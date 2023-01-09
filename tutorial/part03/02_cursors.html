@@ -1,0 +1,751 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Residue, Chain and Segment Properties" href="03_residue_properties.html" /><link rel="prev" title="Atom Properties" href="01_atom_properties.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Cursors and Editing Properties - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/06_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part03.html">Part 3 - Molecular Properties</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="cursors-and-editing-properties">
+<h1>Cursors and Editing Properties<a class="headerlink" href="#cursors-and-editing-properties" title="Permalink to this heading">#</a></h1>
+<p>It is easy to edit the properties of a molecule. The best way to
+do this is by creating a <a class="reference internal" href="../../api/mol.html#sire.mol.Cursor" title="sire.mol.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.mol.Cursor</span></code></a> for the molecule.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">)</span>
+<span class="go">Cursor(molecule, ACE:2)</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="../../api/mol.html#sire.mol.Cursor" title="sire.mol.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a> represents a property editor that can
+be scanned across the molecule. First, we will scan to the atom
+called <code class="docutils literal notranslate"><span class="pre">CA</span></code> using the <code class="docutils literal notranslate"><span class="pre">atom</span></code> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="s2">&quot;CA&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">)</span>
+<span class="go">Cursor(atom, CA:9)</span>
+</pre></div>
+</div>
+<p>The cursor provides a dictionary-style interface to all of the atom’s
+properties.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;gb_screening&#39;, &#39;mass&#39;, &#39;ambertype&#39;, &#39;coordinates&#39;,</span>
+<span class="go"> &#39;treechain&#39;, &#39;atomtype&#39;, &#39;velocity&#39;, &#39;LJ&#39;, &#39;gb_radii&#39;, &#39;charge&#39;, &#39;element&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="go">[(&#39;gb_radii&#39;, 1.7 Å),</span>
+<span class="go"> (&#39;coordinates&#39;, ( 16.5371 Å, 5.02707 Å, 15.812 Å )),</span>
+<span class="go"> (&#39;charge&#39;, 0.0337 |e|),</span>
+<span class="go"> (&#39;mass&#39;, 12.01 g mol-1),</span>
+<span class="go"> (&#39;LJ&#39;, LJ( sigma = 3.39967 Å, epsilon = 0.1094 kcal mol-1 )),</span>
+<span class="go"> (&#39;velocity&#39;, ( 0.00308134 Å ps-1, -0.0190426 Å ps-1, 0.00618047 Å ps-1 )),</span>
+<span class="go"> (&#39;atomtype&#39;, &#39;CX&#39;),</span>
+<span class="go"> (&#39;gb_screening&#39;, 0.72),</span>
+<span class="go"> (&#39;treechain&#39;, &#39;M   &#39;),</span>
+<span class="go"> (&#39;element&#39;, Carbon (C, 6)),</span>
+<span class="go"> (&#39;ambertype&#39;, &#39;CX&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">( 16.5371 Å, 5.02707 Å, 15.812 Å )</span>
+</pre></div>
+</div>
+<p>Assiging to the dictionary will update the corresponding property.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">( 1 Å, 2 Å, 3 Å )</span>
+</pre></div>
+</div>
+<p>Assigning to a non-existent key will create a new property.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;charcoal&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">])</span>
+<span class="go">charcoal</span>
+</pre></div>
+</div>
+<p>An alternative to using the dictionary-type functions is to use
+the <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">get</span></code> functions, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;charcoal&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">))</span>
+<span class="go">charcoal</span>
+</pre></div>
+</div>
+<p>The cursor is editing a copy of the molecule. To commit and save the
+changes, you need to use the <code class="docutils literal notranslate"><span class="pre">commit()</span></code> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">))</span>
+<span class="go">charcoal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">coordinates</span><span class="p">())</span>
+<span class="go">( 1 Å, 2 Å, 3 Å )</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mol</span></code> object was itself a copy from the original in the
+<code class="docutils literal notranslate"><span class="pre">mols</span></code> container loaded from the file. To update the original
+in <code class="docutils literal notranslate"><span class="pre">mols</span></code>, you need to call the <code class="docutils literal notranslate"><span class="pre">update</span></code> function, e.g.
+<code class="docutils literal notranslate"><span class="pre">mols.update(mol)</span></code>. We will cover editing and updating
+molecules in more detail in a later chapter.</p>
+</div>
+<p>Cursors are useful as they make it easy to iterate over and edit
+the properties of several atoms. This is because the <code class="docutils literal notranslate"><span class="pre">atoms()</span></code> function
+returns a list of cursors, one per atom.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">())</span>
+<span class="go">Cursors( size=22</span>
+<span class="go">1: Cursor(atom, HH31:1)</span>
+<span class="go">2: Cursor(atom, CH3:2)</span>
+<span class="go">3: Cursor(atom, HH32:3)</span>
+<span class="go">4: Cursor(atom, HH33:4)</span>
+<span class="go">5: Cursor(atom, C:5)</span>
+<span class="gp">...</span>
+<span class="go">18: Cursor(atom, H:18)</span>
+<span class="go">19: Cursor(atom, CH3:19)</span>
+<span class="go">20: Cursor(atom, HH31:20)</span>
+<span class="go">21: Cursor(atom, HH32:21)</span>
+<span class="go">22: Cursor(atom, HH33:22)</span>
+<span class="go">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">color_name</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">))</span>
+<span class="go">SireMol::AtomStringProperty( size=22</span>
+<span class="go">0: white</span>
+<span class="go">1: charcoal</span>
+<span class="go">2: white</span>
+<span class="go">3: white</span>
+<span class="go">4: charcoal</span>
+<span class="gp">...</span>
+<span class="go">17: white</span>
+<span class="go">18: charcoal</span>
+<span class="go">19: white</span>
+<span class="go">20: white</span>
+<span class="go">21: white</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note how we have used the <a class="reference internal" href="../../api/mol.html#sire.mol.Element.color_name" title="sire.mol.Element.color_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.mol.Element.color_name()</span></code></a>
+function of <a class="reference internal" href="../../api/mol.html#sire.mol.Element" title="sire.mol.Element"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.mol.Element()</span></code></a> to get the color typically
+used to represent each atom in a molecular viewer.</p>
+</div>
+<p>This process of creating a cursor, then applying a change to every single
+atom in the cursor, then commiting the changes back the molecule, is very common.
+It is so common, that sire provides the <code class="docutils literal notranslate"><span class="pre">apply</span></code> function to enable
+you to write this as a single line of code;</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="k">lambda</span> <span class="n">atom</span><span class="p">:</span> <span class="n">atom</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">color_name</span><span class="p">()))</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">))</span>
+<span class="go">SireMol::AtomStringProperty( size=22</span>
+<span class="go">0: white</span>
+<span class="go">1: charcoal</span>
+<span class="go">2: white</span>
+<span class="go">3: white</span>
+<span class="go">4: charcoal</span>
+<span class="gp">...</span>
+<span class="go">17: white</span>
+<span class="go">18: charcoal</span>
+<span class="go">19: white</span>
+<span class="go">20: white</span>
+<span class="go">21: white</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note how we have to use the <code class="docutils literal notranslate"><span class="pre">atom.set(&quot;color&quot;,</span> <span class="pre">...)</span></code> rather than
+<code class="docutils literal notranslate"><span class="pre">atom[&quot;color&quot;]</span> <span class="pre">=</span> <span class="pre">...</span></code> in the lambda expression. This is because
+assignments (using <code class="docutils literal notranslate"><span class="pre">=</span></code>) are not supported in a Python lambda expression.</p>
+</div>
+<section id="searching-by-property">
+<h2>Searching by property<a class="headerlink" href="#searching-by-property" title="Permalink to this heading">#</a></h2>
+<p>You have <a class="reference internal" href="../part02/10_searching.html"><span class="doc">already seen</span></a> how to search for the more
+standard properties, such as <code class="docutils literal notranslate"><span class="pre">element</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code> and <code class="docutils literal notranslate"><span class="pre">charge</span></code>.</p>
+<p>You can also search for custom properties, such as the <code class="docutils literal notranslate"><span class="pre">color</span></code> property
+we added above, using <code class="docutils literal notranslate"><span class="pre">atom</span> <span class="pre">property</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;atom property color == charcoal&quot;</span><span class="p">])</span>
+<span class="go">Selector&lt;SireMol::Atom&gt;( size=6</span>
+<span class="go">0:  Atom( CH3:2   [  18.98,    3.45,   13.39] )</span>
+<span class="go">1:  Atom( C:5     [  18.48,    4.55,   14.35] )</span>
+<span class="go">2:  Atom( CA:9    [  16.54,    5.03,   15.81] )</span>
+<span class="go">3:  Atom( CB:11   [  16.05,    6.39,   15.26] )</span>
+<span class="go">4:  Atom( C:15    [  15.37,    4.19,   16.43] )</span>
+<span class="go">5:  Atom( CH3:19  [  13.83,    3.94,   18.35] )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>This supports any properties that are strings, numbers or boolean types.
+All of the standard comparison operators (e.g. <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code> etc.)
+are supported.</p>
+<p>For example, we could add a <code class="docutils literal notranslate"><span class="pre">radius</span></code> property based on each element’s
+covalent radius…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">():</span>
+<span class="gp">... </span>   <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">covalent_radius</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;radius&quot;</span><span class="p">))</span>
+<span class="go">SireMol::AtomFloatProperty( size=22</span>
+<span class="go">0: 0.23</span>
+<span class="go">1: 0.68</span>
+<span class="go">2: 0.23</span>
+<span class="go">3: 0.23</span>
+<span class="go">4: 0.68</span>
+<span class="gp">...</span>
+<span class="go">17: 0.23</span>
+<span class="go">18: 0.68</span>
+<span class="go">19: 0.23</span>
+<span class="go">20: 0.23</span>
+<span class="go">21: 0.23</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note how we have used the <code class="docutils literal notranslate"><span class="pre">.value()</span></code> function on the radius
+to get the raw value of the radius, without the units.
+We need to do this because we want to be able to search using
+the radius. Searching can only be performed with simple (numeric
+or boolean) properties.</p>
+</div>
+<p>or, using <code class="docutils literal notranslate"><span class="pre">apply</span></code>, this could be written as</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">atoms</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="k">lambda</span> <span class="n">atom</span><span class="p">:</span> <span class="n">atom</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;radius&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">covalent_radius</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="gp">... </span>                         <span class="p">))</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use either <code class="docutils literal notranslate"><span class="pre">.cursor().atoms()</span></code> or <code class="docutils literal notranslate"><span class="pre">.atoms().cursor()</span></code> - the
+order does not change the result.</p>
+</div>
+<p>We can now search for all atoms that have a radius that is less than <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;atom property radius &lt; 0.5&quot;</span><span class="p">])</span>
+<span class="go">Selector&lt;SireMol::Atom&gt;( size=12</span>
+<span class="go">0:  Atom( HH31:1  [  18.45,    3.49,   12.44] )</span>
+<span class="go">1:  Atom( HH32:3  [  20.05,    3.63,   13.29] )</span>
+<span class="go">2:  Atom( HH33:4  [  18.80,    2.43,   13.73] )</span>
+<span class="go">3:  Atom( H:8     [  16.68,    3.62,   14.22] )</span>
+<span class="go">4:  Atom( HA:10   [  17.29,    5.15,   16.59] )</span>
+<span class="gp">...</span>
+<span class="go">7:  Atom( HB3:14  [  15.24,    6.18,   14.55] )</span>
+<span class="go">8:  Atom( H:18    [  15.34,    5.45,   17.96] )</span>
+<span class="go">9:  Atom( HH31:20 [  14.35,    3.41,   19.15] )</span>
+<span class="go">10:  Atom( HH32:21 [  13.19,    4.59,   18.94] )</span>
+<span class="go">11:  Atom( HH33:22 [  13.21,    3.33,   17.69] )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>Boolean properties are particularly useful, as these can be used to
+mark atoms as matching particular criteria.</p>
+<p>For example, we could set a property that is <code class="docutils literal notranslate"><span class="pre">True</span></code> for oxygen atoms using either</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element O&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;special&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="gp">... </span>            <span class="k">lambda</span> <span class="n">atom</span><span class="p">:</span> <span class="n">atom</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;special&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and can then use this property to search for those atoms.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;atom property special == True&quot;</span><span class="p">])</span>
+<span class="go">Selector&lt;SireMol::Atom&gt;( size=2</span>
+<span class="go">0:  Atom( O:6     [  19.19,    5.44,   14.76] )</span>
+<span class="go">1:  Atom( O:16    [  14.94,    3.17,   15.88] )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>This search can be simplified to</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;atom property special&quot;</span><span class="p">])</span>
+<span class="go">Selector&lt;SireMol::Atom&gt;( size=2</span>
+<span class="go">0:  Atom( O:6     [  19.19,    5.44,   14.76] )</span>
+<span class="go">1:  Atom( O:16    [  14.94,    3.17,   15.88] )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>This is because an atom property search will return all of the atoms
+that have a non-zero, non-empty or non-false value for the specified
+property.</p>
+</section>
+<section id="deleting-properties">
+<h2>Deleting properties<a class="headerlink" href="#deleting-properties" title="Permalink to this heading">#</a></h2>
+<p>You can remove properties from the cursor in the same way that you
+remove properties from a normal Python dictionary. You just <code class="docutils literal notranslate"><span class="pre">del</span></code>
+the key for the property you want to remove, or call the
+<code class="docutils literal notranslate"><span class="pre">delete</span></code> function of the Cursor, passing in the key.</p>
+<p>For example, we can delete the <code class="docutils literal notranslate"><span class="pre">radius</span></code> property we created earlier
+using</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;radius&quot;</span><span class="p">))</span>
+<span class="go">KeyError: &#39;SireBase::missing_property: There is no property with</span>
+<span class="go">name &quot;radius&quot;. Available properties are [ velocity, element, gb_radius_set,</span>
+<span class="go">bond, forcefield, gb_radii, color, angle, improper, gb_screening, intrascale,</span>
+<span class="go">LJ, coordinates, dihedral, treechain, connectivity, special, charge,</span>
+<span class="go">ambertype, parameters, atomtype, mass ].</span>
+<span class="go">(call sire.error.get_last_error_details() for more info)&#39;</span>
+</pre></div>
+</div>
+<p>Or, alternatively, using the <code class="docutils literal notranslate"><span class="pre">delete</span></code> function,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;radius&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or, as one line,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;radius&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can also remove the properties from individual atoms. Here, we will
+remove the <code class="docutils literal notranslate"><span class="pre">special</span></code> property from the oxygen atoms</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element O&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">del</span> <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;special&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or, alternatively, using the <code class="docutils literal notranslate"><span class="pre">delete</span></code> function,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;special&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Deleting a property from an atom will reset it to a default-constructed
+value. This is <code class="docutils literal notranslate"><span class="pre">False</span></code> (or <code class="docutils literal notranslate"><span class="pre">0</span></code>) for boolean properties.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;element O&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;special&quot;</span><span class="p">))</span>
+<span class="go">[0, 0]</span>
+</pre></div>
+</div>
+<p>While this is what you want for boolean properties, this may give
+unexpected results for more complex properties. For example, deleting
+the <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> property from an atom will set its coordinates to
+<code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="p">[</span><span class="s2">&quot;element O&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">[( 0, 0, 0 ), ( 0, 0, 0 )]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="03_residue_properties.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Residue, Chain and Segment Properties</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="01_atom_properties.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Atom Properties</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Jan 09, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Cursors and Editing Properties</a><ul>
+<li><a class="reference internal" href="#searching-by-property">Searching by property</a></li>
+<li><a class="reference internal" href="#deleting-properties">Deleting properties</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    </body>
+</html>

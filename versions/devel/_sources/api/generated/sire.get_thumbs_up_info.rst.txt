@@ -1,0 +1,6 @@
+﻿sire.get\_thumbs\_up\_info
+==========================
+
+.. currentmodule:: sire
+
+.. autofunction:: get_thumbs_up_info

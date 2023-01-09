@@ -1,0 +1,6 @@
+﻿sire.thumbs\_up
+===============
+
+.. currentmodule:: sire
+
+.. autofunction:: thumbs_up

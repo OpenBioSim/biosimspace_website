@@ -1,0 +1,6 @@
+﻿sire.segid
+==========
+
+.. currentmodule:: sire
+
+.. autofunction:: segid

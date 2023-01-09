@@ -1,0 +1,6 @@
+﻿sire.molid
+==========
+
+.. currentmodule:: sire
+
+.. autofunction:: molid

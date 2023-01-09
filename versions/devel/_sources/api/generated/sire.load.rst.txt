@@ -1,0 +1,6 @@
+﻿sire.load
+=========
+
+.. currentmodule:: sire
+
+.. autofunction:: load

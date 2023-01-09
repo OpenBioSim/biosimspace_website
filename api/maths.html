@@ -1,0 +1,1338 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="sire.mm" href="index_mm.html" /><link rel="prev" title="sire.maths" href="index_maths.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Public API - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_pygments.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorial/index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheet/search.html">Searching</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sire.html">sire module</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="sire_modules.html">Sub-modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="io.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index_maths.html">sire.maths</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-sire.maths">
+<span id="public-api"></span><h1>Public API<a class="headerlink" href="#module-sire.maths" title="Permalink to this heading">#</a></h1>
+<p><a class="reference internal" href="index_maths.html"><span class="doc">View Module Index</span></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.maths.Matrix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><a class="headerlink" href="#sire.maths.Matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>This class represents a 3x3 square matrix, used to represent 3D transformations.</p>
+<p>Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(Matrix)other</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.assign" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix {lvalue} assign(SireMaths::Matrix {lvalue},SireMaths::Matrix)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)j</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.at" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the element at index i,j</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>double at(SireMaths::Matrix {lvalue},int,int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.checked_offset">
+<span class="sig-name descname"><span class="pre">checked_offset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.checked_offset" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>checkedOffset( (Matrix)arg1, (int)i, (int)j) -&gt; int :</dt><dd><p>Return the offset into the array of the value at index [i,j]
+Throw: SireError::invalid_index</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int checkedOffset(SireMaths::Matrix {lvalue},int,int)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.clone" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix clone(SireMaths::Matrix)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.column0">
+<span class="sig-name descname"><span class="pre">column0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column0" title="Permalink to this definition">#</a></dt>
+<dd><p>Return each column</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector column0(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.column1">
+<span class="sig-name descname"><span class="pre">column1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column1" title="Permalink to this definition">#</a></dt>
+<dd><p>Return each column</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector column1(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.column2">
+<span class="sig-name descname"><span class="pre">column2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.column2" title="Permalink to this definition">#</a></dt>
+<dd><p>Return each column</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector column2(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.covariance">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(object)p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(object)q</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">(int)n=-1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.covariance" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the covariance matrix of the passed arrays of points. This
+matches point p[i] against point q[i], and only calculates up to either
+the specified number of points, if n &gt; 0, or to min(len(p),len(q))</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix covariance(QVector&lt;SireMaths::Vector&gt;,QVector&lt;SireMaths::Vector&gt; [,int=-1])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.determinant">
+<span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.determinant" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the determinant of the matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>double determinant(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.diagonalise">
+<span class="sig-name descname"><span class="pre">diagonalise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.diagonalise" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the eigenvectors and eigenvalues of this matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>boost::tuples::tuple&lt;SireMaths::Vector, SireMaths::Matrix, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; diagonalise(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.enforce_symmetric">
+<span class="sig-name descname"><span class="pre">enforce_symmetric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.enforce_symmetric" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>enforceSymmetric( (Matrix)arg1) -&gt; None :</dt><dd><p>Ensure that this matrix is symmetric - this is done by copying the upper-right
+diagonal to the lower-left diagonal. Note that you should only really use this
+function on matricies that you know are symmetric, but may have lost some of
+their symmetry due to numerical rounding error</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void enforceSymmetric(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.get_principal_axes">
+<span class="sig-name descname"><span class="pre">get_principal_axes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.get_principal_axes" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>getPrincipalAxes( (Matrix)arg1) -&gt; Matrix :</dt><dd><p>Obtain the principal axes of this matrix. This can only be performed if this
+matrix is symmetric. You should only call this function for matricies that
+you know are symmetric, as this function will assume that the matrix is
+symmetric, and will thus only use the upper-right diagonal of values.
+The returned principal axes will be sorted from the highest eigenvalue to
+the lowest.</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix getPrincipalAxes(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.identity">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.identity" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the identity matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix identity()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.inverse">
+<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.inverse" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the inverse of this matrix. Throws a math_error if this
+matrix cannot be inverted.</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix inverse(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.is_identity">
+<span class="sig-name descname"><span class="pre">is_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_identity" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>isIdentity( (Matrix)arg1) -&gt; bool :</dt><dd><p>Return whether or not this matrix is equal to the identity matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isIdentity(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.is_symmetric">
+<span class="sig-name descname"><span class="pre">is_symmetric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.is_symmetric" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>isSymmetric( (Matrix)arg1) -&gt; bool :</dt><dd><p>Return whether or not this is a symmetric matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>bool isSymmetric(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)j</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.offset" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>int offset(SireMaths::Matrix {lvalue},int,int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.row0">
+<span class="sig-name descname"><span class="pre">row0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row0" title="Permalink to this definition">#</a></dt>
+<dd><p>Return each row</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector row0(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.row1">
+<span class="sig-name descname"><span class="pre">row1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row1" title="Permalink to this definition">#</a></dt>
+<dd><p>Return each row</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector row1(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.row2">
+<span class="sig-name descname"><span class="pre">row2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.row2" title="Permalink to this definition">#</a></dt>
+<dd><p>Return each row</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector row2(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.set_to_identity">
+<span class="sig-name descname"><span class="pre">set_to_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.set_to_identity" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>setToIdentity( (Matrix)arg1) -&gt; None :</dt><dd><p>Set the matrix to identity</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>void setToIdentity(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.single_value_decomposition">
+<span class="sig-name descname"><span class="pre">single_value_decomposition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.single_value_decomposition" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>singleValueDecomposition( (Matrix)arg1) -&gt; object :</dt><dd><p>Return the single value decomposition of this matrix.
+This calculates the decomposition of this matrix
+into U S V^T, returning U, S and V in the tuple</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>boost::tuples::tuple&lt;SireMaths::Matrix, SireMaths::Matrix, SireMaths::Matrix, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; singleValueDecomposition(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.svd">
+<span class="sig-name descname"><span class="pre">svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.svd" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the single value decomposition of this matrix.
+This calculates the decomposition of this matrix
+into U S V^T, returning U, S and V in the tuple</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>boost::tuples::tuple&lt;SireMaths::Matrix, SireMaths::Matrix, SireMaths::Matrix, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type, boost::tuples::null_type&gt; svd(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.to_string" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>toString( (Matrix)arg1) -&gt; object :</dt><dd><p>Return a QString representation of the matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.trace">
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.trace" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the trace of the matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector trace(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.transpose">
+<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.transpose" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the transpose of the matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix transpose(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Matrix.typename" title="Permalink to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.what" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.xx">
+<span class="sig-name descname"><span class="pre">xx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xx" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double xx(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.xy">
+<span class="sig-name descname"><span class="pre">xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xy" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double xy(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.xz">
+<span class="sig-name descname"><span class="pre">xz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.xz" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double xz(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.yx">
+<span class="sig-name descname"><span class="pre">yx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yx" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double yx(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.yy">
+<span class="sig-name descname"><span class="pre">yy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yy" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double yy(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.yz">
+<span class="sig-name descname"><span class="pre">yz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.yz" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double yz(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.zero">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Matrix</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zero" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the null matrix</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Matrix zero()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.zx">
+<span class="sig-name descname"><span class="pre">zx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zx" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double zx(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.zy">
+<span class="sig-name descname"><span class="pre">zy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zy" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double zy(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Matrix.zz">
+<span class="sig-name descname"><span class="pre">zz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Matrix)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Matrix.zz" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>double zz(SireMaths::Matrix {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.maths.Sphere">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths/_sphere.html#Sphere"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.Sphere" title="Permalink to this definition">#</a></dt>
+<dd><p>A sphere in 3D space</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.maths.Torsion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Torsion</span></span><a class="headerlink" href="#sire.maths.Torsion" title="Permalink to this definition">#</a></dt>
+<dd><p>This class represents a torsion in three dimensional space, e.g. four points
+in space, not necessarily lying in a plane. A torsion is used to calculate
+dihedral angles (imagine each point is an atom). I am not happy with the
+name of this class, and welcome suggestions :-)</p>
+<p>Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.angle">
+<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.angle" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the torsion angle of this torsion (the torsion angle 0-1-2-3
+around the 1-2 line)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.at" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the point at index i</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector at(SireMaths::Torsion {lvalue},int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Torsion</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.clone" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Torsion clone(SireMaths::Torsion)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.count" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of points in a torsion (4)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>int count(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.improper_angle">
+<span class="sig-name descname"><span class="pre">improper_angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.improper_angle" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>improperAngle( (Torsion)arg1) -&gt; object :</dt><dd><p>Return the improper angle of this torsion (the acute angle between the
+vector 0-1 and the plane formed by 1-2-3)</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; improperAngle(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.line03">
+<span class="sig-name descname"><span class="pre">line03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.line03" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the line from point 0 to point 3</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Line line03(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.line12">
+<span class="sig-name descname"><span class="pre">line12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.line12" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the line from point 1 to point 2</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Line line12(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.point">
+<span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.point" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the point at index i</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector point(SireMaths::Torsion {lvalue},int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.to_string" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>toString( (Torsion)arg1) -&gt; object :</dt><dd><p>Return a string representation of this torsion</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.triangle1">
+<span class="sig-name descname"><span class="pre">triangle1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.triangle1" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the triangle around point 1, i.e. point0-point1-point2</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Triangle triangle1(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.triangle2">
+<span class="sig-name descname"><span class="pre">triangle2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.triangle2" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the triangle around point 2, i.e. point1-point2-point3</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Triangle triangle2(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Torsion.typename" title="Permalink to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.vector03">
+<span class="sig-name descname"><span class="pre">vector03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.vector03" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the vector from point 0 to point 3</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector vector03(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.vector12">
+<span class="sig-name descname"><span class="pre">vector12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.vector12" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the vector from point 1 to point 2</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector vector12(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Torsion.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Torsion)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Torsion.what" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Torsion {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.maths.Triangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><a class="headerlink" href="#sire.maths.Triangle" title="Permalink to this definition">#</a></dt>
+<dd><p>This class represents a triangle in three-dimensional space. (or three points)</p>
+<p>Author: Christopher Woods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.angle">
+<span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.angle0">
+<span class="sig-name descname"><span class="pre">angle0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle0" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle0(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.angle1">
+<span class="sig-name descname"><span class="pre">angle1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle1" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle1(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.angle2">
+<span class="sig-name descname"><span class="pre">angle2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.angle2" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireUnits::Dimension::PhysUnit&lt;0, 0, 0, 0, 0, 0, 1&gt; angle2(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.at" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector at(SireMaths::Triangle {lvalue},int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Triangle</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.clone" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Triangle clone(SireMaths::Triangle)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.count" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>int count(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.line0">
+<span class="sig-name descname"><span class="pre">line0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line0" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Line line0(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.line1">
+<span class="sig-name descname"><span class="pre">line1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line1" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Line line1(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.line2">
+<span class="sig-name descname"><span class="pre">line2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Line</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.line2" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Line line2(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.point">
+<span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(int)i</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.point" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector point(SireMaths::Triangle {lvalue},int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Triangle.to_string" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>toString( (Triangle)arg1) -&gt; object :</dt><dd><p>Return a string representation of the triangle</p>
+<dl class="simple">
+<dt>C++ signature :</dt><dd><p>QString toString(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.typename">
+<span class="sig-name descname"><span class="pre">typename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sire.maths.Triangle.typename" title="Permalink to this definition">#</a></dt>
+<dd><p>typeName() -&gt; str :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* typeName()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.vector">
+<span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector vector(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.vector0">
+<span class="sig-name descname"><span class="pre">vector0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector0" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector vector0(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.vector1">
+<span class="sig-name descname"><span class="pre">vector1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector1" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector vector1(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.vector2">
+<span class="sig-name descname"><span class="pre">vector2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vector</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.vector2" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>SireMaths::Vector vector2(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sire.maths.Triangle.what">
+<span class="sig-name descname"><span class="pre">what</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(Triangle)arg1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span> <span class="pre">:</span></span></span><a class="headerlink" href="#sire.maths.Triangle.what" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>C++ signature :</dt><dd><p>char const* what(SireMaths::Triangle {lvalue})</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sire.maths.Vector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths/_vector.html#Vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.Vector" title="Permalink to this definition">#</a></dt>
+<dd><p>A 3D point in space, or a 3D vector in space. This is a simple
+class containing 3 double precision values. These values
+represent points in units of Angstroms.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sire.maths.create_quaternion">
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">create_quaternion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sire/maths.html#create_quaternion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sire.maths.create_quaternion" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a quaternion from the passed angle and axis
+of the passed rotation matrix. If a rotation
+matrix is passed then this will ignore the
+passed angle and axis. If a quaternion is passed
+then this will ignore the matrix, angle and axis
+arguments.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>angle: (float or angle)</dt><dd><p>The angle to rotate by - this is interpreted as
+degrees if you pass in a float. Otherwise use
+sire.units.degrees or sire.units.radians to specify
+the angle unit. This is superseded by the
+matrix and quaternion arguments.</p>
+</dd>
+<dt>axis: sire.maths.Vector (or anything that can convert to a Vector)</dt><dd><p>The vector about which to rotate. If this is not
+specified, and no other rotation specification is
+used, then the rotation is about the z axis.
+This is superseded by the matrix and
+quaternion arguments.</p>
+</dd>
+<dt>quaternion: sire.maths.Quaternion</dt><dd><p>The Quaternion description of the rotation. Note that,
+if you pass this, then the angle, axis and matrix
+arguments will be ignored.</p>
+</dd>
+<dt>matrix: sire.maths.Matrix</dt><dd><p>The 3x3 rotation matrix that describes the rotation.
+Note that, if you pass this, then the angle and axis
+arguments will be ignored. This is superseded by
+the quaternion argument.</p>
+</dd>
+<dt>Returns: sire.maths.Quaternion</dt><dd><p>The quaternion that represents the rotation</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="sire.maths.pi">
+<span class="sig-prename descclassname"><span class="pre">sire.maths.</span></span><span class="sig-name descname"><span class="pre">pi</span></span><em class="property"><span class="w"> </span><span class="pre">π</span> <span class="pre">(3.141592653589793)</span></em><a class="headerlink" href="#sire.maths.pi" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert a string or number to a floating point number, if possible.</p>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="index_mm.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">sire.mm</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index_maths.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">sire.maths</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Jan 09, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Public API</a><ul>
+<li><a class="reference internal" href="#sire.maths.Matrix"><code class="docutils literal notranslate"><span class="pre">Matrix</span></code></a><ul>
+<li><a class="reference internal" href="#sire.maths.Matrix.assign"><code class="docutils literal notranslate"><span class="pre">Matrix.assign()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.at"><code class="docutils literal notranslate"><span class="pre">Matrix.at()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.checked_offset"><code class="docutils literal notranslate"><span class="pre">Matrix.checked_offset()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.clone"><code class="docutils literal notranslate"><span class="pre">Matrix.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.column0"><code class="docutils literal notranslate"><span class="pre">Matrix.column0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.column1"><code class="docutils literal notranslate"><span class="pre">Matrix.column1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.column2"><code class="docutils literal notranslate"><span class="pre">Matrix.column2()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.covariance"><code class="docutils literal notranslate"><span class="pre">Matrix.covariance()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.determinant"><code class="docutils literal notranslate"><span class="pre">Matrix.determinant()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.diagonalise"><code class="docutils literal notranslate"><span class="pre">Matrix.diagonalise()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.enforce_symmetric"><code class="docutils literal notranslate"><span class="pre">Matrix.enforce_symmetric()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.get_principal_axes"><code class="docutils literal notranslate"><span class="pre">Matrix.get_principal_axes()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.identity"><code class="docutils literal notranslate"><span class="pre">Matrix.identity()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.inverse"><code class="docutils literal notranslate"><span class="pre">Matrix.inverse()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.is_identity"><code class="docutils literal notranslate"><span class="pre">Matrix.is_identity()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.is_symmetric"><code class="docutils literal notranslate"><span class="pre">Matrix.is_symmetric()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.offset"><code class="docutils literal notranslate"><span class="pre">Matrix.offset()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.row0"><code class="docutils literal notranslate"><span class="pre">Matrix.row0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.row1"><code class="docutils literal notranslate"><span class="pre">Matrix.row1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.row2"><code class="docutils literal notranslate"><span class="pre">Matrix.row2()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.set_to_identity"><code class="docutils literal notranslate"><span class="pre">Matrix.set_to_identity()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.single_value_decomposition"><code class="docutils literal notranslate"><span class="pre">Matrix.single_value_decomposition()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.svd"><code class="docutils literal notranslate"><span class="pre">Matrix.svd()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.to_string"><code class="docutils literal notranslate"><span class="pre">Matrix.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.trace"><code class="docutils literal notranslate"><span class="pre">Matrix.trace()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.transpose"><code class="docutils literal notranslate"><span class="pre">Matrix.transpose()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.typename"><code class="docutils literal notranslate"><span class="pre">Matrix.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.what"><code class="docutils literal notranslate"><span class="pre">Matrix.what()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.xx"><code class="docutils literal notranslate"><span class="pre">Matrix.xx()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.xy"><code class="docutils literal notranslate"><span class="pre">Matrix.xy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.xz"><code class="docutils literal notranslate"><span class="pre">Matrix.xz()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.yx"><code class="docutils literal notranslate"><span class="pre">Matrix.yx()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.yy"><code class="docutils literal notranslate"><span class="pre">Matrix.yy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.yz"><code class="docutils literal notranslate"><span class="pre">Matrix.yz()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.zero"><code class="docutils literal notranslate"><span class="pre">Matrix.zero()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.zx"><code class="docutils literal notranslate"><span class="pre">Matrix.zx()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.zy"><code class="docutils literal notranslate"><span class="pre">Matrix.zy()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Matrix.zz"><code class="docutils literal notranslate"><span class="pre">Matrix.zz()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.maths.Sphere"><code class="docutils literal notranslate"><span class="pre">Sphere</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion"><code class="docutils literal notranslate"><span class="pre">Torsion</span></code></a><ul>
+<li><a class="reference internal" href="#sire.maths.Torsion.angle"><code class="docutils literal notranslate"><span class="pre">Torsion.angle()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.at"><code class="docutils literal notranslate"><span class="pre">Torsion.at()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.clone"><code class="docutils literal notranslate"><span class="pre">Torsion.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.count"><code class="docutils literal notranslate"><span class="pre">Torsion.count()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.improper_angle"><code class="docutils literal notranslate"><span class="pre">Torsion.improper_angle()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.line03"><code class="docutils literal notranslate"><span class="pre">Torsion.line03()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.line12"><code class="docutils literal notranslate"><span class="pre">Torsion.line12()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.point"><code class="docutils literal notranslate"><span class="pre">Torsion.point()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.to_string"><code class="docutils literal notranslate"><span class="pre">Torsion.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.triangle1"><code class="docutils literal notranslate"><span class="pre">Torsion.triangle1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.triangle2"><code class="docutils literal notranslate"><span class="pre">Torsion.triangle2()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.typename"><code class="docutils literal notranslate"><span class="pre">Torsion.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.vector03"><code class="docutils literal notranslate"><span class="pre">Torsion.vector03()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.vector12"><code class="docutils literal notranslate"><span class="pre">Torsion.vector12()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Torsion.what"><code class="docutils literal notranslate"><span class="pre">Torsion.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.maths.Triangle"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code></a><ul>
+<li><a class="reference internal" href="#sire.maths.Triangle.angle"><code class="docutils literal notranslate"><span class="pre">Triangle.angle()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.angle0"><code class="docutils literal notranslate"><span class="pre">Triangle.angle0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.angle1"><code class="docutils literal notranslate"><span class="pre">Triangle.angle1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.angle2"><code class="docutils literal notranslate"><span class="pre">Triangle.angle2()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.at"><code class="docutils literal notranslate"><span class="pre">Triangle.at()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.clone"><code class="docutils literal notranslate"><span class="pre">Triangle.clone()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.count"><code class="docutils literal notranslate"><span class="pre">Triangle.count()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.line0"><code class="docutils literal notranslate"><span class="pre">Triangle.line0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.line1"><code class="docutils literal notranslate"><span class="pre">Triangle.line1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.line2"><code class="docutils literal notranslate"><span class="pre">Triangle.line2()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.point"><code class="docutils literal notranslate"><span class="pre">Triangle.point()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.to_string"><code class="docutils literal notranslate"><span class="pre">Triangle.to_string()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.typename"><code class="docutils literal notranslate"><span class="pre">Triangle.typename()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.vector"><code class="docutils literal notranslate"><span class="pre">Triangle.vector()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.vector0"><code class="docutils literal notranslate"><span class="pre">Triangle.vector0()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.vector1"><code class="docutils literal notranslate"><span class="pre">Triangle.vector1()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.vector2"><code class="docutils literal notranslate"><span class="pre">Triangle.vector2()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.Triangle.what"><code class="docutils literal notranslate"><span class="pre">Triangle.what()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sire.maths.Vector"><code class="docutils literal notranslate"><span class="pre">Vector</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.create_quaternion"><code class="docutils literal notranslate"><span class="pre">create_quaternion()</span></code></a></li>
+<li><a class="reference internal" href="#sire.maths.pi"><code class="docutils literal notranslate"><span class="pre">pi</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/js/custom.js"></script>
+    </body>
+</html>

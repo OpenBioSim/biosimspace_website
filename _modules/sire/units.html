@@ -1,0 +1,779 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>sire.units - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part01/06_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial/index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/05_movement.html">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial/part04/06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for sire.units</h1><div class="highlight"><pre>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;angle&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;convert&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;length&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_energy_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_internal_units&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_length_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_mass_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_quantity_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_si_units&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_time_unit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;angstrom&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;celsius&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;degrees&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fahrenheit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;farad&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;femtosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;g_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kcal_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kJ_per_mol&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mod_electron&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;meter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanometer2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nanosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picometer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">..legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">use_new_api</span> <span class="k">as</span> <span class="n">_use_new_api</span>
+
+<span class="kn">from</span> <span class="nn">..legacy.Units</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">angstrom</span><span class="p">,</span>
+    <span class="n">cal</span><span class="p">,</span>
+    <span class="n">celsius</span><span class="p">,</span>
+    <span class="n">convert</span><span class="p">,</span>
+    <span class="n">degrees</span><span class="p">,</span>
+    <span class="n">fahrenheit</span><span class="p">,</span>
+    <span class="n">farad</span><span class="p">,</span>
+    <span class="n">femtosecond</span><span class="p">,</span>
+    <span class="n">g_per_mol</span><span class="p">,</span>
+    <span class="n">gram</span><span class="p">,</span>
+    <span class="n">joule</span><span class="p">,</span>
+    <span class="n">mod_electron</span><span class="p">,</span>
+    <span class="n">meter</span><span class="p">,</span>
+    <span class="n">int_cal</span><span class="p">,</span>
+    <span class="n">int_kcal</span><span class="p">,</span>
+    <span class="n">kcal</span><span class="p">,</span>
+    <span class="n">kcal_per_mol</span><span class="p">,</span>
+    <span class="n">kilogram</span><span class="p">,</span>
+    <span class="n">kilojoule</span><span class="p">,</span>
+    <span class="n">kJ_per_mol</span><span class="p">,</span>
+    <span class="n">mole</span><span class="p">,</span>
+    <span class="n">nanometer</span><span class="p">,</span>
+    <span class="n">nanometer2</span><span class="p">,</span>
+    <span class="n">nanosecond</span><span class="p">,</span>
+    <span class="n">picometer</span><span class="p">,</span>
+    <span class="n">picosecond</span><span class="p">,</span>
+    <span class="n">radians</span><span class="p">,</span>
+    <span class="n">GeneralUnit</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">_use_new_api</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_fix_generalunit</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">_generalunit_approx_equal</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;what&quot;</span><span class="p">):</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="n">GeneralUnit</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;what&quot;</span><span class="p">):</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">GeneralUnit</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">what</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Property&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">_generalunit_approx_equal</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">v</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">v</span><span class="o">.</span><span class="n">what</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Property&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">_generalunit_approx_equal</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
+
+        <span class="c1"># make sure that the units are the same</span>
+        <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">..search</span> <span class="kn">import</span> <span class="n">approx_equal</span>
+
+            <span class="k">return</span> <span class="n">approx_equal</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">_generalunit_to_default</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a floating point value that represents</span>
+<span class="sd">        this value in default units for this dimension</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        &gt;&gt;&gt; import sire as sr</span>
+<span class="sd">        &gt;&gt;&gt; l = 5 * sr.units.angstrom</span>
+<span class="sd">        &gt;&gt;&gt; sr.units.set_length_unit(sr.units.picometer)</span>
+<span class="sd">        &gt;&gt;&gt; print(l.to_default())</span>
+<span class="sd">            500.0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">/</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__generalunit__getitem__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_component</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__generalunit__setitem__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="n">approx_equal</span> <span class="o">=</span> <span class="n">_generalunit_approx_equal</span>
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="n">to_default</span> <span class="o">=</span> <span class="n">_generalunit_to_default</span>
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="fm">__setitem__</span> <span class="o">=</span> <span class="n">__generalunit__setitem__</span>
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="fm">__getitem__</span> <span class="o">=</span> <span class="n">__generalunit__getitem__</span>
+
+    <span class="k">def</span> <span class="nf">__generalunit__bool__</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_zero</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__generalunit__float__</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_dimensionless</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;You cannot convert the dimensioned value </span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="s2">&quot;to a dimensionless floating point number.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__generalunit__int__</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_dimensionless</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;You cannot convert the dimensioned value </span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="s2">&quot;to a dimensionless whole number integer.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
+
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="fm">__bool__</span> <span class="o">=</span> <span class="n">__generalunit__bool__</span>
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="fm">__float__</span> <span class="o">=</span> <span class="n">__generalunit__float__</span>
+    <span class="n">GeneralUnit</span><span class="o">.</span><span class="fm">__int__</span> <span class="o">=</span> <span class="n">__generalunit__int__</span>
+
+
+<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">GeneralUnit</span><span class="p">,</span> <span class="s2">&quot;to_default&quot;</span><span class="p">):</span>
+    <span class="n">_fix_generalunit</span><span class="p">()</span>
+
+
+<span class="n">_names</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_get_unit_name</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
+
+    <span class="k">global</span> <span class="n">_names</span>
+
+    <span class="k">if</span> <span class="n">_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_names</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">mole</span><span class="p">:</span> <span class="s2">&quot;mol&quot;</span><span class="p">,</span>
+            <span class="n">cal</span><span class="p">:</span> <span class="s2">&quot;cal&quot;</span><span class="p">,</span>
+            <span class="n">joule</span><span class="p">:</span> <span class="s2">&quot;joule&quot;</span><span class="p">,</span>
+            <span class="n">int_cal</span><span class="p">:</span> <span class="s2">&quot;int_cal&quot;</span><span class="p">,</span>
+            <span class="n">kcal</span><span class="p">:</span> <span class="s2">&quot;kcal&quot;</span><span class="p">,</span>
+            <span class="n">kilojoule</span><span class="p">:</span> <span class="s2">&quot;kJ&quot;</span><span class="p">,</span>
+            <span class="n">int_kcal</span><span class="p">:</span> <span class="s2">&quot;int_kcal&quot;</span><span class="p">,</span>
+            <span class="n">angstrom</span><span class="p">:</span> <span class="s2">&quot;Å&quot;</span><span class="p">,</span>
+            <span class="n">picometer</span><span class="p">:</span> <span class="s2">&quot;pm&quot;</span><span class="p">,</span>
+            <span class="n">nanometer</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">,</span>
+            <span class="n">gram</span><span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+            <span class="n">kilogram</span><span class="p">:</span> <span class="s2">&quot;kg&quot;</span><span class="p">,</span>
+            <span class="n">picosecond</span><span class="p">:</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span>
+            <span class="n">nanosecond</span><span class="p">:</span> <span class="s2">&quot;ns&quot;</span><span class="p">,</span>
+            <span class="n">femtosecond</span><span class="p">:</span> <span class="s2">&quot;fs&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_names</span><span class="p">[</span><span class="n">unit</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="n">unit</span><span class="o">.</span><span class="n">_to_cpp_type</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_incompatible_units</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">typ</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Unit </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span><span class="si">}</span><span class="s2"> is not a </span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">, and so is &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;incompatible with </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="set_quantity_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_quantity_unit">[docs]</a><span class="k">def</span> <span class="nf">set_quantity_unit</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default quantity unit to be used for</span>
+<span class="sd">    output and default conversions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">mole</span><span class="p">):</span>
+        <span class="n">_incompatible_units</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">mole</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">_get_unit_name</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+    <span class="n">q</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="n">e</span> <span class="o">=</span> <span class="n">kcal</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">ename</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+
+    <span class="n">length</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">lname</span> <span class="o">=</span> <span class="n">length</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1 </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1 </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">gram</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">gname</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_energy_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_energy_unit">[docs]</a><span class="k">def</span> <span class="nf">set_energy_unit</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default energy unit to be used for</span>
+<span class="sd">    output and default conversions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">energy</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">kcal</span><span class="p">):</span>
+        <span class="n">_incompatible_units</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">kcal</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">_get_unit_name</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
+
+    <span class="n">q</span> <span class="o">=</span> <span class="n">mole</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">qname</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="n">energy</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">energy</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">qname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_length_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_length_unit">[docs]</a><span class="k">def</span> <span class="nf">set_length_unit</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default length unit to be used for</span>
+<span class="sd">    output and default conversions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">length</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">angstrom</span><span class="p">):</span>
+        <span class="n">_incompatible_units</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">angstrom</span><span class="p">,</span> <span class="s2">&quot;length&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">_get_unit_name</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+
+    <span class="n">length</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">^2&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">^3&quot;</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-3&quot;</span><span class="p">)</span>
+
+    <span class="n">e</span> <span class="o">=</span> <span class="n">kcal_per_mol</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">ename</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ename</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_mass_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_mass_unit">[docs]</a><span class="k">def</span> <span class="nf">set_mass_unit</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default mass unit to be used for</span>
+<span class="sd">    output and default conversions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mass</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">gram</span><span class="p">):</span>
+        <span class="n">_incompatible_units</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">gram</span><span class="p">,</span> <span class="s2">&quot;mass&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">_get_unit_name</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span>
+
+    <span class="n">mass</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="n">q</span> <span class="o">=</span> <span class="n">mole</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">qname</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="p">(</span><span class="n">mass</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">qname</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_time_unit"><a class="viewcode-back" href="../../api/units.html#sire.units.set_time_unit">[docs]</a><span class="k">def</span> <span class="nf">set_time_unit</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the default time unit to be used for</span>
+<span class="sd">    output and default conversions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">time</span><span class="o">.</span><span class="n">has_same_units</span><span class="p">(</span><span class="n">picosecond</span><span class="p">):</span>
+        <span class="n">_incompatible_units</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">picosecond</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">_get_unit_name</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span>
+
+    <span class="n">length</span> <span class="o">=</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="n">lname</span> <span class="o">=</span> <span class="n">length</span><span class="o">.</span><span class="n">unit_string</span><span class="p">()</span>
+
+    <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-1&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">set_as_default</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">-2&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_si_units"><a class="viewcode-back" href="../../api/units.html#sire.units.set_si_units">[docs]</a><span class="k">def</span> <span class="nf">set_si_units</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Switch over to using SI units for output and default conversions</span>
+
+<span class="sd">    This uses:</span>
+
+<span class="sd">        mass:     gram (g)</span>
+<span class="sd">        energy:   kilojoule (kJ)</span>
+<span class="sd">        length:   nanometer</span>
+<span class="sd">        time:     picosecond</span>
+<span class="sd">        quantity: mole</span>
+<span class="sd">        charge:   mod_electron charges</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_quantity_unit</span><span class="p">(</span><span class="n">mole</span><span class="p">)</span>
+    <span class="n">set_energy_unit</span><span class="p">(</span><span class="n">kilojoule</span><span class="p">)</span>
+    <span class="n">set_mass_unit</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
+    <span class="n">set_time_unit</span><span class="p">(</span><span class="n">picosecond</span><span class="p">)</span>
+    <span class="n">set_length_unit</span><span class="p">(</span><span class="n">nanometer</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_internal_units"><a class="viewcode-back" href="../../api/units.html#sire.units.set_internal_units">[docs]</a><span class="k">def</span> <span class="nf">set_internal_units</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Switch over to using default (AKMA-style) units for output</span>
+<span class="sd">    and default conversions.</span>
+
+<span class="sd">    This uses:</span>
+
+<span class="sd">        mass:     gram (g)</span>
+<span class="sd">        energy:   kilocalorie (kcal)</span>
+<span class="sd">        length:   angstrom</span>
+<span class="sd">        time:     picosecond</span>
+<span class="sd">        quantity: mole</span>
+<span class="sd">        charge:   mod_electron charges</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">set_quantity_unit</span><span class="p">(</span><span class="n">mole</span><span class="p">)</span>
+    <span class="n">set_energy_unit</span><span class="p">(</span><span class="n">kcal</span><span class="p">)</span>
+    <span class="n">set_mass_unit</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
+    <span class="n">set_time_unit</span><span class="p">(</span><span class="n">picosecond</span><span class="p">)</span>
+    <span class="n">set_length_unit</span><span class="p">(</span><span class="n">angstrom</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="length"><a class="viewcode-back" href="../../api/units.html#sire.units.length">[docs]</a><span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the passed argument into a length. This will</span>
+<span class="sd">    return `length` if it is already a length, or it will</span>
+<span class="sd">    convert it into a length with default units if this</span>
+<span class="sd">    is a float or something that can be converted to</span>
+<span class="sd">    a float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">*</span> <span class="n">angstrom</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">angstrom</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The value &#39;</span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">&#39; of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">length</span><span class="p">)</span><span class="si">}</span><span class="s2"> is &quot;</span>
+            <span class="s2">&quot;not a type that is compatible with a GeneralUnit Length&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">length</span></div>
+
+
+<div class="viewcode-block" id="angle"><a class="viewcode-back" href="../../api/units.html#sire.units.angle">[docs]</a><span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the passed argument into an angle. This will</span>
+<span class="sd">    return &#39;angle&#39; if it is already an angle, or will</span>
+<span class="sd">    convert it into an angle with default units if this</span>
+<span class="sd">    is a float or something that can be converted to</span>
+<span class="sd">    a float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">degrees</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">degrees</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The value &#39;</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">&#39; of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="si">}</span><span class="s2"> is &quot;</span>
+            <span class="s2">&quot;not a type that is compatible with a GeneralUnit angle&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">angle</span></div>
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Jan 09, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    </body>
+</html>

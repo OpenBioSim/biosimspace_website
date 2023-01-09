@@ -1,0 +1,801 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Moving Bonds, Angles and Dihedrals" href="06_move_internals.html" /><link rel="prev" title="Measuring Energies Across Trajectories" href="04_energy_trajectories.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Moving Atoms and Molecules - openbiosim - sire</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - sire</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part01.html">Part 1 - Loading and Saving</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part01/01_importing_sire.html">Importing sire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/02_loading_a_molecule.html">Loading a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/03_simple_indexing.html">Simple indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/04_saving_a_molecule.html">Saving a molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/05_loading_from_multiple_files.html">Loading from multiple files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part01/06_supported_file_formats.html">Supported file formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part02.html">Part 2 - Indexing and Searching</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part02/01_indexing_atoms.html">Indexing Atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/02_indexing_residues.html">Indexing Residues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/03_indexing_chains.html">Indexing Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/04_indexing_segments.html">Indexing Segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/05_indexing_molecules.html">Indexing Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/06_indexing_bonds.html">Indexing Bonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/07_indexing_angles.html">Indexing Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/08_indexing_dihedrals.html">Indexing Dihedrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/09_indexing_impropers.html">Indexing Impropers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part02/10_searching.html">Searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_part03.html">Part 3 - Molecular Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part03/01_atom_properties.html">Atom Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/02_cursors.html">Cursors and Editing Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/03_residue_properties.html">Residue, Chain and Segment Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/04_molecule_properties.html">Molecule Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/05_bond_properties.html">Bond Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/06_angle_properties.html">Angle Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/07_dihedral_properties.html">Dihedral Views and Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part03/08_improper_properties.html">Improper Views and Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_part04.html">Part 4 - Measurement, Trajectories and Movement</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_measure.html">Measuring Distances and Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_trajectory.html">Measuring Trajectories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_energies.html">Measuring Energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_energy_trajectories.html">Measuring Energies Across Trajectories</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Moving Atoms and Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_move_internals.html">Moving Bonds, Angles and Dihedrals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cheatsheet/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cheatsheet/search.html">Searching</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sire.html">sire module</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/sire_modules.html">Sub-modules</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_base.html">sire.base</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/base.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_cas.html">sire.cas</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/cas.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_io.html">sire.io</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/io.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_maths.html">sire.maths</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/maths.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mm.html">sire.mm</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mm.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_mol.html">sire.mol</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/mol.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_search.html">sire.search</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/search.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_stream.html">sire.stream</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/stream.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_system.html">sire.system</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/system.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_units.html">sire.units</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/units.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_utils.html">sire.utils</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/utils.html">Public API</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/index_vol.html">sire.vol</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vol.html">Public API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="moving-atoms-and-molecules">
+<h1>Moving Atoms and Molecules<a class="headerlink" href="#moving-atoms-and-molecules" title="Permalink to this heading">#</a></h1>
+<p>Moving atoms and molecules is very simple. At the most basic, you
+can move atoms by simply updating their coordinates property
+(just as you would update any other property). For example,
+let’s load up the <code class="docutils literal notranslate"><span class="pre">aladip</span></code> system and translate the first
+molecule by 1 Å along the x axis.</p>
+<p>First, lets get the molecule and print the coordinates as they
+are from the input file…</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 18.4532 Å, 3.49423 Å, 12.4365 Å )</span>
+<span class="go">1: ( 18.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 20.0513 Å, 3.63293 Å, 13.2874 Å )</span>
+<span class="go">3: ( 18.798 Å, 2.43076 Å, 13.7337 Å )</span>
+<span class="go">4: ( 18.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 15.3407 Å, 5.44815 Å, 17.9626 Å )</span>
+<span class="go">18: ( 13.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 14.3525 Å, 3.40994 Å, 19.1521 Å )</span>
+<span class="go">20: ( 13.1933 Å, 4.59022 Å, 18.9428 Å )</span>
+<span class="go">21: ( 13.2149 Å, 3.33301 Å, 17.6874 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>Now let’s edit the coordinates. The coordinates are just another property
+of the molecule, so can be edited using a cursor.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">atoms</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 19.4532 Å, 3.49423 Å, 12.4365 Å )</span>
+<span class="go">1: ( 19.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 21.0513 Å, 3.63293 Å, 13.2874 Å )</span>
+<span class="go">3: ( 19.798 Å, 2.43076 Å, 13.7337 Å )</span>
+<span class="go">4: ( 19.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 16.3407 Å, 5.44815 Å, 17.9626 Å )</span>
+<span class="go">18: ( 14.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 15.3525 Å, 3.40994 Å, 19.1521 Å )</span>
+<span class="go">20: ( 14.1933 Å, 4.59022 Å, 18.9428 Å )</span>
+<span class="go">21: ( 14.2149 Å, 3.33301 Å, 17.6874 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the tuple, <code class="docutils literal notranslate"><span class="pre">(1,0,0)</span></code> is automatically converted to a
+<code class="docutils literal notranslate"><span class="pre">Vector</span></code> when added to the coordinates. The units will be the current
+default length units.</p>
+</div>
+<p>In this case, we have translated every atom by 1 Å along the x-axis.
+You could set the coordinates directly. For example, here we set the
+coordinates of the hydrogen atoms to <code class="docutils literal notranslate"><span class="pre">(0,0,0)</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element H&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 0 , 0 , 0  )</span>
+<span class="go">1: ( 19.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 0 , 0 , 0  )</span>
+<span class="go">3: ( 0 , 0 , 0  )</span>
+<span class="go">4: ( 19.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 0 , 0 , 0  )</span>
+<span class="go">18: ( 14.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 0 , 0 , 0  )</span>
+<span class="go">20: ( 0 , 0 , 0  )</span>
+<span class="go">21: ( 0 , 0 , 0  )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>Or, more directly</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element H&quot;</span><span class="p">)[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 0 , 0 , 0  )</span>
+<span class="go">1: ( 19.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 0 , 0 , 0  )</span>
+<span class="go">3: ( 0 , 0 , 0  )</span>
+<span class="go">4: ( 19.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 0 , 0 , 0  )</span>
+<span class="go">18: ( 14.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 0 , 0 , 0  )</span>
+<span class="go">20: ( 0 , 0 , 0  )</span>
+<span class="go">21: ( 0 , 0 , 0  )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting the property in a cursor collection sets the value for all
+cursors contained in that collection.</p>
+</div>
+<p>Or, you can set the coordinates of the atoms to different values, if you
+pass in a list of coordinates that has the same size as the number
+of cursors, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="s2">&quot;element H&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">][</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 1 Å, 1 Å, 1 Å )</span>
+<span class="go">1: ( 19.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 2 Å, 2 Å, 2 Å )</span>
+<span class="go">3: ( 3 Å, 3 Å, 3 Å )</span>
+<span class="go">4: ( 19.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 0 , 0 , 0  )</span>
+<span class="go">18: ( 14.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 0 , 0 , 0  )</span>
+<span class="go">20: ( 0 , 0 , 0  )</span>
+<span class="go">21: ( 0 , 0 , 0  )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>sets the coordinates of the first three hydrogen atoms to <code class="docutils literal notranslate"><span class="pre">(1,1,1)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">(2,2,2)</span></code> and <code class="docutils literal notranslate"><span class="pre">(3,3,3)</span></code>.</p>
+<section id="translation-using-a-cursor">
+<h2>Translation using a Cursor<a class="headerlink" href="#translation-using-a-cursor" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../../api/mol.html#sire.mol.Cursor" title="sire.mol.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a> has additional functions that simplify
+the process of translating, rotating and moving atoms and molecules.</p>
+<p>For example, this is how you can use a cursor to translate
+the first molecule by 1 Å along the x axis.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 19.4532 Å, 3.49423 Å, 12.4365 Å )</span>
+<span class="go">1: ( 19.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 21.0513 Å, 3.63293 Å, 13.2874 Å )</span>
+<span class="go">3: ( 19.798 Å, 2.43076 Å, 13.7337 Å )</span>
+<span class="go">4: ( 19.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 16.3407 Å, 5.44815 Å, 17.9626 Å )</span>
+<span class="go">18: ( 14.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 15.3525 Å, 3.40994 Å, 19.1521 Å )</span>
+<span class="go">20: ( 14.1933 Å, 4.59022 Å, 18.9428 Å )</span>
+<span class="go">21: ( 14.2149 Å, 3.33301 Å, 17.6874 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="../../api/mol.html#sire.mol.Cursor.translate" title="sire.mol.Cursor.translate"><code class="xref py py-func docutils literal notranslate"><span class="pre">translate()</span></code></a> function translates all of the
+atoms selected by the cursor by the passed vector (or passed x, y and
+z components).</p>
+<p>For example, you could translate all of the hydrogen atoms by
+the vector <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> using</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;element H&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 20.4532 Å, 5.49423 Å, 15.4365 Å )</span>
+<span class="go">1: ( 19.9818 Å, 3.44823 Å, 13.3886 Å )</span>
+<span class="go">2: ( 22.0513 Å, 5.63293 Å, 16.2874 Å )</span>
+<span class="go">3: ( 20.798 Å, 4.43076 Å, 16.7337 Å )</span>
+<span class="go">4: ( 19.4805 Å, 4.54971 Å, 14.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 17.3407 Å, 7.44815 Å, 20.9626 Å )</span>
+<span class="go">18: ( 14.8341 Å, 3.93668 Å, 18.3509 Å )</span>
+<span class="go">19: ( 16.3525 Å, 5.40994 Å, 22.1521 Å )</span>
+<span class="go">20: ( 15.1933 Å, 6.59022 Å, 21.9428 Å )</span>
+<span class="go">21: ( 15.2149 Å, 5.33301 Å, 20.6874 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can pass in the vector to translate either as arguments, e.g.
+<code class="docutils literal notranslate"><span class="pre">translate(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, or as a <code class="docutils literal notranslate"><span class="pre">Vector</span></code>, e.g.
+<code class="docutils literal notranslate"><span class="pre">translate(sr.maths.Vector(1,2,3))</span></code> or <code class="docutils literal notranslate"><span class="pre">translate((1,2,3))</span></code>.
+As for the rest of Sire, the default units are Å, which can be
+changed using, e.g. <code class="docutils literal notranslate"><span class="pre">sr.units.set_length_unit</span></code>. You can also
+specify the units yourself, e.g. <code class="docutils literal notranslate"><span class="pre">translate(1*sr.units.angstrom,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>
+or <code class="docutils literal notranslate"><span class="pre">translate(sr.maths.Vector(1*sr.units.angstrom,0,</span> <span class="pre">0))</span></code>.</p>
+</div>
+<p>You can even translate all of the molecules that have been loaded,
+using the cursor for the whole system.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mols</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=3</span>
+<span class="go">0: ( 28.6397 Å, 12.5028 Å, 27.4241 Å )</span>
+<span class="go">1: ( 28.8521 Å, 12.6656 Å, 26.505 Å )</span>
+<span class="go">2: ( 29.3373 Å, 11.9243 Å, 27.7322 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+</section>
+<section id="rotation-using-a-cursor">
+<h2>Rotation using a Cursor<a class="headerlink" href="#rotation-using-a-cursor" title="Permalink to this heading">#</a></h2>
+<p>You can rotate molecules using a cursor’s <a class="reference internal" href="../../api/mol.html#sire.mol.Cursor.rotate" title="sire.mol.Cursor.rotate"><code class="xref py py-func docutils literal notranslate"><span class="pre">rotate()</span></code></a>
+function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">))</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 21.5337 Å, 7.66419 Å, 17.4365 Å )</span>
+<span class="go">1: ( 22.0643 Å, 7.66444 Å, 18.3886 Å )</span>
+<span class="go">2: ( 23.1136 Å, 7.94164 Å, 18.2874 Å )</span>
+<span class="go">3: ( 21.9699 Å, 6.63481 Å, 18.7337 Å )</span>
+<span class="go">4: ( 21.4689 Å, 8.71803 Å, 19.3514 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 18.2627 Å, 9.33939 Å, 22.9626 Å )</span>
+<span class="go">18: ( 16.8936 Å, 7.70237 Å, 23.3509 Å )</span>
+<span class="go">19: ( 17.456 Å, 7.22282 Å, 24.1521 Å )</span>
+<span class="go">20: ( 16.1983 Å, 8.29758 Å, 23.9428 Å )</span>
+<span class="go">21: ( 16.3293 Å, 7.04702 Å, 22.6874 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>In this case, we rotated the molecule by 5° about the z-axis of the molecule,
+around its center of mass.</p>
+<p>You can specify the units yourself, e.g. <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">sr.units.degrees</span></code>, and can
+also specify the axis and centers of rotation as additional arguments, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="n">sr</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 21.5337 Å, 7.99007 Å, 17.3691 Å )</span>
+<span class="go">1: ( 22.0643 Å, 7.89526 Å, 18.3165 Å )</span>
+<span class="go">2: ( 23.1136 Å, 8.18119 Å, 18.2434 Å )</span>
+<span class="go">3: ( 21.9699 Å, 6.83634 Å, 18.557 Å )</span>
+<span class="go">4: ( 21.4689 Å, 8.84748 Å, 19.3796 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 18.2627 Å, 9.10522 Å, 23.0348 Å )</span>
+<span class="go">18: ( 16.8936 Å, 7.43761 Å, 23.2577 Å )</span>
+<span class="go">19: ( 17.456 Å, 6.88047 Å, 24.007 Å )</span>
+<span class="go">20: ( 16.1983 Å, 7.97075 Å, 23.9061 Å )</span>
+<span class="go">21: ( 16.3293 Å, 6.85177 Å, 22.5321 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>rotates by 0.1 radians about the x-axis (<code class="docutils literal notranslate"><span class="pre">(1,0,0)</span></code>) around the
+molecule’s center of mass, while</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">sr</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 24.2227 Å, 7.99007 Å, 13.3659 Å )</span>
+<span class="go">1: ( 24.9098 Å, 7.89526 Å, 14.2068 Å )</span>
+<span class="go">2: ( 25.9304 Å, 8.18119 Å, 13.9526 Å )</span>
+<span class="go">3: ( 24.8585 Å, 6.83634 Å, 14.46 Å )</span>
+<span class="go">4: ( 24.508 Å, 8.84748 Å, 15.3571 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 21.9852 Å, 9.10522 Å, 19.5136 Å )</span>
+<span class="go">18: ( 20.6756 Å, 7.43761 Å, 19.9708 Å )</span>
+<span class="go">19: ( 21.3596 Å, 6.88047 Å, 20.6111 Å )</span>
+<span class="go">20: ( 20.1035 Å, 7.97075 Å, 20.7301 Å )</span>
+<span class="go">21: ( 19.9939 Å, 6.85177 Å, 19.3542 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>rotates by 10° about the y-axis with the rotation centered on the origin
+(<code class="docutils literal notranslate"><span class="pre">(0,0,0)</span></code>).</p>
+<p>You can also specify the rotations directly via rotation matrices
+(<a class="reference internal" href="../../api/maths.html#sire.maths.Matrix" title="sire.maths.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">sire.maths.Matrix</span></code></a>) or quaternions (<code class="xref py py-class docutils literal notranslate"><span class="pre">sire.maths.Quaternion</span></code>).</p>
+<p>To do this, pass in the matrix or quaternion that represents the rotation, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">maths</span><span class="o">.</span><span class="n">Quaternion</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">sr</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="n">sr</span><span class="o">.</span><span class="n">maths</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 24.2227 Å, 8.30445 Å, 13.335 Å )</span>
+<span class="go">1: ( 24.9098 Å, 8.13672 Å, 14.1644 Å )</span>
+<span class="go">2: ( 25.9304 Å, 8.44371 Å, 13.9361 Å )</span>
+<span class="go">3: ( 24.8585 Å, 7.05975 Å, 14.3244 Å )</span>
+<span class="go">4: ( 24.508 Å, 8.98505 Å, 15.3934 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 21.9852 Å, 8.87955 Å, 19.5565 Å )</span>
+<span class="go">18: ( 20.6756 Å, 7.17844 Å, 19.8666 Å )</span>
+<span class="go">19: ( 21.3596 Å, 6.56761 Å, 20.4559 Å )</span>
+<span class="go">20: ( 20.1035 Å, 7.64338 Å, 20.6695 Å )</span>
+<span class="go">21: ( 19.9939 Å, 6.64857 Å, 19.2014 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rotmat</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">maths</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="mi">0</span><span class="p">,</span><span class="mf">0.984808</span><span class="p">,</span><span class="o">-</span><span class="mf">0.173648</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="mi">0</span><span class="p">,</span><span class="mf">0.173648</span><span class="p">,</span><span class="mf">0.984808</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">rotmat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 24.2227 Å, 8.9353 Å, 13.3558 Å )</span>
+<span class="go">1: ( 24.9098 Å, 8.62609 Å, 14.1435 Å )</span>
+<span class="go">2: ( 25.9304 Å, 8.96806 Å, 13.972 Å )</span>
+<span class="go">3: ( 24.8585 Å, 7.53769 Å, 14.114 Å )</span>
+<span class="go">4: ( 24.508 Å, 9.24812 Å, 15.5011 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 21.9852 Å, 8.42131 Å, 19.5826 Å )</span>
+<span class="go">18: ( 20.6756 Å, 6.69218 Å, 19.5927 Å )</span>
+<span class="go">19: ( 21.3596 Å, 5.98831 Å, 20.0669 Å )</span>
+<span class="go">20: ( 20.1035 Å, 7.01065 Å, 20.464 Å )</span>
+<span class="go">21: ( 19.9939 Å, 6.28589 Å, 18.8455 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above rotation matrix rotates by 10° about the x-axis.
+If was generated using the <code class="docutils literal notranslate"><span class="pre">to_matrix()</span></code> function of the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Quaternion</span></code> that represented this
+rotation.</p>
+</div>
+<p>As before, the center of rotation defaults to the center of mass
+of the molecule. You can specify the center of rotation via the
+<code class="docutils literal notranslate"><span class="pre">center</span></code> keyword argument. For example,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">rotmat</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="go">AtomCoords( size=22</span>
+<span class="go">0: ( 24.2227 Å, 6.48035 Å, 14.7045 Å )</span>
+<span class="go">1: ( 24.9098 Å, 6.03905 Å, 15.4265 Å )</span>
+<span class="go">2: ( 25.9304 Å, 6.40561 Å, 15.317 Å )</span>
+<span class="go">3: ( 24.8585 Å, 4.9723 Å, 15.2085 Å )</span>
+<span class="go">4: ( 24.508 Å, 6.41589 Å, 16.8715 Å )</span>
+<span class="gp">...</span>
+<span class="go">17: ( 21.9852 Å, 4.89289 Å, 20.7475 Å )</span>
+<span class="go">18: ( 20.6756 Å, 3.18828 Å, 20.4571 Å )</span>
+<span class="go">19: ( 21.3596 Å, 2.41276 Å, 20.8019 Å )</span>
+<span class="go">20: ( 20.1035 Å, 3.3506 Å, 21.3705 Å )</span>
+<span class="go">21: ( 19.9939 Å, 2.91791 Å, 19.6507 Å )</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>rotates using the passed rotation matrix, centered on the origin.</p>
+</section>
+<section id="visualising-movement-by-saving-trajectory-frames">
+<h2>Visualising movement by saving trajectory frames<a class="headerlink" href="#visualising-movement-by-saving-trajectory-frames" title="Permalink to this heading">#</a></h2>
+<p>You can visualise the movements you are performing by saving trajectory
+frames, and then using the trajectory visualisation and/or analysis
+functions.</p>
+<p>For example, here we will rotate a molecule 360° around the z-axis.
+We do this in 25 steps, calling <a class="reference internal" href="../../api/mol.html#sire.mol.Cursor.save_frame" title="sire.mol.Cursor.save_frame"><code class="xref py py-func docutils literal notranslate"><span class="pre">sire.mol.Cursor.save_frame()</span></code></a>
+after each rotation to save the coordinates as a new frame
+in the molecular trajectory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">tutorial_url</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">cursor</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="n">cursor</span><span class="o">.</span><span class="n">save_frame</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note how the axis of rotation is passed in as the second positional
+argument of <code class="docutils literal notranslate"><span class="pre">rotate</span></code>. You can pass it in either as the second
+positional argument or by using the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword, e.g.
+<code class="docutils literal notranslate"><span class="pre">cursor.rotate(360</span> <span class="pre">/</span> <span class="pre">25,</span> <span class="pre">axis=(0,0,1))</span></code>.</p>
+</div>
+<p>If you are in a Jupyter notebook (or similar) then you can view this
+as a movie via;</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="Still from a movie of the aladip molecule being rotated." src="../../_images/04_05_01.jpg" />
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="06_move_internals.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Moving Bonds, Angles and Dihedrals</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="04_energy_trajectories.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Measuring Energies Across Trajectories</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Jan 09, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Moving Atoms and Molecules</a><ul>
+<li><a class="reference internal" href="#translation-using-a-cursor">Translation using a Cursor</a></li>
+<li><a class="reference internal" href="#rotation-using-a-cursor">Rotation using a Cursor</a></li>
+<li><a class="reference internal" href="#visualising-movement-by-saving-trajectory-frames">Visualising movement by saving trajectory frames</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    </body>
+</html>
