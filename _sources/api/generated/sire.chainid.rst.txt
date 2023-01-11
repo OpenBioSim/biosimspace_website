@@ -1,6 +1,0 @@
-﻿sire.chainid
-============
-
-.. currentmodule:: sire
-
-.. autofunction:: chainid

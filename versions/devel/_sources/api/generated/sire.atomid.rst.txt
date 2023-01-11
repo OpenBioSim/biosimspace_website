@@ -1,6 +1,0 @@
-﻿sire.atomid
-===========
-
-.. currentmodule:: sire
-
-.. autofunction:: atomid

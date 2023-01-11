@@ -1,6 +1,0 @@
-﻿sire.disable\_thumbs\_up
-========================
-
-.. currentmodule:: sire
-
-.. autofunction:: disable_thumbs_up
