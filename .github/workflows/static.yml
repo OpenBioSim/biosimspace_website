@@ -1,0 +1,79 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: biosimspace-build
+    defaults:
+      run:
+        shell: "bash -l {0}"
+    env:
+      FORCE_BUILD_DOCS: 1
+      SIRE_DONT_PHONEHOME: 1
+      SIRE_SILENT_PHONEHOME: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Debug directories
+        run: ls -l
+      - name: Debug pages
+        run: ls -l gh-pages
+      - name: Install Python
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: 3.9
+          activate-environment: biosimspace-build
+          miniforge-version: latest
+          miniforge-variant: Mambaforge
+          use-mamba: true
+      - name: Install BioSimSpace
+        run: mamba install -y -c openbiosim biosimspace
+      - name: Checkout BioSimSpace branch
+        uses: actions/checkout@v3
+        with:
+          repository: "openbiosim/biosimspace"
+          github-server-url: "https://github.com"
+          path: project
+      - name: Debug BioSimSpace
+        run: ls -l project
+      - name: Build Website
+        run: python actions/build_docs.py project
+      - name: Assemble Website
+        run: python actions/assemble_website.py project
+      - name: Deduplicate Website
+        run: python actions/deduplicate_website.py
+      - name: Git update Website
+        run: python actions/gitupdate_website.py
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: "gh-pages"
+          directory: "gh-pages"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
