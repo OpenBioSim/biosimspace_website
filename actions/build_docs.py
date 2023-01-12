@@ -28,7 +28,7 @@ try:
 except Exception:
     force_build_docs = False
 
-if branch not in ["main", "devel"]:
+if branch not in ["main", "devel", "feature-2023_1"]:
     if branch.find(version) != -1:
         print(f"Building the docs for tag {version}")
         is_tagged_release = True
