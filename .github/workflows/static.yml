@@ -54,7 +54,7 @@ jobs:
           miniforge-variant: Mambaforge
           use-mamba: true
       - name: Install BioSimSpace
-        run: mamba install -y -c openbiosim biosimspace
+        run: mamba install -y -c openbiosim biosimspace pygit2
       - name: Checkout BioSimSpace branch
         uses: actions/checkout@v3
         with:
@@ -63,6 +63,8 @@ jobs:
           path: project
       - name: Debug BioSimSpace
         run: ls -l project
+      - name: Inject force fields
+        run: PYTHONPATH=project/python actions/inject_force_fields.sh project
       - name: Build Website
         run: python actions/build_docs.py project
       - name: Assemble Website
