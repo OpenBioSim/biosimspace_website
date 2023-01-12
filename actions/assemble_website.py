@@ -1,17 +1,21 @@
 import BioSimSpace as project
-import sys
-import os
+
 from distutils import dir_util
+
 import glob
 import json
+import os
+import pygit2
+import sys
 
-doc_dir = f"{sys.argv[1]}/doc"
+project_dir = sys.argv[1]
+doc_dir = project_dir + "/doc"
 
-branch = project.__branch__
+repo = pygit2.Repository(project_dir)
+
+branch = repo.head.shorthand
 release = project.__version__
 version = project.__version__.split("+")[0]
-repository = project.__repository__
-revisionid = project.__revisionid__
 
 if version.find("untagged") != -1:
     print("This is an untagged branch")
@@ -61,8 +65,6 @@ else:
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch
 os.environ["PROJECT_RELEASE"] = release
-os.environ["PROJECT_REPOSITORY"] = repository
-os.environ["PROJECT_REVISIONID"] = revisionid
 
 if not os.path.exists("./gh-pages"):
     print("You have not checked out the gh-pages branch correctly!")
@@ -102,7 +104,7 @@ for version in glob.glob("gh-pages/versions/*"):
 keys = list(vs.keys())
 keys.sort()
 
-for i in range(len(keys)-1, -1, -1):
+for i in range(len(keys) - 1, -1, -1):
     versions.append([keys[i], vs[keys[i]]])
 
 print(f"Saving paths to versions\n{versions}")

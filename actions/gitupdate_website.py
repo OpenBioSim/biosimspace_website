@@ -1,16 +1,18 @@
-
 import sys
 import os
+import pygit2
 import subprocess
 import shlex
 
 import BioSimSpace as project
 
-branch = project.__branch__
+project_dir = sys.argv[1]
+
+repo = pygit2.Repository(project_dir)
+
+branch = repo.head.shorthand
 release = project.__version__
 version = project.__version__.split("+")[0]
-repository = project.__repository__
-revisionid = project.__revisionid__
 
 if version.find("untagged") != -1:
     print("This is an untagged branch")
@@ -40,8 +42,6 @@ if branch not in ["main", "devel"]:
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch
 os.environ["PROJECT_RELEASE"] = release
-os.environ["PROJECT_REPOSITORY"] = repository
-os.environ["PROJECT_REVISIONID"] = revisionid
 
 
 def run_command(cmd, dry=False):

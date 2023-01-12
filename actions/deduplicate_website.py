@@ -1,18 +1,22 @@
-
 # deduplicate the website by finding all unique files and
 # replacing duplicates with symbolic links
 
 from hashlib import md5
+
+import git2
 import os
 import sys
 import BioSimSpace as project
 
+project_dir = sys.argv[1]
+
+repo = pygit2.Repository(project_dir)
+
+branch = repo.head.shorthand
 
 branch = project.__branch__
 release = project.__version__
 version = project.__version__.split("+")[0]
-repository = project.__repository__
-revisionid = project.__revisionid__
 
 if version.find("untagged") != -1:
     print("This is an untagged branch")
@@ -27,8 +31,6 @@ is_tagged_release = False
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch
 os.environ["PROJECT_RELEASE"] = release
-os.environ["PROJECT_REPOSITORY"] = repository
-os.environ["PROJECT_REVISIONID"] = revisionid
 
 files = {}
 
@@ -57,7 +59,7 @@ for root, dirs, files in os.walk("gh-pages", onerror=None, followlinks=False):
                 data = FILE.read()
 
             # only care about files that are larger than 32K
-            if len(data) < 32*1024:
+            if len(data) < 32 * 1024:
                 continue
 
             # md5 plus filesize should be unique enough

@@ -1,17 +1,18 @@
-
 import BioSimSpace as project
-import sys
 import os
-import subprocess
+import pygit2
+import sys
 import shlex
+import subprocess
 
-doc_dir = sys.argv[1]
+project_dir = sys.argv[1]
+doc_dir = project_dir + "/doc"
 
-branch = project.__branch__
+repo = pygit2.Repository(project_dir)
+
+branch = repo.head.shorthand
 release = project.__version__
 version = project.__version__.split("+")[0]
-repository = project.__repository__
-revisionid = project.__revisionid__
 
 if version.find("untagged") != -1:
     print("This is an untagged branch")
@@ -27,7 +28,7 @@ try:
 except Exception:
     force_build_docs = False
 
-if branch not in ["main", "devel"]:
+if branch not in ["main", "devel", "feature-2023_0"]:
     if branch.find(version) != -1:
         print(f"Building the docs for tag {version}")
         is_tagged_release = True
@@ -40,8 +41,6 @@ if branch not in ["main", "devel"]:
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch
 os.environ["PROJECT_RELEASE"] = release
-os.environ["PROJECT_REPOSITORY"] = repository
-os.environ["PROJECT_REVISIONID"] = revisionid
 
 
 def run_command(cmd, dry=False):
@@ -59,14 +58,20 @@ def run_command(cmd, dry=False):
         print(f"[ERROR] {e}")
         sys.exit(-1)
 
+
 # install doc dependencies
-reqs = " ".join([line.lstrip().rstrip() for line in open(f"{doc_dir}/doc/requirements.txt", "r").readlines()])
+reqs = " ".join(
+    [
+        line.lstrip().rstrip()
+        for line in open(f"{doc_dir}/requirements.txt", "r").readlines()
+    ]
+)
 
 print(f"Installing doc requirements: {reqs}")
 
-run_command(f"mamba install {reqs}")
+# run_command(f"mamba install {reqs}")
 
 # make the documentation
 print(f"Changing into {doc_dir} and building the website...")
-os.chdir(f"{doc_dir}/doc")
+os.chdir(f"{doc_dir}")
 run_command("make")
