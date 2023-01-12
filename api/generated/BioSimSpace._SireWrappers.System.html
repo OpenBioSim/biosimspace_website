@@ -1,0 +1,1151 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace._SireWrappers.SearchResult" href="BioSimSpace._SireWrappers.SearchResult.html" /><link rel="prev" title="BioSimSpace._SireWrappers.Residue" href="BioSimSpace._SireWrappers.Residue.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
+        <title>BioSimSpace._SireWrappers.System - openbiosim - biosimspace</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - biosimspace</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility.html">Compatibility</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Align.html">BioSimSpace.Align</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.generateNetwork.html">BioSimSpace.Align.generateNetwork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.matchAtoms.html">BioSimSpace.Align.matchAtoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.rmsdAlign.html">BioSimSpace.Align.rmsdAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.flexAlign.html">BioSimSpace.Align.flexAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.merge.html">BioSimSpace.Align.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.viewMapping.html">BioSimSpace.Align.viewMapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Box.html">BioSimSpace.Box</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.boxTypes.html">BioSimSpace.Box.boxTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.generateBoxParameters.html">BioSimSpace.Box.generateBoxParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.cubic.html">BioSimSpace.Box.cubic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.rhombicDodecahedronSquare.html">BioSimSpace.Box.rhombicDodecahedronSquare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.rhombicDodecahedronHexagon.html">BioSimSpace.Box.rhombicDodecahedronHexagon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.truncatedOctahedron.html">BioSimSpace.Box.truncatedOctahedron</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_FreeEnergy.html">BioSimSpace.FreeEnergy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.Relative.html">BioSimSpace.FreeEnergy.Relative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.engines.html">BioSimSpace.FreeEnergy.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.getData.html">BioSimSpace.FreeEnergy.getData</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Gateway.html">BioSimSpace.Gateway</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Node.html">BioSimSpace.Gateway.Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Boolean.html">BioSimSpace.Gateway.Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Integer.html">BioSimSpace.Gateway.Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Float.html">BioSimSpace.Gateway.Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.String.html">BioSimSpace.Gateway.String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.File.html">BioSimSpace.Gateway.File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.FileSet.html">BioSimSpace.Gateway.FileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Length.html">BioSimSpace.Gateway.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Area.html">BioSimSpace.Gateway.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readPDB.html">BioSimSpace.IO.readPDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readPerturbableSystem.html">BioSimSpace.IO.readPerturbableSystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.saveMolecules.html">BioSimSpace.IO.saveMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.savePerturbableSystem.html">BioSimSpace.IO.savePerturbableSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Metadynamics.html">BioSimSpace.Metadynamics</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.engines.html">BioSimSpace.Metadynamics.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.run.html">BioSimSpace.Metadynamics.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.Bound.html">BioSimSpace.Metadynamics.Bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.Grid.html">BioSimSpace.Metadynamics.Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.Restraint.html">BioSimSpace.Metadynamics.Restraint</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Metadynamics_CollectiveVariable.html">BioSimSpace.Metadynamics.CollectiveVariable</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.list.html">BioSimSpace.Metadynamics.CollectiveVariable.list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.Distance.html">BioSimSpace.Metadynamics.CollectiveVariable.Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.Funnel.html">BioSimSpace.Metadynamics.CollectiveVariable.Funnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html">BioSimSpace.Metadynamics.CollectiveVariable.RMSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.Torsion.html">BioSimSpace.Metadynamics.CollectiveVariable.Torsion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_MD.html">BioSimSpace.MD</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.MD.engines.html">BioSimSpace.MD.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.MD.run.html">BioSimSpace.MD.run</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Node.html">BioSimSpace.Node</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.help.html">BioSimSpace.Node.help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.list.html">BioSimSpace.Node.list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.run.html">BioSimSpace.Node.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.setNodeDirectory.html">BioSimSpace.Node.setNodeDirectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Notebook.html">BioSimSpace.Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.plot.html">BioSimSpace.Notebook.plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.plotContour.html">BioSimSpace.Notebook.plotContour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.plotOverlapMatrix.html">BioSimSpace.Notebook.plotOverlapMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.View.html">BioSimSpace.Notebook.View</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Parameters.html">BioSimSpace.Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.amberForceFields.html">BioSimSpace.Parameters.amberForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.amberProteinForceFields.html">BioSimSpace.Parameters.amberProteinForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff03.html">BioSimSpace.Parameters.ff03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff14SB.html">BioSimSpace.Parameters.ff14SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff99.html">BioSimSpace.Parameters.ff99</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff99SB.html">BioSimSpace.Parameters.ff99SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff99SBildn.html">BioSimSpace.Parameters.ff99SBildn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.forceFields.html">BioSimSpace.Parameters.forceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.gaff.html">BioSimSpace.Parameters.gaff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.gaff2.html">BioSimSpace.Parameters.gaff2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openForceFields.html">BioSimSpace.Parameters.openForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_0.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_1_0.html">BioSimSpace.Parameters.openff_unconstrained_1_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_1_1.html">BioSimSpace.Parameters.openff_unconstrained_1_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_2_0.html">BioSimSpace.Parameters.openff_unconstrained_1_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_2_1.html">BioSimSpace.Parameters.openff_unconstrained_1_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_3_0.html">BioSimSpace.Parameters.openff_unconstrained_1_3_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_3_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Process.html">BioSimSpace.Process</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.engines.html">BioSimSpace.Process.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.createProcess.html">BioSimSpace.Process.createProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Amber.html">BioSimSpace.Process.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Gromacs.html">BioSimSpace.Process.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Namd.html">BioSimSpace.Process.Namd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.OpenMM.html">BioSimSpace.Process.OpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Plumed.html">BioSimSpace.Process.Plumed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Somd.html">BioSimSpace.Process.Somd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.ProcessRunner.html">BioSimSpace.Process.ProcessRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_Sandpit.html">BioSimSpace.Sandpit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Solvent.html">BioSimSpace.Solvent</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.solvate.html">BioSimSpace.Solvent.solvate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.spc.html">BioSimSpace.Solvent.spc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.spce.html">BioSimSpace.Solvent.spce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Trajectory.Trajectory.html">BioSimSpace.Trajectory.Trajectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Angle.html">BioSimSpace.Types.Angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Area.html">BioSimSpace.Types.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Charge.html">BioSimSpace.Types.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Vector.html">BioSimSpace.Types.Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Volume.html">BioSimSpace.Types.Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.meter.html">BioSimSpace.Units.Length.meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.angstrom.html">BioSimSpace.Units.Length.angstrom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.nanometer.html">BioSimSpace.Units.Length.nanometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.picometer.html">BioSimSpace.Units.Length.picometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.meter2.html">BioSimSpace.Units.Area.meter2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.angstrom2.html">BioSimSpace.Units.Area.angstrom2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.nanometer2.html">BioSimSpace.Units.Area.nanometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.picometer2.html">BioSimSpace.Units.Area.picometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Angle.radian.html">BioSimSpace.Units.Angle.radian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Angle.degree.html">BioSimSpace.Units.Angle.degree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.meter3.html">BioSimSpace.Units.Volume.meter3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.angstrom3.html">BioSimSpace.Units.Volume.angstrom3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.nanometer3.html">BioSimSpace.Units.Volume.nanometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Pressure.atm.html">BioSimSpace.Units.Pressure.atm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Pressure.bar.html">BioSimSpace.Units.Pressure.bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Temperature.kelvin.html">BioSimSpace.Units.Temperature.kelvin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Temperature.celsius.html">BioSimSpace.Units.Temperature.celsius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Temperature.fahrenheit.html">BioSimSpace.Units.Temperature.fahrenheit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.day.html">BioSimSpace.Units.Time.day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.hour.html">BioSimSpace.Units.Time.hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.minute.html">BioSimSpace.Units.Time.minute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.second.html">BioSimSpace.Units.Time.second</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.millisecond.html">BioSimSpace.Units.Time.millisecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.nanosecond.html">BioSimSpace.Units.Time.nanosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.picosecond.html">BioSimSpace.Units.Time.picosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.femtosecond.html">BioSimSpace.Units.Time.femtosecond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.AlignmentError.html">BioSimSpace._Exceptions.AlignmentError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.AnalysisError.html">BioSimSpace._Exceptions.AnalysisError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.IncompatibleError.html">BioSimSpace._Exceptions.IncompatibleError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.MissingSoftwareError.html">BioSimSpace._Exceptions.MissingSoftwareError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ParameterisationError.html">BioSimSpace._Exceptions.ParameterisationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ThirdPartyError.html">BioSimSpace._Exceptions.ThirdPartyError</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_SireWrappers.html">BioSimSpace._SireWrappers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html">BioSimSpace._SireWrappers.Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Bond.html">BioSimSpace._SireWrappers.Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html">BioSimSpace._SireWrappers.Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html">BioSimSpace._SireWrappers.Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Residue.html">BioSimSpace._SireWrappers.Residue</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BioSimSpace._SireWrappers.System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.SearchResult.html">BioSimSpace._SireWrappers.SearchResult</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.cd.html">BioSimSpace._Utils.cd</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../nodes.html">Nodes</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../notebook.html">Notebook server</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocols.html">Protocols</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="biosimspace-sirewrappers-system">
+<h1>BioSimSpace._SireWrappers.System<a class="headerlink" href="#biosimspace-sirewrappers-system" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace._SireWrappers.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System" title="Permalink to this definition">#</a></dt>
+<dd><p>A container class for storing molecular systems.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>system</strong> (Sire.System.System, <a class="reference internal" href="#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>,                 Sire.Mol._Mol.Molecule, <a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>,                 <a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html#BioSimSpace._SireWrappers.Molecules" title="BioSimSpace._SireWrappers.Molecules"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecules</span></code></a>                 [<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>]) – A Sire or BioSimSpace System object, a Sire or BioSimSpace Molecule object,
+a BioSimSpace Molecules object, or a list of BioSimSpace molecule objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.__init__" title="BioSimSpace._SireWrappers.System.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(system)</p></td>
+<td><p>Constructor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.addMolecules" title="BioSimSpace._SireWrappers.System.addMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addMolecules</span></code></a>(molecules)</p></td>
+<td><p>Add a molecule, or list of molecules to the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.charge" title="BioSimSpace._SireWrappers.System.charge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">charge</span></code></a>([property_map, is_lambda1])</p></td>
+<td><p>Return the total molecular charge.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>()</p></td>
+<td><p>Return a copy of this object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.fileFormat" title="BioSimSpace._SireWrappers.System.fileFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fileFormat</span></code></a>([property_map])</p></td>
+<td><p>Return the file formats associated with the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getAtom" title="BioSimSpace._SireWrappers.System.getAtom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAtom</span></code></a>(index)</p></td>
+<td><p>Return the atom specified by the absolute index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAxisAlignedBoundingBox</span></code>([property_map])</p></td>
+<td><p>Get the axis-aligned bounding box enclosing the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getBox" title="BioSimSpace._SireWrappers.System.getBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBox</span></code></a>([property_map])</p></td>
+<td><p>Get the size of the periodic simulation box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getIndex" title="BioSimSpace._SireWrappers.System.getIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIndex</span></code></a>(item)</p></td>
+<td><p>Convert indices of atoms and residues to their absolute values in this system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getMolecule" title="BioSimSpace._SireWrappers.System.getMolecule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMolecule</span></code></a>(index)</p></td>
+<td><p>Return the molecule at the given index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getMolecules" title="BioSimSpace._SireWrappers.System.getMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMolecules</span></code></a>([group])</p></td>
+<td><p>Return a list containing all of the molecules in the specified group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getPerturbableMolecules" title="BioSimSpace._SireWrappers.System.getPerturbableMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPerturbableMolecules</span></code></a>()</p></td>
+<td><p>Return a list containing all of the perturbable molecules in the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getResidue" title="BioSimSpace._SireWrappers.System.getResidue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidue</span></code></a>(index)</p></td>
+<td><p>Return the residue specified by the absolute index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getRestraintAtoms" title="BioSimSpace._SireWrappers.System.getRestraintAtoms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRestraintAtoms</span></code></a>(restraint[, mol_index, ...])</p></td>
+<td><p>Get the indices of atoms involved in a restraint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getWaterMolecules" title="BioSimSpace._SireWrappers.System.getWaterMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getWaterMolecules</span></code></a>([property_map])</p></td>
+<td><p>Return a list containing all of the water molecules in the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nAtoms" title="BioSimSpace._SireWrappers.System.nAtoms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nAtoms</span></code></a>()</p></td>
+<td><p>Return the number of atoms in the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nChains" title="BioSimSpace._SireWrappers.System.nChains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nChains</span></code></a>()</p></td>
+<td><p>Return the number of chains in the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nMolecules" title="BioSimSpace._SireWrappers.System.nMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nMolecules</span></code></a>()</p></td>
+<td><p>Return the number of molecules in the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nPerturbableMolecules" title="BioSimSpace._SireWrappers.System.nPerturbableMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nPerturbableMolecules</span></code></a>()</p></td>
+<td><p>Return the number of perturbable molecules in the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nResidues" title="BioSimSpace._SireWrappers.System.nResidues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nResidues</span></code></a>()</p></td>
+<td><p>Return the number of residues in the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nWaterMolecules" title="BioSimSpace._SireWrappers.System.nWaterMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nWaterMolecules</span></code></a>()</p></td>
+<td><p>Return the number of water molecules in the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeMolecules" title="BioSimSpace._SireWrappers.System.removeMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeMolecules</span></code></a>(molecules)</p></td>
+<td><p>Remove a molecule, or list of molecules from the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules" title="BioSimSpace._SireWrappers.System.removeWaterMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeWaterMolecules</span></code></a>()</p></td>
+<td><p>Remove all of the water molecules from the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass" title="BioSimSpace._SireWrappers.System.repartitionHydrogenMass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repartitionHydrogenMass</span></code></a>([factor, water, ...])</p></td>
+<td><p>Redistrubute mass of heavy atoms connected to bonded hydrogens into the hydrogen atoms.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.search" title="BioSimSpace._SireWrappers.System.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(query[, property_map])</p></td>
+<td><p>Search the system for atoms, residues, and molecules.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.setBox" title="BioSimSpace._SireWrappers.System.setBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBox</span></code></a>(box[, angles, property_map])</p></td>
+<td><p>Set the size of the periodic simulation box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.translate" title="BioSimSpace._SireWrappers.System.translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code></a>(vector[, property_map])</p></td>
+<td><p>Translate the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecule" title="BioSimSpace._SireWrappers.System.updateMolecule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateMolecule</span></code></a>(index, molecule)</p></td>
+<td><p>Updated the molecule at the given index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecules" title="BioSimSpace._SireWrappers.System.updateMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateMolecules</span></code></a>(molecules)</p></td>
+<td><p>Update a molecule, or list of molecules in the system.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.addMolecules">
+<span class="sig-name descname"><span class="pre">addMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.addMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.addMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Add a molecule, or list of molecules to the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>molecules</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>,                     <a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html#BioSimSpace._SireWrappers.Molecules" title="BioSimSpace._SireWrappers.Molecules"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecules</span></code></a>,                     [<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>],                     <a class="reference internal" href="#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – A Molecule, Molecules object, a list of Molecule objects, or a System containing molecules.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.charge">
+<span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_lambda1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.charge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.charge" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the total molecular charge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
+<li><p><strong>is_lambda1</strong> (<em>bool</em>) – Whether to use the charge at lambda = 1 if the molecule is merged.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>charge</strong> – The molecular charge.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Charge.html#BioSimSpace.Types.Charge" title="BioSimSpace.Types.Charge"><code class="xref py py-class docutils literal notranslate"><span class="pre">Charge</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.fileFormat">
+<span class="sig-name descname"><span class="pre">fileFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.fileFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.fileFormat" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the file formats associated with the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>format</strong> – The file formats associated with the system.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getAtom">
+<span class="sig-name descname"><span class="pre">getAtom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAtom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAtom" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the atom specified by the absolute index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The absolute index of the atom in the system.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>atom</strong> – The atom at the specified index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html#BioSimSpace._SireWrappers.Atom" title="BioSimSpace._SireWrappers.Atom"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getBox">
+<span class="sig-name descname"><span class="pre">getBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getBox" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the size of the periodic simulation box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>box_size</strong> ([<a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a>]) – The box vector magnitudes in each dimension.</p></li>
+<li><p><strong>angles</strong> ([<a class="reference internal" href="BioSimSpace.Types.Angle.html#BioSimSpace.Types.Angle" title="BioSimSpace.Types.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a>]) – The box vector angles: yz, xz, and xy.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getIndex">
+<span class="sig-name descname"><span class="pre">getIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getIndex" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert indices of atoms and residues to their absolute values in
+this system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html#BioSimSpace._SireWrappers.Atom" title="BioSimSpace._SireWrappers.Atom"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code></a>,                <a class="reference internal" href="BioSimSpace._SireWrappers.Residue.html#BioSimSpace._SireWrappers.Residue" title="BioSimSpace._SireWrappers.Residue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Residue</span></code></a>                <a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>) – An Atom, Residue, or Molecule object from the System, or a
+list containing objects of these types.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>index</strong> – The absolute index of the atom/residue/molecule in the system.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int, [int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getMolecule">
+<span class="sig-name descname"><span class="pre">getMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getMolecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getMolecule" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the molecule at the given index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the molecule.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>molecule</strong> – The requested molecule.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getMolecules">
+<span class="sig-name descname"><span class="pre">getMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a list containing all of the molecules in the specified group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>group</strong> (<em>str</em>) – The name of the molecule group.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>molecules</strong> – The list of molecules in the group.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getPerturbableMolecules">
+<span class="sig-name descname"><span class="pre">getPerturbableMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getPerturbableMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getPerturbableMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a list containing all of the perturbable molecules in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>molecules</strong> – A container of perturbable molecule objects. The container will
+be empty if no perturbable molecules are present.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html#BioSimSpace._SireWrappers.Molecules" title="BioSimSpace._SireWrappers.Molecules"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecules</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getResidue">
+<span class="sig-name descname"><span class="pre">getResidue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getResidue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getResidue" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the residue specified by the absolute index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The absolute index of the residue in the system.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>atom</strong> – The residue at the specified index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Residue.html#BioSimSpace._SireWrappers.Residue" title="BioSimSpace._SireWrappers.Residue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getRestraintAtoms">
+<span class="sig-name descname"><span class="pre">getRestraintAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restraint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_absolute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_zero_matches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getRestraintAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getRestraintAtoms" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the indices of atoms involved in a restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>restraint</strong> (<em>str</em>) – The type of restraint.</p></li>
+<li><p><strong>mol_index</strong> (<em>int</em>) – The index of the molecule of interest. If None, then the
+entire system is searched.</p></li>
+<li><p><strong>is_absolute</strong> (<em>bool</em>) – Whether the indices are absolute, i.e. indexed within the
+entire system. If False, then indices are relative to the
+molecule in which the atom is found.</p></li>
+<li><p><strong>allow_zero_matches</strong> (<em>bool</em>) – Whether to raise an exception when no atoms match the restraint.
+Setting to false is useful if you need to determine restraints
+on a per-molecule basis, i.e. so molecules won’t contain atoms
+matching the restraint, but the entire system will.</p></li>
+<li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>indices</strong> – A list of the backbone atom indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getWaterMolecules">
+<span class="sig-name descname"><span class="pre">getWaterMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getWaterMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a list containing all of the water molecules in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>molecules</strong> – A container of water molecule objects. The container will be
+empty if no water molecules are present.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html#BioSimSpace._SireWrappers.Molecules" title="BioSimSpace._SireWrappers.Molecules"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecules</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nAtoms">
+<span class="sig-name descname"><span class="pre">nAtoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nAtoms" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of atoms in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_atoms</strong> – The number of atoms in the system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nChains">
+<span class="sig-name descname"><span class="pre">nChains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nChains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nChains" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of chains in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_chains</strong> – The number of chains in the system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nMolecules">
+<span class="sig-name descname"><span class="pre">nMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of molecules in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_molecules</strong> – The number of molecules in the system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nPerturbableMolecules">
+<span class="sig-name descname"><span class="pre">nPerturbableMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nPerturbableMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nPerturbableMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of perturbable molecules in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_perturbable</strong> – The number of perturbable molecules in the system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nResidues">
+<span class="sig-name descname"><span class="pre">nResidues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nResidues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nResidues" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of residues in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_residues</strong> – The number of residues in the system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nWaterMolecules">
+<span class="sig-name descname"><span class="pre">nWaterMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nWaterMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the number of water molecules in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_waters</strong> – The number of water molecules in the system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.removeMolecules">
+<span class="sig-name descname"><span class="pre">removeMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove a molecule, or list of molecules from the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>molecules</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>,                     <a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html#BioSimSpace._SireWrappers.Molecules" title="BioSimSpace._SireWrappers.Molecules"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecules</span></code></a>,                     [<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>]) – A Molecule, Molecules object, or list of Molecule objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.removeWaterMolecules">
+<span class="sig-name descname"><span class="pre">removeWaterMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove all of the water molecules from the system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.repartitionHydrogenMass">
+<span class="sig-name descname"><span class="pre">repartitionHydrogenMass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_coordinates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.repartitionHydrogenMass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass" title="Permalink to this definition">#</a></dt>
+<dd><p>Redistrubute mass of heavy atoms connected to bonded hydrogens into
+the hydrogen atoms. This allows the use of larger simulation
+integration time steps without encountering instabilities related
+to high-frequency hydrogen motion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>factor</strong> (<em>float</em>) – The repartioning scale factor. Hydrogen masses are scaled by this
+amount.</p></li>
+<li><p><strong>water</strong> (<em>str</em>) – Whether to repartition masses for water molecules. Options are
+“yes”, “no”, and “exclusive”, which can be used to repartition
+masses for water molecules only.</p></li>
+<li><p><strong>use_coordinates</strong> (<em>bool</em>) – Whether to use the current molecular coordinates to work out
+the connectivity before repartitioning. If False, the information
+from the molecular topology, e.g. force field, will be used, if
+present.</p></li>
+<li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.search" title="Permalink to this definition">#</a></dt>
+<dd><p>Search the system for atoms, residues, and molecules. Search results
+will be reduced to their minimal representation, i.e. a molecule
+containing a single residue will be returned as a residue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – The search query.</p></li>
+<li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>results</strong> – A list of objects matching the search query.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[<a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html#BioSimSpace._SireWrappers.Atom" title="BioSimSpace._SireWrappers.Atom"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code></a>,                    <a class="reference internal" href="BioSimSpace._SireWrappers.Residue.html#BioSimSpace._SireWrappers.Residue" title="BioSimSpace._SireWrappers.Residue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Residue</span></code></a>,                    <a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>, …]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Search for residues names ALA.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;resname ALA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Search for residues names ALA using a case insensitive search.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;resname /ala/i&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Search for all carbon atoms in residues named ALA.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;resname ALA and atomname C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Search for all oxygen or hydrogen atoms.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;element oxygen or element hydrogen&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Search for atom index 23 in molecule index 10.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;molidx 10 and atomidx 23&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.setBox">
+<span class="sig-name descname"><span class="pre">setBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">box,</span> <span class="pre">angles=[90.0000</span> <span class="pre">degrees,</span> <span class="pre">90.0000</span> <span class="pre">degrees,</span> <span class="pre">90.0000</span> <span class="pre">degrees],</span> <span class="pre">property_map={}</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.setBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.setBox" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the size of the periodic simulation box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>box</strong> ([<a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a>]) – The box vector magnitudes in each dimension.</p></li>
+<li><p><strong>angles</strong> ([<a class="reference internal" href="BioSimSpace.Types.Angle.html#BioSimSpace.Types.Angle" title="BioSimSpace.Types.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a>]) – The box vector angles: yz, xz, and xy.</p></li>
+<li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.translate">
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.translate" title="Permalink to this definition">#</a></dt>
+<dd><p>Translate the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector</strong> ([<a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a>]) – The translation vector in Angstroms.</p></li>
+<li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.updateMolecule">
+<span class="sig-name descname"><span class="pre">updateMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.updateMolecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.updateMolecule" title="Permalink to this definition">#</a></dt>
+<dd><p>Updated the molecule at the given index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – The index of the molecule.</p></li>
+<li><p><strong>molecule</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>) – The updated (or replacement) molecule.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.updateMolecules">
+<span class="sig-name descname"><span class="pre">updateMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.updateMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.updateMolecules" title="Permalink to this definition">#</a></dt>
+<dd><p>Update a molecule, or list of molecules in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>molecules</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>,                     [<a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>]) – A Molecule, or list of Molecule objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="BioSimSpace._SireWrappers.SearchResult.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">BioSimSpace._SireWrappers.SearchResult</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="BioSimSpace._SireWrappers.Residue.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">BioSimSpace._SireWrappers.Residue</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Jan 12, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace._SireWrappers.System</a><ul>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System"><code class="docutils literal notranslate"><span class="pre">System</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.__init__"><code class="docutils literal notranslate"><span class="pre">System.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.addMolecules"><code class="docutils literal notranslate"><span class="pre">System.addMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.charge"><code class="docutils literal notranslate"><span class="pre">System.charge()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.fileFormat"><code class="docutils literal notranslate"><span class="pre">System.fileFormat()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getAtom"><code class="docutils literal notranslate"><span class="pre">System.getAtom()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getBox"><code class="docutils literal notranslate"><span class="pre">System.getBox()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getIndex"><code class="docutils literal notranslate"><span class="pre">System.getIndex()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getMolecule"><code class="docutils literal notranslate"><span class="pre">System.getMolecule()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getMolecules"><code class="docutils literal notranslate"><span class="pre">System.getMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getPerturbableMolecules"><code class="docutils literal notranslate"><span class="pre">System.getPerturbableMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getResidue"><code class="docutils literal notranslate"><span class="pre">System.getResidue()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getRestraintAtoms"><code class="docutils literal notranslate"><span class="pre">System.getRestraintAtoms()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.getWaterMolecules"><code class="docutils literal notranslate"><span class="pre">System.getWaterMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nAtoms"><code class="docutils literal notranslate"><span class="pre">System.nAtoms()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nChains"><code class="docutils literal notranslate"><span class="pre">System.nChains()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nMolecules"><code class="docutils literal notranslate"><span class="pre">System.nMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nPerturbableMolecules"><code class="docutils literal notranslate"><span class="pre">System.nPerturbableMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nResidues"><code class="docutils literal notranslate"><span class="pre">System.nResidues()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nWaterMolecules"><code class="docutils literal notranslate"><span class="pre">System.nWaterMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeMolecules"><code class="docutils literal notranslate"><span class="pre">System.removeMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules"><code class="docutils literal notranslate"><span class="pre">System.removeWaterMolecules()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass"><code class="docutils literal notranslate"><span class="pre">System.repartitionHydrogenMass()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.search"><code class="docutils literal notranslate"><span class="pre">System.search()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.setBox"><code class="docutils literal notranslate"><span class="pre">System.setBox()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.translate"><code class="docutils literal notranslate"><span class="pre">System.translate()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecule"><code class="docutils literal notranslate"><span class="pre">System.updateMolecule()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecules"><code class="docutils literal notranslate"><span class="pre">System.updateMolecules()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    </body>
+</html>

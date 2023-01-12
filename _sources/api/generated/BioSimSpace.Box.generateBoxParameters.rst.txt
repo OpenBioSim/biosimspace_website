@@ -1,0 +1,6 @@
+BioSimSpace.Box.generateBoxParameters
+=====================================
+
+.. currentmodule:: BioSimSpace.Box
+
+.. autofunction:: generateBoxParameters

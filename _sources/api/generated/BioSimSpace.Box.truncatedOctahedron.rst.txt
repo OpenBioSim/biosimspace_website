@@ -1,0 +1,6 @@
+BioSimSpace.Box.truncatedOctahedron
+===================================
+
+.. currentmodule:: BioSimSpace.Box
+
+.. autofunction:: truncatedOctahedron
