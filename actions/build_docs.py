@@ -28,7 +28,7 @@ try:
 except Exception:
     force_build_docs = False
 
-if branch not in ["main", "devel", "feature-2023_0"]:
+if branch not in ["main", "devel"]:
     if branch.find(version) != -1:
         print(f"Building the docs for tag {version}")
         is_tagged_release = True
@@ -74,4 +74,5 @@ print(f"Installing doc requirements: {reqs}")
 # make the documentation
 print(f"Changing into {doc_dir} and building the website...")
 os.chdir(f"{doc_dir}")
+os.environ["PYTHONPATH"] = "../python"
 run_command("make")
