@@ -10,7 +10,7 @@ SRC_DIR=${SRC_DIR:-$1}
 # them into the __init__ file using sed.
 
 # Query the force fields that are supported in this build and capture the output.
-force_fields=$(python "$SRC_DIR"/actions/supported_force_fields.py)
+force_fields=$(python actions/supported_force_fields.py)
 
 # Inject the string into the __init__ of the BioSimSpace.Parameters package.
 # This is only run on Linux so the following, non-portable, sed command is fine.

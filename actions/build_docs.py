@@ -28,7 +28,7 @@ try:
 except Exception:
     force_build_docs = False
 
-if branch not in ["main", "devel", "feature-2023_1"]:
+if branch not in ["main", "devel"]:
     if branch.find(version) != -1:
         print(f"Building the docs for tag {version}")
         is_tagged_release = True
@@ -69,7 +69,7 @@ reqs = " ".join(
 
 print(f"Installing doc requirements: {reqs}")
 
-# run_command(f"mamba install {reqs}")
+run_command(f"mamba install {reqs}")
 
 # make the documentation
 print(f"Changing into {doc_dir} and building the website...")
