@@ -1,4 +1,4 @@
-BioSimSpace.\_Exceptions.AlignmentError
+﻿BioSimSpace.\_Exceptions.AlignmentError
 =======================================
 
 .. currentmodule:: BioSimSpace._Exceptions

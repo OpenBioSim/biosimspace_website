@@ -1,4 +1,4 @@
-BioSimSpace.Notebook.plotContour
+﻿BioSimSpace.Notebook.plotContour
 ================================
 
 .. currentmodule:: BioSimSpace.Notebook

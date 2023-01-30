@@ -1,4 +1,4 @@
-BioSimSpace.Metadynamics.Restraint
+﻿BioSimSpace.Metadynamics.Restraint
 ==================================
 
 .. currentmodule:: BioSimSpace.Metadynamics

@@ -1,4 +1,4 @@
-BioSimSpace.Box.cubic
+﻿BioSimSpace.Box.cubic
 =====================
 
 .. currentmodule:: BioSimSpace.Box

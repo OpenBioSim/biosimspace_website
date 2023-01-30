@@ -1,4 +1,4 @@
-BioSimSpace.Metadynamics.engines
+﻿BioSimSpace.Metadynamics.engines
 ================================
 
 .. currentmodule:: BioSimSpace.Metadynamics

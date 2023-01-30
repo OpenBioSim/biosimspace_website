@@ -1,4 +1,4 @@
-BioSimSpace.Notebook.plotOverlapMatrix
+﻿BioSimSpace.Notebook.plotOverlapMatrix
 ======================================
 
 .. currentmodule:: BioSimSpace.Notebook

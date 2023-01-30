@@ -1,4 +1,4 @@
-BioSimSpace.\_Exceptions.ThirdPartyError
+﻿BioSimSpace.\_Exceptions.ThirdPartyError
 ========================================
 
 .. currentmodule:: BioSimSpace._Exceptions

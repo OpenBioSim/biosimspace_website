@@ -1,4 +1,4 @@
-BioSimSpace.FreeEnergy.getData
+﻿BioSimSpace.FreeEnergy.getData
 ==============================
 
 .. currentmodule:: BioSimSpace.FreeEnergy

@@ -1,4 +1,4 @@
-BioSimSpace.Align.viewMapping
+﻿BioSimSpace.Align.viewMapping
 =============================
 
 .. currentmodule:: BioSimSpace.Align

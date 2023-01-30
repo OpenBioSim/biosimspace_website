@@ -1,4 +1,4 @@
-BioSimSpace.Box.truncatedOctahedron
+﻿BioSimSpace.Box.truncatedOctahedron
 ===================================
 
 .. currentmodule:: BioSimSpace.Box

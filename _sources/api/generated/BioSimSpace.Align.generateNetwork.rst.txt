@@ -1,4 +1,4 @@
-BioSimSpace.Align.generateNetwork
+﻿BioSimSpace.Align.generateNetwork
 =================================
 
 .. currentmodule:: BioSimSpace.Align

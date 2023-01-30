@@ -1,4 +1,4 @@
-BioSimSpace.FreeEnergy.Relative
+﻿BioSimSpace.FreeEnergy.Relative
 ===============================
 
 .. currentmodule:: BioSimSpace.FreeEnergy

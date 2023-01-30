@@ -1,4 +1,4 @@
-BioSimSpace.\_Exceptions.AnalysisError
+﻿BioSimSpace.\_Exceptions.AnalysisError
 ======================================
 
 .. currentmodule:: BioSimSpace._Exceptions

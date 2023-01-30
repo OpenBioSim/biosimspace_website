@@ -1,4 +1,4 @@
-BioSimSpace.Box.boxTypes
+﻿BioSimSpace.Box.boxTypes
 ========================
 
 .. currentmodule:: BioSimSpace.Box

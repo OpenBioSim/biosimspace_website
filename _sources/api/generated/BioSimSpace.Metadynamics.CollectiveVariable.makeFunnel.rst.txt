@@ -1,4 +1,4 @@
-BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel
+﻿BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel
 ======================================================
 
 .. currentmodule:: BioSimSpace.Metadynamics.CollectiveVariable

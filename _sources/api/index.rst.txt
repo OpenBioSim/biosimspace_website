@@ -1,8 +1,8 @@
 .. _ref_api:
 
-=============
-Documentation
-=============
+=================
+API Documentation
+=================
 
 The API (Application Programming Interface) is divided into a collection
 of packages.
@@ -26,6 +26,7 @@ of packages.
    index_Solvent
    index_Trajectory
    index_Types
+   index_Config
    index_Units
    index_Exceptions
    index_SireWrappers
