@@ -3,7 +3,7 @@
 
 from hashlib import md5
 
-import git2
+import pygit2
 import os
 import sys
 import BioSimSpace as project
