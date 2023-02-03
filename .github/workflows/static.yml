@@ -70,9 +70,9 @@ jobs:
       - name: Assemble Website
         run: python actions/assemble_website.py project
       - name: Deduplicate Website
-        run: python actions/deduplicate_website.py
+        run: python actions/deduplicate_website.py project
       - name: Git update Website
-        run: python actions/gitupdate_website.py
+        run: python actions/gitupdate_website.py project
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
