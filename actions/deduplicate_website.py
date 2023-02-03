@@ -13,8 +13,6 @@ project_dir = sys.argv[1]
 repo = pygit2.Repository(project_dir)
 
 branch = repo.head.shorthand
-
-branch = project.__branch__
 release = project.__version__
 version = project.__version__.split("+")[0]
 
