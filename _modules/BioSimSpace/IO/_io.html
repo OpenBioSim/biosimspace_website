@@ -581,6 +581,7 @@
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
 
+
 <span class="c1"># Context manager for capturing stdout.</span>
 <span class="c1"># Taken from:</span>
 <span class="c1"># https://stackoverflow.com/questions/16571150/how-to-capture-stdout-output-from-a-python-function-call</span>
@@ -1098,7 +1099,8 @@
 <span class="sd">    try to save it to all supported file formats.</span>
 
 <span class="sd">    &gt;&gt;&gt; import BioSimSpace as BSS</span>
-<span class="sd">    &gt;&gt;&gt; system = BSS.IO.readMolecules([&quot;ala.rst7&quot;, &quot;ala.prm7&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; files = BSS.IO.expand(BSS.tutorialUrl(), [&quot;ala.top&quot;, &quot;ala.crd&quot;], &quot;.bz2&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; system = BSS.IO.readMolecules(files)</span>
 <span class="sd">    &gt;&gt;&gt; for format in BSS.IO.fileFormats():</span>
 <span class="sd">    ...     try:</span>
 <span class="sd">    ...         BSS.IO.saveMolecules(&quot;test&quot;, system, format)</span>
@@ -1110,7 +1112,8 @@
 <span class="sd">    property along the way.</span>
 
 <span class="sd">    &gt;&gt;&gt; import BioSimSpace as BSS</span>
-<span class="sd">    &gt;&gt;&gt; system = BSS.IO.readMolecules([&quot;ala.rst7&quot;, &quot;ala.prm7&quot;], property_map={&quot;charge&quot; : &quot;my-charge&quot;})</span>
+<span class="sd">    &gt;&gt;&gt; files = BSS.IO.expand(BSS.tutorialUrl(), [&quot;ala.top&quot;, &quot;ala.crd&quot;], &quot;.bz2&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; system = BSS.IO.readMolecules(files, property_map={&quot;charge&quot; : &quot;my-charge&quot;})</span>
 <span class="sd">    &gt;&gt;&gt; BSS.IO.saveMolecules(&quot;test&quot;, system, [&quot;gro87&quot;, &quot;grotop&quot;], property_map={&quot;charge&quot; : &quot;my-charge&quot;})</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -1210,7 +1213,6 @@
 
     <span class="c1"># Save the system using each file format.</span>
     <span class="k">for</span> <span class="nb">format</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
-
         <span class="c1"># Copy an existing file if it exists in the cache.</span>
         <span class="n">ext</span> <span class="o">=</span> <span class="n">_check_cache</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">filebase</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ext</span><span class="p">:</span>
@@ -1224,7 +1226,6 @@
         <span class="c1"># that uses geometric combining rules. While we can write this to file</span>
         <span class="c1"># the information is lost on read.</span>
         <span class="k">if</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;PRM7&quot;</span><span class="p">:</span>
-
             <span class="c1"># Get the name of the &quot;forcefield&quot; property.</span>
             <span class="n">forcefield</span> <span class="o">=</span> <span class="n">_property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;forcefield&quot;</span><span class="p">,</span> <span class="s2">&quot;forcefield&quot;</span><span class="p">)</span>
 
@@ -1438,7 +1439,6 @@
         <span class="ow">and</span> <span class="ow">not</span> <span class="n">top1</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefixes</span><span class="p">)</span>
         <span class="ow">and</span> <span class="ow">not</span> <span class="n">coords1</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefixes</span><span class="p">)</span>
     <span class="p">):</span>
-
         <span class="c1"># lamba = 0 coordinates.</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">_SireIO</span><span class="o">.</span><span class="n">AmberRst7</span><span class="p">(</span><span class="n">coords0</span><span class="p">)</span>
@@ -1801,7 +1801,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

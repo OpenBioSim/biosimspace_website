@@ -685,8 +685,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_log_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.log&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># The names of the input files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.gro&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.top&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># The name of the trajectory file.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.trr&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -698,7 +698,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.mdp&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># Create the list of input files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">]</span>
 
         <span class="c1"># Initialise the PLUMED interface object.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_plumed</span> <span class="o">=</span> <span class="kc">None</span>
@@ -752,18 +752,12 @@
         <span class="n">system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span><span class="s2">&quot;GROMACS&quot;</span><span class="p">)</span>
 
         <span class="c1"># GRO87 file.</span>
-        <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;gro87&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span> <span class="o">+=</span> <span class="s2">&quot;.gro&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span><span class="p">)</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;gro87&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
 
         <span class="c1"># TOP file.</span>
-        <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;grotop&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">+=</span> <span class="s2">&quot;.top&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gro_file</span><span class="p">)</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;grotop&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
 
         <span class="c1"># Create the binary input file name.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_tpr_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.tpr&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
@@ -1073,13 +1067,11 @@
 
         <span class="c1"># Run the process in the working directory.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
-
             <span class="c1"># Create the arguments string list.</span>
             <span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArgStringList</span><span class="p">()</span>
 
             <span class="c1"># Write the command-line process to a README.txt file.</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-
                 <span class="c1"># Set the command-line string.</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_command</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exe</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArgString</span><span class="p">()</span>
 
@@ -2296,7 +2288,6 @@
         <span class="n">restraint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">restraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
             <span class="c1"># Get the force constant in units of kJ_per_mol/nanometer**2</span>
             <span class="n">force_constant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getForceConstant</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_unit</span>
             <span class="n">force_constant</span> <span class="o">=</span> <span class="n">force_constant</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
@@ -2355,7 +2346,6 @@
 
             <span class="c1"># A keyword restraint.</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">restraint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
                 <span class="c1"># The number of restraint files.</span>
                 <span class="n">num_restraint</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -2364,14 +2354,12 @@
                 <span class="k">for</span> <span class="n">mol_type_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">mol_type</span><span class="p">,</span> <span class="n">mol_idxs</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
                     <span class="n">moltypes_sys_idx</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
                 <span class="p">):</span>
-
                     <span class="c1"># Initialise a list of restrained atom indices.</span>
                     <span class="n">restrained_atoms</span> <span class="o">=</span> <span class="p">[]</span>
 
                     <span class="c1"># Loop over each molecule in the system that matches this</span>
                     <span class="c1"># type and append any atoms matching the restraint.</span>
                     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">mol_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mol_idxs</span><span class="p">):</span>
-
                         <span class="c1"># Get the indices of any restrained atoms in this molecule,</span>
                         <span class="c1"># making sure that indices are relative to the molecule.</span>
                         <span class="n">atom_idxs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">getRestraintAtoms</span><span class="p">(</span>
@@ -2439,7 +2427,6 @@
 
             <span class="c1"># A user-defined list of atoms indices.</span>
             <span class="k">else</span><span class="p">:</span>
-
                 <span class="c1"># Create an empty multi-dict for each molecule type.</span>
                 <span class="n">mol_atoms</span> <span class="o">=</span> <span class="p">{}</span>
                 <span class="k">for</span> <span class="n">mol_type</span> <span class="ow">in</span> <span class="n">gro_system</span><span class="o">.</span><span class="n">uniqueTypes</span><span class="p">():</span>
@@ -2471,7 +2458,6 @@
                 <span class="c1"># Loop over all of the molecule types and create a position</span>
                 <span class="c1"># restraint file for each.</span>
                 <span class="k">for</span> <span class="n">mol_type_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">mol_type</span><span class="p">,</span> <span class="n">atom_idxs</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mol_atoms</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-
                     <span class="c1"># Write the position restraint file for this molecule.</span>
                     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                         <span class="c1"># Create the file names.</span>
@@ -2545,17 +2531,14 @@
 
         <span class="c1"># Append any new records to the stdout dictionary.</span>
         <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">num_lines</span><span class="p">:</span>
-
             <span class="c1"># We&#39;ve hit any energy record section.</span>
             <span class="k">if</span> <span class="n">lines</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Energies (kJ/mol)&quot;</span><span class="p">:</span>
-
                 <span class="c1"># Initialise lists to hold all of the key/value pairs.</span>
                 <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
                 <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
 
                 <span class="c1"># Loop until we reach a blank line, or the end of the lines.</span>
                 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-
                     <span class="c1"># End of file.</span>
                     <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">num_lines</span><span class="p">:</span>
                         <span class="k">break</span>
@@ -2737,7 +2720,6 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Grab the last frame from the GRO file.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
-
             <span class="c1"># Do we need to get coordinates for the lambda=1 state.</span>
             <span class="k">if</span> <span class="s2">&quot;is_lambda1&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">:</span>
                 <span class="n">is_lambda1</span> <span class="o">=</span> <span class="kc">True</span>
@@ -2810,7 +2792,6 @@
         <span class="c1"># Grab the last frame from the current trajectory file.</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
-
                 <span class="c1"># Do we need to get coordinates for the lambda=1 state.</span>
                 <span class="k">if</span> <span class="s2">&quot;is_lambda1&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">:</span>
                     <span class="n">is_lambda1</span> <span class="o">=</span> <span class="kc">True</span>
@@ -3019,7 +3000,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

@@ -1389,7 +1389,6 @@
 
     <span class="c1"># Run the solvation in the working directory.</span>
     <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
-
         <span class="c1"># First, generate a box file corresponding to the requested geometry.</span>
         <span class="k">if</span> <span class="n">molecule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># Write the molecule/system to a GRO files.</span>
@@ -1547,7 +1546,6 @@
 
         <span class="c1"># Now we add ions to the system and neutralise the charge.</span>
         <span class="k">if</span> <span class="n">ion_conc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">is_neutral</span><span class="p">:</span>
-
             <span class="k">try</span><span class="p">:</span>
                 <span class="c1"># Write the molecule + water system to file.</span>
                 <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
@@ -1953,7 +1951,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

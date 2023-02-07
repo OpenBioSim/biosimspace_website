@@ -676,8 +676,8 @@
 
         <span class="c1"># The names of the input files. We choose to use AMBER files since they</span>
         <span class="c1"># are self-contained, but could equally work with GROMACS files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.rst7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.prm7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># The name of the trajectory file.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.dcd&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -687,7 +687,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">_script.py&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># Create the list of input files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">]</span>
 
         <span class="c1"># Initialise the log file header.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="o">=</span> <span class="kc">None</span>
@@ -743,11 +743,8 @@
 
         <span class="c1"># RST file (coordinates).</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;rst7&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
-            <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">+=</span> <span class="s2">&quot;.rst7&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">)</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;rst7&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;RST7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
@@ -757,11 +754,8 @@
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;prm7&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
-            <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">+=</span> <span class="s2">&quot;.prm7&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">)</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;prm7&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;PRM7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
@@ -1726,7 +1720,6 @@
 
         <span class="c1"># Run the process in the working directory.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
-
             <span class="c1"># Create the arguments string list.</span>
             <span class="c1"># The name of the Python script (config file) is the first argument.</span>
             <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">]</span>
@@ -1734,7 +1727,6 @@
 
             <span class="c1"># Write the command-line process to a README.txt file.</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-
                 <span class="c1"># Set the command-line string.</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_command</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_exe</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArgString</span><span class="p">()</span>
@@ -1781,7 +1773,6 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Handle minimisation protocols separately.</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">):</span>
-
                 <span class="c1"># Do we need to get coordinates for the lambda=1 state.</span>
                 <span class="k">if</span> <span class="s2">&quot;is_lambda1&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">:</span>
                     <span class="n">is_lambda1</span> <span class="o">=</span> <span class="kc">True</span>
@@ -2625,7 +2616,6 @@
 
         <span class="c1"># Append any new records to the stdout dictionary.</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-
             <span class="c1"># Strip leading/trailing whitespace.</span>
             <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
@@ -2781,7 +2771,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

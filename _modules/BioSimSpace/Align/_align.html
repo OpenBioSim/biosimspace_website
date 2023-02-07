@@ -738,7 +738,6 @@
 
     <span class="c1"># Validate the scores file.</span>
     <span class="k">if</span> <span class="n">links_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">links_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;links_file&#39; must be of type &#39;str&#39;&quot;</span><span class="p">)</span>
 
@@ -994,7 +993,6 @@
     <span class="c1"># If the user has specified a forced number of edges, adjust the network</span>
     <span class="c1"># to match the query. We have three situations to deal with.</span>
     <span class="k">if</span> <span class="n">n_edges_forced</span><span class="p">:</span>
-
         <span class="c1"># sort the list of excluded edges by LOMAP score.</span>
         <span class="n">edges_excluded</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -1467,7 +1465,6 @@
     <span class="c1"># Sometimes RDKit fails to generate a mapping that includes the prematch.</span>
     <span class="c1"># If so, then try generating a mapping using the MCS routine from Sire.</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mappings</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">mappings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">prematch</span><span class="p">:</span>
-
         <span class="c1"># Warn that we&#39;ve fallen back on using Sire.</span>
         <span class="k">if</span> <span class="n">prematch</span> <span class="o">!=</span> <span class="p">{}:</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;RDKit mapping didn&#39;t include prematch. Using Sire MCS.&quot;</span><span class="p">)</span>
@@ -1767,7 +1764,6 @@
 
     <span class="c1"># Execute in the working directory.</span>
     <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
-
         <span class="c1"># Write the two molecules to PDB files.</span>
         <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">,</span> <span class="n">molecule0</span><span class="p">,</span> <span class="s2">&quot;PDB&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map0</span><span class="p">)</span>
         <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="s2">&quot;PDB&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map1</span><span class="p">)</span>
@@ -2479,7 +2475,6 @@
 
     <span class="c1"># Loop over all of the mappings.</span>
     <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="n">sire_mappings</span><span class="p">:</span>
-
         <span class="c1"># Check that the mapping contains the pre-match.</span>
         <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">for</span> <span class="n">idx0</span><span class="p">,</span> <span class="n">idx1</span> <span class="ow">in</span> <span class="n">prematch</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -2675,7 +2670,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

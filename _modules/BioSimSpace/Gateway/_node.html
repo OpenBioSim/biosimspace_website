@@ -1405,7 +1405,6 @@
 
         <span class="c1"># File / File set.</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="p">(</span><span class="n">_File</span><span class="p">,</span> <span class="n">_FileSet</span><span class="p">)):</span>
-
             <span class="c1"># Create a fileupload widget.</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">_FileSet</span><span class="p">):</span>
                 <span class="n">widget</span> <span class="o">=</span> <span class="n">_widgets</span><span class="o">.</span><span class="n">FileUpload</span><span class="p">(</span><span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1692,7 +1691,6 @@
 
         <span class="c1"># Loop over all of the widgets.</span>
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">widget</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_widgets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-
             <span class="c1"># Create the label string.</span>
             <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">getHelp</span><span class="p">())</span>
 
@@ -1760,7 +1758,6 @@
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_notebook</span><span class="p">:</span>
             <span class="c1"># Loop over the widgets and set the input values.</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">widget</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_widgets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-
                 <span class="c1"># Use the widget value if it has been set, otherwise, set the value to None.</span>
                 <span class="c1"># This ensures that the user actually sets a value.</span>
 
@@ -2013,7 +2010,6 @@
 
     <span class="c1"># Loop over all uploaded files.</span>
     <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;owner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
-
         <span class="c1"># Store the number of bytes.</span>
         <span class="n">num_bytes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s2">&quot;owner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">filename</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
 
@@ -2037,7 +2033,6 @@
 
         <span class="c1"># Has this file already been uploaded?</span>
         <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">new_filename</span><span class="p">):</span>
-
             <span class="c1"># We&#39;ll append a number to the file name.</span>
             <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
             <span class="n">new_filename_append</span> <span class="o">=</span> <span class="n">new_filename</span> <span class="o">+</span> <span class="s2">&quot;.</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">index</span>
@@ -2125,7 +2120,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

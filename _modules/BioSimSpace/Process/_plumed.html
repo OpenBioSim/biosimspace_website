@@ -781,7 +781,6 @@
         <span class="n">molecules</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">colvar</span> <span class="ow">in</span> <span class="n">colvars</span><span class="p">:</span>
-
             <span class="c1"># Store all of the atoms to which the collective variable applies.</span>
             <span class="n">atoms</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -822,7 +821,6 @@
                     <span class="c1"># Check whether the system has a space. If not, vacuum</span>
                     <span class="c1"># simulations are okay.</span>
                     <span class="k">if</span> <span class="n">space_prop</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">propertyKeys</span><span class="p">():</span>
-
                         <span class="c1"># Get the space property.</span>
                         <span class="n">space</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">space_prop</span><span class="p">)</span>
 
@@ -953,7 +951,6 @@
         <span class="n">metad_string</span> <span class="o">=</span> <span class="s2">&quot;metad: METAD ARG=&quot;</span>
 
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">colvar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colvars</span><span class="p">):</span>
-
             <span class="c1"># Get the lower/upper bounds and the grid data.</span>
             <span class="n">lower_wall</span> <span class="o">=</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getLowerBound</span><span class="p">()</span>
             <span class="n">upper_wall</span> <span class="o">=</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getUpperBound</span><span class="p">()</span>
@@ -1466,7 +1463,6 @@
         <span class="n">molecules</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">colvar</span> <span class="ow">in</span> <span class="n">colvars</span><span class="p">:</span>
-
             <span class="c1"># Store all of the atoms to which the collective variable applies.</span>
             <span class="n">atoms</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1555,7 +1551,6 @@
         <span class="n">arg_string</span> <span class="o">=</span> <span class="s2">&quot;ARG=&quot;</span>
 
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">colvar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colvars</span><span class="p">):</span>
-
             <span class="c1"># Whether the collective variable is a torsion.</span>
             <span class="n">is_torsion</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -1965,7 +1960,6 @@
 
         <span class="c1"># Move to the working directory.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">+</span> <span class="s2">&quot;/fes&quot;</span><span class="p">):</span>
-
             <span class="c1"># Run the sum_hills command as a background process.</span>
             <span class="n">proc</span> <span class="o">=</span> <span class="n">_subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
                 <span class="n">_Utils</span><span class="o">.</span><span class="n">command_split</span><span class="p">(</span><span class="n">command</span><span class="p">),</span>
@@ -2016,20 +2010,16 @@
 
                 <span class="c1"># Read the file.</span>
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fes</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
                     <span class="c1"># Loop over all lines in the file.</span>
                     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-
                         <span class="c1"># Ignore comments and blank lines.</span>
                         <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;#&quot;</span><span class="p">:</span>
-
                             <span class="c1"># Extract the data.</span>
                             <span class="c1"># This is: colvar1, colvar2, ..., fes</span>
                             <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
 
                             <span class="c1"># The line contains data.</span>
                             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-
                                 <span class="c1"># Store data for each of the collective variables.</span>
                                 <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                                     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_components</span><span class="p">):</span>
@@ -2079,7 +2069,6 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_hills</span><span class="p">:</span>
             <span class="c1"># Loop over all new lines in the file.</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">_pygtail</span><span class="o">.</span><span class="n">Pygtail</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hills_file</span><span class="p">):</span>
-
                 <span class="c1"># Is this a header line. If so, store the keys.</span>
                 <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;FIELDS&quot;</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_colvar_keys</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">()[:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_components</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
@@ -2093,7 +2082,6 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Loop over all new lines in the file.</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">_pygtail</span><span class="o">.</span><span class="n">Pygtail</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_colvar_file</span><span class="p">):</span>
-
                 <span class="c1"># Is this a header line. If so, store the keys.</span>
                 <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;FIELDS&quot;</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_colvar_keys</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -2113,7 +2101,6 @@
 
         <span class="c1"># Loop over all new lines in the file.</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">_pygtail</span><span class="o">.</span><span class="n">Pygtail</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hills_file</span><span class="p">):</span>
-
             <span class="c1"># Is this a header line. If so, store the keys.</span>
             <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;FIELDS&quot;</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_hills_keys</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -2261,7 +2248,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

@@ -1073,7 +1073,6 @@
 
         <span class="c1"># Set up the background thread.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_thread</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
-
             <span class="c1"># Flag that the runner is alive.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_is_killed</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -1186,10 +1185,8 @@
 
             <span class="c1"># Loop until all processes have finished.</span>
             <span class="k">while</span> <span class="n">num_finished</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">nProcesses</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_killed</span><span class="p">:</span>
-
                 <span class="c1"># Only submit more processes if we&#39;re below the batch size.</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nRunning</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">batch_size</span><span class="p">:</span>
-
                     <span class="c1"># Loop over all queued processes until we&#39;ve submitted batch_size.</span>
                     <span class="n">queued</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queued</span><span class="p">()</span>
                     <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">queued</span><span class="p">:</span>
@@ -1390,7 +1387,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

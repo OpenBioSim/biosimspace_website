@@ -1203,7 +1203,6 @@
 
         <span class="c1"># We should receive a list of strings.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-
             <span class="c1"># A single file was passed.</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="c1"># Remove whitespace and split on commas.</span>
@@ -1211,7 +1210,6 @@
 
             <span class="c1"># Loop over all strings.</span>
             <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
-
                 <span class="c1"># Check the types.</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The value should be of type &#39;str&#39;&quot;</span><span class="p">)</span>
@@ -2308,7 +2306,6 @@
 
         <span class="c1"># Use a regular expression to extract the value and unit.</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-
             <span class="c1"># Strip white space from the string.</span>
             <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
@@ -2373,10 +2370,8 @@
 
     <span class="c1"># Check whether this is a tar compressed file.</span>
     <span class="k">for</span> <span class="n">tar_name</span> <span class="ow">in</span> <span class="n">tarfiles</span><span class="p">:</span>
-
         <span class="c1"># Found a match.</span>
         <span class="k">if</span> <span class="n">tar_name</span> <span class="ow">in</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-
             <span class="c1"># The list of decompressed files.</span>
             <span class="n">files</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -2450,7 +2445,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

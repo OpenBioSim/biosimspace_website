@@ -694,20 +694,17 @@
             <span class="k">if</span> <span class="n">restraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="c1"># Get the indices of the atoms that are restrained.</span>
                 <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">restraint</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
-                    <span class="n">atom_idxs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">getRestraintAtoms</span><span class="p">(</span><span class="n">restraint</span><span class="p">)</span>
+                    <span class="n">atom_idxs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">getRestraintAtoms</span><span class="p">(</span><span class="n">restraint</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">atom_idxs</span> <span class="o">=</span> <span class="n">restraint</span>
 
                 <span class="c1"># Don&#39;t add restraints if there are no atoms to restrain.</span>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="c1"># Generate the restraint mask based on atom indices.</span>
-                    <span class="n">restraint_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_amber_mask_from_indices</span><span class="p">(</span>
-                        <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">]</span>
-                    <span class="p">)</span>
+                    <span class="n">restraint_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_restraint_mask</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">)</span>
 
                     <span class="c1"># The restraintmask cannot be more than 256 characters.</span>
                     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">restraint_mask</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">256</span><span class="p">:</span>
-
                         <span class="c1"># AMBER has a limit on the length of the restraintmask</span>
                         <span class="c1"># so it&#39;s easy to overflow if we are matching by index</span>
                         <span class="c1"># on a large protein. As such, handle &quot;backbone&quot; and</span>
@@ -801,7 +798,81 @@
             <span class="n">total_lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;&amp;wt TYPE=&#39;END&#39; /&quot;</span><span class="p">]</span>
         <span class="n">total_lines</span> <span class="o">=</span> <span class="n">dict_lines</span> <span class="o">+</span> <span class="n">total_lines</span>
 
-        <span class="k">return</span> <span class="n">total_lines</span></div></div>
+        <span class="k">return</span> <span class="n">total_lines</span></div>
+
+    <span class="k">def</span> <span class="nf">_create_restraint_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_idxs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal helper function to create an AMBER restraint mask from a</span>
+<span class="sd">        list of atom indices.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        atom_idxs : [int]</span>
+<span class="sd">            A list of atom indices.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        restraint_mask : str</span>
+<span class="sd">            The AMBER restraint mask.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;atom_idxs&#39; must be a list of &#39;int&#39; types.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;atom_idxs&#39; must be a list of &#39;int&#39; types.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># AMBER has a restriction on the number of characters in the restraint</span>
+        <span class="c1"># mask (not documented) so we can&#39;t just use comma-separated atom</span>
+        <span class="c1"># indices. Instead we loop through the indices and use hyphens to</span>
+        <span class="c1"># separate contiguous blocks of indices, e.g. 1-23,34-47,...</span>
+
+        <span class="c1"># Create a set to sort and ensure no duplicates, then convert back to a list.</span>
+        <span class="c1"># This should already by done, but do so again in case the user is accessing</span>
+        <span class="c1"># the method directly.</span>
+        <span class="n">atom_idxs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">))</span>
+        <span class="n">atom_idxs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="c1"># Handle single atom restraints differently.</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">restraint_mask</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;@</span><span class="si">{</span><span class="n">atom_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Start the mask with the first atom index. (AMBER is 1 indexed.)</span>
+            <span class="n">restraint_mask</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;@</span><span class="si">{</span><span class="n">atom_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="c1"># Store the current index.</span>
+            <span class="n">prev_idx</span> <span class="o">=</span> <span class="n">atom_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Store the lead index for this block.</span>
+            <span class="n">lead_idx</span> <span class="o">=</span> <span class="n">prev_idx</span>
+
+            <span class="c1"># Loop over all other indices.</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="c1"># There is a gap in the indices.</span>
+                <span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">prev_idx</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">prev_idx</span> <span class="o">!=</span> <span class="n">lead_idx</span><span class="p">:</span>
+                        <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prev_idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;,</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="n">lead_idx</span> <span class="o">=</span> <span class="n">idx</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># This is the first index beyond the lead.</span>
+                    <span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">lead_idx</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="s2">&quot;-&quot;</span>
+                <span class="c1"># Set the value of the previous index.</span>
+                <span class="n">prev_idx</span> <span class="o">=</span> <span class="n">idx</span>
+
+            <span class="c1"># Add the final atom to the mask.</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">atom_idxs</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">idx</span> <span class="o">!=</span> <span class="n">lead_idx</span><span class="p">:</span>
+                    <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;,</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="n">restraint_mask</span></div>
 </pre></div>
         </article>
       </div>
@@ -816,7 +887,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

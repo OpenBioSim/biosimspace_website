@@ -640,7 +640,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_title</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="c1"># The names of the input files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.psf&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.pdb&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_param_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.params&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_velocity_file</span> <span class="o">=</span> <span class="kc">None</span>
@@ -655,6 +655,7 @@
         <span class="c1"># Create the list of input files.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_param_file</span><span class="p">,</span>
         <span class="p">]</span>
@@ -675,11 +676,8 @@
 
         <span class="c1"># PSF and parameter files.</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
-            <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span> <span class="o">+=</span> <span class="s2">&quot;.psf&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span><span class="p">)</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;CHARMMPSF&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
@@ -730,10 +728,8 @@
 
         <span class="c1"># Open the PSF file for reading.</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_psf_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
             <span class="c1"># Loop over all lines.</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-
                 <span class="c1"># There are improper records.</span>
                 <span class="k">if</span> <span class="s2">&quot;!NIMPHI&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
                     <span class="n">has_impropers</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1169,10 +1165,8 @@
 
         <span class="c1"># Run the process in the working directory.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
-
             <span class="c1"># Write the command-line process to a README.txt file.</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
                 <span class="c1"># Set the command-line string.</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_command</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">.cfg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_exe</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
 
@@ -2492,14 +2486,12 @@
 
         <span class="c1"># Now search backwards through the list to find the last TIMING record.</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">record</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span><span class="p">))):</span>
-
             <span class="c1"># Split the record using whitespace.</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
             <span class="c1"># We&#39;ve found a TIMING record.</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;TIMING:&quot;</span><span class="p">:</span>
-
                     <span class="c1"># Try to find the &quot;hours&quot; record.</span>
                     <span class="c1"># If found, return the entry precedeing it.</span>
                     <span class="k">try</span><span class="p">:</span>
@@ -2535,7 +2527,6 @@
 
             <span class="c1"># Make sure there is at least one record.</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-
                 <span class="c1"># Store the updated energy title.</span>
                 <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ETITLE:&quot;</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_title</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
@@ -2592,10 +2583,8 @@
 
         <span class="c1"># Keyword restraint.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">restraint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="c1"># Loop over all molecules by number.</span>
             <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">mol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-
                 <span class="c1"># Get the indices of the restrained atoms for this molecule.</span>
                 <span class="n">atoms</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">getRestraintAtoms</span><span class="p">(</span>
                     <span class="n">restraint</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">is_absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">allow_zero_matches</span><span class="o">=</span><span class="kc">True</span>
@@ -2626,7 +2615,6 @@
 
         <span class="c1"># A user-defined list of atoms.</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">restraint</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-
             <span class="c1"># Create an empty multi dict for each MolNum.</span>
             <span class="n">mol_atoms</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">_mol_nums</span><span class="p">:</span>
@@ -2648,7 +2636,6 @@
 
             <span class="c1"># Now loop over the multi-dict.</span>
             <span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">idxs</span> <span class="ow">in</span> <span class="n">mol_atoms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-
                 <span class="c1"># Extract the molecule and make it editable.</span>
                 <span class="n">edit_mol</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
 
@@ -2762,7 +2749,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

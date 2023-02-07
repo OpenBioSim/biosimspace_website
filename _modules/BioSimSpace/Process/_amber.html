@@ -778,8 +778,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_watching</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="c1"># The names of the input files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.rst7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.prm7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># The name of the trajectory file.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.nc&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -788,7 +788,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.cfg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="c1"># Create the list of input files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">]</span>
 
         <span class="c1"># Now set up the working directory for the process.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span></div>
@@ -809,11 +809,10 @@
 
         <span class="c1"># RST file (coordinates).</span>
         <span class="k">try</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;rst7&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
             <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">+=</span> <span class="s2">&quot;.rst7&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;RST7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
@@ -823,12 +822,10 @@
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="s2">&quot;prm7&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
             <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">+=</span> <span class="s2">&quot;.prm7&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">)</span>
-
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;PRM7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
@@ -925,7 +922,6 @@
 
         <span class="c1"># Skip if the user has passed a custom protocol.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Custom</span><span class="p">):</span>
-
             <span class="c1"># Append a reference file if this a restrained equilibration.</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Equilibration</span><span class="p">):</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -960,13 +956,11 @@
 
         <span class="c1"># Run the process in the working directory.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
-
             <span class="c1"># Create the arguments string list.</span>
             <span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArgStringList</span><span class="p">()</span>
 
             <span class="c1"># Write the command-line process to a README.txt file.</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
                 <span class="c1"># Set the command-line string.</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_command</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exe</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArgString</span><span class="p">()</span>
 
@@ -2111,19 +2105,14 @@
 
         <span class="c1"># Open the file for reading.</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrg_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
             <span class="c1"># Loop over all of the lines.</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-
                 <span class="c1"># Skip empty lines and summary reports.</span>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;|&quot;</span><span class="p">:</span>
-
                     <span class="c1"># The output format is different for minimisation protocols.</span>
                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">):</span>
-
                         <span class="c1"># No equals sign in the line.</span>
                         <span class="k">if</span> <span class="s2">&quot;=&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-
                             <span class="c1"># Split the line using whitespace.</span>
                             <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
@@ -2135,7 +2124,6 @@
 
                         <span class="c1"># Process the header record.</span>
                         <span class="k">if</span> <span class="n">is_header</span><span class="p">:</span>
-
                             <span class="c1"># Split the line using whitespace.</span>
                             <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
@@ -2164,7 +2152,6 @@
 
                     <span class="c1"># Append each record to the dictionary.</span>
                     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
-
                         <span class="c1"># Strip whitespace from the record key.</span>
                         <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
@@ -2310,81 +2297,7 @@
                         <span class="p">)</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">()</span>
 
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">_create_restraint_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_idxs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Internal helper function to create an AMBER restraint mask from a</span>
-<span class="sd">        list of atom indices.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-
-<span class="sd">        atom_idxs : [int]</span>
-<span class="sd">            A list of atom indices.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-
-<span class="sd">        restraint_mask : str</span>
-<span class="sd">            The AMBER restraint mask.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;atom_idxs&#39; must be a list of &#39;int&#39; types.&quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;atom_idxs&#39; must be a list of &#39;int&#39; types.&quot;</span><span class="p">)</span>
-
-        <span class="c1"># AMBER has a restriction on the number of characters in the restraint</span>
-        <span class="c1"># mask (not documented) so we can&#39;t just use comma-separated atom</span>
-        <span class="c1"># indices. Instead we loop through the indices and use hyphens to</span>
-        <span class="c1"># separate contiguous blocks of indices, e.g. 1-23,34-47,...</span>
-
-        <span class="c1"># Create a set to sort and ensure no duplicates, then convert back to a list.</span>
-        <span class="c1"># This should already by done, but do so again in case the user is accessing</span>
-        <span class="c1"># the method directly.</span>
-        <span class="n">atom_idxs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">))</span>
-        <span class="n">atom_idxs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-
-        <span class="c1"># Handle single atom restraints differently.</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atom_idxs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">restraint_mask</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;@</span><span class="si">{</span><span class="n">atom_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Start the mask with the first atom index. (AMBER is 1 indexed.)</span>
-            <span class="n">restraint_mask</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;@</span><span class="si">{</span><span class="n">atom_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-
-            <span class="c1"># Store the current index.</span>
-            <span class="n">prev_idx</span> <span class="o">=</span> <span class="n">atom_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-            <span class="c1"># Store the lead index for this block.</span>
-            <span class="n">lead_idx</span> <span class="o">=</span> <span class="n">prev_idx</span>
-
-            <span class="c1"># Loop over all other indices.</span>
-            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">atom_idxs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-                <span class="c1"># There is a gap in the indices.</span>
-                <span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">prev_idx</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">prev_idx</span> <span class="o">!=</span> <span class="n">lead_idx</span><span class="p">:</span>
-                        <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prev_idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;,</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-                    <span class="n">lead_idx</span> <span class="o">=</span> <span class="n">idx</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># This is the first index beyond the lead.</span>
-                    <span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">lead_idx</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                        <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="s2">&quot;-&quot;</span>
-                <span class="c1"># Set the value of the previous index.</span>
-                <span class="n">prev_idx</span> <span class="o">=</span> <span class="n">idx</span>
-
-            <span class="c1"># Add the final atom to the mask.</span>
-            <span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">atom_idxs</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">idx</span> <span class="o">!=</span> <span class="n">lead_idx</span><span class="p">:</span>
-                    <span class="n">restraint_mask</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;,</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="k">return</span> <span class="n">restraint_mask</span></div>
+                <span class="k">return</span> <span class="kc">None</span></div>
 </pre></div>
         </article>
       </div>
@@ -2399,7 +2312,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

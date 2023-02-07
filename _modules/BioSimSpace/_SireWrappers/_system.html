@@ -713,7 +713,6 @@
 
         <span class="c1"># Slice.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
-
             <span class="c1"># Create a list to hold the molecules.</span>
             <span class="n">molecules</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -2036,10 +2035,8 @@
 
         <span class="c1"># Search the entire system.</span>
         <span class="k">if</span> <span class="n">mol_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
             <span class="c1"># Only search the system directly if there are no perturbable molecules.</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nPerturbableMolecules</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-
                 <span class="c1"># Backbone restraints.</span>
                 <span class="k">if</span> <span class="n">restraint</span> <span class="o">==</span> <span class="s2">&quot;backbone&quot;</span><span class="p">:</span>
                     <span class="c1"># Find all N, CA, C, and O atoms in protein residues.</span>
@@ -2295,7 +2292,6 @@
 
         <span class="c1"># Loop over all of the molecules.</span>
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">mol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mols</span><span class="p">):</span>
-
             <span class="c1"># Extract the atomic coordinates and append them to the vector.</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="s2">&quot;coordinates&quot;</span> <span class="ow">in</span> <span class="n">property_map</span><span class="p">:</span>
@@ -2355,7 +2351,6 @@
 
         <span class="c1"># Loop over all of the molecules.</span>
         <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
-
             <span class="c1"># Create a copy of the molecule.</span>
             <span class="n">new_mol</span> <span class="o">=</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
@@ -2518,7 +2513,6 @@
         <span class="n">waters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getWaterMolecules</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">waters</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-
             <span class="c1"># Don&#39;t perform conversion if the topology already matches the</span>
             <span class="c1"># the template for the desired format.</span>
 
@@ -2623,7 +2617,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 01, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             
