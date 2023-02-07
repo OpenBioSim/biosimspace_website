@@ -17,15 +17,16 @@ branch = repo.head.shorthand
 release = project.__version__
 version = project.__version__.split("+")[0]
 
+if not "+" in release:
+    is_tagged_release = True
+else:
+    is_tagged_release = False
+
 if version.find("untagged") != -1:
     print("This is an untagged branch")
     version = project.__manual_version__
 
 print(f"Build docs for branch {branch} version {version}")
-
-# we will only build docs for the main and devel branches
-# (as these are moved into special locations)
-is_tagged_release = False
 
 try:
     force_build_docs = os.environ["FORCE_BUILD_DOCS"]
@@ -50,17 +51,17 @@ if force_overwrite_devel:
 if force_overwrite_main:
     branch = "main"
 
-if branch not in ["main", "devel"]:
-    if branch.find(version) != -1:
-        print(f"Building the docs for tag {version}")
-        is_tagged_release = True
-    elif force_build_docs:
+if branch not in ["main", "devel"] and not is_tagged_release:
+    if force_build_docs:
         print(f"Force-building docs for branch {branch}")
     else:
         print(f"We don't build the docs for branch {branch}")
         sys.exit(0)
 else:
-    print(f"Buiding the docs for branch {branch}")
+    if is_tagged_release:
+        print(f"Buiding the docs for version {version}")
+    else:
+        print(f"Buiding the docs for branch {branch}")
 
 os.environ["PROJECT_VERSION"] = version
 os.environ["PROJECT_BRANCH"] = branch

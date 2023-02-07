@@ -14,6 +14,11 @@ branch = repo.head.shorthand
 release = project.__version__
 version = project.__version__.split("+")[0]
 
+if not "+" in release:
+    is_tagged_release = True
+else:
+    is_tagged_release = False
+
 if version.find("untagged") != -1:
     print("This is an untagged branch")
     version = project.__manual_version__
@@ -28,7 +33,7 @@ try:
 except Exception:
     force_build_docs = False
 
-if branch not in ["main", "devel"]:
+if branch not in ["main", "devel"] and not is_tagged_release:
     if branch.find(version) != -1:
         print(f"Building the docs for tag {version}")
         is_tagged_release = True
