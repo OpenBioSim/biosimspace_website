@@ -567,7 +567,7 @@ can be run independently and allocated their own specific resources.</p>
 <td><p>Return whether each process is running.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.ProcessRunner.kill" title="BioSimSpace.Process.ProcessRunner.kill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kill</span></code></a>(index)</p></td>
-<td><p>Kill a specific process. The same can be achieved using:</p></td>
+<td><p>Kill a specific process.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.ProcessRunner.killAll" title="BioSimSpace.Process.ProcessRunner.killAll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">killAll</span></code></a>()</p></td>
 <td><p>Kill all of the processes.</p></td>
@@ -606,7 +606,7 @@ can be run independently and allocated their own specific resources.</p>
 <td><p>Set the process runner name.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.ProcessRunner.start" title="BioSimSpace.Process.ProcessRunner.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a>(index)</p></td>
-<td><p>Start a specific process. The same can be achieved using:</p></td>
+<td><p>Start a specific process.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.ProcessRunner.startAll" title="BioSimSpace.Process.ProcessRunner.startAll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">startAll</span></code></a>([serial, batch_size, max_retries])</p></td>
 <td><p>Start all of the processes.</p></td>
@@ -704,19 +704,15 @@ can be run independently and allocated their own specific resources.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.ProcessRunner.kill">
 <span class="sig-name descname"><span class="pre">kill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_process_runner.html#ProcessRunner.kill"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.ProcessRunner.kill" title="Permalink to this definition">#</a></dt>
-<dd><blockquote>
-<div><p>Kill a specific process. The same can be achieved using:</p>
-</div></blockquote>
-<p>.</p>
+<dd><p>Kill a specific process. The same can be achieved using:</p>
 <blockquote>
-<div><blockquote>
 <div><p>runner.processes()[index].kill()</p>
 </div></blockquote>
-<dl class="simple">
-<dt>index<span class="classifier">int</span></dt><dd><p>The index of the process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the process.</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -868,19 +864,15 @@ can be run independently and allocated their own specific resources.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.ProcessRunner.start">
 <span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_process_runner.html#ProcessRunner.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.ProcessRunner.start" title="Permalink to this definition">#</a></dt>
-<dd><blockquote>
-<div><p>Start a specific process. The same can be achieved using:</p>
-</div></blockquote>
-<p>.</p>
+<dd><p>Start a specific process. The same can be achieved using:</p>
 <blockquote>
-<div><blockquote>
 <div><p>runner.processes()[index].start()</p>
 </div></blockquote>
-<dl class="simple">
-<dt>index<span class="classifier">int</span></dt><dd><p>The index of the process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the process.</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -960,7 +952,7 @@ to the output of multiprocess.cpu_count().</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 03, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             

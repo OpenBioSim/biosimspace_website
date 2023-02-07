@@ -532,8 +532,8 @@
 
 <span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
 
+<span class="kn">import</span> <span class="nn">glob</span> <span class="k">as</span> <span class="nn">_glob</span>
 <span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
 <span class="kn">import</span> <span class="nn">shlex</span> <span class="k">as</span> <span class="nn">_shlex</span>
@@ -2891,7 +2891,7 @@
         <span class="c1"># Check that the current trajectory file is found.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_traj_file</span><span class="p">):</span>
             <span class="c1"># If not, first check for any trr extension.</span>
-            <span class="n">traj_file</span> <span class="o">=</span> <span class="n">_IO</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/*.trr&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">)</span>
+            <span class="n">traj_file</span> <span class="o">=</span> <span class="n">_glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/*.trr&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">)</span>
 
             <span class="c1"># Store the number of trr files.</span>
             <span class="n">num_trr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">traj_file</span><span class="p">)</span>
@@ -2901,7 +2901,7 @@
                 <span class="k">return</span> <span class="n">traj_file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># Now check for any xtc files.</span>
-                <span class="n">traj_file</span> <span class="o">=</span> <span class="n">_IO</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/*.xtc&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">)</span>
+                <span class="n">traj_file</span> <span class="o">=</span> <span class="n">_glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/*.xtc&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">)</span>
 
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">traj_file</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">traj_file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -3000,7 +3000,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 03, 2023</div>
+              Last updated on Feb 07, 2023</div>
           </div>
           <div class="right-details">
             
