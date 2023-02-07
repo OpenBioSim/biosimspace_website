@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.Somd" href="BioSimSpace.Process.Somd.html" /><link rel="prev" title="BioSimSpace.Process.OpenMM" href="BioSimSpace.Process.OpenMM.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.Somd" href="BioSimSpace.Process.Somd.html" /><link rel="prev" title="BioSimSpace.Process.OpenMM" href="BioSimSpace.Process.OpenMM.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Process.Plumed - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -156,7 +157,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
@@ -496,13 +503,13 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="section" id="biosimspace-process-plumed">
+          <section id="biosimspace-process-plumed">
 <h1>BioSimSpace.Process.Plumed<a class="headerlink" href="#biosimspace-process-plumed" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Plumed">
@@ -513,7 +520,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">work_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_plumed.html#Plumed.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Plumed.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>work_dir</strong> (<em>str</em>) – The working directory of the process that is interfacing
 with PLUMED.</p>
 </dd>
@@ -523,10 +530,6 @@ with PLUMED.</p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Plumed.__init__" title="BioSimSpace.Process.Plumed.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(work_dir)</p></td>
 <td><p>Constructor.</p></td>
@@ -551,7 +554,7 @@ with PLUMED.</p>
 <span class="sig-name descname"><span class="pre">createConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_plumed.html#Plumed.createConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Plumed.createConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a PLUMED configuration file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – A BioSimSpace system object.</p></li>
 <li><p><strong>protocol</strong> (<a class="reference internal" href="BioSimSpace.Protocol.Metadynamics.html#BioSimSpace.Protocol.Metadynamics" title="BioSimSpace.Protocol.Metadynamics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol.Metadynamics</span></code></a>,                     <a class="reference internal" href="BioSimSpace.Protocol.Steering.html#BioSimSpace.Protocol.Steering" title="BioSimSpace.Protocol.Steering"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol.Steering</span></code></a>,             The metadynamics or steered molecular dynamics protocol.) – </p></li>
@@ -560,11 +563,11 @@ values. This allows the user to refer to properties with their
 own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>config, auxiliary_files</strong> – The list of PLUMED configuration strings and paths to any auxiliary
 files required by the collective variables.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>[str], [str]</p>
 </dd>
 </dl>
@@ -575,7 +578,7 @@ files required by the collective variables.</p>
 <span class="sig-name descname"><span class="pre">getCollectiveVariable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_plumed.html#Plumed.getCollectiveVariable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Plumed.getCollectiveVariable" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the value of a collective variable.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>index</strong> (<em>int</em>) – The index of the collective variable (CV), or CV component. If
 there are a mixture of single and multi-component CVs, then they
@@ -586,10 +589,10 @@ the first with one component and the second with two, then index
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>collective_variable</strong> – The value of the collective variable.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Types.html#module-BioSimSpace.Types" title="BioSimSpace.Types"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a></p>
 </dd>
 </dl>
@@ -600,7 +603,7 @@ the first with one component and the second with two, then index
 <span class="sig-name descname"><span class="pre">getFreeEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kt=1.0000</span> <span class="pre">KT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_plumed.html#Plumed.getFreeEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Plumed.getFreeEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current free energy estimate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>index</strong> (<em>int</em>) – The index of the collective variable (CV), or CV component. If
 there are a mixture of single and multi-component CVs, then they
@@ -623,13 +626,13 @@ check for convergence.</p></li>
 <span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_plumed.html#Plumed.getTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Plumed.getTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the simulation run time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>time</strong> – The simulation run time.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -637,7 +640,7 @@ check for convergence.</p></li>
 
 </dd></dl>
 
-</div>
+</section>
 
         </article>
       </div>
@@ -679,8 +682,34 @@ check for convergence.</p></li>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace.Process.Plumed</a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Process.Plumed"><code class="docutils literal notranslate"><span class="pre">Plumed</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Process.Plumed.__init__"><code class="docutils literal notranslate"><span class="pre">Plumed.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Plumed.createConfig"><code class="docutils literal notranslate"><span class="pre">Plumed.createConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Plumed.getCollectiveVariable"><code class="docutils literal notranslate"><span class="pre">Plumed.getCollectiveVariable()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Plumed.getFreeEnergy"><code class="docutils literal notranslate"><span class="pre">Plumed.getFreeEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Plumed.getTime"><code class="docutils literal notranslate"><span class="pre">Plumed.getTime()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -690,6 +719,7 @@ check for convergence.</p></li>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/js/custom.js"></script>
     </body>

@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Roadmap" href="roadmap.html" /><link rel="prev" title="Coding Style" href="codestyle.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Roadmap" href="roadmap.html" /><link rel="prev" title="Coding Style" href="codestyle.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Packaging releases - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
@@ -502,7 +509,7 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="packaging-releases">
+          <section id="packaging-releases">
 <h1>Packaging releases<a class="headerlink" href="#packaging-releases" title="Permalink to this heading">#</a></h1>
 <p><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is now (almost) fully tested and deployed using GitHub actions.
 The development process should be;</p>
@@ -542,7 +549,7 @@ and <a class="reference external" href="https://chryswoods.com/git_collaboration
 to learn how to use Git, GitHub, feature branching, merging, pull
 requests etc.</p>
 </div>
-<div class="section" id="defining-a-release">
+<section id="defining-a-release">
 <h2>Defining a release<a class="headerlink" href="#defining-a-release" title="Permalink to this heading">#</a></h2>
 <p>We will release <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> regularly. Releases aim to be backwards
 compatible and capable of being used for production runs, at least for
@@ -555,8 +562,8 @@ the functionality that is fully described in the tutorial.</p>
 to create a new release. If you are interested in helping join the release
 management group then please feel free to get in touch.</p>
 </div>
-</div>
-<div class="section" id="creating-a-release">
+</section>
+<section id="creating-a-release">
 <h2>Creating a release<a class="headerlink" href="#creating-a-release" title="Permalink to this heading">#</a></h2>
 <p>There are a number of stages to go through to create a release:</p>
 <ol class="arabic simple">
@@ -631,8 +638,8 @@ to announce this new release.</p></li>
 </ol>
 <p>(We are in the process of automating many of the above steps, so hope
 that this process will become much easier in the future.)</p>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
@@ -705,6 +712,7 @@ that this process will become much easier in the future.)</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>

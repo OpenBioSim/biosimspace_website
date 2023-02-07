@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Types._time - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +177,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
@@ -535,7 +541,7 @@
 <span class="kn">from</span> <span class="nn">._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
 
-<div class="viewcode-block" id="Time"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time">[docs]</a><span class="k">class</span> <span class="nc">Time</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
+<div class="viewcode-block" id="Time"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time">[docs]</a><span class="k">class</span> <span class="nc">Time</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A time type.&quot;&quot;&quot;</span>
 
     <span class="c1"># A list of the supported Sire unit names.</span>
@@ -604,7 +610,7 @@
     <span class="c1">#     Angle, Charge, Length, Mass, Quantity, Temperature, Time</span>
     <span class="n">_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Time.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -660,7 +666,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%5.4f</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">,</span> <span class="n">abbrev</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Time.days"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.days">[docs]</a>    <span class="k">def</span> <span class="nf">days</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.days"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.days">[docs]</a>    <span class="k">def</span> <span class="nf">days</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in days.</span>
 
@@ -674,7 +680,7 @@
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">_SireUnits</span><span class="o">.</span><span class="n">day</span><span class="p">),</span> <span class="s2">&quot;DAY&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.hours"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.hours">[docs]</a>    <span class="k">def</span> <span class="nf">hours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.hours"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.hours">[docs]</a>    <span class="k">def</span> <span class="nf">hours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in hours.</span>
 
@@ -689,7 +695,7 @@
             <span class="s2">&quot;HOUR&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.minutes"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.minutes">[docs]</a>    <span class="k">def</span> <span class="nf">minutes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.minutes"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.minutes">[docs]</a>    <span class="k">def</span> <span class="nf">minutes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in minutes.</span>
 
@@ -704,7 +710,7 @@
             <span class="s2">&quot;MINUTE&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.seconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.seconds">[docs]</a>    <span class="k">def</span> <span class="nf">seconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.seconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.seconds">[docs]</a>    <span class="k">def</span> <span class="nf">seconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in seconds.</span>
 
@@ -719,7 +725,7 @@
             <span class="s2">&quot;SECOND&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.milliseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.milliseconds">[docs]</a>    <span class="k">def</span> <span class="nf">milliseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.milliseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.milliseconds">[docs]</a>    <span class="k">def</span> <span class="nf">milliseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in milliseconds.</span>
 
@@ -736,7 +742,7 @@
             <span class="s2">&quot;MILLISECOND&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.nanoseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.nanoseconds">[docs]</a>    <span class="k">def</span> <span class="nf">nanoseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.nanoseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.nanoseconds">[docs]</a>    <span class="k">def</span> <span class="nf">nanoseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in nanoseconds.</span>
 
@@ -751,7 +757,7 @@
             <span class="s2">&quot;NANOSECOND&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.picoseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.picoseconds">[docs]</a>    <span class="k">def</span> <span class="nf">picoseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.picoseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.picoseconds">[docs]</a>    <span class="k">def</span> <span class="nf">picoseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in picoseconds.</span>
 
@@ -766,7 +772,7 @@
             <span class="s2">&quot;PICOSECOND&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Time.femtoseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Units.Time.Time.femtoseconds">[docs]</a>    <span class="k">def</span> <span class="nf">femtoseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Time.femtoseconds"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Time.html#BioSimSpace.Types.Time.femtoseconds">[docs]</a>    <span class="k">def</span> <span class="nf">femtoseconds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the time in femtoseconds.</span>
 
@@ -964,6 +970,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/js/custom.js"></script>
     </body>

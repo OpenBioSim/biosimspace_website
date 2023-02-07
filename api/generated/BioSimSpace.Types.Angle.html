@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Types.Area" href="BioSimSpace.Types.Area.html" /><link rel="prev" title="BioSimSpace.Types" href="../index_Types.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Types.Area" href="BioSimSpace.Types.Area.html" /><link rel="prev" title="BioSimSpace.Types" href="../index_Types.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Types.Angle - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -156,7 +157,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
@@ -496,13 +503,13 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="section" id="biosimspace-types-angle">
+          <section id="biosimspace-types-angle">
 <h1>BioSimSpace.Types.Angle<a class="headerlink" href="#biosimspace-types-angle" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Angle">
@@ -515,7 +522,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">*args</span></code> can be a value and unit, or a string representation
 of the angle, e.g. “3 radians”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>float</em>) – The value.</p></li>
 <li><p><strong>unit</strong> (<em>str</em>) – The unit.</p></li>
@@ -545,10 +552,6 @@ would be valid arguments: “3.14 R”, “3.14 radians”, “314e-2 Radians”
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Types.Angle.__init__" title="BioSimSpace.Types.Angle.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args)</p></td>
 <td><p>Constructor.</p></td>
@@ -597,10 +600,10 @@ would be valid arguments: “3.14 R”, “3.14 radians”, “314e-2 Radians”
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.angle" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘angle’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>angle</strong> – The power in the ‘angle’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -611,10 +614,10 @@ would be valid arguments: “3.14 R”, “3.14 radians”, “314e-2 Radians”
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.charge" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘charge’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>charge</strong> – The power in the ‘charge’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -625,10 +628,10 @@ would be valid arguments: “3.14 R”, “3.14 radians”, “314e-2 Radians”
 <span class="sig-name descname"><span class="pre">degrees</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_angle.html#Angle.degrees"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Angle.degrees" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the angle in degrees.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>angle</strong> – The angle in degrees.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Angle" title="BioSimSpace.Types.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a></p>
 </dd>
 </dl>
@@ -651,10 +654,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.length" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘length’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The power in the ‘length’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -665,10 +668,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.mass" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘mass’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mass</strong> – The power in the ‘mass’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -679,10 +682,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quantity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.quantity" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘quantity’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>quantity</strong> – The power in the ‘quantity’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -693,10 +696,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">radians</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_angle.html#Angle.radians"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Angle.radians" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the angle in radians.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>angle</strong> – The angle in radians.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Angle" title="BioSimSpace.Types.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a></p>
 </dd>
 </dl>
@@ -707,10 +710,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.temperature" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘temperature’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>temperature</strong> – The power in the ‘temperature’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -721,10 +724,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.time" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘time’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time</strong> – The power the ‘time’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -735,10 +738,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.unit" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the unit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>unit</strong> – The unit of the type.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -749,10 +752,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Angle.value" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> – The value of the type.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -760,7 +763,7 @@ containing the power in each dimension.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
         </article>
       </div>
@@ -802,8 +805,42 @@ containing the power in each dimension.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace.Types.Angle</a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle"><code class="docutils literal notranslate"><span class="pre">Angle</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.__init__"><code class="docutils literal notranslate"><span class="pre">Angle.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.angle"><code class="docutils literal notranslate"><span class="pre">Angle.angle()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.charge"><code class="docutils literal notranslate"><span class="pre">Angle.charge()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.degrees"><code class="docutils literal notranslate"><span class="pre">Angle.degrees()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.dimensions"><code class="docutils literal notranslate"><span class="pre">Angle.dimensions()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.length"><code class="docutils literal notranslate"><span class="pre">Angle.length()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.mass"><code class="docutils literal notranslate"><span class="pre">Angle.mass()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.quantity"><code class="docutils literal notranslate"><span class="pre">Angle.quantity()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.radians"><code class="docutils literal notranslate"><span class="pre">Angle.radians()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.temperature"><code class="docutils literal notranslate"><span class="pre">Angle.temperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.time"><code class="docutils literal notranslate"><span class="pre">Angle.time()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.unit"><code class="docutils literal notranslate"><span class="pre">Angle.unit()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Angle.value"><code class="docutils literal notranslate"><span class="pre">Angle.value()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -813,6 +850,7 @@ containing the power in each dimension.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/js/custom.js"></script>
     </body>

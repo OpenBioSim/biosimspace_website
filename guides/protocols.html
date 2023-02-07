@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="API Documentation" href="../api/index.html" /><link rel="prev" title="Nodes" href="nodes.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="API Documentation" href="../api/index.html" /><link rel="prev" title="Nodes" href="nodes.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Protocols - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
@@ -502,7 +509,7 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="protocols">
+          <section id="protocols">
 <span id="ref-protocols"></span><h1>Protocols<a class="headerlink" href="#protocols" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
@@ -515,7 +522,7 @@ used for molecular dynamics simulations are defined <a class="reference internal
 construction of a <a class="reference internal" href="../api/index_Process.html#ref-process"><span class="std std-ref">process</span></a> object. It is here that all
 of the required input files are created for the specific process, as well
 as any command-line arguments that need to be passed to the executable.</p>
-<div class="section" id="customising-protocols">
+<section id="customising-protocols">
 <h2>Customising protocols<a class="headerlink" href="#customising-protocols" title="Permalink to this heading">#</a></h2>
 <p>Often a user may wish to customise the protocols that are provided by
 BioSimSpace. For a particular molecular dynamics engine, this can be
@@ -540,8 +547,8 @@ simulation engine happens to be installed there.</p>
 <code class="docutils literal notranslate"><span class="pre">createConfig</span></code> methods in the classes used for
 <a class="reference internal" href="../api/index_Config.html#module-BioSimSpace._Config" title="BioSimSpace._Config"><code class="xref py py-data docutils literal notranslate"><span class="pre">configuration</span> <span class="pre">file</span> <span class="pre">generation</span></code></a>
 for the molecular dynamics enegines.</p>
-</div>
-<div class="section" id="writing-protocols">
+</section>
+<section id="writing-protocols">
 <h2>Writing protocols<a class="headerlink" href="#writing-protocols" title="Permalink to this heading">#</a></h2>
 <p>Occasionally it might be desirable to write a protocol for a <em>new</em> simulation
 that isn’t currently supported by BioSimSpace. To do so requires the following
@@ -598,8 +605,8 @@ a metadynamics protocol is chosen. Modifications for specific metadynamics
 protocols, e.g. adding support for new collective variables, needs to
 be implemented in the <code class="docutils literal notranslate"><span class="pre">createConfig</span></code> method of the <a class="reference external" href="https://github.com/openbiosim/biosimspace/blob/devel/python/BioSimSpace/Process/_plumed.py">BioSimSpace.Process.Plumed</a> class.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
@@ -672,6 +679,7 @@ be implemented in the <code class="docutils literal notranslate"><span class="pr
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>

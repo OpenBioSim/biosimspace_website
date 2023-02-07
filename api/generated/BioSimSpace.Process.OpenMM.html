@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.Plumed" href="BioSimSpace.Process.Plumed.html" /><link rel="prev" title="BioSimSpace.Process.Namd" href="BioSimSpace.Process.Namd.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.Plumed" href="BioSimSpace.Process.Plumed.html" /><link rel="prev" title="BioSimSpace.Process.Namd" href="BioSimSpace.Process.Namd.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Process.OpenMM - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -156,7 +157,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
@@ -496,13 +503,13 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="section" id="biosimspace-process-openmm">
+          <section id="biosimspace-process-openmm">
 <h1>BioSimSpace.Process.OpenMM<a class="headerlink" href="#biosimspace-process-openmm" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Process.OpenMM">
@@ -513,7 +520,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'openmm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CPU'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – The molecular system.</p></li>
 <li><p><strong>protocol</strong> (<a class="reference internal" href="../index_Protocol.html#module-BioSimSpace.Protocol" title="BioSimSpace.Protocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a>) – The protocol for the OpenMM process.</p></li>
@@ -537,10 +544,6 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.OpenMM.__init__" title="BioSimSpace.Process.OpenMM.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(system, protocol[, exe, name, ...])</p></td>
 <td><p>Constructor.</p></td>
@@ -733,7 +736,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <span class="sig-name descname"><span class="pre">addArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.addArgs" title="Permalink to this definition">#</a></dt>
 <dd><p>Append additional command-line arguments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>, </em><em>collections.OrderedDict</em>) – A dictionary of command line arguments.</p>
 </dd>
 </dl>
@@ -744,7 +747,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <span class="sig-name descname"><span class="pre">addToConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.addToConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.addToConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a string to the OpenMM Python script configuration.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> (<em>str</em><em>, </em><em>[</em><em>str</em><em>]</em>) – A configuration string, a list of configuration strings, or a
 path to a configuration file.</p>
 </dd>
@@ -762,10 +765,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.command" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the command-line string used to run the process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>command</strong> – The command string.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -776,7 +779,7 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">deleteArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.deleteArg" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete an argument from the dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg</strong> (<em>str</em>) – The argument to delete.</p>
 </dd>
 </dl>
@@ -787,10 +790,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">exe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.exe" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the executable.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>exe</strong> – The path to the executable.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -801,10 +804,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getArgString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getArgString" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the command-line arguments string.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg_string</strong> – The command-line argument string.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -815,10 +818,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getArgStringList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getArgStringList" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert the argument dictionary into a list of strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg_string_list</strong> – The list of command-line arguments.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>[str]</p>
 </dd>
 </dl>
@@ -829,10 +832,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getArgs" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the dictionary of command-line arguments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> – The dictionary of command-line arguments.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>collections.OrderedDict</p>
 </dd>
 </dl>
@@ -843,10 +846,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getConfig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the list of strings defining the OpenMM Python script.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> – The list of configuration strings.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>[str]</p>
 </dd>
 </dl>
@@ -857,13 +860,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentKineticEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current kinetic energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The kinetic energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -874,13 +877,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentPotentialEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current potential energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The potential energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -891,17 +894,17 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentRecord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a current record from the stdout dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>record</strong> (<em>str</em>) – The record key.</p></li>
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>unit</strong> (<a class="reference internal" href="../index_Units.html#module-BioSimSpace.Units" title="BioSimSpace.Units"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a>) – The unit to convert the record to.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>record</strong> – The matching record.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Types.html#module-BioSimSpace.Types" title="BioSimSpace.Types"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a></p>
 </dd>
 </dl>
@@ -912,13 +915,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentRecords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentRecords" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the current dictionary of stdout time-series records.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>records</strong> – The dictionary of time-series records.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDict</span></code></p>
 </dd>
 </dl>
@@ -929,13 +932,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentStep" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current number of integration steps.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>step</strong> – The current number of integration steps.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -946,10 +949,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentSystem" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the latest molecular system.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>system</strong> – The latest molecular system.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -960,13 +963,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentTemperature" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current temperature.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>temperature</strong> – The current temperature.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
 </dd>
 </dl>
@@ -977,16 +980,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current simulation time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>time</strong> – The current simulation time in nanoseconds.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -997,13 +1000,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentTotalEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current total energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1014,13 +1017,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getCurrentVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getCurrentVolume" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current volume.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>volume</strong> – The volume.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Volume.html#BioSimSpace.Types.Volume" title="BioSimSpace.Types.Volume"><code class="xref py py-class docutils literal notranslate"><span class="pre">Volume</span></code></a></p>
 </dd>
 </dl>
@@ -1031,13 +1034,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getFrame" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a specific trajectory frame.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the frame.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>frame</strong> – The System object of the corresponding frame.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -1049,16 +1052,16 @@ path to a configuration file.</p>
 <dd><p>Return a link to a zip file containing the input files used by
 the process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name of the zip file.</p></li>
 <li><p><strong>file_link</strong> (<em>bool</em>) – Whether to return a FileLink when working in Jupyter.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>output</strong> – A path, or file link, to an archive of the process input.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str, IPython.display.FileLink</p>
 </dd>
 </dl>
@@ -1069,16 +1072,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getKineticEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the kinetic energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The kinetic energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1100,17 +1103,17 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getOutput" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a link to a zip file of the working directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name of the zip file.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 <li><p><strong>file_link</strong> (<em>bool</em>) – Whether to return a FileLink when working in Jupyter.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>output</strong> – A path, or file link, to an archive of the process output.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str, IPython.display.FileLink</p>
 </dd>
 </dl>
@@ -1121,10 +1124,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getPackageName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getPackageName" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the package name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – The name of the package.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -1135,16 +1138,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getPotentialEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the potential energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The potential energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1155,7 +1158,7 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getRecord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a record from the stdout dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>record</strong> (<em>str</em>) – The record key.</p></li>
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
@@ -1163,10 +1166,10 @@ the process.</p>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>record</strong> – The matching record.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Types.html#module-BioSimSpace.Types" title="BioSimSpace.Types"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a></p>
 </dd>
 </dl>
@@ -1177,13 +1180,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getRecords" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the dictionary of stdout time-series records.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>records</strong> – The dictionary of time-series records.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDict</span></code></p>
 </dd>
 </dl>
@@ -1194,10 +1197,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getSeed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getSeed" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the random number seed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>seed</strong> – The random number seed.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -1208,13 +1211,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getStderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getStderr" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the entire stderr for the process as a list of strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>error</strong> – The list of stderror strings.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>[str]</p>
 </dd>
 </dl>
@@ -1225,13 +1228,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getStdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getStdout" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the entire stdout for the process as a list of strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>output</strong> – The list of stdout strings.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>[str]</p>
 </dd>
 </dl>
@@ -1242,16 +1245,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getStep" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the number of integration steps.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>step</strong> – The current number of integration steps.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1262,13 +1265,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getSystem" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the latest molecular system.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>system</strong> – The latest molecular system.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -1279,16 +1282,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getTemperature" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the temperature.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>temperature</strong> – The temperature.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
 </dd>
 </dl>
@@ -1299,16 +1302,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the simulation time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>time</strong> – The current simulation time in nanoseconds.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -1319,16 +1322,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getTotalEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the total energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1339,13 +1342,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getTrajectory" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a trajectory object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>trajectory</strong> – The latest trajectory object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Trajectory.Trajectory.html#BioSimSpace.Trajectory.Trajectory" title="BioSimSpace.Trajectory.Trajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -1356,16 +1359,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.getVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.getVolume" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the volume.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>volume</strong> – The volume.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Volume.html#BioSimSpace.Types.Volume" title="BioSimSpace.Types.Volume"><code class="xref py py-class docutils literal notranslate"><span class="pre">Volume</span></code></a></p>
 </dd>
 </dl>
@@ -1376,10 +1379,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">inputFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.inputFiles" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the list of input files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_files</strong> – The list of autogenerated input files.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>[str]</p>
 </dd>
 </dl>
@@ -1390,7 +1393,7 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">insertArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.insertArg" title="Permalink to this definition">#</a></dt>
 <dd><p>Insert a command-line argument at a specific index.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arg</strong> (<em>str</em>) – The argument to set.</p></li>
 <li><p><strong>value</strong> – The value of the argument.</p></li>
@@ -1405,10 +1408,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">isError</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.isError" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the process exited with an error.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>is_error</strong> – Whether the process exited with an error.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -1419,10 +1422,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">isQueued</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.isQueued" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the process is queued.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>is_queued</strong> – Whether the process is queued.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -1433,10 +1436,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">isRunning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.isRunning" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the process is running.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>is_running</strong> – Whether the process is running.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -1465,7 +1468,7 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.run" title="Permalink to this definition">#</a></dt>
 <dd><p>Create and run a new process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – The molecular system.</p></li>
 <li><p><strong>protocol</strong> (<a class="reference internal" href="../index_Protocol.html#module-BioSimSpace.Protocol" title="BioSimSpace.Protocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a>) – The simulation protocol.</p></li>
@@ -1473,10 +1476,10 @@ the process.</p>
 <li><p><strong>restart</strong> (<em>bool</em>) – Whether to restart the simulation, i.e. use the original system.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>process</strong> – The new process object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Process.html#module-BioSimSpace.Process" title="BioSimSpace.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Procees</span></code></a></p>
 </dd>
 </dl>
@@ -1487,10 +1490,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">runTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.runTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the running time for the process (in minutes).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>runtime</strong> – The runtime in minutes.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -1503,7 +1506,7 @@ the process.</p>
 <p>For command-line flags, i.e. boolean arguments, the key should
 specify whether the flag is enabled (True) or not (False).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arg</strong> (<em>str</em>) – The argument to set.</p></li>
 <li><p><strong>value</strong> (<em>bool</em><em>, </em><em>str</em>) – The value of the argument.</p></li>
@@ -1517,7 +1520,7 @@ specify whether the flag is enabled (True) or not (False).</p>
 <span class="sig-name descname"><span class="pre">setArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.setArgs" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the dictionary of command-line arguments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>, </em><em>collections.OrderedDict</em>) – A dictionary of command-line arguments.</p>
 </dd>
 </dl>
@@ -1528,7 +1531,7 @@ specify whether the flag is enabled (True) or not (False).</p>
 <span class="sig-name descname"><span class="pre">setConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.setConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.setConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the list of configuration file strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> (<em>str</em><em>, </em><em>[</em><em>str</em><em>]</em>) – The list of configuration strings, or a path to a configuration
 file.</p>
 </dd>
@@ -1540,7 +1543,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.setName" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the process name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The process name.</p>
 </dd>
 </dl>
@@ -1551,7 +1554,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">setSeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.setSeed" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the random number seed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>seed</strong> (<em>int</em>) – The random number seed.</p>
 </dd>
 </dl>
@@ -1562,10 +1565,10 @@ file.</p>
 <span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.start" title="Permalink to this definition">#</a></dt>
 <dd><p>Start the OpenMM process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>process</strong> – A handle to the OpenMM process.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Process.OpenMM" title="BioSimSpace.Process.OpenMM"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process.OpenMM</span></code></a></p>
 </dd>
 </dl>
@@ -1576,7 +1579,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">stderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.stderr" title="Permalink to this definition">#</a></dt>
 <dd><p>Print the last n lines of the stderr buffer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – The number of lines to print.</p>
 </dd>
 </dl>
@@ -1587,7 +1590,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_openmm.html#OpenMM.stdout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.OpenMM.stdout" title="Permalink to this definition">#</a></dt>
 <dd><p>Print the last n lines of the stdout buffer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – The number of lines to print.</p>
 </dd>
 </dl>
@@ -1598,7 +1601,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.wait" title="Permalink to this definition">#</a></dt>
 <dd><p>Wait for the process to finish.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>max_time</strong> (<a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>, int, float) – The maximum time to wait (in minutes).</p>
 </dd>
 </dl>
@@ -1609,10 +1612,10 @@ file.</p>
 <span class="sig-name descname"><span class="pre">workDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.workDir" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the working directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>work_dir</strong> – The path of the working directory.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -1623,7 +1626,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">writeConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.OpenMM.writeConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Write the configuration to file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – The path to a file.</p>
 </dd>
 </dl>
@@ -1631,7 +1634,7 @@ file.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
         </article>
       </div>
@@ -1673,8 +1676,90 @@ file.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace.Process.OpenMM</a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM"><code class="docutils literal notranslate"><span class="pre">OpenMM</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.__init__"><code class="docutils literal notranslate"><span class="pre">OpenMM.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.addArgs"><code class="docutils literal notranslate"><span class="pre">OpenMM.addArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.addToConfig"><code class="docutils literal notranslate"><span class="pre">OpenMM.addToConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.clearArgs"><code class="docutils literal notranslate"><span class="pre">OpenMM.clearArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.command"><code class="docutils literal notranslate"><span class="pre">OpenMM.command()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.deleteArg"><code class="docutils literal notranslate"><span class="pre">OpenMM.deleteArg()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.exe"><code class="docutils literal notranslate"><span class="pre">OpenMM.exe()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getArgString"><code class="docutils literal notranslate"><span class="pre">OpenMM.getArgString()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getArgStringList"><code class="docutils literal notranslate"><span class="pre">OpenMM.getArgStringList()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getArgs"><code class="docutils literal notranslate"><span class="pre">OpenMM.getArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getConfig"><code class="docutils literal notranslate"><span class="pre">OpenMM.getConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentKineticEnergy"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentKineticEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentPotentialEnergy"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentPotentialEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentRecord"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentRecord()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentRecords"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentRecords()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentStep"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentStep()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentSystem"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentSystem()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentTemperature"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentTime"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentTotalEnergy"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentTotalEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getCurrentVolume"><code class="docutils literal notranslate"><span class="pre">OpenMM.getCurrentVolume()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getFrame"><code class="docutils literal notranslate"><span class="pre">OpenMM.getFrame()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getInput"><code class="docutils literal notranslate"><span class="pre">OpenMM.getInput()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getKineticEnergy"><code class="docutils literal notranslate"><span class="pre">OpenMM.getKineticEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getName"><code class="docutils literal notranslate"><span class="pre">OpenMM.getName()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getOutput"><code class="docutils literal notranslate"><span class="pre">OpenMM.getOutput()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getPackageName"><code class="docutils literal notranslate"><span class="pre">OpenMM.getPackageName()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getPotentialEnergy"><code class="docutils literal notranslate"><span class="pre">OpenMM.getPotentialEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getRecord"><code class="docutils literal notranslate"><span class="pre">OpenMM.getRecord()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getRecords"><code class="docutils literal notranslate"><span class="pre">OpenMM.getRecords()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getSeed"><code class="docutils literal notranslate"><span class="pre">OpenMM.getSeed()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getStderr"><code class="docutils literal notranslate"><span class="pre">OpenMM.getStderr()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getStdout"><code class="docutils literal notranslate"><span class="pre">OpenMM.getStdout()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getStep"><code class="docutils literal notranslate"><span class="pre">OpenMM.getStep()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getSystem"><code class="docutils literal notranslate"><span class="pre">OpenMM.getSystem()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getTemperature"><code class="docutils literal notranslate"><span class="pre">OpenMM.getTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getTime"><code class="docutils literal notranslate"><span class="pre">OpenMM.getTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getTotalEnergy"><code class="docutils literal notranslate"><span class="pre">OpenMM.getTotalEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getTrajectory"><code class="docutils literal notranslate"><span class="pre">OpenMM.getTrajectory()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.getVolume"><code class="docutils literal notranslate"><span class="pre">OpenMM.getVolume()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.inputFiles"><code class="docutils literal notranslate"><span class="pre">OpenMM.inputFiles()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.insertArg"><code class="docutils literal notranslate"><span class="pre">OpenMM.insertArg()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.isError"><code class="docutils literal notranslate"><span class="pre">OpenMM.isError()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.isQueued"><code class="docutils literal notranslate"><span class="pre">OpenMM.isQueued()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.isRunning"><code class="docutils literal notranslate"><span class="pre">OpenMM.isRunning()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.kill"><code class="docutils literal notranslate"><span class="pre">OpenMM.kill()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.resetArgs"><code class="docutils literal notranslate"><span class="pre">OpenMM.resetArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.resetConfig"><code class="docutils literal notranslate"><span class="pre">OpenMM.resetConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.run"><code class="docutils literal notranslate"><span class="pre">OpenMM.run()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.runTime"><code class="docutils literal notranslate"><span class="pre">OpenMM.runTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.setArg"><code class="docutils literal notranslate"><span class="pre">OpenMM.setArg()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.setArgs"><code class="docutils literal notranslate"><span class="pre">OpenMM.setArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.setConfig"><code class="docutils literal notranslate"><span class="pre">OpenMM.setConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.setName"><code class="docutils literal notranslate"><span class="pre">OpenMM.setName()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.setSeed"><code class="docutils literal notranslate"><span class="pre">OpenMM.setSeed()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.start"><code class="docutils literal notranslate"><span class="pre">OpenMM.start()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.stderr"><code class="docutils literal notranslate"><span class="pre">OpenMM.stderr()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.stdout"><code class="docutils literal notranslate"><span class="pre">OpenMM.stdout()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.wait"><code class="docutils literal notranslate"><span class="pre">OpenMM.wait()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.workDir"><code class="docutils literal notranslate"><span class="pre">OpenMM.workDir()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.OpenMM.writeConfig"><code class="docutils literal notranslate"><span class="pre">OpenMM.writeConfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -1684,6 +1769,7 @@ file.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/js/custom.js"></script>
     </body>

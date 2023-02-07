@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Changelog - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
@@ -502,16 +509,24 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="changelog">
+          <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
-<div class="section" id="openbiosim">
+<section id="openbiosim">
 <h2>OpenBioSim<a class="headerlink" href="#openbiosim" title="Permalink to this heading">#</a></h2>
 <p><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is supported by <a class="reference external" href="https://openbiosim.org">OpenBioSim</a>, a community interest
 company supporting open-source development of fostering academic/industrial collaboration
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">&lt;GitHub</a> organisation.</p>
-</div>
-<div class="section" id="feb-03-2023">
+</section>
+<section id="feb-07-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.1.0...2023.1.1">2023.1.1</a> - Feb 07 2023<a class="headerlink" href="#feb-07-2023" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Minor fixes to website documentation.</p></li>
+<li><p>Fixed issues with API documentation introduced by <a class="reference external" href="https://pypi.org/project/pydocstringformatter">pydocstringformatter</a>.</p></li>
+<li><p>Fix globbing of GROMACS trajectory files.</p></li>
+</ul>
+</section>
+<section id="feb-03-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2022.3.0...2023.1.0">2023.1.0</a> - Feb 03 2023<a class="headerlink" href="#feb-03-2023" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Wrapped the new <a class="reference external" href="https://sire.openbiosim.org/api/sire.html#sire.load">sire.load</a> function to allow loading of URLs.</p></li>
@@ -522,13 +537,13 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <li><p>Fix issues following Sire 2023 API updates.</p></li>
 <li><p>Update documentation for new OpenBioSim website.</p></li>
 </ul>
-</div>
-<div class="section" id="michellab">
+</section>
+<section id="michellab">
 <h2>Michellab<a class="headerlink" href="#michellab" title="Permalink to this heading">#</a></h2>
 <p>Prior to January 2023, <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> was hosted within the <a class="reference external" href="https://github.com/michellab/BioSimSpace">michellab</a>
 GitHub organisation. The following releases were made during that time.</p>
-</div>
-<div class="section" id="sep-28-2022-pre-release">
+</section>
+<section id="sep-28-2022-pre-release">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2022.2.1...2022.3.0">2022.3.0</a> - Sep 28 2022 (Pre-release)<a class="headerlink" href="#sep-28-2022-pre-release" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Improved NAMD restraint implementation for consistency with other engines.</p></li>
@@ -541,15 +556,15 @@ GitHub organisation. The following releases were made during that time.</p>
 <li><p>Allow continuation for GROMACS equilibration simulations. (<a class="reference external" href="https://github.com/kexul">&#64;kexul</a>)</p></li>
 <li><p>Update BioSimSpace to work with the new Sire 2023.0.0 Python API.</p></li>
 </ul>
-</div>
-<div class="section" id="mar-30-2022">
+</section>
+<section id="mar-30-2022">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2022.2.0...2022.2.1">2022.2.1</a> - Mar 30 2022<a class="headerlink" href="#mar-30-2022" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix performance issues when ensuring unique molecule numbering when adding molecules to <code class="docutils literal notranslate"><span class="pre">BioSimSpace._SireWrappers.System</span></code> and <code class="docutils literal notranslate"><span class="pre">BioSimSpace._SireWrappers.Molecules</span></code> objects.</p></li>
 <li><p>Fix extraction of box vector magnitudes for triclinic boxes.</p></li>
 </ul>
-</div>
-<div class="section" id="mar-24-2022">
+</section>
+<section id="mar-24-2022">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2022.1.0...2022.2.0">2022.2.0</a> - Mar 24 2022<a class="headerlink" href="#mar-24-2022" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Use fast C++ wrappers for updating coordinates and velocities during SOMD simulations.</p></li>
@@ -562,8 +577,8 @@ GitHub organisation. The following releases were made during that time.</p>
 <li><p>Handle trjconv frame extraction failures within <code class="docutils literal notranslate"><span class="pre">BioSimSpace.Process.Gromacs.getSystem()</span></code>.</p></li>
 <li><p>Catch and handle possible GSL error during singular valued decomposition routine used for molecular alignment.</p></li>
 </ul>
-</div>
-<div class="section" id="jan-26-2022">
+</section>
+<section id="jan-26-2022">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2020.1.0...2022.1.0">2022.1.0</a> - Jan 26 2022<a class="headerlink" href="#jan-26-2022" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added basic support for cleaning PDB files with <a class="reference external" href="https://github.com/Amber-MD/pdb4amber">pdb4amber</a> prior to read.</p></li>
@@ -580,8 +595,8 @@ combination of molecular systems.</p></li>
 <li><p>Numerous free-energy perturbation pipeline fixes and improvements. Thanks to <a class="reference external" href="https://github.com/kexul">&#64;kexul</a> and <a class="reference external" href="https://github.com/msuruzhon">&#64;msuruzhon</a> for their help testing and debugging.</p></li>
 <li><p>Switch continuous integration to GitHub actions using conda-forge compliant build and upload to Anaconda cloud.</p></li>
 </ul>
-</div>
-<div class="section" id="july-28-2020">
+</section>
+<section id="july-28-2020">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2019.3.0...2020.1.0">2020.1.0</a> - July 28 2020<a class="headerlink" href="#july-28-2020" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added logo to website and update theme (<a class="reference external" href="https://github.com/ppxasjsm">&#64;ppxasjsm</a>).</p></li>
@@ -594,8 +609,8 @@ combination of molecular systems.</p></li>
 <li><p>Run vacuum simulations on a single thread when using GROMACS to avoid domain decomposition.</p></li>
 <li><p>Make sure BioSimSpace is always built against the latest version of Sire during conda build.</p></li>
 </ul>
-</div>
-<div class="section" id="nov-22-2019">
+</section>
+<section id="nov-22-2019">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2019.2.0...2019.3.0">2019.3.0</a> - Nov 22 2019<a class="headerlink" href="#nov-22-2019" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Make FKCOMBU download during conda build resilient to server downtime.</p></li>
@@ -603,8 +618,8 @@ combination of molecular systems.</p></li>
 <li><p>Fixed numerous typos in Sphinx documentation.</p></li>
 <li><p>Added Journal of Open Source Software paper.</p></li>
 </ul>
-</div>
-<div class="section" id="sep-11-2019">
+</section>
+<section id="sep-11-2019">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2019.1.0...2019.2.0">2019.2.0</a> - Sep 11 2019<a class="headerlink" href="#sep-11-2019" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Switched to using <a class="reference external" href="https://www.rdkit.org/">RDKit</a> for maximum common substructure (MCS) mappings.</p></li>
@@ -617,8 +632,8 @@ combination of molecular systems.</p></li>
 <li><p>Added thin-wrappers for several additional Sire objects, e.g. Residue, Atom, and Molecules container.</p></li>
 <li><p>Performance improvements for searching, indexing, and extracting objects from molecular containers, e.g. System, Molecule.</p></li>
 </ul>
-</div>
-<div class="section" id="may-02-2019">
+</section>
+<section id="may-02-2019">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2018.1.1...2019.1.0">2019.1.0</a> - May 02 2019<a class="headerlink" href="#may-02-2019" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Added support for parameterising proteins and ligands.</p></li>
@@ -628,8 +643,8 @@ combination of molecular systems.</p></li>
 <li><p>Added Azure Pipeline to automatically build, test, document, and deploy BioSimSpace.</p></li>
 <li><p>Created automatic Conda package pipeline.</p></li>
 </ul>
-</div>
-<div class="section" id="may-02-2018">
+</section>
+<section id="may-02-2018">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2018.1.0...2018.1.1">2018.1.1</a> - May 02 2018<a class="headerlink" href="#may-02-2018" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed conda NetCDF issue on macOS. Yay for managing <a class="reference external" href="https://xkcd.com/1987">python environments</a>!</p></li>
@@ -639,14 +654,14 @@ combination of molecular systems.</p></li>
 <li><p>Fixed error in RMSD calculation within <code class="docutils literal notranslate"><span class="pre">BioSimSpace.Trajectory</span></code> class.</p></li>
 <li><p>Improved example scripts and notebooks.</p></li>
 </ul>
-</div>
-<div class="section" id="may-01-2018">
+</section>
+<section id="may-01-2018">
 <h2>2018.1.0 - May 01 2018<a class="headerlink" href="#may-01-2018" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Initial public release of BioSimSpace.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
@@ -694,6 +709,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#feb-07-2023">2023.1.1 - Feb 07 2023</a></li>
 <li><a class="reference internal" href="#feb-03-2023">2023.1.0 - Feb 03 2023</a></li>
 <li><a class="reference internal" href="#michellab">Michellab</a></li>
 <li><a class="reference internal" href="#sep-28-2022-pre-release">2022.3.0 - Sep 28 2022 (Pre-release)</a></li>
@@ -722,6 +738,7 @@ combination of molecular systems.</p></li>
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/js/custom.js"></script>
     </body>

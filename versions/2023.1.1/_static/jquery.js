@@ -1,1 +1,1 @@
-../../2023.1.0/_static/jquery.js
+../../../_static/jquery.js

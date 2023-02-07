@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.OpenMM" href="BioSimSpace.Process.OpenMM.html" /><link rel="prev" title="BioSimSpace.Process.Gromacs" href="BioSimSpace.Process.Gromacs.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.OpenMM" href="BioSimSpace.Process.OpenMM.html" /><link rel="prev" title="BioSimSpace.Process.Gromacs" href="BioSimSpace.Process.Gromacs.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Process.Namd - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -156,7 +157,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
@@ -496,13 +503,13 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="section" id="biosimspace-process-namd">
+          <section id="biosimspace-process-namd">
 <h1>BioSimSpace.Process.Namd<a class="headerlink" href="#biosimspace-process-namd" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Namd">
@@ -513,7 +520,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'namd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – The molecular system.</p></li>
 <li><p><strong>protocol</strong> (<a class="reference internal" href="../index_Protocol.html#module-BioSimSpace.Protocol" title="BioSimSpace.Protocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a>) – The protocol for the NAMD process.</p></li>
@@ -532,10 +539,6 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Namd.__init__" title="BioSimSpace.Process.Namd.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(system, protocol[, exe, name, ...])</p></td>
 <td><p>Constructor.</p></td>
@@ -827,7 +830,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <span class="sig-name descname"><span class="pre">addArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.addArgs" title="Permalink to this definition">#</a></dt>
 <dd><p>Append additional command-line arguments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>, </em><em>collections.OrderedDict</em>) – A dictionary of command line arguments.</p>
 </dd>
 </dl>
@@ -838,7 +841,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <span class="sig-name descname"><span class="pre">addToConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.addToConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a string to the configuration list.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> (<em>str</em><em>, </em><em>[ </em><em>str</em><em> ]</em>) – A configuration string, a list of configuration strings, or a
 path to a configuration file.</p>
 </dd>
@@ -856,10 +859,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.command" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the command-line string used to run the process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>command</strong> – The command string.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -870,7 +873,7 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">deleteArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.deleteArg" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete an argument from the dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg</strong> (<em>str</em>) – The argument to delete.</p>
 </dd>
 </dl>
@@ -881,10 +884,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">eta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.eta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.eta" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the estimated time for the process to finish (in minutes).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>eta</strong> – The estimated remaining time in minutes.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -895,10 +898,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">exe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.exe" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the executable.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>exe</strong> – The path to the executable.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -909,16 +912,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getAngleEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getAngleEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getAngleEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the angle energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The angle energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -929,10 +932,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getArgString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getArgString" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the command-line arguments string.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg_string</strong> – The command-line argument string.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -943,10 +946,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getArgStringList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getArgStringList" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert the argument dictionary into a list of strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg_string_list</strong> – The list of command-line arguments.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>[str]</p>
 </dd>
 </dl>
@@ -957,10 +960,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getArgs" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the dictionary of command-line arguments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> – The dictionary of command-line arguments.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>collections.OrderedDict</p>
 </dd>
 </dl>
@@ -971,16 +974,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getBondEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getBondEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getBondEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the bond energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The bond energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -991,16 +994,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getBoundaryEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getBoundaryEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getBoundaryEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the boundary energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The boundary energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1011,10 +1014,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getConfig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the list of configuration file strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> – The list of configuration strings.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>[str]</p>
 </dd>
 </dl>
@@ -1025,13 +1028,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentAngleEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentAngleEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentAngleEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current angle energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The angle energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1042,13 +1045,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentBondEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentBondEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentBondEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current bond energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The bond energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1059,13 +1062,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentBoundaryEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentBoundaryEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentBoundaryEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current boundary energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The boundary energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1076,13 +1079,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentDihedralEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentDihedralEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentDihedralEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current total dihedral energy (proper + improper).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The dihedral energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1093,13 +1096,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentElectrostaticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentElectrostaticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentElectrostaticEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current electrostatic energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The electrostatic energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1110,13 +1113,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentGPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentGPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentGPressure" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current pressure. (Hydrogens incorporated into bonded atoms.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1127,13 +1130,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentGPressureAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentGPressureAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentGPressureAverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current average pressure. (Hydrogens incorporated into bonded atoms.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The average pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1144,13 +1147,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentImproperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentImproperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentImproperEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current improper energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The improper energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1161,13 +1164,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentKineticEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current kinetic energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The current kinetic energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1178,13 +1181,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentMiscEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentMiscEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentMiscEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current external energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The external energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1195,13 +1198,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentPotentialEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current potential energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The potential energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1212,13 +1215,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentPressure" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current pressure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1229,13 +1232,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentPressureAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentPressureAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentPressureAverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current average pressure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The average pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1246,13 +1249,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentProperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentProperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentProperEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current proper dihedral energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The proper dihedral energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1263,17 +1266,17 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentRecord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a current record from the stdout dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>record</strong> (<em>str</em>) – The record key.</p></li>
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>unit</strong> (<a class="reference internal" href="../index_Units.html#module-BioSimSpace.Units" title="BioSimSpace.Units"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a>) – The unit to convert the record to.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>record</strong> – The matching record.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Types.html#module-BioSimSpace.Types" title="BioSimSpace.Types"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a></p>
 </dd>
 </dl>
@@ -1284,13 +1287,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentRecords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentRecords" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the current dictionary of stdout time-series records.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>records</strong> – The dictionary of time-series records.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>BioSimSpace.Process._process._MultiDict</p>
 </dd>
 </dl>
@@ -1301,13 +1304,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentStep" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current number of integration steps.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>step</strong> – The current number of integration steps.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1318,10 +1321,10 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentSystem" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the latest molecular system.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>system</strong> – The latest molecular system.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -1332,13 +1335,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentTemperature" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the temperature.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>temperature</strong> – The temperature.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
 </dd>
 </dl>
@@ -1349,13 +1352,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTemperatureAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentTemperatureAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentTemperatureAverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current average temperature.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>temperature</strong> – The average temperature.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
 </dd>
 </dl>
@@ -1366,16 +1369,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current simulation time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>time</strong> – The current simulation time in nanoseconds.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -1386,13 +1389,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTotal2Energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentTotal2Energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentTotal2Energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current total energy. (Better KE conservation.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1403,13 +1406,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTotal3Energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentTotal3Energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentTotal3Energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the total energy. (Smaller short-time fluctuations.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1420,13 +1423,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentTotalEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current potential energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1437,13 +1440,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentVanDerWaalsEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentVanDerWaalsEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentVanDerWaalsEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current Van der Waals energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The Van der Vaals energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1454,13 +1457,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getCurrentVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getCurrentVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getCurrentVolume" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current volume.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>volume</strong> – The volume.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Volume.html#BioSimSpace.Types.Volume" title="BioSimSpace.Types.Volume"><code class="xref py py-class docutils literal notranslate"><span class="pre">Volume</span></code></a></p>
 </dd>
 </dl>
@@ -1471,16 +1474,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getDihedralEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getDihedralEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getDihedralEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the total dihedral energy (proper + improper).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total dihedral energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1491,16 +1494,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getElectrostaticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getElectrostaticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getElectrostaticEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the electrostatic energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The electrostatic energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1511,13 +1514,13 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getFrame" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a specific trajectory frame.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the frame.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>frame</strong> – The System object of the corresponding frame.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -1528,16 +1531,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getGPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getGPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getGPressure" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the pressure. (Hydrogens incorporated into bonded atoms.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1548,16 +1551,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getGPressureAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getGPressureAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getGPressureAverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the average pressure. (Hydrogens incorporated into bonded atoms.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The average pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1568,16 +1571,16 @@ path to a configuration file.</p>
 <span class="sig-name descname"><span class="pre">getImproperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getImproperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getImproperEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the improper energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The improper energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1589,16 +1592,16 @@ path to a configuration file.</p>
 <dd><p>Return a link to a zip file containing the input files used by
 the process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name of the zip file.</p></li>
 <li><p><strong>file_link</strong> (<em>bool</em>) – Whether to return a FileLink when working in Jupyter.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>output</strong> – A path, or file link, to an archive of the process input.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str, IPython.display.FileLink</p>
 </dd>
 </dl>
@@ -1609,16 +1612,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getKineticEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the kinetic energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The kinetic energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1629,16 +1632,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getMiscEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getMiscEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getMiscEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the external energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The external energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1660,17 +1663,17 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getOutput" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a link to a zip file of the working directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name of the zip file.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 <li><p><strong>file_link</strong> (<em>bool</em>) – Whether to return a FileLink when working in Jupyter.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>output</strong> – A path, or file link, to an archive of the process output.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str, IPython.display.FileLink</p>
 </dd>
 </dl>
@@ -1681,10 +1684,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getPackageName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getPackageName" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the package name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – The name of the package.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -1695,16 +1698,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getPotentialEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the potential energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The potential energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1715,16 +1718,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getPressure" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the pressure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1735,16 +1738,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getPressureAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getPressureAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getPressureAverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the average pressure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pressure</strong> – The average pressure.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
 </dd>
 </dl>
@@ -1755,16 +1758,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getProperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getProperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getProperEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the proper dihedral energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The proper dihedral energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1775,7 +1778,7 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getRecord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a record from the stdout dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>record</strong> (<em>str</em>) – The record key.</p></li>
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
@@ -1783,10 +1786,10 @@ the process.</p>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>record</strong> – The matching record.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Types.html#module-BioSimSpace.Types" title="BioSimSpace.Types"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a></p>
 </dd>
 </dl>
@@ -1797,13 +1800,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getRecords" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the dictionary of stdout time-series records.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>records</strong> – The dictionary of time-series records.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -1814,10 +1817,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getSeed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getSeed" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the random number seed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>seed</strong> – The random number seed.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -1828,13 +1831,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getStderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getStderr" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the entire stderr for the process as a list of strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>error</strong> – The list of stderror strings.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>[str]</p>
 </dd>
 </dl>
@@ -1845,13 +1848,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getStdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.getStdout" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the entire stdout for the process as a list of strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>output</strong> – The list of stdout strings.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>[str]</p>
 </dd>
 </dl>
@@ -1862,16 +1865,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getStep" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the number of integration steps.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>step</strong> – The current number of integration steps.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1882,13 +1885,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getSystem" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the latest molecular system.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>system</strong> – The latest molecular system.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
@@ -1899,16 +1902,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTemperature" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the temperature.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>temperature</strong> – The temperature.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
 </dd>
 </dl>
@@ -1919,16 +1922,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTemperatureAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTemperatureAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTemperatureAverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the average temperature.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>temperature</strong> – The average temperature.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
 </dd>
 </dl>
@@ -1939,16 +1942,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the simulation time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>time</strong> – The current simulation time in nanoseconds.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -1959,16 +1962,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTotal2Energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTotal2Energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTotal2Energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the total energy. (Better KE conservation.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1979,16 +1982,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTotal3Energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTotal3Energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTotal3Energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the total energy. (Smaller short-time fluctuations.).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -1999,16 +2002,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTotalEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the total energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The total energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -2019,13 +2022,13 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getTrajectory" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a trajectory object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>trajectory</strong> – The latest trajectory object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Trajectory.html#module-BioSimSpace.Trajectory" title="BioSimSpace.Trajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trajectory</span></code></a></p>
 </dd>
 </dl>
@@ -2036,16 +2039,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getVanDerWaalsEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getVanDerWaalsEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getVanDerWaalsEnergy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the Van der Vaals energy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>energy</strong> – The Van der Vaals energy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
 </dd>
 </dl>
@@ -2056,16 +2059,16 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.getVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.getVolume" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the volume.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>volume</strong> – The volume.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="BioSimSpace.Types.Volume.html#BioSimSpace.Types.Volume" title="BioSimSpace.Types.Volume"><code class="xref py py-class docutils literal notranslate"><span class="pre">Volume</span></code></a></p>
 </dd>
 </dl>
@@ -2076,10 +2079,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">inputFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.inputFiles" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the list of input files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_files</strong> – The list of autogenerated input files.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>[str]</p>
 </dd>
 </dl>
@@ -2090,7 +2093,7 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">insertArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.insertArg" title="Permalink to this definition">#</a></dt>
 <dd><p>Insert a command-line argument at a specific index.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arg</strong> (<em>str</em>) – The argument to set.</p></li>
 <li><p><strong>value</strong> – The value of the argument.</p></li>
@@ -2105,10 +2108,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">isError</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.isError" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the process exited with an error.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>is_error</strong> – Whether the process exited with an error.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -2119,10 +2122,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">isQueued</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.isQueued" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the process is queued.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>is_queued</strong> – Whether the process is queued.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -2133,10 +2136,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">isRunning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.isRunning" title="Permalink to this definition">#</a></dt>
 <dd><p>Return whether the process is running.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>is_running</strong> – Whether the process is running.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
@@ -2165,7 +2168,7 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.run" title="Permalink to this definition">#</a></dt>
 <dd><p>Create and run a new process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – The molecular system.</p></li>
 <li><p><strong>protocol</strong> (<a class="reference internal" href="../index_Protocol.html#module-BioSimSpace.Protocol" title="BioSimSpace.Protocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a>) – The simulation protocol.</p></li>
@@ -2173,10 +2176,10 @@ the process.</p>
 <li><p><strong>restart</strong> (<em>bool</em>) – Whether to restart the simulation, i.e. use the original system.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>process</strong> – The new process object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../index_Process.html#module-BioSimSpace.Process" title="BioSimSpace.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Procees</span></code></a></p>
 </dd>
 </dl>
@@ -2187,10 +2190,10 @@ the process.</p>
 <span class="sig-name descname"><span class="pre">runTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.runTime" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the running time for the process (in minutes).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>runtime</strong> – The runtime in minutes.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
@@ -2203,7 +2206,7 @@ the process.</p>
 <p>For command-line flags, i.e. boolean arguments, the key should
 specify whether the flag is enabled (True) or not (False).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arg</strong> (<em>str</em>) – The argument to set.</p></li>
 <li><p><strong>value</strong> (<em>bool</em><em>, </em><em>str</em>) – The value of the argument.</p></li>
@@ -2217,7 +2220,7 @@ specify whether the flag is enabled (True) or not (False).</p>
 <span class="sig-name descname"><span class="pre">setArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.setArgs" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the dictionary of command-line arguments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>, </em><em>collections.OrderedDict</em>) – A dictionary of command-line arguments.</p>
 </dd>
 </dl>
@@ -2228,7 +2231,7 @@ specify whether the flag is enabled (True) or not (False).</p>
 <span class="sig-name descname"><span class="pre">setConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.setConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the list of configuration file strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> (<em>str</em><em>, </em><em>[</em><em>str</em><em>]</em>) – The list of configuration strings, or a path to a configuration
 file.</p>
 </dd>
@@ -2240,7 +2243,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.setName" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the process name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The process name.</p>
 </dd>
 </dl>
@@ -2251,7 +2254,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">setSeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.setSeed" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the random number seed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>seed</strong> (<em>int</em>) – The random number seed.</p>
 </dd>
 </dl>
@@ -2262,10 +2265,10 @@ file.</p>
 <span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.start" title="Permalink to this definition">#</a></dt>
 <dd><p>Start the NAMD process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>process</strong> – The process object.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Process.Namd" title="BioSimSpace.Process.Namd"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process.Namd</span></code></a></p>
 </dd>
 </dl>
@@ -2276,7 +2279,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">stderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.stderr" title="Permalink to this definition">#</a></dt>
 <dd><p>Print the last n lines of the stderr buffer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – The number of lines to print.</p>
 </dd>
 </dl>
@@ -2287,7 +2290,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_namd.html#Namd.stdout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Namd.stdout" title="Permalink to this definition">#</a></dt>
 <dd><p>Print the last n lines of the stdout buffer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – The number of lines to print.</p>
 </dd>
 </dl>
@@ -2298,7 +2301,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.wait" title="Permalink to this definition">#</a></dt>
 <dd><p>Wait for the process to finish.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>max_time</strong> (<a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>, int, float) – The maximum time to wait (in minutes).</p>
 </dd>
 </dl>
@@ -2309,10 +2312,10 @@ file.</p>
 <span class="sig-name descname"><span class="pre">workDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.workDir" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the working directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>work_dir</strong> – The path of the working directory.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -2323,7 +2326,7 @@ file.</p>
 <span class="sig-name descname"><span class="pre">writeConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Namd.writeConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Write the configuration to file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – The path to a file.</p>
 </dd>
 </dl>
@@ -2331,7 +2334,7 @@ file.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
         </article>
       </div>
@@ -2373,8 +2376,123 @@ file.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace.Process.Namd</a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd"><code class="docutils literal notranslate"><span class="pre">Namd</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.__init__"><code class="docutils literal notranslate"><span class="pre">Namd.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.addArgs"><code class="docutils literal notranslate"><span class="pre">Namd.addArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.addToConfig"><code class="docutils literal notranslate"><span class="pre">Namd.addToConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.clearArgs"><code class="docutils literal notranslate"><span class="pre">Namd.clearArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.command"><code class="docutils literal notranslate"><span class="pre">Namd.command()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.deleteArg"><code class="docutils literal notranslate"><span class="pre">Namd.deleteArg()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.eta"><code class="docutils literal notranslate"><span class="pre">Namd.eta()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.exe"><code class="docutils literal notranslate"><span class="pre">Namd.exe()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getAngleEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getAngleEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getArgString"><code class="docutils literal notranslate"><span class="pre">Namd.getArgString()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getArgStringList"><code class="docutils literal notranslate"><span class="pre">Namd.getArgStringList()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getArgs"><code class="docutils literal notranslate"><span class="pre">Namd.getArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getBondEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getBondEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getBoundaryEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getBoundaryEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getConfig"><code class="docutils literal notranslate"><span class="pre">Namd.getConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentAngleEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentAngleEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentBondEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentBondEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentBoundaryEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentBoundaryEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentDihedralEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentDihedralEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentElectrostaticEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentElectrostaticEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentGPressure"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentGPressure()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentGPressureAverage"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentGPressureAverage()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentImproperEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentImproperEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentKineticEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentKineticEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentMiscEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentMiscEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentPotentialEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentPotentialEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentPressure"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentPressure()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentPressureAverage"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentPressureAverage()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentProperEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentProperEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentRecord"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentRecord()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentRecords"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentRecords()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentStep"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentStep()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentSystem"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentSystem()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentTemperature"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentTemperatureAverage"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentTemperatureAverage()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentTime"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentTotal2Energy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentTotal2Energy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentTotal3Energy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentTotal3Energy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentTotalEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentTotalEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentVanDerWaalsEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentVanDerWaalsEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getCurrentVolume"><code class="docutils literal notranslate"><span class="pre">Namd.getCurrentVolume()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getDihedralEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getDihedralEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getElectrostaticEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getElectrostaticEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getFrame"><code class="docutils literal notranslate"><span class="pre">Namd.getFrame()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getGPressure"><code class="docutils literal notranslate"><span class="pre">Namd.getGPressure()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getGPressureAverage"><code class="docutils literal notranslate"><span class="pre">Namd.getGPressureAverage()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getImproperEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getImproperEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getInput"><code class="docutils literal notranslate"><span class="pre">Namd.getInput()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getKineticEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getKineticEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getMiscEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getMiscEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getName"><code class="docutils literal notranslate"><span class="pre">Namd.getName()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getOutput"><code class="docutils literal notranslate"><span class="pre">Namd.getOutput()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getPackageName"><code class="docutils literal notranslate"><span class="pre">Namd.getPackageName()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getPotentialEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getPotentialEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getPressure"><code class="docutils literal notranslate"><span class="pre">Namd.getPressure()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getPressureAverage"><code class="docutils literal notranslate"><span class="pre">Namd.getPressureAverage()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getProperEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getProperEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getRecord"><code class="docutils literal notranslate"><span class="pre">Namd.getRecord()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getRecords"><code class="docutils literal notranslate"><span class="pre">Namd.getRecords()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getSeed"><code class="docutils literal notranslate"><span class="pre">Namd.getSeed()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getStderr"><code class="docutils literal notranslate"><span class="pre">Namd.getStderr()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getStdout"><code class="docutils literal notranslate"><span class="pre">Namd.getStdout()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getStep"><code class="docutils literal notranslate"><span class="pre">Namd.getStep()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getSystem"><code class="docutils literal notranslate"><span class="pre">Namd.getSystem()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTemperature"><code class="docutils literal notranslate"><span class="pre">Namd.getTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTemperatureAverage"><code class="docutils literal notranslate"><span class="pre">Namd.getTemperatureAverage()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTime"><code class="docutils literal notranslate"><span class="pre">Namd.getTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTotal2Energy"><code class="docutils literal notranslate"><span class="pre">Namd.getTotal2Energy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTotal3Energy"><code class="docutils literal notranslate"><span class="pre">Namd.getTotal3Energy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTotalEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getTotalEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getTrajectory"><code class="docutils literal notranslate"><span class="pre">Namd.getTrajectory()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getVanDerWaalsEnergy"><code class="docutils literal notranslate"><span class="pre">Namd.getVanDerWaalsEnergy()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.getVolume"><code class="docutils literal notranslate"><span class="pre">Namd.getVolume()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.inputFiles"><code class="docutils literal notranslate"><span class="pre">Namd.inputFiles()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.insertArg"><code class="docutils literal notranslate"><span class="pre">Namd.insertArg()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.isError"><code class="docutils literal notranslate"><span class="pre">Namd.isError()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.isQueued"><code class="docutils literal notranslate"><span class="pre">Namd.isQueued()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.isRunning"><code class="docutils literal notranslate"><span class="pre">Namd.isRunning()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.kill"><code class="docutils literal notranslate"><span class="pre">Namd.kill()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.resetArgs"><code class="docutils literal notranslate"><span class="pre">Namd.resetArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.resetConfig"><code class="docutils literal notranslate"><span class="pre">Namd.resetConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.run"><code class="docutils literal notranslate"><span class="pre">Namd.run()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.runTime"><code class="docutils literal notranslate"><span class="pre">Namd.runTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.setArg"><code class="docutils literal notranslate"><span class="pre">Namd.setArg()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.setArgs"><code class="docutils literal notranslate"><span class="pre">Namd.setArgs()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.setConfig"><code class="docutils literal notranslate"><span class="pre">Namd.setConfig()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.setName"><code class="docutils literal notranslate"><span class="pre">Namd.setName()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.setSeed"><code class="docutils literal notranslate"><span class="pre">Namd.setSeed()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.start"><code class="docutils literal notranslate"><span class="pre">Namd.start()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.stderr"><code class="docutils literal notranslate"><span class="pre">Namd.stderr()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.stdout"><code class="docutils literal notranslate"><span class="pre">Namd.stdout()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.wait"><code class="docutils literal notranslate"><span class="pre">Namd.wait()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.workDir"><code class="docutils literal notranslate"><span class="pre">Namd.workDir()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Process.Namd.writeConfig"><code class="docutils literal notranslate"><span class="pre">Namd.writeConfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -2384,6 +2502,7 @@ file.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/js/custom.js"></script>
     </body>

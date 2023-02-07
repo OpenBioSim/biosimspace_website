@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Types.Pressure" href="BioSimSpace.Types.Pressure.html" /><link rel="prev" title="BioSimSpace.Types.Energy" href="BioSimSpace.Types.Energy.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Types.Pressure" href="BioSimSpace.Types.Pressure.html" /><link rel="prev" title="BioSimSpace.Types.Energy" href="BioSimSpace.Types.Energy.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Types.Length - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -156,7 +157,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
@@ -496,13 +503,13 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="section" id="biosimspace-types-length">
+          <section id="biosimspace-types-length">
 <h1>BioSimSpace.Types.Length<a class="headerlink" href="#biosimspace-types-length" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Length">
@@ -515,7 +522,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">*args</span></code> can be a value and unit, or a string representation
 of the length, e.g. “12 Angstrom”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>float</em>) – The value.</p></li>
 <li><p><strong>unit</strong> (<em>str</em>) – The unit.</p></li>
@@ -545,10 +552,6 @@ would be valid arguments: “148.6 A”, “148.6 angstrom”, “1.48e2 Angstro
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Types.Length.__init__" title="BioSimSpace.Types.Length.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args)</p></td>
 <td><p>Constructor.</p></td>
@@ -609,10 +612,10 @@ would be valid arguments: “148.6 A”, “148.6 angstrom”, “1.48e2 Angstro
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.angle" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘angle’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>angle</strong> – The power in the ‘angle’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -623,10 +626,10 @@ would be valid arguments: “148.6 A”, “148.6 angstrom”, “1.48e2 Angstro
 <span class="sig-name descname"><span class="pre">angstroms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_length.html#Length.angstroms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Length.angstroms" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length in angstroms.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The length in angstrom.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
 </dd>
 </dl>
@@ -637,10 +640,10 @@ would be valid arguments: “148.6 A”, “148.6 angstrom”, “1.48e2 Angstro
 <span class="sig-name descname"><span class="pre">centimeters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_length.html#Length.centimeters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Length.centimeters" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length in centimeters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The length in centimeters.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
 </dd>
 </dl>
@@ -651,10 +654,10 @@ would be valid arguments: “148.6 A”, “148.6 angstrom”, “1.48e2 Angstro
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.charge" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘charge’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>charge</strong> – The power in the ‘charge’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -677,10 +680,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.length" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘length’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The power in the ‘length’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -691,10 +694,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.mass" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘mass’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mass</strong> – The power in the ‘mass’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -705,10 +708,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">meters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_length.html#Length.meters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Length.meters" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length in meters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The length in meters.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
 </dd>
 </dl>
@@ -719,10 +722,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">millimeters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_length.html#Length.millimeters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Length.millimeters" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length in millimeters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The length in millimeters.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
 </dd>
 </dl>
@@ -733,10 +736,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">nanometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_length.html#Length.nanometers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Length.nanometers" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length in nanometers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The length in nanometers.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
 </dd>
 </dl>
@@ -747,10 +750,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">picometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_length.html#Length.picometers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Length.picometers" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the length in picometers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>length</strong> – The length in picometers.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
 </dd>
 </dl>
@@ -761,10 +764,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quantity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.quantity" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘quantity’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>quantity</strong> – The power in the ‘quantity’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -775,10 +778,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.temperature" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘temperature’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>temperature</strong> – The power in the ‘temperature’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -789,10 +792,10 @@ containing the power in each dimension.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.time" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the power in the ‘time’ dimension.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time</strong> – The power the ‘time’ dimension.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -803,10 +806,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">unit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.unit" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the unit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>unit</strong> – The unit of the type.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -817,10 +820,10 @@ containing the power in each dimension.</p>
 <span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Length.value" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> – The value of the type.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -828,7 +831,7 @@ containing the power in each dimension.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
         </article>
       </div>
@@ -870,8 +873,46 @@ containing the power in each dimension.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace.Types.Length</a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length"><code class="docutils literal notranslate"><span class="pre">Length</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.__init__"><code class="docutils literal notranslate"><span class="pre">Length.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.angle"><code class="docutils literal notranslate"><span class="pre">Length.angle()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.angstroms"><code class="docutils literal notranslate"><span class="pre">Length.angstroms()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.centimeters"><code class="docutils literal notranslate"><span class="pre">Length.centimeters()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.charge"><code class="docutils literal notranslate"><span class="pre">Length.charge()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.dimensions"><code class="docutils literal notranslate"><span class="pre">Length.dimensions()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.length"><code class="docutils literal notranslate"><span class="pre">Length.length()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.mass"><code class="docutils literal notranslate"><span class="pre">Length.mass()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.meters"><code class="docutils literal notranslate"><span class="pre">Length.meters()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.millimeters"><code class="docutils literal notranslate"><span class="pre">Length.millimeters()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.nanometers"><code class="docutils literal notranslate"><span class="pre">Length.nanometers()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.picometers"><code class="docutils literal notranslate"><span class="pre">Length.picometers()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.quantity"><code class="docutils literal notranslate"><span class="pre">Length.quantity()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.temperature"><code class="docutils literal notranslate"><span class="pre">Length.temperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.time"><code class="docutils literal notranslate"><span class="pre">Length.time()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.unit"><code class="docutils literal notranslate"><span class="pre">Length.unit()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Types.Length.value"><code class="docutils literal notranslate"><span class="pre">Length.value()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -881,6 +922,7 @@ containing the power in each dimension.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/js/custom.js"></script>
     </body>

@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Compatibility" href="compatibility.html" /><link rel="prev" title="Features" href="features.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Compatibility" href="compatibility.html" /><link rel="prev" title="Features" href="features.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Installation - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
@@ -502,9 +509,9 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="installation">
+          <section id="installation">
 <span id="ref-install"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
-<div class="section" id="no-installation-run-in-a-web-browser">
+<section id="no-installation-run-in-a-web-browser">
 <h2>1. No-installation - Run in a web browser<a class="headerlink" href="#no-installation-run-in-a-web-browser" title="Permalink to this heading">#</a></h2>
 <p>We run a completely free <a class="reference external" href="https://try.openbiosim.org">JupyterHub</a> on
 which we have BioSimSpace installed.</p>
@@ -534,8 +541,8 @@ automatically stopped and logged out after 20 minutes. Please only
 use this service to explore and learn <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>.
 Do not use it for production work.</p>
 </div>
-</div>
-<div class="section" id="easy-installation-run-in-a-conda-environment">
+</section>
+<section id="easy-installation-run-in-a-conda-environment">
 <h2>2. Easy installation - Run in a conda environment<a class="headerlink" href="#easy-installation-run-in-a-conda-environment" title="Permalink to this heading">#</a></h2>
 <p>The easiest way to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is in a new
 <a class="reference external" href="https://anaconda.org">conda environment</a>.</p>
@@ -544,8 +551,8 @@ Do not use it for production work.</p>
 as this is pre-configured to use <a class="reference external" href="https://conda-forge.org">conda-forge</a>,
 and bundles <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">mamba</a>, which
 is a fast drop-in replacement for <a class="reference external" href="https://conda.io">conda</a>.</p>
-<div class="section" id="either-install-a-new-copy-of-mambaforge">
-<h3>Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code><a class="headerlink" href="#either-install-a-new-copy-of-mambaforge" title="Permalink to this heading">#</a></h3>
+<section id="either-install-a-new-copy-of-mambaforge">
+<span id="install-mambaforge"></span><h3>Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code><a class="headerlink" href="#either-install-a-new-copy-of-mambaforge" title="Permalink to this heading">#</a></h3>
 <p>To install a new copy of
 <a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
 first download a <code class="docutils literal notranslate"><span class="pre">Mambaforge</span></code> from
@@ -556,8 +563,8 @@ matches your operating system and processor.</p>
 <p>Once installed, you should be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command to
 install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help on
 how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
-</div>
-<div class="section" id="or-use-an-existing-anaconda-miniconda-install">
+</section>
+<section id="or-use-an-existing-anaconda-miniconda-install">
 <h3>Or… Use an existing anaconda/miniconda install<a class="headerlink" href="#or-use-an-existing-anaconda-miniconda-install" title="Permalink to this heading">#</a></h3>
 <p>If you want to use an existing anaconda or miniconda installation,
 then first open a terminal with that distribution activated.
@@ -579,8 +586,8 @@ to install a new copy of <code class="docutils literal notranslate"><span class=
 <p>If this works, then you should now be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command
 to install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help
 on how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
-</div>
-<div class="section" id="and-then-install-biosimspace-into-a-new-environment">
+</section>
+<section id="and-then-install-biosimspace-into-a-new-environment">
 <h3>And then… Install BioSimSpace into a new environment<a class="headerlink" href="#and-then-install-biosimspace-into-a-new-environment" title="Permalink to this heading">#</a></h3>
 <p>We recommend that <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is installed into a new (clean) environment.
 This minimises the risk of failures caused by incompatible dependencies.</p>
@@ -629,9 +636,9 @@ Python prompt you can import <code class="xref py py-mod docutils literal notran
 We encourage you to take a look at <a class="reference internal" href="tutorials/index.html"><span class="doc">the tutorials</span></a>
 to learn how to use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> or the
 <a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
-</div>
-</div>
-<div class="section" id="also-easy-installation-run-in-a-container">
+</section>
+</section>
+<section id="also-easy-installation-run-in-a-container">
 <h2>3. Also easy installation - Run in a container<a class="headerlink" href="#also-easy-installation-run-in-a-container" title="Permalink to this heading">#</a></h2>
 <p>Another route to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is to download and run our
 pre-built containers. These can be run via
@@ -679,8 +686,8 @@ Python prompt you can import <code class="xref py py-mod docutils literal notran
 We encourage you to take a look at <a class="reference internal" href="tutorials/index.html"><span class="doc">the tutorials</span></a>
 to learn how to use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> or the
 <a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
-</div>
-<div class="section" id="harder-installation-compile-from-source">
+</section>
+<section id="harder-installation-compile-from-source">
 <h2>4. Harder installation - Compile from source<a class="headerlink" href="#harder-installation-compile-from-source" title="Permalink to this heading">#</a></h2>
 <p>The following documents a full installation of BioSimSpace from source. Before
 starting, you’ll need a working <a class="reference external" href="https://git-scm.com">Git</a> installation.</p>
@@ -719,8 +726,8 @@ environment variable <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BSS_SKIP_DEPENDENCIES</span><span class="o">=</span>True<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install
 </pre></div>
 </div>
-</div>
-<div class="section" id="common-issues">
+</section>
+<section id="common-issues">
 <h2>5. Common issues<a class="headerlink" href="#common-issues" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>If you experience problems with <a class="reference external" href="https://matplotlib.org">Matplotlib</a> when
@@ -739,8 +746,8 @@ BioSimSpace on a remote server without X forwarding.</p>
 <li><p>If you experience problems with <a class="reference external" href="https://jupyter.org">Jupyter</a> permissions,
 try removing <code class="docutils literal notranslate"><span class="pre">$HOME/.jupyter</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/jupyter</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="external-dependencies">
+</section>
+<section id="external-dependencies">
 <h2>6. External dependencies<a class="headerlink" href="#external-dependencies" title="Permalink to this heading">#</a></h2>
 <p>Several additional packages are required for full access to all of BioSimSpace’s
 functionality. Please download and install these packages according to their
@@ -763,8 +770,8 @@ visible to third-party libraries, such as
 <p>Please visit our <a class="reference internal" href="compatibility.html#ref-compatibility"><span class="std std-ref">compatibility</span></a> page to see which
 versions of the external dependencies BioSimSpace has currently been tested
 against.</p>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
@@ -846,6 +853,7 @@ against.</p>
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/js/custom.js"></script>
     </body>

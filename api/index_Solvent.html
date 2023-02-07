@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="BioSimSpace.Solvent.solvate" href="generated/BioSimSpace.Solvent.solvate.html" /><link rel="prev" title="BioSimSpace.Sandpit" href="index_Sandpit.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="BioSimSpace.Solvent.solvate" href="generated/BioSimSpace.Solvent.solvate.html" /><link rel="prev" title="BioSimSpace.Sandpit" href="index_Sandpit.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>BioSimSpace.Solvent - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
@@ -502,17 +509,13 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="biosimspace-solvent">
+          <section id="biosimspace-solvent">
 <span id="ref-solvent"></span><h1>BioSimSpace.Solvent<a class="headerlink" href="#biosimspace-solvent" title="Permalink to this heading">#</a></h1>
 <p>The <em>Solvent</em> package contains tools for solvating molecular systems.</p>
-<span class="target" id="module-BioSimSpace.Solvent"></span><div class="section" id="functions">
+<span class="target" id="module-BioSimSpace.Solvent"></span><section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/BioSimSpace.Solvent.solvate.html#BioSimSpace.Solvent.solvate" title="BioSimSpace.Solvent.solvate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solvate</span></code></a>(model[, molecule, box, angles, ...])</p></td>
 <td><p>Solvate with the specified water model.</p></td>
@@ -599,10 +602,10 @@ box of pure SPC/E water.</p>
 <span class="n">water</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Solvent</span><span class="o">.</span><span class="n">spce</span><span class="p">(</span><span class="n">box</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="p">[</span><span class="mi">50</span><span class="o">*</span><span class="n">BSS</span><span class="o">.</span><span class="n">Units</span><span class="o">.</span><span class="n">Length</span><span class="o">.</span><span class="n">angstrom</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
         </article>
       </div>
@@ -674,6 +677,7 @@ box of pure SPC/E water.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>

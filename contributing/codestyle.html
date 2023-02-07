@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Packaging releases" href="packaging.html" /><link rel="prev" title="Developer’s guide" href="development.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Packaging releases" href="packaging.html" /><link rel="prev" title="Developer’s guide" href="development.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.0.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Coding Style - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -177,7 +178,13 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
@@ -502,7 +509,7 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="coding-style">
+          <section id="coding-style">
 <h1>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading">#</a></h1>
 <p>We really appreciate your help developing <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> and
 welcome pull requests to the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch. To help us more
@@ -510,7 +517,7 @@ quickly review your pull request, and to keep a consistent coding
 style throughout, we ask that you please follow the below coding
 styles (and that you aren’t offended if we modify your submission
 so that it meets these styles).</p>
-<div class="section" id="python">
+<section id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
 <p>BioSimSpace uses the Python programming language. Our aim is to provide a simple
 and robust API where unnecessary implementation details are hidden from the user.</p>
@@ -524,7 +531,7 @@ running with molecular simulation. BioSimSpace also needs to be robust and
 portable, hence we need to use encapsulation to shield the user from unintended
 consequences.</p>
 <p>With this in mind, we use the following coding conventions:</p>
-<div class="section" id="naming">
+<section id="naming">
 <h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading">#</a></h3>
 <p>We follow a C++ style naming convention.</p>
 <ul class="simple">
@@ -548,8 +555,8 @@ compatibility.)</p>
 Python code. Please use this if you plan on submitting code. They are easy to
 configure and use via your IDE (or from the command-line) and help ensure a
 consistent code style and minimise diffs during pull requests.</p>
-</div>
-<div class="section" id="modules">
+</section>
+<section id="modules">
 <h3>Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h3>
 <p>BioSimSpace is a collection of packages, e.g. <code class="docutils literal notranslate"><span class="pre">BioSimSpace.Gateway</span></code> and
 <code class="docutils literal notranslate"><span class="pre">BioSimSpace.Protocol</span></code>. Within each package is a set of modules that
@@ -580,8 +587,8 @@ exposed names. This greatly improves the clarity of the package, allowing
 a new user to quickly determine the available functionality. Any user wishing
 expose further implementation detail can, of course, type an underscore to
 show the hidden names when searching.</p>
-</div>
-<div class="section" id="encapsulation">
+</section>
+<section id="encapsulation">
 <h3>Encapsulation<a class="headerlink" href="#encapsulation" title="Permalink to this heading">#</a></h3>
 <p>BioSimSpace aims to provide a means of writing robust and portable workflow
 components (nodes). To this end, we choose to use an object oriented approach
@@ -636,9 +643,9 @@ should be used to explicitly modify member data.</p>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
         </article>
       </div>
@@ -715,6 +722,7 @@ should be used to explicitly modify member data.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>
