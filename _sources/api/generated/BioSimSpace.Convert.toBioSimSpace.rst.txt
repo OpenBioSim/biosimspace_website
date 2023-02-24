@@ -1,0 +1,6 @@
+﻿BioSimSpace.Convert.toBioSimSpace
+=================================
+
+.. currentmodule:: BioSimSpace.Convert
+
+.. autofunction:: toBioSimSpace
