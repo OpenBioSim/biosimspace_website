@@ -54,7 +54,7 @@ jobs:
           miniforge-variant: Mambaforge
           use-mamba: true
       - name: Install BioSimSpace
-        run: mamba install -y -c openbiosim biosimspace pygit2
+        run: mamba install -y -c openbiosim/label/dev biosimspace pygit2
       - name: Checkout BioSimSpace branch
         uses: actions/checkout@v3
         with:
