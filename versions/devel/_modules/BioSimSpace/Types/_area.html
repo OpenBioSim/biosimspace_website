@@ -1,0 +1,966 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>BioSimSpace.Types._area - openbiosim - biosimspace</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_pygments.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">openbiosim - biosimspace</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/metadynamics.html">Metadynamics</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../guides/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../guides/nodes.html">Nodes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../guides/protocols.html">Protocols</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Align.html">BioSimSpace.Align</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Align.generateNetwork.html">BioSimSpace.Align.generateNetwork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Align.matchAtoms.html">BioSimSpace.Align.matchAtoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Align.rmsdAlign.html">BioSimSpace.Align.rmsdAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Align.flexAlign.html">BioSimSpace.Align.flexAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Align.merge.html">BioSimSpace.Align.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Align.viewMapping.html">BioSimSpace.Align.viewMapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Box.html">BioSimSpace.Box</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Box.boxTypes.html">BioSimSpace.Box.boxTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Box.generateBoxParameters.html">BioSimSpace.Box.generateBoxParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Box.cubic.html">BioSimSpace.Box.cubic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Box.rhombicDodecahedronSquare.html">BioSimSpace.Box.rhombicDodecahedronSquare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Box.rhombicDodecahedronHexagon.html">BioSimSpace.Box.rhombicDodecahedronHexagon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Box.truncatedOctahedron.html">BioSimSpace.Box.truncatedOctahedron</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Convert.html">BioSimSpace.Convert</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.smiles.html">BioSimSpace.Convert.smiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_FreeEnergy.html">BioSimSpace.FreeEnergy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html">BioSimSpace.FreeEnergy.Relative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.FreeEnergy.engines.html">BioSimSpace.FreeEnergy.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.FreeEnergy.getData.html">BioSimSpace.FreeEnergy.getData</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Gateway.html">BioSimSpace.Gateway</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Node.html">BioSimSpace.Gateway.Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Boolean.html">BioSimSpace.Gateway.Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Integer.html">BioSimSpace.Gateway.Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Float.html">BioSimSpace.Gateway.Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.String.html">BioSimSpace.Gateway.String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.File.html">BioSimSpace.Gateway.File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.FileSet.html">BioSimSpace.Gateway.FileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Length.html">BioSimSpace.Gateway.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Area.html">BioSimSpace.Gateway.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readPDB.html">BioSimSpace.IO.readPDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readPerturbableSystem.html">BioSimSpace.IO.readPerturbableSystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.saveMolecules.html">BioSimSpace.IO.saveMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.savePerturbableSystem.html">BioSimSpace.IO.savePerturbableSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Metadynamics.html">BioSimSpace.Metadynamics</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.engines.html">BioSimSpace.Metadynamics.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.run.html">BioSimSpace.Metadynamics.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.Bound.html">BioSimSpace.Metadynamics.Bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.Grid.html">BioSimSpace.Metadynamics.Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.Restraint.html">BioSimSpace.Metadynamics.Restraint</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/index_Metadynamics_CollectiveVariable.html">BioSimSpace.Metadynamics.CollectiveVariable</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.list.html">BioSimSpace.Metadynamics.CollectiveVariable.list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Distance.html">BioSimSpace.Metadynamics.CollectiveVariable.Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Funnel.html">BioSimSpace.Metadynamics.CollectiveVariable.Funnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html">BioSimSpace.Metadynamics.CollectiveVariable.RMSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Torsion.html">BioSimSpace.Metadynamics.CollectiveVariable.Torsion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_MD.html">BioSimSpace.MD</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.MD.engines.html">BioSimSpace.MD.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.MD.run.html">BioSimSpace.MD.run</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Node.html">BioSimSpace.Node</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Node.help.html">BioSimSpace.Node.help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Node.list.html">BioSimSpace.Node.list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Node.run.html">BioSimSpace.Node.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Node.setNodeDirectory.html">BioSimSpace.Node.setNodeDirectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Notebook.html">BioSimSpace.Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Notebook.plot.html">BioSimSpace.Notebook.plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Notebook.plotContour.html">BioSimSpace.Notebook.plotContour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Notebook.plotOverlapMatrix.html">BioSimSpace.Notebook.plotOverlapMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Notebook.View.html">BioSimSpace.Notebook.View</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Parameters.html">BioSimSpace.Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.amberForceFields.html">BioSimSpace.Parameters.amberForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.amberProteinForceFields.html">BioSimSpace.Parameters.amberProteinForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.ff03.html">BioSimSpace.Parameters.ff03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.ff14SB.html">BioSimSpace.Parameters.ff14SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.ff99.html">BioSimSpace.Parameters.ff99</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.ff99SB.html">BioSimSpace.Parameters.ff99SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.ff99SBildn.html">BioSimSpace.Parameters.ff99SBildn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.forceFields.html">BioSimSpace.Parameters.forceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.gaff.html">BioSimSpace.Parameters.gaff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.gaff2.html">BioSimSpace.Parameters.gaff2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openForceFields.html">BioSimSpace.Parameters.openForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_1_0.html">BioSimSpace.Parameters.openff_unconstrained_1_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_1_1.html">BioSimSpace.Parameters.openff_unconstrained_1_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_2_0.html">BioSimSpace.Parameters.openff_unconstrained_1_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_2_1.html">BioSimSpace.Parameters.openff_unconstrained_1_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_0.html">BioSimSpace.Parameters.openff_unconstrained_1_3_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Process.html">BioSimSpace.Process</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.engines.html">BioSimSpace.Process.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.createProcess.html">BioSimSpace.Process.createProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.Amber.html">BioSimSpace.Process.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.Gromacs.html">BioSimSpace.Process.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.Namd.html">BioSimSpace.Process.Namd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.OpenMM.html">BioSimSpace.Process.OpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.Plumed.html">BioSimSpace.Process.Plumed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.Somd.html">BioSimSpace.Process.Somd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Process.ProcessRunner.html">BioSimSpace.Process.ProcessRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Solvent.html">BioSimSpace.Solvent</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.solvate.html">BioSimSpace.Solvent.solvate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.spc.html">BioSimSpace.Solvent.spc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.spce.html">BioSimSpace.Solvent.spce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Trajectory.Trajectory.html">BioSimSpace.Trajectory.Trajectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Angle.html">BioSimSpace.Types.Angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Area.html">BioSimSpace.Types.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Charge.html">BioSimSpace.Types.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Vector.html">BioSimSpace.Types.Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Volume.html">BioSimSpace.Types.Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Length.meter.html">BioSimSpace.Units.Length.meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Length.angstrom.html">BioSimSpace.Units.Length.angstrom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Length.nanometer.html">BioSimSpace.Units.Length.nanometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Length.picometer.html">BioSimSpace.Units.Length.picometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Area.meter2.html">BioSimSpace.Units.Area.meter2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Area.angstrom2.html">BioSimSpace.Units.Area.angstrom2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Area.nanometer2.html">BioSimSpace.Units.Area.nanometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Area.picometer2.html">BioSimSpace.Units.Area.picometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Angle.radian.html">BioSimSpace.Units.Angle.radian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Angle.degree.html">BioSimSpace.Units.Angle.degree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.meter3.html">BioSimSpace.Units.Volume.meter3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.angstrom3.html">BioSimSpace.Units.Volume.angstrom3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.nanometer3.html">BioSimSpace.Units.Volume.nanometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Pressure.atm.html">BioSimSpace.Units.Pressure.atm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Pressure.bar.html">BioSimSpace.Units.Pressure.bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Temperature.kelvin.html">BioSimSpace.Units.Temperature.kelvin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Temperature.celsius.html">BioSimSpace.Units.Temperature.celsius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Temperature.fahrenheit.html">BioSimSpace.Units.Temperature.fahrenheit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.day.html">BioSimSpace.Units.Time.day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.hour.html">BioSimSpace.Units.Time.hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.minute.html">BioSimSpace.Units.Time.minute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.second.html">BioSimSpace.Units.Time.second</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.millisecond.html">BioSimSpace.Units.Time.millisecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.nanosecond.html">BioSimSpace.Units.Time.nanosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.picosecond.html">BioSimSpace.Units.Time.picosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Time.femtosecond.html">BioSimSpace.Units.Time.femtosecond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Config.html">BioSimSpace._Config</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Config.Amber.html">BioSimSpace._Config.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Config.Gromacs.html">BioSimSpace._Config.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Config.Somd.html">BioSimSpace._Config.Somd</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.AlignmentError.html">BioSimSpace._Exceptions.AlignmentError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.AnalysisError.html">BioSimSpace._Exceptions.AnalysisError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.ConversionError.html">BioSimSpace._Exceptions.ConversionError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.IncompatibleError.html">BioSimSpace._Exceptions.IncompatibleError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.MissingSoftwareError.html">BioSimSpace._Exceptions.MissingSoftwareError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.ParameterisationError.html">BioSimSpace._Exceptions.ParameterisationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Exceptions.ThirdPartyError.html">BioSimSpace._Exceptions.ThirdPartyError</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_SireWrappers.html">BioSimSpace._SireWrappers</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.Atom.html">BioSimSpace._SireWrappers.Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.Bond.html">BioSimSpace._SireWrappers.Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html">BioSimSpace._SireWrappers.Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.Molecules.html">BioSimSpace._SireWrappers.Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.Residue.html">BioSimSpace._SireWrappers.Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.System.html">BioSimSpace._SireWrappers.System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html">BioSimSpace._SireWrappers.SearchResult</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils.WorkDir.html">BioSimSpace._Utils.WorkDir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils.cd.html">BioSimSpace._Utils.cd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils.command_split.html">BioSimSpace._Utils.command_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils._module_stub.html">BioSimSpace._Utils._module_stub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils._try_import.html">BioSimSpace._Utils._try_import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils._have_imported.html">BioSimSpace._Utils._have_imported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace._Utils._assert_imported.html">BioSimSpace._Utils._assert_imported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../contributing/development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for BioSimSpace.Types._area</h1><div class="highlight"><pre>
+<span></span><span class="c1">######################################################################</span>
+<span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1">#</span>
+<span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># BioSimSpace is free software: you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU General Public License as published by</span>
+<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># BioSimSpace is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="c1"># GNU General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU General Public License</span>
+<span class="c1"># along with BioSimSpace. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c1">#####################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;An area type.&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Lester Hedges&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;lester.hedges@gmail.com&quot;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Area&quot;</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
+
+<span class="kn">from</span> <span class="nn">._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
+
+
+<div class="viewcode-block" id="Area"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Area.html#BioSimSpace.Types.Area">[docs]</a><span class="k">class</span> <span class="nc">Area</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An area type.&quot;&quot;&quot;</span>
+
+    <span class="c1"># A list of the supported Sire unit names.</span>
+    <span class="n">_sire_units</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;meter2&quot;</span><span class="p">,</span> <span class="s2">&quot;nanometer2&quot;</span><span class="p">,</span> <span class="s2">&quot;angstrom2&quot;</span><span class="p">,</span> <span class="s2">&quot;picometer2&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Dictionary of allowed units.</span>
+    <span class="n">_supported_units</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;METER2&quot;</span><span class="p">:</span> <span class="n">_SireUnits</span><span class="o">.</span><span class="n">meter2</span><span class="p">,</span>
+        <span class="s2">&quot;NANOMETER2&quot;</span><span class="p">:</span> <span class="n">_SireUnits</span><span class="o">.</span><span class="n">nanometer2</span><span class="p">,</span>
+        <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">:</span> <span class="n">_SireUnits</span><span class="o">.</span><span class="n">angstrom2</span><span class="p">,</span>
+        <span class="s2">&quot;PICOMETER2&quot;</span><span class="p">:</span> <span class="n">_SireUnits</span><span class="o">.</span><span class="n">picometer2</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Map unit abbreviations to the full name.</span>
+    <span class="n">_abbreviations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;M2&quot;</span><span class="p">:</span> <span class="s2">&quot;METER2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NM2&quot;</span><span class="p">:</span> <span class="s2">&quot;NANOMETER2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;A2&quot;</span><span class="p">:</span> <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PM2&quot;</span><span class="p">:</span> <span class="s2">&quot;PICOMETER2&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Print format.</span>
+    <span class="n">_print_format</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;METER2&quot;</span><span class="p">:</span> <span class="s2">&quot;m^2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NANOMETER2&quot;</span><span class="p">:</span> <span class="s2">&quot;nm^2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">:</span> <span class="s2">&quot;A^2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PICOMETER2&quot;</span><span class="p">:</span> <span class="s2">&quot;pm^2&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Documentation strings.</span>
+    <span class="n">_doc_strings</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;METER2&quot;</span><span class="p">:</span> <span class="s2">&quot;An area in square meters.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NANOMETER2&quot;</span><span class="p">:</span> <span class="s2">&quot;An area in square nanometers.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">:</span> <span class="s2">&quot;An area in square Angstrom.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PICOMETER2&quot;</span><span class="p">:</span> <span class="s2">&quot;An area in square picometers.&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Null type unit for avoiding issue printing configargparse help.</span>
+    <span class="n">_default_unit</span> <span class="o">=</span> <span class="s2">&quot;ANGSTROM2&quot;</span>
+
+    <span class="c1"># The dimension mask:</span>
+    <span class="c1">#     Angle, Charge, Length, Mass, Quantity, Temperature, Time</span>
+    <span class="n">_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Area.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Area.html#BioSimSpace.Types.Area.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor.</span>
+
+<span class="sd">        ``*args`` can be a value and unit, or a string representation</span>
+<span class="sd">        of the area, e.g. &quot;30 nm^2&quot;.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        value : float</span>
+<span class="sd">            The value.</span>
+
+<span class="sd">        unit : str</span>
+<span class="sd">            The unit.</span>
+
+<span class="sd">        string : str</span>
+<span class="sd">            A string representation of the area.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+
+<span class="sd">        Create an object representing an area of 30 square nanometers then</span>
+<span class="sd">        print the area in square Angstrom.</span>
+
+<span class="sd">        &gt;&gt;&gt; import BioSimSpace as BSS</span>
+<span class="sd">        &gt;&gt;&gt; area = BSS.Types.Area(30, &quot;nm^2&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(area.angstroms2())</span>
+
+<span class="sd">        The same as above, except passing a string representation of the</span>
+<span class="sd">        area to the constructor.</span>
+
+<span class="sd">        &gt;&gt;&gt; import BioSimSpace as BSS</span>
+<span class="sd">        &gt;&gt;&gt; area = BSS.Types.Area(&quot;30 nm^2&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(area.angstroms2())</span>
+
+<span class="sd">        The string matching is extremeley flexible, so all of the following</span>
+<span class="sd">        would be valid arguments: &quot;30 nm^2&quot;, &quot;30 square nanometers&quot;,</span>
+<span class="sd">        &quot;30 nanometers squared&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Call the base class constructor.</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Multiplication operator.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Handle containers by converting each item in the container to</span>
+        <span class="c1"># this type.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">other</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">other</span><span class="p">])</span>
+
+        <span class="c1"># Convert int to float.</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+        <span class="c1"># Multiplication by float.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">mag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="n">other</span>
+            <span class="k">return</span> <span class="n">Area</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">)</span>
+
+        <span class="c1"># Multiplication by a Length.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_Length</span><span class="p">):</span>
+            <span class="n">mag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">angstroms2</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">angstroms</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">_Volume</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Multiplication by another type.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_Type</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">._general_unit</span> <span class="kn">import</span> <span class="n">GeneralUnit</span> <span class="k">as</span> <span class="n">_GeneralUnit</span>
+
+            <span class="k">return</span> <span class="n">_GeneralUnit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">()</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">())</span>
+
+        <span class="c1"># Multiplication by a string.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="n">_Length</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">length</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Could not convert the string to a &#39;BioSimSpace.Types.Length&#39;&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;unsupported operand type(s) for *: &#39;</span><span class="si">%s</span><span class="s2">&#39; and &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Multiplication operator.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Multiplication is commutative: a*b = b*a</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Division operator.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Convert int to float.</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+        <span class="c1"># Float division.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">mag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">/</span> <span class="n">other</span>
+            <span class="k">return</span> <span class="n">Area</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">)</span>
+
+        <span class="c1"># Division by another Area.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Area</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">angstroms2</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">/</span> <span class="n">other</span><span class="o">.</span><span class="n">angstroms2</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+        <span class="c1"># Division by a Length.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_Length</span><span class="p">):</span>
+            <span class="n">mag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">angstroms2</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">/</span> <span class="n">other</span><span class="o">.</span><span class="n">angstroms</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">_Length</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Division by another type.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_Type</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">._general_unit</span> <span class="kn">import</span> <span class="n">GeneralUnit</span> <span class="k">as</span> <span class="n">_GeneralUnit</span>
+
+            <span class="k">return</span> <span class="n">_GeneralUnit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">()</span> <span class="o">/</span> <span class="n">other</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">())</span>
+
+        <span class="c1"># Division by a string.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="n">_Length</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span> <span class="o">/</span> <span class="n">length</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">area</span> <span class="o">=</span> <span class="n">Area</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="bp">self</span> <span class="o">/</span> <span class="n">area</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;Could not convert the string to a &quot;</span>
+                        <span class="s2">&quot;&#39;BioSimSpace.Types.Length&#39; or a &#39;BioSimSpace.Types.Area&#39;.&quot;</span>
+                    <span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;unsupported operand type(s) for /: &#39;</span><span class="si">%s</span><span class="s2">&#39; and &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">)</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="Area.meters2"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Area.html#BioSimSpace.Types.Area.meters2">[docs]</a>    <span class="k">def</span> <span class="nf">meters2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the area in square meters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        area : :class:`Area &lt;BioSimSpace.Types.Area&gt;`</span>
+<span class="sd">            The area in square meters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Area</span><span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">_SireUnits</span><span class="o">.</span><span class="n">meter2</span><span class="p">),</span>
+            <span class="s2">&quot;METER2&quot;</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Area.nanometers2"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Area.html#BioSimSpace.Types.Area.nanometers2">[docs]</a>    <span class="k">def</span> <span class="nf">nanometers2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the area in square nanometers.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        area : :class:`Area &lt;BioSimSpace.Types.Area&gt;`</span>
+<span class="sd">            The area in square nanometers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Area</span><span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">_SireUnits</span><span class="o">.</span><span class="n">nanometer2</span><span class="p">),</span>
+            <span class="s2">&quot;NANOMETER2&quot;</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Area.angstroms2"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Area.html#BioSimSpace.Types.Area.angstroms2">[docs]</a>    <span class="k">def</span> <span class="nf">angstroms2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the area in square Angstrom.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        area : :class:`Area &lt;BioSimSpace.Types.Area&gt;`</span>
+<span class="sd">            The area in square Angstrom.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Area</span><span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">_SireUnits</span><span class="o">.</span><span class="n">angstrom2</span><span class="p">),</span>
+            <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Area.picometers2"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Area.html#BioSimSpace.Types.Area.picometers2">[docs]</a>    <span class="k">def</span> <span class="nf">picometers2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the area in square picometers.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        area : :class:`Area &lt;BioSimSpace.Types.Area&gt;`</span>
+<span class="sd">            The area in square picometers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Area</span><span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">_SireUnits</span><span class="o">.</span><span class="n">picometer2</span><span class="p">),</span>
+            <span class="s2">&quot;PICOMETER2&quot;</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_to_default_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal method to return an object of the same type in the default unit.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        mag : float</span>
+<span class="sd">            The value (optional).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        area : :class:`Area &lt;BioSimSpace.Types.Area&gt;`</span>
+<span class="sd">            The area in the default unit of square Angstrom.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">mag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">angstroms2</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Area</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_convert_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the area in a different unit.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        unit : str</span>
+<span class="sd">            The unit to convert to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        area : :class:`Area &lt;BioSimSpace.Types.Area&gt;`</span>
+<span class="sd">            The area in the specified unit.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;METER2&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meters2</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;NANOMETER2&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nanometers2</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;ANGSTROM2&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">angstroms2</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;PICOMETER2&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">picometers2</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Supported units are: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_validate_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate that the unit is supported.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Strip whitespace and convert to upper case.</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+        <span class="c1"># Replace any occurrence of squared with 2.</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;SQUARED&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;SQUARE&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Strip &quot;^&quot; character.</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Strip &quot;**&quot; characters.</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Strip any &quot;S&quot; characters.</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Fix for ANGSTROM (since it contains an &quot;S&quot;).</span>
+        <span class="k">if</span> <span class="n">unit</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ANG&quot;</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="s2">&quot;ANGS&quot;</span> <span class="o">+</span> <span class="n">unit</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+
+        <span class="c1"># Make sure that the &quot;2&quot; character appears last. This allows the user</span>
+        <span class="c1"># to write, e.g. &quot;square nm&quot; or &quot;nm squared&quot;.</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">unit</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span>
+
+        <span class="c1"># Check that the unit is supported.</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">unit</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abbreviations</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abbreviations</span><span class="p">[</span><span class="n">unit</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Supported units are: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_to_sire_format</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reformat the unit string so it adheres to the Sire unit formatting.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        unit : str</span>
+<span class="sd">            A string representation of the unit.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        sire_unit : str</span>
+<span class="sd">            The unit string in Sire compatible format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;angstroms&quot;</span><span class="p">,</span> <span class="s2">&quot;angstrom&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;meters&quot;</span><span class="p">,</span> <span class="s2">&quot;meter&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;nm&quot;</span><span class="p">,</span> <span class="s2">&quot;nanometer&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;pm&quot;</span><span class="p">,</span> <span class="s2">&quot;picometer&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Convert powers.</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;angstrom-2&quot;</span><span class="p">,</span> <span class="s2">&quot;(1/angstrom2)&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;picometer-2&quot;</span><span class="p">,</span> <span class="s2">&quot;(1/picometer2)&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;nanometer-2&quot;</span><span class="p">,</span> <span class="s2">&quot;(1/nanometer2)&quot;</span><span class="p">)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;meter-2&quot;</span><span class="p">,</span> <span class="s2">&quot;(1/meter2)&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">unit</span></div>
+
+
+<span class="c1"># Import at bottom of module to avoid circular dependency.</span>
+<span class="kn">from</span> <span class="nn">._length</span> <span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
+<span class="kn">from</span> <span class="nn">._volume</span> <span class="kn">import</span> <span class="n">Volume</span> <span class="k">as</span> <span class="n">_Volume</span>
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 28, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/js/custom.js"></script>
+    </body>
+</html>
