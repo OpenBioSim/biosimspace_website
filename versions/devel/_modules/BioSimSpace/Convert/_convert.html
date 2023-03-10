@@ -608,8 +608,11 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">property_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;property_map&#39; must be of type &#39;dict&#39;.&quot;</span><span class="p">)</span>
 
+    <span class="c1"># Strip whitespace.</span>
+    <span class="n">smiles_string</span> <span class="o">=</span> <span class="n">smiles_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">_SireWrappers</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span>
+        <span class="n">molecule</span> <span class="o">=</span> <span class="n">_SireWrappers</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span>
             <span class="n">_sire_smiles</span><span class="p">(</span>
                 <span class="n">smiles_string</span><span class="p">,</span>
                 <span class="n">add_hydrogens</span><span class="o">=</span><span class="n">add_hydrogens</span><span class="p">,</span>
@@ -617,6 +620,19 @@
                 <span class="nb">map</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">)</span>
+
+        <span class="c1"># Rename the molecule with the original SMILES string.</span>
+        <span class="c1"># Since the name is written to topology file formats, we</span>
+        <span class="c1"># need to ensure that it doesn&#39;t start with an [ character,</span>
+        <span class="c1"># which would break GROMACS.</span>
+        <span class="k">if</span> <span class="n">smiles_string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;smiles:</span><span class="si">{</span><span class="n">smiles_string</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">edit_mol</span> <span class="o">=</span> <span class="n">molecule</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+            <span class="n">edit_mol</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+            <span class="n">molecule</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">molecule</span>
+
     <span class="k">except</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">_ConversionError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;Unable to create a BioSimSpace Molecule from SMILES string: </span><span class="si">{</span><span class="n">smiles_string</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1050,7 +1066,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 28, 2023</div>
+              Last updated on Mar 10, 2023</div>
           </div>
           <div class="right-details">
             
