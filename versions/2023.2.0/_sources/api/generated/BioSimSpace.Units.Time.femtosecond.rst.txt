@@ -1,0 +1,6 @@
+﻿BioSimSpace.Units.Time.femtosecond
+==================================
+
+.. currentmodule:: BioSimSpace.Units.Time
+
+.. autodata:: femtosecond

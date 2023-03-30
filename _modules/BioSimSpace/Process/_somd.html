@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.Process._somd - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -549,10 +553,11 @@
 
 <span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
 
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
+
 <span class="kn">import</span> <span class="nn">glob</span> <span class="k">as</span> <span class="nn">_glob</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">_math</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
 <span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">_random</span>
 <span class="kn">import</span> <span class="nn">string</span> <span class="k">as</span> <span class="nn">_string</span>
 <span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
@@ -569,6 +574,7 @@
 <span class="kn">from</span> <span class="nn">.._Config</span> <span class="kn">import</span> <span class="n">Somd</span> <span class="k">as</span> <span class="n">_SomdConfig</span>
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span> <span class="nn">..Protocol._free_energy_mixin</span> <span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 
@@ -659,6 +665,33 @@
             <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
                 <span class="s2">&quot;Unsupported protocol: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
             <span class="p">)</span>
+
+        <span class="c1"># SOMD currently doesn&#39;t support FreeEnergyMinimisation or FreeEnergyEquilibration</span>
+        <span class="c1"># protocols at intermediate lambda values. Check to see if we&#39;re at an end state</span>
+        <span class="c1"># and convert the protocol accordingly.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_FreeEnergyMixin</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">FreeEnergyProduction</span><span class="p">):</span>
+                <span class="c1"># Get the lambda value.</span>
+                <span class="n">lam</span> <span class="o">=</span> <span class="n">protocol</span><span class="o">.</span><span class="n">getLambda</span><span class="p">()</span>
+
+                <span class="c1"># Check the end states.</span>
+
+                <span class="c1"># Lambda = 0 (default)</span>
+                <span class="k">if</span> <span class="n">_math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+                    <span class="k">pass</span>
+                <span class="c1"># Lambda = 1 (specify via property map)</span>
+                <span class="k">elif</span> <span class="n">_math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">[</span><span class="s2">&quot;is_lambda1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_SireBase</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+                <span class="c1"># Not supported.</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;SOMD cannot execute the &#39;BioSimSpace.Protocol.</span><span class="si">{</span><span class="n">protocol</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;protocol at the intermediate lambda value of </span><span class="si">{</span><span class="n">lam</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">. Simulations are only &quot;</span>
+                        <span class="s2">&quot;possible at the lambda end states, i.e. lambda = 0 or lambda = 1.&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># If we get this far, convert to a regular protocol.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">protocol</span><span class="o">.</span><span class="n">_to_regular_protocol</span><span class="p">()</span>
 
         <span class="c1"># Set the package name.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_package_name</span> <span class="o">=</span> <span class="s2">&quot;SOMD&quot;</span>
@@ -3518,7 +3551,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Align.matchAtoms" href="BioSimSpace.Align.matchAtoms.html" /><link rel="prev" title="BioSimSpace.Align" href="../index_Align.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.Align.generateNetwork - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -354,13 +355,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -524,7 +528,7 @@
 <h1>BioSimSpace.Align.generateNetwork<a class="headerlink" href="#biosimspace-align-generatenetwork" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="BioSimSpace.Align.generateNetwork">
-<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Align.</span></span><span class="sig-name descname"><span class="pre">generateNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_network</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">links_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_edges_forced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Align/_align.html#generateNetwork"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Align.generateNetwork" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Align.</span></span><span class="sig-name descname"><span class="pre">generateNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_network</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">links_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_edges_forced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Align/_align.html#generateNetwork"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Align.generateNetwork" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate a perturbation network using Lead Optimisation Mappper (LOMAP).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -568,6 +572,8 @@ n_edges_forced &lt; the number of edges suggested by LOMAP, BioSimSpace
 will remove the bottom n edges parsed from the LOMAP output file.
 This last option is discouraged as it can cause network cycle
 breakage and disconnecting of ligands/clusters from the network.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – A dictionary of keyword arguments to pass through to LOMAP. These
+will take precedence over any default values that are set.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -617,7 +623,7 @@ accurate.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

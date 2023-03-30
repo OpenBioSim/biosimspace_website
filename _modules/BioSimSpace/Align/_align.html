@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.Align._align - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -565,15 +569,10 @@
 
 <span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
 
-<span class="c1"># Suppress numpy warnings from RDKit import.</span>
-<span class="n">_warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;numpy.dtype size changed&quot;</span><span class="p">)</span>
-<span class="n">_warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;numpy.ndarray size changed&quot;</span><span class="p">)</span>
-<span class="n">_warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;numpy.ufunc size changed&quot;</span><span class="p">)</span>
-
 <span class="c1"># Suppress duplicate to-Python converted warnings.</span>
 <span class="c1"># Both Sire and RDKit register the same converter.</span>
 <span class="k">with</span> <span class="n">_warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-    <span class="n">_warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+    <span class="n">_warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
     <span class="n">_rdkit</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;rdkit&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">_have_imported</span><span class="p">(</span><span class="n">_rdkit</span><span class="p">):</span>
@@ -598,11 +597,10 @@
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
 
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Convert</span> <span class="k">as</span> <span class="n">_Convert</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
-
-<span class="kn">from</span> <span class="nn">..Convert._convert</span> <span class="kn">import</span> <span class="n">_to_rdkit</span>
 
 <span class="c1"># lomap depends on RDKit and networkx</span>
 <span class="n">_networkx</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;networkx&quot;</span><span class="p">)</span>
@@ -637,6 +635,7 @@
     <span class="n">links_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
     <span class="n">n_edges_forced</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate a perturbation network using Lead Optimisation Mappper (LOMAP).</span>
@@ -692,6 +691,10 @@
 <span class="sd">        will remove the bottom n edges parsed from the LOMAP output file.</span>
 <span class="sd">        This last option is discouraged as it can cause network cycle</span>
 <span class="sd">        breakage and disconnecting of ligands/clusters from the network.</span>
+
+<span class="sd">    **kwargs : dict</span>
+<span class="sd">        A dictionary of keyword arguments to pass through to LOMAP. These</span>
+<span class="sd">        will take precedence over any default values that are set.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -925,19 +928,24 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">lf</span> <span class="o">=</span> <span class="kc">None</span>
 
+    <span class="c1"># Create a dictionary of default keyword arguments.</span>
+    <span class="n">default_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s2">/outputs/lomap&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;links_file&quot;</span><span class="p">:</span> <span class="n">lf</span><span class="p">,</span>
+        <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;output_no_graph&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;output_no_images&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;threed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;max3d&quot;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;parallel&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Combine with **kwargs, with those taking precendence.</span>
+    <span class="n">total_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">default_kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">}</span>
+
     <span class="c1"># Create the DBMolecules object.</span>
-    <span class="n">db_mol</span> <span class="o">=</span> <span class="n">_lomap</span><span class="o">.</span><span class="n">DBMolecules</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s2">/inputs&quot;</span><span class="p">,</span>
-        <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s2">/outputs/lomap&quot;</span><span class="p">,</span>
-        <span class="n">links_file</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
-        <span class="n">output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">output_no_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">output_no_images</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">threed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">max3d</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
-        <span class="n">time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">parallel</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="n">db_mol</span> <span class="o">=</span> <span class="n">_lomap</span><span class="o">.</span><span class="n">DBMolecules</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s2">/inputs&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">total_kwargs</span><span class="p">)</span>
 
     <span class="c1"># Create the similarity matrices.</span>
     <span class="n">strict</span><span class="p">,</span> <span class="n">loose</span> <span class="o">=</span> <span class="n">db_mol</span><span class="o">.</span><span class="n">build_matrices</span><span class="p">()</span>
@@ -1419,29 +1427,27 @@
     <span class="c1"># Use RDKkit to find the maximum common substructure.</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Run inside a temporary directory.</span>
-        <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
-            <span class="c1"># Convert the molecules to RDKit format.</span>
-            <span class="n">mols</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">_to_rdkit</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">work_dir</span><span class="p">),</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map0</span><span class="p">),</span>
-                <span class="n">_to_rdkit</span><span class="p">(</span><span class="n">molecule1</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">work_dir</span><span class="p">),</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map1</span><span class="p">),</span>
-            <span class="p">]</span>
+        <span class="c1"># Convert the molecules to RDKit format.</span>
+        <span class="n">mols</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">_Convert</span><span class="o">.</span><span class="n">toRDKit</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map0</span><span class="p">),</span>
+            <span class="n">_Convert</span><span class="o">.</span><span class="n">toRDKit</span><span class="p">(</span><span class="n">mol1</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map1</span><span class="p">),</span>
+        <span class="p">]</span>
 
-            <span class="c1"># Generate the MCS match.</span>
-            <span class="n">mcs</span> <span class="o">=</span> <span class="n">_rdFMCS</span><span class="o">.</span><span class="n">FindMCS</span><span class="p">(</span>
-                <span class="n">mols</span><span class="p">,</span>
-                <span class="n">atomCompare</span><span class="o">=</span><span class="n">_rdFMCS</span><span class="o">.</span><span class="n">AtomCompare</span><span class="o">.</span><span class="n">CompareAny</span><span class="p">,</span>
-                <span class="n">bondCompare</span><span class="o">=</span><span class="n">_rdFMCS</span><span class="o">.</span><span class="n">BondCompare</span><span class="o">.</span><span class="n">CompareAny</span><span class="p">,</span>
-                <span class="n">completeRingsOnly</span><span class="o">=</span><span class="n">complete_rings_only</span><span class="p">,</span>
-                <span class="n">ringMatchesRingOnly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">matchChiralTag</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">matchValences</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">maximizeBonds</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-            <span class="p">)</span>
+        <span class="c1"># Generate the MCS match.</span>
+        <span class="n">mcs</span> <span class="o">=</span> <span class="n">_rdFMCS</span><span class="o">.</span><span class="n">FindMCS</span><span class="p">(</span>
+            <span class="n">mols</span><span class="p">,</span>
+            <span class="n">atomCompare</span><span class="o">=</span><span class="n">_rdFMCS</span><span class="o">.</span><span class="n">AtomCompare</span><span class="o">.</span><span class="n">CompareAny</span><span class="p">,</span>
+            <span class="n">bondCompare</span><span class="o">=</span><span class="n">_rdFMCS</span><span class="o">.</span><span class="n">BondCompare</span><span class="o">.</span><span class="n">CompareAny</span><span class="p">,</span>
+            <span class="n">completeRingsOnly</span><span class="o">=</span><span class="n">complete_rings_only</span><span class="p">,</span>
+            <span class="n">ringMatchesRingOnly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">matchChiralTag</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">matchValences</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">maximizeBonds</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+        <span class="p">)</span>
 
-            <span class="c1"># Get the common substructure as a SMARTS string.</span>
-            <span class="n">mcs_smarts</span> <span class="o">=</span> <span class="n">_Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">mcs</span><span class="o">.</span><span class="n">smartsString</span><span class="p">)</span>
+        <span class="c1"># Get the common substructure as a SMARTS string.</span>
+        <span class="n">mcs_smarts</span> <span class="o">=</span> <span class="n">_Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">mcs</span><span class="o">.</span><span class="n">smartsString</span><span class="p">)</span>
 
     <span class="k">except</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;RDKIT MCS mapping failed!&quot;</span><span class="p">)</span>
@@ -1756,9 +1762,6 @@
     <span class="c1"># Convert the mapping to AtomIdx key:value pairs.</span>
     <span class="n">sire_mapping</span> <span class="o">=</span> <span class="n">_to_sire_mapping</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
 
-    <span class="c1"># Create the working directory.</span>
-    <span class="n">work_dir</span> <span class="o">=</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">WorkDir</span><span class="p">()</span>
-
     <span class="c1"># Execute in the working directory.</span>
     <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
         <span class="c1"># Write the two molecules to PDB files.</span>
@@ -2062,12 +2065,9 @@
         <span class="p">)</span>
         <span class="n">molecule0</span> <span class="o">=</span> <span class="n">rmsdAlign</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span>
 
-    <span class="c1"># Create the working directory.</span>
-    <span class="n">work_dir</span> <span class="o">=</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">WorkDir</span><span class="p">()</span>
-
     <span class="c1"># Convert the molecules to RDKit format.</span>
-    <span class="n">rdmol0</span> <span class="o">=</span> <span class="n">_to_rdkit</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">work_dir</span><span class="p">),</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map0</span><span class="p">)</span>
-    <span class="n">rdmol1</span> <span class="o">=</span> <span class="n">_to_rdkit</span><span class="p">(</span><span class="n">molecule1</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">work_dir</span><span class="p">),</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map1</span><span class="p">)</span>
+    <span class="n">rdmol0</span> <span class="o">=</span> <span class="n">_Convert</span><span class="o">.</span><span class="n">toRDKit</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map0</span><span class="p">)</span>
+    <span class="n">rdmol1</span> <span class="o">=</span> <span class="n">_Convert</span><span class="o">.</span><span class="n">toRDKit</span><span class="p">(</span><span class="n">molecule1</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="n">property_map1</span><span class="p">)</span>
 
     <span class="kn">import</span> <span class="nn">py3Dmol</span> <span class="k">as</span> <span class="nn">_py3Dmol</span>
 
@@ -2659,7 +2659,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

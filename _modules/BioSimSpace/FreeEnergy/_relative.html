@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.FreeEnergy._relative - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -629,7 +633,9 @@
 <span class="sd">            a single perturbable molecule and is assumed to have already</span>
 <span class="sd">            been equilibrated.</span>
 
-<span class="sd">        protocol : :class:`Protocol.FreeEnergy &lt;BioSimSpace.Protocol.FreeEnergy&gt;`, \</span>
+<span class="sd">        protocol : :class:`Protocol.FreeEnergyMinimisation &lt;BioSimSpace.Protocol.FreeEnergyMinimisation&gt;`, \</span>
+<span class="sd">                   :class:`Protocol.FreeEnergyEquilibration &lt;BioSimSpace.Protocol.FreeEnergyEquilibration&gt;`, \</span>
+<span class="sd">                   :class:`Protocol.FreeEnergyProduction &lt;BioSimSpace.Protocol.FreeEnergyProduction&gt;`</span>
 <span class="sd">            The simulation protocol.</span>
 
 <span class="sd">        work_dir : str</span>
@@ -674,30 +680,6 @@
             <span class="c1"># Store a copy of solvated system.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">protocol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">protocol</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="s2">&quot;&#39;protocol&#39; must be of type &#39;BioSimSpace.Protocol.FreeEnergy&#39;&quot;</span>
-                <span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Use a default protocol.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">setup_only</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;setup_only&#39; must be of type &#39;bool&#39;.&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span> <span class="o">=</span> <span class="n">setup_only</span>
-
-        <span class="k">if</span> <span class="n">work_dir</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">setup_only</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;A &#39;work_dir&#39; must be specified when &#39;setup_only&#39; is True!&quot;</span>
-            <span class="p">)</span>
-
-        <span class="c1"># Create the working directory.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">=</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">WorkDir</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
-
         <span class="c1"># Validate the user specified molecular dynamics engine.</span>
         <span class="k">if</span> <span class="n">engine</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -727,12 +709,6 @@
                         <span class="s2">&quot;Use the &#39;BioSimSpace.Align&#39; package to map and merge molecules.&quot;</span>
                     <span class="p">)</span>
 
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getPerturbationType</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-                        <span class="s2">&quot;GROMACS currently only supports the &#39;full&#39; perturbation &quot;</span>
-                        <span class="s2">&quot;type. Please use engine=&#39;SOMD&#39; when running multistep &quot;</span>
-                        <span class="s2">&quot;perturbation types.&quot;</span>
-                    <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Use SOMD as a default.</span>
             <span class="n">engine</span> <span class="o">=</span> <span class="s2">&quot;SOMD&quot;</span>
@@ -746,6 +722,49 @@
 
         <span class="c1"># Set the engine.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">engine</span>
+
+        <span class="c1"># Validate the protocol.</span>
+        <span class="k">if</span> <span class="n">protocol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..Protocol._free_energy_mixin</span> <span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_FreeEnergyMixin</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;SOMD&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
+                    <span class="n">protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">FreeEnergyProduction</span>
+                <span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;Currently SOMD only supports protocols of type &#39;BioSimSpace.Protocol.FreeEnergyProduction&#39;&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">protocol</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;&#39;protocol&#39; must be of type &#39;BioSimSpace.Protocol.FreeEnergy&#39;&quot;</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Use a default protocol.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="p">()</span>
+
+        <span class="c1"># Check that multi-step perturbation isn&#39;t specified if GROMACS is the chosen engine.</span>
+        <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getPerturbationType</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                    <span class="s2">&quot;GROMACS currently only supports the &#39;full&#39; perturbation &quot;</span>
+                    <span class="s2">&quot;type. Please use engine=&#39;SOMD&#39; when running multistep &quot;</span>
+                    <span class="s2">&quot;perturbation types.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">setup_only</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;setup_only&#39; must be of type &#39;bool&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span> <span class="o">=</span> <span class="n">setup_only</span>
+
+        <span class="k">if</span> <span class="n">work_dir</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">setup_only</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;A &#39;work_dir&#39; must be specified when &#39;setup_only&#39; is True!&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Create the working directory.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">=</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">WorkDir</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ignore_warnings</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;ignore_warnings&#39; must be of type &#39;bool.&quot;</span><span class="p">)</span>
@@ -1326,10 +1345,11 @@
         <span class="c1"># Initialise list to store the processe</span>
         <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="c1"># Convert to an appropriate AMBER topology. (Required by SOMD for its</span>
-        <span class="c1"># FEP setup.)</span>
+        <span class="c1"># Convert to an appropriate water topology.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">==</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">:</span>
             <span class="n">system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span><span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">==</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span><span class="s2">&quot;GROMACS&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
 
         <span class="c1"># Setup all of the simulation processes for each leg.</span>
 
@@ -1387,9 +1407,9 @@
             <span class="c1"># Name the directory.</span>
             <span class="n">new_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/lambda_</span><span class="si">%5.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
 
-            <span class="c1"># Use the full path.</span>
-            <span class="k">if</span> <span class="n">new_dir</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;/&quot;</span><span class="p">:</span>
-                <span class="n">new_dir</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">new_dir</span>
+            <span class="c1"># Use absolute path.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">new_dir</span><span class="p">):</span>
+                <span class="n">new_dir</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">new_dir</span><span class="p">)</span>
 
             <span class="c1"># Delete any existing directories.</span>
             <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">new_dir</span><span class="p">):</span>
@@ -1566,7 +1586,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

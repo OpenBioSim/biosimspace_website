@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Changelog - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_style.css" />
@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -354,13 +355,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -529,12 +533,32 @@ company supporting open-source development of fostering academic/industrial coll
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
 </section>
+<section id="mar-30-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.1.2...2023.2.0">2023.2.0</a> - Mar 30 2023<a class="headerlink" href="#mar-30-2023" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Make sure that system properties are preserved when creating a new Sire system.</p></li>
+<li><p>Fixed an issue with the OpenMM minimisation protocol that meant that the number of steps was ignored (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/12">#12</a>).</p></li>
+<li><p>Use native Sire PDB downloading functionality to remove <code class="docutils literal notranslate"><span class="pre">pypdb</span></code> dependency.</p></li>
+<li><p>Fixed an issue with SMILES characters in molecule names causing issues for <code class="docutils literal notranslate"><span class="pre">gmx</span> <span class="pre">grompp</span></code> (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/14">#14</a>).</p></li>
+<li><p>Increase default SOMD cut-off since it uses reaction field (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/15">#15</a>).</p></li>
+<li><p>No longer downcast molecules to single residues and atoms when searching (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/19">#19</a>).</p></li>
+<li><p>Remove velocities when combining molecules if the property isn’t present for all molecules (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/21">#21</a>).</p></li>
+<li><p>Set default-valued properties when merging molecules to avoid issues with zero values when units are stripped (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/24">#24</a>).</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">watchdog</span></code> to avoid non-deterministic parsing of AMBER output (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/27">#27</a>).</p></li>
+<li><p>Improved handling of disulphide bonds in multi-chain PDBs sharing the same residue numbers (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/28">#28</a>).</p></li>
+<li><p>Allow keyword arguments to be passed through to <code class="docutils literal notranslate"><span class="pre">lomap</span></code> in <a class="reference internal" href="api/generated/BioSimSpace.Align.generateNetwork.html#BioSimSpace.Align.generateNetwork" title="BioSimSpace.Align.generateNetwork"><code class="xref py py-func docutils literal notranslate"><span class="pre">generateNetwork</span></code></a> (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/29">#29</a>).</p></li>
+<li><p>Add mixin classes to allow position restraints to be used with a wider range of protocols (<a class="reference external" href="https://github.com/xiki-tempula">&#64;xiki-tempula</a>) and alchemical simulations for non-production protocols (<a class="reference external" href="https://github.com/msuruzhon">&#64;msuruzhon</a>). Switch to using <code class="docutils literal notranslate"><span class="pre">gmx</span> <span class="pre">energy</span></code> to parse GROMACS energy records (<a class="reference external" href="https://github.com/xiki-tempula">&#64;xiki-tempula</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/30">#30</a>).</p></li>
+<li><p>Switch to using native RDKit conversion throughout to avoid conversion via an intermediate file format.</p></li>
+<li><p>Expose Sire to OpenMM conversion functionality in <a class="reference internal" href="api/index_Convert.html#module-BioSimSpace.Convert" title="BioSimSpace.Convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace.Convert</span></code></a>.</p></li>
+<li><p>Added Python 3.10 support and now build Python 3.10 packages. This is now the default version of Python for BioSimSpace, and the version we recommend for new workflows. Note that we will drop automatic building of Python 3.8 packages later this year (likely Q3 or Q4). This will be timed to co-incide with when we add Python 3.11 support, and when (we anticipate) conda-forge will drop Python 3.8. Our aim is to only build packages for a maximum of 3 Python versions at a time.</p></li>
+</ul>
+</section>
 <section id="feb-24-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.1.1...2023.1.2">2023.1.2</a> - Feb 24 2023<a class="headerlink" href="#feb-24-2023" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Refactor code to use a unified <a class="reference internal" href="api/generated/BioSimSpace._Utils.WorkDir.html#BioSimSpace._Utils.WorkDir" title="BioSimSpace._Utils.WorkDir"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkDir</span></code></a> class to simplify the creation of working directories.</p></li>
-<li><p>Added <a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.isSame" title="BioSimSpace._SireWrappers.System.isSame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">isSame</span></code></a> method to compare systems using a sub-set of system and molecular properties. This improves our file caching support, allowing a user to exclude properties when comparing cached systems prior to write, e.g. ignoring coordinates and velocities, if those are the only things that differ between the systems.</p></li>
-<li><p>Added the initial version of <a class="reference internal" href="api/index_Convert.html#module-BioSimSpace.Convert" title="BioSimSpace.Convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace.Convert</span></code></a>, which provides support for converting between native <code class="xref py py-obj docutils literal notranslate"><span class="pre">BioSimSpace</span></code>, <a class="reference external" href="http://sire.openbiosim.org">Sire</a>, and <a class="reference external" href="https://www.rdkit.org">RDKit</a> objects.</p></li>
+<li><p>Refactor code to use a unified <a class="reference internal" href="api/generated/BioSimSpace._Utils.WorkDir.html#BioSimSpace._Utils.WorkDir" title="BioSimSpace._Utils.WorkDir"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkDir</span></code></a> class to simplify the creation of working directories (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/2">#2</a>).</p></li>
+<li><p>Added <a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.isSame" title="BioSimSpace._SireWrappers.System.isSame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">isSame</span></code></a> method to compare systems using a sub-set of system and molecular properties. This improves our file caching support, allowing a user to exclude properties when comparing cached systems prior to write, e.g. ignoring coordinates and velocities, if those are the only things that differ between the systems <a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/3">(#3</a>).</p></li>
+<li><p>Added the initial version of <a class="reference internal" href="api/index_Convert.html#module-BioSimSpace.Convert" title="BioSimSpace.Convert"><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace.Convert</span></code></a>, which provides support for converting between native <code class="xref py py-obj docutils literal notranslate"><span class="pre">BioSimSpace</span></code>, <a class="reference external" href="http://sire.openbiosim.org">Sire</a>, and <a class="reference external" href="https://www.rdkit.org">RDKit</a> objects (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/9">#9</a>).</p></li>
 <li><p>Fixed several formatting issues with the website documentation.</p></li>
 </ul>
 </section>
@@ -543,7 +567,7 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <ul class="simple">
 <li><p>Minor fixes to website documentation.</p></li>
 <li><p>Fixed issues with API documentation introduced by <a class="reference external" href="https://pypi.org/project/pydocstringformatter">pydocstringformatter</a>.</p></li>
-<li><p>Fix globbing of GROMACS trajectory files.</p></li>
+<li><p>Fixed globbing of GROMACS trajectory files.</p></li>
 </ul>
 </section>
 <section id="feb-03-2023">
@@ -706,7 +730,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             
@@ -729,6 +753,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#mar-30-2023">2023.2.0 - Mar 30 2023</a></li>
 <li><a class="reference internal" href="#feb-24-2023">2023.1.2 - Feb 24 2023</a></li>
 <li><a class="reference internal" href="#feb-07-2023">2023.1.1 - Feb 07 2023</a></li>
 <li><a class="reference internal" href="#feb-03-2023">2023.1.0 - Feb 03 2023</a></li>

@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace._SireWrappers._system - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -549,6 +553,8 @@
 <span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;lester.hedges@gmail.com&quot;</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;System&quot;</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
 
 <span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
 <span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
@@ -1155,7 +1161,32 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_reset_mappings</span><span class="p">()</span>
 
             <span class="c1"># Update the molecule numbers.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_mol_nums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molNums</span><span class="p">()</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_mol_nums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molNums</span><span class="p">()</span>
+
+        <span class="c1"># Remove velocities if any molecules are missing them.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Search for water molecules in the system.</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mols_with_velocities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;mols with property velocity&quot;</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">molecules</span><span class="p">()</span>
+                <span class="n">num_vels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mols_with_velocities</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">num_vels</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Not all molecules have velocities.</span>
+            <span class="k">if</span> <span class="n">num_vels</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">num_vels</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">():</span>
+                <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="s2">&quot;Not all molecules have velocities. The &#39;velocity&#39; property will be removed.&quot;</span>
+                <span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="s2">&quot;velocity&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;Failed to remove &#39;velocity&#39; property from all molecules!&quot;</span>
+                    <span class="p">)</span></div>
 
 <div class="viewcode-block" id="System.removeMolecules"><a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.removeMolecules">[docs]</a>    <span class="k">def</span> <span class="nf">removeMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2601,8 +2632,7 @@
         <span class="c1"># Return the renumbered molecules.</span>
         <span class="k">return</span> <span class="n">new_molecules</span>
 
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_createSireSystem</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">_createSireSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an empty Sire system with a single molecule group called &quot;all&quot;.</span>
 
@@ -2621,6 +2651,10 @@
 
         <span class="c1"># Add the molecule group to the system.</span>
         <span class="n">system</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">molgrp</span><span class="p">)</span>
+
+        <span class="c1"># Copy any existing system properties.</span>
+        <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">propertyKeys</span><span class="p">():</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">system</span>
 
@@ -2826,7 +2860,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

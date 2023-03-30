@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace._Config._amber - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -553,6 +557,7 @@
 <span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
 
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
+<span class="kn">from</span> <span class="nn">..Protocol._position_restraint_mixin</span> <span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
 
 <span class="kn">from</span> <span class="nn">._config</span> <span class="kn">import</span> <span class="n">Config</span> <span class="k">as</span> <span class="n">_Config</span>
 
@@ -635,7 +640,7 @@
         <span class="c1"># Define some miscellaneous defaults.</span>
         <span class="n">protocol_dict</span> <span class="o">=</span> <span class="p">{</span>
             <span class="c1"># Interval between reporting energies.</span>
-            <span class="s2">&quot;ntpr&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="s2">&quot;ntpr&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reportInterval</span><span class="p">(),</span>
             <span class="c1"># Interval between saving restart files.</span>
             <span class="s2">&quot;ntwr&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">restartInterval</span><span class="p">(),</span>
             <span class="c1"># Trajectory sampling frequency.</span>
@@ -673,6 +678,8 @@
             <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;maxcyc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">()</span>
             <span class="c1"># Set the number of steepest descent steps.</span>
             <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;ncyc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_steep</span>
+            <span class="c1"># Report energies every 100 steps.</span>
+            <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;ntpr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Define the timestep</span>
             <span class="n">timestep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getTimeStep</span><span class="p">()</span><span class="o">.</span><span class="n">picoseconds</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
@@ -703,8 +710,8 @@
             <span class="c1"># Wrap the coordinates.</span>
             <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;iwrap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-        <span class="c1"># Restraints.</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Equilibration</span><span class="p">):</span>
+        <span class="c1"># Postion restraints.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_PositionRestraintMixin</span><span class="p">):</span>
             <span class="c1"># Get the restraint.</span>
             <span class="n">restraint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span>
 
@@ -772,11 +779,16 @@
                     <span class="p">)</span>
 
         <span class="c1"># Temperature control.</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">_Protocol</span><span class="o">.</span><span class="n">Metadynamics</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Steering</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">),</span>
+        <span class="p">):</span>
             <span class="c1"># Langevin dynamics.</span>
             <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;ntt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-            <span class="c1"># Collision frequency (ps).</span>
-            <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;gamma_ln&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="c1"># Collision frequency (1 / ps).</span>
+            <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;gamma_ln&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getThermostatTimeConstant</span><span class="p">()</span><span class="o">.</span><span class="n">picoseconds</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+            <span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Equilibration</span><span class="p">):</span>
                 <span class="n">temp0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getStartTemperature</span><span class="p">()</span><span class="o">.</span><span class="n">kelvin</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
@@ -904,7 +916,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

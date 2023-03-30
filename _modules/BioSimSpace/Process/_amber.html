@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.Process._amber - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -547,18 +551,9 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Amber&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span><span class="p">,</span> <span class="n">_have_imported</span>
+<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
 
-<span class="n">_watchdog</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;watchdog&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">_have_imported</span><span class="p">(</span><span class="n">_watchdog</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">watchdog.events</span> <span class="kn">import</span> <span class="p">(</span>
-        <span class="n">PatternMatchingEventHandler</span> <span class="k">as</span> <span class="n">_PatternMatchingEventHandler</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">watchdog.observers</span> <span class="kn">import</span> <span class="n">Observer</span> <span class="k">as</span> <span class="n">_Observer</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">_PatternMatchingEventHandler</span> <span class="o">=</span> <span class="n">_watchdog</span>
-    <span class="n">_Observer</span> <span class="o">=</span> <span class="n">_watchdog</span>
+<span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
 <span class="kn">import</span> <span class="nn">re</span> <span class="k">as</span> <span class="nn">_re</span>
@@ -575,6 +570,7 @@
 <span class="kn">from</span> <span class="nn">.._Config</span> <span class="kn">import</span> <span class="n">Amber</span> <span class="k">as</span> <span class="n">_AmberConfig</span>
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span> <span class="nn">..Protocol._position_restraint_mixin</span> <span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 <span class="kn">from</span> <span class="nn">..Types._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
@@ -587,100 +583,6 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_process</span>
 
 <span class="kn">from</span> <span class="nn">._plumed</span> <span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
-
-
-<span class="k">class</span> <span class="nc">_Watcher</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A class to watch for changes to the AMBER energy info file. An event handler</span>
-<span class="sd">    is used trigger updates to the energy dictionary each time the file is modified.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proc</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-
-<span class="sd">        proc : :class:`Process.Amber &lt;BioSimSpace.Process.Amber&gt;`</span>
-<span class="sd">            The Amber Process object.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">proc</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_observer</span> <span class="o">=</span> <span class="n">_Observer</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Start the file watcher.&quot;&quot;&quot;</span>
-
-        <span class="c1"># Setup the event handler and observer.</span>
-        <span class="n">event_handler</span> <span class="o">=</span> <span class="n">_Handler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="n">event_handler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">workDir</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="n">_have_imported</span><span class="p">(</span><span class="n">_watchdog</span><span class="p">):</span>
-
-    <span class="k">class</span> <span class="nc">_Handler</span><span class="p">(</span><span class="n">_PatternMatchingEventHandler</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;An event handler to trigger updates to the energy dictionary each time</span>
-<span class="sd">        the log file is changed.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proc</span><span class="p">):</span>
-<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            Constructor.</span>
-
-<span class="sd">            Parameters</span>
-<span class="sd">            ----------</span>
-
-<span class="sd">            proc : :class:`Process.Amber &lt;BioSimSpace.Process.Amber&gt;`</span>
-<span class="sd">                The Amber Process object.</span>
-<span class="sd">            &quot;&quot;&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">proc</span>
-
-            <span class="nb">super</span><span class="p">(</span><span class="n">_Handler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-                <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">ignore_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">ignore_patterns</span><span class="o">=</span><span class="p">[],</span>
-                <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*.nrg&quot;</span><span class="p">],</span>
-            <span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">on_any_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            Update the dictionary when the file is modified.</span>
-
-<span class="sd">            Parameters</span>
-<span class="sd">            ----------</span>
-
-<span class="sd">            event : str</span>
-<span class="sd">                The file system event.</span>
-<span class="sd">            &quot;&quot;&quot;</span>
-
-            <span class="c1"># N.B.</span>
-            <span class="c1">#</span>
-            <span class="c1"># Since the watchdog package is cross-platform it doesn&#39;t support</span>
-            <span class="c1"># detection of &quot;close-write&quot; operations, so multiple &quot;modified&quot; events</span>
-            <span class="c1"># can be triggered while the log file is being written. As such, we</span>
-            <span class="c1"># check whether the file has been updated by seeing if the NSTEP record</span>
-            <span class="c1"># is different to the most recent entry in the dictionary.</span>
-            <span class="c1"># So far, no issues have been found with processing partially written</span>
-            <span class="c1"># files, i.e. duplicate or missing records.</span>
-
-            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">event_type</span> <span class="o">==</span> <span class="s2">&quot;modified&quot;</span><span class="p">:</span>
-                <span class="c1"># If this is the first time the file has been modified since the</span>
-                <span class="c1"># process started, then wipe the dictionary and flag that the file</span>
-                <span class="c1"># is now being watched.</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">_is_watching</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">_stdout_dict</span> <span class="o">=</span> <span class="n">_process</span><span class="o">.</span><span class="n">_MultiDict</span><span class="p">()</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">_is_watching</span> <span class="o">=</span> <span class="kc">True</span>
-
-                <span class="c1"># Make sure the file exists.</span>
-                <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">_nrg_file</span><span class="p">):</span>
-                    <span class="c1"># Now update the dictionary with any new records.</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">_update_energy_dict</span><span class="p">()</span>
-
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">_Handler</span> <span class="o">=</span> <span class="n">_watchdog</span>
 
 
 <div class="viewcode-block" id="Amber"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber">[docs]</a><span class="k">class</span> <span class="nc">Amber</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
@@ -785,14 +687,10 @@
         <span class="c1"># Initialise the energy dictionary and header.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span> <span class="o">=</span> <span class="n">_process</span><span class="o">.</span><span class="n">_MultiDict</span><span class="p">()</span>
 
-        <span class="c1"># Create the name of the energy output file and wipe the</span>
-        <span class="c1"># contents of any existing file.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_nrg_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.nrg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrg_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-        <span class="c1"># Initialise the energy watcher.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_is_watching</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># Initialise log file parsing flags.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_results</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_finished_results</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_header</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="c1"># The names of the input files.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.rst7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -935,8 +833,8 @@
 
         <span class="c1"># Skip if the user has passed a custom protocol.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Custom</span><span class="p">):</span>
-            <span class="c1"># Append a reference file if this a restrained equilibration.</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Equilibration</span><span class="p">):</span>
+            <span class="c1"># Append a reference file if a position restraint is specified.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_PositionRestraintMixin</span><span class="p">):</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">setArg</span><span class="p">(</span><span class="s2">&quot;-ref&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.rst7&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
 
@@ -964,9 +862,6 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">isRunning</span><span class="p">():</span>
                 <span class="k">return</span>
 
-        <span class="c1"># Reset the watcher.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_is_watching</span> <span class="o">=</span> <span class="kc">False</span>
-
         <span class="c1"># Run the process in the working directory.</span>
         <span class="k">with</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">cd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">):</span>
             <span class="c1"># Create the arguments string list.</span>
@@ -990,10 +885,6 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">_SireBase</span><span class="o">.</span><span class="n">Process</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_exe</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.err&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
             <span class="p">)</span>
-
-        <span class="c1"># Watch the energy info file for changes.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span> <span class="o">=</span> <span class="n">_Watcher</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -1285,6 +1176,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isError</span><span class="p">():</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The process exited with an error!&quot;</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentRecords"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRecords">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2106,37 +1998,61 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDensity</span><span class="p">(</span><span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_update_energy_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Read the energy info file and update the dictionary.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Amber.stdout"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.stdout">[docs]</a>    <span class="k">def</span> <span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Print the last n lines of the stdout buffer.</span>
 
-        <span class="c1"># Return if the file doesn&#39;t exist, e.g. it could have been deleted.</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrg_file</span><span class="p">):</span>
-            <span class="k">return</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        n : int</span>
+<span class="sd">            The number of lines to print.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Ensure that the number of lines is positive.</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The number of lines must be positive!&quot;</span><span class="p">)</span>
 
         <span class="c1"># Flag that this isn&#39;t a header line.</span>
-        <span class="n">is_header</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_header</span> <span class="o">=</span> <span class="kc">False</span>
 
-        <span class="c1"># Open the file for reading.</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrg_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-            <span class="c1"># Loop over all of the lines.</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-                <span class="c1"># Skip empty lines and summary reports.</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;|&quot;</span><span class="p">:</span>
+        <span class="c1"># Append any new lines to the stdout list.</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">_pygtail</span><span class="o">.</span><span class="n">Pygtail</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout_file</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="c1"># Skip empty lines and summary reports.</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+                <span class="ow">and</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;|&quot;</span>
+                <span class="ow">and</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;EAMBER&quot;</span><span class="p">)</span>
+            <span class="p">):</span>
+                <span class="c1"># Flag that we&#39;ve started recording results.</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_results</span> <span class="ow">and</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_has_results</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_finished_results</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="c1"># Flag that we&#39;ve finished recording results.</span>
+                <span class="k">elif</span> <span class="s2">&quot;A V E R A G E S&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_finished_results</span> <span class="o">=</span> <span class="kc">True</span>
+
+                <span class="c1"># Parse the results.</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_results</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_finished_results</span><span class="p">:</span>
                     <span class="c1"># The output format is different for minimisation protocols.</span>
                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">):</span>
                         <span class="c1"># No equals sign in the line.</span>
-                        <span class="k">if</span> <span class="s2">&quot;=&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="s2">&quot;NSTEP&quot;</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s2">&quot;=&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
                             <span class="c1"># Split the line using whitespace.</span>
                             <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
                             <span class="c1"># If we find a header, jump to the top of the loop.</span>
                             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                                 <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;NSTEP&quot;</span><span class="p">:</span>
-                                    <span class="n">is_header</span> <span class="o">=</span> <span class="kc">True</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">_is_header</span> <span class="o">=</span> <span class="kc">True</span>
                                     <span class="k">continue</span>
 
                         <span class="c1"># Process the header record.</span>
-                        <span class="k">if</span> <span class="n">is_header</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_header</span><span class="p">:</span>
                             <span class="c1"># Split the line using whitespace.</span>
                             <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
@@ -2145,15 +2061,15 @@
                                 <span class="s2">&quot;NSTEP&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span>
                                 <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                             <span class="p">):</span>
-                                <span class="k">return</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_finished_results</span> <span class="o">=</span> <span class="kc">True</span>
+                                <span class="k">continue</span>
 
-                            <span class="k">else</span><span class="p">:</span>
-                                <span class="c1"># Add the timestep and energy records to the dictionary.</span>
-                                <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                                <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="s2">&quot;ENERGY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                            <span class="c1"># Add the timestep and energy records to the dictionary.</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="s2">&quot;ENERGY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-                                <span class="c1"># Turn off the header flag now that the data has been recorded.</span>
-                                <span class="n">is_header</span> <span class="o">=</span> <span class="kc">False</span>
+                            <span class="c1"># Turn off the header flag now that the data has been recorded.</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_is_header</span> <span class="o">=</span> <span class="kc">False</span>
 
                     <span class="c1"># All other protocols have output that is formatted as RECORD = VALUE.</span>
 
@@ -2167,81 +2083,27 @@
                     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
                         <span class="c1"># Strip whitespace from the record key.</span>
                         <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
-                        <span class="c1"># The file hasn&#39;t been updated.</span>
-                        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;NSTEP&quot;</span><span class="p">:</span>
-                            <span class="k">if</span> <span class="p">(</span>
-                                <span class="s2">&quot;NSTEP&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span>
-                                <span class="ow">and</span> <span class="n">value</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-                            <span class="p">):</span>
-                                <span class="k">return</span>
-                            <span class="k">else</span><span class="p">:</span>
-                                <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-                        <span class="k">else</span><span class="p">:</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="c1"># Get the current number of lines.</span>
+        <span class="n">num_lines</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span><span class="p">)</span>
+
+        <span class="c1"># Set the line from which to start printing.</span>
+        <span class="k">if</span> <span class="n">num_lines</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">num_lines</span> <span class="o">-</span> <span class="n">n</span>
+
+        <span class="c1"># Print the lines.</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">num_lines</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span><span class="p">[</span><span class="n">x</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="Amber.kill"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.kill">[docs]</a>    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Kill the running process.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Stop and join the watchdog observer.</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-
         <span class="c1"># Kill the process.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">isRunning</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span></div>
-
-<div class="viewcode-block" id="Amber.wait"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.wait">[docs]</a>    <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_time</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Wait for the process to finish.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-
-<span class="sd">        max_time : :class:`Time &lt;BioSimSpace.Types.Time&gt;`, int, float</span>
-<span class="sd">            The maximum time to wait (in minutes).</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="c1"># The process isn&#39;t running.</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isRunning</span><span class="p">():</span>
-            <span class="k">return</span>
-
-        <span class="k">if</span> <span class="n">max_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="c1"># Convert int to float.</span>
-            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">max_time</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
-                <span class="n">max_time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_time</span><span class="p">)</span>
-
-            <span class="c1"># BioSimSpace.Types.Time</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">max_time</span><span class="p">,</span> <span class="n">_Type</span><span class="p">):</span>
-                <span class="n">max_time</span> <span class="o">=</span> <span class="n">max_time</span><span class="o">.</span><span class="n">minutes</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
-
-            <span class="c1"># Float.</span>
-            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">max_time</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">max_time</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;max_time&#39; cannot be negative!&quot;</span><span class="p">)</span>
-
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="s2">&quot;&#39;max_time&#39; must be of type &#39;BioSimSpace.Types.Time&#39; or &#39;float&#39;.&quot;</span>
-                <span class="p">)</span>
-
-        <span class="c1"># Loop until the process is finished.</span>
-        <span class="c1"># For some reason we can&#39;t use Sire.Base.Process.wait() since it</span>
-        <span class="c1"># doesn&#39;t work properly with the background threads used for the</span>
-        <span class="c1"># watchdog observer.</span>
-        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">isRunning</span><span class="p">():</span>
-            <span class="n">_time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-            <span class="c1"># The maximum run time has been exceeded, kill the job.</span>
-            <span class="k">if</span> <span class="n">max_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">runTime</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">max_time</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-                    <span class="k">return</span>
-
-        <span class="c1"># Stop and join the watchdog observer.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_watcher</span><span class="o">.</span><span class="n">_observer</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_get_stdout_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2265,6 +2127,9 @@
 <span class="sd">        record :</span>
 <span class="sd">            The matching stdout record.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Update the standard output dictionary.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
         <span class="c1"># No data!</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -2325,7 +2190,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             

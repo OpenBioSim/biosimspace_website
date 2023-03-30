@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.Process._namd - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -353,13 +354,16 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -564,6 +568,7 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
 <span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span> <span class="nn">..Protocol._position_restraint_mixin</span> <span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 <span class="kn">from</span> <span class="nn">..Types._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
@@ -930,6 +935,40 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;binaryOutput          no&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;binaryRestart         no&quot;</span><span class="p">)</span>
 
+        <span class="c1"># Position restraints.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_PositionRestraintMixin</span><span class="p">):</span>
+            <span class="n">restraint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">restraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># Create a restrained system.</span>
+                <span class="n">restrained</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_createRestrainedSystem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="p">,</span> <span class="n">restraint</span><span class="p">)</span>
+
+                <span class="c1"># Create a PDB object, mapping the &quot;occupancy&quot; property to &quot;restrained&quot;.</span>
+                <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;occupancy&quot;</span><span class="p">,</span> <span class="s2">&quot;occupancy&quot;</span><span class="p">)</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">p</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">PDB2</span><span class="p">(</span><span class="n">restrained</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="p">{</span><span class="n">prop</span><span class="p">:</span> <span class="s2">&quot;restrained&quot;</span><span class="p">})</span>
+
+                    <span class="c1"># File name for the restraint file.</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_restraint_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.restrained&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+                    <span class="c1"># Write the PDB file.</span>
+                    <span class="n">p</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_restraint_file</span><span class="p">)</span>
+
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;Failed to add restraints to PDB file. &quot;</span>
+                        <span class="s2">&quot;Perhaps there are no atoms matching the restraint?&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># Update the configuration file.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;constraints           yes&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;consref               </span><span class="si">%s</span><span class="s2">.restrained&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;conskfile             </span><span class="si">%s</span><span class="s2">.restrained&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;conskcol              O&quot;</span><span class="p">)</span>
+
         <span class="c1"># Add configuration variables for a minimisation simulation.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">):</span>
             <span class="c1"># Output frequency.</span>
@@ -1014,39 +1053,6 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;useFlexibleCell       no&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;useConstantArea       no&quot;</span><span class="p">)</span>
 
-            <span class="c1"># Restrain the backbone.</span>
-            <span class="n">restraint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">restraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="c1"># Create a restrained system.</span>
-                <span class="n">restrained</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_createRestrainedSystem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="p">,</span> <span class="n">restraint</span><span class="p">)</span>
-
-                <span class="c1"># Create a PDB object, mapping the &quot;occupancy&quot; property to &quot;restrained&quot;.</span>
-                <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;occupancy&quot;</span><span class="p">,</span> <span class="s2">&quot;occupancy&quot;</span><span class="p">)</span>
-
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">p</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">PDB2</span><span class="p">(</span><span class="n">restrained</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="p">{</span><span class="n">prop</span><span class="p">:</span> <span class="s2">&quot;restrained&quot;</span><span class="p">})</span>
-
-                    <span class="c1"># File name for the restraint file.</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_restraint_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.restrained&quot;</span> <span class="o">%</span> <span class="p">(</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
-                    <span class="p">)</span>
-
-                    <span class="c1"># Write the PDB file.</span>
-                    <span class="n">p</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_restraint_file</span><span class="p">)</span>
-
-                <span class="k">except</span><span class="p">:</span>
-                    <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                        <span class="s2">&quot;Failed to add restraints to PDB file. &quot;</span>
-                        <span class="s2">&quot;Perhaps there are no atoms matching the restraint?&quot;</span>
-                    <span class="p">)</span>
-
-                <span class="c1"># Update the configuration file.</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;constraints           yes&quot;</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;consref               </span><span class="si">%s</span><span class="s2">.restrained&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;conskfile             </span><span class="si">%s</span><span class="s2">.restrained&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;conskcol              O&quot;</span><span class="p">)</span>
-
             <span class="c1"># Heating/cooling simulation.</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">isConstantTemp</span><span class="p">():</span>
                 <span class="c1"># Work out temperature step size (assuming a unit increment).</span>
@@ -1110,10 +1116,6 @@
                 <span class="s2">&quot;timestep              </span><span class="si">%.2f</span><span class="s2">&quot;</span>
                 <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getTimeStep</span><span class="p">()</span><span class="o">.</span><span class="n">femtoseconds</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
             <span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getFirstStep</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                    <span class="s2">&quot;firsttimestep         </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getFirstStep</span><span class="p">()</span>
-                <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;rigidBonds            all&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;nonbondedFreq         1&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;fullElectFrequency    2&quot;</span><span class="p">)</span>
@@ -1529,6 +1531,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isError</span><span class="p">():</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The process exited with an error!&quot;</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="Namd.getCurrentRecords"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Namd.html#BioSimSpace.Process.Namd.getCurrentRecords">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2766,7 +2769,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 24, 2023</div>
+              Last updated on Mar 30, 2023</div>
           </div>
           <div class="right-details">
             
