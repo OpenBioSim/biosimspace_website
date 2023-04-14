@@ -56,6 +56,7 @@
       ~Gromacs.getCurrentTemperature
       ~Gromacs.getCurrentTime
       ~Gromacs.getCurrentTotalEnergy
+      ~Gromacs.getCurrentVolume
       ~Gromacs.getDihedralEnergy
       ~Gromacs.getDispersionCorrection
       ~Gromacs.getFrame
@@ -83,6 +84,7 @@
       ~Gromacs.getTime
       ~Gromacs.getTotalEnergy
       ~Gromacs.getTrajectory
+      ~Gromacs.getVolume
       ~Gromacs.inputFiles
       ~Gromacs.insertArg
       ~Gromacs.isError

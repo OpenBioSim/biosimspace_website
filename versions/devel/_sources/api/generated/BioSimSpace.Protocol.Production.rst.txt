@@ -14,21 +14,26 @@
    .. autosummary::
    
       ~Production.__init__
-      ~Production.getFirstStep
+      ~Production.getForceConstant
       ~Production.getPressure
       ~Production.getReportInterval
       ~Production.getRestartInterval
+      ~Production.getRestraint
       ~Production.getRunTime
       ~Production.getTemperature
+      ~Production.getThermostatTimeConstant
       ~Production.getTimeStep
       ~Production.isRestart
-      ~Production.setFirstStep
+      ~Production.restraints
+      ~Production.setForceConstant
       ~Production.setPressure
       ~Production.setReportInterval
       ~Production.setRestart
       ~Production.setRestartInterval
+      ~Production.setRestraint
       ~Production.setRunTime
       ~Production.setTemperature
+      ~Production.setThermostatTimeConstant
       ~Production.setTimeStep
    
    

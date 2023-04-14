@@ -22,6 +22,7 @@
       ~Atom.index
       ~Atom.moleculeNumber
       ~Atom.name
+      ~Atom.save
       ~Atom.smiles
       ~Atom.toMolecule
       ~Atom.translate

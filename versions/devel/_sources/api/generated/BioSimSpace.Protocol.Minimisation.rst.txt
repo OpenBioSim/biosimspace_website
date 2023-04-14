@@ -14,7 +14,12 @@
    .. autosummary::
    
       ~Minimisation.__init__
+      ~Minimisation.getForceConstant
+      ~Minimisation.getRestraint
       ~Minimisation.getSteps
+      ~Minimisation.restraints
+      ~Minimisation.setForceConstant
+      ~Minimisation.setRestraint
       ~Minimisation.setSteps
    
    

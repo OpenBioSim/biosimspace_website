@@ -3,12 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Protocol.Production" href="BioSimSpace.Protocol.Production.html" /><link rel="prev" title="BioSimSpace.Protocol.Metadynamics" href="BioSimSpace.Protocol.Metadynamics.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Protocol.Equilibration" href="BioSimSpace.Protocol.Equilibration.html" /><link rel="prev" title="BioSimSpace.Protocol.createProtocol" href="BioSimSpace.Protocol.createProtocol.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>BioSimSpace.Protocol.Minimisation - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
 </ul>
@@ -335,6 +336,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -354,13 +356,16 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index_Protocol.html">BioSimSpace.Protocol</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BioSimSpace.Protocol.Minimisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BioSimSpace.Protocol.Minimisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -374,11 +379,16 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Stream.html">BioSimSpace.Stream</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Stream.save.html">BioSimSpace.Stream.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Stream.load.html">BioSimSpace.Stream.load</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Trajectory.Trajectory.html">BioSimSpace.Trajectory.Trajectory</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Angle.html">BioSimSpace.Types.Angle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Area.html">BioSimSpace.Types.Area</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Charge.html">BioSimSpace.Types.Charge</a></li>
@@ -392,7 +402,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Volume.html">BioSimSpace.Types.Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.meter.html">BioSimSpace.Units.Length.meter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.angstrom.html">BioSimSpace.Units.Length.angstrom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.nanometer.html">BioSimSpace.Units.Length.nanometer</a></li>
@@ -427,23 +437,24 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.femtosecond.html">BioSimSpace.Units.Time.femtosecond</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Config.html">BioSimSpace._Config</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Config.html">BioSimSpace._Config</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Config.Amber.html">BioSimSpace._Config.Amber</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Config.Gromacs.html">BioSimSpace._Config.Gromacs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Config.Somd.html">BioSimSpace._Config.Somd</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.AlignmentError.html">BioSimSpace._Exceptions.AlignmentError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.AnalysisError.html">BioSimSpace._Exceptions.AnalysisError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ConversionError.html">BioSimSpace._Exceptions.ConversionError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.IncompatibleError.html">BioSimSpace._Exceptions.IncompatibleError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.MissingSoftwareError.html">BioSimSpace._Exceptions.MissingSoftwareError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ParameterisationError.html">BioSimSpace._Exceptions.ParameterisationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.StreamError.html">BioSimSpace._Exceptions.StreamError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ThirdPartyError.html">BioSimSpace._Exceptions.ThirdPartyError</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_SireWrappers.html">BioSimSpace._SireWrappers</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_SireWrappers.html">BioSimSpace._SireWrappers</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html">BioSimSpace._SireWrappers.Atom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Bond.html">BioSimSpace._SireWrappers.Bond</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html">BioSimSpace._SireWrappers.Molecule</a></li>
@@ -453,7 +464,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.SearchResult.html">BioSimSpace._SireWrappers.SearchResult</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.WorkDir.html">BioSimSpace._Utils.WorkDir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.cd.html">BioSimSpace._Utils.cd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.command_split.html">BioSimSpace._Utils.command_split</a></li>
@@ -470,8 +481,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
@@ -524,15 +535,39 @@
 <h1>BioSimSpace.Protocol.Minimisation<a class="headerlink" href="#biosimspace-protocol-minimisation" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">Minimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_minimisation.html#Minimisation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">Minimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps=10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10.0000</span> <span class="pre">M</span> <span class="pre">Q-1</span> <span class="pre">T-2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_minimisation.html#Minimisation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation" title="Permalink to this definition">#</a></dt>
 <dd><p>A class for storing minimisation protocols.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_minimisation.html#Minimisation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps=10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10.0000</span> <span class="pre">M</span> <span class="pre">Q-1</span> <span class="pre">T-2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_minimisation.html#Minimisation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>steps</strong> (<em>int</em>) – The maximum number of steps to perform.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps</strong> (<em>int</em>) – The maximum number of steps to perform.</p></li>
+<li><p><strong>restraint</strong> (<em>str</em><em>, </em><em>[</em><em>int</em><em>]</em>) – <p>The type of restraint to perform. This should be one of the
+following options:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”backbone”</dt><dd><p>Protein backbone atoms. The matching is done by a name
+template, so is unreliable on conversion between
+molecular file formats.</p>
+</dd>
+<dt>”heavy”</dt><dd><p>All non-hydrogen atoms that aren’t part of water
+molecules or free ions.</p>
+</dd>
+<dt>”all”</dt><dd><p>All atoms that aren’t part of water molecules or free
+ions.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Alternatively, the user can pass a list of atom indices for
+more fine-grained control. If None, then no restraints are used.</p>
+</p></li>
+<li><p><strong>force_constant</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>, float) – The force constant for the restraint potential. If a ‘float’ is
+passed, then default units of ‘kcal_per_mol / angstrom**2’ will
+be used.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -541,18 +576,62 @@
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.__init__" title="BioSimSpace.Protocol.Minimisation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([steps])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.__init__" title="BioSimSpace.Protocol.Minimisation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([steps, restraint, force_constant])</p></td>
 <td><p>Constructor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.getForceConstant" title="BioSimSpace.Protocol.Minimisation.getForceConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getForceConstant</span></code></a>()</p></td>
+<td><p>Return the force constant for the restraint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.getRestraint" title="BioSimSpace.Protocol.Minimisation.getRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRestraint</span></code></a>()</p></td>
+<td><p>Return the type of restraint..</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.getSteps" title="BioSimSpace.Protocol.Minimisation.getSteps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSteps</span></code></a>()</p></td>
 <td><p>Return the maximum number of steps.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setSteps" title="BioSimSpace.Protocol.Minimisation.setSteps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSteps</span></code></a>(steps)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.restraints" title="BioSimSpace.Protocol.Minimisation.restraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">restraints</span></code></a>()</p></td>
+<td><p>Return a list of the supported restraint keywords.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setForceConstant" title="BioSimSpace.Protocol.Minimisation.setForceConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setForceConstant</span></code></a>(force_constant)</p></td>
+<td><p>Set the force constant for the restraint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setRestraint" title="BioSimSpace.Protocol.Minimisation.setRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRestraint</span></code></a>(restraint)</p></td>
+<td><p>Set the type of restraint.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setSteps" title="BioSimSpace.Protocol.Minimisation.setSteps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSteps</span></code></a>(steps)</p></td>
 <td><p>Set the maximum number of steps.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.getForceConstant">
+<span class="sig-name descname"><span class="pre">getForceConstant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.getForceConstant" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the force constant for the restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>force_constant</strong> – The force constant for the restraint, in units of
+kcal_per_mol/angstrom**2.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>class:<code class="xref py py-obj docutils literal notranslate"><span class="pre">GeneralUnit</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.getRestraint">
+<span class="sig-name descname"><span class="pre">getRestraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.getRestraint" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the type of restraint..</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraint</strong> – The type of restraint.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str, [int]</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.getSteps">
 <span class="sig-name descname"><span class="pre">getSteps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_minimisation.html#Minimisation.getSteps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.getSteps" title="Permalink to this definition">#</a></dt>
@@ -563,6 +642,61 @@
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.restraints">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.restraints" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a list of the supported restraint keywords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraints</strong> – A list of the supported restraint keywords.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.setForceConstant">
+<span class="sig-name descname"><span class="pre">setForceConstant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_constant</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.setForceConstant" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the force constant for the restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>force_constant</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>, float) – The force constant for the restraint, in units of
+kcal_per_mol/angstrom**2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Minimisation.setRestraint">
+<span class="sig-name descname"><span class="pre">setRestraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restraint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.Minimisation.setRestraint" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the type of restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraint</strong> (<em>str</em><em>, </em><em>[</em><em>int</em><em>]</em>) – <p>The type of restraint to perform. This should be one of the
+following options:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”backbone”</dt><dd><p>Protein backbone atoms. The matching is done by a name
+template, so is unreliable on conversion between
+molecular file formats.</p>
+</dd>
+<dt>”heavy”</dt><dd><p>All non-hydrogen atoms that aren’t part of water
+molecules or free ions.</p>
+</dd>
+<dt>”all”</dt><dd><p>All atoms that aren’t part of water molecules or free
+ions.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Alternatively, the user can pass a list of atom indices for
+more fine-grained control.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -587,23 +721,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="BioSimSpace.Protocol.Production.html">
+          <a class="next-page" href="BioSimSpace.Protocol.Equilibration.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">BioSimSpace.Protocol.Production</div>
+                <div class="title">BioSimSpace.Protocol.Equilibration</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="BioSimSpace.Protocol.Metadynamics.html">
+          <a class="prev-page" href="BioSimSpace.Protocol.createProtocol.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">BioSimSpace.Protocol.Metadynamics</div>
+                <div class="title">BioSimSpace.Protocol.createProtocol</div>
                 
               </div>
             </a>
@@ -613,7 +747,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 10, 2023</div>
+              Last updated on Apr 14, 2023</div>
           </div>
           <div class="right-details">
             
@@ -637,7 +771,12 @@
 <li><a class="reference internal" href="#">BioSimSpace.Protocol.Minimisation</a><ul>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation"><code class="docutils literal notranslate"><span class="pre">Minimisation</span></code></a><ul>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.__init__"><code class="docutils literal notranslate"><span class="pre">Minimisation.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.getForceConstant"><code class="docutils literal notranslate"><span class="pre">Minimisation.getForceConstant()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.getRestraint"><code class="docutils literal notranslate"><span class="pre">Minimisation.getRestraint()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.getSteps"><code class="docutils literal notranslate"><span class="pre">Minimisation.getSteps()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.restraints"><code class="docutils literal notranslate"><span class="pre">Minimisation.restraints()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setForceConstant"><code class="docutils literal notranslate"><span class="pre">Minimisation.setForceConstant()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setRestraint"><code class="docutils literal notranslate"><span class="pre">Minimisation.setRestraint()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Minimisation.setSteps"><code class="docutils literal notranslate"><span class="pre">Minimisation.setSteps()</span></code></a></li>
 </ul>
 </li>

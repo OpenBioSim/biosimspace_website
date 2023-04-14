@@ -33,6 +33,7 @@
       ~Molecule.nResidues
       ~Molecule.number
       ~Molecule.repartitionHydrogenMass
+      ~Molecule.save
       ~Molecule.search
       ~Molecule.smiles
       ~Molecule.toSystem

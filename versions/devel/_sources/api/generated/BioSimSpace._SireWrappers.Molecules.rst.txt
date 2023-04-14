@@ -19,6 +19,7 @@
       ~Molecules.getAxisAlignedBoundingBox
       ~Molecules.getMolecule
       ~Molecules.nMolecules
+      ~Molecules.save
       ~Molecules.search
       ~Molecules.smiles
       ~Molecules.toSystem
