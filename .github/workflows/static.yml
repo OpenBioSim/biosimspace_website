@@ -2,12 +2,16 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      branch_name:
+        description: "Branch to build website against:"
+        required: true
+        type: choice
+        default: 'main'
+        options:
+          - main
+          - devel
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -55,11 +59,12 @@ jobs:
           use-mamba: true
       - name: Install BioSimSpace
         run: mamba install -y -c openbiosim/label/dev biosimspace pygit2
-      - name: Checkout BioSimSpace branch
+      - name: Checkout BioSimSpace
         uses: actions/checkout@v3
         with:
           repository: "openbiosim/biosimspace"
           github-server-url: "https://github.com"
+          ref: ${{ github.event.inputs.branch_name }}
           path: project
       - name: Debug BioSimSpace
         run: ls -l project
