@@ -765,8 +765,11 @@
                     <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getStartTemperature</span><span class="p">()</span><span class="o">.</span><span class="n">kelvin</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
                 <span class="p">)</span>
 
-            <span class="c1"># Friction coefficient (1 / ps).</span>
-            <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;inverse friction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="c1"># Friction coefficient (1 / ps). Note that the unit is written</span>
+            <span class="c1"># to the configuration file as &quot;picosecond&quot;. This is because SOMD</span>
+            <span class="c1"># applies the value to OpenMM without inverting it, so has things the</span>
+            <span class="c1"># wrong way round, i.e. it uses the inverse friction as the friction.</span>
+            <span class="n">protocol_dict</span><span class="p">[</span><span class="s2">&quot;inverse friction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.5f}</span><span class="s2"> picosecond&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getThermostatTimeConstant</span><span class="p">()</span><span class="o">.</span><span class="n">picoseconds</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
             <span class="p">)</span>
 

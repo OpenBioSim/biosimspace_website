@@ -628,6 +628,8 @@
         <span class="n">setup_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">ignore_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">show_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">extra_options</span><span class="o">=</span><span class="p">{},</span>
+        <span class="n">extra_lines</span><span class="o">=</span><span class="p">[],</span>
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -671,6 +673,13 @@
 <span class="sd">            Whether to show warning/error messages when generating the binary</span>
 <span class="sd">            run file. This option is specific to GROMACS and will be ignored</span>
 <span class="sd">            when a different molecular dynamics engine is chosen.</span>
+
+<span class="sd">        extra_options : dict</span>
+<span class="sd">            A dictionary containing extra options. Overrides the defaults generated</span>
+<span class="sd">            by the protocol.</span>
+
+<span class="sd">        extra_lines : [str]</span>
+<span class="sd">            A list of extra lines to put at the end of the configuration file.</span>
 
 <span class="sd">        property_map : dict</span>
 <span class="sd">            A dictionary that maps system &quot;properties&quot; to their user defined</span>
@@ -781,6 +790,23 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">show_errors</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;show_errors&#39; must be of type &#39;bool.&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_show_errors</span> <span class="o">=</span> <span class="n">show_errors</span>
+
+        <span class="c1"># Check the extra options.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extra_options</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;extra_options&#39; must be of type &#39;dict&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="n">extra_options</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Keys of &#39;extra_options&#39; must be of type &#39;str&#39;.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span> <span class="o">=</span> <span class="n">extra_options</span>
+
+        <span class="c1"># Check the extra lines.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extra_lines</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;extra_lines&#39; must be of type &#39;list&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">extra_lines</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Lines in &#39;extra_lines&#39; must be of type &#39;str&#39;.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span> <span class="o">=</span> <span class="n">extra_lines</span>
 
         <span class="c1"># Check that the map is valid.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">property_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
@@ -1389,6 +1415,8 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span>
                 <span class="n">platform</span><span class="o">=</span><span class="n">platform</span><span class="p">,</span>
                 <span class="n">work_dir</span><span class="o">=</span><span class="n">first_dir</span><span class="p">,</span>
+                <span class="n">extra_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span><span class="p">,</span>
+                <span class="n">extra_lines</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span><span class="p">,</span>
                 <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
@@ -1404,6 +1432,9 @@
                 <span class="n">work_dir</span><span class="o">=</span><span class="n">first_dir</span><span class="p">,</span>
                 <span class="n">ignore_warnings</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ignore_warnings</span><span class="p">,</span>
                 <span class="n">show_errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_errors</span><span class="p">,</span>
+                <span class="n">extra_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span><span class="p">,</span>
+                <span class="n">extra_lines</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span><span class="p">,</span>
+                <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
                 <span class="k">del</span> <span class="n">first_process</span>
