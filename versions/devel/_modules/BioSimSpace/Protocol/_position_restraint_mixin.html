@@ -485,7 +485,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -561,10 +562,8 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
 
-<span class="kn">from</span> <span class="nn">._protocol</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
 
-
-<span class="k">class</span> <span class="nc">_PositionRestraintMixin</span><span class="p">(</span><span class="n">_Protocol</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">_PositionRestraintMixin</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin for applying position restraints to other protocols.&quot;&quot;&quot;</span>
 
     <span class="c1"># Supported restraint keywords.</span>
@@ -762,7 +761,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 14, 2023</div>
+              Last updated on Apr 21, 2023</div>
           </div>
           <div class="right-details">
             
