@@ -479,7 +479,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -532,6 +533,29 @@
 company supporting open-source development of fostering academic/industrial collaboration
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
+</section>
+<section id="may-15-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.2.1...2023.2.2">2023.2.2</a> - May 15 2023<a class="headerlink" href="#may-15-2023" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Rename tests directory to <code class="docutils literal notranslate"><span class="pre">tests</span></code> for compliance with <code class="docutils literal notranslate"><span class="pre">pytest</span></code> standard (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/51">#51</a>).</p></li>
+<li><p>Fixed parsing of AMBER standard output records (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/56">#56</a>).</p></li>
+<li><p>Re-add pre-minimisation stage to SOMD FEP configuration (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/59">#59</a>).</p></li>
+<li><p>Fixed reference to <code class="docutils literal notranslate"><span class="pre">plumed.dat</span></code> file in AMBER configuration input for steered molecular dynamics (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/64">#64</a>).</p></li>
+<li><p>Fixed <a class="reference internal" href="api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getDensity" title="BioSimSpace.Process.Amber.getDensity"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getDensity</span></code></a> method (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/64">#64</a>).</p></li>
+</ul>
+</section>
+<section id="apr-27-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.2.0...2023.2.1">2023.2.1</a> - Apr 27 2023<a class="headerlink" href="#apr-27-2023" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Update GitHub CI for our new release process (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/34">#34</a>).</p></li>
+<li><p>Fixed <a class="reference internal" href="api/generated/BioSimSpace.IO.readMolecules.html#BioSimSpace.IO.readMolecules" title="BioSimSpace.IO.readMolecules"><code class="xref py py-func docutils literal notranslate"><span class="pre">readMolecules</span></code></a> so that can handle a tuple of input files again (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/38">#38</a>).</p></li>
+<li><p>Fixed protocol mixin inheritance (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/41">#41</a>).</p></li>
+<li><p>Update documentation for new development and release process (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/43">#43</a>).</p></li>
+<li><p>Fixed SOMD inverse friction coefficient configuration parameter (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/49">#49</a>).</p></li>
+<li><p>Fixes to the hydration free energy tutorial (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/49">#49</a>).</p></li>
+<li><p>Fixed bug in SOMD test runner that caused it to return prior to assertions (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/49">#49</a>).</p></li>
+<li><p>Expose <code class="docutils literal notranslate"><span class="pre">extra_options</span></code> and <code class="docutils literal notranslate"><span class="pre">extra_lines</span></code> parameters in <a class="reference internal" href="api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative" title="BioSimSpace.FreeEnergy.Relative"><code class="xref py py-class docutils literal notranslate"><span class="pre">BioSimSpace.FreeEnergy.Relative</span></code></a> (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/49">#49</a>).</p></li>
+</ul>
 </section>
 <section id="mar-30-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.1.2...2023.2.0">2023.2.0</a> - Mar 30 2023<a class="headerlink" href="#mar-30-2023" title="Permalink to this heading">#</a></h2>
@@ -730,7 +754,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             
@@ -753,6 +777,8 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#may-15-2023">2023.2.2 - May 15 2023</a></li>
+<li><a class="reference internal" href="#apr-27-2023">2023.2.1 - Apr 27 2023</a></li>
 <li><a class="reference internal" href="#mar-30-2023">2023.2.0 - Mar 30 2023</a></li>
 <li><a class="reference internal" href="#feb-24-2023">2023.1.2 - Feb 24 2023</a></li>
 <li><a class="reference internal" href="#feb-07-2023">2023.1.1 - Feb 07 2023</a></li>

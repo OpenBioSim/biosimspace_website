@@ -479,7 +479,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -691,19 +692,19 @@ to locate the tests. Valid names start or end with <em>test</em>, e.g.:</p>
 <section id="running-tests">
 <h4>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">#</a></h4>
 <p>To run the full test suite, simply type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests
 </pre></div>
 </div>
 <p>To run tests for a specific sub-module, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test/Process
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests/Process
 </pre></div>
 </div>
 <p>To only run the unit tests in a particular file, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test/Process/test_namd.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests/Process/test_namd.py
 </pre></div>
 </div>
 <p>To run a specific unit tests in a particular file, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test/Process/test_namd.py::test_minimise
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests/Process/test_namd.py::test_minimise
 </pre></div>
 </div>
 <p>To get more detailed information about each test, run pytests using the
@@ -908,7 +909,7 @@ the documentation <a class="reference external" href="https://help.github.com/ar
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

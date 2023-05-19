@@ -478,7 +478,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -649,7 +650,7 @@
                 <span class="k">raise</span> <span class="n">_MissingSoftwareError</span><span class="p">(</span>
                     <span class="s2">&quot;&#39;BioSimSpace.Process.Namd&#39; is not supported. &quot;</span>
                     <span class="s2">&quot;Please install NAMD (http://www.ks.uiuc.edu/Research/namd).&quot;</span>
-                <span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Make sure executable exists.</span>
             <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">exe</span><span class="p">):</span>
@@ -705,7 +706,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># PDB file.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -716,7 +717,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># Try to write a PDB &quot;velocity&quot; restart file.</span>
         <span class="c1"># The file will only be generated if all atoms in the system have</span>
@@ -2652,7 +2653,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Now loop over the multi-dict.</span>
             <span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">idxs</span> <span class="ow">in</span> <span class="n">mol_atoms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -2769,7 +2770,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Roadmap" href="roadmap.html" /><link rel="prev" title="Coding Style" href="codestyle.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Packaging releases - openbiosim - biosimspace</title>
+        <title>Development process - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -157,7 +157,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -479,7 +479,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="codestyle.html">Coding Style</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Packaging releases</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -518,37 +519,103 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="packaging-releases">
-<h1>Packaging releases<a class="headerlink" href="#packaging-releases" title="Permalink to this heading">#</a></h1>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is now (almost) fully tested and deployed using GitHub actions.
-The development process should be;</p>
+          <section id="development-process">
+<span id="ref-devprocess"></span><h1>Development process<a class="headerlink" href="#development-process" title="Permalink to this heading">#</a></h1>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> uses a <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">devel</span></code> and <code class="docutils literal notranslate"><span class="pre">future</span></code> development process,
+using feature branches for all code development.</p>
 <ul class="simple">
-<li><p>New features are developed on forks or feature branches, called <code class="docutils literal notranslate"><span class="pre">feature-{feature}</span></code>,
-either in the <a class="reference external" href="https://github.com/openbiosim/biosimspace">main BioSimSpace repository</a>
-for authorised developers, or in personal forks for
-new developers.</p></li>
-<li><p>Bug fixes or issue fixes are developed on fix branches, called
-<code class="docutils literal notranslate"><span class="pre">fix-issue-{number}</span></code> (again in either the main repository or forks).</p></li>
-<li><p>Pull requests are issued from these branches to <code class="docutils literal notranslate"><span class="pre">devel</span></code>. All merge conflicts
-must be fixed in the branch and all tests must pass before the pull
-request can be merged into <code class="docutils literal notranslate"><span class="pre">devel</span></code>. NOTE THAT ONLY AUTHORISED
-DEVELOPERS CAN ACCEPT THE PULL REQUEST. Authorised developers will
-review the pull request as quickly as they can. They will be greatly
-helped if the feature is accompanied with tests, examples and/or tutorial
-instructions.</p></li>
-<li><p>Note that we encourage that new functionality in a pull request is
-documented, e.g. by adding to the tutorials or writing a detailed
-description for the website.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> - this always contains the latest official release.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">devel</span></code> - this always contains the latest development release, which will become the next official release.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">future</span></code> - this contains pull requests that have been accepted, but which are targetted for a future release (i.e. not the next official release)</p></li>
 </ul>
-<p>The result of this is that <code class="docutils literal notranslate"><span class="pre">devel</span></code> should contain the fully-working,
-documented and tested code, and most up-to-date version of <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>.
-However, this version should not be used for production runs.</p>
+<p>Code should be developed on a fork or in a feature branch called <code class="docutils literal notranslate"><span class="pre">feature_{feature}</span></code>.
+When your feature is ready, please submit a pull request against <code class="docutils literal notranslate"><span class="pre">devel</span></code>. This
+will trigger our continuos integration (CI) process, which will build
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> on a range of different platforms. All merge conflicts must
+be fixed in the branch and all tests must pass before the pull request can be
+merged into <code class="docutils literal notranslate"><span class="pre">devel</span></code>.( NOTE THAT ONLY AUTHORISED DEVELOPERS CAN ACCEPT THE
+PULL REQUEST.) Authorised developers will review the pull request as quickly
+as they can.  They will be greatly helped if the feature is accompanied with
+tests, examples and/or tutorial instructions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We encourage that new functionality in a pull request is documented, e.g. by adding to
+the tutorials or writing a detailed description for the website.</p>
+</div>
+<p>Assuming the CI completes successfully, then one of the release team will
+conduct a code review. The outcome of the review will be one of the following;</p>
+<ol class="arabic simple">
+<li><p>This feature is ready, and should be part of the next official release. The pull request
+will be accepted into <code class="docutils literal notranslate"><span class="pre">devel</span></code>. This will trigger our CI/CD process, building the new dev
+package and uploading it to <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace">anaconda.org</a>
+for everyone to use.</p></li>
+<li><p>This feature is good, but it is not yet ready to be part of the next offical release. This
+could be because the feature is part of a series, and all of the series need to be finished
+before release. Or because we are in a feature freeze period. Or because you want more time
+for people to explore and play with the feature before it is officially released (and would
+then need to be supported, and backwards compatibility maintained). If this is the case (or
+it is your request) then the pull request will be redirected into the <code class="docutils literal notranslate"><span class="pre">future</span></code> branch.
+Once it (and features that depend on it) are ready, you can then issue a pull request for
+all of the features at once into <code class="docutils literal notranslate"><span class="pre">devel</span></code>. It will be noted that each of the individual
+parts have already been code reviewed, so the process to accept the combination
+into <code class="docutils literal notranslate"><span class="pre">devel</span></code> should be more straightforward.</p></li>
+<li><p>This feature is good, but more work is needed before it can be accepted. This could be
+because some of the unit tests haven’t passed, or the latest version of <code class="docutils literal notranslate"><span class="pre">devel</span></code> hasn’t
+been merged. Or there may be changes that are requested that would make the code easier
+to maintain or to preserve backwards compatibility. If this is the case, then we
+will engage in conversation with you and will work together to rectify any issues.</p></li>
+</ol>
+<p>Bug fixes or issue fixes are developed on fix branches, called <code class="docutils literal notranslate"><span class="pre">fix_{number}</span></code> (again in
+either the main repository or forks). If no <a class="reference external" href="https://github.com/OpenBioSim/biosimspace/issues">issue thread</a>
+exists for the bug that you are fixing, please open one to notify other users of the problem.
+This also allows us to correctly cross-reference and categorise pull requests. Once a fix
+is ready, please submit a pull request against <code class="docutils literal notranslate"><span class="pre">devel</span></code>. Assuming that the CI passes and
+the reviewers are happy, this will then be merged. The same approach should also be used
+for updates to documentation.</p>
+<p>Once a fix has been approved and merged into <code class="docutils literal notranslate"><span class="pre">devel</span></code> one of the core developers will
+backport it to the previous major release, i.e. by applying the fix to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
+To do so, create a new fix branch based on <code class="docutils literal notranslate"><span class="pre">main</span></code>. If the files that were updated on
+<code class="docutils literal notranslate"><span class="pre">devel</span></code> as part of the fix don’t contain any other differences to those in <code class="docutils literal notranslate"><span class="pre">main</span></code>,
+i.e. they haven’t been updated during the merging of a new feature, then you can
+directly apply those to main. This can be done via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>devel<span class="w"> </span>file
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">file</span></code> is the path to the file that was changed. If multiple files in a directory
+were changed, then you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>devel<span class="w"> </span>directory
+</pre></div>
+</div>
+<p>Note that the above approach will automatically stage the modified files. If you would
+prefer to be able to check the diff and make additional edits, then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>
+instead, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>restore<span class="w"> </span>--source<span class="w"> </span>devel<span class="w"> </span>file
+</pre></div>
+</div>
+<p>If the fix applied on <code class="docutils literal notranslate"><span class="pre">devel</span></code> was applied on top of a new feature, then you might be
+able to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span></code> to apply the specific commits that relate only to the
+fix, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cherry-pick<span class="w"> </span>commitSha
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">commitSha</span></code> is a commit reference. Use the <code class="docutils literal notranslate"><span class="pre">--edit</span></code> option if you want
+to change the commit message, and use <code class="docutils literal notranslate"><span class="pre">--no-commit</span></code> if you just want to apply
+the edits to the files on <code class="docutils literal notranslate"><span class="pre">main</span></code>, but not automatically make a new commit, e.g.
+if you want to check the results. (For more details, see <a class="reference external" href="https://git-scm.com/docs/git-cherry-pick">here</a>
+or <a class="reference external" href="https://www.atlassian.com/git/tutorials/cherry-pick">here</a>.)</p>
+<p>Once the fix has been successfully applied, please raise a pull request against
+<code class="docutils literal notranslate"><span class="pre">main</span></code> for one of the development team to review. In cases where the updated
+files are identical to <code class="docutils literal notranslate"><span class="pre">devel</span></code>, it may not be necessary to ask for a review or
+run CI, since this would have been done when the fix was applied to <code class="docutils literal notranslate"><span class="pre">devel</span></code>.
+Once approved, the fix be merged into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>Within a release cycle we will periodically create point releases on <code class="docutils literal notranslate"><span class="pre">main</span></code>,
+e.g. <code class="docutils literal notranslate"><span class="pre">2023.1.1</span></code>. (The frequency will depend on the urgency of the fixes.)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The group of developers authorised to have access to the
@@ -564,77 +631,88 @@ and <a class="reference external" href="https://chryswoods.com/git_collaboration
 to learn how to use Git, GitHub, feature branching, merging, pull
 requests etc.</p>
 </div>
-<section id="defining-a-release">
-<h2>Defining a release<a class="headerlink" href="#defining-a-release" title="Permalink to this heading">#</a></h2>
-<p>We will release <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> regularly. Releases aim to be backwards
-compatible and capable of being used for production runs, at least for
-the functionality that is fully described in the tutorial.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is the job of the release managers (currently
-<a class="reference external" href="https://github.com/lohedges">lohedges</a> and
-<a class="reference external" href="https://github.com/chryswoods">chryswoods</a>) to decide when it is time
-to create a new release. If you are interested in helping join the release
-management group then please feel free to get in touch.</p>
-</div>
 </section>
-<section id="creating-a-release">
-<h2>Creating a release<a class="headerlink" href="#creating-a-release" title="Permalink to this heading">#</a></h2>
-<p>There are a number of stages to go through to create a release:</p>
+<section id="creating-releases">
+<h1>Creating releases<a class="headerlink" href="#creating-releases" title="Permalink to this heading">#</a></h1>
+<p>We use a calendar-based version numbering system, based on regular release cadence
+of several releases per year. Our aim is to make a major release every quarter
+(so four releases per year). Each release will be numbered sequentially, e.g.
+2023.1.0 is the first release of 2023, 2023.2.0 is the second release. Our aim
+is that new functionality only appears in these “major” releases.</p>
+<section id="major-releases">
+<h2>Major releases<a class="headerlink" href="#major-releases" title="Permalink to this heading">#</a></h2>
+<p>There are a number of stages to go through to create a major release:</p>
 <ol class="arabic simple">
-<li><p>Make sure that all changes have been merged into the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch,
-and the GitHub Action has run fully, building <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> on all
-supported platforms, running all the unit tests correctly, and
-building and uploading the conda packages to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> channel
-on <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace/files">anaconda.org</a>.</p></li>
-<li><p>On your computer, checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and then pull in the
-changes from <code class="docutils literal notranslate"><span class="pre">devel</span></code>, e.g. using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.
-There shouldn’t be any conflicts. If there are, resolve them so that
-<code class="docutils literal notranslate"><span class="pre">main</span></code> is identical to <code class="docutils literal notranslate"><span class="pre">devel</span></code>.</p></li>
-<li><p>Now update <code class="docutils literal notranslate"><span class="pre">doc/source/changelog.rst</span></code> with the changelog since
-the last release. Start the entry with a title that (will) link
-to the changes on GitHub, e.g.
-<a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2022.2.1...2023.1.0">https://github.com/openbiosim/biosimspace/compare/2022.2.1…2023.1.0</a>
+<li><p>Make sure that all changes (features and fixes) that are required for the
+release have been merged into the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch, and the GitHub Action
+has run fully, building <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> on all supported platforms,
+running all the unit tests correctly, and building and uploading the conda
+packages to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> channel on <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace/files">anaconda.org</a>.</p></li>
+<li><p>Create feature branches from <code class="docutils literal notranslate"><span class="pre">devel</span></code> to synchronise updates from external
+sandpits, e.g. <a class="reference external" href="https://github.com/Exscientia/BioSimSpace">here</a>. (This
+may also be submitted as an external PR from the industrial partner.)
+Once ready, submit a pull request so that these updates can be tested and
+reviewed. (It might be the case the an external partner needs to run a larger
+set of internal tests against the changes.) When ready, this can be merged
+into <code class="docutils literal notranslate"><span class="pre">devel</span></code> by an authorised developer.</p></li>
+<li><p>The next task is to create a pull request to merge <code class="docutils literal notranslate"><span class="pre">devel</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>.
+At this point there might be conflicts to resolve due to previous backporting
+of fixes from <code class="docutils literal notranslate"><span class="pre">devel</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>. Since <code class="docutils literal notranslate"><span class="pre">devel</span></code> should now be the
+<em>source of truth</em>, an approach could be to perform the merge in the reverse
+fashion, taking <em>everything</em> from <code class="docutils literal notranslate"><span class="pre">devel</span></code>, after which the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch
+has the exact same tree as <code class="docutils literal notranslate"><span class="pre">devel</span></code>, with all of the history and tags from
+<code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>release<span class="w"> </span>devel
+git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>ours<span class="w"> </span>main
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>On the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch, you will now need to update <code class="docutils literal notranslate"><span class="pre">doc/source/changelog.rst</span></code>
+with the changes since the last release. Start the entry with a title that (will)
+link to the changes on GitHub,
+e.g.  <a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2022.2.1...2023.1.0">https://github.com/openbiosim/biosimspace/compare/2022.2.1…2023.1.0</a>
 links to the changes between the <code class="docutils literal notranslate"><span class="pre">2022.2.1</span></code> and <code class="docutils literal notranslate"><span class="pre">2023.1.0</span></code> releases.
-You can change the version numbers in this URL to look at the
-difference for your versions. Follow a similar format for changes
-as already exist in this file. Try to link to tutorials that
-describe new functionality if available.</p></li>
-<li><p>You can now commit your changes and push them to GitHub
-(e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>). GitHub Actions will
-only be triggered on pushes to <code class="docutils literal notranslate"><span class="pre">devel</span></code>, so this won’t do anything (yet).</p></li>
-<li><p>Now create a git tag for this release. You can use the command with
-the format <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">{VERSION}</span> <span class="pre">-m</span> <span class="pre">&quot;{VERSION}</span> <span class="pre">release&quot;</span></code>, e.g.
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">2023.1.1</span> <span class="pre">-m</span> <span class="pre">&quot;2023.1.1</span> <span class="pre">release&quot;</span></code> would be the
-tag for the <code class="docutils literal notranslate"><span class="pre">2023.1.1</span></code> release.</p></li>
-<li><p>Push this tag to GitHub, e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">tag</span></code>, where
-<code class="docutils literal notranslate"><span class="pre">tag</span></code> is the new tag that you’ve created, e.g. <code class="docutils literal notranslate"><span class="pre">2023.1.1</span></code>.</p></li>
-<li><p>Now we are finally ready to build the packages. Do this by checking
-out the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">devel</span></code>) and then pulling
-the changes from <code class="docutils literal notranslate"><span class="pre">main</span></code> into <code class="docutils literal notranslate"><span class="pre">devel</span></code> (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>).
-This will create a merge commit. Accept the commit and then
-push this back up to GitHub (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>). This will trigger the
-GitHub actions that will automatically build and upload all(*)
-the conda packages.</p></li>
+Follow a similar format for changes as already exist in this file. Try to
+link to pull requests and tutorials that describe new functionality if available.</p></li>
+<li><p>Typically <a class="reference external" href="https://sire.openbiosim.org/index.html">Sire</a> will be release at the
+same time, so you will need to update the version number in the
+<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/blob/devel/requirements.txt">requirements.txt</a>
+file. Note that there are different versions of Sire for <code class="docutils literal notranslate"><span class="pre">main</span></code> and
+<code class="docutils literal notranslate"><span class="pre">devel</span></code>, so you will need to ensure that <em>only</em> the <code class="docutils literal notranslate"><span class="pre">main</span></code> version is
+uncommented and increment it to the latest version of Sire available on <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Now create a pull request for the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch against <code class="docutils literal notranslate"><span class="pre">main</span></code>. Once the
+CI passes and it has been approved by an authorised developer it can be merged.</p></li>
+<li><p>An authorised developer will now create a tag for this release on <code class="docutils literal notranslate"><span class="pre">main</span></code>, e.g.
+using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-as</span> <span class="pre">{VERSION}</span> <span class="pre">-m</span> <span class="pre">&quot;{VERSION}</span> <span class="pre">release&quot;</span></code>, e.g.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-as</span> <span class="pre">2023.1.0</span> <span class="pre">-m</span> <span class="pre">&quot;2023.1.0</span> <span class="pre">release&quot;</span></code> would be the tag for the
+<code class="docutils literal notranslate"><span class="pre">2023.1.0</span></code> release. The tag can then be pushed to GitHub with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">tag</span></code>, where <code class="docutils literal notranslate"><span class="pre">tag</span></code> is the new tag that you’ve created,
+e.g. <code class="docutils literal notranslate"><span class="pre">2023.1.0</span></code>.</p></li>
+<li><p>Now we are finally ready to build the packages. This can be done by an
+authorised developer by triggering the <em>workflow dispatch</em> event for the
+<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/actions/workflows/main.yaml">Release Main</a>
+workflow. At this point you will need to choose <code class="docutils literal notranslate"><span class="pre">yes</span></code> to upload packages
+to <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace">anaconda.org</a>.</p></li>
 <li><p>(*) GitHub Actions don’t currently build the ARM64/aarch64 packages.
 These have to be built and uploaded manually. On a MacOS/M1 or
 Linux/aarch64 computer you should create build environments for
 the Python versions that <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> should support. Activate
 this environment, and then checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">actions/update_recipe.py</span></code> and then run <code class="docutils literal notranslate"><span class="pre">conda-build</span></code>
-via the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">mambabuild</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">openbiosim/label/dev</span> <span class="pre">recipes/biosimspace</span></code>.
+via the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">mambabuild</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">openbiosim/label/main</span> <span class="pre">recipes/biosimspace</span></code>.
 This will result in a conda package in the <code class="docutils literal notranslate"><span class="pre">conda-bld</span></code> directory
 in the root directory of your conda environment. You then need
-to upload these packages to anaconda.org, e.g. via the command
-<code class="docutils literal notranslate"><span class="pre">anaconda</span> <span class="pre">--token</span> <span class="pre">{PASSWORD}</span> <span class="pre">upload</span> <span class="pre">--user</span> <span class="pre">openbiosim</span> <span class="pre">--label</span> <span class="pre">main</span> <span class="pre">--label</span> <span class="pre">dev</span> <span class="pre">--force</span> <span class="pre">{/path/to/biosimspace-packages}</span></code>
+to upload these packages to <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace">anaconda.org</a>,
+e.g. via the command <code class="docutils literal notranslate"><span class="pre">anaconda</span> <span class="pre">--token</span> <span class="pre">{PASSWORD}</span> <span class="pre">upload</span> <span class="pre">--user</span> <span class="pre">openbiosim</span> <span class="pre">--label</span> <span class="pre">main</span> <span class="pre">{/path/to/biosimspace-packages}</span></code>
 (modified as appropriate to include the anaconda password and the
 path to the built conda package).</p></li>
 <li><p>On GitHub, you can now create a release by using the
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace/releases/new">Draft a New Release</a>
-link. Choose the version number for your release from the
-tag you created earlier. The text should be simple,
-e.g. titled <code class="docutils literal notranslate"><span class="pre">BioSimSpace</span> <span class="pre">{VERSION}</span></code>, with the body
-<code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">{VERSION}</span> <span class="pre">release</span> <span class="pre">of</span> <span class="pre">BioSimSpace.</span></code>.</p></li>
+link. Choose the version number for your release from the tag you created
+earlier. The text should be simple, e.g. titled <code class="docutils literal notranslate"><span class="pre">BioSimSpace</span> <span class="pre">{VERSION}</span></code>,
+with the body <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">{VERSION}</span> <span class="pre">release</span> <span class="pre">of</span> <span class="pre">BioSimSpace.</span></code>, along with
+a link to the changelog for the release on the website (if a major release).</p></li>
 <li><p>Next you should build the docker images for this release.
 Do this by following the instructions in the
 <a class="reference external" href="https://github.com/OpenBioSim/containers/blob/main/biosimspace/README.md">containers repository</a>.
@@ -653,6 +731,27 @@ to announce this new release.</p></li>
 </ol>
 <p>(We are in the process of automating many of the above steps, so hope
 that this process will become much easier in the future.)</p>
+</section>
+<section id="point-releases">
+<h2>Point releases<a class="headerlink" href="#point-releases" title="Permalink to this heading">#</a></h2>
+<p>Between major releases it might be necessary to create <em>point</em> releases to fix
+bugs. Fixes will have been applied following the <a class="reference internal" href="#ref-devprocess"><span class="std std-ref">Development process</span></a> and a
+release can be made by following steps 7 through 11 above. There is no need
+to create a changelog entry or update the website for a point release. (Unless
+fixes apply to the documentation itself.)</p>
+</section>
+<section id="development-releases">
+<h2>Development releases<a class="headerlink" href="#development-releases" title="Permalink to this heading">#</a></h2>
+<p>Following a major release, the next commit to <code class="docutils literal notranslate"><span class="pre">devel</span></code> will be given a new
+development tag based against the <em>next</em> major release number. For example,
+following the <code class="docutils literal notranslate"><span class="pre">2023.1.0</span></code> release, <code class="docutils literal notranslate"><span class="pre">devel</span></code> will be tagged with <code class="docutils literal notranslate"><span class="pre">2023.2.0.dev</span></code>.
+Following this, future merges into <code class="docutils literal notranslate"><span class="pre">devel</span></code> will trigger builds of development
+packages that will be pushed to our <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace">anaconda.org</a>
+channel using the <code class="docutils literal notranslate"><span class="pre">dev</span></code> label. This allows users to pull and test features
+that will be available in the next major release on <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>Periodically an authorised user will update the development documentation on our
+<a class="reference external" href="https://github.com/OpenBioSim/biosimspace_website/blob/main/README.md">website repository</a>
+by running the workflow dispatch event against the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch.</p>
 </section>
 </section>
 
@@ -687,7 +786,7 @@ that this process will become much easier in the future.)</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             
@@ -696,28 +795,8 @@ that this process will become much easier in the future.)</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Packaging releases</a><ul>
-<li><a class="reference internal" href="#defining-a-release">Defining a release</a></li>
-<li><a class="reference internal" href="#creating-a-release">Creating a release</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -479,7 +479,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -617,13 +618,26 @@ to run the simulations. First we will use our built in, GPU optimised, molecular
 dynamics engine called SOMD. (This is a wrapper around the excellent
 <a class="reference external" href="https://openmm.org">OpenMM</a> package and is the default engine if no other
 packages are present.)</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It’s possible to use a different protocol or molecular dynamics engine for each leg.</p>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">free_somd</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="o">.</span><span class="n">Relative</span><span class="p">(</span><span class="n">solvated</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;somd&quot;</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="s2">&quot;freenrg_somd/free&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">protocol</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Protocol</span><span class="o">.</span><span class="n">FreeEnergyProduction</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">free_somd</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="o">.</span><span class="n">Relative</span><span class="p">(</span><span class="n">solvated</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;somd&quot;</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="s2">&quot;freenrg_somd/free&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vac_somd</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="o">.</span><span class="n">Relative</span><span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">toSystem</span><span class="p">(),</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;somd&quot;</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="s2">&quot;freenrg_somd/vacuum&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For GROMACS, you can use <a class="reference internal" href="../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html#BioSimSpace.Protocol.FreeEnergyMinimisation" title="BioSimSpace.Protocol.FreeEnergyMinimisation"><code class="xref py py-data docutils literal notranslate"><span class="pre">BioSimSpace.Protocol.FreeEnergyMinimisation</span></code></a> and
+<a class="reference internal" href="../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html#BioSimSpace.Protocol.FreeEnergyEquilibration" title="BioSimSpace.Protocol.FreeEnergyEquilibration"><code class="xref py py-data docutils literal notranslate"><span class="pre">BioSimSpace.Protocol.FreeEnergyEquilibration</span></code></a> to minimise and equilibrate at each
+<span class="math notranslate nohighlight">\({\lambda}\)</span> value prior to setting up to the production run above. For SOMD this
+isn’t possible, so you can either use GROMACS to prepare production input for each window,
+or use the regular <a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Minimisation.html#BioSimSpace.Protocol.Minimisation" title="BioSimSpace.Protocol.Minimisation"><code class="xref py py-data docutils literal notranslate"><span class="pre">BioSimSpace.Protocol.Minimisation</span></code></a> and
+<a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Equilibration.html#BioSimSpace.Protocol.Equilibration" title="BioSimSpace.Protocol.Equilibration"><code class="xref py py-data docutils literal notranslate"><span class="pre">BioSimSpace.Protocol.Equilibration</span></code></a> protocols to minimise and equilibrate
+the <span class="math notranslate nohighlight">\({\lambda=0}\)</span> and <span class="math notranslate nohighlight">\({\lambda=1}\)</span> states only using any supported
+engine from <a class="reference internal" href="../api/index_Process.html#module-BioSimSpace.Process" title="BioSimSpace.Process"><code class="xref py py-data docutils literal notranslate"><span class="pre">BioSimSpace.Process</span></code></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s possible to use a different protocol or molecular dynamics engine for each leg,
+e.g. if you want to use a different <span class="math notranslate nohighlight">\({\lambda}\)</span> schedule.</p>
 </div>
 <p>When complete, BioSimSpace will have set up a folder hierarchy containing
 everything that is needed to run the hydration free energy calculation
@@ -700,7 +714,7 @@ visit the <a class="reference internal" href="../api/index_FreeEnergy.html#modul
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

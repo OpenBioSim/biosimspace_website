@@ -1,0 +1,6 @@
+﻿BioSimSpace.\_Exceptions.ConversionError
+========================================
+
+.. currentmodule:: BioSimSpace._Exceptions
+
+.. autoexception:: ConversionError

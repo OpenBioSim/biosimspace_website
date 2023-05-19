@@ -479,7 +479,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -529,6 +530,15 @@
 <p>The <em>Box</em> package contains tools for generating parameters for different
 simulation boxes. This is particularly useful when needing box magnitudes and
 angles for generating <a class="reference internal" href="index_Solvent.html#ref-solvent"><span class="std std-ref">BioSimSpace.Solvent</span></a> boxes.</p>
+<p>To support triclinic boxes that work across the range of molecular simulation
+engines that support, we represent the triclinic space in reduced form, using
+the approach documented in Appendix A of Chapter 3 from
+<a class="reference external" href="https://research.rug.nl/files/2839528/01_c1.pdf">“Molecular dynamics of sense and sensibility in processing and analysis of data”</a>
+by Tsjerk A. Wassenaar. Due to the fixed-width format used to represent box
+dimensions and angles in the various molecular input files, repeated reading
+and writing can lead to oscillation of the box angles on reduction due to
+rounding precision errors. To account for this, we add a small bias so that
+we always round in a consistent direction.</p>
 <span class="target" id="module-BioSimSpace.Box"></span><section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -599,7 +609,7 @@ of 10 nanometer lattice separation.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

@@ -478,7 +478,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -731,7 +732,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
@@ -742,7 +743,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># Generate the AMBER configuration file.</span>
         <span class="c1"># Skip if the user has passed a custom config.</span>
@@ -779,7 +780,7 @@
         <span class="c1"># Add configuration variables for a metadynamics simulation.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="p">(</span><span class="n">_Protocol</span><span class="o">.</span><span class="n">Metadynamics</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Steering</span><span class="p">)):</span>
             <span class="n">extra_options</span><span class="p">[</span><span class="s2">&quot;plumed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">extra_options</span><span class="p">[</span><span class="s2">&quot;plumedfile&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;plumed.dat&quot;</span>
+            <span class="n">extra_options</span><span class="p">[</span><span class="s2">&quot;plumedfile&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&#39;plumed.dat&#39;&quot;</span>
 
             <span class="c1"># Create the PLUMED input file and copy auxiliary files to the working directory.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_plumed</span> <span class="o">=</span> <span class="n">_Plumed</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">))</span>
@@ -1082,14 +1083,14 @@
         <span class="k">except</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="Amber.getRecord"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRecord">[docs]</a>    <span class="k">def</span> <span class="nf">getRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="Amber.getRecord"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRecord">[docs]</a>    <span class="k">def</span> <span class="nf">getRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a record from the stdout dictionary.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 
-<span class="sd">        record : str</span>
+<span class="sd">        key : str</span>
 <span class="sd">            The record key.</span>
 
 <span class="sd">        time_series : bool</span>
@@ -1118,16 +1119,18 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isError</span><span class="p">():</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The process exited with an error!&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_stdout_record</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_stdout_record</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span>
+        <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Amber.getCurrentRecord"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRecord">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Amber.getCurrentRecord"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRecord">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a current record from the stdout dictionary.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 
-<span class="sd">        record : str</span>
+<span class="sd">        key : str</span>
 <span class="sd">            The record key.</span>
 
 <span class="sd">        time_series : bool</span>
@@ -1147,7 +1150,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isError</span><span class="p">():</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The process exited with an error!&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_stdout_record</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_stdout_record</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getRecords"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRecords">[docs]</a>    <span class="k">def</span> <span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1216,7 +1221,7 @@
             <span class="k">return</span> <span class="kc">None</span>
 
         <span class="c1"># Get the list of time steps.</span>
-        <span class="n">time_steps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;TIME(PS)&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span>
+        <span class="n">time_steps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;TIME(PS)&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">)</span>
 
         <span class="c1"># Convert from picoseconds to nanoseconds.</span>
         <span class="k">if</span> <span class="n">time_steps</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1264,7 +1269,7 @@
 <span class="sd">        step : int</span>
 <span class="sd">            The current number of integration steps.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;NSTEP&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentStep"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentStep">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1303,7 +1308,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The bond energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;BOND&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;BOND&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentBondEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentBondEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1342,7 +1352,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The angle energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;ANGLE&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;ANGLE&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentAngleEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentAngleEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1381,7 +1396,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The total dihedral energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;DIHED&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;DIHED&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentDihedralEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentDihedralEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1420,7 +1440,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The electrostatic energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;EELECT&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;EELEC&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentElectrostaticEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentElectrostaticEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentElectrostaticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1459,7 +1484,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The electrostatic energy between atoms 1 and 4.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;1-4 EEL&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;1-4 EEL&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentElectrostaticEnergy14"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentElectrostaticEnergy14">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentElectrostaticEnergy14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1498,7 +1528,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The Van der Vaals energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;VDWAALS&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;VDWAALS&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentVanDerWaalsEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVanDerWaalsEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentVanDerWaalsEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1537,7 +1572,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The hydrogen bond energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;EHBOND&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;EHBOND&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentHydrogenBondEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentHydrogenBondEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentHydrogenBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1577,7 +1617,10 @@
 <span class="sd">           The restraint energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
-            <span class="s2">&quot;RESTRAINT&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span>
+            <span class="s2">&quot;RESTRAINT&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentRestraintEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRestraintEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -1620,7 +1663,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The potential energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;EPTOT&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;EPTOT&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentPotentialEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentPotentialEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1659,7 +1707,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The kinetic energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;EKTOT&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;EKTOT&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentKineticEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentKineticEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1698,7 +1751,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The non-bonded energy between atoms 1 and 4.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;1-4 NB&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;1-4 NB&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentNonBondedEnergy14"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentNonBondedEnergy14">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentNonBondedEnergy14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1739,11 +1797,17 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
-                <span class="s2">&quot;ENERGY&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span>
+                <span class="s2">&quot;ENERGY&quot;</span><span class="p">,</span>
+                <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+                <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+                <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
-                <span class="s2">&quot;ETOT&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span>
+                <span class="s2">&quot;ETOT&quot;</span><span class="p">,</span>
+                <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+                <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+                <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
             <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentTotalEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentTotalEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -1783,7 +1847,12 @@
 <span class="sd">        energy : :class:`Energy &lt;BioSimSpace.Types.Energy&gt;`</span>
 <span class="sd">           The centre of mass kinetic energy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;EKCMT&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;EKCMT&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Energy</span><span class="o">.</span><span class="n">kcal_per_mol</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentCentreOfMassKineticEnergy"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentCentreOfMassKineticEnergy">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentCentreOfMassKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1822,7 +1891,7 @@
 <span class="sd">        virial : float</span>
 <span class="sd">           The virial.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;VIRIAL&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;VIRIAL&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentVirial"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVirial">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentVirial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1861,7 +1930,12 @@
 <span class="sd">        temperature : :class:`Temperature &lt;BioSimSpace.Types.Temperature&gt;`</span>
 <span class="sd">           The temperature.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;TEMP(K)&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Temperature</span><span class="o">.</span><span class="n">kelvin</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;TEMP(K)&quot;</span><span class="p">,</span>
+            <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Temperature</span><span class="o">.</span><span class="n">kelvin</span><span class="p">,</span>
+            <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentTemperature"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentTemperature">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1900,7 +1974,9 @@
 <span class="sd">        pressure : :class:`Pressure &lt;BioSimSpace.Types.Pressure&gt;`</span>
 <span class="sd">           The pressure.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;PRESS&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Pressure</span><span class="o">.</span><span class="n">bar</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;PRESS&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Pressure</span><span class="o">.</span><span class="n">bar</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentPressure"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentPressure">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1939,7 +2015,9 @@
 <span class="sd">        volume : :class:`Volume &lt;BioSimSpace.Types.Volume&gt;`</span>
 <span class="sd">           The volume.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;VOLUME&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">angstrom3</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span>
+            <span class="s2">&quot;VOLUME&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">_Units</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">angstrom3</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentVolume"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVolume">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1978,7 +2056,7 @@
 <span class="sd">        density : float</span>
 <span class="sd">           The density.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;DENSITY&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRecord</span><span class="p">(</span><span class="s2">&quot;DENSITY&quot;</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Amber.getCurrentDensity"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentDensity">[docs]</a>    <span class="k">def</span> <span class="nf">getCurrentDensity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2190,7 +2268,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

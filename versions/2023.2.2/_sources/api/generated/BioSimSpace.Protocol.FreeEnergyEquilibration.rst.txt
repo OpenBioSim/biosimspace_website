@@ -1,0 +1,50 @@
+﻿BioSimSpace.Protocol.FreeEnergyEquilibration
+============================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: FreeEnergyEquilibration
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FreeEnergyEquilibration.__init__
+      ~FreeEnergyEquilibration.getEndTemperature
+      ~FreeEnergyEquilibration.getForceConstant
+      ~FreeEnergyEquilibration.getLambda
+      ~FreeEnergyEquilibration.getLambdaIndex
+      ~FreeEnergyEquilibration.getLambdaValues
+      ~FreeEnergyEquilibration.getPerturbationType
+      ~FreeEnergyEquilibration.getPressure
+      ~FreeEnergyEquilibration.getReportInterval
+      ~FreeEnergyEquilibration.getRestartInterval
+      ~FreeEnergyEquilibration.getRestraint
+      ~FreeEnergyEquilibration.getRunTime
+      ~FreeEnergyEquilibration.getStartTemperature
+      ~FreeEnergyEquilibration.getThermostatTimeConstant
+      ~FreeEnergyEquilibration.getTimeStep
+      ~FreeEnergyEquilibration.isConstantTemp
+      ~FreeEnergyEquilibration.restraints
+      ~FreeEnergyEquilibration.setEndTemperature
+      ~FreeEnergyEquilibration.setForceConstant
+      ~FreeEnergyEquilibration.setLambdaValues
+      ~FreeEnergyEquilibration.setPerturbationType
+      ~FreeEnergyEquilibration.setPressure
+      ~FreeEnergyEquilibration.setReportInterval
+      ~FreeEnergyEquilibration.setRestartInterval
+      ~FreeEnergyEquilibration.setRestraint
+      ~FreeEnergyEquilibration.setRunTime
+      ~FreeEnergyEquilibration.setStartTemperature
+      ~FreeEnergyEquilibration.setThermostatTimeConstant
+      ~FreeEnergyEquilibration.setTimeStep
+   
+   
+
+   
+   
+   

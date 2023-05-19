@@ -478,7 +478,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -1123,7 +1124,7 @@
                 <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># 2) Find the MCS of the molecules to use as a template.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1149,7 +1150,7 @@
                 <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># 3) Load all ligands, make 2D depiction aligned to the template and save to file.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1170,7 +1171,7 @@
                 <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># 4) Create the NetworkX graph.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1205,7 +1206,7 @@
                 <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># 5) Create and display the plot.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1229,7 +1230,7 @@
                 <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
                 <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
     <span class="k">return</span> <span class="n">edges</span><span class="p">,</span> <span class="n">scores</span></div>
 
@@ -1648,7 +1649,7 @@
         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+            <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
     <span class="c1"># Return the aligned molecule.</span>
     <span class="k">return</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">mol0</span><span class="p">)</span></div>
@@ -1791,7 +1792,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s2">&quot;aligned.pdb&quot;</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span>
                 <span class="s2">&quot;Failed to align molecules based on mapping: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">mapping</span>
-            <span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+            <span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># Load the aligned molecule.</span>
         <span class="n">aligned</span> <span class="o">=</span> <span class="n">_IO</span><span class="o">.</span><span class="n">readMolecules</span><span class="p">(</span><span class="s2">&quot;aligned.pdb&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -2322,7 +2323,7 @@
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                     <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                    <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
                     <span class="c1"># Flexibly align molecule0 to molecule1 based on the mapping.</span>
                     <span class="k">elif</span> <span class="n">scoring_function</span> <span class="o">==</span> <span class="s2">&quot;RMSDFLEXALIGN&quot;</span><span class="p">:</span>
                         <span class="n">molecule0</span> <span class="o">=</span> <span class="n">flexAlign</span><span class="p">(</span>
@@ -2365,7 +2366,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">gsl_exception</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">prematch</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">([{}],</span> <span class="p">[])</span>
@@ -2489,7 +2490,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_AlignmentError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
             <span class="c1"># Flexibly align molecule0 to molecule1 based on the mapping.</span>
             <span class="k">elif</span> <span class="n">scoring_function</span> <span class="o">==</span> <span class="s2">&quot;RMSDFLEXALIGN&quot;</span><span class="p">:</span>
                 <span class="n">molecule0</span> <span class="o">=</span> <span class="n">flexAlign</span><span class="p">(</span>
@@ -2659,7 +2660,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

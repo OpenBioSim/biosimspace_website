@@ -479,7 +479,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -636,7 +637,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getCurrentPressure" title="BioSimSpace.Process.Amber.getCurrentPressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCurrentPressure</span></code></a>([time_series])</p></td>
 <td><p>Get the current pressure.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getCurrentRecord" title="BioSimSpace.Process.Amber.getCurrentRecord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCurrentRecord</span></code></a>(record[, time_series, unit])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getCurrentRecord" title="BioSimSpace.Process.Amber.getCurrentRecord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCurrentRecord</span></code></a>(key[, time_series, unit])</p></td>
 <td><p>Get a current record from the stdout dictionary.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getCurrentRecords" title="BioSimSpace.Process.Amber.getCurrentRecords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCurrentRecords</span></code></a>()</p></td>
@@ -711,7 +712,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getPressure" title="BioSimSpace.Process.Amber.getPressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPressure</span></code></a>([time_series, block])</p></td>
 <td><p>Get the pressure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getRecord" title="BioSimSpace.Process.Amber.getRecord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRecord</span></code></a>(record[, time_series, unit, block])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getRecord" title="BioSimSpace.Process.Amber.getRecord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRecord</span></code></a>(key[, time_series, unit, block])</p></td>
 <td><p>Get a record from the stdout dictionary.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Amber.getRecords" title="BioSimSpace.Process.Amber.getRecords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRecords</span></code></a>([block])</p></td>
@@ -1212,12 +1213,12 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Amber.getCurrentRecord">
-<span class="sig-name descname"><span class="pre">getCurrentRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_amber.html#Amber.getCurrentRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Amber.getCurrentRecord" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_amber.html#Amber.getCurrentRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Amber.getCurrentRecord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a current record from the stdout dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>record</strong> (<em>str</em>) – The record key.</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – The record key.</p></li>
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>unit</strong> (<a class="reference internal" href="../index_Units.html#module-BioSimSpace.Units" title="BioSimSpace.Units"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a>) – The unit to convert the record to.</p></li>
 </ul>
@@ -1664,12 +1665,12 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Amber.getRecord">
-<span class="sig-name descname"><span class="pre">getRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_amber.html#Amber.getRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Amber.getRecord" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_amber.html#Amber.getRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Amber.getRecord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a record from the stdout dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>record</strong> (<em>str</em>) – The record key.</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – The record key.</p></li>
 <li><p><strong>time_series</strong> (<em>bool</em>) – Whether to return a list of time series records.</p></li>
 <li><p><strong>unit</strong> (<a class="reference internal" href="../index_Units.html#module-BioSimSpace.Units" title="BioSimSpace.Units"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a>) – The unit to convert the record to.</p></li>
 <li><p><strong>block</strong> (<em>bool</em>) – Whether to block until the process has finished running.</p></li>
@@ -2236,7 +2237,7 @@ file.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

@@ -478,7 +478,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -970,7 +971,7 @@
 
         <span class="c1"># Warnings don&#39;t trigger an error.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_warnings</span><span class="p">:</span>
-            <span class="n">command</span> <span class="o">+=</span> <span class="s2">&quot; --maxwarn -1&quot;</span>
+            <span class="n">command</span> <span class="o">+=</span> <span class="s2">&quot; --maxwarn 9999&quot;</span>
 
         <span class="c1"># Run the command.</span>
         <span class="n">proc</span> <span class="o">=</span> <span class="n">_subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
@@ -2524,7 +2525,7 @@
                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
                 <span class="c1"># The number of restraint files.</span>
                 <span class="n">num_restraint</span> <span class="o">=</span> <span class="mi">1</span>
@@ -3157,7 +3158,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             

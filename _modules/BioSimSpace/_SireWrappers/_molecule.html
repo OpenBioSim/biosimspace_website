@@ -478,7 +478,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/codestyle.html">Coding Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/packaging.html#creating-releases">Creating releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing/roadmap.html">Roadmap</a></li>
 </ul>
 </li>
@@ -890,7 +891,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># Get the &quot;intrascale&quot; property name.</span>
         <span class="n">intrascale</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">,</span> <span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
@@ -917,7 +918,7 @@
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                     <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Convert back to a Sire system.</span>
             <span class="n">gro_sys</span> <span class="o">=</span> <span class="n">gro_top</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span>
@@ -1149,7 +1150,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Query the Sire molecule.</span>
@@ -1160,7 +1161,7 @@
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="k">return</span> <span class="n">_SearchResult</span><span class="p">(</span><span class="n">search_result</span><span class="p">)</span></div>
 
@@ -1335,7 +1336,7 @@
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                     <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># The atom order is different, we need to map the atoms when setting properties.</span>
             <span class="k">else</span><span class="p">:</span>
@@ -1381,7 +1382,7 @@
                                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                                     <span class="k">else</span><span class="p">:</span>
-                                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
                 <span class="c1"># Now deal with all unseen properties. These will be non atom-based</span>
                 <span class="c1"># properties, such as TwoAtomFunctions, StringProperty, etc.</span>
@@ -1421,7 +1422,7 @@
                                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                             <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                                         <span class="k">else</span><span class="p">:</span>
-                                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
                                 <span class="c1"># Now try to set the property.</span>
                                 <span class="n">edit_mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">_property_map</span><span class="p">[</span><span class="n">prop</span><span class="p">],</span> <span class="n">propty</span><span class="p">)</span>
@@ -1452,7 +1453,7 @@
                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                             <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Commit the changes.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -1574,7 +1575,7 @@
                             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                 <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                             <span class="k">else</span><span class="p">:</span>
-                                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
                     <span class="c1"># Loop over all atom properties.</span>
                     <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">atom_props</span><span class="p">:</span>
@@ -1597,7 +1598,7 @@
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                     <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
                 <span class="c1"># Now deal with the molecular properties.</span>
                 <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">mol_props</span><span class="p">:</span>
@@ -1623,7 +1624,7 @@
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                                     <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
                         <span class="c1"># Now try to set the property.</span>
                         <span class="n">edit_mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">propty</span><span class="p">)</span>
@@ -1726,7 +1727,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Angles.</span>
             <span class="k">if</span> <span class="n">angles</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1740,7 +1741,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Dihedrals.</span>
             <span class="k">if</span> <span class="n">dihedrals</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1754,7 +1755,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Impropers.</span>
             <span class="k">if</span> <span class="n">impropers</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1768,7 +1769,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Now generate the molecular connectivity.</span>
             <span class="k">if</span> <span class="n">bonds</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1790,7 +1791,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Next we construct the intrascale matrix for the non-bonded</span>
             <span class="c1"># interactions. It is prohibitively slow to do this on-the-fly so</span>
@@ -1820,7 +1821,7 @@
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                         <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
             <span class="c1"># Finally, commit the changes to the internal object.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
@@ -2365,7 +2366,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 30, 2023</div>
+              Last updated on May 19, 2023</div>
           </div>
           <div class="right-details">
             
