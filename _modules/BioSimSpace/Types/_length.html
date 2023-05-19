@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
         <title>BioSimSpace.Types._length - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
@@ -165,7 +165,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../../_static/logo.svg" alt="Logo"/>
@@ -335,6 +335,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -557,7 +559,7 @@
 <span class="kn">from</span> <span class="nn">._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
 
-<div class="viewcode-block" id="Length"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length">[docs]</a><span class="k">class</span> <span class="nc">Length</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
+<div class="viewcode-block" id="Length"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length">[docs]</a><span class="k">class</span> <span class="nc">Length</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A length type.&quot;&quot;&quot;</span>
 
     <span class="c1"># A list of the supported Sire unit names.</span>
@@ -617,7 +619,7 @@
     <span class="c1">#     Angle, Charge, Length, Mass, Quantity, Temperature, Time</span>
     <span class="n">_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Length.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -744,7 +746,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__pow__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Length.meters"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.meters">[docs]</a>    <span class="k">def</span> <span class="nf">meters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.meters"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.meters">[docs]</a>    <span class="k">def</span> <span class="nf">meters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in meters.</span>
 
@@ -759,7 +761,7 @@
             <span class="s2">&quot;METER&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Length.centimeters"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.centimeters">[docs]</a>    <span class="k">def</span> <span class="nf">centimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.centimeters"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.centimeters">[docs]</a>    <span class="k">def</span> <span class="nf">centimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in centimeters.</span>
 
@@ -774,7 +776,7 @@
             <span class="s2">&quot;CENTIMETER&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Length.millimeters"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.millimeters">[docs]</a>    <span class="k">def</span> <span class="nf">millimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.millimeters"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.millimeters">[docs]</a>    <span class="k">def</span> <span class="nf">millimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in millimeters.</span>
 
@@ -789,7 +791,7 @@
             <span class="s2">&quot;MILLIMETER&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Length.nanometers"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.nanometers">[docs]</a>    <span class="k">def</span> <span class="nf">nanometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.nanometers"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.nanometers">[docs]</a>    <span class="k">def</span> <span class="nf">nanometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in nanometers.</span>
 
@@ -804,7 +806,7 @@
             <span class="s2">&quot;NANOMETER&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Length.angstroms"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.angstroms">[docs]</a>    <span class="k">def</span> <span class="nf">angstroms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.angstroms"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.angstroms">[docs]</a>    <span class="k">def</span> <span class="nf">angstroms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in angstroms.</span>
 
@@ -819,7 +821,7 @@
             <span class="s2">&quot;ANGSTROM&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Length.picometers"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Types.Length.picometers">[docs]</a>    <span class="k">def</span> <span class="nf">picometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Length.picometers"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.picometers">[docs]</a>    <span class="k">def</span> <span class="nf">picometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in picometers.</span>
 
@@ -976,9 +978,6 @@
     </aside>
   </div>
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>

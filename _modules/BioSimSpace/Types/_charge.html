@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
         <title>BioSimSpace.Types._charge - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
@@ -165,7 +165,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../../_static/logo.svg" alt="Logo"/>
@@ -335,6 +335,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -557,7 +559,7 @@
 <span class="kn">from</span> <span class="nn">._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
 
-<div class="viewcode-block" id="Charge"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Types.Charge">[docs]</a><span class="k">class</span> <span class="nc">Charge</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
+<div class="viewcode-block" id="Charge"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Units.Charge.Charge">[docs]</a><span class="k">class</span> <span class="nc">Charge</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A charge type.&quot;&quot;&quot;</span>
 
     <span class="c1"># A list of the supported Sire unit names.</span>
@@ -588,7 +590,7 @@
     <span class="c1">#     Angle, Charge, Length, Mass, Quantity, Temperature, Time</span>
     <span class="n">_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Charge.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Types.Charge.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="Charge.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Units.Charge.Charge.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -632,7 +634,7 @@
         <span class="c1"># Call the base class constructor.</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Charge.electron_charge"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Types.Charge.electron_charge">[docs]</a>    <span class="k">def</span> <span class="nf">electron_charge</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Charge.electron_charge"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Units.Charge.Charge.electron_charge">[docs]</a>    <span class="k">def</span> <span class="nf">electron_charge</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the charge in electron charge.</span>
 
@@ -647,7 +649,7 @@
             <span class="s2">&quot;ELECTRON CHARGE&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Charge.coulomb"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Types.Charge.coulomb">[docs]</a>    <span class="k">def</span> <span class="nf">coulomb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Charge.coulomb"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Charge.html#BioSimSpace.Units.Charge.Charge.coulomb">[docs]</a>    <span class="k">def</span> <span class="nf">coulomb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the charge in Coulomb.</span>
 
@@ -811,9 +813,6 @@
     </aside>
   </div>
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
         <title>BioSimSpace.Types._temperature - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
@@ -165,7 +165,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../../_static/logo.svg" alt="Logo"/>
@@ -335,6 +335,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -557,7 +559,7 @@
 <span class="kn">from</span> <span class="nn">._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
 
-<div class="viewcode-block" id="Temperature"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature">[docs]</a><span class="k">class</span> <span class="nc">Temperature</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
+<div class="viewcode-block" id="Temperature"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Units.Temperature.Temperature">[docs]</a><span class="k">class</span> <span class="nc">Temperature</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A temperature type.&quot;&quot;&quot;</span>
 
     <span class="c1"># A list of the supported Sire unit names.</span>
@@ -590,7 +592,7 @@
     <span class="c1">#     Angle, Charge, Length, Mass, Quantity, Temperature, Time</span>
     <span class="n">_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Temperature.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="Temperature.__init__"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Units.Temperature.Temperature.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -826,7 +828,7 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the value of the temperature in Kelvin.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
-<div class="viewcode-block" id="Temperature.kelvin"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature.kelvin">[docs]</a>    <span class="k">def</span> <span class="nf">kelvin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Temperature.kelvin"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Units.Temperature.Temperature.kelvin">[docs]</a>    <span class="k">def</span> <span class="nf">kelvin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the temperature in Kelvin.</span>
 
@@ -840,7 +842,7 @@
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supported_units</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">])</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="s2">&quot;KELVIN&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Temperature.celsius"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature.celsius">[docs]</a>    <span class="k">def</span> <span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Temperature.celsius"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Units.Temperature.Temperature.celsius">[docs]</a>    <span class="k">def</span> <span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the temperature in Celsius.</span>
 
@@ -855,7 +857,7 @@
             <span class="s2">&quot;CELSIUS&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Temperature.fahrenheit"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature.fahrenheit">[docs]</a>    <span class="k">def</span> <span class="nf">fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Temperature.fahrenheit"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Temperature.html#BioSimSpace.Units.Temperature.Temperature.fahrenheit">[docs]</a>    <span class="k">def</span> <span class="nf">fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the temperature in Fahrenheit.</span>
 
@@ -1065,9 +1067,6 @@
     </aside>
   </div>
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
