@@ -1,0 +1,6 @@
+﻿BioSimSpace.\_Utils.\_have\_imported
+====================================
+
+.. currentmodule:: BioSimSpace._Utils
+
+.. autofunction:: _have_imported

@@ -1,0 +1,6 @@
+﻿BioSimSpace.\_Exceptions.IncompatibleError
+==========================================
+
+.. currentmodule:: BioSimSpace._Exceptions
+
+.. autoexception:: IncompatibleError

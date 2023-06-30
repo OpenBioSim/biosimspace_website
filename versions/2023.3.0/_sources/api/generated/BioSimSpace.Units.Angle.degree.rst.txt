@@ -1,0 +1,6 @@
+﻿BioSimSpace.Units.Angle.degree
+==============================
+
+.. currentmodule:: BioSimSpace.Units.Angle
+
+.. autodata:: degree
