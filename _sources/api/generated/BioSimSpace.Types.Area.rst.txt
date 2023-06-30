@@ -26,6 +26,7 @@
       ~Area.quantity
       ~Area.temperature
       ~Area.time
+      ~Area.to
       ~Area.unit
       ~Area.value
    

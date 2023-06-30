@@ -25,6 +25,7 @@
       ~Energy.quantity
       ~Energy.temperature
       ~Energy.time
+      ~Energy.to
       ~Energy.unit
       ~Energy.value
    

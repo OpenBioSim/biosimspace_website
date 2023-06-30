@@ -30,6 +30,7 @@
       ~Time.seconds
       ~Time.temperature
       ~Time.time
+      ~Time.to
       ~Time.unit
       ~Time.value
    

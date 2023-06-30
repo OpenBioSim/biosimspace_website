@@ -23,6 +23,7 @@
       ~Residue.moleculeNumber
       ~Residue.nAtoms
       ~Residue.name
+      ~Residue.save
       ~Residue.search
       ~Residue.smiles
       ~Residue.toMolecule

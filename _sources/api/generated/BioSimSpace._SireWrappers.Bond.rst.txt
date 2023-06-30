@@ -26,6 +26,7 @@
       ~Bond.moleculeNumber
       ~Bond.nAtoms
       ~Bond.name
+      ~Bond.save
       ~Bond.search
       ~Bond.smiles
       ~Bond.toMolecule

@@ -25,6 +25,7 @@
       ~Temperature.quantity
       ~Temperature.temperature
       ~Temperature.time
+      ~Temperature.to
       ~Temperature.unit
       ~Temperature.value
    
