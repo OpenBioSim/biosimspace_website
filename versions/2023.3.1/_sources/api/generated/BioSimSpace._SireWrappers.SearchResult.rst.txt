@@ -1,0 +1,31 @@
+﻿BioSimSpace.\_SireWrappers.SearchResult
+=======================================
+
+.. currentmodule:: BioSimSpace._SireWrappers
+
+.. autoclass:: SearchResult
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SearchResult.__init__
+      ~SearchResult.atoms
+      ~SearchResult.bonds
+      ~SearchResult.chains
+      ~SearchResult.copy
+      ~SearchResult.getResult
+      ~SearchResult.molecules
+      ~SearchResult.nResults
+      ~SearchResult.residues
+      ~SearchResult.segments
+   
+   
+
+   
+   
+   

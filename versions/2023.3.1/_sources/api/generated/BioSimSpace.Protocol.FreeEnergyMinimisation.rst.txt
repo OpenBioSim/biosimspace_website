@@ -1,0 +1,35 @@
+﻿BioSimSpace.Protocol.FreeEnergyMinimisation
+===========================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: FreeEnergyMinimisation
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FreeEnergyMinimisation.__init__
+      ~FreeEnergyMinimisation.getForceConstant
+      ~FreeEnergyMinimisation.getLambda
+      ~FreeEnergyMinimisation.getLambdaIndex
+      ~FreeEnergyMinimisation.getLambdaValues
+      ~FreeEnergyMinimisation.getPerturbationType
+      ~FreeEnergyMinimisation.getRestraint
+      ~FreeEnergyMinimisation.getSteps
+      ~FreeEnergyMinimisation.restraints
+      ~FreeEnergyMinimisation.setForceConstant
+      ~FreeEnergyMinimisation.setLambdaValues
+      ~FreeEnergyMinimisation.setPerturbationType
+      ~FreeEnergyMinimisation.setRestraint
+      ~FreeEnergyMinimisation.setSteps
+   
+   
+
+   
+   
+   
