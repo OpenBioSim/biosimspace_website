@@ -4,14 +4,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>BioSimSpace.Process._amber - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_pygments.css?v=c839eb9e" />
     
     
 
@@ -995,12 +995,17 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSystem</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Amber.getTrajectory"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getTrajectory">[docs]</a>    <span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="Amber.getTrajectory"><a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getTrajectory">[docs]</a>    <span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a trajectory object.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
+
+<span class="sd">        backend : str</span>
+<span class="sd">            The backend to use for trajectory parsing. To see supported backends,</span>
+<span class="sd">            run BioSimSpace.Trajectory.backends(). Using &quot;AUTO&quot; will try each in</span>
+<span class="sd">            sequence.</span>
 
 <span class="sd">        block : bool</span>
 <span class="sd">            Whether to block until the process has finished running.</span>
@@ -1011,6 +1016,12 @@
 <span class="sd">        trajectory : :class:`Trajectory &lt;BioSimSpace.Trajectory.Trajectory&gt;`</span>
 <span class="sd">            The latest trajectory object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;backend&#39; must be of type &#39;str&#39;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;block&#39; must be of type &#39;bool&#39; or &#39;str&#39;&quot;</span><span class="p">)</span>
 
         <span class="c1"># Wait for the process to finish.</span>
         <span class="k">if</span> <span class="n">block</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
@@ -1023,7 +1034,7 @@
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The process exited with an error!&quot;</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_Trajectory</span><span class="o">.</span><span class="n">Trajectory</span><span class="p">(</span><span class="n">process</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">_Trajectory</span><span class="o">.</span><span class="n">Trajectory</span><span class="p">(</span><span class="n">process</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">)</span>
 
         <span class="k">except</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
@@ -2284,7 +2295,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 30, 2023</div>
+              Last updated on Aug 14, 2023</div>
           </div>
           <div class="right-details">
             
@@ -2299,10 +2310,10 @@
       
     </aside>
   </div>
-</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="../../../_static/scripts/furo.js"></script>
-    <script src="../../../_static/js/custom.js"></script>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/js/custom.js?v=e0b44004"></script>
     </body>
 </html>
