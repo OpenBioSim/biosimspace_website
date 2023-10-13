@@ -38,9 +38,11 @@
       ~System.nPerturbableMolecules
       ~System.nResidues
       ~System.nWaterMolecules
+      ~System.reduceBoxVectors
       ~System.removeMolecules
       ~System.removeWaterMolecules
       ~System.repartitionHydrogenMass
+      ~System.rotateBoxVectors
       ~System.save
       ~System.search
       ~System.setBox
