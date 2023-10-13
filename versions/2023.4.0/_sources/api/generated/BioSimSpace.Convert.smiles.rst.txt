@@ -1,0 +1,6 @@
+﻿BioSimSpace.Convert.smiles
+==========================
+
+.. currentmodule:: BioSimSpace.Convert
+
+.. autofunction:: smiles
