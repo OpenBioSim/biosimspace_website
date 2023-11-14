@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Tutorials" href="../tutorials/index.html" /><link rel="prev" title="Compatibility" href="../compatibility.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Hydration free energy" href="hydration_freenrg.html" /><link rel="prev" title="Tutorials" href="index.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Quick Start Guide - openbiosim - biosimspace</title>
+        <title>Crystal water - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -185,19 +185,19 @@
     <div id="version_box" class="version_box"></div>
   </div>
 </div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
+  <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Compatibility</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
 </ul>
-<ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tutorials/crystal_water.html">Crystal water</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Crystal water</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Crystal water</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Crystal water</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydration_freenrg.html">Hydration free energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadynamics.html">Metadynamics</a></li>
 </ul>
 </li>
 </ul>
@@ -536,98 +536,133 @@
           </label>
         </div>
         <article role="main">
-          <section id="quick-start-guide">
-<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading">#</a></h1>
-<p>Import <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioiSmSpace</span></code> using</p>
+          <section id="crystal-water">
+<span id="ref-crystal-water"></span><h1>Crystal water<a class="headerlink" href="#crystal-water" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Water molecules are important for the structure, function, and dynamics of
+proteins. When setting up a simulation it may be important to preserve
+specific water molecules, often referred to as <em>crystal waters</em>. For example,
+many structures from the <a class="reference external" href="https://www.rcsb.org/">Protein Data Bank</a>
+contain the coordinates of water molecules that are resolvable via X-ray
+crystallography. In this example, we will use BioSimSpace to parameterise
+and solvate a <a class="reference external" href="https://en.wikipedia.org/wiki/Tyrosine_kinase_2">tyrosine kinase 2</a>
+protein structure containing two crystal waters within its binding site.</p>
+<p>Firstly, let’s load the PDB structure:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tyk2_xtal</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">readMolecules</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span>
+<span class="gp">... </span>       <span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">tutorialUrl</span><span class="p">(),</span> <span class="s2">&quot;tyk2_xtal.pdb&quot;</span>
+<span class="gp">... </span>   <span class="p">)</span>
+<span class="go">...)[0]</span>
 </pre></div>
 </div>
-<p>Load a molecular system from a URL, via <a class="reference internal" href="../api/generated/BioSimSpace.IO.readMolecules.html#BioSimSpace.IO.readMolecules" title="BioSimSpace.IO.readMolecules"><code class="xref py py-func docutils literal notranslate"><span class="pre">BioSimSpace.IO.readMolecules()</span></code></a>:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">tutorialUrl</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">system</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">readMolecules</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">/ala.top&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">/ala.crd&quot;</span><span class="p">])</span>
+<p>This is a single molecule that contains the oxgyen atoms of two crystal waters
+at the end of the structure:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">residue</span> <span class="ow">in</span> <span class="n">tyk2_xtal</span><span class="o">.</span><span class="n">getResidues</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">residue</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">atom</span><span class="p">,</span> <span class="n">atom</span><span class="o">.</span><span class="n">coordinates</span><span class="p">())</span>
+<span class="gp">...</span>
+<span class="go">&lt;BioSimSpace.Atom: name=&#39;O&#39;, molecule=2, index=4652&gt; (-4.5180 A, -0.0520 A, -15.6070 A)</span>
+<span class="go">&lt;BioSimSpace.Atom: name=&#39;O&#39;, molecule=2, index=4653&gt; (-7.2040 A, -8.5540 A, -20.7520 A)</span>
+</pre></div>
+</div>
+<p>We can use BioSimSpace to search for and extract the protein and water
+components of the system. In this case, the waters are part of a residue
+named <code class="docutils literal notranslate"><span class="pre">WAT</span></code>, so we can use this as our search term:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tyk2</span> <span class="o">=</span> <span class="n">tyk2_xtal</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">tyk2_xtal</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;not resname WAT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">atoms</span><span class="p">()]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xtal_water</span> <span class="o">=</span> <span class="n">tyk2_xtal</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">()</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">tyk2_xtal</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;resname WAT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">atoms</span><span class="p">()]</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we have the components, we can parameterise them individually. First the
+protein:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tyk2</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ff14SB</span><span class="p">(</span><span class="n">tyk2</span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And then the water:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xtal_water</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ff14SB</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">xtal_water</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">water_model</span><span class="o">=</span><span class="s2">&quot;tip3p&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">ensure_compatible</span><span class="o">=</span><span class="kc">False</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this case we need to specify the desired water model, and also that we don’t
+want to ensure that the parameterised molecule is compatible with the topology
+of the molecule that we passed in. This is because we are only passing in
+oxygen atoms, so <code class="docutils literal notranslate"><span class="pre">tLEaP</span></code> will add the missing hydrogens.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, BioSimSpace ensures that the topology of the parameterised molecule(s)
+matches that of the input molecule and will raise an exception if this is not
+the case. This is because the input system is often required as a reference by
+the user, e.g. they might want to preserve a specific naming convention, chain
+identifiers, etc.</p>
+</div>
+<p>Let’s check one of the parameterised crystal waters:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">xtal_water</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getAtoms</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atom</span><span class="p">,</span> <span class="n">atom</span><span class="o">.</span><span class="n">coordinates</span><span class="p">())</span>
+<span class="gp">...</span>
+<span class="go">&lt;BioSimSpace.Atom: name=&#39;O&#39;, molecule=9, index=0&gt; (-4.5180 A, -0.0520 A, -15.6070 A)</span>
+<span class="go">&lt;BioSimSpace.Atom: name=&#39;H1&#39;, molecule=9, index=1&gt; (-3.5608 A, -0.0520 A, -15.6070 A)</span>
+<span class="go">&lt;BioSimSpace.Atom: name=&#39;H2&#39;, molecule=9, index=2&gt; (-4.7580 A, 0.8746 A, -15.6070 A)</span>
+</pre></div>
+</div>
+<p>Note that the coordinates of the oxygen atom are preserved.</p>
+<p>Once both components are parameterised, we can combine them together to create
+a new system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">system</span> <span class="o">=</span> <span class="n">tyk2</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span> <span class="o">+</span> <span class="n">xtal_water</span>
+</pre></div>
+</div>
+<p>The next step in our setup procedure is to solvate the system in a water box.
+Here we will use a truncated octahedral box with a base length of 7 nanometers:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="p">,</span> <span class="n">angles</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Box</span><span class="o">.</span><span class="n">truncatedOctahedron</span><span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Units</span><span class="o">.</span><span class="n">Length</span><span class="o">.</span><span class="n">nanometer</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solvated</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Solvent</span><span class="o">.</span><span class="n">tip3p</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">angles</span><span class="o">=</span><span class="n">angles</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since the protein is charged, during the solvation process <code class="docutils literal notranslate"><span class="pre">gmx</span> <span class="pre">genion</span></code> will
+have been used to neutralise the solvated system by adding counter ions. We can
+check this as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">charge</span><span class="p">(),</span> <span class="n">solvated</span><span class="o">.</span><span class="n">charge</span><span class="p">())</span>
+<span class="gp">... </span><span class="o">-</span><span class="mf">2.0000</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="o">-</span><span class="mf">1.5091e-07</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">solvated</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;element Na&quot;</span><span class="p">)))</span>
+<span class="gp">... </span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>In this case, two sodium ions have been added to neutralise the system. In
+doing so, <code class="docutils literal notranslate"><span class="pre">gmx</span> <span class="pre">genion</span></code> will have removed two <em>random</em> water molecules. In
+order to ensure that crystal waters are not removed, we temporarily tag them
+with a unique residue and molecule name during solvation.</p>
+<p>To check that they are preserved we can re-solvate the system, asking to
+preserve the water naming for the existing waters in the system. (By default,
+they will be updated to the default <code class="docutils literal notranslate"><span class="pre">GROMACS</span></code> naming convention.)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solvated_no_match</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Solvent</span><span class="o">.</span><span class="n">tip3p</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">system</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">angles</span><span class="o">=</span><span class="n">angles</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">match_water</span><span class="o">=</span><span class="kc">False</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can check that the crystal waters are still present as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">residue</span> <span class="ow">in</span> <span class="n">solvated_no_match</span><span class="o">.</span><span class="n">getWaterMolecules</span><span class="p">()</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;resname WAT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">residues</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">residue</span><span class="p">)</span>
+<span class="go">&lt;BioSimSpace.Residue: name=&#39;WAT&#39;, molecule=8, index=0, nAtoms=3&gt;</span>
+<span class="go">&lt;BioSimSpace.Residue: name=&#39;WAT&#39;, molecule=9, index=0, nAtoms=3&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="xref py py-data docutils literal notranslate"><span class="pre">BioSimSpace.tutorialUrl()</span></code> expands to the base URL that contains
-all tutorial files.</p>
-</div>
-<p>Write the system back to a bunch of different molecular formats:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="s2">&quot;ala&quot;</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;gro87&quot;</span><span class="p">,</span> <span class="s2">&quot;grotop&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;mol2&quot;</span><span class="p">])</span>
-<span class="go">[&#39;/home/lester/code/openbiosim/biosimspace/ala.gro&#39;,</span>
-<span class="go"> &#39;/home/lester/code/openbiosim/biosimspace/ala.top&#39;,</span>
-<span class="go"> &#39;/home/lester/code/openbiosim/biosimspace/ala.pdb&#39;,</span>
-<span class="go"> &#39;/home/lester/code/openbiosim/biosimspace/ala.mol2&#39;]</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The list of options specify the file formats, not the extensions.</p>
-</div>
-<p>Check what file formats are supported:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">fileFormats</span><span class="p">()</span>
-<span class="go">[&#39;DCD&#39;, &#39;Gro87&#39;, &#39;GroTop&#39;, &#39;MOL2&#39;, &#39;PDB&#39;, &#39;PRM7&#39;, &#39;PSF&#39;, &#39;RST&#39;, &#39;RST7&#39;, &#39;SDF&#39;]</span>
-</pre></div>
-</div>
-<p>Find out more information about a specific format:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">formatInfo</span><span class="p">(</span><span class="s2">&quot;rst7&quot;</span><span class="p">)</span>
-<span class="go">&#39;Amber coordinate/velocity text (ascii) restart files supported from Amber 7 upwards.&#39;</span>
-</pre></div>
-</div>
-<p>Create a toluene molecule parameterised with the General AMBER Force Field (GAFF):</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">molecule</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">gaff</span><span class="p">(</span><span class="s2">&quot;Cc1ccccc1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Check what force fields are supported:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">forceFields</span><span class="p">()</span>
-<span class="go">[&#39;ff03&#39;,</span>
-<span class="go"> &#39;ff99&#39;,</span>
-<span class="go"> &#39;ff99SB&#39;,</span>
-<span class="go"> &#39;ff99SBildn&#39;,</span>
-<span class="go"> &#39;ff14SB&#39;,</span>
-<span class="go"> &#39;gaff&#39;,</span>
-<span class="go"> &#39;gaff2&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.0.0-RC2&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.0.1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.2.1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.3.1-alpha.1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.2.0&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-2.0.0-rc.1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.1.0&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.1.1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.3.1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.0.0-RC1&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-2.0.0-rc.2&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-2.0.0&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.3.0&#39;,</span>
-<span class="go"> &#39;openff_unconstrained-1.0.0&#39;]</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The list of supported force fields may differ depending on what version
-of the <code class="xref py py-obj docutils literal notranslate"><span class="pre">openforcefields</span></code> package is installed.</p>
-</div>
-<p>Solvate the molecule in a truncated octahedral box of TIP3P water:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="p">,</span> <span class="n">angles</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Box</span><span class="o">.</span><span class="n">truncatedOctahedron</span><span class="p">(</span><span class="mi">35</span> <span class="o">*</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Units</span><span class="o">.</span><span class="n">Length</span><span class="o">.</span><span class="n">angstrom</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">solvated</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Solvent</span><span class="o">.</span><span class="n">tip3p</span><span class="p">(</span><span class="n">molecule</span><span class="o">=</span><span class="n">molecule</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">angles</span><span class="o">=</span><span class="n">angles</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>By default the solvated system will be neutralised.</p>
-</div>
-<p>Run 5000 steps of minimisation using any available molecular dynamics engine
-and get back the final structure:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">protocol</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Protocol</span><span class="o">.</span><span class="n">Minimisation</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">process</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">MD</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">solvated</span><span class="p">,</span> <span class="n">protocol</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">minimised_system</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">getSystem</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>BioSimSpace processes can also be run interactively. By passing <code class="xref py py-data docutils literal notranslate"><span class="pre">block=True</span></code>
-ensures that we wait for it to finish before returning the minimised system.</p>
+<p>When solvating, molecules in the original system will be centered within the
+solvation box, hence the coordinates of the crystal waters after solvation
+won’t necessarily match those from before. By setting <code class="docutils literal notranslate"><span class="pre">match_water=False</span></code>,
+it is possible to preserve the naming convention used for any existing
+waters in the system. However, note that some simulation engines rely on a
+specific naming convention for water molecules and a single solvent group.</p>
 </div>
 </section>
 
@@ -636,23 +671,23 @@ ensures that we wait for it to finish before returning the minimised system.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../tutorials/index.html">
+          <a class="next-page" href="hydration_freenrg.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Tutorials</div>
+                <div class="title">Hydration free energy</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../compatibility.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Compatibility</div>
+                <div class="title">Tutorials</div>
                 
               </div>
             </a>

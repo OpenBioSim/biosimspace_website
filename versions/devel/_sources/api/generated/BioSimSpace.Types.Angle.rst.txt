@@ -24,6 +24,7 @@
       ~Angle.radians
       ~Angle.temperature
       ~Angle.time
+      ~Angle.to
       ~Angle.unit
       ~Angle.value
    

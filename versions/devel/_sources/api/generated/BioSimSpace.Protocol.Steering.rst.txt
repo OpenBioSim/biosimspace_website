@@ -23,6 +23,7 @@
       ~Steering.getRunTime
       ~Steering.getSchedule
       ~Steering.getTemperature
+      ~Steering.getThermostatTimeConstant
       ~Steering.getTimeStep
       ~Steering.getVerse
       ~Steering.setCollectiveVariable
@@ -34,6 +35,7 @@
       ~Steering.setRunTime
       ~Steering.setSchedule
       ~Steering.setTemperature
+      ~Steering.setThermostatTimeConstant
       ~Steering.setTimeStep
       ~Steering.setVerse
    

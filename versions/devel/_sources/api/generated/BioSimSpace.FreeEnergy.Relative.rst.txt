@@ -15,6 +15,7 @@
    
       ~Relative.__init__
       ~Relative.analyse
+      ~Relative.checkOverlap
       ~Relative.difference
       ~Relative.getData
       ~Relative.kill
