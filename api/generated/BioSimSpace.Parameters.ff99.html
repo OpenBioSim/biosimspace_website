@@ -540,7 +540,7 @@
 <h1>BioSimSpace.Parameters.ff99<a class="headerlink" href="#biosimspace-parameters-ff99" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="BioSimSpace.Parameters.ff99">
-<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Parameters.</span></span><span class="sig-name descname"><span class="pre">ff99</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance=1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance=6.0000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water_model=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leap_commands=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bonds=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_compatible=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map={}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Parameters.ff99" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Parameters.</span></span><span class="sig-name descname"><span class="pre">ff99</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance=1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance=6.0000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water_model=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_mol_commands=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_mol_commands=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bonds=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_compatible=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map={}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Parameters.ff99" title="Link to this definition">#</a></dt>
 <dd><p>Parameterise a molecule using the named AMBER force field.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -557,10 +557,14 @@ Run ‘BioSimSpace.Solvent.waterModels()’ to see the supported
 water models. This can also be used to parameterise water molecules,
 or lone oxygen atoms corresponding to structural (crystal) water
 molecules.</p></li>
-<li><p><strong>leap_commands</strong> (<em>[</em><em>str</em><em>]</em>) – An optional list of extra commands for the LEaP program. These
-will be added after any default commands and can be used to, e.g.,
-load additional parameter files. When this option is set, we can no
-longer fall back on GROMACS’s pdb2gmx.</p></li>
+<li><p><strong>pre_mol_commands</strong> (<em>[</em><em>str</em><em>]</em>) – A list of custom LEaP commands to be executed before loading the molecule.
+This can be used for loading custom parameter files, or sourcing additional
+scripts. Make sure to use absolute paths when specifying any external files.
+When this option is set, we can no longer fall back on GROMACS’s pdb2gmx.</p></li>
+<li><p><strong>post_mol_commands</strong> (<em>[</em><em>str</em><em>]</em>) – A list of custom LEaP commands to be executed after loading the molecule.
+This allows the use of additional commands that operate on the molecule,
+which is named “mol”. When this option is set, we can no longer fall
+back on GROMACS’s pdb2gmx.</p></li>
 <li><p><strong>bonds</strong> (((class:<a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html#BioSimSpace._SireWrappers.Atom" title="BioSimSpace._SireWrappers.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a>, class:<a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html#BioSimSpace._SireWrappers.Atom" title="BioSimSpace._SireWrappers.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a>))) – An optional tuple of atom pairs to specify additional atoms that
 should be bonded.</p></li>
 <li><p><strong>ensure_compatible</strong> (<em>bool</em>) – Whether to ensure that the topology of the parameterised molecule is
@@ -618,7 +622,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Dec 14, 2023</div>
           </div>
           <div class="right-details">
             

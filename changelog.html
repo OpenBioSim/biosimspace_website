@@ -545,6 +545,25 @@ company supporting open-source development of fostering academic/industrial coll
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
 </section>
+<section id="dec-14-2023">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.4.0...2023.4.1">2023.4.1</a> - Dec 14 2023<a class="headerlink" href="#dec-14-2023" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">match_water</span></code> keyword argument is passed to specialised solvation functions (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/190">#190</a>).</p></li>
+<li><p>Check perturbable molecules for velocities when combining molecules (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/192">#192</a>).</p></li>
+<li><p>Make sure velocities are double counted when searching for velocity properties when combining molecules (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/197">#197</a>).</p></li>
+<li><p>Remove redundant <code class="docutils literal notranslate"><span class="pre">BioSimSpace.Types.Type.__ne__</span></code> operator (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/201">#201</a>).</p></li>
+<li><p>Minor internal updates due to Sire API fixes (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/203">#203</a>).</p></li>
+<li><p>Fixed bug in the Boresch restraint search code (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/204">#204</a>).</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">renumber</span></code> option in <a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.extract" title="BioSimSpace._SireWrappers.Molecule.extract"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract</span></code></a> method (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/210">#210</a>).</p></li>
+<li><p>Add workaround for fixing reconstruction of intrascale matrix in <a class="reference internal" href="api/generated/BioSimSpace.IO.readPerturbableSystem.html#BioSimSpace.IO.readPerturbableSystem" title="BioSimSpace.IO.readPerturbableSystem"><code class="xref py py-func docutils literal notranslate"><span class="pre">readPerturbableSystem</span></code></a> function (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/210">#210</a>).</p></li>
+<li><p>Remove incorrect <code class="docutils literal notranslate"><span class="pre">try_import</span></code> statement in metadynamics driver script and make sure that global parameters in OpenMM script are unique (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/217">#217</a>).</p></li>
+<li><p>Ensure the existing trajectory backend is used when getting the number of trajectory frames from a running process (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/219">#219</a>).</p></li>
+<li><p>Fixed setting of <code class="docutils literal notranslate"><span class="pre">igb</span></code> config parameter     for PMEMD simulations (<a class="reference external" href="https://github.com/annamherz">&#64;annamherz</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/220">#220</a>).</p></li>
+<li><p>Make sure AMBER restraint mask matches all hydrogen atoms (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/222">#222</a>).</p></li>
+<li><p>Ensure all searches for disulphide bonds are convert to a <code class="docutils literal notranslate"><span class="pre">SelectorBond</span></code> object (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/224">#224</a>).</p></li>
+<li><p>Fix injection of custom commands into <code class="docutils literal notranslate"><span class="pre">LEaP</span></code> script (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/226">#226</a>).</p></li>
+</ul>
+</section>
 <section id="oct-13-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.3.1...2023.4.0">2023.4.0</a> - Oct 13 2023<a class="headerlink" href="#oct-13-2023" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -553,7 +572,7 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <li><p>Add unified free-energy perturbation analysis using <code class="docutils literal notranslate"><span class="pre">alchemlyb</span></code> (<a class="reference external" href="https://github.com/annamherz">&#64;annamherz</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/155">#155</a>).</p></li>
 <li><p>Fix handling of connectivity changes during molecular perturbations (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/157">#157</a>).</p></li>
 <li><p>Fix issues related to new shared properties in Sire (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/160">#160</a>).</p></li>
-<li><p>Fix issues in SOMD perturbation files for absolute binding free-energy simulations (<a class="reference external" href="https://github.com/fjclark">&#64;fkclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/164">#164</a>).</p></li>
+<li><p>Fix issues in SOMD perturbation files for absolute binding free-energy simulations (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/164">#164</a>).</p></li>
 <li><p>Don’t generate velocities when performing a continuation with GROMACS (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/169">#169</a>).</p></li>
 <li><p>Decouple custom parameters and additional commands in <code class="docutils literal notranslate"><span class="pre">LEaP</span></code> input (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/170">#170</a>).</p></li>
 <li><p>Check for periodic space when updating box information from restart file or trajectory (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/173">#173</a>).</p></li>
@@ -587,9 +606,9 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <li><p>Fix order of imports in <code class="docutils literal notranslate"><span class="pre">prepareFEP</span></code> node (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/90">#90</a>).</p></li>
 <li><p>Recenter molecules following vacuum simulation with GROMACS to avoid precision overflow with molecular coordinates on write (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/95">#95</a>).</p></li>
 <li><p>Fix expected angles used in unit test following updates to triclinic box code in Sire (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/99">#99</a>).</p></li>
-<li><p>Add absolute binding free-energy support for SOMD (<a class="reference external" href="https://github.com/fjclark">&#64;fkclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/104">#104</a>).</p></li>
+<li><p>Add absolute binding free-energy support for SOMD (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/104">#104</a>).</p></li>
 <li><p>Avoid streaming issues when reading binary AMBER restart files for a single frame (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/105">#105</a>).</p></li>
-<li><p>Improve overlap matrix plotting functionality (<a class="reference external" href="https://github.com/fjclark">&#64;fkclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/107">#107</a>).</p></li>
+<li><p>Improve overlap matrix plotting functionality (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/107">#107</a>).</p></li>
 <li><p>Handle updates to Sire parser format naming (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/108">#108</a>).</p></li>
 <li><p>Wrap new Sire units grammar to improve parsing of units from strings (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/109">#109</a>).</p></li>
 <li><p>Expose <code class="docutils literal notranslate"><span class="pre">make_whole</span></code> option in Sire to allow un-wrapping of molecular coordinates on read (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/110">#110</a>).</p></li>
@@ -598,7 +617,7 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <li><p>Fix bug in <code class="docutils literal notranslate"><span class="pre">plumed</span></code> version requirement check (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/113">#113</a>).</p></li>
 <li><p>Reinstate temperature control for all GROMACS simulation protocols (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/115">#115</a>).</p></li>
 <li><p>Fix pre-processing selector in test section of <code class="docutils literal notranslate"><span class="pre">conda</span></code> recipe (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/117">#117</a>).</p></li>
-<li><p>Fixed bug in SOMD free-energy perturbation analysis (<a class="reference external" href="https://github.com/fjclark">&#64;fkclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/119">#119</a>).</p></li>
+<li><p>Fixed bug in SOMD free-energy perturbation analysis (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/119">#119</a>).</p></li>
 <li><p>Catch exception when vacuum system has a cartesian space (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/120">#120</a>).</p></li>
 <li><p>Add support for Sire as a trajectory backend (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/121">#121</a>).</p></li>
 </ul>
@@ -823,7 +842,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Dec 14, 2023</div>
           </div>
           <div class="right-details">
             
@@ -846,6 +865,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#dec-14-2023">2023.4.1 - Dec 14 2023</a></li>
 <li><a class="reference internal" href="#oct-13-2023">2023.4.0 - Oct 13 2023</a></li>
 <li><a class="reference internal" href="#aug-14-2023">2023.3.1 - Aug 14 2023</a></li>
 <li><a class="reference internal" href="#jun-30-2023">2023.3.0 - Jun 30 2023</a></li>
