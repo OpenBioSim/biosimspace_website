@@ -1657,9 +1657,13 @@
     <span class="c1"># Flag that the molecule is perturbable.</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">,</span> <span class="n">_SireBase</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
 
+    <span class="c1"># Get the two molecules.</span>
+    <span class="n">mol0</span> <span class="o">=</span> <span class="n">system0</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span>
+    <span class="n">mol1</span> <span class="o">=</span> <span class="n">system1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span>
+
     <span class="c1"># Add the molecule0 and molecule1 properties.</span>
-    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">,</span> <span class="n">system0</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
-    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">,</span> <span class="n">system1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">,</span> <span class="n">mol0</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">,</span> <span class="n">mol1</span><span class="p">)</span>
 
     <span class="c1"># Get the connectivity property name.</span>
     <span class="n">conn_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;connectivity&quot;</span><span class="p">,</span> <span class="s2">&quot;connectivity&quot;</span><span class="p">)</span>
@@ -1677,6 +1681,23 @@
         <span class="c1"># Delete the end state properties.</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="n">conn_prop</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="n">conn_prop</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+
+    <span class="c1"># Reconstruct the intrascale matrices using the GroTop parser.</span>
+    <span class="n">intra0</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">_Molecule</span><span class="p">(</span><span class="n">mol0</span><span class="p">)</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">toSystem</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">intra1</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">_Molecule</span><span class="p">(</span><span class="n">mol1</span><span class="p">)</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">toSystem</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Set the &quot;intrascale&quot; properties.</span>
+    <span class="n">intrascale_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">,</span> <span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">intrascale_prop</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="n">intra0</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">intrascale_prop</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">intra0</span><span class="p">)</span>
 
     <span class="c1"># Commit the changes.</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
@@ -1783,7 +1804,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Nov 14, 2023</div>
+              Last updated on Dec 14, 2023</div>
           </div>
           <div class="right-details">
             

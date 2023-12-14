@@ -675,8 +675,8 @@
     <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span>
     <span class="n">max_distance</span><span class="o">=</span><span class="n">_Length</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span>
     <span class="n">water_model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">custom_parameters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">leap_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">pre_mol_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">post_mol_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">bonds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ensure_compatible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -712,14 +712,17 @@
 <span class="sd">        or lone oxygen atoms corresponding to structural (crystal) water</span>
 <span class="sd">        molecules.</span>
 
-<span class="sd">    custom_parameters: [str]</span>
-<span class="sd">        A list of paths to custom parameter files. When this option is set,</span>
-<span class="sd">        we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
+<span class="sd">    pre_mol_commands : [str]</span>
+<span class="sd">        A list of custom LEaP commands to be executed before loading the molecule.</span>
+<span class="sd">        This can be used for loading custom parameter files, or sourcing additional</span>
+<span class="sd">        scripts. Make sure to use absolute paths when specifying any external files.</span>
+<span class="sd">        When this option is set, we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
 
-<span class="sd">    leap_commands : [str]</span>
-<span class="sd">        An optional list of extra commands for the LEaP program. These</span>
-<span class="sd">        will be added after any default commands. When this option is set,</span>
-<span class="sd">        we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
+<span class="sd">    post_mol_commands : [str]</span>
+<span class="sd">        A list of custom LEaP commands to be executed after loading the molecule.</span>
+<span class="sd">        This allows the use of additional commands that operate on the molecule,</span>
+<span class="sd">        which is named &quot;mol&quot;. When this option is set, we can no longer fall</span>
+<span class="sd">        back on GROMACS&#39;s pdb2gmx.</span>
 
 <span class="sd">    bonds : ((class:`Atom &lt;BioSimSpace._SireWrappers.Atom&gt;`, class:`Atom &lt;BioSimSpace._SireWrappers.Atom&gt;`))</span>
 <span class="sd">        An optional tuple of atom pairs to specify additional atoms that</span>
@@ -781,8 +784,8 @@
         <span class="n">max_distance</span><span class="o">=</span><span class="n">max_distance</span><span class="p">,</span>
         <span class="n">water_model</span><span class="o">=</span><span class="n">water_model</span><span class="p">,</span>
         <span class="n">check_ions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">custom_parameters</span><span class="o">=</span><span class="n">custom_parameters</span><span class="p">,</span>
-        <span class="n">leap_commands</span><span class="o">=</span><span class="n">leap_commands</span><span class="p">,</span>
+        <span class="n">pre_mol_commands</span><span class="o">=</span><span class="n">pre_mol_commands</span><span class="p">,</span>
+        <span class="n">post_mol_commands</span><span class="o">=</span><span class="n">post_mol_commands</span><span class="p">,</span>
         <span class="n">bonds</span><span class="o">=</span><span class="n">bonds</span><span class="p">,</span>
         <span class="n">ensure_compatible</span><span class="o">=</span><span class="n">ensure_compatible</span><span class="p">,</span>
         <span class="n">property_map</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
@@ -795,8 +798,8 @@
         <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">,</span>
         <span class="n">water_model</span><span class="o">=</span><span class="n">water_model</span><span class="p">,</span>
         <span class="n">max_distance</span><span class="o">=</span><span class="n">max_distance</span><span class="p">,</span>
-        <span class="n">custom_parameters</span><span class="o">=</span><span class="n">custom_parameters</span><span class="p">,</span>
-        <span class="n">leap_commands</span><span class="o">=</span><span class="n">leap_commands</span><span class="p">,</span>
+        <span class="n">pre_mol_commands</span><span class="o">=</span><span class="n">pre_mol_commands</span><span class="p">,</span>
+        <span class="n">post_mol_commands</span><span class="o">=</span><span class="n">post_mol_commands</span><span class="p">,</span>
         <span class="n">bonds</span><span class="o">=</span><span class="n">bonds</span><span class="p">,</span>
         <span class="n">ensure_compatible</span><span class="o">=</span><span class="n">ensure_compatible</span><span class="p">,</span>
         <span class="n">property_map</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
@@ -1360,8 +1363,8 @@
     <span class="n">max_distance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">water_model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">check_ions</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">custom_parameters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">leap_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">pre_mol_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">post_mol_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">bonds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ensure_compatible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1397,14 +1400,17 @@
 <span class="sd">        Whether to check for the presence of structural ions. This is only</span>
 <span class="sd">        required when parameterising with protein force fields.</span>
 
-<span class="sd">    custom_parameters: [str]</span>
-<span class="sd">        A list of paths to custom parameter files. When this option is set,</span>
-<span class="sd">        we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
+<span class="sd">    pre_mol_commands : [str]</span>
+<span class="sd">        A list of custom LEaP commands to be executed before loading the molecule.</span>
+<span class="sd">        This can be used for loading custom parameter files, or sourcing additional</span>
+<span class="sd">        scripts. Make sure to use absolute paths when specifying any external files.</span>
+<span class="sd">        When this option is set, we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
 
-<span class="sd">    leap_commands : [str]</span>
-<span class="sd">        An optional list of extra commands for the LEaP program. These</span>
-<span class="sd">        will be added after any default commands. When this option is set,</span>
-<span class="sd">        we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
+<span class="sd">    post_mol_commands : [str]</span>
+<span class="sd">        A list of custom LEaP commands to be executed after loading the molecule.</span>
+<span class="sd">        This allows the use of additional commands that operate on the molecule,</span>
+<span class="sd">        which is named &quot;mol&quot;. When this option is set, we can no longer fall</span>
+<span class="sd">        back on GROMACS&#39;s pdb2gmx.</span>
 
 <span class="sd">    bonds : ((class:`Atom &lt;BioSimSpace._SireWrappers.Atom&gt;`, class:`Atom &lt;BioSimSpace._SireWrappers.Atom&gt;`))</span>
 <span class="sd">        An optional tuple of atom pairs to specify additional atoms that</span>
@@ -1463,22 +1469,19 @@
                 <span class="s2">&quot;Please choose a &#39;water_model&#39; for the ion parameters.&quot;</span>
             <span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">custom_parameters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">custom_parameters</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;custom_parameters&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pre_mol_commands</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pre_mol_commands</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;pre_mol_commands&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">custom_parameters</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;custom_parameters&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">custom_parameters</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Custom parameter file does not exist: &#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pre_mol_commands</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;pre_mol_commands&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">leap_commands</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">leap_commands</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;leap_commands&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">post_mol_commands</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">post_mol_commands</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;post_mol_commands&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">leap_commands</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;leap_commands&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">post_mol_commands</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;post_mol_commands&#39; must be a &#39;list&#39; of &#39;str&#39; types.&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">bonds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">molecule</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1539,7 +1542,8 @@
         <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span>
         <span class="n">max_distance</span><span class="o">=</span><span class="n">_Length</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span>
         <span class="n">water_model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">leap_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pre_mol_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">post_mol_commands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">bonds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">ensure_compatible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1571,11 +1575,17 @@
 <span class="sd">            or lone oxygen atoms corresponding to structural (crystal) water</span>
 <span class="sd">            molecules.</span>
 
-<span class="sd">        leap_commands : [str]</span>
-<span class="sd">            An optional list of extra commands for the LEaP program. These</span>
-<span class="sd">            will be added after any default commands and can be used to, e.g.,</span>
-<span class="sd">            load additional parameter files. When this option is set, we can no</span>
-<span class="sd">            longer fall back on GROMACS&#39;s pdb2gmx.</span>
+<span class="sd">        pre_mol_commands : [str]</span>
+<span class="sd">            A list of custom LEaP commands to be executed before loading the molecule.</span>
+<span class="sd">            This can be used for loading custom parameter files, or sourcing additional</span>
+<span class="sd">            scripts. Make sure to use absolute paths when specifying any external files.</span>
+<span class="sd">            When this option is set, we can no longer fall back on GROMACS&#39;s pdb2gmx.</span>
+
+<span class="sd">        post_mol_commands : [str]</span>
+<span class="sd">            A list of custom LEaP commands to be executed after loading the molecule.</span>
+<span class="sd">            This allows the use of additional commands that operate on the molecule,</span>
+<span class="sd">            which is named &quot;mol&quot;. When this option is set, we can no longer fall</span>
+<span class="sd">            back on GROMACS&#39;s pdb2gmx.</span>
 
 <span class="sd">        bonds : ((class:`Atom &lt;BioSimSpace._SireWrappers.Atom&gt;`, class:`Atom &lt;BioSimSpace._SireWrappers.Atom&gt;`))</span>
 <span class="sd">            An optional tuple of atom pairs to specify additional atoms that</span>
@@ -1610,7 +1620,8 @@
             <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">,</span>
             <span class="n">max_distance</span><span class="o">=</span><span class="n">max_distance</span><span class="p">,</span>
             <span class="n">water_model</span><span class="o">=</span><span class="n">water_model</span><span class="p">,</span>
-            <span class="n">leap_commands</span><span class="o">=</span><span class="n">leap_commands</span><span class="p">,</span>
+            <span class="n">pre_mol_commands</span><span class="o">=</span><span class="n">pre_mol_commands</span><span class="p">,</span>
+            <span class="n">post_mol_commands</span><span class="o">=</span><span class="n">post_mol_commands</span><span class="p">,</span>
             <span class="n">bonds</span><span class="o">=</span><span class="n">bonds</span><span class="p">,</span>
             <span class="n">ensure_compatible</span><span class="o">=</span><span class="n">ensure_compatible</span><span class="p">,</span>
             <span class="n">work_dir</span><span class="o">=</span><span class="n">work_dir</span><span class="p">,</span>
@@ -1776,7 +1787,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Nov 14, 2023</div>
+              Last updated on Dec 14, 2023</div>
           </div>
           <div class="right-details">
             

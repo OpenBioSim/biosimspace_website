@@ -1419,13 +1419,13 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># Upper wall.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                <span class="s2">&quot;upper_wall_rest = CustomCentroidBondForce(3, &#39;(k/2)*max(distance(g1,g2)*cos(angle(g1,g2,g3)) - upper_wall, 0)^2&#39;)&quot;</span>
+                <span class="s2">&quot;upper_wall_rest = CustomCentroidBondForce(3, &#39;(k1/2)*max(distance(g1,g2)*cos(angle(g1,g2,g3)) - upper_wall, 0)^2&#39;)&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGroup(lig)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGroup(p1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGroup(p2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addBond([0,1,2])&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGlobalParameter(&#39;k&#39;, k1)&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGlobalParameter(&#39;k1&#39;, k1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
                 <span class="s2">&quot;upper_wall_rest.addGlobalParameter(&#39;upper_wall&#39;, upper_wall)&quot;</span>
             <span class="p">)</span>
@@ -1445,13 +1445,13 @@
             <span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                <span class="s2">&quot;dist_restraint = CustomCentroidBondForce(3, &#39;(k/2)*max(distance(g1,g2)*sin(angle(g1,g2,g3)) - (a/(1+exp(b*(distance(g1,g2)*cos(angle(g1,g2,g3))-c)))+d), 0)^2&#39;)&quot;</span>
+                <span class="s2">&quot;dist_restraint = CustomCentroidBondForce(3, &#39;(k2/2)*max(distance(g1,g2)*sin(angle(g1,g2,g3)) - (a/(1+exp(b*(distance(g1,g2)*cos(angle(g1,g2,g3))-c)))+d), 0)^2&#39;)&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGroup(lig)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGroup(p1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGroup(p2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addBond([0,1,2])&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;k&#39;, k2)&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;k2&#39;, k2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;a&#39;, wall_width)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;b&#39;, beta_cent)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;c&#39;, s_cent)&quot;</span><span class="p">)</span>
@@ -1461,13 +1461,13 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># Lower wall.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                <span class="s2">&quot;lower_wall_rest = CustomCentroidBondForce(3, &#39;(k/2)*min(distance(g1,g2)*cos(angle(g1,g2,g3)) - lower_wall, 0)^2&#39;)&quot;</span>
+                <span class="s2">&quot;lower_wall_rest = CustomCentroidBondForce(3, &#39;(k1/2)*min(distance(g1,g2)*cos(angle(g1,g2,g3)) - lower_wall, 0)^2&#39;)&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGroup(lig)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGroup(p1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGroup(p2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addBond([0,1,2])&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGlobalParameter(&#39;k&#39;, k1)&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGlobalParameter(&#39;k1&#39;, k1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
                 <span class="s2">&quot;lower_wall_rest.addGlobalParameter(&#39;lower_wall&#39;, lower_wall)&quot;</span>
             <span class="p">)</span>
@@ -2971,7 +2971,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Nov 14, 2023</div>
+              Last updated on Dec 14, 2023</div>
           </div>
           <div class="right-details">
             
