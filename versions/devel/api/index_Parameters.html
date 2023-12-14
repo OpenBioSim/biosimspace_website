@@ -729,7 +729,7 @@ for the ion parameters, e.g:</p>
 <span class="n">molecule</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ff14SB</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="n">water_model</span><span class="o">=</span><span class="s2">&quot;tip3p&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Additional parameters can be loaded by passing the <code class="docutils literal notranslate"><span class="pre">leap_commands</span></code> option to
+<p>Additional parameters can be loaded by passing the <code class="docutils literal notranslate"><span class="pre">pre_mol_commands</span></code> option to
 any compatible AMBER force field function, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
 
@@ -742,9 +742,12 @@ any compatible AMBER force field function, e.g.:</p>
 
 <span class="c1"># Initialise the parameterisation process and block until the molecule is</span>
 <span class="c1"># ready to be returned.</span>
-<span class="n">molecule</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ff14SB</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="n">leap_commands</span><span class="o">=</span><span class="n">leap_commands</span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ff14SB</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="n">pre_mol_commands</span><span class="o">=</span><span class="n">leap_commands</span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>If you need to apply any additional operations on the loaded molecule, then this
+can be done using the <code class="docutils literal notranslate"><span class="pre">post_mol_commands</span></code> option, using <code class="docutils literal notranslate"><span class="pre">mol</span></code> for the name of
+the molecule.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
