@@ -1,0 +1,36 @@
+﻿BioSimSpace.\_SireWrappers.Residue
+==================================
+
+.. currentmodule:: BioSimSpace._SireWrappers
+
+.. autoclass:: Residue
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Residue.__init__
+      ~Residue.charge
+      ~Residue.coordinates
+      ~Residue.copy
+      ~Residue.getAtoms
+      ~Residue.getAxisAlignedBoundingBox
+      ~Residue.index
+      ~Residue.moleculeNumber
+      ~Residue.nAtoms
+      ~Residue.name
+      ~Residue.save
+      ~Residue.search
+      ~Residue.smiles
+      ~Residue.toMolecule
+      ~Residue.translate
+   
+   
+
+   
+   
+   

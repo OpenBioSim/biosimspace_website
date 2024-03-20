@@ -1,0 +1,45 @@
+﻿BioSimSpace.Metadynamics.CollectiveVariable.Funnel
+==================================================
+
+.. currentmodule:: BioSimSpace.Metadynamics.CollectiveVariable
+
+.. autoclass:: Funnel
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Funnel.__init__
+      ~Funnel.getAtoms0
+      ~Funnel.getAtoms1
+      ~Funnel.getBuffer
+      ~Funnel.getCorrection
+      ~Funnel.getExtent
+      ~Funnel.getGrid
+      ~Funnel.getHillWidth
+      ~Funnel.getInflection
+      ~Funnel.getLowerBound
+      ~Funnel.getSteepness
+      ~Funnel.getUpperBound
+      ~Funnel.getWidth
+      ~Funnel.nComponents
+      ~Funnel.setAtoms0
+      ~Funnel.setAtoms1
+      ~Funnel.setBuffer
+      ~Funnel.setGrid
+      ~Funnel.setHillWidth
+      ~Funnel.setInflection
+      ~Funnel.setLowerBound
+      ~Funnel.setSteepness
+      ~Funnel.setUpperBound
+      ~Funnel.setWidth
+   
+   
+
+   
+   
+   

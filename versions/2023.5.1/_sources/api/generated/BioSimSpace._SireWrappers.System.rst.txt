@@ -1,0 +1,62 @@
+﻿BioSimSpace.\_SireWrappers.System
+=================================
+
+.. currentmodule:: BioSimSpace._SireWrappers
+
+.. autoclass:: System
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~System.__init__
+      ~System.addMolecules
+      ~System.charge
+      ~System.copy
+      ~System.fileFormat
+      ~System.getAminoAcids
+      ~System.getAtom
+      ~System.getAtoms
+      ~System.getAxisAlignedBoundingBox
+      ~System.getBox
+      ~System.getIndex
+      ~System.getMolecule
+      ~System.getMolecules
+      ~System.getNucleotides
+      ~System.getPerturbableMolecules
+      ~System.getResidue
+      ~System.getResidues
+      ~System.getRestraintAtoms
+      ~System.getWaterMolecules
+      ~System.isSame
+      ~System.makeWhole
+      ~System.nAminoAcids
+      ~System.nAtoms
+      ~System.nChains
+      ~System.nMolecules
+      ~System.nNucleotides
+      ~System.nPerturbableMolecules
+      ~System.nResidues
+      ~System.nWaterMolecules
+      ~System.reduceBoxVectors
+      ~System.removeMolecules
+      ~System.removeWaterMolecules
+      ~System.repartitionHydrogenMass
+      ~System.rotateBoxVectors
+      ~System.save
+      ~System.search
+      ~System.setBox
+      ~System.smiles
+      ~System.translate
+      ~System.updateMolecule
+      ~System.updateMolecules
+   
+   
+
+   
+   
+   

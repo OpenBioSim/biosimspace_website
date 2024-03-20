@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Changelog - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
@@ -545,6 +545,20 @@ company supporting open-source development of fostering academic/industrial coll
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
 </section>
+<section id="mar-20-2024">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.5.0...2023.5.1">2023.5.1</a> - Mar 20 2024<a class="headerlink" href="#mar-20-2024" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fixed path to user links file in the <a class="reference internal" href="api/generated/BioSimSpace.Align.generateNetwork.html#BioSimSpace.Align.generateNetwork" title="BioSimSpace.Align.generateNetwork"><code class="xref py py-func docutils literal notranslate"><span class="pre">generateNetwork</span></code></a> function (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/233">#233</a>).</p></li>
+<li><p>Fixed redirection of stderr (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/233">#233</a>).</p></li>
+<li><p>Switched to using <code class="docutils literal notranslate"><span class="pre">AtomCoordMatcher</span></code> to map parameterised molecules back to their original topology. This resolves issues where atoms moved between residues following parameterisation (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/235">#235</a>).</p></li>
+<li><p>Make the GROMACS <code class="docutils literal notranslate"><span class="pre">_generate_binary_run_file</span></code> function static so that it can be used when initialising free energy simulations in setup-only mode (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/237">#237</a>).</p></li>
+<li><p>Improve error handling and message when attempting to extract an all dummy atom selection (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/251">#251</a>).</p></li>
+<li><p>Don’t set SOMD specific end-state properties when decoupling a molecule (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/253">#253</a>).</p></li>
+<li><p>Only convert to a end-state system when not running a free energy protocol with GROMACS so that hybrid topology isn’t lost when using position restraints (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/257">#257</a>).</p></li>
+<li><p>Exclude standard free ions from the AMBER position restraint mask (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/260">#260</a>).</p></li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">BioSimSpace.Types._GeneralUnit.__pow__</span></code> operator to support fractional exponents (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/260">#260</a>).</p></li>
+</ul>
+</section>
 <section id="dec-16-2023">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.4.1...2023.5.0">2023.5.0</a> - Dec 16 2023<a class="headerlink" href="#dec-16-2023" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -849,7 +863,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 16, 2023</div>
+              Last updated on Mar 20, 2024</div>
           </div>
           <div class="right-details">
             
@@ -872,6 +886,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#mar-20-2024">2023.5.1 - Mar 20 2024</a></li>
 <li><a class="reference internal" href="#dec-16-2023">2023.5.0 - Dec 16 2023</a></li>
 <li><a class="reference internal" href="#dec-14-2023">2023.4.1 - Dec 14 2023</a></li>
 <li><a class="reference internal" href="#oct-13-2023">2023.4.0 - Oct 13 2023</a></li>
