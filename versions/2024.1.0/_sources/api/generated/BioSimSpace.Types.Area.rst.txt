@@ -1,0 +1,37 @@
+﻿BioSimSpace.Types.Area
+======================
+
+.. currentmodule:: BioSimSpace.Types
+
+.. autoclass:: Area
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Area.__init__
+      ~Area.angle
+      ~Area.angstroms2
+      ~Area.charge
+      ~Area.dimensions
+      ~Area.length
+      ~Area.mass
+      ~Area.meters2
+      ~Area.nanometers2
+      ~Area.picometers2
+      ~Area.quantity
+      ~Area.temperature
+      ~Area.time
+      ~Area.to
+      ~Area.unit
+      ~Area.value
+   
+   
+
+   
+   
+   

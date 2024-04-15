@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.MD._md - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -605,7 +610,7 @@
 <span class="c1"># Whether each engine supports free energy simulations. This dictionary needs to</span>
 <span class="c1"># be updated as support for different engines is added.</span>
 <span class="n">_free_energy</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;AMBER&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;AMBER&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
     <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
     <span class="s2">&quot;NAMD&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s2">&quot;OPENMM&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
@@ -633,7 +638,7 @@
 <span class="p">}</span>
 
 
-<span class="k">def</span> <span class="nf">_find_md_engines</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">gpu_support</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_find_md_engines</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">gpu_support</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Find molecular dynamics engines on the system that</span>
 <span class="sd">    support the given protocol and GPU requirements.</span>
@@ -710,20 +715,55 @@
             <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_metadynamics</span> <span class="ow">or</span> <span class="n">_metadynamics</span><span class="p">[</span><span class="n">engine</span><span class="p">])</span>
             <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_steering</span> <span class="ow">or</span> <span class="n">_steering</span><span class="p">[</span><span class="n">engine</span><span class="p">])</span>
         <span class="p">):</span>
-            <span class="c1"># Check whether this engine exists on the system and has the desired</span>
-            <span class="c1"># GPU support.</span>
-            <span class="k">for</span> <span class="n">exe</span><span class="p">,</span> <span class="n">gpu</span> <span class="ow">in</span> <span class="n">_md_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="c1"># If the user has requested GPU support make sure the engine</span>
-                <span class="c1"># supports it.</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">gpu_support</span> <span class="ow">or</span> <span class="n">gpu</span><span class="p">:</span>
-                    <span class="c1"># AMBER</span>
-                    <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;AMBER&quot;</span><span class="p">:</span>
-                        <span class="c1"># Search AMBERHOME, if set.</span>
-                        <span class="k">if</span> <span class="n">_amber_home</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                            <span class="n">_exe</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/bin/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_amber_home</span><span class="p">,</span> <span class="n">exe</span><span class="p">)</span>
-                            <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">_exe</span><span class="p">):</span>
+            <span class="c1"># Special handling for AMBER which has a custom executable finding</span>
+            <span class="c1"># function.</span>
+            <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;AMBER&quot;</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.._Config</span> <span class="kn">import</span> <span class="n">Amber</span> <span class="k">as</span> <span class="n">_AmberConfig</span>
+                <span class="kn">from</span> <span class="nn">..Process._amber</span> <span class="kn">import</span> <span class="n">_find_exe</span>
+
+                <span class="c1"># Is this a vacuum simulation.</span>
+                <span class="n">is_vacuum</span> <span class="o">=</span> <span class="ow">not</span> <span class="p">(</span>
+                    <span class="n">_AmberConfig</span><span class="o">.</span><span class="n">hasBox</span><span class="p">(</span><span class="n">system</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_AmberConfig</span><span class="o">.</span><span class="n">hasWater</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+                <span class="p">)</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">exe</span> <span class="o">=</span> <span class="n">_find_exe</span><span class="p">(</span>
+                        <span class="n">is_gpu</span><span class="o">=</span><span class="n">gpu_support</span><span class="p">,</span>
+                        <span class="n">is_free_energy</span><span class="o">=</span><span class="n">is_free_energy</span><span class="p">,</span>
+                        <span class="n">is_vacuum</span><span class="o">=</span><span class="n">is_vacuum</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+                    <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">exe</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">pass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Check whether this engine exists on the system and has the desired</span>
+                <span class="c1"># GPU support.</span>
+                <span class="k">for</span> <span class="n">exe</span><span class="p">,</span> <span class="n">gpu</span> <span class="ow">in</span> <span class="n">_md_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="c1"># If the user has requested GPU support make sure the engine</span>
+                    <span class="c1"># supports it.</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">gpu_support</span> <span class="ow">or</span> <span class="n">gpu</span><span class="p">:</span>
+                        <span class="c1"># GROMACS</span>
+                        <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="p">(</span>
+                                <span class="n">_gmx_exe</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                                <span class="ow">and</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">_gmx_exe</span><span class="p">)</span> <span class="o">==</span> <span class="n">exe</span>
+                            <span class="p">):</span>
                                 <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-                                <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_exe</span><span class="p">)</span>
+                                <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_gmx_exe</span><span class="p">)</span>
+                        <span class="c1"># OPENMM</span>
+                        <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;OPENMM&quot;</span><span class="p">:</span>
+                            <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+                            <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_SireBase</span><span class="o">.</span><span class="n">getBinDir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/sire_python&quot;</span><span class="p">)</span>
+                        <span class="c1"># SOMD</span>
+                        <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">:</span>
+                            <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">is_free_energy</span><span class="p">:</span>
+                                <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                                    <span class="n">_SireBase</span><span class="o">.</span><span class="n">getBinDir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/somd-freenrg&quot;</span>
+                                <span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_SireBase</span><span class="o">.</span><span class="n">getBinDir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/somd&quot;</span><span class="p">)</span>
                         <span class="c1"># Search system PATH.</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="k">try</span><span class="p">:</span>
@@ -732,30 +772,6 @@
                                 <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">exe</span><span class="p">)</span>
                             <span class="k">except</span><span class="p">:</span>
                                 <span class="k">pass</span>
-                    <span class="c1"># GROMACS</span>
-                    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">_gmx_exe</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">_gmx_exe</span><span class="p">)</span> <span class="o">==</span> <span class="n">exe</span><span class="p">:</span>
-                            <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-                            <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_gmx_exe</span><span class="p">)</span>
-                    <span class="c1"># OPENMM</span>
-                    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;OPENMM&quot;</span><span class="p">:</span>
-                        <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-                        <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_SireBase</span><span class="o">.</span><span class="n">getBinDir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/sire_python&quot;</span><span class="p">)</span>
-                    <span class="c1"># SOMD</span>
-                    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">:</span>
-                        <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-                        <span class="k">if</span> <span class="n">is_free_energy</span><span class="p">:</span>
-                            <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_SireBase</span><span class="o">.</span><span class="n">getBinDir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/somd-freenrg&quot;</span><span class="p">)</span>
-                        <span class="k">else</span><span class="p">:</span>
-                            <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_SireBase</span><span class="o">.</span><span class="n">getBinDir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/somd&quot;</span><span class="p">)</span>
-                    <span class="c1"># Search system PATH.</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="k">try</span><span class="p">:</span>
-                            <span class="n">exe</span> <span class="o">=</span> <span class="n">_SireBase</span><span class="o">.</span><span class="n">findExe</span><span class="p">(</span><span class="n">exe</span><span class="p">)</span><span class="o">.</span><span class="n">absoluteFilePath</span><span class="p">()</span>
-                            <span class="n">found_engines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-                            <span class="n">found_exes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">exe</span><span class="p">)</span>
-                        <span class="k">except</span><span class="p">:</span>
-                            <span class="k">pass</span>
 
     <span class="c1"># No engine was found.</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">found_engines</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -998,7 +1014,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

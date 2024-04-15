@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.IO._io - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -603,8 +608,9 @@
 <span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
 
-<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">check_cache</span> <span class="k">as</span> <span class="n">_check_cache</span>
-<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">update_cache</span> <span class="k">as</span> <span class="n">_update_cache</span>
+<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">_check_cache</span>
+<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">_update_cache</span>
+<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">_cache_active</span>
 
 
 <span class="c1"># Context manager for capturing stdout.</span>
@@ -978,12 +984,9 @@
         <span class="p">)</span>
         <span class="n">_has_gmx_warned</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="c1"># Glob string to catch wildcards and convert to list.</span>
+    <span class="c1"># Convert a single string to a list.</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;www&quot;</span><span class="p">)):</span>
-            <span class="n">files</span> <span class="o">=</span> <span class="n">_glob</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">files</span><span class="p">]</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">files</span><span class="p">]</span>
 
     <span class="c1"># Check that all arguments are of type &#39;str&#39;.</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
@@ -996,6 +999,15 @@
             <span class="n">files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;files&#39; must be of type &#39;str&#39;, or a list of &#39;str&#39; types.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Glob all files to catch wildcards.</span>
+    <span class="n">new_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;www&quot;</span><span class="p">)):</span>
+            <span class="n">new_files</span> <span class="o">+=</span> <span class="n">_glob</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">new_files</span>
 
     <span class="c1"># Validate the molecule unwrapping flag.</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">make_whole</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
@@ -1114,7 +1126,7 @@
         <span class="n">prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">)</span>
         <span class="n">time</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
         <span class="n">system</span><span class="o">.</span><span class="n">removeSharedProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
-        <span class="n">system</span><span class="o">.</span><span class="n">setProperties</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+        <span class="n">system</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
 
@@ -1292,14 +1304,17 @@
     <span class="c1"># Save the system using each file format.</span>
     <span class="k">for</span> <span class="nb">format</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
         <span class="c1"># Copy an existing file if it exists in the cache.</span>
-        <span class="n">ext</span> <span class="o">=</span> <span class="n">_check_cache</span><span class="p">(</span>
-            <span class="n">system</span><span class="p">,</span>
-            <span class="nb">format</span><span class="p">,</span>
-            <span class="n">filebase</span><span class="p">,</span>
-            <span class="n">match_water</span><span class="o">=</span><span class="n">match_water</span><span class="p">,</span>
-            <span class="n">property_map</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">_cache_active</span><span class="p">():</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="n">_check_cache</span><span class="p">(</span>
+                <span class="n">system</span><span class="p">,</span>
+                <span class="nb">format</span><span class="p">,</span>
+                <span class="n">filebase</span><span class="p">,</span>
+                <span class="n">match_water</span><span class="o">=</span><span class="n">match_water</span><span class="p">,</span>
+                <span class="n">property_map</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">ext</span><span class="p">:</span>
             <span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">filebase</span> <span class="o">+</span> <span class="n">ext</span><span class="p">))</span>
             <span class="k">continue</span>
@@ -1386,7 +1401,10 @@
             <span class="n">files</span> <span class="o">+=</span> <span class="n">file</span>
 
             <span class="c1"># If this is a new file, then add it to the cache.</span>
-            <span class="n">_update_cache</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">match_water</span><span class="o">=</span><span class="n">match_water</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">_cache_active</span><span class="p">():</span>
+                <span class="n">_update_cache</span><span class="p">(</span>
+                    <span class="n">system</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">match_water</span><span class="o">=</span><span class="n">match_water</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                <span class="p">)</span>
 
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to save system to format: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="nb">format</span>
@@ -1657,9 +1675,13 @@
     <span class="c1"># Flag that the molecule is perturbable.</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">,</span> <span class="n">_SireBase</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
 
+    <span class="c1"># Get the two molecules.</span>
+    <span class="n">mol0</span> <span class="o">=</span> <span class="n">system0</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span>
+    <span class="n">mol1</span> <span class="o">=</span> <span class="n">system1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span>
+
     <span class="c1"># Add the molecule0 and molecule1 properties.</span>
-    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">,</span> <span class="n">system0</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
-    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">,</span> <span class="n">system1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">,</span> <span class="n">mol0</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">,</span> <span class="n">mol1</span><span class="p">)</span>
 
     <span class="c1"># Get the connectivity property name.</span>
     <span class="n">conn_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;connectivity&quot;</span><span class="p">,</span> <span class="s2">&quot;connectivity&quot;</span><span class="p">)</span>
@@ -1678,11 +1700,46 @@
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="n">conn_prop</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="n">conn_prop</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
 
+    <span class="c1"># Reconstruct the intrascale matrices using the GroTop parser.</span>
+    <span class="n">intra0</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">_Molecule</span><span class="p">(</span><span class="n">mol0</span><span class="p">)</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">toSystem</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">intra1</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">_Molecule</span><span class="p">(</span><span class="n">mol1</span><span class="p">)</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">toSystem</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Set the &quot;intrascale&quot; properties.</span>
+    <span class="n">intrascale_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">,</span> <span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">intrascale_prop</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="n">intra0</span><span class="p">)</span>
+    <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">intrascale_prop</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">intra0</span><span class="p">)</span>
+
     <span class="c1"># Commit the changes.</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
 
     <span class="c1"># Update the molecule in the original system.</span>
     <span class="n">system0</span><span class="o">.</span><span class="n">updateMolecules</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="c1"># Remove &quot;space&quot; and &quot;time&quot; shared properties since this causes incorrect</span>
+    <span class="c1"># behaviour when extracting molecules and recombining them to make other</span>
+    <span class="c1"># systems.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Space.</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">)</span>
+        <span class="n">space</span> <span class="o">=</span> <span class="n">system0</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+        <span class="n">system0</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">removeSharedProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+        <span class="n">system0</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">space</span><span class="p">)</span>
+
+        <span class="c1"># Time.</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">)</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">system0</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+        <span class="n">system0</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">removeSharedProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+        <span class="n">system0</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
 
     <span class="k">return</span> <span class="n">system0</span></div>
 
@@ -1783,7 +1840,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

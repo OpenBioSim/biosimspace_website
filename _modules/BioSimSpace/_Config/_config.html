@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace._Config._config - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -616,9 +621,21 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">protocol</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span> <span class="o">=</span> <span class="n">property_map</span>
 
-    <span class="k">def</span> <span class="nf">hasBox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">hasBox</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether the system has a box.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        system : :class:`System &lt;BioSimSpace._SireWrappers.System&gt;`</span>
+<span class="sd">            The molecular system.</span>
+
+<span class="sd">        property_map : dict</span>
+<span class="sd">            A dictionary that maps system &quot;properties&quot; to their user defined</span>
+<span class="sd">            values. This allows the user to refer to properties with their</span>
+<span class="sd">            own naming scheme, e.g. { &quot;charge&quot; : &quot;my-charge&quot; }</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -626,12 +643,21 @@
 <span class="sd">        has_box : bool</span>
 <span class="sd">            Whether the system has a simulation box.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">space_prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">space_prop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">propertyKeys</span><span class="p">():</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">_System</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;system&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">property_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;property_map&#39; must be of type &#39;dict&#39;&quot;</span><span class="p">)</span>
+
+        <span class="n">space_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">space_prop</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">propertyKeys</span><span class="p">():</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="c1"># Make sure that we have a periodic box. The system will now have</span>
                 <span class="c1"># a default cartesian space.</span>
-                <span class="n">box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">space_prop</span><span class="p">)</span>
+                <span class="n">box</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">space_prop</span><span class="p">)</span>
                 <span class="n">has_box</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">isPeriodic</span><span class="p">()</span>
             <span class="k">except</span><span class="p">:</span>
                 <span class="n">has_box</span> <span class="o">=</span> <span class="kc">False</span>
@@ -641,9 +667,15 @@
 
         <span class="k">return</span> <span class="n">has_box</span>
 
-    <span class="k">def</span> <span class="nf">hasWater</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">hasWater</span><span class="p">(</span><span class="n">system</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether the system is contains water molecules.</span>
+
+<span class="sd">        Parameters</span>
+
+<span class="sd">        system : :class:`System &lt;BioSimSpace._SireWrappers.System&gt;`</span>
+<span class="sd">            The molecular system.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -651,7 +683,12 @@
 <span class="sd">        has_water : bool</span>
 <span class="sd">            Whether the system contains water molecules.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">nWaterMolecules</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">_System</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;system&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">system</span><span class="o">.</span><span class="n">nWaterMolecules</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">reportInterval</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -735,7 +772,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

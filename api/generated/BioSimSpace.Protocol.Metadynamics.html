@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Protocol.Steering" href="BioSimSpace.Protocol.Steering.html" /><link rel="prev" title="BioSimSpace.Protocol.FreeEnergy" href="BioSimSpace.Protocol.FreeEnergy.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.Protocol.Metadynamics - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
@@ -267,6 +267,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +344,8 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -540,11 +545,11 @@
 <h1>BioSimSpace.Protocol.Metadynamics<a class="headerlink" href="#biosimspace-protocol-metadynamics" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">Metadynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collective_variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_height=1.0000</span> <span class="pre">kJ/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_frequency=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_factor=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">Metadynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collective_variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_height=1.0000</span> <span class="pre">kJ/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_frequency=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_factor=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics" title="Link to this definition">#</a></dt>
 <dd><p>A class for storing metadynamics protocols.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collective_variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_height=1.0000</span> <span class="pre">kJ/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_frequency=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_factor=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collective_variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_height=1.0000</span> <span class="pre">kJ/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hill_frequency=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_factor=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -554,6 +559,7 @@
 <li><p><strong>runtime</strong> (<a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The running time.</p></li>
 <li><p><strong>temperature</strong> (<a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a>) – The temperature.</p></li>
 <li><p><strong>pressure</strong> (<a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a>) – The pressure. Pass pressure=None to use the NVT ensemble.</p></li>
+<li><p><strong>thermostat_time_constant</strong> (<a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – Time constant for thermostat coupling.</p></li>
 <li><p><strong>hill_height</strong> (<a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The height of the Gaussian hills.</p></li>
 <li><p><strong>hill_frequency</strong> (<em>int</em>) – The frequency at which hills are deposited.</p></li>
 <li><p><strong>report_interval</strong> (<em>int</em>) – The frequency at which statistics are recorded. (In integration steps.)</p></li>
@@ -593,11 +599,17 @@ frames are saved. (In integration steps.)</p></li>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRestartInterval" title="BioSimSpace.Protocol.Metadynamics.getRestartInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRestartInterval</span></code></a>()</p></td>
 <td><p>Return the interval between saving restart confiugrations, and/or trajectory frames.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRunTime" title="BioSimSpace.Protocol.Metadynamics.getRunTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRunTime</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRestraint" title="BioSimSpace.Protocol.Metadynamics.getRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRestraint</span></code></a>()</p></td>
+<td><p>Return the type of restraint.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRunTime" title="BioSimSpace.Protocol.Metadynamics.getRunTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRunTime</span></code></a>()</p></td>
 <td><p>Return the running time.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getTemperature" title="BioSimSpace.Protocol.Metadynamics.getTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTemperature</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getTemperature" title="BioSimSpace.Protocol.Metadynamics.getTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTemperature</span></code></a>()</p></td>
 <td><p>Return temperature.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getThermostatTimeConstant" title="BioSimSpace.Protocol.Metadynamics.getThermostatTimeConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getThermostatTimeConstant</span></code></a>()</p></td>
+<td><p>Return the time constant for the thermostat.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getTimeStep" title="BioSimSpace.Protocol.Metadynamics.getTimeStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTimeStep</span></code></a>()</p></td>
 <td><p>Return the time step.</p></td>
@@ -629,7 +641,10 @@ frames are saved. (In integration steps.)</p></li>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setTemperature" title="BioSimSpace.Protocol.Metadynamics.setTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTemperature</span></code></a>(temperature)</p></td>
 <td><p>Set the temperature.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setTimeStep" title="BioSimSpace.Protocol.Metadynamics.setTimeStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTimeStep</span></code></a>(timestep)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setThermostatTimeConstant" title="BioSimSpace.Protocol.Metadynamics.setThermostatTimeConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setThermostatTimeConstant</span></code></a>(...)</p></td>
+<td><p>Set the time constant for the thermostat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setTimeStep" title="BioSimSpace.Protocol.Metadynamics.setTimeStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTimeStep</span></code></a>(timestep)</p></td>
 <td><p>Set the time step.</p></td>
 </tr>
 </tbody>
@@ -736,6 +751,20 @@ configurations and/or trajectory frames.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics.getRestraint">
+<span class="sig-name descname"><span class="pre">getRestraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.getRestraint" title="Link to this definition">#</a></dt>
+<dd><p>Return the type of restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraint</strong> – The type of restraint, either a keyword or a list of atom indices.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str, [int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics.getRunTime">
 <span class="sig-name descname"><span class="pre">getRunTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics.getRunTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.getRunTime" title="Link to this definition">#</a></dt>
 <dd><p>Return the running time.</p>
@@ -759,6 +788,20 @@ configurations and/or trajectory frames.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics.getThermostatTimeConstant">
+<span class="sig-name descname"><span class="pre">getThermostatTimeConstant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics.getThermostatTimeConstant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.getThermostatTimeConstant" title="Link to this definition">#</a></dt>
+<dd><p>Return the time constant for the thermostat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>runtime</strong> – The time constant for the thermostat.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -880,6 +923,17 @@ configurations and/or trajectory frames.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics.setThermostatTimeConstant">
+<span class="sig-name descname"><span class="pre">setThermostatTimeConstant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics.setThermostatTimeConstant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.setThermostatTimeConstant" title="Link to this definition">#</a></dt>
+<dd><p>Set the time constant for the thermostat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thermostat_time_constant</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The time constant for the thermostat.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.Metadynamics.setTimeStep">
 <span class="sig-name descname"><span class="pre">setTimeStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestep</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_metadynamics.html#Metadynamics.setTimeStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.Metadynamics.setTimeStep" title="Link to this definition">#</a></dt>
 <dd><p>Set the time step.</p>
@@ -925,7 +979,7 @@ configurations and/or trajectory frames.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             
@@ -956,8 +1010,10 @@ configurations and/or trajectory frames.</p>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getPressure"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getPressure()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getReportInterval"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getReportInterval()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRestartInterval"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getRestartInterval()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRestraint"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getRestraint()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getRunTime"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getRunTime()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getTemperature"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getThermostatTimeConstant"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getThermostatTimeConstant()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.getTimeStep"><code class="docutils literal notranslate"><span class="pre">Metadynamics.getTimeStep()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setBiasFactor"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setBiasFactor()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setCollectiveVariable"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setCollectiveVariable()</span></code></a></li>
@@ -968,6 +1024,7 @@ configurations and/or trajectory frames.</p>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setRestartInterval"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setRestartInterval()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setRunTime"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setRunTime()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setTemperature"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setThermostatTimeConstant"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setThermostatTimeConstant()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.Metadynamics.setTimeStep"><code class="docutils literal notranslate"><span class="pre">Metadynamics.setTimeStep()</span></code></a></li>
 </ul>
 </li>

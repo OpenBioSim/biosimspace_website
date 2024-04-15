@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.FreeEnergy._relative - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -662,7 +667,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for configuring and running relative free-energy perturbation simulations.&quot;&quot;&quot;</span>
 
     <span class="c1"># Create a list of supported molecular dynamics engines. (For running simulations.)</span>
-    <span class="n">_engines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GROMACS&quot;</span><span class="p">,</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">]</span>
+    <span class="n">_engines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">,</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">]</span>
 
     <span class="c1"># Create a list of supported molecular dynamics engines. (For analysis.)</span>
     <span class="n">_engines_analysis</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">,</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">,</span> <span class="s2">&quot;SOMD2&quot;</span><span class="p">]</span>
@@ -676,11 +681,8 @@
         <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">engine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">setup_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">ignore_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">show_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">extra_options</span><span class="o">=</span><span class="p">{},</span>
-        <span class="n">extra_lines</span><span class="o">=</span><span class="p">[],</span>
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
@@ -698,6 +700,9 @@
 <span class="sd">                   :class:`Protocol.FreeEnergyProduction &lt;BioSimSpace.Protocol.FreeEnergyProduction&gt;`</span>
 <span class="sd">            The simulation protocol.</span>
 
+<span class="sd">        reference_system : :class:`System &lt;BioSimSpace._SireWrappers.System&gt;`</span>
+<span class="sd">            A reference system to use for position restraints.</span>
+
 <span class="sd">        work_dir : str</span>
 <span class="sd">            The working directory for the free-energy perturbation</span>
 <span class="sd">            simulation.</span>
@@ -714,27 +719,14 @@
 <span class="sd">            can be useful when you don&#39;t intend to use BioSimSpace to run</span>
 <span class="sd">            the simulation. Note that a &#39;work_dir&#39; must also be specified.</span>
 
-<span class="sd">        ignore_warnings : bool</span>
-<span class="sd">            Whether to ignore warnings when generating the binary run file.</span>
-<span class="sd">            This option is specific to GROMACS and will be ignored when a</span>
-<span class="sd">            different molecular dynamics engine is chosen.</span>
-
-<span class="sd">        show_errors : bool</span>
-<span class="sd">            Whether to show warning/error messages when generating the binary</span>
-<span class="sd">            run file. This option is specific to GROMACS and will be ignored</span>
-<span class="sd">            when a different molecular dynamics engine is chosen.</span>
-
-<span class="sd">        extra_options : dict</span>
-<span class="sd">            A dictionary containing extra options. Overrides the defaults generated</span>
-<span class="sd">            by the protocol.</span>
-
-<span class="sd">        extra_lines : [str]</span>
-<span class="sd">            A list of extra lines to put at the end of the configuration file.</span>
-
 <span class="sd">        property_map : dict</span>
 <span class="sd">            A dictionary that maps system &quot;properties&quot; to their user defined</span>
 <span class="sd">            values. This allows the user to refer to properties with their</span>
 <span class="sd">            own naming scheme, e.g. { &quot;charge&quot; : &quot;my-charge&quot; }</span>
+
+<span class="sd">        kwargs : dict</span>
+<span class="sd">            Additional keyword arguments to pass to the underlying Process</span>
+<span class="sd">            objects.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># Validate the input.</span>
@@ -744,7 +736,7 @@
                 <span class="s2">&quot;&#39;system&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;&quot;</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Store a copy of solvated system.</span>
+            <span class="c1"># Store a copy of the system.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
         <span class="c1"># Validate the user specified molecular dynamics engine.</span>
@@ -762,19 +754,12 @@
                     <span class="s2">&quot;Supported engines are: </span><span class="si">%r</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">)</span>
                 <span class="p">)</span>
 
-            <span class="c1"># Make sure GROMACS is installed if GROMACS engine is selected.</span>
-            <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">_gmx_exe</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">_MissingSoftwareError</span><span class="p">(</span>
-                        <span class="s2">&quot;Cannot use GROMACS engine as GROMACS is not installed!&quot;</span>
-                    <span class="p">)</span>
-
-                <span class="c1"># The system must have a perturbable molecule.</span>
-                <span class="k">if</span> <span class="n">system</span><span class="o">.</span><span class="n">nPerturbableMolecules</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                        <span class="s2">&quot;The system must contain a perturbable molecule! &quot;</span>
-                        <span class="s2">&quot;Use the &#39;BioSimSpace.Align&#39; package to map and merge molecules.&quot;</span>
-                    <span class="p">)</span>
+            <span class="c1"># The system must have a perturbable molecule.</span>
+            <span class="k">if</span> <span class="n">system</span><span class="o">.</span><span class="n">nPerturbableMolecules</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;The system must contain a perturbable molecule! &quot;</span>
+                    <span class="s2">&quot;Use the &#39;BioSimSpace.Align&#39; package to map and merge molecules.&quot;</span>
+                <span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Use SOMD as a default.</span>
@@ -833,35 +818,15 @@
         <span class="c1"># Create the working directory.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">=</span> <span class="n">_Utils</span><span class="o">.</span><span class="n">WorkDir</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ignore_warnings</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;ignore_warnings&#39; must be of type &#39;bool.&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_warnings</span> <span class="o">=</span> <span class="n">ignore_warnings</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">show_errors</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;show_errors&#39; must be of type &#39;bool.&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_show_errors</span> <span class="o">=</span> <span class="n">show_errors</span>
-
-        <span class="c1"># Check the extra options.</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extra_options</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;extra_options&#39; must be of type &#39;dict&#39;.&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">keys</span> <span class="o">=</span> <span class="n">extra_options</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Keys of &#39;extra_options&#39; must be of type &#39;str&#39;.&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span> <span class="o">=</span> <span class="n">extra_options</span>
-
-        <span class="c1"># Check the extra lines.</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extra_lines</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;extra_lines&#39; must be of type &#39;list&#39;.&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">extra_lines</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Lines in &#39;extra_lines&#39; must be of type &#39;str&#39;.&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span> <span class="o">=</span> <span class="n">extra_lines</span>
-
         <span class="c1"># Check that the map is valid.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">property_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;property_map&#39; must be of type &#39;dict&#39;&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span> <span class="o">=</span> <span class="n">property_map</span>
+
+        <span class="c1"># Validate the kwargs.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;kwargs&#39; must be of type &#39;dict&#39;.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
 
         <span class="c1"># Create fake instance methods for &#39;analyse&#39;, &#39;checkOverlap&#39;,</span>
         <span class="c1"># and &#39;difference&#39;. These pass instance data through to the</span>
@@ -1005,7 +970,7 @@
                     <span class="p">)</span>
 
             <span class="c1"># Write to the zip file.</span>
-            <span class="k">with</span> <span class="n">_zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">zipname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">zip</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">_zipfile</span><span class="o">.</span><span class="n">Zipfile</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="n">zipname</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">zip</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
                     <span class="nb">zip</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 
@@ -2573,7 +2538,7 @@
         <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="c1"># Convert to an appropriate water topology.</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">==</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="s2">&quot;SOMD&quot;</span><span class="p">]:</span>
             <span class="n">system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span><span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">==</span> <span class="s2">&quot;GROMACS&quot;</span><span class="p">:</span>
             <span class="n">system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span><span class="s2">&quot;GROMACS&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
@@ -2608,9 +2573,8 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span>
                 <span class="n">platform</span><span class="o">=</span><span class="n">platform</span><span class="p">,</span>
                 <span class="n">work_dir</span><span class="o">=</span><span class="n">first_dir</span><span class="p">,</span>
-                <span class="n">extra_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span><span class="p">,</span>
-                <span class="n">extra_lines</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span><span class="p">,</span>
                 <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
                 <span class="k">del</span> <span class="n">first_process</span>
@@ -2623,11 +2587,20 @@
                 <span class="n">system</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span>
                 <span class="n">work_dir</span><span class="o">=</span><span class="n">first_dir</span><span class="p">,</span>
-                <span class="n">ignore_warnings</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ignore_warnings</span><span class="p">,</span>
-                <span class="n">show_errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_errors</span><span class="p">,</span>
-                <span class="n">extra_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span><span class="p">,</span>
-                <span class="n">extra_lines</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span><span class="p">,</span>
                 <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
+                <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_process</span><span class="p">)</span>
+
+        <span class="c1"># AMBER.</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">==</span> <span class="s2">&quot;AMBER&quot;</span><span class="p">:</span>
+            <span class="n">first_process</span> <span class="o">=</span> <span class="n">_Process</span><span class="o">.</span><span class="n">Amber</span><span class="p">(</span>
+                <span class="n">system</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span>
+                <span class="n">work_dir</span><span class="o">=</span><span class="n">first_dir</span><span class="p">,</span>
+                <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
                 <span class="k">del</span> <span class="n">first_process</span>
@@ -2675,15 +2648,15 @@
                     <span class="n">process</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">first_process</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
                     <span class="n">process</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span>
                     <span class="n">process</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">=</span> <span class="n">new_dir</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_std_out_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/somd.out&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_std_err_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/somd.err&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/somd.rst7&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/somd.prm7&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/traj000000001.dcd&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_restart_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/latest.rst&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/somd.cfg&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_pert_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/somd.pert&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_gradients_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gradients.dat&quot;</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_std_out_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;somd.out&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_std_err_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;somd.err&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;somd.rst7&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;somd.prm7&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;traj000000001.dcd&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_restart_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;latest.rst&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;somd.cfg&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_pert_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;somd.pert&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_gradients_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gradients.dat&quot;</span><span class="p">)</span>
                     <span class="n">process</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span>
                         <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span>
                         <span class="n">process</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span>
@@ -2707,31 +2680,20 @@
                     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">new_config</span><span class="p">:</span>
                         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
-                <span class="n">mdp</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.mdp&quot;</span>
-                <span class="n">mdp_out</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.out.mdp&quot;</span>
-                <span class="n">gro</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.gro&quot;</span>
-                <span class="n">top</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.top&quot;</span>
-                <span class="n">tpr</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.tpr&quot;</span>
+                <span class="n">mdp</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.mdp&quot;</span><span class="p">)</span>
+                <span class="n">gro</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.gro&quot;</span><span class="p">)</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.top&quot;</span><span class="p">)</span>
+                <span class="n">tpr</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.tpr&quot;</span><span class="p">)</span>
 
                 <span class="c1"># Use grompp to generate the portable binary run input file.</span>
-                <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> grompp -f </span><span class="si">%s</span><span class="s2"> -po </span><span class="si">%s</span><span class="s2"> -c </span><span class="si">%s</span><span class="s2"> -p </span><span class="si">%s</span><span class="s2"> -r </span><span class="si">%s</span><span class="s2"> -o </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
-                    <span class="n">_gmx_exe</span><span class="p">,</span>
+                <span class="n">_Process</span><span class="o">.</span><span class="n">Gromacs</span><span class="o">.</span><span class="n">_generate_binary_run_file</span><span class="p">(</span>
                     <span class="n">mdp</span><span class="p">,</span>
-                    <span class="n">mdp_out</span><span class="p">,</span>
                     <span class="n">gro</span><span class="p">,</span>
                     <span class="n">top</span><span class="p">,</span>
                     <span class="n">gro</span><span class="p">,</span>
                     <span class="n">tpr</span><span class="p">,</span>
-                <span class="p">)</span>
-
-                <span class="c1"># Run the command. If this worked for the first lambda value,</span>
-                <span class="c1"># then it should work for all others.</span>
-                <span class="n">proc</span> <span class="o">=</span> <span class="n">_subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-                    <span class="n">_Utils</span><span class="o">.</span><span class="n">command_split</span><span class="p">(</span><span class="n">command</span><span class="p">),</span>
-                    <span class="n">shell</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                    <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                    <span class="n">stdout</span><span class="o">=</span><span class="n">_subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
-                    <span class="n">stderr</span><span class="o">=</span><span class="n">_subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                    <span class="n">first_process</span><span class="o">.</span><span class="n">_exe</span><span class="p">,</span>
+                    <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
                 <span class="p">)</span>
 
                 <span class="c1"># Create a copy of the process and update the working</span>
@@ -2741,13 +2703,14 @@
                     <span class="n">process</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">first_process</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
                     <span class="n">process</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span>
                     <span class="n">process</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">=</span> <span class="n">new_dir</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_std_out_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.out&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_std_err_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.err&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_gro_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.gro&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.top&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.trr&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.mdp&quot;</span>
-                    <span class="n">process</span><span class="o">.</span><span class="n">_tpr_file</span> <span class="o">=</span> <span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/gromacs.tpr&quot;</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_std_out_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.out&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_std_err_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.err&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_gro_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.gro&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.top&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_ref_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs_ref.gro&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.trr&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.mdp&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_tpr_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;gromacs.tpr&quot;</span><span class="p">)</span>
                     <span class="n">process</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span>
                         <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span>
                         <span class="n">process</span><span class="o">.</span><span class="n">_gro_file</span><span class="p">,</span>
@@ -2756,28 +2719,45 @@
                     <span class="p">]</span>
                     <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
 
+            <span class="c1"># AMBER.</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">==</span> <span class="s2">&quot;AMBER&quot;</span><span class="p">:</span>
+                <span class="n">new_config</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/amber.cfg&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="s2">&quot;clambda&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                            <span class="n">new_config</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;   clambda=</span><span class="si">%s</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">lam</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">new_config</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">new_dir</span> <span class="o">+</span> <span class="s2">&quot;/amber.cfg&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">new_config</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+                <span class="c1"># Create a copy of the process and update the working</span>
+                <span class="c1"># directory.</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
+                    <span class="n">process</span> <span class="o">=</span> <span class="n">_copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">first_process</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">first_process</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">=</span> <span class="n">new_dir</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_std_out_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.out&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_std_err_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.err&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.rst7&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.prm7&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_ref_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber_ref.rst7&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.nc&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.cfg&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_nrg_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_dir</span><span class="p">,</span> <span class="s2">&quot;amber.nrg&quot;</span><span class="p">)</span>
+                    <span class="n">process</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span>
+                        <span class="n">process</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span>
+                        <span class="n">process</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span>
+                        <span class="n">process</span><span class="o">.</span><span class="n">_top_file</span><span class="p">,</span>
+                    <span class="p">]</span>
+                    <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
             <span class="c1"># Initialise the process runner. All processes have already been nested</span>
             <span class="c1"># inside the working directory so no need to re-nest.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_runner</span> <span class="o">=</span> <span class="n">_Process</span><span class="o">.</span><span class="n">ProcessRunner</span><span class="p">(</span><span class="n">processes</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_update_run_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Internal function to update run arguments for all subprocesses.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-
-<span class="sd">        args : dict, collections.OrderedDict</span>
-<span class="sd">            A dictionary which contains the new command-line arguments</span>
-<span class="sd">            for the process executable.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;args&#39; must be of type &#39;dict&#39;&quot;</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_runner</span><span class="o">.</span><span class="n">processes</span><span class="p">():</span>
-            <span class="n">process</span><span class="o">.</span><span class="n">setArgs</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_runner</span> <span class="o">=</span> <span class="n">_Process</span><span class="o">.</span><span class="n">ProcessRunner</span><span class="p">(</span><span class="n">processes</span><span class="p">)</span></div>
 
 
 
@@ -2822,7 +2802,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

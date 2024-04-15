@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace._SireWrappers._molecule - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -621,13 +626,16 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">_Mol</span><span class="o">.</span><span class="n">Molecule</span><span class="p">):</span>
             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="s2">&quot;is_perturbable&quot;</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_convertFromMergedMolecule</span><span class="p">()</span>
+                <span class="c1"># Flag that the molecule is perturbable.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_is_perturbable</span> <span class="o">=</span> <span class="kc">True</span>
+
+                <span class="c1"># Extract the end states.</span>
                 <span class="k">if</span> <span class="n">molecule</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">):</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_molecule</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_molecule0</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">))</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_molecule0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extractMolecule</span><span class="p">()</span>
                 <span class="k">if</span> <span class="n">molecule</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">):</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_molecule</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_molecule1</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">))</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_molecule1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extractMolecule</span><span class="p">(</span><span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -899,25 +907,27 @@
             <span class="c1"># Append to the updated atom index.</span>
             <span class="n">indices_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomIdx</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="n">renumber</span><span class="p">:</span>
-            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">mol</span> <span class="o">=</span> <span class="bp">self</span>
-
         <span class="c1"># Extract a partial molecule.</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Create an empty atom selection for this molecule.</span>
-            <span class="n">selection</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">selection</span><span class="p">()</span>
+            <span class="n">selection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">selection</span><span class="p">()</span>
             <span class="n">selection</span><span class="o">.</span><span class="n">selectNone</span><span class="p">()</span>
 
             <span class="c1"># Add the atom indices to the selection.</span>
             <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">indices_</span><span class="p">:</span>
                 <span class="n">selection</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 
+            <span class="c1"># Store the Sire molecule.</span>
+            <span class="n">sire_mol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span>
+
+            <span class="c1"># Remove the &quot;parameters&quot; property, if it exists.</span>
+            <span class="k">if</span> <span class="n">sire_mol</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">):</span>
+                <span class="n">sire_mol</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">sire_mol</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+                <span class="p">)</span>
+
             <span class="n">partial_mol</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">_SireMol</span><span class="o">.</span><span class="n">PartialMolecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span>
-                <span class="o">.</span><span class="n">extract</span><span class="p">()</span>
-                <span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+                <span class="n">_SireMol</span><span class="o">.</span><span class="n">PartialMolecule</span><span class="p">(</span><span class="n">sire_mol</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
             <span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to create partial molecule!&quot;</span>
@@ -930,7 +940,7 @@
         <span class="n">intrascale</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">,</span> <span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
 
         <span class="c1"># Flag whether the molecule has an intrascale property.</span>
-        <span class="n">has_intrascale</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="n">intrascale</span><span class="p">)</span>
+        <span class="n">has_intrascale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="n">intrascale</span><span class="p">)</span>
 
         <span class="c1"># Remove the &quot;intrascale&quot; property, since this doesn&#39;t correspond to the</span>
         <span class="c1"># extracted molecule.</span>
@@ -967,6 +977,15 @@
 
         <span class="k">else</span><span class="p">:</span>
             <span class="n">mol</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">partial_mol</span><span class="p">)</span>
+
+        <span class="c1"># Keep the same MolNum.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">renumber</span><span class="p">:</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">mol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">renumber</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">number</span><span class="p">())</span>
+                <span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">mol</span></div>
 
@@ -1334,10 +1353,13 @@
 
             <span class="c1"># Have we matched all of the atoms?</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_atoms0</span><span class="p">:</span>
-                <span class="c1"># Atom names might have changed. Try to match by residue index</span>
-                <span class="c1"># and coordinates.</span>
-                <span class="n">matcher</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">ResIdxAtomCoordMatcher</span><span class="p">()</span>
-                <span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">mol1</span><span class="p">)</span>
+                <span class="c1"># Atom names or order might have changed. Try to match by coordinates.</span>
+                <span class="n">matcher</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomCoordMatcher</span><span class="p">()</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">mol1</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
 
                 <span class="c1"># We need to rename the atoms.</span>
                 <span class="n">is_renamed</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1536,9 +1558,6 @@
             <span class="c1"># Tally counter for the total number of matches.</span>
             <span class="n">num_matches</span> <span class="o">=</span> <span class="mi">0</span>
 
-            <span class="c1"># Initialise the offset.</span>
-            <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
-
             <span class="c1"># Get the molecule numbers in the system.</span>
             <span class="n">mol_nums</span> <span class="o">=</span> <span class="n">mol1</span><span class="o">.</span><span class="n">molNums</span><span class="p">()</span>
 
@@ -1548,15 +1567,16 @@
                 <span class="n">mol</span> <span class="o">=</span> <span class="n">mol1</span><span class="p">[</span><span class="n">num</span><span class="p">]</span>
 
                 <span class="c1"># Initialise the matcher.</span>
-                <span class="n">matcher</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">ResIdxAtomCoordMatcher</span><span class="p">(</span><span class="n">_SireMol</span><span class="o">.</span><span class="n">ResIdx</span><span class="p">(</span><span class="n">offset</span><span class="p">))</span>
+                <span class="n">matcher</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomCoordMatcher</span><span class="p">()</span>
 
                 <span class="c1"># Get the matches for this molecule and append to the list.</span>
-                <span class="n">match</span> <span class="o">=</span> <span class="n">matcher</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">mol</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">match</span> <span class="o">=</span> <span class="n">matcher</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">mol0</span><span class="p">,</span> <span class="n">mol</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">match</span> <span class="o">=</span> <span class="p">[]</span>
+
                 <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
                 <span class="n">num_matches</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
-
-                <span class="c1"># Increment the offset.</span>
-                <span class="n">offset</span> <span class="o">+=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nResidues</span><span class="p">()</span>
 
             <span class="c1"># Have we matched all of the atoms?</span>
             <span class="k">if</span> <span class="n">num_matches</span> <span class="o">&lt;</span> <span class="n">num_atoms0</span><span class="p">:</span>
@@ -2126,25 +2146,6 @@
 
         <span class="k">return</span> <span class="n">property_map</span>
 
-    <span class="k">def</span> <span class="nf">_convertFromMergedMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert from a merged molecule.&quot;&quot;&quot;</span>
-
-        <span class="c1"># Extract the components of the merged molecule.</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">mol0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;molecule0&quot;</span><span class="p">)</span>
-            <span class="n">mol1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;molecule1&quot;</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
-                <span class="s2">&quot;The merged molecule doesn&#39;t have the required properties!&quot;</span>
-            <span class="p">)</span>
-
-        <span class="c1"># Store the components.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_molecule0</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">mol0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_molecule1</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">mol1</span><span class="p">)</span>
-
-        <span class="c1"># Flag that the molecule is perturbable.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_is_perturbable</span> <span class="o">=</span> <span class="kc">True</span>
-
     <span class="k">def</span> <span class="nf">_fixCharge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make the molecular charge an integer value.</span>
@@ -2198,7 +2199,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_toRegularMolecule</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">convert_amber_dummies</span><span class="o">=</span><span class="kc">False</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
+        <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">convert_amber_dummies</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">generate_intrascale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal function to convert a merged molecule to a regular molecule.</span>
@@ -2220,6 +2225,9 @@
 <span class="sd">            non-FEP simulations. This will replace the &quot;du&quot; ambertype</span>
 <span class="sd">            and &quot;Xx&quot; element with the properties from the other end state.</span>
 
+<span class="sd">        generate_intrascale : bool</span>
+<span class="sd">            Whether to regenerate the intrascale matrix.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 
@@ -2232,6 +2240,9 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">convert_amber_dummies</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;convert_amber_dummies&#39; must be of type &#39;bool&#39;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">generate_intrascale</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;generate_intrascale&#39; must be of type &#39;bool&#39;&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">is_lambda1</span><span class="p">:</span>
             <span class="n">lam</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
@@ -2315,6 +2326,17 @@
                 <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="s2">&quot;element0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
                 <span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">removeProperty</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
 
+        <span class="k">if</span> <span class="n">generate_intrascale</span><span class="p">:</span>
+            <span class="c1"># First we regenerate the connectivity based on the bonds.</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Connectivity</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">info</span><span class="p">())</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;bond&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">():</span>
+                <span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">bond</span><span class="o">.</span><span class="n">atom1</span><span class="p">())</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;connectivity&quot;</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+
+            <span class="c1"># Now we have the correct connectivity, we can regenerate the exclusions.</span>
+            <span class="n">gro_sys</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">_System</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">,</span> <span class="n">gro_sys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">))</span>
+
         <span class="c1"># Return the updated molecule.</span>
         <span class="k">return</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
 
@@ -2360,7 +2382,11 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">search_result</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">property_map</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="n">search_result</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;All atoms in the selection are dummies. Unable to extract.&quot;</span>
+            <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># If there are no dummies, then simply return this molecule.</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_result</span><span class="p">)</span> <span class="o">==</span> <span class="n">mol</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
@@ -2443,7 +2469,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Roadmap" href="roadmap.html" /><link rel="prev" title="Coding Style" href="codestyle.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Development process - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
@@ -267,6 +267,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +344,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,12 +543,11 @@
         <article role="main">
           <section id="development-process">
 <span id="ref-devprocess"></span><h1>Development process<a class="headerlink" href="#development-process" title="Link to this heading">#</a></h1>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> uses a <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">devel</span></code> and <code class="docutils literal notranslate"><span class="pre">future</span></code> development process,
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> uses a <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">devel</span></code> development process,
 using feature branches for all code development.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> - this always contains the latest official release.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">devel</span></code> - this always contains the latest development release, which will become the next official release.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">future</span></code> - this contains pull requests that have been accepted, but which are targetted for a future release (i.e. not the next official release)</p></li>
 </ul>
 <p>Code should be developed on a fork or in a feature branch called <code class="docutils literal notranslate"><span class="pre">feature_{feature}</span></code>.
 When your feature is ready, please submit a pull request against <code class="docutils literal notranslate"><span class="pre">devel</span></code>. This
@@ -560,28 +564,8 @@ tests, examples and/or tutorial instructions.</p>
 the tutorials or writing a detailed description for the website.</p>
 </div>
 <p>Assuming the CI completes successfully, then one of the release team will
-conduct a code review. The outcome of the review will be one of the following;</p>
-<ol class="arabic simple">
-<li><p>This feature is ready, and should be part of the next official release. The pull request
-will be accepted into <code class="docutils literal notranslate"><span class="pre">devel</span></code>. This will trigger our CI/CD process, building the new dev
-package and uploading it to <a class="reference external" href="https://anaconda.org/openbiosim/biosimspace">anaconda.org</a>
-for everyone to use.</p></li>
-<li><p>This feature is good, but it is not yet ready to be part of the next offical release. This
-could be because the feature is part of a series, and all of the series need to be finished
-before release. Or because we are in a feature freeze period. Or because you want more time
-for people to explore and play with the feature before it is officially released (and would
-then need to be supported, and backwards compatibility maintained). If this is the case (or
-it is your request) then the pull request will be redirected into the <code class="docutils literal notranslate"><span class="pre">future</span></code> branch.
-Once it (and features that depend on it) are ready, you can then issue a pull request for
-all of the features at once into <code class="docutils literal notranslate"><span class="pre">devel</span></code>. It will be noted that each of the individual
-parts have already been code reviewed, so the process to accept the combination
-into <code class="docutils literal notranslate"><span class="pre">devel</span></code> should be more straightforward.</p></li>
-<li><p>This feature is good, but more work is needed before it can be accepted. This could be
-because some of the unit tests haven’t passed, or the latest version of <code class="docutils literal notranslate"><span class="pre">devel</span></code> hasn’t
-been merged. Or there may be changes that are requested that would make the code easier
-to maintain or to preserve backwards compatibility. If this is the case, then we
-will engage in conversation with you and will work together to rectify any issues.</p></li>
-</ol>
+conduct a code review, with the code being merged into <code class="docutils literal notranslate"><span class="pre">devel</span></code> if it is
+approved.</p>
 <p>Bug fixes or issue fixes are developed on fix branches, called <code class="docutils literal notranslate"><span class="pre">fix_{number}</span></code> (again in
 either the main repository or forks). If no <a class="reference external" href="https://github.com/OpenBioSim/biosimspace/issues">issue thread</a>
 exists for the bug that you are fixing, please open one to notify other users of the problem.
@@ -797,7 +781,7 @@ by running the workflow dispatch event against the <code class="docutils literal
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.Types._type - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -640,7 +645,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">_value</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">_unit</span>
 
-            <span class="c1"># The user has passed a string representation of the temperature.</span>
+            <span class="c1"># The user has passed a string representation of the type.</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="c1"># Convert the string to an object of this type.</span>
                 <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_string</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -705,11 +710,21 @@
             <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_string</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="n">temp</span>
 
+        <span class="c1"># Addition of a zero-valued integer or float.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">and</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                 <span class="s2">&quot;unsupported operand type(s) for +: &#39;</span><span class="si">%s</span><span class="s2">&#39; and &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
                 <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">)</span>
             <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Addition operator.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Addition is commutative: a+b = b+a</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtraction operator.&quot;&quot;&quot;</span>
@@ -722,21 +737,31 @@
             <span class="c1"># Return a new object of the same type with the original unit.</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">_convert_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">)</span>
 
-        <span class="c1"># Addition of a different type with the same dimensions.</span>
+        <span class="c1"># Subtraction of a different type with the same dimensions.</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Type</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">dimensions</span><span class="p">:</span>
             <span class="c1"># Negate other and add.</span>
             <span class="k">return</span> <span class="o">-</span><span class="n">other</span> <span class="o">+</span> <span class="bp">self</span>
 
-        <span class="c1"># Addition of a string.</span>
+        <span class="c1"># Subtraction of a string.</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_string</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span> <span class="o">-</span> <span class="n">temp</span>
+
+        <span class="c1"># Subtraction of a zero-valued integer or float.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">and</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                 <span class="s2">&quot;unsupported operand type(s) for -: &#39;</span><span class="si">%s</span><span class="s2">&#39; and &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
                 <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">)</span>
             <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtraction operator.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Subtraction is not commutative: a-b != b-a</span>
+        <span class="k">return</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="fm">__sub__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Multiplication operator.&quot;&quot;&quot;</span>
@@ -781,19 +806,9 @@
     <span class="k">def</span> <span class="fm">__pow__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Power operator.&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;We can only raise to the power of integer values.&quot;</span><span class="p">)</span>
-
         <span class="kn">from</span> <span class="nn">._general_unit</span> <span class="kn">import</span> <span class="n">GeneralUnit</span> <span class="k">as</span> <span class="n">_GeneralUnit</span>
 
-        <span class="n">default_unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">()</span>
-        <span class="n">mag</span> <span class="o">=</span> <span class="n">default_unit</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">**</span> <span class="n">other</span>
-        <span class="n">unit</span> <span class="o">=</span> <span class="n">default_unit</span><span class="o">.</span><span class="n">unit</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        <span class="n">pow_to_mul</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">*</span> <span class="p">[</span><span class="n">unit</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">other</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_GeneralUnit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mag</span><span class="si">}</span><span class="s2">*</span><span class="si">{</span><span class="n">pow_to_mul</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_GeneralUnit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mag</span><span class="si">}</span><span class="s2">/(</span><span class="si">{</span><span class="n">pow_to_mul</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_GeneralUnit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">(),</span> <span class="n">no_cast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">**</span> <span class="n">other</span>
 
     <span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Division operator.&quot;&quot;&quot;</span>
@@ -925,26 +940,6 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Not equals to operator.&quot;&quot;&quot;</span>
-
-        <span class="c1"># Compare to another object of the same type.</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">_math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
-                <span class="n">other</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
-            <span class="p">)</span>
-
-        <span class="c1"># Compare with a string.</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="k">return</span> <span class="ow">not</span> <span class="n">_math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_from_string</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">_to_default_unit</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
-            <span class="p">)</span>
-
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-
     <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Greater than or equal to operator.&quot;&quot;&quot;</span>
 
@@ -1043,49 +1038,10 @@
 <span class="sd">        containing the power in each dimension.</span>
 
 <span class="sd">        Returns : (int, int, int, int, int, int)</span>
-<span class="sd">            The power in each dimension: &#39;angle&#39;, &#39;charge&#39;, &#39;length&#39;,</span>
-<span class="sd">            &#39;mass&#39;, &#39;quantity&#39;, &#39;temperature&#39;, and &#39;time&#39;.</span>
+<span class="sd">            The power in each dimension: &#39;mass&#39;, &#39;length&#39;, &#39;temperature&#39;,</span>
+<span class="sd">            &#39;charge&#39;, &#39;time&#39;, &#39;quantity&#39;, and &#39;angle&#39;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the power in the &#39;angle&#39; dimension.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-
-<span class="sd">        angle : int</span>
-<span class="sd">            The power in the &#39;angle&#39; dimension.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">charge</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the power in the &#39;charge&#39; dimension.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-
-<span class="sd">        charge : int</span>
-<span class="sd">            The power in the &#39;charge&#39; dimension.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the power in the &#39;length&#39; dimension.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-
-<span class="sd">        length : int</span>
-<span class="sd">            The power in the &#39;length&#39; dimension.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -1098,20 +1054,46 @@
 <span class="sd">        mass : int</span>
 <span class="sd">            The power in the &#39;mass&#39; dimension.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">quantity</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the power in the &#39;quantity&#39; dimension.</span>
+<span class="sd">        Return the power in the &#39;length&#39; dimension.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 
-<span class="sd">        quantity : int</span>
-<span class="sd">            The power in the &#39;quantity&#39; dimension.</span>
+<span class="sd">        length : int</span>
+<span class="sd">            The power in the &#39;length&#39; dimension.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the power in the &#39;time&#39; dimension.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        time : int</span>
+<span class="sd">            The power the &#39;time&#39; dimension.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">charge</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the power in the &#39;charge&#39; dimension.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        charge : int</span>
+<span class="sd">            The power in the &#39;charge&#39; dimension.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -1124,18 +1106,31 @@
 <span class="sd">        temperature : int</span>
 <span class="sd">            The power in the &#39;temperature&#39; dimension.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">quantity</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the power in the &#39;time&#39; dimension.</span>
+<span class="sd">        Return the power in the &#39;quantity&#39; dimension.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 
-<span class="sd">        time : int</span>
-<span class="sd">            The power the &#39;time&#39; dimension.</span>
+<span class="sd">        quantity : int</span>
+<span class="sd">            The power in the &#39;quantity&#39; dimension.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the power in the &#39;angle&#39; dimension.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">        angle : int</span>
+<span class="sd">            The power in the &#39;angle&#39; dimension.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
 
@@ -1219,15 +1214,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;sire_unit&#39; must be of type &#39;sire.units.GeneralUnit&#39;&quot;</span><span class="p">)</span>
 
         <span class="c1"># Create a mask for the dimensions of the object.</span>
-        <span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">(),</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">CHARGE</span><span class="p">(),</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">LENGTH</span><span class="p">(),</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">MASS</span><span class="p">(),</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">QUANTITY</span><span class="p">(),</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">TEMPERATURE</span><span class="p">(),</span>
-            <span class="n">sire_unit</span><span class="o">.</span><span class="n">TIME</span><span class="p">(),</span>
-        <span class="p">)</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sire_unit</span><span class="o">.</span><span class="n">dimensions</span><span class="p">())</span>
 
         <span class="c1"># Make sure that this isn&#39;t zero.</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sire_unit</span><span class="p">,</span> <span class="s2">&quot;is_zero&quot;</span><span class="p">):</span>
@@ -1260,7 +1247,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

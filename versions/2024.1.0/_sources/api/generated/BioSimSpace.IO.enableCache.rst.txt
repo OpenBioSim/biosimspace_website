@@ -1,0 +1,6 @@
+﻿BioSimSpace.IO.enableCache
+==========================
+
+.. currentmodule:: BioSimSpace.IO
+
+.. autofunction:: enableCache

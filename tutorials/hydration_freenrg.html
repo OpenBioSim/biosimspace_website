@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Metadynamics" href="metadynamics.html" /><link rel="prev" title="Crystal water" href="crystal_water.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Hydration free energy - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
@@ -267,6 +267,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +344,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -689,6 +694,16 @@ gromacs.err<span class="w">  </span>gromacs.mdp<span class="w">  </span>gromacs.
 gromacs.gro<span class="w">  </span>gromacs.out<span class="w">  </span>gromacs.top
 </pre></div>
 </div>
+<p>Similarly, we can also set up the same simulations using AMBER:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">free_amber</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="o">.</span><span class="n">Relative</span><span class="p">(</span><span class="n">solvated</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="s2">&quot;freenrg_amber/free&quot;</span><span class="p">)</span>
+<span class="n">vac_amber</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">FreeEnergy</span><span class="o">.</span><span class="n">Relative</span><span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">toSystem</span><span class="p">(),</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="s2">&quot;freenrg_amber/vacuum&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s examine the directory for the <span class="math notranslate nohighlight">\({\lambda=0}\)</span> window of the free leg:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>freenrg_amber/free/lambda_0.0000
+amber.cfg<span class="w">  </span>amber.err<span class="w">  </span>amber.out<span class="w">  </span>amber.prm7<span class="w">  </span>amber_ref.rst7<span class="w">  </span>amber.rst7
+</pre></div>
+</div>
 <p>There you go! This tutorial has shown you how BioSimSpace can be used to easily set
 up everything that is needed for complex alchemical free energy simulations. Please
 visit the <a class="reference internal" href="../api/index_FreeEnergy.html#module-BioSimSpace.FreeEnergy" title="BioSimSpace.FreeEnergy"><code class="xref py py-data docutils literal notranslate"><span class="pre">API</span> <span class="pre">documentation</span></code></a> for further information.</p>
@@ -725,7 +740,7 @@ visit the <a class="reference internal" href="../api/index_FreeEnergy.html#modul
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

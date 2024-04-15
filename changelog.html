@@ -267,6 +267,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +344,8 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -544,6 +549,20 @@
 company supporting open-source development of fostering academic/industrial collaboration
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
+</section>
+<section id="apr-15-2024">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.5.1...2024.1.0">2024.1.0</a> - Apr 15 2024<a class="headerlink" href="#apr-15-2024" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Switch to using Langevin integrator for GROMACS free energy simulations (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/264">#264</a>).</p></li>
+<li><p>Add support for clearing and disabling the IO file cache (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/266">#266</a>).</p></li>
+<li><p>Add support for using <code class="docutils literal notranslate"><span class="pre">openff-nagl</span></code> to generate partial charges (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/267">#267</a>).</p></li>
+<li><p>Fixed non-reproducible search for backbone restraint atom indices (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/270">#270</a>).</p></li>
+<li><p>Add support for AMBER as an alchemical free-energy simulation engine (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/272">#272</a>).</p></li>
+<li><p>Switch to using <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code> to generate directory file names (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/276">#276</a>).</p></li>
+<li><p>Make sure the <code class="docutils literal notranslate"><span class="pre">fileformat</span></code> property is preserved when creating single molecule systems (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/276">#276</a>).</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">getRestraintType</span></code> method to the base protocol that returns <code class="docutils literal notranslate"><span class="pre">None</span></code> (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/276">#276</a>).</p></li>
+<li><p>Add missing <code class="docutils literal notranslate"><span class="pre">themostat_time_constant</span></code> kwarg to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Metadynamics</span></code> protocol (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/276">#276</a>).</p></li>
+</ul>
 </section>
 <section id="mar-20-2024">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2023.5.0...2023.5.1">2023.5.1</a> - Mar 20 2024<a class="headerlink" href="#mar-20-2024" title="Link to this heading">#</a></h2>
@@ -863,7 +882,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Mar 20, 2024</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             
@@ -886,6 +905,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#apr-15-2024">2024.1.0 - Apr 15 2024</a></li>
 <li><a class="reference internal" href="#mar-20-2024">2023.5.1 - Mar 20 2024</a></li>
 <li><a class="reference internal" href="#dec-16-2023">2023.5.0 - Dec 16 2023</a></li>
 <li><a class="reference internal" href="#dec-14-2023">2023.4.1 - Dec 14 2023</a></li>

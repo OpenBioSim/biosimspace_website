@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Compatibility" href="compatibility.html" /><link rel="prev" title="Features" href="features.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Installation - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
@@ -267,6 +267,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +344,8 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -574,22 +579,20 @@ Do not use it for production work.</p>
 <p>The easiest way to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is in a new
 <a class="reference external" href="https://anaconda.org">conda environment</a>.</p>
 <p>You can use any conda environment or installation. We recommend using
-<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
-as this is pre-configured to use <a class="reference external" href="https://conda-forge.org">conda-forge</a>,
-and bundles <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">mamba</a>, which
-is a fast drop-in replacement for <a class="reference external" href="https://conda.io">conda</a>.</p>
-<section id="either-install-a-new-copy-of-mambaforge">
-<span id="install-mambaforge"></span><h3>Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code><a class="headerlink" href="#either-install-a-new-copy-of-mambaforge" title="Link to this heading">#</a></h3>
+<a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a>,
+as this is pre-configured to use <a class="reference external" href="https://conda-forge.org">conda-forge</a>.</p>
+<section id="either-install-a-new-copy-of-miniforge">
+<span id="install-miniforge"></span><h3>Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">Miniforge</span></code><a class="headerlink" href="#either-install-a-new-copy-of-miniforge" title="Link to this heading">#</a></h3>
 <p>To install a new copy of
-<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
-first download a <code class="docutils literal notranslate"><span class="pre">Mambaforge</span></code> from
-<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">this page</a> that
+<a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a>,
+first download a <code class="docutils literal notranslate"><span class="pre">Miniforge</span></code> from
+<a class="reference external" href="https://github.com/conda-forge/miniforge">this page</a> that
 matches your operating system and processor.</p>
-<p>Install <code class="docutils literal notranslate"><span class="pre">Mambaforge</span></code> following the
+<p>Install <code class="docutils literal notranslate"><span class="pre">Miniforge</span></code> following the
 <a class="reference external" href="https://github.com/conda-forge/miniforge#install">instructions here</a>.</p>
-<p>Once installed, you should be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command to
-install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help on
-how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
+<p>Once installed, you should be able to run the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command to
+install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">-h</span></code> will print out help on
+how to use the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command).</p>
 </section>
 <section id="or-use-an-existing-anaconda-miniconda-install">
 <h3>Or… Use an existing anaconda/miniconda install<a class="headerlink" href="#or-use-an-existing-anaconda-miniconda-install" title="Link to this heading">#</a></h3>
@@ -601,18 +604,7 @@ open a terminal and run
 the full path to your anaconda or miniconda installation.</p>
 <p>You should now be able to run the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command to install other
 packages (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">-h</span></code> will print out help on how to use the
-<code class="docutils literal notranslate"><span class="pre">conda</span></code> command). We highly recommend that you use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> as a
-drop-in replacement for <code class="docutils literal notranslate"><span class="pre">conda</span></code>, so first install <code class="docutils literal notranslate"><span class="pre">mamba</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
-</pre></div>
-</div>
-<p>This should install mamba. If this fails, then your anaconda or miniconda
-environment is likely quite full, or else it is outdated. We recommend
-going back and following <em class="xref py py-obj">the instructions</em>
-to install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code>.</p>
-<p>If this works, then you should now be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command
-to install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help
-on how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> command).</p>
 </section>
 <section id="and-then-install-biosimspace-into-a-new-environment">
 <h3>And then… Install BioSimSpace into a new environment<a class="headerlink" href="#and-then-install-biosimspace-into-a-new-environment" title="Link to this heading">#</a></h3>
@@ -620,7 +612,7 @@ on how to use the <code class="docutils literal notranslate"><span class="pre">m
 This minimises the risk of failures caused by incompatible dependencies.</p>
 <p>BioSimSpace is currently packaged for Python 3.8 and Python 3.9. We will start
 by creating a Python 3.9 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.10&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.10&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -629,23 +621,23 @@ by creating a Python 3.9 environment that we will call <code class="docutils lit
 release of python.</p>
 </div>
 <p>We can now install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> into that environment by typing</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>biosimspace
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>biosimspace
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The option <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">openbiosim</span></code> tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>
+<p>The option <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">openbiosim</span></code> tells <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>
 into the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment. The option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">openbiosim</span></code>
-tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> from the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>
+tells <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> from the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>
 conda channel.</p>
 </div>
 <p>If you want the latest development release, then install by typing</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;openbiosim/label/dev&quot;</span><span class="w"> </span>biosimspace
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;openbiosim/label/dev&quot;</span><span class="w"> </span>biosimspace
 </pre></div>
 </div>
 <p>To install the latest development version you can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>biosimspace
-mamba<span class="w"> </span>activate<span class="w"> </span>openbiosim-dev
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>biosimspace
+conda<span class="w"> </span>activate<span class="w"> </span>openbiosim-dev
 </pre></div>
 </div>
 <p>To run <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>, you must now activate the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment.
@@ -750,8 +742,8 @@ are already installed, then you can use:</p>
 <p>If you don’t want to install Sire from source, an alternative is to create a conda
 environment containing only the dependencies of BioSimSpace, then install the
 latest development code into that.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>biosimspace<span class="w"> </span>--only-deps
-mamba<span class="w"> </span>activate<span class="w"> </span>openbiosim-dev
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>biosimspace<span class="w"> </span>--only-deps
+conda<span class="w"> </span>activate<span class="w"> </span>openbiosim-dev
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openbiosim/biosimspace
 <span class="nb">cd</span><span class="w"> </span>biosimspace/python
 <span class="nv">BSS_SKIP_DEPENDENCIES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
@@ -837,7 +829,7 @@ against.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             
@@ -861,7 +853,7 @@ against.</p>
 <li><a class="reference internal" href="#">Installation</a><ul>
 <li><a class="reference internal" href="#no-installation-run-in-a-web-browser">1. No-installation - Run in a web browser</a></li>
 <li><a class="reference internal" href="#easy-installation-run-in-a-conda-environment">2. Easy installation - Run in a conda environment</a><ul>
-<li><a class="reference internal" href="#either-install-a-new-copy-of-mambaforge">Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code></a></li>
+<li><a class="reference internal" href="#either-install-a-new-copy-of-miniforge">Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">Miniforge</span></code></a></li>
 <li><a class="reference internal" href="#or-use-an-existing-anaconda-miniconda-install">Or… Use an existing anaconda/miniconda install</a></li>
 <li><a class="reference internal" href="#and-then-install-biosimspace-into-a-new-environment">And then… Install BioSimSpace into a new environment</a></li>
 </ul>

@@ -3,9 +3,9 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Parameters.parameterise" href="BioSimSpace.Parameters.parameterise.html" /><link rel="prev" title="BioSimSpace.Parameters.openff_unconstrained_2_1_0" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Parameters.openff_unconstrained_2_1_1" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html" /><link rel="prev" title="BioSimSpace.Parameters.openff_unconstrained_2_1_0" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1 - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
@@ -267,6 +267,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +344,8 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -540,7 +545,7 @@
 <h1>BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1<a class="headerlink" href="#biosimspace-parameters-openff-unconstrained-2-1-0-rc-1" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1">
-<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Parameters.</span></span><span class="sig-name descname"><span class="pre">openff_unconstrained_2_1_0_rc_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_compatible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Parameters.</span></span><span class="sig-name descname"><span class="pre">openff_unconstrained_2_1_0_rc_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_compatible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_nagl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1" title="Link to this definition">#</a></dt>
 <dd><p>Parameterise a molecule using the named force field from the
 Open Force Field initiative.</p>
 <dl class="field-list simple">
@@ -555,6 +560,9 @@ this to False is parameterising lone oxygen atoms corresponding to
 structural (crystal) water molecules. When True, the parameterised
 molecule will preserve the topology of the original molecule, e.g.
 the original atom and residue names will be kept.</p></li>
+<li><p><strong>use_nagl</strong> (<em>bool</em>) – Whether to use NAGL to compute AM1-BCC charges. If False, the default
+is to use AmberTools via antechamber and sqm. (This option is only
+used if NAGL is available.)</p></li>
 <li><p><strong>work_dir</strong> (<em>str</em>) – The working directory for the process.</p></li>
 <li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
 values. This allows the user to refer to properties with their
@@ -577,12 +585,12 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="BioSimSpace.Parameters.parameterise.html">
+          <a class="next-page" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">BioSimSpace.Parameters.parameterise</div>
+                <div class="title">BioSimSpace.Parameters.openff_unconstrained_2_1_1</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -603,7 +611,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 14, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             

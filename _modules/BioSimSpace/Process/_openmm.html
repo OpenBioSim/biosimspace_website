@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>BioSimSpace.Process._openmm - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
@@ -266,6 +266,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -340,6 +343,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -538,7 +543,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2023</span>
+<span class="c1"># Copyright: 2017-2024</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -613,12 +618,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="p">,</span>
+        <span class="n">reference_system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">exe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;openmm&quot;</span><span class="p">,</span>
         <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;CPU&quot;</span><span class="p">,</span>
         <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
@@ -631,6 +638,11 @@
 
 <span class="sd">        protocol : :class:`Protocol &lt;BioSimSpace.Protocol&gt;`</span>
 <span class="sd">            The protocol for the OpenMM process.</span>
+
+<span class="sd">        reference_system : :class:`System &lt;BioSimSpace._SireWrappers.System&gt;` or None</span>
+<span class="sd">            An optional system to use as a source of reference coordinates for position</span>
+<span class="sd">            restraints. It is assumed that this system has the same topology as &quot;system&quot;.</span>
+<span class="sd">            If this is None, then &quot;system&quot; is used as a reference.</span>
 
 <span class="sd">        exe : str</span>
 <span class="sd">            The full path to the Python interpreter used to run OpenMM.</span>
@@ -655,12 +667,16 @@
 <span class="sd">            A dictionary that maps system &quot;properties&quot; to their user defined</span>
 <span class="sd">            values. This allows the user to refer to properties with their</span>
 <span class="sd">            own naming scheme, e.g. { &quot;charge&quot; : &quot;my-charge&quot; }</span>
+
+<span class="sd">        kwargs : dict</span>
+<span class="sd">            Additional keyword arguments.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># Call the base class constructor.</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">system</span><span class="p">,</span>
             <span class="n">protocol</span><span class="p">,</span>
+            <span class="n">reference_system</span><span class="o">=</span><span class="n">reference_system</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
             <span class="n">work_dir</span><span class="o">=</span><span class="n">work_dir</span><span class="p">,</span>
             <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
@@ -704,7 +720,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span> <span class="o">=</span> <span class="n">_process</span><span class="o">.</span><span class="n">_MultiDict</span><span class="p">()</span>
 
         <span class="c1"># Store the name of the OpenMM log file.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_log_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.log&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_log_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">)</span>
 
         <span class="c1"># Initialise the log file separator.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_record_separator</span> <span class="o">=</span> <span class="kc">None</span>
@@ -714,18 +730,23 @@
 
         <span class="c1"># The names of the input files. We choose to use AMBER files since they</span>
         <span class="c1"># are self-contained, but could equally work with GROMACS files.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.rst7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.prm7&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.rst7&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.prm7&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ref_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_ref.rst7&quot;</span><span class="p">)</span>
 
         <span class="c1"># The name of the trajectory file.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.dcd&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_traj_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.dcd&quot;</span><span class="p">)</span>
 
         <span class="c1"># Set the path for the OpenMM Python script. (We use the concept of a</span>
         <span class="c1"># config file for consistency with other Process classes.)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">_script.py&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_script.py&quot;</span><span class="p">)</span>
 
         <span class="c1"># Create the list of input files.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span><span class="p">]</span>
+
+        <span class="c1"># Add the reference file if there are position restraints.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ref_file</span><span class="p">)</span>
 
         <span class="c1"># Initialise the log file header.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="o">=</span> <span class="kc">None</span>
@@ -774,6 +795,9 @@
 
         <span class="c1"># Convert the water model topology so that it matches the AMBER naming convention.</span>
         <span class="n">system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span><span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reference_system</span><span class="o">.</span><span class="n">_set_water_topology</span><span class="p">(</span>
+            <span class="s2">&quot;AMBER&quot;</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span>
+        <span class="p">)</span>
 
         <span class="c1"># Check for perturbable molecules and convert to the chosen end state.</span>
         <span class="n">system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkPerturbable</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -790,6 +814,23 @@
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+        <span class="c1"># Reference coordinate file for position restraints.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ref_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">_IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span>
+                    <span class="n">file</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_reference_system</span><span class="p">,</span>
+                    <span class="s2">&quot;rst7&quot;</span><span class="p">,</span>
+                    <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write reference system to &#39;RST7&#39; format.&quot;</span>
+                <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1278,7 +1319,7 @@
             <span class="p">)</span>
 
             <span class="c1"># Copy the file into the working directory.</span>
-            <span class="n">_shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">aux_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">_shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="n">aux_file</span><span class="p">))</span>
 
             <span class="c1"># The following OpenMM native implementation of the funnel metadynamics protocol</span>
             <span class="c1"># is adapted from funnel_maker.py by Dominykas Lukauskis.</span>
@@ -1419,13 +1460,13 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># Upper wall.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                <span class="s2">&quot;upper_wall_rest = CustomCentroidBondForce(3, &#39;(k/2)*max(distance(g1,g2)*cos(angle(g1,g2,g3)) - upper_wall, 0)^2&#39;)&quot;</span>
+                <span class="s2">&quot;upper_wall_rest = CustomCentroidBondForce(3, &#39;(k1/2)*max(distance(g1,g2)*cos(angle(g1,g2,g3)) - upper_wall, 0)^2&#39;)&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGroup(lig)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGroup(p1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGroup(p2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addBond([0,1,2])&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGlobalParameter(&#39;k&#39;, k1)&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;upper_wall_rest.addGlobalParameter(&#39;k1&#39;, k1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
                 <span class="s2">&quot;upper_wall_rest.addGlobalParameter(&#39;upper_wall&#39;, upper_wall)&quot;</span>
             <span class="p">)</span>
@@ -1445,13 +1486,13 @@
             <span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                <span class="s2">&quot;dist_restraint = CustomCentroidBondForce(3, &#39;(k/2)*max(distance(g1,g2)*sin(angle(g1,g2,g3)) - (a/(1+exp(b*(distance(g1,g2)*cos(angle(g1,g2,g3))-c)))+d), 0)^2&#39;)&quot;</span>
+                <span class="s2">&quot;dist_restraint = CustomCentroidBondForce(3, &#39;(k2/2)*max(distance(g1,g2)*sin(angle(g1,g2,g3)) - (a/(1+exp(b*(distance(g1,g2)*cos(angle(g1,g2,g3))-c)))+d), 0)^2&#39;)&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGroup(lig)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGroup(p1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGroup(p2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addBond([0,1,2])&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;k&#39;, k2)&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;k2&#39;, k2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;a&#39;, wall_width)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;b&#39;, beta_cent)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dist_restraint.addGlobalParameter(&#39;c&#39;, s_cent)&quot;</span><span class="p">)</span>
@@ -1461,13 +1502,13 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># Lower wall.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
-                <span class="s2">&quot;lower_wall_rest = CustomCentroidBondForce(3, &#39;(k/2)*min(distance(g1,g2)*cos(angle(g1,g2,g3)) - lower_wall, 0)^2&#39;)&quot;</span>
+                <span class="s2">&quot;lower_wall_rest = CustomCentroidBondForce(3, &#39;(k1/2)*min(distance(g1,g2)*cos(angle(g1,g2,g3)) - lower_wall, 0)^2&#39;)&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGroup(lig)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGroup(p1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGroup(p2)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addBond([0,1,2])&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGlobalParameter(&#39;k&#39;, k1)&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;lower_wall_rest.addGlobalParameter(&#39;k1&#39;, k1)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
                 <span class="s2">&quot;lower_wall_rest.addGlobalParameter(&#39;lower_wall&#39;, lower_wall)&quot;</span>
             <span class="p">)</span>
@@ -1476,9 +1517,13 @@
 
             <span class="c1"># Get the number of steps to date.</span>
             <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.xml&quot;</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">):</span>
-                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.xml&quot;</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span>
+                    <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">)</span>
+                <span class="p">):</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                        <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                         <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
                         <span class="n">last_line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
                         <span class="k">try</span><span class="p">:</span>
@@ -2621,8 +2666,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;else:&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;    is_restart = False&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.xml&quot;</span><span class="p">):</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.xml&quot;</span><span class="p">)):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
                 <span class="n">last_line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
                 <span class="n">step</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">last_line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -2766,10 +2813,14 @@
         <span class="k">if</span> <span class="n">restraint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># Search for the atoms to restrain by keyword.</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">restraint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-                <span class="n">restrained_atoms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">getRestraintAtoms</span><span class="p">(</span><span class="n">restraint</span><span class="p">)</span>
+                <span class="n">restrained_atoms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference_system</span><span class="o">.</span><span class="n">getRestraintAtoms</span><span class="p">(</span><span class="n">restraint</span><span class="p">)</span>
             <span class="c1"># Use the user-defined list of indices.</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">restrained_atoms</span> <span class="o">=</span> <span class="n">restraint</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;ref_prm = parmed.load_file(&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">.prm7&#39;, &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">_ref.rst7&#39;)&quot;</span>
+            <span class="p">)</span>
 
             <span class="c1"># Get the force constant in units of kJ_per_mol/nanometer**2</span>
             <span class="n">force_constant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getForceConstant</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_unit</span>
@@ -2787,7 +2838,7 @@
                 <span class="s2">&quot;nonbonded = [f for f in system.getForces() if isinstance(f, NonbondedForce)][0]&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;dummy_indices = []&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;positions = prm.positions&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;positions = ref_prm.positions&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;restrained_atoms = </span><span class="si">{</span><span class="n">restrained_atoms</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;for i in restrained_atoms:&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;    j = system.addParticle(0)&quot;</span><span class="p">)</span>
@@ -2971,7 +3022,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 13, 2023</div>
+              Last updated on Apr 15, 2024</div>
           </div>
           <div class="right-details">
             
