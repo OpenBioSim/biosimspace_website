@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Process.Namd" href="BioSimSpace.Process.Namd.html" /><link rel="prev" title="BioSimSpace.Process.Amber" href="BioSimSpace.Process.Amber.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>BioSimSpace.Process.Gromacs - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css?v=094c566b" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,7 +106,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -114,7 +114,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -122,6 +122,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +188,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +208,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -267,6 +324,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
@@ -341,6 +401,9 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -522,10 +585,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -535,22 +600,25 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="biosimspace-process-gromacs">
-<h1>BioSimSpace.Process.Gromacs<a class="headerlink" href="#biosimspace-process-gromacs" title="Link to this heading">#</a></h1>
+<h1>BioSimSpace.Process.Gromacs<a class="headerlink" href="#biosimspace-process-gromacs" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Process.</span></span><span class="sig-name descname"><span class="pre">Gromacs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gromacs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Process.</span></span><span class="sig-name descname"><span class="pre">Gromacs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gromacs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs" title="Link to this definition">¶</a></dt>
 <dd><p>A class for running simulations using GROMACS.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gromacs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gromacs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.__init__" title="Link to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – The molecular system.</p></li>
 <li><p><strong>protocol</strong> (<a class="reference internal" href="../index_Protocol.html#module-BioSimSpace.Protocol" title="BioSimSpace.Protocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a>) – The protocol for the GROMACS process.</p></li>
+<li><p><strong>reference_system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> or None) – An optional system to use as a source of reference coordinates for position
+restraints. It is assumed that this system has the same topology as “system”.
+If this is None, then “system” is used as a reference.</p></li>
 <li><p><strong>exe</strong> (<em>str</em>) – The full path to the GROMACS executable.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name of the process.</p></li>
 <li><p><strong>work_dir</strong> – The working directory for the process.</p></li>
@@ -558,6 +626,8 @@
 <li><p><strong>extra_options</strong> (<em>dict</em>) – A dictionary containing extra options. Overrides the defaults generated
 by the protocol.</p></li>
 <li><p><strong>extra_lines</strong> (<em>[</em><em>str</em><em>]</em>) – A list of extra lines to put at the end of the configuration file.</p></li>
+<li><p><strong>extra_args</strong> (<em>dict</em>) – A dictionary of extra command-line arguments to pass to the GROMACS
+executable.</p></li>
 <li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
 values. This allows the user to refer to properties with their
 own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
@@ -569,6 +639,7 @@ run file.</p></li>
 <li><p><strong>checkpoint_file</strong> (<em>str</em>) – The path to a checkpoint file from a previous run. This can be used
 to continue an existing simulation. Currently we only support the
 use of checkpoint files for Equilibration protocols.</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Additional keyword arguments.</p></li>
 </ul>
 </dd>
 </dl>
@@ -578,7 +649,7 @@ use of checkpoint files for Equilibration protocols.</p></li>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Gromacs.__init__" title="BioSimSpace.Process.Gromacs.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(system, protocol[, exe, name, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Process.Gromacs.__init__" title="BioSimSpace.Process.Gromacs.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(system, protocol[, ...])</p></td>
 <td><p>Constructor.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Process.Gromacs.addArgs" title="BioSimSpace.Process.Gromacs.addArgs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addArgs</span></code></a>(args)</p></td>
@@ -862,7 +933,7 @@ use of checkpoint files for Equilibration protocols.</p></li>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.addArgs">
-<span class="sig-name descname"><span class="pre">addArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.addArgs" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">addArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.addArgs" title="Link to this definition">¶</a></dt>
 <dd><p>Append additional command-line arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -873,7 +944,7 @@ use of checkpoint files for Equilibration protocols.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.addToConfig">
-<span class="sig-name descname"><span class="pre">addToConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.addToConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.addToConfig" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">addToConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.addToConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.addToConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Add a string to the configuration list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -885,13 +956,13 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.clearArgs">
-<span class="sig-name descname"><span class="pre">clearArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.clearArgs" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clearArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.clearArgs" title="Link to this definition">¶</a></dt>
 <dd><p>Clear all of the command-line arguments.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.command">
-<span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.command" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.command" title="Link to this definition">¶</a></dt>
 <dd><p>Return the command-line string used to run the process.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -905,7 +976,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.deleteArg">
-<span class="sig-name descname"><span class="pre">deleteArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.deleteArg" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">deleteArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.deleteArg" title="Link to this definition">¶</a></dt>
 <dd><p>Delete an argument from the dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -916,7 +987,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.exe">
-<span class="sig-name descname"><span class="pre">exe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.exe" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">exe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.exe" title="Link to this definition">¶</a></dt>
 <dd><p>Return the executable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -930,7 +1001,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getAngleEnergy">
-<span class="sig-name descname"><span class="pre">getAngleEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getAngleEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getAngleEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAngleEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getAngleEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getAngleEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the angle energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -950,7 +1021,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getArgString">
-<span class="sig-name descname"><span class="pre">getArgString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getArgString" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getArgString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getArgString" title="Link to this definition">¶</a></dt>
 <dd><p>Get the command-line arguments string.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -964,7 +1035,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getArgStringList">
-<span class="sig-name descname"><span class="pre">getArgStringList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getArgStringList" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getArgStringList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getArgStringList" title="Link to this definition">¶</a></dt>
 <dd><p>Convert the argument dictionary into a list of strings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -978,7 +1049,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getArgs">
-<span class="sig-name descname"><span class="pre">getArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getArgs" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getArgs" title="Link to this definition">¶</a></dt>
 <dd><p>Get the dictionary of command-line arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -992,7 +1063,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getBondEnergy">
-<span class="sig-name descname"><span class="pre">getBondEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getBondEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getBondEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getBondEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getBondEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getBondEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the bond energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1012,7 +1083,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getConfig">
-<span class="sig-name descname"><span class="pre">getConfig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getConfig" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getConfig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Get the list of configuration file strings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1026,7 +1097,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getConservedEnergy">
-<span class="sig-name descname"><span class="pre">getConservedEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getConservedEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getConservedEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getConservedEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getConservedEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getConservedEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the conserved energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1046,7 +1117,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getConstraintRMSD">
-<span class="sig-name descname"><span class="pre">getConstraintRMSD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getConstraintRMSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getConstraintRMSD" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getConstraintRMSD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getConstraintRMSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getConstraintRMSD" title="Link to this definition">¶</a></dt>
 <dd><p>Get the RMSD of the constrained atoms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1066,7 +1137,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCoulomb14">
-<span class="sig-name descname"><span class="pre">getCoulomb14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCoulomb14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCoulomb14" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCoulomb14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCoulomb14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCoulomb14" title="Link to this definition">¶</a></dt>
 <dd><p>Get the Coulomb energy between atoms 1 and 4.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1086,7 +1157,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCoulombReciprocal">
-<span class="sig-name descname"><span class="pre">getCoulombReciprocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCoulombReciprocal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCoulombReciprocal" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCoulombReciprocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCoulombReciprocal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCoulombReciprocal" title="Link to this definition">¶</a></dt>
 <dd><p>Get the reciprocal space Coulomb energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1106,7 +1177,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCoulombSR">
-<span class="sig-name descname"><span class="pre">getCoulombSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCoulombSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCoulombSR" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCoulombSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCoulombSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCoulombSR" title="Link to this definition">¶</a></dt>
 <dd><p>Get the short-range Coulomb energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1126,7 +1197,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentAngleEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentAngleEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentAngleEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentAngleEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentAngleEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentAngleEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentAngleEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current angle energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1143,7 +1214,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentBondEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentBondEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentBondEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentBondEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentBondEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentBondEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentBondEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current bond energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1160,7 +1231,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentConservedEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentConservedEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentConservedEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentConservedEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentConservedEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentConservedEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentConservedEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current conserved energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1177,7 +1248,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentConstraintRMSD">
-<span class="sig-name descname"><span class="pre">getCurrentConstraintRMSD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentConstraintRMSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentConstraintRMSD" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentConstraintRMSD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentConstraintRMSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentConstraintRMSD" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current RMSD of the constrained atoms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1194,7 +1265,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentCoulomb14">
-<span class="sig-name descname"><span class="pre">getCurrentCoulomb14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentCoulomb14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentCoulomb14" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentCoulomb14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentCoulomb14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentCoulomb14" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current Coulomb energy between atoms 1 and 4.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1211,7 +1282,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentCoulombReciprocal">
-<span class="sig-name descname"><span class="pre">getCurrentCoulombReciprocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentCoulombReciprocal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentCoulombReciprocal" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentCoulombReciprocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentCoulombReciprocal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentCoulombReciprocal" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current reciprocal space Coulomb energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1228,7 +1299,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentCoulombSR">
-<span class="sig-name descname"><span class="pre">getCurrentCoulombSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentCoulombSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentCoulombSR" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentCoulombSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentCoulombSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentCoulombSR" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current short-range Coulomb energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1245,7 +1316,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentDihedralEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentDihedralEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentDihedralEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentDihedralEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentDihedralEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentDihedralEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentDihedralEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current total dihedral energy (proper + improper).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1262,7 +1333,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentDispersionCorrection">
-<span class="sig-name descname"><span class="pre">getCurrentDispersionCorrection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentDispersionCorrection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentDispersionCorrection" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentDispersionCorrection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentDispersionCorrection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentDispersionCorrection" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current dispersion correction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1279,7 +1350,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentImproperEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentImproperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentImproperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentImproperEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentImproperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentImproperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentImproperEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current improper energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1296,7 +1367,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentKineticEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentKineticEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentKineticEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current kinetic energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1313,7 +1384,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentLennardJones14">
-<span class="sig-name descname"><span class="pre">getCurrentLennardJones14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentLennardJones14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentLennardJones14" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentLennardJones14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentLennardJones14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentLennardJones14" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current Lennard-Jones energy between atoms 1 and 4.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1330,7 +1401,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentLennardJonesSR">
-<span class="sig-name descname"><span class="pre">getCurrentLennardJonesSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentLennardJonesSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentLennardJonesSR" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentLennardJonesSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentLennardJonesSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentLennardJonesSR" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current short-range Lennard-Jones energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1347,7 +1418,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentPotentialEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentPotentialEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentPotentialEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current potential energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1364,7 +1435,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentPressure">
-<span class="sig-name descname"><span class="pre">getCurrentPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentPressure" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentPressure" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current pressure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1381,7 +1452,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentPressureDC">
-<span class="sig-name descname"><span class="pre">getCurrentPressureDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentPressureDC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentPressureDC" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentPressureDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentPressureDC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentPressureDC" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current DC pressure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1398,7 +1469,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentProperEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentProperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentProperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentProperEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentProperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentProperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentProperEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current proper dihedral energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1415,7 +1486,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentRecord">
-<span class="sig-name descname"><span class="pre">getCurrentRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentRecord" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentRecord" title="Link to this definition">¶</a></dt>
 <dd><p>Get a current record from the stdout dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1436,7 +1507,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentRecords">
-<span class="sig-name descname"><span class="pre">getCurrentRecords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentRecords" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentRecords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentRecords" title="Link to this definition">¶</a></dt>
 <dd><p>Return the current dictionary of stdout time-series records.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1453,7 +1524,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentRestraintEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentRestraintEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentRestraintEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentRestraintEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentRestraintEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentRestraintEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentRestraintEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current position restraint energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1470,7 +1541,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentStep">
-<span class="sig-name descname"><span class="pre">getCurrentStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentStep" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentStep" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current number of integration steps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1487,7 +1558,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentSystem">
-<span class="sig-name descname"><span class="pre">getCurrentSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentSystem" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentSystem" title="Link to this definition">¶</a></dt>
 <dd><p>Get the latest molecular system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1501,7 +1572,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentTemperature">
-<span class="sig-name descname"><span class="pre">getCurrentTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentTemperature" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentTemperature" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current temperature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1518,7 +1589,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentTime">
-<span class="sig-name descname"><span class="pre">getCurrentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentTime" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentTime" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current simulation time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1538,7 +1609,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentTotalEnergy">
-<span class="sig-name descname"><span class="pre">getCurrentTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentTotalEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentTotalEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current total energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1555,7 +1626,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getCurrentVolume">
-<span class="sig-name descname"><span class="pre">getCurrentVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentVolume" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getCurrentVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getCurrentVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getCurrentVolume" title="Link to this definition">¶</a></dt>
 <dd><p>Get the current volume.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1572,7 +1643,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getDihedralEnergy">
-<span class="sig-name descname"><span class="pre">getDihedralEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getDihedralEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getDihedralEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getDihedralEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getDihedralEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getDihedralEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the total dihedral energy (proper + improper).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1592,7 +1663,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getDispersionCorrection">
-<span class="sig-name descname"><span class="pre">getDispersionCorrection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getDispersionCorrection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getDispersionCorrection" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getDispersionCorrection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getDispersionCorrection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getDispersionCorrection" title="Link to this definition">¶</a></dt>
 <dd><p>Get the dispersion correction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1612,7 +1683,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getFrame">
-<span class="sig-name descname"><span class="pre">getFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getFrame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getFrame" title="Link to this definition">¶</a></dt>
 <dd><p>Return a specific trajectory frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1629,7 +1700,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getImproperEnergy">
-<span class="sig-name descname"><span class="pre">getImproperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getImproperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getImproperEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getImproperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getImproperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getImproperEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the improper energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1649,7 +1720,7 @@ path to a configuration file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getInput">
-<span class="sig-name descname"><span class="pre">getInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getInput" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getInput" title="Link to this definition">¶</a></dt>
 <dd><p>Return a link to a zip file containing the input files used by
 the process.</p>
 <dl class="field-list simple">
@@ -1670,7 +1741,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getKineticEnergy">
-<span class="sig-name descname"><span class="pre">getKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getKineticEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getKineticEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getKineticEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getKineticEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the kinetic energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1690,7 +1761,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getLennardJones14">
-<span class="sig-name descname"><span class="pre">getLennardJones14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getLennardJones14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getLennardJones14" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getLennardJones14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getLennardJones14"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getLennardJones14" title="Link to this definition">¶</a></dt>
 <dd><p>Get the Lennard-Jones energy between atoms 1 and 4.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1710,7 +1781,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getLennardJonesSR">
-<span class="sig-name descname"><span class="pre">getLennardJonesSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getLennardJonesSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getLennardJonesSR" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getLennardJonesSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getLennardJonesSR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getLennardJonesSR" title="Link to this definition">¶</a></dt>
 <dd><p>Get the short-range Lennard-Jones energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1730,7 +1801,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getName">
-<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getName" title="Link to this definition">¶</a></dt>
 <dd><p>Return the process name.</p>
 <p>Returns:</p>
 <dl class="simple">
@@ -1741,7 +1812,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getOutput">
-<span class="sig-name descname"><span class="pre">getOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getOutput" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getOutput" title="Link to this definition">¶</a></dt>
 <dd><p>Return a link to a zip file of the working directory.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1762,7 +1833,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getPackageName">
-<span class="sig-name descname"><span class="pre">getPackageName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPackageName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getPackageName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPackageName" title="Link to this definition">¶</a></dt>
 <dd><p>Return the package name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1776,7 +1847,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getPotentialEnergy">
-<span class="sig-name descname"><span class="pre">getPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPotentialEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getPotentialEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getPotentialEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPotentialEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the potential energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1796,7 +1867,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getPressure">
-<span class="sig-name descname"><span class="pre">getPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPressure" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPressure" title="Link to this definition">¶</a></dt>
 <dd><p>Get the pressure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1816,7 +1887,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getPressureDC">
-<span class="sig-name descname"><span class="pre">getPressureDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getPressureDC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPressureDC" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getPressureDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getPressureDC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getPressureDC" title="Link to this definition">¶</a></dt>
 <dd><p>Get the DC pressure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1836,7 +1907,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getProperEnergy">
-<span class="sig-name descname"><span class="pre">getProperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getProperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getProperEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getProperEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getProperEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getProperEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the proper dihedral energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1856,7 +1927,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getRecord">
-<span class="sig-name descname"><span class="pre">getRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getRecord" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getRecord" title="Link to this definition">¶</a></dt>
 <dd><p>Get a record from the stdout dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1878,7 +1949,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getRecords">
-<span class="sig-name descname"><span class="pre">getRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getRecords" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getRecords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getRecords" title="Link to this definition">¶</a></dt>
 <dd><p>Return the dictionary of stdout time-series records.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1895,7 +1966,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getRestraintEnergy">
-<span class="sig-name descname"><span class="pre">getRestraintEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getRestraintEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getRestraintEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getRestraintEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getRestraintEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getRestraintEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the position restraint energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1915,7 +1986,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getSeed">
-<span class="sig-name descname"><span class="pre">getSeed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getSeed" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getSeed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getSeed" title="Link to this definition">¶</a></dt>
 <dd><p>Return the random number seed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1929,7 +2000,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getStderr">
-<span class="sig-name descname"><span class="pre">getStderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getStderr" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getStderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getStderr" title="Link to this definition">¶</a></dt>
 <dd><p>Return the entire stderr for the process as a list of strings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1946,7 +2017,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getStdout">
-<span class="sig-name descname"><span class="pre">getStdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getStdout" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getStdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getStdout" title="Link to this definition">¶</a></dt>
 <dd><p>Return the entire stdout for the process as a list of strings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1963,7 +2034,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getStep">
-<span class="sig-name descname"><span class="pre">getStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getStep" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getStep" title="Link to this definition">¶</a></dt>
 <dd><p>Get the number of integration steps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1983,7 +2054,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getSystem">
-<span class="sig-name descname"><span class="pre">getSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getSystem" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getSystem" title="Link to this definition">¶</a></dt>
 <dd><p>Get the latest molecular system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2000,7 +2071,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getTemperature">
-<span class="sig-name descname"><span class="pre">getTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTemperature" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTemperature" title="Link to this definition">¶</a></dt>
 <dd><p>Get the temperature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2020,7 +2091,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getTime">
-<span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTime" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTime" title="Link to this definition">¶</a></dt>
 <dd><p>Get the simulation time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2040,7 +2111,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getTotalEnergy">
-<span class="sig-name descname"><span class="pre">getTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTotalEnergy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getTotalEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTotalEnergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTotalEnergy" title="Link to this definition">¶</a></dt>
 <dd><p>Get the total energy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2060,7 +2131,7 @@ the process.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getTrajectory">
-<span class="sig-name descname"><span class="pre">getTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTrajectory" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getTrajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getTrajectory" title="Link to this definition">¶</a></dt>
 <dd><p>Return a trajectory object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2082,7 +2153,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.getVolume">
-<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getVolume" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AUTO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.getVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.getVolume" title="Link to this definition">¶</a></dt>
 <dd><p>Get the volume.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2102,7 +2173,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.inputFiles">
-<span class="sig-name descname"><span class="pre">inputFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.inputFiles" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">inputFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.inputFiles" title="Link to this definition">¶</a></dt>
 <dd><p>Return the list of input files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2116,7 +2187,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.insertArg">
-<span class="sig-name descname"><span class="pre">insertArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.insertArg" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">insertArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.insertArg" title="Link to this definition">¶</a></dt>
 <dd><p>Insert a command-line argument at a specific index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2131,7 +2202,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.isError">
-<span class="sig-name descname"><span class="pre">isError</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.isError" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isError</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.isError" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether the process exited with an error.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2145,7 +2216,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.isQueued">
-<span class="sig-name descname"><span class="pre">isQueued</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.isQueued" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isQueued</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.isQueued" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether the process is queued.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2159,7 +2230,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.isRunning">
-<span class="sig-name descname"><span class="pre">isRunning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.isRunning" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isRunning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.isRunning" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether the process is running.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2173,25 +2244,25 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.kill">
-<span class="sig-name descname"><span class="pre">kill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.kill" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">kill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.kill" title="Link to this definition">¶</a></dt>
 <dd><p>Kill the running process.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.resetArgs">
-<span class="sig-name descname"><span class="pre">resetArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.resetArgs" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">resetArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.resetArgs" title="Link to this definition">¶</a></dt>
 <dd><p>Reset the command-line arguments.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.resetConfig">
-<span class="sig-name descname"><span class="pre">resetConfig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.resetConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.resetConfig" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">resetConfig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.resetConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.resetConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Reset the configuration parameters.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.run" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.run" title="Link to this definition">¶</a></dt>
 <dd><p>Create and run a new process.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2213,7 +2284,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.runTime">
-<span class="sig-name descname"><span class="pre">runTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.runTime" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">runTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.runTime" title="Link to this definition">¶</a></dt>
 <dd><p>Return the running time for the process (in minutes).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2227,7 +2298,7 @@ sequence.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.setArg">
-<span class="sig-name descname"><span class="pre">setArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setArg" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setArg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setArg" title="Link to this definition">¶</a></dt>
 <dd><p>Set a specific command-line argument.</p>
 <p>For command-line flags, i.e. boolean arguments, the key should
 specify whether the flag is enabled (True) or not (False).</p>
@@ -2243,7 +2314,7 @@ specify whether the flag is enabled (True) or not (False).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.setArgs">
-<span class="sig-name descname"><span class="pre">setArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setArgs" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setArgs" title="Link to this definition">¶</a></dt>
 <dd><p>Set the dictionary of command-line arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2254,7 +2325,7 @@ specify whether the flag is enabled (True) or not (False).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.setConfig">
-<span class="sig-name descname"><span class="pre">setConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.setConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setConfig" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.setConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Set the list of configuration file strings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2266,7 +2337,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.setName">
-<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setName" title="Link to this definition">¶</a></dt>
 <dd><p>Set the process name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2277,7 +2348,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.setSeed">
-<span class="sig-name descname"><span class="pre">setSeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setSeed" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setSeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.setSeed" title="Link to this definition">¶</a></dt>
 <dd><p>Set the random number seed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2288,7 +2359,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.start" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.start" title="Link to this definition">¶</a></dt>
 <dd><p>Start the GROMACS process.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2302,7 +2373,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.stderr">
-<span class="sig-name descname"><span class="pre">stderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.stderr" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">stderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.stderr" title="Link to this definition">¶</a></dt>
 <dd><p>Print the last n lines of the stderr buffer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2313,7 +2384,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.stdout">
-<span class="sig-name descname"><span class="pre">stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.stdout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.stdout" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Process/_gromacs.html#Gromacs.stdout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Process.Gromacs.stdout" title="Link to this definition">¶</a></dt>
 <dd><p>Print the last n lines of the stdout buffer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2324,7 +2395,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.wait">
-<span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.wait" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.wait" title="Link to this definition">¶</a></dt>
 <dd><p>Wait for the process to finish.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2335,7 +2406,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.workDir">
-<span class="sig-name descname"><span class="pre">workDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.workDir" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">workDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.workDir" title="Link to this definition">¶</a></dt>
 <dd><p>Return the working directory.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2349,7 +2420,7 @@ file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Process.Gromacs.writeConfig">
-<span class="sig-name descname"><span class="pre">writeConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.writeConfig" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">writeConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Process.Gromacs.writeConfig" title="Link to this definition">¶</a></dt>
 <dd><p>Write the configuration to file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2393,7 +2464,7 @@ file.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 16, 2023</div>
+              Last updated on Jun 19, 2024</div>
           </div>
           <div class="right-details">
             
@@ -2523,9 +2594,9 @@ file.</p>
     </aside>
   </div>
 </div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../../_static/js/custom.js?v=e0b44004"></script>
     </body>
 </html>

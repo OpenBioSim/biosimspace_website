@@ -15,6 +15,7 @@
    
       ~Custom.__init__
       ~Custom.getConfig
+      ~Custom.getRestraint
       ~Custom.setConfig
    
    
