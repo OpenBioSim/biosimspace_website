@@ -197,6 +197,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/protein_mutations.html#aldose-reductase-alchemical-system-generation">Aldose Reductase - Alchemical System Generation</a></li>
 </ul>
 </li>
 </ul>
@@ -772,6 +774,14 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;SOMD executable doesn&#39;t exist: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">exe</span><span class="p">)</span>
 
+        <span class="c1"># Validate torsion modification kwargs.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_dihedrals</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;zero_dummy_dihedrals&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_dihedrals</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_dihedrals</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_impropers</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;zero_dummy_impropers&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_impropers</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_impropers</span> <span class="o">=</span> <span class="kc">False</span>
+
         <span class="c1"># The names of the input files.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rst_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.rst7&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_top_file</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.prm7&quot;</span><span class="p">)</span>
@@ -869,7 +879,9 @@
                 <span class="c1"># to the lambda = 0 state.</span>
                 <span class="n">pert_mol</span> <span class="o">=</span> <span class="n">_to_pert_file</span><span class="p">(</span>
                     <span class="n">pert_mol</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_pert_file</span><span class="p">,</span>
+                    <span class="n">filename</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pert_file</span><span class="p">,</span>
+                    <span class="n">zero_dummy_dihedrals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_dihedrals</span><span class="p">,</span>
+                    <span class="n">zero_dummy_impropers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_zero_dummy_impropers</span><span class="p">,</span>
                     <span class="n">property_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
                     <span class="n">perturbation_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getPerturbationType</span><span class="p">(),</span>
                 <span class="p">)</span>
@@ -1704,6 +1716,10 @@
 
         <span class="c1"># 1) Atoms.</span>
 
+        <span class="c1"># Store a null LJParameter object for dummy atoms. SOMD requires that</span>
+        <span class="c1"># both sigma and epsilon are set to zero for dummy atoms.</span>
+        <span class="n">dummy_lj</span> <span class="o">=</span> <span class="n">_SireMM</span><span class="o">.</span><span class="n">LJParameter</span><span class="p">()</span>
+
         <span class="k">def</span> <span class="nf">atom_sorting_criteria</span><span class="p">(</span><span class="n">atom</span><span class="p">):</span>
             <span class="n">LJ0</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ0&quot;</span><span class="p">)</span>
             <span class="n">LJ1</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ1&quot;</span><span class="p">)</span>
@@ -1730,6 +1746,13 @@
                     <span class="c1"># Get the initial/final Lennard-Jones properties.</span>
                     <span class="n">LJ0</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ0&quot;</span><span class="p">)</span>
                     <span class="n">LJ1</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ1&quot;</span><span class="p">)</span>
+
+                    <span class="c1"># Dummy atom at lambda = 0.</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">(),</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+                        <span class="n">LJ0</span> <span class="o">=</span> <span class="n">dummy_lj</span>
+                    <span class="c1"># Dummy atom at lambda = 1.</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">(),</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                        <span class="n">LJ1</span> <span class="o">=</span> <span class="n">dummy_lj</span>
 
                     <span class="c1"># Atom data.</span>
                     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;        name           </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">atom</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
@@ -1773,6 +1796,13 @@
                     <span class="c1"># Get the initial/final Lennard-Jones properties.</span>
                     <span class="n">LJ0</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ0&quot;</span><span class="p">)</span>
                     <span class="n">LJ1</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ1&quot;</span><span class="p">)</span>
+
+                    <span class="c1"># Dummy atom at lambda = 0.</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+                        <span class="n">LJ0</span> <span class="o">=</span> <span class="n">dummy_lj</span>
+                    <span class="c1"># Dummy atom at lambda = 1.</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                        <span class="n">LJ1</span> <span class="o">=</span> <span class="n">dummy_lj</span>
 
                     <span class="c1"># Atom data.</span>
                     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;        name           </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">atom</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
@@ -1827,11 +1857,11 @@
 
                 <span class="c1"># Set LJ/charge based on requested perturbed term.</span>
                 <span class="k">if</span> <span class="n">perturbation_type</span> <span class="o">==</span> <span class="s2">&quot;discharge_soft&quot;</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element0&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
-                        <span class="s2">&quot;X&quot;</span>
-                    <span class="p">)</span> <span class="ow">or</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_dummy</span><span class="p">(</span>
+                        <span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">):</span>
                         <span class="c1"># If perturbing TO dummy:</span>
-                        <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
                             <span class="n">atom_type1</span> <span class="o">=</span> <span class="n">atom_type0</span>
 
                             <span class="c1"># In this step, only remove charges from soft-core perturbations.</span>
@@ -1845,7 +1875,7 @@
 
                         <span class="c1"># If perturbing FROM dummy:</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="c1"># All terms have already been perturbed in &quot;5_grow_soft&quot;.</span>
+                            <span class="c1"># All terms have already been perturbed in &quot;grow_soft&quot;.</span>
                             <span class="n">atom_type1</span> <span class="o">=</span> <span class="n">atom_type0</span>
                             <span class="n">LJ0_value</span> <span class="o">=</span> <span class="n">LJ1_value</span> <span class="o">=</span> <span class="p">(</span>
                                 <span class="n">LJ0</span><span class="o">.</span><span class="n">sigma</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
@@ -1865,11 +1895,11 @@
                         <span class="n">charge0_value</span> <span class="o">=</span> <span class="n">charge1_value</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
                 <span class="k">elif</span> <span class="n">perturbation_type</span> <span class="o">==</span> <span class="s2">&quot;vanish_soft&quot;</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element0&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
-                        <span class="s2">&quot;X&quot;</span>
-                    <span class="p">)</span> <span class="ow">or</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_dummy</span><span class="p">(</span>
+                        <span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">):</span>
                         <span class="c1"># If perturbing TO dummy:</span>
-                        <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
                             <span class="c1"># allow atom types to change.</span>
                             <span class="n">atom_type0</span> <span class="o">=</span> <span class="n">atom_type0</span>
                             <span class="n">atom_type1</span> <span class="o">=</span> <span class="n">atom_type1</span>
@@ -1883,7 +1913,7 @@
 
                         <span class="c1"># If perturbing FROM dummy:</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="c1"># All terms have already been perturbed in &quot;5_grow_soft&quot;.</span>
+                            <span class="c1"># All terms have already been perturbed in &quot;grow_soft&quot;.</span>
                             <span class="n">atom_type1</span> <span class="o">=</span> <span class="n">atom_type0</span>
                             <span class="n">LJ0_value</span> <span class="o">=</span> <span class="n">LJ1_value</span> <span class="o">=</span> <span class="p">(</span>
                                 <span class="n">LJ0</span><span class="o">.</span><span class="n">sigma</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
@@ -1903,11 +1933,11 @@
                         <span class="n">charge0_value</span> <span class="o">=</span> <span class="n">charge1_value</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
                 <span class="k">elif</span> <span class="n">perturbation_type</span> <span class="o">==</span> <span class="s2">&quot;flip&quot;</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element0&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
-                        <span class="s2">&quot;X&quot;</span>
-                    <span class="p">)</span> <span class="ow">or</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_dummy</span><span class="p">(</span>
+                        <span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">):</span>
                         <span class="c1"># If perturbing TO dummy:</span>
-                        <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
                             <span class="c1"># atom types have already been changed.</span>
                             <span class="n">atom_type0</span> <span class="o">=</span> <span class="n">atom_type1</span>
 
@@ -1917,7 +1947,7 @@
 
                         <span class="c1"># If perturbing FROM dummy:</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="c1"># All terms have already been perturbed in &quot;5_grow_soft&quot;.</span>
+                            <span class="c1"># All terms have already been perturbed in &quot;grow_soft&quot;.</span>
                             <span class="n">atom_type1</span> <span class="o">=</span> <span class="n">atom_type0</span>
                             <span class="n">LJ0_value</span> <span class="o">=</span> <span class="n">LJ1_value</span> <span class="o">=</span> <span class="p">(</span>
                                 <span class="n">LJ0</span><span class="o">.</span><span class="n">sigma</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
@@ -1937,11 +1967,11 @@
                         <span class="n">charge1_value</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
                 <span class="k">elif</span> <span class="n">perturbation_type</span> <span class="o">==</span> <span class="s2">&quot;grow_soft&quot;</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element0&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
-                        <span class="s2">&quot;X&quot;</span>
-                    <span class="p">)</span> <span class="ow">or</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_dummy</span><span class="p">(</span>
+                        <span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">):</span>
                         <span class="c1"># If perturbing TO dummy:</span>
-                        <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
                             <span class="c1"># atom types have already been changed.</span>
                             <span class="n">atom_type0</span> <span class="o">=</span> <span class="n">atom_type1</span>
 
@@ -1973,11 +2003,11 @@
                         <span class="n">charge0_value</span> <span class="o">=</span> <span class="n">charge1_value</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 
                 <span class="k">elif</span> <span class="n">perturbation_type</span> <span class="o">==</span> <span class="s2">&quot;charge_soft&quot;</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element0&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
-                        <span class="s2">&quot;X&quot;</span>
-                    <span class="p">)</span> <span class="ow">or</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_dummy</span><span class="p">(</span>
+                        <span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">):</span>
                         <span class="c1"># If perturbing TO dummy:</span>
-                        <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
                             <span class="c1"># atom types have already been changed.</span>
                             <span class="n">atom_type0</span> <span class="o">=</span> <span class="n">atom_type1</span>
 
@@ -3531,17 +3561,29 @@
 <span class="sd">        Whether a dummy atom is present.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c1"># Set the element property associated with the end state.</span>
+    <span class="c1"># Set the element and ambertype property associated with the end state.</span>
+    <span class="c1"># We need to check by ambertype too since this molecule may have been</span>
+    <span class="c1"># created via sire.morph.create_from_pertfile, in which case the element</span>
+    <span class="c1"># property will have been set to the end state with the largest mass, i.e.</span>
+    <span class="c1"># may no longer by a dummy.</span>
     <span class="k">if</span> <span class="n">is_lambda1</span><span class="p">:</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="s2">&quot;element1&quot;</span>
+        <span class="n">element_prop</span> <span class="o">=</span> <span class="s2">&quot;element1&quot;</span>
+        <span class="n">ambertype_prop</span> <span class="o">=</span> <span class="s2">&quot;ambertype1&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="s2">&quot;element0&quot;</span>
+        <span class="n">element_prop</span> <span class="o">=</span> <span class="s2">&quot;element0&quot;</span>
+        <span class="n">ambertype_prop</span> <span class="o">=</span> <span class="s2">&quot;ambertype0&quot;</span>
 
-    <span class="n">dummy</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">element_dummy</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ambertype_dummy</span> <span class="o">=</span> <span class="s2">&quot;du&quot;</span>
+
+    <span class="c1"># Check that the molecule has the ambertype property.</span>
+    <span class="n">has_ambertype</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="n">ambertype_prop</span><span class="p">)</span>
 
     <span class="c1"># Check whether an of the atoms is a dummy.</span>
     <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idxs</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span> <span class="o">==</span> <span class="n">dummy</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">element_prop</span><span class="p">)</span> <span class="o">==</span> <span class="n">element_dummy</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="n">has_ambertype</span> <span class="ow">and</span> <span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">ambertype_prop</span><span class="p">)</span> <span class="o">==</span> <span class="n">ambertype_dummy</span>
+        <span class="p">):</span>
             <span class="k">return</span> <span class="kc">True</span>
 
     <span class="k">return</span> <span class="kc">False</span>
@@ -3550,6 +3592,7 @@
 <span class="k">def</span> <span class="nf">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal function to return whether each atom is a dummy.</span>
+<span class="sd">    If a single index is pased, then a single boolean is returned.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -3570,23 +3613,52 @@
 <span class="sd">        Whether each atom is a dummy.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c1"># Set the element property associated with the end state.</span>
+    <span class="c1"># Set the element and ambertype property associated with the end state.</span>
+    <span class="c1"># We need to check by ambertype too since this molecule may have been</span>
+    <span class="c1"># created via sire.morph.create_from_pertfile, in which case the element</span>
+    <span class="c1"># property will have been set to the end state with the largest mass, i.e.</span>
+    <span class="c1"># may no longer by a dummy.</span>
     <span class="k">if</span> <span class="n">is_lambda1</span><span class="p">:</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="s2">&quot;element1&quot;</span>
+        <span class="n">element_prop</span> <span class="o">=</span> <span class="s2">&quot;element1&quot;</span>
+        <span class="n">ambertype_prop</span> <span class="o">=</span> <span class="s2">&quot;ambertype1&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="s2">&quot;element0&quot;</span>
+        <span class="n">element_prop</span> <span class="o">=</span> <span class="s2">&quot;element0&quot;</span>
+        <span class="n">ambertype_prop</span> <span class="o">=</span> <span class="s2">&quot;ambertype0&quot;</span>
 
-    <span class="c1"># Store a dummy element.</span>
-    <span class="n">dummy</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_lambda1</span><span class="p">:</span>
+        <span class="n">element_prop</span> <span class="o">=</span> <span class="s2">&quot;element1&quot;</span>
+        <span class="n">ambertype_prop</span> <span class="o">=</span> <span class="s2">&quot;ambertype1&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">element_prop</span> <span class="o">=</span> <span class="s2">&quot;element0&quot;</span>
+        <span class="n">ambertype_prop</span> <span class="o">=</span> <span class="s2">&quot;ambertype0&quot;</span>
+
+    <span class="n">element_dummy</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ambertype_dummy</span> <span class="o">=</span> <span class="s2">&quot;du&quot;</span>
+
+    <span class="c1"># Check that the molecule has the ambertype property.</span>
+    <span class="n">has_ambertype</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">hasProperty</span><span class="p">(</span><span class="n">ambertype_prop</span><span class="p">)</span>
 
     <span class="c1"># Initialise a list to store the state of each atom.</span>
     <span class="n">is_dummy</span> <span class="o">=</span> <span class="p">[]</span>
 
+    <span class="c1"># Convert single index to list.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">idxs</span><span class="p">]</span>
+
     <span class="c1"># Check whether each of the atoms is a dummy.</span>
     <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idxs</span><span class="p">:</span>
-        <span class="n">is_dummy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span> <span class="o">==</span> <span class="n">dummy</span><span class="p">)</span>
+        <span class="n">is_dummy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">element_prop</span><span class="p">)</span> <span class="o">==</span> <span class="n">element_dummy</span>
+            <span class="ow">or</span> <span class="p">(</span>
+                <span class="n">has_ambertype</span>
+                <span class="ow">and</span> <span class="n">mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">ambertype_prop</span><span class="p">)</span> <span class="o">==</span> <span class="n">ambertype_dummy</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">is_dummy</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">is_dummy</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">is_dummy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">is_dummy</span>
 
 
 <span class="k">def</span> <span class="nf">_random_suffix</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="n">_string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">_string</span><span class="o">.</span><span class="n">digits</span><span class="p">):</span>
@@ -4137,7 +4209,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 15, 2024</div>
+              Last updated on Jul 09, 2024</div>
           </div>
           <div class="right-details">
             

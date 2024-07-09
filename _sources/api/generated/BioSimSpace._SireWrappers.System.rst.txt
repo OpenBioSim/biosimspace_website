@@ -18,6 +18,7 @@
       ~System.charge
       ~System.copy
       ~System.fileFormat
+      ~System.getAminoAcids
       ~System.getAtom
       ~System.getAtoms
       ~System.getAxisAlignedBoundingBox
@@ -25,6 +26,7 @@
       ~System.getIndex
       ~System.getMolecule
       ~System.getMolecules
+      ~System.getNucleotides
       ~System.getPerturbableMolecules
       ~System.getResidue
       ~System.getResidues
@@ -32,9 +34,11 @@
       ~System.getWaterMolecules
       ~System.isSame
       ~System.makeWhole
+      ~System.nAminoAcids
       ~System.nAtoms
       ~System.nChains
       ~System.nMolecules
+      ~System.nNucleotides
       ~System.nPerturbableMolecules
       ~System.nResidues
       ~System.nWaterMolecules

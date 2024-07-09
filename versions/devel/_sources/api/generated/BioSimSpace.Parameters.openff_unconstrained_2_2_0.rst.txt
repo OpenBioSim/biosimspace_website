@@ -1,6 +1,0 @@
-﻿BioSimSpace.Parameters.openff\_unconstrained\_2\_2\_0
-=====================================================
-
-.. currentmodule:: BioSimSpace.Parameters
-
-.. autofunction:: openff_unconstrained_2_2_0

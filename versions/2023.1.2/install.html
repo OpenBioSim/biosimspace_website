@@ -1,1 +1,878 @@
-../../install.html
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Compatibility" href="compatibility.html" /><link rel="prev" title="Features" href="features.html" />
+
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Installation - openbiosim - biosimspace</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">openbiosim - biosimspace</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/hydration_freenrg.html">Hydration free energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/metadynamics.html">Metadynamics</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="guides/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="guides/nodes.html">Nodes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Nodes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="guides/protocols.html">Protocols</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Protocols</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of API Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Align.html">BioSimSpace.Align</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of BioSimSpace.Align</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Align.generateNetwork.html">BioSimSpace.Align.generateNetwork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Align.matchAtoms.html">BioSimSpace.Align.matchAtoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Align.rmsdAlign.html">BioSimSpace.Align.rmsdAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Align.flexAlign.html">BioSimSpace.Align.flexAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Align.merge.html">BioSimSpace.Align.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Align.viewMapping.html">BioSimSpace.Align.viewMapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Box.html">BioSimSpace.Box</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of BioSimSpace.Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Box.boxTypes.html">BioSimSpace.Box.boxTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Box.generateBoxParameters.html">BioSimSpace.Box.generateBoxParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Box.cubic.html">BioSimSpace.Box.cubic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Box.rhombicDodecahedronSquare.html">BioSimSpace.Box.rhombicDodecahedronSquare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Box.rhombicDodecahedronHexagon.html">BioSimSpace.Box.rhombicDodecahedronHexagon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Box.truncatedOctahedron.html">BioSimSpace.Box.truncatedOctahedron</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Convert.html">BioSimSpace.Convert</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of BioSimSpace.Convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.smiles.html">BioSimSpace.Convert.smiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_FreeEnergy.html">BioSimSpace.FreeEnergy</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of BioSimSpace.FreeEnergy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.FreeEnergy.Relative.html">BioSimSpace.FreeEnergy.Relative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.FreeEnergy.engines.html">BioSimSpace.FreeEnergy.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.FreeEnergy.getData.html">BioSimSpace.FreeEnergy.getData</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Gateway.html">BioSimSpace.Gateway</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of BioSimSpace.Gateway</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Node.html">BioSimSpace.Gateway.Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Boolean.html">BioSimSpace.Gateway.Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Integer.html">BioSimSpace.Gateway.Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Float.html">BioSimSpace.Gateway.Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.String.html">BioSimSpace.Gateway.String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.File.html">BioSimSpace.Gateway.File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.FileSet.html">BioSimSpace.Gateway.FileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Length.html">BioSimSpace.Gateway.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Area.html">BioSimSpace.Gateway.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.readPDB.html">BioSimSpace.IO.readPDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.readPerturbableSystem.html">BioSimSpace.IO.readPerturbableSystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.saveMolecules.html">BioSimSpace.IO.saveMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.IO.savePerturbableSystem.html">BioSimSpace.IO.savePerturbableSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Metadynamics.html">BioSimSpace.Metadynamics</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.Metadynamics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.engines.html">BioSimSpace.Metadynamics.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.run.html">BioSimSpace.Metadynamics.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.Bound.html">BioSimSpace.Metadynamics.Bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.Grid.html">BioSimSpace.Metadynamics.Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.Restraint.html">BioSimSpace.Metadynamics.Restraint</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="api/index_Metadynamics_CollectiveVariable.html">BioSimSpace.Metadynamics.CollectiveVariable</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of BioSimSpace.Metadynamics.CollectiveVariable</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.list.html">BioSimSpace.Metadynamics.CollectiveVariable.list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Distance.html">BioSimSpace.Metadynamics.CollectiveVariable.Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Funnel.html">BioSimSpace.Metadynamics.CollectiveVariable.Funnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html">BioSimSpace.Metadynamics.CollectiveVariable.RMSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Torsion.html">BioSimSpace.Metadynamics.CollectiveVariable.Torsion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_MD.html">BioSimSpace.MD</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of BioSimSpace.MD</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.MD.engines.html">BioSimSpace.MD.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.MD.run.html">BioSimSpace.MD.run</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Node.html">BioSimSpace.Node</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of BioSimSpace.Node</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Node.help.html">BioSimSpace.Node.help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Node.list.html">BioSimSpace.Node.list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Node.run.html">BioSimSpace.Node.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Node.setNodeDirectory.html">BioSimSpace.Node.setNodeDirectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Notebook.html">BioSimSpace.Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of BioSimSpace.Notebook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Notebook.plot.html">BioSimSpace.Notebook.plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Notebook.plotContour.html">BioSimSpace.Notebook.plotContour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Notebook.plotOverlapMatrix.html">BioSimSpace.Notebook.plotOverlapMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Notebook.View.html">BioSimSpace.Notebook.View</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Parameters.html">BioSimSpace.Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of BioSimSpace.Parameters</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.amberForceFields.html">BioSimSpace.Parameters.amberForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.amberProteinForceFields.html">BioSimSpace.Parameters.amberProteinForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.ff03.html">BioSimSpace.Parameters.ff03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.ff14SB.html">BioSimSpace.Parameters.ff14SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.ff99.html">BioSimSpace.Parameters.ff99</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.ff99SB.html">BioSimSpace.Parameters.ff99SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.ff99SBildn.html">BioSimSpace.Parameters.ff99SBildn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.forceFields.html">BioSimSpace.Parameters.forceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.gaff.html">BioSimSpace.Parameters.gaff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.gaff2.html">BioSimSpace.Parameters.gaff2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openForceFields.html">BioSimSpace.Parameters.openForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_1_0.html">BioSimSpace.Parameters.openff_unconstrained_1_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_1_1.html">BioSimSpace.Parameters.openff_unconstrained_1_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_2_0.html">BioSimSpace.Parameters.openff_unconstrained_1_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_2_1.html">BioSimSpace.Parameters.openff_unconstrained_1_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_0.html">BioSimSpace.Parameters.openff_unconstrained_1_3_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Process.html">BioSimSpace.Process</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of BioSimSpace.Process</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.engines.html">BioSimSpace.Process.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.createProcess.html">BioSimSpace.Process.createProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.Amber.html">BioSimSpace.Process.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.Gromacs.html">BioSimSpace.Process.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.Namd.html">BioSimSpace.Process.Namd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.OpenMM.html">BioSimSpace.Process.OpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.Plumed.html">BioSimSpace.Process.Plumed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.Somd.html">BioSimSpace.Process.Somd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Process.ProcessRunner.html">BioSimSpace.Process.ProcessRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of BioSimSpace.Protocol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Solvent.html">BioSimSpace.Solvent</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of BioSimSpace.Solvent</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.solvate.html">BioSimSpace.Solvent.solvate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.spc.html">BioSimSpace.Solvent.spc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.spce.html">BioSimSpace.Solvent.spce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of BioSimSpace.Trajectory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Trajectory.Trajectory.html">BioSimSpace.Trajectory.Trajectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of BioSimSpace.Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Angle.html">BioSimSpace.Types.Angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Area.html">BioSimSpace.Types.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Charge.html">BioSimSpace.Types.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Vector.html">BioSimSpace.Types.Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Volume.html">BioSimSpace.Types.Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of BioSimSpace.Units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Length.meter.html">BioSimSpace.Units.Length.meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Length.angstrom.html">BioSimSpace.Units.Length.angstrom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Length.nanometer.html">BioSimSpace.Units.Length.nanometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Length.picometer.html">BioSimSpace.Units.Length.picometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Area.meter2.html">BioSimSpace.Units.Area.meter2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Area.angstrom2.html">BioSimSpace.Units.Area.angstrom2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Area.nanometer2.html">BioSimSpace.Units.Area.nanometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Area.picometer2.html">BioSimSpace.Units.Area.picometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Angle.radian.html">BioSimSpace.Units.Angle.radian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Angle.degree.html">BioSimSpace.Units.Angle.degree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Volume.meter3.html">BioSimSpace.Units.Volume.meter3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Volume.angstrom3.html">BioSimSpace.Units.Volume.angstrom3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Volume.nanometer3.html">BioSimSpace.Units.Volume.nanometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Pressure.atm.html">BioSimSpace.Units.Pressure.atm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Pressure.bar.html">BioSimSpace.Units.Pressure.bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Temperature.kelvin.html">BioSimSpace.Units.Temperature.kelvin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Temperature.celsius.html">BioSimSpace.Units.Temperature.celsius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Temperature.fahrenheit.html">BioSimSpace.Units.Temperature.fahrenheit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.day.html">BioSimSpace.Units.Time.day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.hour.html">BioSimSpace.Units.Time.hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.minute.html">BioSimSpace.Units.Time.minute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.second.html">BioSimSpace.Units.Time.second</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.millisecond.html">BioSimSpace.Units.Time.millisecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.nanosecond.html">BioSimSpace.Units.Time.nanosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.picosecond.html">BioSimSpace.Units.Time.picosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Time.femtosecond.html">BioSimSpace.Units.Time.femtosecond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Config.html">BioSimSpace._Config</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of BioSimSpace._Config</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Config.Amber.html">BioSimSpace._Config.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Config.Gromacs.html">BioSimSpace._Config.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Config.Somd.html">BioSimSpace._Config.Somd</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of BioSimSpace._Exceptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.AlignmentError.html">BioSimSpace._Exceptions.AlignmentError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.AnalysisError.html">BioSimSpace._Exceptions.AnalysisError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.ConversionError.html">BioSimSpace._Exceptions.ConversionError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.IncompatibleError.html">BioSimSpace._Exceptions.IncompatibleError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.MissingSoftwareError.html">BioSimSpace._Exceptions.MissingSoftwareError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.ParameterisationError.html">BioSimSpace._Exceptions.ParameterisationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Exceptions.ThirdPartyError.html">BioSimSpace._Exceptions.ThirdPartyError</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_SireWrappers.html">BioSimSpace._SireWrappers</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of BioSimSpace._SireWrappers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.Atom.html">BioSimSpace._SireWrappers.Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.Bond.html">BioSimSpace._SireWrappers.Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.Molecule.html">BioSimSpace._SireWrappers.Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.Molecules.html">BioSimSpace._SireWrappers.Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.Residue.html">BioSimSpace._SireWrappers.Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.System.html">BioSimSpace._SireWrappers.System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._SireWrappers.SearchResult.html">BioSimSpace._SireWrappers.SearchResult</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="api/index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of BioSimSpace._Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils.WorkDir.html">BioSimSpace._Utils.WorkDir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils.cd.html">BioSimSpace._Utils.cd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils.command_split.html">BioSimSpace._Utils.command_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils._module_stub.html">BioSimSpace._Utils._module_stub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils._try_import.html">BioSimSpace._Utils._try_import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils._have_imported.html">BioSimSpace._Utils._have_imported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace._Utils._assert_imported.html">BioSimSpace._Utils._assert_imported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="contributing/development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of Developer’s guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/packaging.html">Packaging releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="installation">
+<span id="ref-install"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<section id="no-installation-run-in-a-web-browser">
+<h2>1. No-installation - Run in a web browser<a class="headerlink" href="#no-installation-run-in-a-web-browser" title="Link to this heading">#</a></h2>
+<p>We run a completely free <a class="reference external" href="https://try.openbiosim.org">JupyterHub</a> on
+which we have BioSimSpace installed.</p>
+<p>This is at <a class="reference external" href="https://try.openbiosim.org">try.openbiosim.org</a>.
+You only need a <a class="reference external" href="https://github.com">GitHub account</a>, which is
+used to log into the server.</p>
+<p>Simply go to <a class="reference external" href="https://try.openbiosim.org">try.openbiosim.org</a> in your
+web browser, and log in using your <a class="reference external" href="https://github.com">GitHub account</a>.
+This will start a Jupyter Lab instance. In here you can start a terminal,
+and then use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> directly via <code class="docutils literal notranslate"><span class="pre">ipython</span></code>. Or you can start a Jupyter
+notebook and use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> there.</p>
+<p>To import <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>, at a Python prompt type</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+</pre></div>
+</div>
+<p>If this imports without errors, then everything is working.
+We encourage you to take a look at <a class="reference internal" href="tutorials/index.html"><span class="doc">the tutorials</span></a>
+to learn how to use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This free JupyterHub server is limited. You only have up to 2 GB of
+memory and at most 1 processor core. Disk storage is temporary,
+and any data will be lost when you log out. Because it only
+supports a limited number of concurrent users, inactive sessions will be
+automatically stopped and logged out after 20 minutes. Please only
+use this service to explore and learn <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>.
+Do not use it for production work.</p>
+</div>
+</section>
+<section id="easy-installation-run-in-a-conda-environment">
+<h2>2. Easy installation - Run in a conda environment<a class="headerlink" href="#easy-installation-run-in-a-conda-environment" title="Link to this heading">#</a></h2>
+<p>The easiest way to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is in a new
+<a class="reference external" href="https://anaconda.org">conda environment</a>.</p>
+<p>You can use any conda environment or installation. We recommend using
+<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
+as this is pre-configured to use <a class="reference external" href="https://conda-forge.org">conda-forge</a>,
+and bundles <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">mamba</a>, which
+is a fast drop-in replacement for <a class="reference external" href="https://conda.io">conda</a>.</p>
+<section id="either-install-a-new-copy-of-mambaforge">
+<span id="install-mambaforge"></span><h3>Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code><a class="headerlink" href="#either-install-a-new-copy-of-mambaforge" title="Link to this heading">#</a></h3>
+<p>To install a new copy of
+<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a>,
+first download a <code class="docutils literal notranslate"><span class="pre">Mambaforge</span></code> from
+<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">this page</a> that
+matches your operating system and processor.</p>
+<p>Install <code class="docutils literal notranslate"><span class="pre">Mambaforge</span></code> following the
+<a class="reference external" href="https://github.com/conda-forge/miniforge#install">instructions here</a>.</p>
+<p>Once installed, you should be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command to
+install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help on
+how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
+</section>
+<section id="or-use-an-existing-anaconda-miniconda-install">
+<h3>Or… Use an existing anaconda/miniconda install<a class="headerlink" href="#or-use-an-existing-anaconda-miniconda-install" title="Link to this heading">#</a></h3>
+<p>If you want to use an existing anaconda or miniconda installation,
+then first open a terminal with that distribution activated.
+For example, open a terminal via anaconda navigator, or
+open a terminal and run
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/path/to/conda/bin/activate</span></code>, where <code class="docutils literal notranslate"><span class="pre">/path/to/conda</span></code> is
+the full path to your anaconda or miniconda installation.</p>
+<p>You should now be able to run the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command to install other
+packages (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">-h</span></code> will print out help on how to use the
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> command). We highly recommend that you use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> as a
+drop-in replacement for <code class="docutils literal notranslate"><span class="pre">conda</span></code>, so first install <code class="docutils literal notranslate"><span class="pre">mamba</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
+</pre></div>
+</div>
+<p>This should install mamba. If this fails, then your anaconda or miniconda
+environment is likely quite full, or else it is outdated. We recommend
+going back and following <em class="xref py py-obj">the instructions</em>
+to install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code>.</p>
+<p>If this works, then you should now be able to run the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command
+to install other packages (e.g. <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">-h</span></code> will print out help
+on how to use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command).</p>
+</section>
+<section id="and-then-install-biosimspace-into-a-new-environment">
+<h3>And then… Install BioSimSpace into a new environment<a class="headerlink" href="#and-then-install-biosimspace-into-a-new-environment" title="Link to this heading">#</a></h3>
+<p>We recommend that <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is installed into a new (clean) environment.
+This minimises the risk of failures caused by incompatible dependencies.</p>
+<p>BioSimSpace is currently packaged for Python 3.8 and Python 3.9. We will start
+by creating a Python 3.9 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.10&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">python&lt;3.10</span></code> as this will install the most recent 3.9
+release of python.</p>
+</div>
+<p>We can now install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> into that environment by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>biosimspace
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The option <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">openbiosim</span></code> tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>
+into the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment. The option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">openbiosim</span></code>
+tells <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> from the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>
+conda channel.</p>
+</div>
+<p>If you want the latest development release, then install by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;openbiosim/label/dev&quot;</span><span class="w"> </span>biosimspace
+</pre></div>
+</div>
+<p>To install the latest development version you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>biosimspace
+mamba<span class="w"> </span>activate<span class="w"> </span>openbiosim-dev
+</pre></div>
+</div>
+<p>To run <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>, you must now activate the <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code> environment.
+You can do this by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>openbiosim
+</pre></div>
+</div>
+<p>You can now start a Python session (e.g. running <code class="docutils literal notranslate"><span class="pre">python</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> if you installed those). At the
+Python prompt you can import <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> by typing</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+</pre></div>
+</div>
+<p>If this imports without errors, then everything is working.
+We encourage you to take a look at <a class="reference internal" href="tutorials/index.html"><span class="doc">the tutorials</span></a>
+to learn how to use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
+</section>
+</section>
+<section id="also-easy-installation-run-in-a-container">
+<h2>3. Also easy installation - Run in a container<a class="headerlink" href="#also-easy-installation-run-in-a-container" title="Link to this heading">#</a></h2>
+<p>Another route to install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is to download and run our
+pre-built containers. These can be run via
+<a class="reference external" href="https://www.docker.com">docker</a> (on Linux, MacOS and Windows)
+or via <a class="reference external" href="https://podman.io">podman</a> (on Linux) on Intel (X86-64)
+or ARM64 processors.</p>
+<p>To run via <a class="reference external" href="https://www.docker.com">docker</a>, simply type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>-it<span class="w"> </span>openbiosim/biosimspace:latest
+</pre></div>
+</div>
+<p>or, via <a class="reference external" href="https://podman.io">podman</a>, type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>podman<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>-it<span class="w"> </span>openbiosim/biosimspace:latest
+</pre></div>
+</div>
+<p>This will download the container from
+<a class="reference external" href="https://hub.docker.com/r/openbiosim/biosimspace">hub.docker.com</a> and
+will start a command prompt in that container.</p>
+<p>You can now type <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>
+to start a python, ipython or jupyter lab session.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The option <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">8888:8888</span></code> tells docker/podman to redirect
+port <code class="docutils literal notranslate"><span class="pre">8888</span></code> on your computer to port <code class="docutils literal notranslate"><span class="pre">8888</span></code> in the
+container. This will let you open a browser and navigate to
+the URL printed by <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> if you are using jupyter.
+You can drop this option if you don’t want to use
+<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can map directories from your computer into the container
+by using the <code class="docutils literal notranslate"><span class="pre">-v</span></code> option. For example,
+<code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">$HOME/input:/home/openbiosim/input</span></code> would map your
+<code class="docutils literal notranslate"><span class="pre">input</span></code> folder in your home directory to the <code class="docutils literal notranslate"><span class="pre">input</span></code> folder
+in the home directory of the container. This will let <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code>
+read and write files on your computer.</p>
+</div>
+<p>You can now start a Python session (e.g. running <code class="docutils literal notranslate"><span class="pre">python</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">ipython</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> if you installed those). At the
+Python prompt you can import <code class="xref py py-mod docutils literal notranslate"><span class="pre">biosimspace</span></code> by typing</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+</pre></div>
+</div>
+<p>If this imports without errors, then everything is working.
+We encourage you to take a look at <a class="reference internal" href="tutorials/index.html"><span class="doc">the tutorials</span></a>
+to learn how to use <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> or the
+<a class="reference internal" href="quickstart/index.html"><span class="doc">quickstart guide</span></a> if you want an overview.</p>
+</section>
+<section id="harder-installation-compile-from-source">
+<h2>4. Harder installation - Compile from source<a class="headerlink" href="#harder-installation-compile-from-source" title="Link to this heading">#</a></h2>
+<p>The following documents a full installation of BioSimSpace from source. Before
+starting, you’ll need a working <a class="reference external" href="https://git-scm.com">Git</a> installation.</p>
+<p>BioSimSpace is built on top of the <a class="reference external" href="https://github.com/openbiosim/sire">Sire</a>
+molecular simulation framework. To download and install Sire, follow the
+instructions <a class="reference external" href="https://sire.openbiosim.org/install.html">here</a>, making
+sure that BioSimSpace’s dependencies are installed into the Sire conda
+environment at the point at which Sire is installed.</p>
+<p>Next you will need to download BioSimSpace and install it into your Sire
+Conda environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openbiosim/biosimspace
+<span class="nb">cd</span><span class="w"> </span>biosimspace/python
+python<span class="w"> </span>setup.py<span class="w"> </span>install
+</pre></div>
+</div>
+<p>If you plan to develop and want an editable install, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
+</pre></div>
+</div>
+<p>If you want to skip the installation of BioSimSpace dependencies, e.g. if they
+are already installed, then you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BSS_SKIP_DEPENDENCIES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
+</pre></div>
+</div>
+<p>Once finished, you can test the installation by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python
+</pre></div>
+</div>
+<p>Then try importing the BioSimSpace package:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+</pre></div>
+</div>
+<p>If you don’t want to install Sire from source, an alternative is to create a conda
+environment containing only the dependencies of BioSimSpace, then install the
+latest development code into that.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>openbiosim/label/dev<span class="w"> </span>biosimspace<span class="w"> </span>--only-deps
+mamba<span class="w"> </span>activate<span class="w"> </span>openbiosim-dev
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openbiosim/biosimspace
+<span class="nb">cd</span><span class="w"> </span>biosimspace/python
+<span class="nv">BSS_SKIP_DEPENDENCIES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
+</pre></div>
+</div>
+<p>(You may also want to install optional dependencies, such as <code class="docutils literal notranslate"><span class="pre">ambertools</span></code> and
+<code class="docutils literal notranslate"><span class="pre">gromacs</span></code> into your environment.)</p>
+</section>
+<section id="common-issues">
+<h2>5. Common issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>If you experience problems with <a class="reference external" href="https://matplotlib.org">Matplotlib</a> when
+importing BioSimSpace on macOS, e.g.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RuntimeError**:<span class="w"> </span>Python<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installed<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>framework.
+</pre></div>
+</div>
+<p>simply add the following to <code class="docutils literal notranslate"><span class="pre">~/.matplotlib/matplotlibrc</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>backend:<span class="w"> </span>TkAgg
+</pre></div>
+</div>
+<p>Note that plotting functionality will be disabled if you are using
+BioSimSpace on a remote server without X forwarding.</p>
+<ul class="simple">
+<li><p>If you experience problems with <a class="reference external" href="https://jupyter.org">Jupyter</a> permissions,
+try removing <code class="docutils literal notranslate"><span class="pre">$HOME/.jupyter</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/jupyter</span></code></p></li>
+</ul>
+</section>
+<section id="external-dependencies">
+<h2>6. External dependencies<a class="headerlink" href="#external-dependencies" title="Link to this heading">#</a></h2>
+<p>Several additional packages are required for full access to all of BioSimSpace’s
+functionality. Please download and install these packages according to their
+recommended installation instructions.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://ambermd.org">Amber / AmberTools</a> – <em>Dynamics / Parameterisation</em></p></li>
+<li><p><a class="reference external" href="http://www.gromacs.org">Gromacs</a> – <em>Dynamics / Parameterisation / Solvation</em></p></li>
+<li><p><a class="reference external" href="http://www.ks.uiuc.edu/Research/namd">Namd</a> – <em>Dynamics</em></p></li>
+</ul>
+<p>(Note that BioSimSpace is built to be compatible with the <code class="docutils literal notranslate"><span class="pre">ambertools</span></code> and
+<code class="docutils literal notranslate"><span class="pre">gromacs</span></code> packages from conda-forge, but they are not included as hard
+requirement. This means that BioSimSpace can be used in conda environments
+with and without them. We’ve taken this approach to enable the use of stripped
+down environments, and to avoid clashes with external versions of the packages,
+which may be better optimised for specific hardware and usage requirements.)</p>
+<p>For <a class="reference external" href="http://ambermd.org">Amber / AmberTools</a>, we also recommend adding
+<code class="docutils literal notranslate"><span class="pre">${AMBERHOME}/bin</span></code> to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> to ensure that its binaries are
+visible to third-party libraries, such as
+<a class="reference external" href="https://github.com/openforcefield/openff-toolkit">openff-toolkit</a>.</p>
+<p>Please visit our <a class="reference internal" href="compatibility.html#ref-compatibility"><span class="std std-ref">compatibility</span></a> page to see which
+versions of the external dependencies BioSimSpace has currently been tested
+against.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="compatibility.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Compatibility</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="features.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Features</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Jul 09, 2024</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#no-installation-run-in-a-web-browser">1. No-installation - Run in a web browser</a></li>
+<li><a class="reference internal" href="#easy-installation-run-in-a-conda-environment">2. Easy installation - Run in a conda environment</a><ul>
+<li><a class="reference internal" href="#either-install-a-new-copy-of-mambaforge">Either… Install a new copy of <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code></a></li>
+<li><a class="reference internal" href="#or-use-an-existing-anaconda-miniconda-install">Or… Use an existing anaconda/miniconda install</a></li>
+<li><a class="reference internal" href="#and-then-install-biosimspace-into-a-new-environment">And then… Install BioSimSpace into a new environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#also-easy-installation-run-in-a-container">3. Also easy installation - Run in a container</a></li>
+<li><a class="reference internal" href="#harder-installation-compile-from-source">4. Harder installation - Compile from source</a></li>
+<li><a class="reference internal" href="#common-issues">5. Common issues</a></li>
+<li><a class="reference internal" href="#external-dependencies">6. External dependencies</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/js/custom.js?v=e0b44004"></script>
+    </body>
+</html>

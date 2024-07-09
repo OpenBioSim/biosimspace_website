@@ -198,6 +198,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html#aldose-reductase-alchemical-system-generation">Aldose Reductase - Alchemical System Generation</a></li>
 </ul>
 </li>
 </ul>
@@ -545,7 +547,7 @@
 <h1>BioSimSpace.Align.merge<a class="headerlink" href="#biosimspace-align-merge" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="BioSimSpace.Align.merge">
-<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Align.</span></span><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_ring_breaking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_ring_size_change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Align/_align.html#merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Align.merge" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Align.</span></span><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_ring_breaking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_ring_size_change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Align/_align.html#merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Align.merge" title="Link to this definition">#</a></dt>
 <dd><p>Create a merged molecule from ‘molecule0’ and ‘molecule1’ based on the
 atom index ‘mapping’. The merged molecule can be used in single topology
 free-energy simulations.</p>
@@ -565,6 +567,8 @@ connectivity changes not as the result of a ring transformation.
 This will likely lead to an unstable perturbation. This option
 takes precedence over ‘allow_ring_breaking’ and
 ‘allow_ring_size_change’.</p></li>
+<li><p><strong>roi</strong> (<em>list</em>) – The region of interest to merge.
+Consists of a list of ROI residue indices.</p></li>
 <li><p><strong>property_map0</strong> (<em>dict</em>) – A dictionary that maps “properties” in molecule0 to their user
 defined values. This allows the user to refer to properties
 with their own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
@@ -583,6 +587,12 @@ defined values.</p></li>
 <p>Merge molecule0 and molecule1 based on a precomputed mapping.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">merged</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Merge molecule0 and molecule1 based on a precomputed mapping and a region
+of interest.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">merged</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Merge molecule0 with molecule1. Since no mapping is passed one will be
@@ -628,7 +638,7 @@ will be used to align molecule0 to molecule1 based on the resulting mapping.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 15, 2024</div>
+              Last updated on Jul 09, 2024</div>
           </div>
           <div class="right-details">
             

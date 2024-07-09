@@ -198,6 +198,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html#aldose-reductase-alchemical-system-generation">Aldose Reductase - Alchemical System Generation</a></li>
 </ul>
 </li>
 </ul>
@@ -567,10 +569,12 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>molecule</strong> – The parameterised molecule.</p>
+<dd class="field-even"><p><strong>process</strong> – A process to parameterise the molecule in the background. Call the
+.getMolecule() method on the returned process to block until the
+parameterisation is complete and get the parameterised molecule.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a></p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -608,7 +612,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 15, 2024</div>
+              Last updated on Jul 09, 2024</div>
           </div>
           <div class="right-details">
             

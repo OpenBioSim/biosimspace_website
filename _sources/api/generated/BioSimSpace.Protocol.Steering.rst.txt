@@ -19,6 +19,7 @@
       ~Steering.getPressure
       ~Steering.getReportInterval
       ~Steering.getRestartInterval
+      ~Steering.getRestraint
       ~Steering.getRestraints
       ~Steering.getRunTime
       ~Steering.getSchedule

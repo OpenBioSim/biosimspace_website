@@ -197,6 +197,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/protein_mutations.html#aldose-reductase-alchemical-system-generation">Aldose Reductase - Alchemical System Generation</a></li>
 </ul>
 </li>
 </ul>
@@ -655,8 +657,10 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 
-<span class="sd">    molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">        The parameterised molecule.</span>
+<span class="sd">    process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">        A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">        .getMolecule() method on the returned process to block until the</span>
+<span class="sd">        parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">forcefield</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -753,8 +757,10 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 
-<span class="sd">    molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">        The parameterised molecule.</span>
+<span class="sd">    process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">        A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">        .getMolecule() method on the returned process to block until the</span>
+<span class="sd">        parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">forcefield</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -861,8 +867,10 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 
-<span class="sd">    molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">        The parameterised molecule.</span>
+<span class="sd">    process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">        A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">        .getMolecule() method on the returned process to block until the</span>
+<span class="sd">        parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">_amber_home</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -957,8 +965,10 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 
-<span class="sd">    molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">        The parameterised molecule.</span>
+<span class="sd">    process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">        A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">        .getMolecule() method on the returned process to block until the</span>
+<span class="sd">        parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">_amber_home</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1057,8 +1067,10 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 
-<span class="sd">    molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">        The parameterised molecule.</span>
+<span class="sd">    process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">        A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">        .getMolecule() method on the returned process to block until the</span>
+<span class="sd">        parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="kn">from</span> <span class="nn">sire.legacy.Base</span> <span class="kn">import</span> <span class="n">findExe</span> <span class="k">as</span> <span class="n">_findExe</span>
@@ -1631,8 +1643,10 @@
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 
-<span class="sd">        molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">            The parameterised molecule.</span>
+<span class="sd">        process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">            A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">            .getMolecule() method on the returned process to block until the</span>
+<span class="sd">            parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_parameterise_amber_protein</span><span class="p">(</span>
             <span class="n">name</span><span class="p">,</span>
@@ -1696,8 +1710,10 @@
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 
-<span class="sd">        molecule : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">            The parameterised molecule.</span>
+<span class="sd">        process : :class:`Process &lt;BioSimSpace.Parameters._process.Process&gt;`</span>
+<span class="sd">            A process to parameterise the molecule in the background. Call the</span>
+<span class="sd">            .getMolecule() method on the returned process to block until the</span>
+<span class="sd">            parameterisation is complete and get the parameterised molecule.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_parameterise_openff</span><span class="p">(</span>
             <span class="n">name</span><span class="p">,</span>
@@ -1815,7 +1831,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 15, 2024</div>
+              Last updated on Jul 09, 2024</div>
           </div>
           <div class="right-details">
             

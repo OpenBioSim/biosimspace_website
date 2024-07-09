@@ -198,6 +198,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html#aldose-reductase-alchemical-system-generation">Aldose Reductase - Alchemical System Generation</a></li>
 </ul>
 </li>
 </ul>
@@ -545,13 +547,13 @@
 <h1>BioSimSpace.Align.matchAtoms<a class="headerlink" href="#biosimspace-align-matchatoms" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="BioSimSpace.Align.matchAtoms">
-<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Align.</span></span><span class="sig-name descname"><span class="pre">matchAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring_function='rmsd_align'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matches=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_scores=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prematch={}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout=5.0000</span> <span class="pre">secs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complete_rings_only=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scoring_matches=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map0={}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map1={}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Align/_align.html#matchAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Align.matchAtoms" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BioSimSpace.Align.</span></span><span class="sig-name descname"><span class="pre">matchAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring_function='rmsd_align'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matches=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_scores=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prematch={}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout=5.0000</span> <span class="pre">secs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complete_rings_only=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scoring_matches=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roi=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map0={}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map1={}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Align/_align.html#matchAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Align.matchAtoms" title="Link to this definition">#</a></dt>
 <dd><p>Find mappings between atom indices in molecule0 to those in molecule1.
 Molecules are aligned using a Maximum Common Substructure (MCS) search.
 When requesting more than one match, the mappings will be sorted using
 a scoring function and returned in order of best to worst score. (Note
 that, depending on the scoring function the “best” score may have the
-lowest value.).</p>
+lowest value).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -574,7 +576,7 @@ computing the above RMSD score.</p>
 </li>
 <li><dl class="simple">
 <dt>”rmsd_flex_align”</dt><dd><p>Flexibly align molecule0 to molecule1 based on the mapping
-before computing the above RMSD score. (based on the
+before computing the above RMSD score. (Requires the
 ‘fkcombu’. package: <a class="reference external" href="https://pdbj.org/kcombu">https://pdbj.org/kcombu</a>)</p>
 </dd>
 </dl>
@@ -595,6 +597,8 @@ computing mapping scores. Consider reducing this if you find the
 matchAtoms function to be taking an excessive amount of time. This
 option is only relevant to MCS performed using RDKit and will be
 ignored when falling back on Sire.</p></li>
+<li><p><strong>roi</strong> (<em>list</em>) – The region of interest to match.
+Consists of a list of ROI residue indices.</p></li>
 <li><p><strong>property_map0</strong> (<em>dict</em>) – A dictionary that maps “properties” in molecule0 to their user
 defined values. This allows the user to refer to properties
 with their own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
@@ -641,6 +645,17 @@ atom indices in molecule0 to those in molecule1).</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">matchAtoms</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="n">prematch</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="mi">7</span><span class="p">})</span>
 </pre></div>
 </div>
+<p>Find the best maximum common substructure mapping between two molecules
+with a region of interest defined as a list of residues.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">matchAtoms</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Find the mapping between two molecules with multiple regions of interest.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">matchAtoms</span><span class="p">(</span><span class="n">molecule0</span><span class="p">,</span> <span class="n">molecule1</span><span class="p">,</span> <span class="n">roi</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -676,7 +691,7 @@ atom indices in molecule0 to those in molecule1).</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Apr 15, 2024</div>
+              Last updated on Jul 09, 2024</div>
           </div>
           <div class="right-details">
             
