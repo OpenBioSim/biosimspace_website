@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace._SireWrappers.SearchResult" href="BioSimSpace._SireWrappers.SearchResult.html" /><link rel="prev" title="BioSimSpace._SireWrappers.Residue" href="BioSimSpace._SireWrappers.Residue.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace._SireWrappers.System - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css?v=094c566b" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css?v=c839eb9e" />
@@ -91,7 +91,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -106,22 +106,63 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -134,6 +175,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -152,7 +195,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -199,7 +243,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html#aldose-reductase-alchemical-system-generation">Aldose Reductase - Alchemical System Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
 </ul>
 </li>
 </ul>
@@ -246,6 +290,8 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../index_FreeEnergy.html">BioSimSpace.FreeEnergy</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of BioSimSpace.FreeEnergy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.Relative.html">BioSimSpace.FreeEnergy.Relative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.ATMSetup.html">BioSimSpace.FreeEnergy.ATMSetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.ATM.html">BioSimSpace.FreeEnergy.ATM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.engines.html">BioSimSpace.FreeEnergy.engines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.getData.html">BioSimSpace.FreeEnergy.getData</a></li>
 </ul>
@@ -347,7 +393,10 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -377,6 +426,10 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMMinimisation.html">BioSimSpace.Protocol.ATMMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMEquilibration.html">BioSimSpace.Protocol.ATMEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMAnnealing.html">BioSimSpace.Protocol.ATMAnnealing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMProduction.html">BioSimSpace.Protocol.ATMProduction</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index_Sandpit.html">BioSimSpace.Sandpit</a></li>
@@ -529,10 +582,12 @@
         </a>
         <div class="content-icon-container">
           
+
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -542,16 +597,16 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="biosimspace-sirewrappers-system">
-<h1>BioSimSpace._SireWrappers.System<a class="headerlink" href="#biosimspace-sirewrappers-system" title="Link to this heading">#</a></h1>
+<h1>BioSimSpace._SireWrappers.System<a class="headerlink" href="#biosimspace-sirewrappers-system" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace._SireWrappers.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace._SireWrappers.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System" title="Link to this definition">¶</a></dt>
 <dd><p>A container class for storing molecular systems.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.__init__" title="Link to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -655,37 +710,40 @@ a BioSimSpace Molecules object, or a list of BioSimSpace molecule objects.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.reduceBoxVectors" title="BioSimSpace._SireWrappers.System.reduceBoxVectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduceBoxVectors</span></code></a>([bias, property_map])</p></td>
 <td><p>Reduce the box vectors.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeMolecules" title="BioSimSpace._SireWrappers.System.removeMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeMolecules</span></code></a>(molecules)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeBox" title="BioSimSpace._SireWrappers.System.removeBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeBox</span></code></a>([property_map])</p></td>
+<td><p>Remove the simulation box from the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeMolecules" title="BioSimSpace._SireWrappers.System.removeMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeMolecules</span></code></a>(molecules)</p></td>
 <td><p>Remove a molecule, or list of molecules from the system.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules" title="BioSimSpace._SireWrappers.System.removeWaterMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeWaterMolecules</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules" title="BioSimSpace._SireWrappers.System.removeWaterMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeWaterMolecules</span></code></a>()</p></td>
 <td><p>Remove all of the water molecules from the system.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass" title="BioSimSpace._SireWrappers.System.repartitionHydrogenMass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repartitionHydrogenMass</span></code></a>([factor, water, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass" title="BioSimSpace._SireWrappers.System.repartitionHydrogenMass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repartitionHydrogenMass</span></code></a>([factor, water, ...])</p></td>
 <td><p>Redistrubute mass of heavy atoms connected to bonded hydrogens into the hydrogen atoms.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.rotateBoxVectors" title="BioSimSpace._SireWrappers.System.rotateBoxVectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotateBoxVectors</span></code></a>([origin, precision, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.rotateBoxVectors" title="BioSimSpace._SireWrappers.System.rotateBoxVectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotateBoxVectors</span></code></a>([origin, precision, ...])</p></td>
 <td><p>Rotate the box vectors of the system so that the first vector is aligned with the x-axis, the second vector lies in the x-y plane, and the third vector has a positive z-component.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.save" title="BioSimSpace._SireWrappers.System.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(filebase)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.save" title="BioSimSpace._SireWrappers.System.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(filebase)</p></td>
 <td><p>Stream a wrapped Sire object to file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.search" title="BioSimSpace._SireWrappers.System.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(query[, property_map])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.search" title="BioSimSpace._SireWrappers.System.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(query[, property_map])</p></td>
 <td><p>Search the system for atoms, residues, and molecules.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.setBox" title="BioSimSpace._SireWrappers.System.setBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBox</span></code></a>(box[, angles, property_map])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.setBox" title="BioSimSpace._SireWrappers.System.setBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBox</span></code></a>(box[, angles, property_map])</p></td>
 <td><p>Set the size of the periodic simulation box.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.smiles" title="BioSimSpace._SireWrappers.System.smiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smiles</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.smiles" title="BioSimSpace._SireWrappers.System.smiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smiles</span></code></a>()</p></td>
 <td><p>Return the SMILES string representation of this object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.translate" title="BioSimSpace._SireWrappers.System.translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code></a>(vector[, property_map])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.translate" title="BioSimSpace._SireWrappers.System.translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code></a>(vector[, property_map])</p></td>
 <td><p>Translate the system.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecule" title="BioSimSpace._SireWrappers.System.updateMolecule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateMolecule</span></code></a>(index, molecule)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecule" title="BioSimSpace._SireWrappers.System.updateMolecule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateMolecule</span></code></a>(index, molecule)</p></td>
 <td><p>Update the molecule at the given index.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecules" title="BioSimSpace._SireWrappers.System.updateMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateMolecules</span></code></a>(molecules)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.updateMolecules" title="BioSimSpace._SireWrappers.System.updateMolecules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateMolecules</span></code></a>(molecules)</p></td>
 <td><p>Update a molecule, or list of molecules in the system.</p></td>
 </tr>
 </tbody>
@@ -693,7 +751,7 @@ a BioSimSpace Molecules object, or a list of BioSimSpace molecule objects.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.addMolecules">
-<span class="sig-name descname"><span class="pre">addMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.addMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.addMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">addMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.addMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.addMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Add a molecule, or list of molecules to the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -705,7 +763,7 @@ or a SearchResult containing molecules.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.charge">
-<span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_lambda1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.charge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.charge" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_lambda1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.charge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.charge" title="Link to this definition">¶</a></dt>
 <dd><p>Return the total molecular charge.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -727,7 +785,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.copy" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.copy" title="Link to this definition">¶</a></dt>
 <dd><p>Return a copy of this object. The return type is same as the object
 on which copy is called.</p>
 <dl class="field-list simple">
@@ -742,7 +800,7 @@ on which copy is called.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.fileFormat">
-<span class="sig-name descname"><span class="pre">fileFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.fileFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.fileFormat" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">fileFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.fileFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.fileFormat" title="Link to this definition">¶</a></dt>
 <dd><p>Return the file formats associated with the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -761,7 +819,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getAminoAcids">
-<span class="sig-name descname"><span class="pre">getAminoAcids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAminoAcids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAminoAcids" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAminoAcids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAminoAcids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAminoAcids" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing all of the amino acid residues in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -780,7 +838,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getAtom">
-<span class="sig-name descname"><span class="pre">getAtom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAtom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAtom" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAtom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAtom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAtom" title="Link to this definition">¶</a></dt>
 <dd><p>Return the atom specified by the absolute index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -797,7 +855,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getAtoms">
-<span class="sig-name descname"><span class="pre">getAtoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAtoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAtoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAtoms" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing the atoms in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -811,7 +869,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getAxisAlignedBoundingBox">
-<span class="sig-name descname"><span class="pre">getAxisAlignedBoundingBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAxisAlignedBoundingBox" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getAxisAlignedBoundingBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getAxisAlignedBoundingBox" title="Link to this definition">¶</a></dt>
 <dd><p>Get the axis-aligned bounding box enclosing the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -833,7 +891,7 @@ each dimension.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getBox">
-<span class="sig-name descname"><span class="pre">getBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getBox" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getBox" title="Link to this definition">¶</a></dt>
 <dd><p>Get the size of the periodic simulation box.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -853,7 +911,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getIndex">
-<span class="sig-name descname"><span class="pre">getIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getIndex" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getIndex" title="Link to this definition">¶</a></dt>
 <dd><p>Convert indices of atoms and residues to their absolute values in
 this system.</p>
 <dl class="field-list simple">
@@ -872,7 +930,7 @@ list containing objects of these types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getMolecule">
-<span class="sig-name descname"><span class="pre">getMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getMolecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getMolecule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getMolecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getMolecule" title="Link to this definition">¶</a></dt>
 <dd><p>Return the molecule at the given index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -889,7 +947,7 @@ list containing objects of these types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getMolecules">
-<span class="sig-name descname"><span class="pre">getMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing all of the molecules in the specified group.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -906,7 +964,7 @@ list containing objects of these types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getNucleotides">
-<span class="sig-name descname"><span class="pre">getNucleotides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getNucleotides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getNucleotides" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getNucleotides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getNucleotides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getNucleotides" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing all of the nucleotide residues in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -925,7 +983,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getPerturbableMolecules">
-<span class="sig-name descname"><span class="pre">getPerturbableMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getPerturbableMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getPerturbableMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getPerturbableMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getPerturbableMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getPerturbableMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing all of the perturbable molecules in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -940,7 +998,7 @@ be empty if no perturbable molecules are present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getResidue">
-<span class="sig-name descname"><span class="pre">getResidue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getResidue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getResidue" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getResidue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getResidue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getResidue" title="Link to this definition">¶</a></dt>
 <dd><p>Return the residue specified by the absolute index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -957,7 +1015,7 @@ be empty if no perturbable molecules are present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getResidues">
-<span class="sig-name descname"><span class="pre">getResidues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getResidues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getResidues" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getResidues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getResidues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getResidues" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing the residues in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -971,7 +1029,7 @@ be empty if no perturbable molecules are present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getRestraintAtoms">
-<span class="sig-name descname"><span class="pre">getRestraintAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restraint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_absolute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_zero_matches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getRestraintAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getRestraintAtoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getRestraintAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restraint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_absolute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_zero_matches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getRestraintAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getRestraintAtoms" title="Link to this definition">¶</a></dt>
 <dd><p>Get the indices of atoms involved in a restraint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1001,7 +1059,7 @@ values. This allows the user to refer to properties with their</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.getWaterMolecules">
-<span class="sig-name descname"><span class="pre">getWaterMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getWaterMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getWaterMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.getWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.getWaterMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list containing all of the water molecules in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1021,7 +1079,7 @@ empty if no water molecules are present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.isSame">
-<span class="sig-name descname"><span class="pre">isSame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excluded_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_water</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.isSame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.isSame" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isSame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excluded_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_water</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.isSame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.isSame" title="Link to this definition">¶</a></dt>
 <dd><p>Check whether “other” is the same as this system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1050,7 +1108,7 @@ defined values.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.makeWhole">
-<span class="sig-name descname"><span class="pre">makeWhole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.makeWhole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.makeWhole" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">makeWhole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.makeWhole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.makeWhole" title="Link to this definition">¶</a></dt>
 <dd><p>Make all molecules in the system “whole”, i.e. unwrap any molecules that have
 been split across the periodic boundary.</p>
 <dl class="field-list simple">
@@ -1064,7 +1122,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nAminoAcids">
-<span class="sig-name descname"><span class="pre">nAminoAcids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nAminoAcids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nAminoAcids" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nAminoAcids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nAminoAcids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nAminoAcids" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of amino acid residues in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1078,7 +1136,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nAtoms">
-<span class="sig-name descname"><span class="pre">nAtoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nAtoms" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nAtoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nAtoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nAtoms" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of atoms in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1092,7 +1150,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nChains">
-<span class="sig-name descname"><span class="pre">nChains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nChains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nChains" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nChains</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nChains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nChains" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of chains in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1106,7 +1164,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nMolecules">
-<span class="sig-name descname"><span class="pre">nMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of molecules in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1120,7 +1178,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nNucleotides">
-<span class="sig-name descname"><span class="pre">nNucleotides</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nNucleotides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nNucleotides" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nNucleotides</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nNucleotides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nNucleotides" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of nucleotide residues in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1134,7 +1192,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nPerturbableMolecules">
-<span class="sig-name descname"><span class="pre">nPerturbableMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nPerturbableMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nPerturbableMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nPerturbableMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nPerturbableMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nPerturbableMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of perturbable molecules in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1148,7 +1206,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nResidues">
-<span class="sig-name descname"><span class="pre">nResidues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nResidues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nResidues" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nResidues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nResidues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nResidues" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of residues in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1162,7 +1220,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.nWaterMolecules">
-<span class="sig-name descname"><span class="pre">nWaterMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nWaterMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nWaterMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.nWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.nWaterMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Return the number of water molecules in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1176,7 +1234,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.reduceBoxVectors">
-<span class="sig-name descname"><span class="pre">reduceBoxVectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.reduceBoxVectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.reduceBoxVectors" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reduceBoxVectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.reduceBoxVectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.reduceBoxVectors" title="Link to this definition">¶</a></dt>
 <dd><p>Reduce the box vectors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1196,8 +1254,21 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.removeBox">
+<span class="sig-name descname"><span class="pre">removeBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeBox" title="Link to this definition">¶</a></dt>
+<dd><p>Remove the simulation box from the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
+values. This allows the user to refer to properties with their
+own naming scheme, e.g. { “charge” : “my-charge” }</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.removeMolecules">
-<span class="sig-name descname"><span class="pre">removeMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">removeMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Remove a molecule, or list of molecules from the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1208,13 +1279,13 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.removeWaterMolecules">
-<span class="sig-name descname"><span class="pre">removeWaterMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">removeWaterMolecules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.removeWaterMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Remove all of the water molecules from the system.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.repartitionHydrogenMass">
-<span class="sig-name descname"><span class="pre">repartitionHydrogenMass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_coordinates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.repartitionHydrogenMass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">repartitionHydrogenMass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_coordinates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.repartitionHydrogenMass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass" title="Link to this definition">¶</a></dt>
 <dd><p>Redistrubute mass of heavy atoms connected to bonded hydrogens into
 the hydrogen atoms. This allows the use of larger simulation
 integration time steps without encountering instabilities related
@@ -1241,7 +1312,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.rotateBoxVectors">
-<span class="sig-name descname"><span class="pre">rotateBoxVectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin=(0.0000e+00</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0000e+00</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0000e+00</span> <span class="pre">A)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map={}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.rotateBoxVectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.rotateBoxVectors" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">rotateBoxVectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin=(0.0000e+00</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0000e+00</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0000e+00</span> <span class="pre">A)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map={}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.rotateBoxVectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.rotateBoxVectors" title="Link to this definition">¶</a></dt>
 <dd><p>Rotate the box vectors of the system so that the first vector is
 aligned with the x-axis, the second vector lies in the x-y plane,
 and the third vector has a positive z-component. This is a requirement
@@ -1266,7 +1337,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filebase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.save" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filebase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.save" title="Link to this definition">¶</a></dt>
 <dd><p>Stream a wrapped Sire object to file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1280,7 +1351,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.search">
-<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.search" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.search" title="Link to this definition">¶</a></dt>
 <dd><p>Search the system for atoms, residues, and molecules. Search results
 will be reduced to their minimal representation, i.e. a molecule
 containing a single residue will be returned as a residue.</p>
@@ -1325,7 +1396,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.setBox">
-<span class="sig-name descname"><span class="pre">setBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">box,</span> <span class="pre">angles=[90.0000</span> <span class="pre">degrees,</span> <span class="pre">90.0000</span> <span class="pre">degrees,</span> <span class="pre">90.0000</span> <span class="pre">degrees],</span> <span class="pre">property_map={}</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.setBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.setBox" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">box,</span> <span class="pre">angles=[90.0000</span> <span class="pre">degrees,</span> <span class="pre">90.0000</span> <span class="pre">degrees,</span> <span class="pre">90.0000</span> <span class="pre">degrees],</span> <span class="pre">property_map={}</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.setBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.setBox" title="Link to this definition">¶</a></dt>
 <dd><p>Set the size of the periodic simulation box.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1342,7 +1413,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.smiles">
-<span class="sig-name descname"><span class="pre">smiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.smiles" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">smiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.smiles" title="Link to this definition">¶</a></dt>
 <dd><p>Return the SMILES string representation of this object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1356,7 +1427,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.translate">
-<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.translate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.translate" title="Link to this definition">¶</a></dt>
 <dd><p>Translate the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1372,7 +1443,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.updateMolecule">
-<span class="sig-name descname"><span class="pre">updateMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.updateMolecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.updateMolecule" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">updateMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.updateMolecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.updateMolecule" title="Link to this definition">¶</a></dt>
 <dd><p>Update the molecule at the given index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1386,7 +1457,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.updateMolecules">
-<span class="sig-name descname"><span class="pre">updateMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.updateMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.updateMolecules" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">updateMolecules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.updateMolecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.updateMolecules" title="Link to this definition">¶</a></dt>
 <dd><p>Update a molecule, or list of molecules in the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1430,7 +1501,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 09, 2024</div>
+              Last updated on Oct 24, 2024</div>
           </div>
           <div class="right-details">
             
@@ -1483,6 +1554,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 <li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nResidues"><code class="docutils literal notranslate"><span class="pre">System.nResidues()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.nWaterMolecules"><code class="docutils literal notranslate"><span class="pre">System.nWaterMolecules()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.reduceBoxVectors"><code class="docutils literal notranslate"><span class="pre">System.reduceBoxVectors()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeBox"><code class="docutils literal notranslate"><span class="pre">System.removeBox()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeMolecules"><code class="docutils literal notranslate"><span class="pre">System.removeMolecules()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.removeWaterMolecules"><code class="docutils literal notranslate"><span class="pre">System.removeWaterMolecules()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace._SireWrappers.System.repartitionHydrogenMass"><code class="docutils literal notranslate"><span class="pre">System.repartitionHydrogenMass()</span></code></a></li>
@@ -1508,9 +1580,9 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
     </aside>
   </div>
 </div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../../_static/js/custom.js?v=e0b44004"></script>
     </body>
 </html>

@@ -1,0 +1,52 @@
+﻿BioSimSpace.Protocol.ATMMinimisation
+====================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: ATMMinimisation
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ATMMinimisation.__init__
+      ~ATMMinimisation.getAlignKDistance
+      ~ATMMinimisation.getAlignKPsi
+      ~ATMMinimisation.getAlignKTheta
+      ~ATMMinimisation.getCOMDistanceRestraint
+      ~ATMMinimisation.getCOMWidth
+      ~ATMMinimisation.getCOMk
+      ~ATMMinimisation.getCoreAlignment
+      ~ATMMinimisation.getData
+      ~ATMMinimisation.getForceConstant
+      ~ATMMinimisation.getPosRestWidth
+      ~ATMMinimisation.getRestraint
+      ~ATMMinimisation.getSoftCoreA
+      ~ATMMinimisation.getSoftCoreU0
+      ~ATMMinimisation.getSoftCoreUmax
+      ~ATMMinimisation.getSteps
+      ~ATMMinimisation.restraints
+      ~ATMMinimisation.setAlignKDistance
+      ~ATMMinimisation.setAlignKPsi
+      ~ATMMinimisation.setAlignKTheta
+      ~ATMMinimisation.setCOMDistanceRestraint
+      ~ATMMinimisation.setCOMWidth
+      ~ATMMinimisation.setCOMk
+      ~ATMMinimisation.setCoreAlignment
+      ~ATMMinimisation.setForceConstant
+      ~ATMMinimisation.setPosRestWidth
+      ~ATMMinimisation.setRestraint
+      ~ATMMinimisation.setSoftCoreA
+      ~ATMMinimisation.setSoftCoreU0
+      ~ATMMinimisation.setSoftCoreUmax
+      ~ATMMinimisation.setSteps
+   
+   
+
+   
+   
+   
