@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Metadynamics.CollectiveVariable._rmsd - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,36 +633,41 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RMSD&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span> <span class="k">as</span> <span class="n">_ceil</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">_sqrt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">ceil</span> <span class="k">as</span> <span class="n">_ceil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">_sqrt</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
 
-<span class="kn">from</span> <span class="nn">..._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
-<span class="kn">from</span> <span class="nn">..._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
-<span class="kn">from</span> <span class="nn">..._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">...Align</span> <span class="kn">import</span> <span class="n">rmsdAlign</span> <span class="k">as</span> <span class="n">_rmsdAlign</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">selection_to_atoms</span> <span class="k">as</span> <span class="n">_selection_to_atoms</span>
 
-<span class="kn">from</span> <span class="nn">._collective_variable</span> <span class="kn">import</span> <span class="n">CollectiveVariable</span> <span class="k">as</span> <span class="n">_CollectiveVariable</span>
-<span class="kn">from</span> <span class="nn">.._bound</span> <span class="kn">import</span> <span class="n">Bound</span> <span class="k">as</span> <span class="n">_Bound</span>
-<span class="kn">from</span> <span class="nn">.._grid</span> <span class="kn">import</span> <span class="n">Grid</span> <span class="k">as</span> <span class="n">_Grid</span>
-<span class="kn">from</span> <span class="nn">...Types</span> <span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...Align</span><span class="w"> </span><span class="kn">import</span> <span class="n">rmsdAlign</span> <span class="k">as</span> <span class="n">_rmsdAlign</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">._collective_variable</span><span class="w"> </span><span class="kn">import</span> <span class="n">CollectiveVariable</span> <span class="k">as</span> <span class="n">_CollectiveVariable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._bound</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bound</span> <span class="k">as</span> <span class="n">_Bound</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span> <span class="k">as</span> <span class="n">_Grid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
 
 
 <div class="viewcode-block" id="RMSD">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD">[docs]</a>
-<span class="k">class</span> <span class="nc">RMSD</span><span class="p">(</span><span class="n">_CollectiveVariable</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RMSD</span><span class="p">(</span><span class="n">_CollectiveVariable</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for a root-mean-square deviation (RMSD) collective variable.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="RMSD.__init__">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">reference</span><span class="p">,</span>
-        <span class="n">rmsd_indices</span><span class="p">,</span>
-        <span class="n">reference_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">align_selection</span><span class="p">,</span>
+        <span class="n">rmsd_selection</span><span class="p">,</span>
+        <span class="n">reference_mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">hill_width</span><span class="o">=</span><span class="n">_Length</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;nanometer&quot;</span><span class="p">),</span>
         <span class="n">lower_bound</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">upper_bound</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -671,23 +685,22 @@
 <span class="sd">        system : :class:`System &lt;BioSimSpace._SireWrappers.System&gt;`</span>
 <span class="sd">            The molecular system of interest.</span>
 
-<span class="sd">        reference : :class:`Molecule &lt;BioSimSpace._SireWrappers.Molecule&gt;`</span>
-<span class="sd">            The reference molecule, against which the RMSD will be measured.</span>
-<span class="sd">            This molecule should match with a single molecule from the</span>
-<span class="sd">            system, i.e. contain the same residues as the matching molecule</span>
-<span class="sd">            in the same order.</span>
+<span class="sd">        reference : :class:`System &lt;BioSimSpace._SireWrappers.System&gt;`</span>
+<span class="sd">            The reference system, against which the RMSD will be measured.</span>
 
-<span class="sd">        rmsd_indices : [int]</span>
-<span class="sd">            The indices of the atoms within the reference that should be</span>
-<span class="sd">            used when calculating the RMSD. Atoms from the reference that</span>
-<span class="sd">            are not in rmsd_indices will instead be used for alignment.</span>
+<span class="sd">        align_selection : str</span>
+<span class="sd">            A Sire selection string that defines the atoms to be used</span>
+<span class="sd">            when aligning the two structures. If None, then the RMSD</span>
+<span class="sd">            will be calculated without alignment.</span>
 
-<span class="sd">        reference_index : int</span>
-<span class="sd">            The index of the molecule in the system that matches the</span>
-<span class="sd">            reference. If none, then we will assume that the molecule with</span>
-<span class="sd">            the closest number of residues is the match. If not all atoms</span>
-<span class="sd">            from the reference are matched in the system, then an exception</span>
-<span class="sd">            will be thrown.</span>
+<span class="sd">        rmsd_selection : str</span>
+<span class="sd">            A Sire selection string that defines the atoms to be used</span>
+<span class="sd">            when calculating the RMSD.</span>
+
+<span class="sd">        reference_mapping : dict</span>
+<span class="sd">            A dictionary mapping molecule indices in the reference to</span>
+<span class="sd">            those in the system. This must be used when the reference</span>
+<span class="sd">            represents a sub-set of the system.</span>
 
 <span class="sd">        hill_width : :class:`Length &lt;BioSimSpace.Types.Length&gt;`</span>
 <span class="sd">            The width of the Gaussian hill used to sample this variable.</span>
@@ -729,182 +742,231 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                 <span class="s2">&quot;&#39;system&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;.&quot;</span>
             <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">_Molecule</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">_System</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;&#39;reference&#39; must be of type &#39;BioSimSpace._SireWrappers.Molecule&#39;.&quot;</span>
+                <span class="s2">&quot;&#39;reference&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;.&quot;</span>
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">sire.system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
+
+        <span class="n">sire_reference</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">reference_mapping</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Make sure that the reference system is compatible with the system.</span>
+            <span class="k">if</span> <span class="n">system</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span> <span class="o">!=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
+                    <span class="s2">&quot;The number of molecules in &#39;system&#39; and &#39;reference&#39; must match.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">system</span><span class="o">.</span><span class="n">nResidues</span><span class="p">()</span> <span class="o">!=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nResidues</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
+                    <span class="s2">&quot;The number of residues in &#39;system&#39; and &#39;reference&#39; must match.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">system</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span> <span class="o">!=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
+                    <span class="s2">&quot;The number of atoms in &#39;system&#39; and &#39;reference&#39; must match.&quot;</span>
+                <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reference_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">())}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference_mapping</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;reference_mapping&#39; must be of type &#39;dict&#39;&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Validate the mapping.</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">reference_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Keys of &#39;reference_mapping&#39; must be of type &#39;int&#39;&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                        <span class="s2">&quot;Values of &#39;reference_mapping&#39; must be of type &#39;int&#39;&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># Allow negative indeices.</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">k</span> <span class="o">+=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">v</span> <span class="o">+=</span> <span class="n">system</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;Keys of &#39;reference_mapping&#39; must be in the range [0, nMolecules)&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="n">system</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;Values of &#39;reference_mapping&#39; must be in the range [0, nMolecules)&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># Make sure the mapped molecules have the same number of atoms.</span>
+                <span class="k">if</span> <span class="n">reference</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span> <span class="o">!=</span> <span class="n">system</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
+                        <span class="s2">&quot;Molecules mapped via the &#39;reference_mapping&#39; must have the same number of atoms.&quot;</span>
+                    <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reference_mapping</span> <span class="o">=</span> <span class="n">reference_mapping</span>
+
+        <span class="c1"># Validate alignment selection string.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">align_selection</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;align_selection&#39; must be of type &#39;str&#39;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_selection</span> <span class="o">=</span> <span class="n">align_selection</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_aligment_atoms</span> <span class="o">=</span> <span class="n">_selection_to_atoms</span><span class="p">(</span><span class="n">sire_reference</span><span class="p">,</span> <span class="n">align_selection</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Invalid &#39;align_selection&#39; string.&quot;</span>
+            <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+
+        <span class="c1"># Validate RMSD selection string.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rmsd_selection</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;rmsd_selection&#39; must be of type &#39;str&#39;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rmsd_selection</span> <span class="o">=</span> <span class="n">rmsd_selection</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rmsd_atoms</span> <span class="o">=</span> <span class="n">_selection_to_atoms</span><span class="p">(</span><span class="n">sire_reference</span><span class="p">,</span> <span class="n">rmsd_selection</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Invalid &#39;rmsd_selection&#39; string.&quot;</span>
+            <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Check that the map is valid.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">property_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;property_map&#39; must be of type &#39;dict&#39;&quot;</span><span class="p">)</span>
 
-        <span class="c1"># Extract the corresponding molecule from the system by index.</span>
-        <span class="k">if</span> <span class="n">reference_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">reference_index</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;reference_index&#39; must be of type &#39;int&#39;.&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_reference_index</span> <span class="o">=</span> <span class="n">reference_index</span>
-            <span class="n">molecule</span> <span class="o">=</span> <span class="n">system</span><span class="p">[</span><span class="n">reference_index</span><span class="p">]</span>
+        <span class="c1"># Work out the unique molecule numbers used for alignment and RMSD.</span>
 
-        <span class="c1"># Match to the molecule with the closest number of residues.</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Store the number of residues in the target.</span>
-            <span class="n">num_res_ref</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nResidues</span><span class="p">()</span>
+        <span class="n">mol_nums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
-            <span class="c1"># Create a list to hold the number of residues for each molecule in the system.</span>
-            <span class="n">num_res_system</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span>
-                <span class="n">num_res_system</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">nResidues</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aligment_atoms</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">number</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mol_nums</span><span class="p">:</span>
+                <span class="n">mol_nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">number</span><span class="p">())</span>
 
-            <span class="c1"># Find the index of the molecule with the closest number of residues.</span>
-            <span class="n">reference_index</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
-                <span class="nb">enumerate</span><span class="p">(</span><span class="n">num_res_system</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">num_res_ref</span><span class="p">)</span>
-            <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rmsd_atoms</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">atom</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">number</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mol_nums</span><span class="p">:</span>
+                <span class="n">mol_nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span><span class="o">.</span><span class="n">number</span><span class="p">())</span>
 
-            <span class="c1"># Extract the molecule from the system.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_reference_index</span> <span class="o">=</span> <span class="n">reference_index</span>
-            <span class="n">molecule</span> <span class="o">=</span> <span class="n">system</span><span class="p">[</span><span class="n">reference_index</span><span class="p">]</span>
+        <span class="c1"># List to store the molecule indices in the system.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_molecule_indices</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rmsd_indices</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="c1"># Make sure the indices are unique.</span>
-            <span class="n">rmsd_indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">rmsd_indices</span><span class="p">))</span>
+        <span class="c1"># List to store index pairs for the mapped molecule (system, reference).</span>
+        <span class="n">molecule_pairs</span> <span class="o">=</span> <span class="p">[]</span>
 
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rmsd_indices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;rmsd_indices&#39; contains no items?&quot;</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">rmsd_indices</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;&#39;rmsd_indices&#39; must refer to a subset of the &quot;</span>
-                    <span class="s2">&quot;atoms from the reference molecule.&quot;</span>
-                <span class="p">)</span>
+        <span class="c1"># List to store the absolute atom indices.</span>
+        <span class="n">abs_atom_indices</span> <span class="o">=</span> <span class="p">[]</span>
 
-            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">rmsd_indices</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;rmsd_indices&#39; must be a list of &#39;int&#39; types.&quot;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">idx</span> <span class="o">+=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                        <span class="s2">&quot;&#39;rmsd_indices&#39; is out of range: &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="o">-</span><span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
-                    <span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;rmsd_indices&#39; must be a list of &#39;int&#39; types.&quot;</span><span class="p">)</span>
+        <span class="c1"># Dictionary to store alignment and RMSD indices for each molecule.</span>
+        <span class="n">align_indices</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">rmsd_indices</span> <span class="o">=</span> <span class="p">{}</span>
 
-        <span class="c1"># Create the matcher.</span>
-        <span class="n">matcher</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">ResNumAtomNameMatcher</span><span class="p">()</span>
+        <span class="c1"># Create mappings for the alignment and RMSD.</span>
 
-        <span class="c1"># Match the atoms by residue number and name.</span>
-        <span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+        <span class="c1"># Loop over the molecules numbers.</span>
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">mol_nums</span><span class="p">:</span>
+            <span class="c1"># Extract the molecule from the reference system.</span>
+            <span class="n">molecule</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="n">num</span><span class="p">]</span>
 
-        <span class="c1"># We need to match all of the atoms in the reference.</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
-            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span>
-                <span class="s2">&quot;Didn&#39;t match all of the atoms in the reference molecule: &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span><span class="si">}</span><span class="s2">, expected </span><span class="si">{</span><span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="c1"># Work out the index of the molecule in the reference.</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(</span><span class="n">_Molecule</span><span class="p">(</span><span class="n">molecule</span><span class="p">))</span>
+
+            <span class="c1"># Map the index to the system.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_molecule_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reference_mapping</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+            <span class="c1"># Store the index pair.</span>
+            <span class="n">molecule_pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_reference_mapping</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">index</span><span class="p">))</span>
+
+            <span class="c1"># Set of atoms to select.</span>
+            <span class="n">selected</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+            <span class="c1"># Create a cursor for editing the molecule.</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">molecule</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+            <span class="c1"># Loop over the atoms.</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">atoms</span><span class="p">()):</span>
+                <span class="n">is_align</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">is_rmsd</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="c1"># This atom is used for alignment.</span>
+                <span class="k">if</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aligment_atoms</span><span class="p">:</span>
+                    <span class="n">is_align</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">align_indices</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="n">align_indices</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">()]</span>
+                <span class="c1"># This atom is used for RMSD.</span>
+                <span class="k">if</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rmsd_atoms</span><span class="p">:</span>
+                    <span class="n">is_rmsd</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">rmsd_indices</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="n">rmsd_indices</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">()]</span>
+
+                <span class="k">if</span> <span class="n">is_align</span> <span class="ow">or</span> <span class="n">is_rmsd</span><span class="p">:</span>
+                    <span class="c1"># Append to the list of atoms to select.</span>
+                    <span class="n">selected</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+
+                    <span class="c1"># Add the absolute atom index.</span>
+                    <span class="n">abs_atom_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">reference</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(</span><span class="n">_Atom</span><span class="p">(</span><span class="n">atom</span><span class="p">)))</span>
+
+                    <span class="c1"># Set occupancy and beta factor.</span>
+                    <span class="k">if</span> <span class="n">is_align</span><span class="p">:</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="s2">&quot;occupancy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="s2">&quot;occupancy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                    <span class="k">if</span> <span class="n">is_rmsd</span><span class="p">:</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="s2">&quot;beta_factor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="s2">&quot;beta_factor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+            <span class="c1"># Commit the changes.</span>
+            <span class="n">new_molecule</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+            <span class="c1"># Create an AtomSelection.</span>
+            <span class="n">selection</span> <span class="o">=</span> <span class="n">new_molecule</span><span class="o">.</span><span class="n">selection</span><span class="p">()</span>
+
+            <span class="c1"># Unselect all of the atoms.</span>
+            <span class="n">selection</span><span class="o">.</span><span class="n">selectNone</span><span class="p">()</span>
+
+            <span class="c1"># Now add all of the atoms that appear in the reference.</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">:</span>
+                <span class="n">selection</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+            <span class="c1"># Create a partial molecule and extract the atoms.</span>
+            <span class="n">partial_molecule</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">_SireMol</span><span class="o">.</span><span class="n">PartialMolecule</span><span class="p">(</span><span class="n">new_molecule</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
             <span class="p">)</span>
 
-        <span class="c1"># Invert the matches so that we map from the system to the reference.</span>
-        <span class="n">matches</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">matches</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+            <span class="c1"># Update the new system.</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">new_system</span> <span class="o">+=</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">partial_molecule</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">new_system</span> <span class="o">=</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">partial_molecule</span><span class="p">)</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span>
 
-        <span class="c1"># Get the indices of the matching atoms.</span>
-        <span class="n">idx_matches</span> <span class="o">=</span> <span class="n">matches</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="c1"># Parse as a PDB file and store the lines.</span>
+        <span class="n">pdb</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">PDB2</span><span class="p">(</span><span class="n">new_system</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">toLines</span><span class="p">()</span>
 
-        <span class="c1"># Extract the molecule of interest and make it editable.</span>
-        <span class="n">edit_mol</span> <span class="o">=</span> <span class="n">molecule</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
-
-        <span class="c1"># A list of atoms to select.</span>
-        <span class="n">selected</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="c1"># Create a mapping dictionary for the atoms involved in the RMSD and alignment.</span>
-        <span class="n">rmsd_mapping</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">align_mapping</span> <span class="o">=</span> <span class="p">{}</span>
-
-        <span class="c1"># Get the coordinates property from the user mapping.</span>
-        <span class="n">coord_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">)</span>
-
-        <span class="c1"># Loop over all atoms in the molecule.</span>
-        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()):</span>
-            <span class="c1"># Convert to an AtomIdx.</span>
-            <span class="n">idx</span> <span class="o">=</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomIdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-            <span class="c1"># This atom was matched to an atom in the reference.</span>
-            <span class="k">if</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idx_matches</span><span class="p">:</span>
-                <span class="c1"># Append to the list of atoms to select.</span>
-                <span class="n">selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-                <span class="c1"># Copy across the coordinates.</span>
-                <span class="n">edit_mol</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">edit_mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-                    <span class="o">.</span><span class="n">setProperty</span><span class="p">(</span>
-                        <span class="n">coord_prop</span><span class="p">,</span>
-                        <span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="o">.</span><span class="n">property</span><span class="p">(</span>
-                            <span class="s2">&quot;coordinates&quot;</span>
-                        <span class="p">),</span>
-                    <span class="p">)</span>
-                    <span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-                <span class="p">)</span>
-                <span class="c1"># Set occupancy and beta factor.</span>
-                <span class="k">if</span> <span class="n">matches</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="ow">in</span> <span class="n">rmsd_indices</span><span class="p">:</span>
-                    <span class="c1"># This atom is used to compute the RMSD.</span>
-                    <span class="n">edit_mol</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">edit_mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;occupancy&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-                    <span class="p">)</span>
-                    <span class="n">edit_mol</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">edit_mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;beta_factor&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-                    <span class="p">)</span>
-                    <span class="n">rmsd_mapping</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># This atom is used for alignment.</span>
-                    <span class="n">edit_mol</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">edit_mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;occupancy&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-                    <span class="p">)</span>
-                    <span class="n">edit_mol</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">edit_mol</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;beta_factor&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-                    <span class="p">)</span>
-                    <span class="n">align_mapping</span><span class="p">[</span><span class="n">idx</span><span class="o">.</span><span class="n">value</span><span class="p">()]</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="c1"># Format for PLUMED, making sure to use the same indices as in the system.</span>
+        <span class="c1"># Also strip any TER records.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reference_pdb</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">line</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">abs_atom_indices</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;TER&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_reference_pdb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="n">line</span><span class="p">[</span><span class="mi">11</span><span class="p">:])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reference_pdb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
         <span class="c1"># Store the initial value of the RMSD. This is useful to use as a starting</span>
         <span class="c1"># point for the restraint when performing steered molecular dynamics.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_initial_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_initial_rmsd</span><span class="p">(</span>
             <span class="n">system</span><span class="p">,</span>
             <span class="n">reference</span><span class="p">,</span>
-            <span class="n">reference_index</span><span class="p">,</span>
-            <span class="n">rmsd_mapping</span><span class="p">,</span>
-            <span class="n">align_mapping</span><span class="p">,</span>
+            <span class="n">molecule_pairs</span><span class="p">,</span>
+            <span class="n">align_indices</span><span class="p">,</span>
+            <span class="n">rmsd_indices</span><span class="p">,</span>
             <span class="n">property_map</span><span class="p">,</span>
         <span class="p">)</span>
-
-        <span class="c1"># Commit the changes.</span>
-        <span class="n">new_molecule</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-
-        <span class="c1"># Create an AtomSelection.</span>
-        <span class="n">selection</span> <span class="o">=</span> <span class="n">new_molecule</span><span class="o">.</span><span class="n">selection</span><span class="p">()</span>
-
-        <span class="c1"># Unselect all of the atoms.</span>
-        <span class="n">selection</span><span class="o">.</span><span class="n">selectNone</span><span class="p">()</span>
-
-        <span class="c1"># Now add all of the atoms that appear in the reference.</span>
-        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">:</span>
-            <span class="n">selection</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-
-        <span class="c1"># Create a partial molecule and extract the atoms.</span>
-        <span class="n">partial_molecule</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">_SireMol</span><span class="o">.</span><span class="n">PartialMolecule</span><span class="p">(</span><span class="n">new_molecule</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
-        <span class="p">)</span>
-
-        <span class="c1"># Save the changes to the molecule.</span>
-        <span class="n">molecule</span> <span class="o">=</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">partial_molecule</span><span class="p">)</span>
-
-        <span class="c1"># Parse as a PDB file and store the lines.</span>
-        <span class="n">pdb</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">PDB2</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">toLines</span><span class="p">()</span>
-
-        <span class="c1"># Format for PLUMED, making sure to use the same indices as in the system.</span>
-        <span class="n">new_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">idx</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_reference_pdb</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="n">line</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span>
-            <span class="k">for</span> <span class="n">line</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_indices</span><span class="p">)</span>
-        <span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_reference_pdb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
         <span class="c1"># Set the &quot;settable&quot; parameters.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setHillWidth</span><span class="p">(</span><span class="n">hill_width</span><span class="p">)</span>
@@ -931,10 +993,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_new_object</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human readable string representation of the object.&quot;&quot;&quot;</span>
         <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&lt;BioSimSpace.Metadynamics.CollectiveVariable.RMSD: &quot;</span>
-        <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot; reference=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span>
+        <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot; align_selection=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_selection</span>
+        <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot;, rmsd_selection=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rmsd_selection</span>
         <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot;, hill_width=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hill_width</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lower_bound</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot;, lower_bound=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lower_bound</span>
@@ -947,11 +1010,11 @@
         <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot;&gt;&quot;</span>
         <span class="k">return</span> <span class="n">string</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string showing how to instantiate the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Equality operator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_reference</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_reference</span>
@@ -965,7 +1028,7 @@
 
 <div class="viewcode-block" id="RMSD.getReferencePDB">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getReferencePDB">[docs]</a>
-    <span class="k">def</span> <span class="nf">getReferencePDB</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getReferencePDB</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the reference PDB file as a list of strings.</span>
 
@@ -980,7 +1043,7 @@
 
 <div class="viewcode-block" id="RMSD.getInitialValue">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getInitialValue">[docs]</a>
-    <span class="k">def</span> <span class="nf">getInitialValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getInitialValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the initial value of the collective variable.</span>
 
@@ -995,7 +1058,7 @@
 
 <div class="viewcode-block" id="RMSD.setHillWidth">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.setHillWidth">[docs]</a>
-    <span class="k">def</span> <span class="nf">setHillWidth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hill_width</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setHillWidth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hill_width</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the width of the Gaussian hills used to bias this collective</span>
 <span class="sd">        variable.</span>
@@ -1015,7 +1078,7 @@
 
 <div class="viewcode-block" id="RMSD.getHillWidth">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getHillWidth">[docs]</a>
-    <span class="k">def</span> <span class="nf">getHillWidth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getHillWidth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the width of the Gaussian hill used to bias this collective</span>
 <span class="sd">        variable.</span>
@@ -1031,7 +1094,7 @@
 
 <div class="viewcode-block" id="RMSD.setAlignmentType">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.setAlignmentType">[docs]</a>
-    <span class="k">def</span> <span class="nf">setAlignmentType</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alignment_type</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setAlignmentType</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alignment_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the RMSD alignment type. Options are &quot;optimal&quot; or &quot;simple&quot;.</span>
 
@@ -1053,7 +1116,7 @@
 
 <div class="viewcode-block" id="RMSD.getAlignmentType">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getAlignmentType">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAlignmentType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAlignmentType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the RMSD alignment type.</span>
 
@@ -1066,26 +1129,24 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_alignment_type</span></div>
 
 
-<div class="viewcode-block" id="RMSD.getReferenceIndex">
-<a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getReferenceIndex">[docs]</a>
-    <span class="k">def</span> <span class="nf">getReferenceIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RMSD.getMoleculeIndices">
+<a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getMoleculeIndices">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getMoleculeIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the index of the molecule in the system that corresponds</span>
-<span class="sd">        to the reference.</span>
+<span class="sd">        Return the indices of molecules involved in the collective variable.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 
-<span class="sd">        reference_index : int</span>
-<span class="sd">            The index of the molecule in the system that corresponds to</span>
-<span class="sd">            the reference.</span>
+<span class="sd">        molecule_indices : int</span>
+<span class="sd">            The indices of molecules involved in the collective variable.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reference_index</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molecule_indices</span></div>
 
 
 <div class="viewcode-block" id="RMSD.setPeriodicBoundaries">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.setPeriodicBoundaries">[docs]</a>
-    <span class="k">def</span> <span class="nf">setPeriodicBoundaries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pbc</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setPeriodicBoundaries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pbc</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set whether to use periodic_boundaries when calculating the</span>
 <span class="sd">        collective variable.</span>
@@ -1103,7 +1164,7 @@
 
 <div class="viewcode-block" id="RMSD.getPeriodicBoundaries">
 <a class="viewcode-back" href="../../../../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD.getPeriodicBoundaries">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPeriodicBoundaries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPeriodicBoundaries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return whether to take account of periodic boundary conditions</span>
 <span class="sd">        when computing the collective variable.</span>
@@ -1117,13 +1178,13 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pbc</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_compute_initial_rmsd</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_initial_rmsd</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">reference</span><span class="p">,</span>
-        <span class="n">reference_index</span><span class="p">,</span>
-        <span class="n">rmsd_mapping</span><span class="p">,</span>
-        <span class="n">align_mapping</span><span class="p">,</span>
+        <span class="n">molecule_pairs</span><span class="p">,</span>
+        <span class="n">align_indices</span><span class="p">,</span>
+        <span class="n">rmsd_indices</span><span class="p">,</span>
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1141,18 +1202,17 @@
 <span class="sd">            system, i.e. contain the same residues as the matching molecule</span>
 <span class="sd">            in the same order.</span>
 
-<span class="sd">        reference_index : int</span>
-<span class="sd">            The index of the molecule in the system that matches the</span>
-<span class="sd">            reference.</span>
+<span class="sd">        molecule_pairs : [(int, int), ...]</span>
+<span class="sd">            The indices of molecules in the system and reference that contain</span>
+<span class="sd">            atoms involved in alignment and RMSD.</span>
 
-<span class="sd">        rmsd_mapping : {Sire.Mol.AtomIdx : Sire.Mol.AtomIdx, ...}</span>
-<span class="sd">             A dictionary mapping atoms in the system to those in the</span>
-<span class="sd">             reference molecule.</span>
+<span class="sd">        align_indices : {Sire.Mol.MolNum: [Sire.Mol.AtomIdx, ...]}</span>
+<span class="sd">            A dictionary mapping molecules to the indices of atoms that will</span>
+<span class="sd">            be used for alignment.</span>
 
-<span class="sd">        align_mapping : { int: int, ...}</span>
-<span class="sd">             A dictionary mapping atoms in the system to those in the</span>
-<span class="sd">             reference molecule that will be used for alignment prior</span>
-<span class="sd">             to computing the RMSD.</span>
+<span class="sd">        rmsd_indices : {Sire.Mol.MolNum: [Sire.Mol.AtomIdx, ...]}</span>
+<span class="sd">            A dictionary mapping molecules to the indices of atoms that will</span>
+<span class="sd">            be used for the RMSD.</span>
 
 <span class="sd">        property_map : dict</span>
 <span class="sd">            A dictionary that maps system &quot;properties&quot; to their user defined</span>
@@ -1174,39 +1234,59 @@
                 <span class="s2">&quot;&#39;system&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;.&quot;</span>
             <span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">_Molecule</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">_System</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;&#39;reference&#39; must be of type &#39;BioSimSpace._SireWrappers.Molecule&#39;.&quot;</span>
+                <span class="s2">&quot;&#39;reference&#39; must be of type &#39;BioSimSpace._SireWrappers.System&#39;.&quot;</span>
             <span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">reference_index</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;reference_index&#39; must be of type &#39;int&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">molecule_pairs</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;molecule_pairs&#39; must be a list of integer tuples.&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">molecule_pairs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pair</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;molecule_pairs&#39; must be a list of integer tuples.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;molecule_pairs&#39; must be a list of integer tuples.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;molecule_pairs&#39; must be a list of integer tuples.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;molecule_pairs&#39; must be a list of integer tuples.&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rmsd_mapping</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;rmsd_mapping&#39; must be of type &#39;dict&#39;.&quot;</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rmsd_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomIdx</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
-                <span class="n">v</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomIdx</span>
-            <span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">align_indices</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;align_indices&#39; must be a dictionary.&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">align_indices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">MolNum</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                    <span class="s2">&quot;&#39;mapping&#39; must contain &#39;Sire.Mol.AtomIdx&#39; key-value pairs!&quot;</span>
+                    <span class="s2">&quot;Keys of &#39;align_indices&#39; must be of type &#39;sire.legacy.Mol.MolMolNum&#39;.&quot;</span>
                 <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Values of &#39;align_indices&#39; must be lists of &#39;sire.legacy.Mol.AtomIdx&#39; types.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomIdx</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                        <span class="s2">&quot;Values of &#39;align_indices&#39; must be lists of &#39;sire.legacy.Mol.AtomIdx&#39; types.&quot;</span>
+                    <span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">align_mapping</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;align_mapping&#39; must be of type &#39;dict&#39;.&quot;</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">align_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;align_mapping&#39; must contain &#39;int&#39; key-value pairs!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rmsd_indices</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;rmsd_indices&#39; must be a dictionary.&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">rmsd_indices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">MolNum</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Keys of &#39;rmsd_indices&#39; must be of type &#39;sire.legacy.Mol.MolNum&#39;.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Values of &#39;rmsd_indices&#39; must be lists of &#39;sire.legacy.Mol.AtomIdx&#39; types.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">_SireMol</span><span class="o">.</span><span class="n">AtomIdx</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                        <span class="s2">&quot;Values of &#39;rmsd_indices&#39; must be lists of &#39;sire.legacy.Mol.AtomIdx&#39; types.&quot;</span>
+                    <span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">property_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;property_map&#39; must be of type &#39;dict&#39;&quot;</span><span class="p">)</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">molecule</span> <span class="o">=</span> <span class="n">system</span><span class="p">[</span><span class="n">reference_index</span><span class="p">]</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Molecule at &#39;reference_index&#39; not found in &#39;system&#39;!&quot;</span><span class="p">)</span>
 
         <span class="c1"># Get the &#39;space&#39; property from the system.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1217,43 +1297,71 @@
                 <span class="sa">f</span><span class="s2">&quot;&#39;system&#39; has no &#39;</span><span class="si">{</span><span class="n">space_prop</span><span class="si">}</span><span class="s2">&#39; property. Unable to compute RMSD!&quot;</span>
             <span class="p">)</span>
 
-        <span class="c1"># Align the molecule to the reference using the alignment mapping.</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">align_mapping</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">molecule</span> <span class="o">=</span> <span class="n">_rmsdAlign</span><span class="p">(</span>
-                    <span class="n">molecule</span><span class="p">,</span>
-                    <span class="n">reference</span><span class="p">,</span>
-                    <span class="n">align_mapping</span><span class="p">,</span>
-                    <span class="n">property_map0</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
-                    <span class="n">property_map1</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;Unable to align &#39;molecule&#39; to &#39;reference&#39; based on &#39;align_mapping&#39;.&quot;</span>
-                <span class="p">)</span>
-
         <span class="c1"># Set the user-define coordinates property.</span>
         <span class="n">coord_prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;coordinates&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">)</span>
 
-        <span class="c1"># Loop over all atom matches and compute the squared distance.</span>
+        <span class="c1"># Total squared distance.</span>
         <span class="n">dist2</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">idx0</span><span class="p">,</span> <span class="n">idx1</span> <span class="ow">in</span> <span class="n">rmsd_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+        <span class="c1"># Total number of RMSD atoms.</span>
+        <span class="n">num_rmsd</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Loop over the molecules.</span>
+        <span class="k">for</span> <span class="n">idx_system</span><span class="p">,</span> <span class="n">idx_ref</span> <span class="ow">in</span> <span class="n">molecule_pairs</span><span class="p">:</span>
+            <span class="n">mol</span> <span class="o">=</span> <span class="n">system</span><span class="p">[</span><span class="n">idx_system</span><span class="p">]</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="n">reference</span><span class="p">[</span><span class="n">idx_ref</span><span class="p">]</span>
+
+            <span class="n">align_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">coord0</span> <span class="o">=</span> <span class="n">molecule</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx0</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">coord_prop</span><span class="p">)</span>
-                <span class="n">coord1</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx1</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">coord_prop</span><span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;Could not calculate initial RMSD due to missing coordinates!&quot;</span>
-                <span class="p">)</span>
-            <span class="n">dist2</span> <span class="o">+=</span> <span class="n">space</span><span class="o">.</span><span class="n">calcDist2</span><span class="p">(</span><span class="n">coord0</span><span class="p">,</span> <span class="n">coord1</span><span class="p">)</span>
+                <span class="n">align_mapping</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="n">i</span><span class="o">.</span><span class="n">value</span><span class="p">():</span> <span class="n">i</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">align_indices</span><span class="p">[</span><span class="n">ref</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">number</span><span class="p">()]</span>
+                <span class="p">}</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">align_mapping</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">new_mol</span> <span class="o">=</span> <span class="n">_rmsdAlign</span><span class="p">(</span>
+                        <span class="n">mol</span><span class="p">,</span>
+                        <span class="n">ref</span><span class="p">,</span>
+                        <span class="n">align_mapping</span><span class="p">,</span>
+                        <span class="n">property_map0</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
+                        <span class="n">property_map1</span><span class="o">=</span><span class="n">property_map</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;Unable to align &#39;molecule&#39; to &#39;reference&#39; based on &#39;align_mapping&#39;.&quot;</span>
+                    <span class="p">)</span>
+
+            <span class="n">rmsd_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">rmsd_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">rmsd_indices</span><span class="p">[</span><span class="n">ref</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">number</span><span class="p">()]}</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rmsd_mapping</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Loop over all atom matches and compute the squared distance.</span>
+                <span class="k">for</span> <span class="n">idx0</span><span class="p">,</span> <span class="n">idx1</span> <span class="ow">in</span> <span class="n">rmsd_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">coord0</span> <span class="o">=</span> <span class="n">new_mol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx0</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">coord_prop</span><span class="p">)</span>
+                        <span class="n">coord1</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">idx1</span><span class="p">)</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">coord_prop</span><span class="p">)</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="s2">&quot;Could not calculate initial RMSD due to missing coordinates!&quot;</span>
+                        <span class="p">)</span>
+                    <span class="n">dist2</span> <span class="o">+=</span> <span class="n">space</span><span class="o">.</span><span class="n">calcDist2</span><span class="p">(</span><span class="n">coord0</span><span class="p">,</span> <span class="n">coord1</span><span class="p">)</span>
+                    <span class="n">num_rmsd</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="c1"># Compute the RMSD.</span>
-        <span class="n">dist2</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rmsd_mapping</span><span class="p">)</span>
+        <span class="n">dist2</span> <span class="o">/=</span> <span class="n">num_rmsd</span>
         <span class="n">rmsd</span> <span class="o">=</span> <span class="n">_sqrt</span><span class="p">(</span><span class="n">dist2</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">_Length</span><span class="p">(</span><span class="n">rmsd</span><span class="p">,</span> <span class="s2">&quot;Angstrom&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal function to check that the object is in a consistent state.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lower_bound</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1310,7 +1418,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

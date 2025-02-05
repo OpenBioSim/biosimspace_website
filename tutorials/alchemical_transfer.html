@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Alchemical Transfer Method - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -309,6 +309,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -459,6 +460,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -483,6 +485,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -615,7 +624,7 @@ intricacies involved in setting up an ATM calculation.</p>
 <section id="system-setup">
 <h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading">¶</a></h2>
 <p>Import <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> using:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">BioSimSpace</span> <span class="k">as</span> <span class="nn">BSS</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">BioSimSpace</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">BSS</span>
 </pre></div>
 </div>
 <p>Now load the set of example molecules from a URL, via
@@ -673,10 +682,9 @@ more choices to be made before the system can be prepared. The most important of
 these is the choice of displacement vector, which defines the direction and
 distance at which the free ligand will be placed relative to the bound ligand.
 It is generally recommended that this displacement be at least 3 layers of water
-molecules (&gt; 10 Å) thick. If no displacement is provided BioSimSpace will find a best
-guess translation vector based on the relative positions of the protein and bound ligands
-and translate the free ligand 20Å along this vector.
-</p>
+molecules (&gt; 10 Å) thick. If no displacement is provided BioSimSpace will find a
+best guess translation vector based on the relative positions of the protein and
+bound ligands and translate the free ligand 20 Å along this vector.</p>
 <p>This is also the point at which a custom set of atoms can be chosen to define the
 centre of mass of both the ligands and the protein. In the majority of cases it
 should not be necessary to change the default choice of atoms, but the option is
@@ -912,7 +920,7 @@ transfer method, see the <a class="reference external" href="https://www.compmol
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.IO._io - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -633,52 +642,52 @@
     <span class="s2">&quot;savePerturbableSystem&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span> <span class="k">as</span> <span class="n">_OrderedDict</span>
-<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span> <span class="k">as</span> <span class="n">_glob</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span> <span class="k">as</span> <span class="n">_StringIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span> <span class="k">as</span> <span class="n">_OrderedDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span> <span class="k">as</span> <span class="n">_glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span> <span class="k">as</span> <span class="n">_StringIO</span>
 
-<span class="kn">import</span> <span class="nn">json</span> <span class="k">as</span> <span class="nn">_json</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">shlex</span> <span class="k">as</span> <span class="nn">_shlex</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
-<span class="kn">import</span> <span class="nn">subprocess</span> <span class="k">as</span> <span class="nn">_subprocess</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shlex</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shlex</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
 <span class="c1"># Flag that we&#39;ve not yet raised a warning about GROMACS not being installed.</span>
 <span class="n">_has_gmx_warned</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="kn">import</span> <span class="nn">sire</span> <span class="k">as</span> <span class="nn">_sire</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_sire</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_SireSystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_SireSystem</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_amber_home</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_gmx_path</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_amber_home</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_gmx_path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
 
-<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">_check_cache</span>
-<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">_update_cache</span>
-<span class="kn">from</span> <span class="nn">._file_cache</span> <span class="kn">import</span> <span class="n">_cache_active</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._file_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">_check_cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._file_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">_update_cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._file_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cache_active</span>
 
 
 <span class="c1"># Context manager for capturing stdout.</span>
 <span class="c1"># Taken from:</span>
 <span class="c1"># https://stackoverflow.com/questions/16571150/how-to-capture-stdout-output-from-a-python-function-call</span>
-<span class="k">class</span> <span class="nc">_Capturing</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_Capturing</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span> <span class="o">=</span> <span class="n">_sys</span><span class="o">.</span><span class="n">stdout</span>
         <span class="n">_sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stringio</span> <span class="o">=</span> <span class="n">_StringIO</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stringio</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
         <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stringio</span>
         <span class="n">_sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span>
@@ -709,7 +718,7 @@
 <span class="k">del</span> <span class="n">format_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">extensions</span><span class="p">,</span> <span class="n">description</span>
 
 
-<span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">expand</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Expand the set of paths with the supplied base.</span>
 
@@ -751,7 +760,7 @@
 
 <div class="viewcode-block" id="fileFormats">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.fileFormats.html#BioSimSpace.IO.fileFormats">[docs]</a>
-<span class="k">def</span> <span class="nf">fileFormats</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fileFormats</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a list of the supported formats.</span>
 
@@ -767,7 +776,7 @@
 
 <div class="viewcode-block" id="formatInfo">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.formatInfo.html#BioSimSpace.IO.formatInfo">[docs]</a>
-<span class="k">def</span> <span class="nf">formatInfo</span><span class="p">(</span><span class="nb">format</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">formatInfo</span><span class="p">(</span><span class="nb">format</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return information for the specified file format.</span>
 
@@ -808,7 +817,7 @@
 
 <div class="viewcode-block" id="readPDB">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.readPDB.html#BioSimSpace.IO.readPDB">[docs]</a>
-<span class="k">def</span> <span class="nf">readPDB</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">pdb4amber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">readPDB</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">pdb4amber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Read a molecular system from a Protein Data Bank (PDBP) ID in the RSCB PDB</span>
 <span class="sd">    website.</span>
@@ -875,7 +884,7 @@
 
     <span class="c1"># This is a URL.</span>
     <span class="k">elif</span> <span class="nb">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;www&quot;</span><span class="p">)):</span>
-        <span class="kn">from</span> <span class="nn">sire._load</span> <span class="kn">import</span> <span class="n">_resolve_path</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">sire._load</span><span class="w"> </span><span class="kn">import</span> <span class="n">_resolve_path</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">pdb_file</span> <span class="o">=</span> <span class="n">_resolve_path</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">work_dir</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
@@ -951,7 +960,7 @@
 
 <div class="viewcode-block" id="readMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.readMolecules.html#BioSimSpace.IO.readMolecules">[docs]</a>
-<span class="k">def</span> <span class="nf">readMolecules</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">readMolecules</span><span class="p">(</span>
     <span class="n">files</span><span class="p">,</span>
     <span class="n">make_whole</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">rotate_box</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -1127,42 +1136,42 @@
                             <span class="s2">&quot;records are currently unsupported.&quot;</span>
                         <span class="p">)</span>
                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e1</span>
+                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e1</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
                     <span class="k">elif</span> <span class="s2">&quot;CHAMBER&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
                         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
                             <span class="s2">&quot;Unable to parse AMBER topology file. &quot;</span>
                             <span class="s2">&quot;CHAMBER files are currently unsupported.&quot;</span>
                         <span class="p">)</span>
                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e1</span>
+                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e1</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="s2">&quot;Failed to read molecules from </span><span class="si">%s</span><span class="s2">. &quot;</span>
                 <span class="s2">&quot;It looks like you failed to include a topology file.&quot;</span>
             <span class="p">)</span> <span class="o">%</span> <span class="n">files</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e0</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e0</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="s2">&quot;Incompatibility&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e0</span><span class="p">):</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="s2">&quot;Incompatibility between molecular information in files: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">files</span>
                 <span class="p">)</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e0</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e0</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to read molecules from: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">files</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e0</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e0</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
     <span class="c1"># Add a file format shared property.</span>
     <span class="n">prop</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fileformat&quot;</span><span class="p">,</span> <span class="s2">&quot;fileformat&quot;</span><span class="p">)</span>
@@ -1203,7 +1212,7 @@
 
 <div class="viewcode-block" id="saveMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.saveMolecules.html#BioSimSpace.IO.saveMolecules">[docs]</a>
-<span class="k">def</span> <span class="nf">saveMolecules</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">saveMolecules</span><span class="p">(</span>
     <span class="n">filebase</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">fileformat</span><span class="p">,</span> <span class="n">match_water</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1465,9 +1474,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to save system to format: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="nb">format</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
     <span class="c1"># Return the list of files.</span>
     <span class="k">return</span> <span class="n">files</span></div>
@@ -1476,7 +1485,7 @@
 
 <div class="viewcode-block" id="savePerturbableSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.savePerturbableSystem.html#BioSimSpace.IO.savePerturbableSystem">[docs]</a>
-<span class="k">def</span> <span class="nf">savePerturbableSystem</span><span class="p">(</span><span class="n">filebase</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">savePerturbableSystem</span><span class="p">(</span><span class="n">filebase</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Save a system containing a perturbable molecule. This will be written in</span>
 <span class="sd">    AMBER format, with a topology file for each end state of the perturbation,</span>
@@ -1561,7 +1570,7 @@
 
 <div class="viewcode-block" id="readPerturbableSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.IO.readPerturbableSystem.html#BioSimSpace.IO.readPerturbableSystem">[docs]</a>
-<span class="k">def</span> <span class="nf">readPerturbableSystem</span><span class="p">(</span><span class="n">top0</span><span class="p">,</span> <span class="n">coords0</span><span class="p">,</span> <span class="n">top1</span><span class="p">,</span> <span class="n">coords1</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">readPerturbableSystem</span><span class="p">(</span><span class="n">top0</span><span class="p">,</span> <span class="n">coords0</span><span class="p">,</span> <span class="n">top1</span><span class="p">,</span> <span class="n">coords1</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Read a perturbable system from file.</span>
 
@@ -1621,9 +1630,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unable to read lambda=0 coordinate file: </span><span class="si">{</span><span class="n">coords0</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># lamba = 1 coordinates.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1631,9 +1640,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unable to read lambda=1 coordinate file: </span><span class="si">{</span><span class="n">coords1</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># lamba = 0 topology.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1641,9 +1650,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unable to read lambda=0 topology file: </span><span class="si">{</span><span class="n">top0</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
         <span class="k">if</span> <span class="n">parser</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Unable to read topology file for lamba=0 end state: </span><span class="si">{</span><span class="n">top0</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1655,9 +1664,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unable to read lambda=1 topology file: </span><span class="si">{</span><span class="n">top1</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
         <span class="k">if</span> <span class="n">parser</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Unable to read topology file for lamba=1 end state: </span><span class="si">{</span><span class="n">top1</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1801,7 +1810,7 @@
 
 
 
-<span class="k">def</span> <span class="nf">_patch_sire_load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_patch_sire_load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">show_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Load the molecular system at &#39;path&#39;. This can be a filename</span>
 <span class="sd">    of a URL. If it is a URL, then the file will be downloaded</span>
@@ -1896,7 +1905,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

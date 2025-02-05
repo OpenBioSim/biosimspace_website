@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.FreeEnergy._relative - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,29 +633,29 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Relative&quot;</span><span class="p">,</span> <span class="s2">&quot;getData&quot;</span><span class="p">]</span>
 
-<span class="kn">import</span> <span class="nn">copy</span> <span class="k">as</span> <span class="nn">_copy</span>
-<span class="kn">import</span> <span class="nn">json</span> <span class="k">as</span> <span class="nn">_json</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">_math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">_np</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">_pd</span>
-<span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">_pathlib</span>
-<span class="kn">import</span> <span class="nn">pyarrow.parquet</span> <span class="k">as</span> <span class="nn">_pq</span>
-<span class="kn">import</span> <span class="nn">re</span> <span class="k">as</span> <span class="nn">_re</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">subprocess</span> <span class="k">as</span> <span class="nn">_subprocess</span>
-<span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
-<span class="kn">import</span> <span class="nn">zipfile</span> <span class="k">as</span> <span class="nn">_zipfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.parquet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_pq</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_zipfile</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_assert_imported</span><span class="p">,</span> <span class="n">_have_imported</span><span class="p">,</span> <span class="n">_try_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_assert_imported</span><span class="p">,</span> <span class="n">_have_imported</span><span class="p">,</span> <span class="n">_try_import</span>
 
 <span class="c1"># alchemlyb isn&#39;t available for all variants of Python that we support, so we</span>
 <span class="c1"># need to try_import it.</span>
 <span class="n">_alchemlyb</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">_have_imported</span><span class="p">(</span><span class="n">_alchemlyb</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">logging</span> <span class="k">as</span> <span class="nn">_logging</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_logging</span>
 
     <span class="c1"># Silence pymbar warnings on startup.</span>
     <span class="n">_logger</span> <span class="o">=</span> <span class="n">_logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;pymbar&quot;</span><span class="p">)</span>
@@ -654,49 +663,49 @@
 
     <span class="c1"># Handle alchemlyb MBAR API changes.</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">AutoMBAR</span> <span class="k">as</span> <span class="n">_AutoMBAR</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.estimators</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoMBAR</span> <span class="k">as</span> <span class="n">_AutoMBAR</span>
     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">MBAR</span> <span class="k">as</span> <span class="n">_AutoMBAR</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.estimators</span> <span class="kn">import</span> <span class="n">TI</span> <span class="k">as</span> <span class="n">_TI</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.postprocessors.units</span> <span class="kn">import</span> <span class="n">to_kcalmol</span> <span class="k">as</span> <span class="n">_to_kcalmol</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.parsing.amber</span> <span class="kn">import</span> <span class="n">extract_dHdl</span> <span class="k">as</span> <span class="n">_amber_extract_dHdl</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.parsing.amber</span> <span class="kn">import</span> <span class="n">extract_u_nk</span> <span class="k">as</span> <span class="n">_amber_extract_u_nk</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.parsing.gmx</span> <span class="kn">import</span> <span class="n">extract_dHdl</span> <span class="k">as</span> <span class="n">_gmx_extract_dHdl</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.parsing.gmx</span> <span class="kn">import</span> <span class="n">extract_u_nk</span> <span class="k">as</span> <span class="n">_gmx_extract_u_nk</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.preprocessing.subsampling</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.estimators</span><span class="w"> </span><span class="kn">import</span> <span class="n">MBAR</span> <span class="k">as</span> <span class="n">_AutoMBAR</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.estimators</span><span class="w"> </span><span class="kn">import</span> <span class="n">TI</span> <span class="k">as</span> <span class="n">_TI</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.postprocessors.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_kcalmol</span> <span class="k">as</span> <span class="n">_to_kcalmol</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.parsing.amber</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_dHdl</span> <span class="k">as</span> <span class="n">_amber_extract_dHdl</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.parsing.amber</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_u_nk</span> <span class="k">as</span> <span class="n">_amber_extract_u_nk</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.parsing.gmx</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_dHdl</span> <span class="k">as</span> <span class="n">_gmx_extract_dHdl</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.parsing.gmx</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_u_nk</span> <span class="k">as</span> <span class="n">_gmx_extract_u_nk</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.preprocessing.subsampling</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
         <span class="n">equilibrium_detection</span> <span class="k">as</span> <span class="n">_equilibrium_detection</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.preprocessing.subsampling</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.preprocessing.subsampling</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
         <span class="n">statistical_inefficiency</span> <span class="k">as</span> <span class="n">_statistical_inefficiency</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.preprocessing.subsampling</span> <span class="kn">import</span> <span class="n">slicing</span> <span class="k">as</span> <span class="n">_slicing</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.preprocessing.subsampling</span> <span class="kn">import</span> <span class="n">decorrelate_u_nk</span><span class="p">,</span> <span class="n">decorrelate_dhdl</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.postprocessors.units</span> <span class="kn">import</span> <span class="n">to_kcalmol</span> <span class="k">as</span> <span class="n">_to_kcalmol</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.postprocessors.units</span> <span class="kn">import</span> <span class="n">kJ2kcal</span> <span class="k">as</span> <span class="n">_kJ2kcal</span>
-    <span class="kn">from</span> <span class="nn">alchemlyb.postprocessors.units</span> <span class="kn">import</span> <span class="n">R_kJmol</span> <span class="k">as</span> <span class="n">_R_kJmol</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.preprocessing.subsampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">slicing</span> <span class="k">as</span> <span class="n">_slicing</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.preprocessing.subsampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">decorrelate_u_nk</span><span class="p">,</span> <span class="n">decorrelate_dhdl</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.postprocessors.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_kcalmol</span> <span class="k">as</span> <span class="n">_to_kcalmol</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.postprocessors.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">kJ2kcal</span> <span class="k">as</span> <span class="n">_kJ2kcal</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">alchemlyb.postprocessors.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">R_kJmol</span> <span class="k">as</span> <span class="n">_R_kJmol</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy.Base</span> <span class="kn">import</span> <span class="n">getBinDir</span> <span class="k">as</span> <span class="n">_getBinDir</span>
-<span class="kn">from</span> <span class="nn">sire.legacy.Base</span> <span class="kn">import</span> <span class="n">getShareDir</span> <span class="k">as</span> <span class="n">_getShareDir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Base</span><span class="w"> </span><span class="kn">import</span> <span class="n">getBinDir</span> <span class="k">as</span> <span class="n">_getBinDir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Base</span><span class="w"> </span><span class="kn">import</span> <span class="n">getShareDir</span> <span class="k">as</span> <span class="n">_getShareDir</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_gmx_exe</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_is_notebook</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">AnalysisError</span> <span class="k">as</span> <span class="n">_AnalysisError</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">cd</span> <span class="k">as</span> <span class="n">_cd</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Process</span> <span class="k">as</span> <span class="n">_Process</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_gmx_exe</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_is_notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnalysisError</span> <span class="k">as</span> <span class="n">_AnalysisError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">cd</span> <span class="k">as</span> <span class="n">_cd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span> <span class="k">as</span> <span class="n">_Process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
 
 <span class="k">if</span> <span class="n">_is_notebook</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">FileLink</span> <span class="k">as</span> <span class="n">_FileLink</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileLink</span> <span class="k">as</span> <span class="n">_FileLink</span>
 
 <span class="c1"># Check that the analyse_freenrg script exists.</span>
 <span class="k">if</span> <span class="n">_sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">!=</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
@@ -719,7 +728,7 @@
 
 <div class="viewcode-block" id="Relative">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative">[docs]</a>
-<span class="k">class</span> <span class="nc">Relative</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Relative</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for configuring and running relative free-energy perturbation simulations.&quot;&quot;&quot;</span>
 
     <span class="c1"># Create a list of supported molecular dynamics engines. (For running simulations.)</span>
@@ -730,7 +739,7 @@
 
 <div class="viewcode-block" id="Relative.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -765,7 +774,7 @@
 
 <span class="sd">        engine : str</span>
 <span class="sd">            The molecular dynamics engine used to run the simulation. Available</span>
-<span class="sd">            options are &quot;GROMACS&quot;, or &quot;SOMD&quot;. If this argument is omitted then</span>
+<span class="sd">            options are &quot;AMBER&quot;, &quot;GROMACS&quot;, or &quot;SOMD&quot;. If this argument is omitted then</span>
 <span class="sd">            BioSimSpace will choose an appropriate engine for you.</span>
 
 <span class="sd">        setup_only : bool</span>
@@ -833,7 +842,7 @@
 
         <span class="c1"># Validate the protocol.</span>
         <span class="k">if</span> <span class="n">protocol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..Protocol._free_energy_mixin</span> <span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._free_energy_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
 
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_FreeEnergyMixin</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;SOMD&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
@@ -897,7 +906,7 @@
 
 <div class="viewcode-block" id="Relative.run">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.run">[docs]</a>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Run the simulation.</span>
 
@@ -919,7 +928,7 @@
 
 <div class="viewcode-block" id="Relative.wait">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.wait">[docs]</a>
-    <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Wait for the simulation to finish.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;No processes exist! Object created in &#39;setup_only&#39; mode.&quot;</span><span class="p">)</span>
@@ -929,7 +938,7 @@
 
 <div class="viewcode-block" id="Relative.kill">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.kill">[docs]</a>
-    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Kill a process for a specific lambda window.</span>
 
@@ -944,7 +953,7 @@
 
 <div class="viewcode-block" id="Relative.killAll">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.killAll">[docs]</a>
-    <span class="k">def</span> <span class="nf">killAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">killAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Kill any running processes for all lambda windows.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_runner</span><span class="o">.</span><span class="n">killAll</span><span class="p">()</span></div>
@@ -952,7 +961,7 @@
 
 <div class="viewcode-block" id="Relative.workDir">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.workDir">[docs]</a>
-    <span class="k">def</span> <span class="nf">workDir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">workDir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the working directory.</span>
 
@@ -967,7 +976,7 @@
 
 <div class="viewcode-block" id="Relative.getData">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.getData">[docs]</a>
-    <span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">file_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">file_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a link to a zip file containing the data files required for</span>
 <span class="sd">        post-simulation analysis.</span>
@@ -1053,7 +1062,7 @@
 <div class="viewcode-block" id="Relative.analyse">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.analyse">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">analyse</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">analyse</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse existing free-energy data from a simulation working directory.</span>
 
@@ -1137,7 +1146,7 @@
 <div class="viewcode-block" id="Relative.checkOverlap">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.checkOverlap">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">checkOverlap</span><span class="p">(</span><span class="n">overlap</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.03</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">checkOverlap</span><span class="p">(</span><span class="n">overlap</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.03</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check the overlap of an FEP leg.</span>
 
@@ -1193,7 +1202,7 @@
 <div class="viewcode-block" id="Relative.difference">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.Relative.html#BioSimSpace.FreeEnergy.Relative.difference">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">difference</span><span class="p">(</span><span class="n">pmf</span><span class="p">,</span> <span class="n">pmf_ref</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">difference</span><span class="p">(</span><span class="n">pmf</span><span class="p">,</span> <span class="n">pmf_ref</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the relative free-energy difference between two perturbation</span>
 <span class="sd">        legs, or between the end states of a single leg.</span>
@@ -1303,7 +1312,7 @@
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_get_data</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">estimator</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_data</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">estimator</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        files : list(pathlib.Path)</span>
 <span class="sd">            List of files for all lambda values to analyse. Should be sorted.</span>
@@ -1357,7 +1366,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">is_mbar</span> <span class="o">=</span> <span class="kc">False</span>
 
-        <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
 
         <span class="n">function_dict</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;SOMD&quot;</span><span class="p">:</span> <span class="n">partial</span><span class="p">(</span><span class="n">Relative</span><span class="o">.</span><span class="n">_somd_extract</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">),</span>
@@ -1373,14 +1382,14 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Could not extract the data from the provided files!&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="k">return</span> <span class="n">data</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_get_u_nk</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_u_nk</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the u_nk dataframes for MBAR analysis.</span>
 
@@ -1405,7 +1414,7 @@
         <span class="k">return</span> <span class="n">Relative</span><span class="o">.</span><span class="n">_get_data</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="s2">&quot;MBAR&quot;</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_get_dh_dl</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_dh_dl</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the dh_dl dataframes for TI analysis.</span>
 
@@ -1429,7 +1438,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Relative</span><span class="o">.</span><span class="n">_get_data</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="s2">&quot;TI&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse free-energy data for this object.</span>
 
@@ -1458,7 +1467,7 @@
         <span class="k">return</span> <span class="n">Relative</span><span class="o">.</span><span class="n">analyse</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_somd_extract</span><span class="p">(</span><span class="n">simfile</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_somd_extract</span><span class="p">(</span><span class="n">simfile</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract required data from a SOMD output file (simfile.dat).</span>
 
@@ -1621,7 +1630,7 @@
         <span class="k">return</span> <span class="n">df</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_somd2_extract</span><span class="p">(</span><span class="n">parquet_file</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_somd2_extract</span><span class="p">(</span><span class="n">parquet_file</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract required data from a SOMD2 output file (parquet file).</span>
 
@@ -1756,7 +1765,7 @@
             <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_preprocess_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_preprocess_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Preprocess FEP simulation data.</span>
 
@@ -1788,8 +1797,8 @@
         <span class="c1"># Assign defaults in case not passed via kwargs.</span>
         <span class="n">auto_eq</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">stat_ineff</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">truncate</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">truncate_keep</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span>
+        <span class="n">truncate_upper</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="n">truncate_lower</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="c1"># Parse kwargs.</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1798,35 +1807,31 @@
                 <span class="n">auto_eq</span> <span class="o">=</span> <span class="n">value</span>
             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;STATISTICALINEFFICIENCY&quot;</span><span class="p">:</span>
                 <span class="n">stat_ineff</span> <span class="o">=</span> <span class="n">value</span>
-            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;TRUNCATEPERCENTAGE&quot;</span><span class="p">:</span>
-                <span class="n">truncate</span> <span class="o">=</span> <span class="n">value</span>
-            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;TRUNCATEKEEP&quot;</span><span class="p">:</span>
-                <span class="n">truncate_keep</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;TRUNCATEUPPER&quot;</span><span class="p">:</span>
+                <span class="n">truncate_upper</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;TRUNCATELOWER&quot;</span><span class="p">:</span>
+                <span class="n">truncate_lower</span> <span class="o">=</span> <span class="n">value</span>
 
-        <span class="c1"># First truncate data.</span>
+        <span class="c1"># Copy the data.</span>
         <span class="n">raw_data</span> <span class="o">=</span> <span class="n">data</span>
-        <span class="k">if</span> <span class="n">truncate</span><span class="p">:</span>
-            <span class="c1"># Get the upper and lower bounds for truncate.</span>
-            <span class="n">data_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">data_step</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="n">data_kept</span> <span class="o">=</span> <span class="n">data_len</span> <span class="o">*</span> <span class="p">(</span><span class="n">truncate</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
-            <span class="n">data_time</span> <span class="o">=</span> <span class="n">data_kept</span> <span class="o">*</span> <span class="n">data_step</span>
-            <span class="k">if</span> <span class="n">truncate_keep</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
-                <span class="n">truncate_lower</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="n">truncate_upper</span> <span class="o">=</span> <span class="n">data_time</span> <span class="o">-</span> <span class="n">data_step</span>
-            <span class="k">if</span> <span class="n">truncate_keep</span> <span class="o">==</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span>
-                <span class="n">truncate_lower</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_len</span> <span class="o">*</span> <span class="n">data_step</span><span class="p">)</span> <span class="o">-</span> <span class="n">data_time</span>
-                <span class="n">truncate_upper</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_len</span> <span class="o">*</span> <span class="n">data_step</span><span class="p">)</span> <span class="o">-</span> <span class="n">data_step</span>
 
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-                    <span class="n">_slicing</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">truncate_lower</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">truncate_upper</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">raw_data</span>
-                <span class="p">]</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not truncate data.&quot;</span><span class="p">)</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span>
-        <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Data length.</span>
+        <span class="n">data_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># Step size.</span>
+        <span class="n">data_step</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Get the upper and lower bounds for truncate.</span>
+        <span class="n">truncate_lower</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_len</span> <span class="o">*</span> <span class="p">(</span><span class="n">truncate_lower</span> <span class="o">/</span> <span class="mi">100</span><span class="p">))</span> <span class="o">*</span> <span class="n">data_step</span>
+        <span class="n">truncate_upper</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_len</span> <span class="o">*</span> <span class="p">(</span><span class="n">truncate_upper</span> <span class="o">/</span> <span class="mi">100</span><span class="p">))</span> <span class="o">*</span> <span class="n">data_step</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">_slicing</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">truncate_lower</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">truncate_upper</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">raw_data</span>
+            <span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not truncate data.&quot;</span><span class="p">)</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span>
 
         <span class="c1"># The decorrelate function calls either autoequilibration or statistical_inefficiency</span>
@@ -1860,13 +1865,10 @@
                 <span class="p">)</span>
             <span class="n">sampled_data</span> <span class="o">=</span> <span class="n">data</span>
 
-        <span class="c1"># Concatanate in alchemlyb format.</span>
-        <span class="n">processed_data</span> <span class="o">=</span> <span class="n">_alchemlyb</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sampled_data</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">processed_data</span>
+        <span class="k">return</span> <span class="n">sampled_data</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_internal</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_internal</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse existing free-energy data using MBAR and the alchemlyb library.</span>
 
@@ -1942,13 +1944,14 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Could not extract the data from the provided files!&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Preprocess the data.</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">processed_data</span> <span class="o">=</span> <span class="n">Relative</span><span class="o">.</span><span class="n">_preprocess_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">processed_data</span> <span class="o">=</span> <span class="n">_alchemlyb</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">processed_data</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not preprocess the data!&quot;</span><span class="p">)</span>
             <span class="n">processed_data</span> <span class="o">=</span> <span class="n">_alchemlyb</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -1969,9 +1972,9 @@
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;MBAR free-energy analysis failed with </span><span class="si">{</span><span class="n">mbar_method</span><span class="si">}</span><span class="s2"> as mbar_method!&quot;</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
         <span class="c1"># Standard analysis.</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
@@ -1982,9 +1985,9 @@
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s2"> free-energy analysis failed!&quot;</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="n">_AnalysisError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Extract the data from the results.</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2011,7 +2014,7 @@
             <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_amber</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_amber</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse the AMBER free energy data.</span>
 
@@ -2066,6 +2069,13 @@
                 <span class="k">if</span> <span class="s2">&quot;lambda&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">:</span>
                     <span class="n">lambdas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambdas</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;No lambda windows were detected from the output directory names! &quot;</span>
+                <span class="s2">&quot;Ensure that the directory being analysed contains sub-directories&quot;</span>
+                <span class="s2">&quot;name e.g `lambda_0`, `lambda_1` containing the output files.&quot;</span>
+            <span class="p">)</span>
+
         <span class="c1"># Find the temperature for each lambda window.</span>
         <span class="n">temperatures</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">file</span><span class="p">,</span> <span class="n">lambda_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">):</span>
@@ -2092,7 +2102,7 @@
         <span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_gromacs</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_gromacs</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse GROMACS free energy data.</span>
 
@@ -2146,6 +2156,13 @@
                 <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">parts</span><span class="p">:</span>
                     <span class="k">if</span> <span class="s2">&quot;lambda&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">:</span>
                         <span class="n">lambdas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambdas</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;No lambda windows were detected from the output directory names! &quot;</span>
+                    <span class="s2">&quot;Ensure that the directory being analysed contains sub-directories&quot;</span>
+                    <span class="s2">&quot;name e.g `lambda_0`, `lambda_1` containing the output files.&quot;</span>
+                <span class="p">)</span>
 
             <span class="c1"># Find the temperature at each lambda window</span>
             <span class="n">temperatures</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2260,7 +2277,7 @@
             <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_somd</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_somd</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse SOMD free energy data.</span>
 
@@ -2315,6 +2332,13 @@
                 <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">parts</span><span class="p">:</span>
                     <span class="k">if</span> <span class="s2">&quot;lambda&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">:</span>
                         <span class="n">lambdas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambdas</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;No lambda windows were detected from the output directory names! &quot;</span>
+                    <span class="s2">&quot;Ensure that the directory being analysed contains sub-directories&quot;</span>
+                    <span class="s2">&quot;name e.g `lambda_0`, `lambda_1` containing the output files.&quot;</span>
+                <span class="p">)</span>
 
             <span class="n">temperatures</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
@@ -2441,7 +2465,7 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">overlap</span><span class="p">))</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_somd2</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_somd2</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;alchemlyb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse SOMD2 free energy data.</span>
 
@@ -2513,6 +2537,13 @@
         <span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">))]</span>
         <span class="n">lambdas</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lambdas</span><span class="p">)</span>
 
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambdas</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;No lambda windows were detected from the output directory names! &quot;</span>
+                <span class="s2">&quot;Ensure that the directory being analysed contains sub-directories&quot;</span>
+                <span class="s2">&quot;name e.g `lambda_0`, `lambda_1` containing the output files.&quot;</span>
+            <span class="p">)</span>
+
         <span class="c1"># Check that the temperatures at the end states match.</span>
         <span class="k">if</span> <span class="n">temperatures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">temperatures</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The temperatures at the endstates don&#39;t match!&quot;</span><span class="p">)</span>
@@ -2521,7 +2552,7 @@
             <span class="n">files</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="s2">&quot;SOMD2&quot;</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_checkOverlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.03</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_checkOverlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s2">&quot;MBAR&quot;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.03</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check the overlap of an FEP simulation leg.</span>
 
@@ -2553,7 +2584,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Overlap matrix isn&#39;t supported for this estimator.&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pmf_ref</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pmf_ref</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the relative free-energy difference between two perturbation</span>
 <span class="sd">        legs, or between the end states of a single leg.</span>
@@ -2579,7 +2610,7 @@
         <span class="c1"># Now call the staticmethod passing in both PMFs.</span>
         <span class="k">return</span> <span class="n">Relative</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">pmf</span><span class="p">,</span> <span class="n">pmf_ref</span><span class="o">=</span><span class="n">pmf_ref</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_initialise_runner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialise_runner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal helper function to initialise the process runner.</span>
 
@@ -2819,7 +2850,7 @@
 
 <div class="viewcode-block" id="getData">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.getData.html#BioSimSpace.FreeEnergy.getData">[docs]</a>
-<span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">file_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getData</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">file_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a link to a zip file containing the data files required for</span>
 <span class="sd">    post-simulation analysis.</span>
@@ -2858,7 +2889,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

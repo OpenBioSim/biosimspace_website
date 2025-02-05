@@ -25,11 +25,13 @@
       ~Equilibration.getThermostatTimeConstant
       ~Equilibration.getTimeStep
       ~Equilibration.isConstantTemp
+      ~Equilibration.isRestart
       ~Equilibration.restraints
       ~Equilibration.setEndTemperature
       ~Equilibration.setForceConstant
       ~Equilibration.setPressure
       ~Equilibration.setReportInterval
+      ~Equilibration.setRestart
       ~Equilibration.setRestartInterval
       ~Equilibration.setRestraint
       ~Equilibration.setRunTime

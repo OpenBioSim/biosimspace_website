@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Process._gromacs - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,57 +633,57 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Gromacs&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_try_import</span>
 
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span> <span class="k">as</span> <span class="n">_Path</span>
-<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span> <span class="k">as</span> <span class="n">_TemporaryDirectory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span> <span class="k">as</span> <span class="n">_Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tempfile</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemporaryDirectory</span> <span class="k">as</span> <span class="n">_TemporaryDirectory</span>
 
-<span class="kn">import</span> <span class="nn">glob</span> <span class="k">as</span> <span class="nn">_glob</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">_np</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
 
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">shlex</span> <span class="k">as</span> <span class="nn">_shlex</span>
-<span class="kn">import</span> <span class="nn">subprocess</span> <span class="k">as</span> <span class="nn">_subprocess</span>
-<span class="kn">import</span> <span class="nn">timeit</span> <span class="k">as</span> <span class="nn">_timeit</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shlex</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shlex</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_timeit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Vol</span> <span class="k">as</span> <span class="n">_SireVol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vol</span> <span class="k">as</span> <span class="n">_SireVol</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_gmx_exe</span><span class="p">,</span> <span class="n">_gmx_version</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Config</span> <span class="kn">import</span> <span class="n">Gromacs</span> <span class="k">as</span> <span class="n">_GromacsConfig</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
-<span class="kn">from</span> <span class="nn">..Protocol._free_energy_mixin</span> <span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
-<span class="kn">from</span> <span class="nn">..Protocol._position_restraint_mixin</span> <span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">..Types._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_gmx_exe</span><span class="p">,</span> <span class="n">_gmx_version</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gromacs</span> <span class="k">as</span> <span class="n">_GromacsConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._free_energy_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._position_restraint_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types._type</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_process</span>
 
-<span class="kn">from</span> <span class="nn">._plumed</span> <span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._plumed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
 
 
 <div class="viewcode-block" id="Gromacs">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs">[docs]</a>
-<span class="k">class</span> <span class="nc">Gromacs</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Gromacs</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for running simulations using GROMACS.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Gromacs.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="p">,</span>
@@ -850,7 +859,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the input files and working directory ready for simulation.&quot;&quot;&quot;</span>
 
         <span class="c1"># Create the input files...</span>
@@ -880,7 +889,7 @@
                 <span class="s2">&quot;somd1_compatibility&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span>
                 <span class="ow">and</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;somd1_compatibility&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>
             <span class="p">):</span>
-                <span class="kn">from</span> <span class="nn">._somd</span> <span class="kn">import</span> <span class="n">_somd1_compatibility</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">._somd</span><span class="w"> </span><span class="kn">import</span> <span class="n">_somd1_compatibility</span>
 
                 <span class="n">system</span> <span class="o">=</span> <span class="n">_somd1_compatibility</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 
@@ -934,7 +943,7 @@
         <span class="c1"># Return the list of input files.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span>
 
-    <span class="k">def</span> <span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate GROMACS configuration file strings.&quot;&quot;&quot;</span>
 
         <span class="c1"># Check whether the system contains periodic box information.</span>
@@ -1058,7 +1067,7 @@
         <span class="c1"># Flag that this isn&#39;t a custom protocol.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">_setCustomised</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_generate_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate the dictionary of command-line arguments.&quot;&quot;&quot;</span>
 
         <span class="c1"># Clear the existing arguments.</span>
@@ -1078,7 +1087,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">setArg</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_generate_binary_run_file</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_binary_run_file</span><span class="p">(</span>
         <span class="n">mdp_file</span><span class="p">,</span>
         <span class="n">gro_file</span><span class="p">,</span>
         <span class="n">top_file</span><span class="p">,</span>
@@ -1266,7 +1275,7 @@
 
 <div class="viewcode-block" id="Gromacs.addToConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.addToConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">addToConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addToConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a string to the configuration list.</span>
 
@@ -1297,7 +1306,7 @@
 
 <div class="viewcode-block" id="Gromacs.resetConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.resetConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">resetConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resetConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the configuration parameters.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_generate_config</span><span class="p">()</span>
 
@@ -1317,7 +1326,7 @@
 
 <div class="viewcode-block" id="Gromacs.setConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.setConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">setConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the list of configuration file strings.</span>
 
@@ -1348,7 +1357,7 @@
 
 <div class="viewcode-block" id="Gromacs.start">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.start">[docs]</a>
-    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start the GROMACS process.</span>
 
@@ -1405,7 +1414,7 @@
 
 <div class="viewcode-block" id="Gromacs.getSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -1448,7 +1457,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -1463,7 +1472,7 @@
 
 <div class="viewcode-block" id="Gromacs.getTrajectory">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getTrajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a trajectory object.</span>
 
@@ -1518,7 +1527,7 @@
 
 <div class="viewcode-block" id="Gromacs.getFrame">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getFrame">[docs]</a>
-    <span class="k">def</span> <span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a specific trajectory frame.</span>
 
@@ -1567,7 +1576,7 @@
 
 <div class="viewcode-block" id="Gromacs.getRecord">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getRecord">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a record from the stdout dictionary.</span>
 
@@ -1609,7 +1618,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentRecord">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentRecord">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a current record from the stdout dictionary.</span>
 
@@ -1641,7 +1650,7 @@
 
 <div class="viewcode-block" id="Gromacs.getRecords">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getRecords">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the dictionary of stdout time-series records.</span>
 
@@ -1673,7 +1682,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentRecords">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentRecords">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the current dictionary of stdout time-series records.</span>
 
@@ -1694,7 +1703,7 @@
 
 <div class="viewcode-block" id="Gromacs.getTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the simulation time.</span>
 
@@ -1723,7 +1732,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current simulation time.</span>
 
@@ -1747,7 +1756,7 @@
 
 <div class="viewcode-block" id="Gromacs.getStep">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getStep">[docs]</a>
-    <span class="k">def</span> <span class="nf">getStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of integration steps.</span>
 
@@ -1776,7 +1785,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentStep">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentStep">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current number of integration steps.</span>
 
@@ -1797,7 +1806,7 @@
 
 <div class="viewcode-block" id="Gromacs.getBondEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getBondEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the bond energy.</span>
 
@@ -1821,7 +1830,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentBondEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentBondEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current bond energy.</span>
 
@@ -1842,7 +1851,7 @@
 
 <div class="viewcode-block" id="Gromacs.getAngleEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getAngleEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the angle energy.</span>
 
@@ -1866,7 +1875,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentAngleEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentAngleEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current angle energy.</span>
 
@@ -1887,7 +1896,7 @@
 
 <div class="viewcode-block" id="Gromacs.getDihedralEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getDihedralEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the total dihedral energy (proper + improper).</span>
 
@@ -1930,7 +1939,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentDihedralEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentDihedralEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current total dihedral energy (proper + improper).</span>
 
@@ -1951,7 +1960,7 @@
 
 <div class="viewcode-block" id="Gromacs.getProperEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getProperEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getProperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getProperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the proper dihedral energy.</span>
 
@@ -1975,7 +1984,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentProperEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentProperEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentProperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentProperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current proper dihedral energy.</span>
 
@@ -1996,7 +2005,7 @@
 
 <div class="viewcode-block" id="Gromacs.getImproperEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getImproperEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getImproperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getImproperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the improper energy.</span>
 
@@ -2022,7 +2031,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentImproperEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentImproperEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentImproperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentImproperEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current improper energy.</span>
 
@@ -2043,7 +2052,7 @@
 
 <div class="viewcode-block" id="Gromacs.getLennardJones14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getLennardJones14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getLennardJones14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLennardJones14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the Lennard-Jones energy between atoms 1 and 4.</span>
 
@@ -2067,7 +2076,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentLennardJones14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentLennardJones14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentLennardJones14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentLennardJones14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current Lennard-Jones energy between atoms 1 and 4.</span>
 
@@ -2088,7 +2097,7 @@
 
 <div class="viewcode-block" id="Gromacs.getLennardJonesSR">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getLennardJonesSR">[docs]</a>
-    <span class="k">def</span> <span class="nf">getLennardJonesSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLennardJonesSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the short-range Lennard-Jones energy.</span>
 
@@ -2112,7 +2121,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentLennardJonesSR">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentLennardJonesSR">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentLennardJonesSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentLennardJonesSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current short-range Lennard-Jones energy.</span>
 
@@ -2133,7 +2142,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCoulomb14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCoulomb14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCoulomb14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCoulomb14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the Coulomb energy between atoms 1 and 4.</span>
 
@@ -2157,7 +2166,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentCoulomb14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentCoulomb14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentCoulomb14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentCoulomb14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current Coulomb energy between atoms 1 and 4.</span>
 
@@ -2178,7 +2187,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCoulombSR">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCoulombSR">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCoulombSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCoulombSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the short-range Coulomb energy.</span>
 
@@ -2202,7 +2211,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentCoulombSR">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentCoulombSR">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentCoulombSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentCoulombSR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current short-range Coulomb energy.</span>
 
@@ -2223,7 +2232,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCoulombReciprocal">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCoulombReciprocal">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCoulombReciprocal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCoulombReciprocal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the reciprocal space Coulomb energy.</span>
 
@@ -2247,7 +2256,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentCoulombReciprocal">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentCoulombReciprocal">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentCoulombReciprocal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentCoulombReciprocal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current reciprocal space Coulomb energy.</span>
 
@@ -2268,7 +2277,7 @@
 
 <div class="viewcode-block" id="Gromacs.getDispersionCorrection">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getDispersionCorrection">[docs]</a>
-    <span class="k">def</span> <span class="nf">getDispersionCorrection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDispersionCorrection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the dispersion correction.</span>
 
@@ -2294,7 +2303,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentDispersionCorrection">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentDispersionCorrection">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentDispersionCorrection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentDispersionCorrection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current dispersion correction.</span>
 
@@ -2315,7 +2324,7 @@
 
 <div class="viewcode-block" id="Gromacs.getRestraintEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getRestraintEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the position restraint energy.</span>
 
@@ -2341,7 +2350,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentRestraintEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentRestraintEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current position restraint energy.</span>
 
@@ -2362,7 +2371,7 @@
 
 <div class="viewcode-block" id="Gromacs.getPotentialEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getPotentialEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the potential energy.</span>
 
@@ -2386,7 +2395,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentPotentialEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentPotentialEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current potential energy.</span>
 
@@ -2407,7 +2416,7 @@
 
 <div class="viewcode-block" id="Gromacs.getKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the kinetic energy.</span>
 
@@ -2431,7 +2440,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current kinetic energy.</span>
 
@@ -2452,7 +2461,7 @@
 
 <div class="viewcode-block" id="Gromacs.getTotalEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getTotalEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the total energy.</span>
 
@@ -2478,7 +2487,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentTotalEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentTotalEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current total energy.</span>
 
@@ -2499,7 +2508,7 @@
 
 <div class="viewcode-block" id="Gromacs.getConservedEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getConservedEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getConservedEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getConservedEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the conserved energy.</span>
 
@@ -2525,7 +2534,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentConservedEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentConservedEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentConservedEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentConservedEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current conserved energy.</span>
 
@@ -2546,7 +2555,7 @@
 
 <div class="viewcode-block" id="Gromacs.getTemperature">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getTemperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the temperature.</span>
 
@@ -2572,7 +2581,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentTemperature">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentTemperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current temperature.</span>
 
@@ -2593,7 +2602,7 @@
 
 <div class="viewcode-block" id="Gromacs.getPressure">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getPressure">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the pressure.</span>
 
@@ -2617,7 +2626,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentPressure">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentPressure">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current pressure.</span>
 
@@ -2638,7 +2647,7 @@
 
 <div class="viewcode-block" id="Gromacs.getPressureDC">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getPressureDC">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPressureDC</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPressureDC</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the DC pressure.</span>
 
@@ -2662,7 +2671,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentPressureDC">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentPressureDC">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentPressureDC</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentPressureDC</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current DC pressure.</span>
 
@@ -2683,7 +2692,7 @@
 
 <div class="viewcode-block" id="Gromacs.getConstraintRMSD">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getConstraintRMSD">[docs]</a>
-    <span class="k">def</span> <span class="nf">getConstraintRMSD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getConstraintRMSD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the RMSD of the constrained atoms.</span>
 
@@ -2707,7 +2716,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentConstraintRMSD">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentConstraintRMSD">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentConstraintRMSD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentConstraintRMSD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current RMSD of the constrained atoms.</span>
 
@@ -2728,7 +2737,7 @@
 
 <div class="viewcode-block" id="Gromacs.getVolume">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getVolume">[docs]</a>
-    <span class="k">def</span> <span class="nf">getVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the volume.</span>
 
 <span class="sd">        Parameters</span>
@@ -2751,7 +2760,7 @@
 
 <div class="viewcode-block" id="Gromacs.getCurrentVolume">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.getCurrentVolume">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the current volume.</span>
 
 <span class="sd">        Parameters</span>
@@ -2771,7 +2780,7 @@
 
 <div class="viewcode-block" id="Gromacs.stdout">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Gromacs.html#BioSimSpace.Process.Gromacs.stdout">[docs]</a>
-    <span class="k">def</span> <span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print the last n lines of the stdout buffer.</span>
 
@@ -2807,7 +2816,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span><span class="p">[</span><span class="n">x</span><span class="p">])</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_add_position_restraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_position_restraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to add position restraints.&quot;&quot;&quot;</span>
 
         <span class="c1"># Get the restraint type.</span>
@@ -2993,9 +3002,9 @@
                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to find restrained atom in the system?&quot;</span>
                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
                 <span class="c1"># The number of restraint files.</span>
                 <span class="n">num_restraint</span> <span class="o">=</span> <span class="mi">1</span>
@@ -3056,7 +3065,7 @@
                     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">top_lines</span><span class="p">:</span>
                         <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">line</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_initialise_energy_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialise_energy_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to intialise the energy dictionary.&quot;&quot;&quot;</span>
         <span class="c1"># Grab the available energy terms</span>
         <span class="n">command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_exe</span><span class="si">}</span><span class="s2"> energy -f </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_energy_file</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -3079,7 +3088,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_energy_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_sanitise_energy_term</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_parse_energy_terms</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_energy_terms</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parse the output from gmx energy output to get the energy terms in</span>
 <span class="sd">        the edr file. Example output looks like:</span>
@@ -3135,7 +3144,7 @@
             <span class="k">return</span> <span class="n">energy_names</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_parse_energy_units</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_energy_units</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract the energy unit from the output. Example outputs are:</span>
 
@@ -3198,7 +3207,7 @@
         <span class="k">return</span> <span class="n">units</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_sanitise_energy_term</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_sanitise_energy_term</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Format the energy term names to comply with the BioSimSpace</span>
 <span class="sd">        standard.</span>
@@ -3236,7 +3245,7 @@
         <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;BAR&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">key</span>
 
-    <span class="k">def</span> <span class="nf">_update_energy_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_energy_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal function to update the energy dictionary with the latest data.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_energy_dict</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -3279,7 +3288,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_energy_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]]</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_energy_units</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">units</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">_get_energy_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_energy_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to get a stdout record from the dictionary.</span>
 
 <span class="sd">        Parameters</span>
@@ -3339,7 +3348,7 @@
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">_getFinalFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getFinalFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the frame from the GRO file generated at the end of the</span>
 <span class="sd">        simulation.</span>
@@ -3420,7 +3429,7 @@
 
             <span class="k">return</span> <span class="n">old_system</span>
 
-    <span class="k">def</span> <span class="nf">_getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the trajectory frame closest to a specific time value.</span>
 
@@ -3548,7 +3557,7 @@
                 <span class="n">_os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
             <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">_find_trajectory_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_find_trajectory_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to find the trajectory file associated with the</span>
 <span class="sd">        process.</span>
@@ -3589,7 +3598,7 @@
 
 
 
-<span class="k">def</span> <span class="nf">_is_minimisation</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_minimisation</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper function to check whether a custom configuration</span>
 <span class="sd">    is a minimisation.</span>
@@ -3622,7 +3631,7 @@
     <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">_is_vacuum</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_vacuum</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper function to check whether a configuration corresponds to a</span>
 <span class="sd">    vacuum simulation.</span>
@@ -3673,7 +3682,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

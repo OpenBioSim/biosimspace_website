@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Changelog - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom_fonts.css?v=50da5bc0" />
@@ -309,6 +309,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -459,6 +460,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -483,6 +485,13 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -607,6 +616,19 @@ company supporting open-source development of fostering academic/industrial coll
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
 </section>
+<section id="feb-04-2025">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2024.3.0...2024.4.0">2024.4.0</a> - Feb 04 2025<a class="headerlink" href="#feb-04-2025" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Improved robustness of restraint search and fixed torsion force constant (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/360">#360</a>).</p></li>
+<li><p>Add support for <code class="docutils literal notranslate"><span class="pre">acdoctor</span></code> option for <code class="docutils literal notranslate"><span class="pre">Antechamber</span></code> to help with parameterisation of molecules with atypical valence (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/361">#361</a>).</p></li>
+<li><p>Added missing AMBER atom mapping pruning options to the <a class="reference internal" href="api/index_Align.html#module-BioSimSpace.Align" title="BioSimSpace.Align"><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace.Align</span></code></a> module (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/366">#366</a>).</p></li>
+<li><p>Improved error messages when no lambda windows are found during alchemical free-energy analysis (<a class="reference external" href="https://github.com/fjclark">&#64;fjclark</a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/368">#368</a>).</p></li>
+<li><p>Decouple the selection used for aligment and RMSD for the <a class="reference internal" href="api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html#BioSimSpace.Metadynamics.CollectiveVariable.RMSD" title="BioSimSpace.Metadynamics.CollectiveVariable.RMSD"><code class="xref py py-class docutils literal notranslate"><span class="pre">RMSD</span></code></a> collective variable (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/379">#379</a>).</p></li>
+<li><p>Added missing <code class="docutils literal notranslate"><span class="pre">._to_default_unit()</span></code> method to the <code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code> class (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/385">#385</a>).</p></li>
+<li><p>Clarified the meaning of the <code class="docutils literal notranslate"><span class="pre">explicit_dummies</span></code> keyword argument in the <a class="reference internal" href="api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber" title="BioSimSpace.Process.Amber"><code class="xref py py-class docutils literal notranslate"><span class="pre">BioSimSpace.Process.Amber</span></code></a> class (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/385">#385</a>).</p></li>
+<li><p>Added a new <a class="reference internal" href="api/generated/BioSimSpace.Types.Mass.html#BioSimSpace.Types.Mass" title="BioSimSpace.Types.Mass"><code class="xref py py-class docutils literal notranslate"><span class="pre">BioSimSpace.Types.Mass</span></code></a> class to handle atomic masses (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/385">#385</a>).</p></li>
+</ul>
+</section>
 <section id="oct-24-2024">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2024.2.0...2024.3.0">2024.3.0</a> - Oct 24 2024<a class="headerlink" href="#oct-24-2024" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -631,7 +653,7 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <li><p>Use SDF as an intermediate for <code class="docutils literal notranslate"><span class="pre">antechamber</span></code> if the original molecule was loaded from that format (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/287">#287</a>).</p></li>
 <li><p>Detect dummy atoms by checking <code class="docutils literal notranslate"><span class="pre">element</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">ambertype</span></code> properties when creating <code class="docutils literal notranslate"><span class="pre">SOMD</span></code> pert files (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/289">#289</a>).</p></li>
 <li><p>Add missing <code class="docutils literal notranslate"><span class="pre">match_water</span></code> kwarg to <code class="docutils literal notranslate"><span class="pre">prepareFEP</span></code> node (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/292">#292</a>).</p></li>
-<li><p>Add protein free-energy perturbation functionality (<a href="#id38"><span class="problematic" id="id39">`&#64;akalpokas &lt;https://github.com/akalpokas`_</span></a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/294">#294</a>).</p></li>
+<li><p>Add protein free-energy perturbation functionality (<a href="#id41"><span class="problematic" id="id42">`&#64;akalpokas &lt;https://github.com/akalpokas`_</span></a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/294">#294</a>).</p></li>
 <li><p>Ensure that the LJ sigma parameter for perturbed atoms is non-zero (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/295">#295</a>).</p></li>
 <li><p>Fixed return type docstrings for functions in the <a class="reference internal" href="api/index_Parameters.html#module-BioSimSpace.Parameters" title="BioSimSpace.Parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace.Parameters</span></code></a> module (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/298">#298</a>).</p></li>
 <li><p>Don’t use <code class="docutils literal notranslate"><span class="pre">sire.legacy.Base.wrap</span></code> with the <code class="docutils literal notranslate"><span class="pre">file_format</span></code> property to avoid (incorrect) auto string to unit conversion of <code class="docutils literal notranslate"><span class="pre">mol2</span></code> to moles squared (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/300">#300</a>).</p></li>
@@ -970,7 +992,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             
@@ -993,6 +1015,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#feb-04-2025">2024.4.0 - Feb 04 2025</a></li>
 <li><a class="reference internal" href="#oct-24-2024">2024.3.0 - Oct 24 2024</a></li>
 <li><a class="reference internal" href="#jul-09-2024">2024.2.0 - Jul 09 2024</a></li>
 <li><a class="reference internal" href="#apr-15-2024">2024.1.0 - Apr 15 2024</a></li>

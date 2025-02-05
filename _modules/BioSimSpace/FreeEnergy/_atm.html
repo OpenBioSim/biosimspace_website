@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.FreeEnergy._atm - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#          Matthew Burman &lt;matthew@openbiosim.org&gt;</span>
@@ -622,44 +631,44 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ATMSetup&quot;</span><span class="p">,</span> <span class="s2">&quot;ATM&quot;</span><span class="p">]</span>
 
-<span class="kn">import</span> <span class="nn">copy</span> <span class="k">as</span> <span class="nn">_copy</span>
-<span class="kn">import</span> <span class="nn">json</span> <span class="k">as</span> <span class="nn">_json</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">_pathlib</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
-<span class="kn">import</span> <span class="nn">zipfile</span> <span class="k">as</span> <span class="nn">_zipfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_zipfile</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
 
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
-<span class="kn">from</span> <span class="nn">..Align</span> <span class="kn">import</span> <span class="n">matchAtoms</span> <span class="k">as</span> <span class="n">_matchAtoms</span>
-<span class="kn">from</span> <span class="nn">..Align</span> <span class="kn">import</span> <span class="n">rmsdAlign</span> <span class="k">as</span> <span class="n">_rmsdAlign</span>
-<span class="kn">from</span> <span class="nn">..Notebook</span> <span class="kn">import</span> <span class="n">View</span> <span class="k">as</span> <span class="n">_View</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_is_notebook</span>
-<span class="kn">from</span> <span class="nn">..Process</span> <span class="kn">import</span> <span class="n">OpenMM</span> <span class="k">as</span> <span class="n">_OpenMM</span>
-<span class="kn">from</span> <span class="nn">..Process</span> <span class="kn">import</span> <span class="n">ProcessRunner</span> <span class="k">as</span> <span class="n">_ProcessRunner</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Align</span><span class="w"> </span><span class="kn">import</span> <span class="n">matchAtoms</span> <span class="k">as</span> <span class="n">_matchAtoms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Align</span><span class="w"> </span><span class="kn">import</span> <span class="n">rmsdAlign</span> <span class="k">as</span> <span class="n">_rmsdAlign</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">View</span> <span class="k">as</span> <span class="n">_View</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_is_notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Process</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenMM</span> <span class="k">as</span> <span class="n">_OpenMM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Process</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessRunner</span> <span class="k">as</span> <span class="n">_ProcessRunner</span>
 
 <span class="k">if</span> <span class="n">_is_notebook</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">FileLink</span> <span class="k">as</span> <span class="n">_FileLink</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileLink</span> <span class="k">as</span> <span class="n">_FileLink</span>
 
 
 <div class="viewcode-block" id="ATMSetup">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATMSetup.html#BioSimSpace.FreeEnergy.ATMSetup">[docs]</a>
-<span class="k">class</span> <span class="nc">ATMSetup</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ATMSetup</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class for setting up a system for ATM simulations.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="ATMSetup.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATMSetup.html#BioSimSpace.FreeEnergy.ATMSetup.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">receptor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -734,7 +743,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_setLigandFreeIndex</span><span class="p">(</span><span class="n">ligand_free_index</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_setSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">is_prepared</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">is_prepared</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the system for the ATM simulation.</span>
 
@@ -760,7 +769,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_is_prepared</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">_getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the system for the ATM simulation.</span>
 
 <span class="sd">        Returns</span>
@@ -770,7 +779,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span>
 
-    <span class="k">def</span> <span class="nf">_setProtein</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">protein</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setProtein</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">protein</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the protein for the ATM simulation.</span>
 
 <span class="sd">        Parameters</span>
@@ -787,7 +796,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_protein</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">_getProtein</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getProtein</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the protein for the ATM simulation.</span>
 
 <span class="sd">        Returns</span>
@@ -797,7 +806,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protein</span>
 
-    <span class="k">def</span> <span class="nf">_setLigandBound</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_bound</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLigandBound</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_bound</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the bound ligand for the ATM simulation.</span>
 
 <span class="sd">        Parameters</span>
@@ -816,7 +825,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">_getLigandBound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLigandBound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the bound ligand for the ATM simulation.</span>
 
 <span class="sd">        Returns</span>
@@ -826,7 +835,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound</span>
 
-    <span class="k">def</span> <span class="nf">_setLigandFree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_free</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLigandFree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_free</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the free ligand for the ATM simulation.</span>
 
 <span class="sd">        Parameters</span>
@@ -845,7 +854,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">_getLigandFree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLigandFree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the free ligand for the ATM simulation.</span>
 
 <span class="sd">        Returns</span>
@@ -855,7 +864,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free</span>
 
-    <span class="k">def</span> <span class="nf">_setDisplacement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">displacement</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setDisplacement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">displacement</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the displacement of the free ligand along the normal vector.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">displacement</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
@@ -887,7 +896,7 @@
                     <span class="s2">&quot;Displacement must be a vector or list if a pre-prepared system is given&quot;</span>
                 <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_getDisplacement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getDisplacement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the displacement of the free ligand along the normal vector.</span>
 
 <span class="sd">        Returns</span>
@@ -897,7 +906,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_displacement</span>
 
-    <span class="k">def</span> <span class="nf">_setLigandBoundRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_bound_rigid_core</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLigandBoundRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_bound_rigid_core</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the indices for the rigid core atoms of ligand 1.</span>
 
 <span class="sd">        Parameters</span>
@@ -922,7 +931,7 @@
                 <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound_rigid_core</span> <span class="o">=</span> <span class="n">ligand_bound_rigid_core</span>
 
-    <span class="k">def</span> <span class="nf">_getLigandBoundRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLigandBoundRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the indices for the rigid core atoms of ligand 1.</span>
 
 <span class="sd">        Returns</span>
@@ -932,7 +941,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound_rigid_core</span>
 
-    <span class="k">def</span> <span class="nf">_setLigandFreeRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_free_rigid_core</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLigandFreeRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_free_rigid_core</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the indices for the rigid core atoms of ligand 2.</span>
 
 <span class="sd">        Parameters</span>
@@ -957,7 +966,7 @@
                 <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free_rigid_core</span> <span class="o">=</span> <span class="n">ligand_free_rigid_core</span>
 
-    <span class="k">def</span> <span class="nf">_getLigandFreeRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLigandFreeRigidCore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the indices for the rigid core atoms of ligand 2.</span>
 
 <span class="sd">        Returns</span>
@@ -967,7 +976,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free_rigid_core</span>
 
-    <span class="k">def</span> <span class="nf">_setProteinIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">protein_index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setProteinIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">protein_index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the index of the protein in the system</span>
 
@@ -994,7 +1003,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;protein_index must be an int or a list of ints&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_getProteinIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getProteinIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the index of the protein molecule in the system.</span>
 
 <span class="sd">        Returns</span>
@@ -1004,7 +1013,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">protein_index</span>
 
-    <span class="k">def</span> <span class="nf">_setLigandBoundIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_bound_index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLigandBoundIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_bound_index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the index of the bound ligand molecule in the system.</span>
 
 <span class="sd">        Parameters</span>
@@ -1024,7 +1033,7 @@
                 <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound_index</span> <span class="o">=</span> <span class="n">ligand_bound_index</span>
 
-    <span class="k">def</span> <span class="nf">_getLigandBoundIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLigandBoundIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the index of the bound ligand molecule in the system.</span>
 
 <span class="sd">        Returns</span>
@@ -1034,7 +1043,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound_index</span>
 
-    <span class="k">def</span> <span class="nf">_setLigandFreeIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_free_index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLigandFreeIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ligand_free_index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the index of the free ligand molecule in the system.</span>
 
 <span class="sd">        Parameters</span>
@@ -1054,7 +1063,7 @@
                 <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free_index</span> <span class="o">=</span> <span class="n">ligand_free_index</span>
 
-    <span class="k">def</span> <span class="nf">_getLigandFreeIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLigandFreeIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the index of the free ligand molecule in the system.</span>
 
 <span class="sd">        Returns</span>
@@ -1066,7 +1075,7 @@
 
 <div class="viewcode-block" id="ATMSetup.prepare">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATMSetup.html#BioSimSpace.FreeEnergy.ATMSetup.prepare">[docs]</a>
-    <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prepare</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">ligand_bound_rigid_core</span><span class="p">,</span>
         <span class="n">ligand_free_rigid_core</span><span class="p">,</span>
@@ -1172,7 +1181,7 @@
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_makeSystemFromThree</span><span class="p">(</span><span class="n">protein</span><span class="p">,</span> <span class="n">ligand_bound</span><span class="p">,</span> <span class="n">ligand_free</span><span class="p">,</span> <span class="n">displacement</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_makeSystemFromThree</span><span class="p">(</span><span class="n">protein</span><span class="p">,</span> <span class="n">ligand_bound</span><span class="p">,</span> <span class="n">ligand_free</span><span class="p">,</span> <span class="n">displacement</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a system for ATM simulations.</span>
 
 <span class="sd">        Parameters</span>
@@ -1197,9 +1206,9 @@
 <span class="sd">            The system for the ATM simulation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">def</span> <span class="nf">_findTranslationVector</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">displacement</span><span class="p">,</span> <span class="n">protein</span><span class="p">,</span> <span class="n">ligand</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_findTranslationVector</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">displacement</span><span class="p">,</span> <span class="n">protein</span><span class="p">,</span> <span class="n">ligand</span><span class="p">):</span>
 
-            <span class="kn">from</span> <span class="nn">sire.legacy.Maths</span> <span class="kn">import</span> <span class="n">Vector</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">_System</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;system must be a BioSimSpace system&quot;</span><span class="p">)</span>
@@ -1224,7 +1233,7 @@
             <span class="c1"># Count grid squares that contain no protein atoms</span>
             <span class="n">num_non_prot</span> <span class="o">=</span> <span class="mi">0</span>
 
-            <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
             <span class="c1"># Loop over the grid</span>
             <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">grid_min</span><span class="o">.</span><span class="n">x</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">grid_max</span><span class="o">.</span><span class="n">x</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="n">num_edges</span><span class="p">):</span>
@@ -1296,7 +1305,7 @@
         <span class="n">lig2_ind</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(</span><span class="n">ligand_free_aligned</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">sys</span><span class="p">,</span> <span class="n">prot_ind</span><span class="p">,</span> <span class="n">lig1_ind</span><span class="p">,</span> <span class="n">lig2_ind</span><span class="p">,</span> <span class="n">vec</span>
 
-    <span class="k">def</span> <span class="nf">_systemInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_systemInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        If the user gives a pre-prepared ATM system, extract the needed information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1322,7 +1331,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound_atomcount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_ligand_bound_index</span><span class="p">]</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free_atomcount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_ligand_free_index</span><span class="p">]</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_findAtomIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_findAtomIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the indices of the protein and ligand atoms in the system</span>
 
@@ -1352,7 +1361,7 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_ligand_free_atom_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(</span><span class="n">ligand_free_atom_end</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_getProtComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getProtComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the atoms that define the center of mass of the protein as a list of ints</span>
 
@@ -1363,7 +1372,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol1_com_atoms</span>
 
-    <span class="k">def</span> <span class="nf">_setProtComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prot_com_atoms</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setProtComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prot_com_atoms</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the atoms that define the center of mass of the protein</span>
 <span class="sd">        If a list is given, simply set them according to the list.</span>
@@ -1398,7 +1407,7 @@
                     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">protein</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atoms within 11 angstrom of </span><span class="si">{</span><span class="n">com</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
                 <span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">_getLig1ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLig1ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the atoms that define the center of mass of the bound ligand as a list of ints</span>
 
@@ -1409,7 +1418,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lig1_com_atoms</span>
 
-    <span class="k">def</span> <span class="nf">_setLig1ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lig1_com_atoms</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLig1ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lig1_com_atoms</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the atoms that define the center of mass of the bound ligand</span>
 <span class="sd">        If a list is given, simply set them according to the list.</span>
@@ -1435,7 +1444,7 @@
                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ligand_bound</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atoms within 11 angstrom of </span><span class="si">{</span><span class="n">com</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
             <span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">_getLig2ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getLig2ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the atoms that define the center of mass of the free ligand as a list of ints</span>
 
@@ -1446,7 +1455,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lig2_com_atoms</span>
 
-    <span class="k">def</span> <span class="nf">_setLig2ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lig2_com_atoms</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setLig2ComAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lig2_com_atoms</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the atoms that define the center of mass of the free ligand</span>
 <span class="sd">        If a list is given, simply set them according to the list.</span>
@@ -1472,7 +1481,7 @@
                 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ligand_free</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atoms within 11 angstrom of </span><span class="si">{</span><span class="n">com</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
             <span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">_makeData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_makeData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make the data dictionary for the ATM system</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1499,7 +1508,7 @@
 <div class="viewcode-block" id="ATMSetup.viewRigidCores">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATMSetup.html#BioSimSpace.FreeEnergy.ATMSetup.viewRigidCores">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">viewRigidCores</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">viewRigidCores</span><span class="p">(</span>
         <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">ligand_bound</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">ligand_free</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1529,20 +1538,20 @@
 <span class="sd">        ligand_free_rigid_core : list</span>
 <span class="sd">            The indices for the rigid core atoms of the free ligand.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">_math</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_math</span>
 
-        <span class="k">def</span> <span class="nf">move_to_origin</span><span class="p">(</span><span class="n">lig</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">move_to_origin</span><span class="p">(</span><span class="n">lig</span><span class="p">):</span>
             <span class="n">com</span> <span class="o">=</span> <span class="n">_Coordinate</span><span class="p">(</span><span class="o">*</span><span class="n">lig</span><span class="o">.</span><span class="n">_getCenterOfMass</span><span class="p">())</span>
             <span class="n">lig</span><span class="o">.</span><span class="n">translate</span><span class="p">([</span><span class="o">-</span><span class="n">com</span><span class="o">.</span><span class="n">x</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="o">-</span><span class="n">com</span><span class="o">.</span><span class="n">y</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span> <span class="o">-</span><span class="n">com</span><span class="o">.</span><span class="n">z</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()])</span>
 
-        <span class="k">def</span> <span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">_math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
                 <span class="p">(</span><span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
                 <span class="o">+</span> <span class="p">(</span><span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
                 <span class="o">+</span> <span class="p">(</span><span class="n">point1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
             <span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">furthest_points</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">furthest_points</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
             <span class="n">max_distance</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">furthest_pair</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
@@ -1559,7 +1568,7 @@
 
             <span class="k">return</span> <span class="n">furthest_pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">furthest_pair</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">max_distance</span>
 
-        <span class="k">def</span> <span class="nf">vector_from_points</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">vector_from_points</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
             <span class="n">dx</span> <span class="o">=</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">dy</span> <span class="o">=</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
             <span class="n">dz</span> <span class="o">=</span> <span class="n">point2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">point1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -1570,8 +1579,8 @@
 
             <span class="k">return</span> <span class="p">(</span><span class="n">dx</span> <span class="o">/</span> <span class="n">magnitude</span><span class="p">,</span> <span class="n">dy</span> <span class="o">/</span> <span class="n">magnitude</span><span class="p">,</span> <span class="n">dz</span> <span class="o">/</span> <span class="n">magnitude</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">find_arrow_points</span><span class="p">(</span><span class="n">center1</span><span class="p">,</span> <span class="n">center2</span><span class="p">,</span> <span class="n">diameter1</span><span class="p">,</span> <span class="n">diameter2</span><span class="p">):</span>
-            <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">find_arrow_points</span><span class="p">(</span><span class="n">center1</span><span class="p">,</span> <span class="n">center2</span><span class="p">,</span> <span class="n">diameter1</span><span class="p">,</span> <span class="n">diameter2</span><span class="p">):</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
             <span class="c1"># logic to make sure arrows pointing from spheres start on their edge, not centre.</span>
             <span class="c1"># Convert the points to numpy arrays</span>
@@ -1755,7 +1764,7 @@
 
 <div class="viewcode-block" id="ATM">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM">[docs]</a>
-<span class="k">class</span> <span class="nc">ATM</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ATM</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class for setting up, running, and analysis RBFE calculations using the</span>
 <span class="sd">    Alchemical Transfer Method.</span>
@@ -1763,7 +1772,7 @@
 
 <div class="viewcode-block" id="ATM.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="p">,</span>
@@ -1812,7 +1821,7 @@
 
         <span class="c1"># Validate the protocol.</span>
         <span class="k">if</span> <span class="n">protocol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">..Protocol._atm</span> <span class="kn">import</span> <span class="n">ATMProduction</span> <span class="k">as</span> <span class="n">_Production</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._atm</span><span class="w"> </span><span class="kn">import</span> <span class="n">ATMProduction</span> <span class="k">as</span> <span class="n">_Production</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_Production</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -1853,7 +1862,7 @@
 
 <div class="viewcode-block" id="ATM.run">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.run">[docs]</a>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Run the simulations.</span>
 
@@ -1871,7 +1880,7 @@
 
 <div class="viewcode-block" id="ATM.wait">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.wait">[docs]</a>
-    <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Wait for the simulation to finish.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_only</span><span class="p">:</span>
             <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;No processes exist! Object created in &#39;setup_only&#39; mode.&quot;</span><span class="p">)</span>
@@ -1881,7 +1890,7 @@
 
 <div class="viewcode-block" id="ATM.kill">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.kill">[docs]</a>
-    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Kill a process for a specific lambda window.</span>
 
@@ -1896,7 +1905,7 @@
 
 <div class="viewcode-block" id="ATM.killAll">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.killAll">[docs]</a>
-    <span class="k">def</span> <span class="nf">killAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">killAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Kill any running processes for all lambda windows.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_runner</span><span class="o">.</span><span class="n">killAll</span><span class="p">()</span></div>
@@ -1904,7 +1913,7 @@
 
 <div class="viewcode-block" id="ATM.workDir">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.workDir">[docs]</a>
-    <span class="k">def</span> <span class="nf">workDir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">workDir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the working directory.</span>
 
@@ -1919,7 +1928,7 @@
 
 <div class="viewcode-block" id="ATM.getData">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.getData">[docs]</a>
-    <span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">file_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">file_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">work_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a link to a zip file containing the data files required for</span>
 <span class="sd">        post-simulation analysis.</span>
@@ -2002,7 +2011,7 @@
             <span class="k">return</span> <span class="n">zipname</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_inititalise_runner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_inititalise_runner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal helper function to initialise the process runner.</span>
 
@@ -2121,7 +2130,7 @@
 <div class="viewcode-block" id="ATM.analyse">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.FreeEnergy.ATM.html#BioSimSpace.FreeEnergy.ATM.analyse">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">analyse</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">analyse</span><span class="p">(</span>
         <span class="n">work_dir</span><span class="p">,</span>
         <span class="n">method</span><span class="o">=</span><span class="s2">&quot;UWHAM&quot;</span><span class="p">,</span>
         <span class="n">ignore_lower</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
@@ -2182,7 +2191,7 @@
             <span class="p">)</span>
             <span class="k">return</span> <span class="n">total_ddg</span><span class="p">,</span> <span class="n">total_ddg_err</span>
         <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;MBAR&quot;</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">._relative</span> <span class="kn">import</span> <span class="n">Relative</span> <span class="k">as</span> <span class="n">_Relative</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">._relative</span><span class="w"> </span><span class="kn">import</span> <span class="n">Relative</span> <span class="k">as</span> <span class="n">_Relative</span>
 
             <span class="c1"># temporary version to check that things are working</span>
             <span class="n">ddg_forward</span><span class="p">,</span> <span class="n">ddg_reverse</span> <span class="o">=</span> <span class="n">ATM</span><span class="o">.</span><span class="n">_analyse_MBAR</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
@@ -2194,11 +2203,11 @@
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_UWHAM</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">ignore_lower</span><span class="p">,</span> <span class="n">ignore_upper</span><span class="p">,</span> <span class="n">inflex_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_UWHAM</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">ignore_lower</span><span class="p">,</span> <span class="n">ignore_upper</span><span class="p">,</span> <span class="n">inflex_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse the UWHAM results from the ATM simulation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">._ddg</span> <span class="kn">import</span> <span class="n">analyse_UWHAM</span> <span class="k">as</span> <span class="n">_UWHAM</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._ddg</span><span class="w"> </span><span class="kn">import</span> <span class="n">analyse_UWHAM</span> <span class="k">as</span> <span class="n">_UWHAM</span>
 
         <span class="n">total_ddg</span><span class="p">,</span> <span class="n">total_ddg_err</span> <span class="o">=</span> <span class="n">_UWHAM</span><span class="p">(</span>
             <span class="n">work_dir</span><span class="p">,</span> <span class="n">ignore_lower</span><span class="p">,</span> <span class="n">ignore_upper</span><span class="p">,</span> <span class="n">inflection_indices</span><span class="o">=</span><span class="n">inflex_indices</span>
@@ -2206,45 +2215,45 @@
         <span class="k">return</span> <span class="n">total_ddg</span><span class="p">,</span> <span class="n">total_ddg_err</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_MBAR</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_MBAR</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse the MBAR results from the ATM simulation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">._ddg</span> <span class="kn">import</span> <span class="n">analyse_MBAR</span> <span class="k">as</span> <span class="n">_MBAR</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._ddg</span><span class="w"> </span><span class="kn">import</span> <span class="n">analyse_MBAR</span> <span class="k">as</span> <span class="n">_MBAR</span>
 
         <span class="n">ddg_forward</span><span class="p">,</span> <span class="n">ddg_reverse</span> <span class="o">=</span> <span class="n">_MBAR</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ddg_forward</span><span class="p">,</span> <span class="n">ddg_reverse</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_test</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_test</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Analyse the test results from the ATM simulation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">._ddg</span> <span class="kn">import</span> <span class="n">new_MBAR</span> <span class="k">as</span> <span class="n">_test</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._ddg</span><span class="w"> </span><span class="kn">import</span> <span class="n">new_MBAR</span> <span class="k">as</span> <span class="n">_test</span>
 
         <span class="n">ddg_forward</span><span class="p">,</span> <span class="n">ddg_reverse</span> <span class="o">=</span> <span class="n">_test</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ddg_forward</span><span class="p">,</span> <span class="n">ddg_reverse</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_analyse_femto</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">._ddg</span> <span class="kn">import</span> <span class="n">MBAR_hijack_femto</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_analyse_femto</span><span class="p">(</span><span class="n">work_dir</span><span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._ddg</span><span class="w"> </span><span class="kn">import</span> <span class="n">MBAR_hijack_femto</span>
 
         <span class="n">est</span><span class="p">,</span> <span class="n">o</span> <span class="o">=</span> <span class="n">MBAR_hijack_femto</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">est</span><span class="p">,</span> <span class="n">o</span></div>
 
 
 
-<span class="k">class</span> <span class="nc">_ViewAtoM</span><span class="p">(</span><span class="n">_View</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_ViewAtoM</span><span class="p">(</span><span class="n">_View</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overloads regular view class needed to pass default_representation=False</span>
 <span class="sd">    into show_file.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># Initialise super</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">property_map</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_create_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="n">system</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Both &#39;system&#39; and &#39;view&#39; cannot be &#39;None&#39;.&quot;</span><span class="p">)</span>
@@ -2278,12 +2287,12 @@
                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;PDB&#39; format.&quot;</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Import NGLView when it is used for the first time.</span>
-        <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">_nglview</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">nglview</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_nglview</span>
 
         <span class="c1"># Create the NGLview object.</span>
         <span class="n">view</span> <span class="o">=</span> <span class="n">_nglview</span><span class="o">.</span><span class="n">show_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">default_representation</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2304,7 +2313,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

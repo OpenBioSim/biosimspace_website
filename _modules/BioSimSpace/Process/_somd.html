@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Process._somd - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">#####################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,44 +633,44 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Somd&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_try_import</span>
 
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">glob</span> <span class="k">as</span> <span class="nn">_glob</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">_math</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">_random</span>
-<span class="kn">import</span> <span class="nn">string</span> <span class="k">as</span> <span class="nn">_string</span>
-<span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
-<span class="kn">import</span> <span class="nn">timeit</span> <span class="k">as</span> <span class="nn">_timeit</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_string</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_timeit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">CAS</span> <span class="k">as</span> <span class="n">_SireCAS</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">MM</span> <span class="k">as</span> <span class="n">_SireMM</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">CAS</span> <span class="k">as</span> <span class="n">_SireCAS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM</span> <span class="k">as</span> <span class="n">_SireMM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Config</span> <span class="kn">import</span> <span class="n">Somd</span> <span class="k">as</span> <span class="n">_SomdConfig</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
-<span class="kn">from</span> <span class="nn">..Protocol._free_energy_mixin</span> <span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Somd</span> <span class="k">as</span> <span class="n">_SomdConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._free_energy_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_process</span>
 
 
 <div class="viewcode-block" id="Somd">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd">[docs]</a>
-<span class="k">class</span> <span class="nc">Somd</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Somd</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for running simulations using SOMD.&quot;&quot;&quot;</span>
 
     <span class="c1"># Dictionary of platforms and their OpenMM keyword.</span>
@@ -669,7 +678,7 @@
 
 <div class="viewcode-block" id="Somd.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="p">,</span>
@@ -878,7 +887,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human readable string representation of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="s2">&quot;&lt;BioSimSpace.Process.</span><span class="si">%s</span><span class="s2">: system=</span><span class="si">%s</span><span class="s2">, protocol=</span><span class="si">%s</span><span class="s2">, exe=&#39;</span><span class="si">%s</span><span class="s2">&#39;, name=&#39;</span><span class="si">%s</span><span class="s2">&#39;, platform=&#39;</span><span class="si">%s</span><span class="s2">&#39;, work_dir=&#39;</span><span class="si">%s</span><span class="s2">&#39; seed=</span><span class="si">%s</span><span class="s2">&gt;&quot;</span>
@@ -894,7 +903,7 @@
             <span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string showing how to instantiate the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="s2">&quot;BioSimSpace.Process.</span><span class="si">%s</span><span class="s2">(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, exe=&#39;</span><span class="si">%s</span><span class="s2">&#39;, name=&#39;</span><span class="si">%s</span><span class="s2">&#39;, platform=&#39;</span><span class="si">%s</span><span class="s2">&#39;, work_dir=&#39;</span><span class="si">%s</span><span class="s2">&#39;, seed=</span><span class="si">%s</span><span class="s2">)&quot;</span>
@@ -910,7 +919,7 @@
             <span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the input files and working directory ready for simulation.&quot;&quot;&quot;</span>
 
         <span class="c1"># Create the input files...</span>
@@ -973,9 +982,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;RST7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
@@ -985,9 +994,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;PRM7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Warn the user if the simulation is seeded and not running a FreeEnergy</span>
         <span class="c1"># protocol.</span>
@@ -1019,7 +1028,7 @@
         <span class="c1"># Return the list of input files.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span>
 
-    <span class="k">def</span> <span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate SOMD configuration file strings.&quot;&quot;&quot;</span>
 
         <span class="c1"># Check whether the system contains periodic box information.</span>
@@ -1072,7 +1081,7 @@
         <span class="c1"># Flag that this isn&#39;t a custom protocol.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">_setCustomised</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_generate_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate the dictionary of command-line arguments.&quot;&quot;&quot;</span>
 
         <span class="c1"># Clear the existing arguments.</span>
@@ -1092,7 +1101,7 @@
 
 <div class="viewcode-block" id="Somd.start">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.start">[docs]</a>
-    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start the SOMD process.</span>
 
@@ -1146,7 +1155,7 @@
 
 <div class="viewcode-block" id="Somd.getSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -1227,7 +1236,7 @@
 
 <div class="viewcode-block" id="Somd.getCurrentSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getCurrentSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -1242,7 +1251,7 @@
 
 <div class="viewcode-block" id="Somd.getTrajectory">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getTrajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a trajectory object.</span>
 
@@ -1289,7 +1298,7 @@
 
 <div class="viewcode-block" id="Somd.getFrame">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getFrame">[docs]</a>
-    <span class="k">def</span> <span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a specific trajectory frame.</span>
 
@@ -1366,7 +1375,7 @@
 
 <div class="viewcode-block" id="Somd.getTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the time (in nanoseconds).</span>
 
@@ -1421,7 +1430,7 @@
 
 <div class="viewcode-block" id="Somd.getCurrentTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getCurrentTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current time (in nanoseconds).</span>
 
@@ -1442,7 +1451,7 @@
 
 <div class="viewcode-block" id="Somd.getGradient">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getGradient">[docs]</a>
-    <span class="k">def</span> <span class="nf">getGradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getGradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the free energy gradient.</span>
 
@@ -1493,7 +1502,7 @@
 
 <div class="viewcode-block" id="Somd.getCurrentGradient">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Somd.html#BioSimSpace.Process.Somd.getCurrentGradient">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentGradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentGradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current free energy gradient.</span>
 
@@ -1512,7 +1521,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getGradient</span><span class="p">(</span><span class="n">time_series</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_clear_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_clear_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset stdout and stderr.&quot;&quot;&quot;</span>
 
         <span class="c1"># Call the base class method.</span>
@@ -1545,7 +1554,7 @@
 
 
 
-<span class="k">def</span> <span class="nf">_to_pert_file</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_to_pert_file</span><span class="p">(</span>
     <span class="n">molecule</span><span class="p">,</span>
     <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;MORPH.pert&quot;</span><span class="p">,</span>
     <span class="n">zero_dummy_dihedrals</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -1783,7 +1792,7 @@
         <span class="c1"># both sigma and epsilon are set to zero for dummy atoms.</span>
         <span class="n">dummy_lj</span> <span class="o">=</span> <span class="n">_SireMM</span><span class="o">.</span><span class="n">LJParameter</span><span class="p">()</span>
 
-        <span class="k">def</span> <span class="nf">atom_sorting_criteria</span><span class="p">(</span><span class="n">atom</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">atom_sorting_criteria</span><span class="p">(</span><span class="n">atom</span><span class="p">):</span>
             <span class="n">LJ0</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ0&quot;</span><span class="p">)</span>
             <span class="n">LJ1</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;LJ1&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="p">(</span>
@@ -2172,7 +2181,7 @@
 
         <span class="c1"># First create records for the bonds that are unique to lambda = 0 and 1.</span>
 
-        <span class="k">def</span> <span class="nf">sort_bonds</span><span class="p">(</span><span class="n">bonds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">sort_bonds</span><span class="p">(</span><span class="n">bonds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
             <span class="c1"># Get the bond potential.</span>
             <span class="n">bond</span> <span class="o">=</span> <span class="n">bonds</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 
@@ -2422,7 +2431,7 @@
 
         <span class="c1"># First create records for the angles that are unique to lambda = 0 and 1.</span>
 
-        <span class="k">def</span> <span class="nf">sort_angles</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">sort_angles</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
             <span class="c1"># Get the angle potential.</span>
             <span class="n">angle</span> <span class="o">=</span> <span class="n">angles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 
@@ -2758,7 +2767,7 @@
 
         <span class="c1"># First create records for the dihedrals that are unique to lambda = 0 and 1.</span>
 
-        <span class="k">def</span> <span class="nf">sort_dihedrals</span><span class="p">(</span><span class="n">dihedrals</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">sort_dihedrals</span><span class="p">(</span><span class="n">dihedrals</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
             <span class="c1"># Get the dihedral potential.</span>
             <span class="n">dihedral</span> <span class="o">=</span> <span class="n">dihedrals</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 
@@ -3574,7 +3583,7 @@
     <span class="k">return</span> <span class="n">_Molecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
 
 
-<span class="k">def</span> <span class="nf">_has_pert_atom</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">pert_idxs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_has_pert_atom</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">pert_idxs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal function to check whether a potential contains perturbed atoms.</span>
 
@@ -3601,7 +3610,7 @@
     <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">_has_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_has_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal function to check whether any atom is a dummy.</span>
 
@@ -3652,7 +3661,7 @@
     <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_dummy</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal function to return whether each atom is a dummy.</span>
 <span class="sd">    If a single index is pased, then a single boolean is returned.</span>
@@ -3724,7 +3733,7 @@
         <span class="k">return</span> <span class="n">is_dummy</span>
 
 
-<span class="k">def</span> <span class="nf">_random_suffix</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="n">_string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">_string</span><span class="o">.</span><span class="n">digits</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_random_suffix</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="n">_string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">_string</span><span class="o">.</span><span class="n">digits</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Internal helper function to generate a random atom name suffix to avoid</span>
 <span class="sd">    naming clashes.</span>
@@ -3759,7 +3768,7 @@
     <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">basename_size</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">_somd1_compatibility</span><span class="p">(</span><span class="n">system</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_somd1_compatibility</span><span class="p">(</span><span class="n">system</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Makes a perturbation SOMD1 compatible.</span>
 
@@ -4272,7 +4281,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

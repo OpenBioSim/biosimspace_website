@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace._SireWrappers._system - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -627,36 +636,36 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;System&quot;</span><span class="p">]</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_SireSystem</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Vol</span> <span class="k">as</span> <span class="n">_SireVol</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_SireSystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vol</span> <span class="k">as</span> <span class="n">_SireVol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Angle</span> <span class="k">as</span> <span class="n">_Angle</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Angle</span> <span class="k">as</span> <span class="n">_Angle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
 
-<span class="kn">from</span> <span class="nn">._sire_wrapper</span> <span class="kn">import</span> <span class="n">SireWrapper</span> <span class="k">as</span> <span class="n">_SireWrapper</span>
-<span class="kn">from</span> <span class="nn">._utils</span> <span class="kn">import</span> <span class="n">_prot_res</span><span class="p">,</span> <span class="n">_nucl_res</span><span class="p">,</span> <span class="n">_ions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._sire_wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">SireWrapper</span> <span class="k">as</span> <span class="n">_SireWrapper</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_prot_res</span><span class="p">,</span> <span class="n">_nucl_res</span><span class="p">,</span> <span class="n">_ions</span>
 
-<span class="kn">from</span> <span class="nn">sire.mol</span> <span class="kn">import</span> <span class="n">Select</span> <span class="k">as</span> <span class="n">_Select</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Select</span> <span class="k">as</span> <span class="n">_Select</span>
 
 
 <div class="viewcode-block" id="System">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System">[docs]</a>
-<span class="k">class</span> <span class="nc">System</span><span class="p">(</span><span class="n">_SireWrapper</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">System</span><span class="p">(</span><span class="n">_SireWrapper</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A container class for storing molecular systems.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="System.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -755,15 +764,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_mol_nums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molNums</span><span class="p">()</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human readable string representation of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;BioSimSpace.System: nMolecules=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string showing how to instantiate the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;BioSimSpace.System: nMolecules=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Addition operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Create a copy of the current system.</span>
@@ -775,7 +784,7 @@
         <span class="c1"># Return the combined system.</span>
         <span class="k">return</span> <span class="n">system</span>
 
-    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtraction operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Create a copy of the current system.</span>
@@ -790,7 +799,7 @@
         <span class="c1"># Return the new system.</span>
         <span class="k">return</span> <span class="n">system</span>
 
-    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether other is in self.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">_Molecule</span><span class="p">,</span> <span class="n">_Atom</span><span class="p">,</span> <span class="n">_Residue</span><span class="p">)):</span>
@@ -802,7 +811,7 @@
         <span class="c1"># Return whether the object is in the system.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molecule</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a molecule from the system.&quot;&quot;&quot;</span>
 
         <span class="c1"># Slice.</span>
@@ -833,17 +842,17 @@
             <span class="c1"># Extract and return the corresponding molecule.</span>
             <span class="k">return</span> <span class="n">_Molecule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="n">_SireMol</span><span class="o">.</span><span class="n">MolIdx</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span>
 
-    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a molecule in the container.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;System&#39; object does not support assignment.&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;An iterator for the object.&quot;&quot;&quot;</span>
         <span class="c1"># Reset the iterator counter and return the object.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_iter_count</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;An iterator for the object.&quot;&quot;&quot;</span>
 
         <span class="c1"># Stop if we&#39;ve reached the end of the container.</span>
@@ -859,13 +868,13 @@
         <span class="c1"># Return the molecule.</span>
         <span class="k">return</span> <span class="n">molecule</span>
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of molecules in the system.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()</span>
 
 <div class="viewcode-block" id="System.nMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">nMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of molecules in the system.</span>
 
@@ -880,7 +889,7 @@
 
 <div class="viewcode-block" id="System.nResidues">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nResidues">[docs]</a>
-    <span class="k">def</span> <span class="nf">nResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of residues in the system.</span>
 
@@ -901,7 +910,7 @@
 
 <div class="viewcode-block" id="System.nChains">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nChains">[docs]</a>
-    <span class="k">def</span> <span class="nf">nChains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nChains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of chains in the system.</span>
 
@@ -922,7 +931,7 @@
 
 <div class="viewcode-block" id="System.nAtoms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nAtoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">nAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of atoms in the system.</span>
 
@@ -943,7 +952,7 @@
 
 <div class="viewcode-block" id="System.charge">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.charge">[docs]</a>
-    <span class="k">def</span> <span class="nf">charge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">charge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the total molecular charge.</span>
 
@@ -978,7 +987,7 @@
 
 <div class="viewcode-block" id="System.fileFormat">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.fileFormat">[docs]</a>
-    <span class="k">def</span> <span class="nf">fileFormat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fileFormat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the file formats associated with the system.</span>
 
@@ -1010,7 +1019,7 @@
 
 <div class="viewcode-block" id="System.isSame">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.isSame">[docs]</a>
-    <span class="k">def</span> <span class="nf">isSame</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isSame</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">,</span>
         <span class="n">excluded_properties</span><span class="o">=</span><span class="p">[],</span>
@@ -1100,7 +1109,7 @@
         <span class="n">_excluded_properties</span> <span class="o">=</span> <span class="n">excluded_properties</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">_excluded_properties</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s2">&quot;fileformat&quot;</span><span class="p">,</span> <span class="s2">&quot;is_perturbable&quot;</span><span class="p">,</span> <span class="s2">&quot;was_perturbable&quot;</span><span class="p">])</span>
 
-        <span class="k">def</span> <span class="nf">_object_compare</span><span class="p">(</span><span class="n">object0</span><span class="p">,</span> <span class="n">object1</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_object_compare</span><span class="p">(</span><span class="n">object0</span><span class="p">,</span> <span class="n">object1</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Helper function to check whether two Sire objects are the same.&quot;&quot;&quot;</span>
 
             <span class="c1"># Store the two sets of properties.</span>
@@ -1178,7 +1187,7 @@
 
 <div class="viewcode-block" id="System.addMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.addMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">addMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a molecule, or list of molecules to the system.</span>
 
@@ -1194,8 +1203,8 @@
 <span class="sd">            or a SearchResult containing molecules.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="kn">from</span> <span class="nn">._search_result</span> <span class="kn">import</span> <span class="n">SearchResult</span> <span class="k">as</span> <span class="n">_SearchResult</span>
-        <span class="kn">from</span> <span class="nn">sire.legacy.Mol</span> <span class="kn">import</span> <span class="n">SelectorMol</span> <span class="k">as</span> <span class="n">_SelectorMol</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._search_result</span><span class="w"> </span><span class="kn">import</span> <span class="n">SearchResult</span> <span class="k">as</span> <span class="n">_SearchResult</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMol</span> <span class="k">as</span> <span class="n">_SelectorMol</span>
 
         <span class="c1"># Whether this is a selector mol object.</span>
         <span class="n">is_selector_mol</span> <span class="o">=</span> <span class="kc">False</span>
@@ -1333,7 +1342,7 @@
 
 <div class="viewcode-block" id="System.removeMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.removeMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">removeMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">removeMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove a molecule, or list of molecules from the system.</span>
 
@@ -1390,7 +1399,7 @@
 
 <div class="viewcode-block" id="System.removeWaterMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.removeWaterMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">removeWaterMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">removeWaterMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove all of the water molecules from the system.&quot;&quot;&quot;</span>
 
         <span class="c1"># Get the list of water molecules.</span>
@@ -1408,7 +1417,7 @@
 
 <div class="viewcode-block" id="System.updateMolecule">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.updateMolecule">[docs]</a>
-    <span class="k">def</span> <span class="nf">updateMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">molecule</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">updateMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">molecule</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the molecule at the given index.</span>
 
@@ -1460,7 +1469,7 @@
 
 <div class="viewcode-block" id="System.updateMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.updateMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">updateMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">updateMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update a molecule, or list of molecules in the system.</span>
 
@@ -1537,7 +1546,7 @@
 
 <div class="viewcode-block" id="System.getMolecule">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getMolecule">[docs]</a>
-    <span class="k">def</span> <span class="nf">getMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the molecule at the given index.</span>
 
@@ -1558,7 +1567,7 @@
 
 <div class="viewcode-block" id="System.getMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">getMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing all of the molecules in the specified group.</span>
 
@@ -1590,7 +1599,7 @@
 
 <div class="viewcode-block" id="System.getAtoms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getAtoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing the atoms in the system.</span>
 
@@ -1608,7 +1617,7 @@
 
 <div class="viewcode-block" id="System.getAtom">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getAtom">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAtom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAtom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the atom specified by the absolute index.</span>
 
@@ -1652,7 +1661,7 @@
 
 <div class="viewcode-block" id="System.getResidues">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getResidues">[docs]</a>
-    <span class="k">def</span> <span class="nf">getResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing the residues in the system.</span>
 
@@ -1670,7 +1679,7 @@
 
 <div class="viewcode-block" id="System.getResidue">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getResidue">[docs]</a>
-    <span class="k">def</span> <span class="nf">getResidue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getResidue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the residue specified by the absolute index.</span>
 
@@ -1716,7 +1725,7 @@
 
 <div class="viewcode-block" id="System.getWaterMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getWaterMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">getWaterMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getWaterMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing all of the water molecules in the system.</span>
 
@@ -1740,7 +1749,7 @@
 
 <div class="viewcode-block" id="System.nWaterMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nWaterMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">nWaterMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nWaterMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of water molecules in the system.</span>
 
@@ -1755,7 +1764,7 @@
 
 <div class="viewcode-block" id="System.getPerturbableMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getPerturbableMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPerturbableMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPerturbableMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing all of the perturbable molecules in the system.</span>
 
@@ -1773,7 +1782,7 @@
 
 <div class="viewcode-block" id="System.nPerturbableMolecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nPerturbableMolecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">nPerturbableMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nPerturbableMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of perturbable molecules in the system.</span>
 
@@ -1788,7 +1797,7 @@
 
 <div class="viewcode-block" id="System.rotateBoxVectors">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.rotateBoxVectors">[docs]</a>
-    <span class="k">def</span> <span class="nf">rotateBoxVectors</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rotateBoxVectors</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">origin</span><span class="o">=</span><span class="n">_Coordinate</span><span class="p">(</span>
             <span class="mi">0</span> <span class="o">*</span> <span class="n">_Units</span><span class="o">.</span><span class="n">Length</span><span class="o">.</span><span class="n">angstrom</span><span class="p">,</span>
@@ -1855,7 +1864,7 @@
         <span class="c1"># Get the center of rotation, as a Sire vector.</span>
         <span class="n">center</span> <span class="o">=</span> <span class="n">origin</span><span class="o">.</span><span class="n">toVector</span><span class="p">()</span><span class="o">.</span><span class="n">_sire_object</span>
 
-        <span class="kn">from</span> <span class="nn">sire.system</span> <span class="kn">import</span> <span class="n">System</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">sire.system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 
         <span class="c1"># Create a cursor for the non-perturbable molecules.</span>
         <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
@@ -1941,7 +1950,7 @@
 
 <div class="viewcode-block" id="System.reduceBoxVectors">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.reduceBoxVectors">[docs]</a>
-    <span class="k">def</span> <span class="nf">reduceBoxVectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reduceBoxVectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reduce the box vectors.</span>
 
@@ -1982,7 +1991,7 @@
 
 <div class="viewcode-block" id="System.repartitionHydrogenMass">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.repartitionHydrogenMass">[docs]</a>
-    <span class="k">def</span> <span class="nf">repartitionHydrogenMass</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repartitionHydrogenMass</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="n">use_coordinates</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2060,7 +2069,7 @@
 
 <div class="viewcode-block" id="System.search">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.search">[docs]</a>
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Search the system for atoms, residues, and molecules. Search results</span>
 <span class="sd">        will be reduced to their minimal representation, i.e. a molecule</span>
@@ -2125,16 +2134,16 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&#39;Invalid search query: </span><span class="si">%r</span><span class="s2"> : </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="k">return</span> <span class="n">_SearchResult</span><span class="p">(</span><span class="n">search_result</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="System.getIndex">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getIndex">[docs]</a>
-    <span class="k">def</span> <span class="nf">getIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert indices of atoms and residues to their absolute values in</span>
 <span class="sd">        this system.</span>
@@ -2238,7 +2247,7 @@
 
 <div class="viewcode-block" id="System.setBox">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.setBox">[docs]</a>
-    <span class="k">def</span> <span class="nf">setBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">angles</span><span class="o">=</span><span class="mi">3</span> <span class="o">*</span> <span class="p">[</span><span class="n">_Angle</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;degree&quot;</span><span class="p">)],</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">angles</span><span class="o">=</span><span class="mi">3</span> <span class="o">*</span> <span class="p">[</span><span class="n">_Angle</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;degree&quot;</span><span class="p">)],</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the size of the periodic simulation box.</span>
 
@@ -2316,7 +2325,7 @@
 
 <div class="viewcode-block" id="System.getBox">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getBox">[docs]</a>
-    <span class="k">def</span> <span class="nf">getBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the size of the periodic simulation box.</span>
 
@@ -2375,7 +2384,7 @@
 
 <div class="viewcode-block" id="System.removeBox">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.removeBox">[docs]</a>
-    <span class="k">def</span> <span class="nf">removeBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">removeBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove the simulation box from the system.</span>
 
@@ -2400,7 +2409,7 @@
 
 <div class="viewcode-block" id="System.makeWhole">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.makeWhole">[docs]</a>
-    <span class="k">def</span> <span class="nf">makeWhole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">makeWhole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make all molecules in the system &quot;whole&quot;, i.e. unwrap any molecules that have</span>
 <span class="sd">        been split across the periodic boundary.</span>
@@ -2422,7 +2431,7 @@
 
 <div class="viewcode-block" id="System.translate">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.translate">[docs]</a>
-    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vector</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vector</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Translate the system.</span>
 
@@ -2475,7 +2484,7 @@
 
 <div class="viewcode-block" id="System.getRestraintAtoms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getRestraintAtoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRestraintAtoms</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRestraintAtoms</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">restraint</span><span class="p">,</span>
         <span class="n">mol_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2743,7 +2752,7 @@
 
 <div class="viewcode-block" id="System.getAminoAcids">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getAminoAcids">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAminoAcids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAminoAcids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing all of the amino acid residues in the system.</span>
 
@@ -2771,7 +2780,7 @@
 
 <div class="viewcode-block" id="System.nAminoAcids">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nAminoAcids">[docs]</a>
-    <span class="k">def</span> <span class="nf">nAminoAcids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nAminoAcids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of amino acid residues in the system.</span>
 
@@ -2786,7 +2795,7 @@
 
 <div class="viewcode-block" id="System.getNucleotides">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.getNucleotides">[docs]</a>
-    <span class="k">def</span> <span class="nf">getNucleotides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getNucleotides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing all of the nucleotide residues in the system.</span>
 
@@ -2814,7 +2823,7 @@
 
 <div class="viewcode-block" id="System.nNucleotides">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System.nNucleotides">[docs]</a>
-    <span class="k">def</span> <span class="nf">nNucleotides</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nNucleotides</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of nucleotide residues in the system.</span>
 
@@ -2827,7 +2836,7 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getNucleotides</span><span class="p">())</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_isParameterised</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_isParameterised</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether the system is parameterised, i.e. can we run a simulation</span>
 <span class="sd">        using this system. Essentially we check whether every molecule in</span>
@@ -2870,7 +2879,7 @@
         <span class="c1"># If we get this far, then all molecules are okay.</span>
         <span class="k">return</span> <span class="kc">True</span>
 
-    <span class="k">def</span> <span class="nf">_getAABox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getAABox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the axis-aligned bounding box for the molecular system.</span>
 
@@ -2914,14 +2923,14 @@
                     <span class="o">+</span> <span class="s2">&quot;box since a molecule has no &#39;coordinates&#39; property.&quot;</span>
                 <span class="p">)</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Return the AABox for the coordinates.</span>
         <span class="k">return</span> <span class="n">_SireVol</span><span class="o">.</span><span class="n">AABox</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_renumberMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">,</span> <span class="n">is_rebuild</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_renumberMolecules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">,</span> <span class="n">is_rebuild</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to renumber the molecules to be consistent with the</span>
 <span class="sd">        system.</span>
@@ -2997,7 +3006,7 @@
         <span class="c1"># Return the renumbered molecules.</span>
         <span class="k">return</span> <span class="n">new_molecules</span>
 
-    <span class="k">def</span> <span class="nf">_createSireSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_createSireSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an empty Sire system with a single molecule group called &quot;all&quot;.</span>
 
@@ -3023,7 +3032,7 @@
 
         <span class="k">return</span> <span class="n">system</span>
 
-    <span class="k">def</span> <span class="nf">_getRelativeIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abs_index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getRelativeIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abs_index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Given an absolute index, get the number of the molecule to which it</span>
 <span class="sd">        belongs and the relative index within that molecule.</span>
@@ -3071,7 +3080,7 @@
 
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;abs_index&#39; exceeded system atom tally!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_reset_mappings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_reset_mappings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal function to reset index mapping dictionaries.&quot;&quot;&quot;</span>
 
         <span class="c1"># Clear dictionaries.</span>
@@ -3083,7 +3092,7 @@
         <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nMolecules</span><span class="p">()):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_molecule_index</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">[</span><span class="n">_SireMol</span><span class="o">.</span><span class="n">MolIdx</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span><span class="o">.</span><span class="n">number</span><span class="p">()]</span> <span class="o">=</span> <span class="n">idx</span>
 
-    <span class="k">def</span> <span class="nf">_set_water_topology</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">is_crystal</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set_water_topology</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">is_crystal</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal function to swap the water topology to AMBER or GROMACS format.</span>
 
@@ -3165,7 +3174,7 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="n">water_model</span><span class="p">,</span> <span class="n">property_map</span><span class="p">,</span> <span class="n">is_crystal</span>
                 <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_set_atom_index_tally</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set_atom_index_tally</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal helper function to create a dictionary mapping molecule</span>
 <span class="sd">        numbers to the cumulative total of atoms in the system.</span>
@@ -3180,7 +3189,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_atom_index_tally</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_atoms</span>
                 <span class="n">num_atoms</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molecule</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_set_residue_index_tally</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set_residue_index_tally</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal helper function to create a dictionary mapping molecule</span>
 <span class="sd">        numbers to the cumulative total of atoms in the system.</span>
@@ -3195,7 +3204,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_residue_index_tally</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_residues</span>
                 <span class="n">num_residues</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molecule</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">nResidues</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_set_molecule_index_tally</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set_molecule_index_tally</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal helper function to create a dictionary mapping molecule</span>
 <span class="sd">        numbers to the cumulative total of atoms in the system.</span>
@@ -3214,11 +3223,11 @@
 
 
 <span class="c1"># Import at bottom of module to avoid circular dependency.</span>
-<span class="kn">from</span> <span class="nn">._atom</span> <span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
-<span class="kn">from</span> <span class="nn">._molecule</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
-<span class="kn">from</span> <span class="nn">._molecules</span> <span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
-<span class="kn">from</span> <span class="nn">._residue</span> <span class="kn">import</span> <span class="n">Residue</span> <span class="k">as</span> <span class="n">_Residue</span>
-<span class="kn">from</span> <span class="nn">._search_result</span> <span class="kn">import</span> <span class="n">SearchResult</span> <span class="k">as</span> <span class="n">_SearchResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._atom</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._molecule</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._molecules</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._residue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Residue</span> <span class="k">as</span> <span class="n">_Residue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._search_result</span><span class="w"> </span><span class="kn">import</span> <span class="n">SearchResult</span> <span class="k">as</span> <span class="n">_SearchResult</span>
 </pre></div>
         </article>
       </div>
@@ -3233,7 +3242,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

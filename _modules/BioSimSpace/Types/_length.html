@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Types._length - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,14 +633,14 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Length&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
 
-<span class="kn">from</span> <span class="nn">._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._type</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
 
 <div class="viewcode-block" id="Length">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length">[docs]</a>
-<span class="k">class</span> <span class="nc">Length</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Length</span><span class="p">(</span><span class="n">_Type</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A length type.&quot;&quot;&quot;</span>
 
     <span class="c1"># A list of the supported Sire unit names.</span>
@@ -692,7 +701,7 @@
 
 <div class="viewcode-block" id="Length.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -736,7 +745,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Multiplication operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Handle containers by converting each item in the container to</span>
@@ -767,7 +776,7 @@
 
         <span class="c1"># Multiplication by another type.</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_Type</span><span class="p">):</span>
-            <span class="kn">from</span> <span class="nn">._general_unit</span> <span class="kn">import</span> <span class="n">GeneralUnit</span> <span class="k">as</span> <span class="n">_GeneralUnit</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">._general_unit</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeneralUnit</span> <span class="k">as</span> <span class="n">_GeneralUnit</span>
 
             <span class="k">return</span> <span class="n">_GeneralUnit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">()</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">_to_sire_unit</span><span class="p">())</span>
 
@@ -791,7 +800,7 @@
                 <span class="o">%</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
             <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Multiplication operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Multiplication is commutative: a*b = b*a</span>
@@ -799,7 +808,7 @@
 
 <div class="viewcode-block" id="Length.meters">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.meters">[docs]</a>
-    <span class="k">def</span> <span class="nf">meters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">meters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in meters.</span>
 
@@ -817,7 +826,7 @@
 
 <div class="viewcode-block" id="Length.centimeters">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.centimeters">[docs]</a>
-    <span class="k">def</span> <span class="nf">centimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">centimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in centimeters.</span>
 
@@ -835,7 +844,7 @@
 
 <div class="viewcode-block" id="Length.millimeters">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.millimeters">[docs]</a>
-    <span class="k">def</span> <span class="nf">millimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">millimeters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in millimeters.</span>
 
@@ -853,7 +862,7 @@
 
 <div class="viewcode-block" id="Length.nanometers">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.nanometers">[docs]</a>
-    <span class="k">def</span> <span class="nf">nanometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nanometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in nanometers.</span>
 
@@ -871,7 +880,7 @@
 
 <div class="viewcode-block" id="Length.angstroms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.angstroms">[docs]</a>
-    <span class="k">def</span> <span class="nf">angstroms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">angstroms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in angstroms.</span>
 
@@ -889,7 +898,7 @@
 
 <div class="viewcode-block" id="Length.picometers">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Types.Length.html#BioSimSpace.Units.Length.Length.picometers">[docs]</a>
-    <span class="k">def</span> <span class="nf">picometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">picometers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in picometers.</span>
 
@@ -905,7 +914,7 @@
         <span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_to_default_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_to_default_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal method to return an object of the same type in the default unit.</span>
 
@@ -926,7 +935,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Length</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="s2">&quot;ANGSTROM&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_convert_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_convert_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the length in a different unit.</span>
 
@@ -960,7 +969,7 @@
             <span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_validate_unit</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_unit</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate that the unit are supported.&quot;&quot;&quot;</span>
 
         <span class="c1"># Strip whitespace and convert to upper case.</span>
@@ -984,7 +993,7 @@
             <span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_to_sire_format</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_to_sire_format</span><span class="p">(</span><span class="n">unit</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reformat the unit string so it adheres to the Sire unit formatting.</span>
 
@@ -1017,8 +1026,8 @@
 
 
 <span class="c1"># Import at bottom of module to avoid circular dependency.</span>
-<span class="kn">from</span> <span class="nn">._area</span> <span class="kn">import</span> <span class="n">Area</span> <span class="k">as</span> <span class="n">_Area</span>
-<span class="kn">from</span> <span class="nn">._volume</span> <span class="kn">import</span> <span class="n">Volume</span> <span class="k">as</span> <span class="n">_Volume</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._area</span><span class="w"> </span><span class="kn">import</span> <span class="n">Area</span> <span class="k">as</span> <span class="n">_Area</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._volume</span><span class="w"> </span><span class="kn">import</span> <span class="n">Volume</span> <span class="k">as</span> <span class="n">_Volume</span>
 </pre></div>
         </article>
       </div>
@@ -1033,7 +1042,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

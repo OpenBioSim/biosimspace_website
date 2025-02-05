@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace._SireWrappers._search_result - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -627,17 +636,17 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SearchResult&quot;</span><span class="p">]</span>
 
-<span class="kn">import</span> <span class="nn">sire.legacy</span> <span class="k">as</span> <span class="nn">_Sire</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_Sire</span>
 
 
 <div class="viewcode-block" id="SearchResult">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult">[docs]</a>
-<span class="k">class</span> <span class="nc">SearchResult</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchResult</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A thin wrapper around Sire.Mol.SelectResult.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="SearchResult.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">select_result</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">select_result</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -663,15 +672,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_iter_count</span> <span class="o">=</span> <span class="mi">0</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human readable string representation of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;BioSimSpace.SearchResult: nResults=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nResults</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string showing how to instantiate the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;BioSimSpace.SearchResult: nResults=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nResults</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of results.</span>
 
@@ -683,7 +692,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_results</span>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Equals to operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Compare to another object of the same type.</span>
@@ -692,7 +701,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Not equals to operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Compare to another object of the same type.</span>
@@ -701,11 +710,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Hash operator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a search result from the container.&quot;&quot;&quot;</span>
 
         <span class="c1"># Slice.</span>
@@ -753,17 +762,17 @@
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WARNING: Type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="si">}</span><span class="s2"> is not supported.&quot;</span><span class="p">)</span>
                 <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a molecule in the container.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;SearchResult&#39; object does not support assignment.&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;An iterator for the object.&quot;&quot;&quot;</span>
         <span class="c1"># Reset the iterator counter and return the object.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_iter_count</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;An iterator for the object.&quot;&quot;&quot;</span>
 
         <span class="c1"># Stop if we&#39;ve reached the end of the container.</span>
@@ -781,7 +790,7 @@
 
 <div class="viewcode-block" id="SearchResult.copy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.copy">[docs]</a>
-    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a copy of this object.</span>
 
@@ -796,7 +805,7 @@
 
 <div class="viewcode-block" id="SearchResult.atoms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.atoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the atoms that contain the results of this</span>
 <span class="sd">        search.</span>
@@ -812,7 +821,7 @@
 
 <div class="viewcode-block" id="SearchResult.residues">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.residues">[docs]</a>
-    <span class="k">def</span> <span class="nf">residues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">residues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the residues that contain the results of this</span>
 <span class="sd">        search.</span>
@@ -828,7 +837,7 @@
 
 <div class="viewcode-block" id="SearchResult.chains">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.chains">[docs]</a>
-    <span class="k">def</span> <span class="nf">chains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">chains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the chains that contain the results of this</span>
 <span class="sd">        search.</span>
@@ -844,7 +853,7 @@
 
 <div class="viewcode-block" id="SearchResult.segments">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.segments">[docs]</a>
-    <span class="k">def</span> <span class="nf">segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the segments that contain the results of this</span>
 <span class="sd">        search.</span>
@@ -860,7 +869,7 @@
 
 <div class="viewcode-block" id="SearchResult.molecules">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.molecules">[docs]</a>
-    <span class="k">def</span> <span class="nf">molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the molecules that contain the results of this</span>
 <span class="sd">        search.</span>
@@ -875,14 +884,14 @@
             <span class="k">return</span> <span class="n">SearchResult</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molecules</span><span class="p">())</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="c1"># this is a single molecule view</span>
-            <span class="kn">from</span> <span class="nn">sire.mol</span> <span class="kn">import</span> <span class="n">SelectorMol</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMol</span>
 
             <span class="k">return</span> <span class="n">SearchResult</span><span class="p">(</span><span class="n">SelectorMol</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">molecule</span><span class="p">()))</span></div>
 
 
 <div class="viewcode-block" id="SearchResult.bonds">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.bonds">[docs]</a>
-    <span class="k">def</span> <span class="nf">bonds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bonds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all of the bonds in this result.</span>
 
@@ -893,18 +902,18 @@
 <span class="sd">            A copy of the object viewed via its bonds.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">sire.mm</span> <span class="kn">import</span> <span class="n">SelectorMBond</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorMBond</span>
 
             <span class="k">return</span> <span class="n">SearchResult</span><span class="p">(</span><span class="n">SelectorMBond</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">sire.mm</span> <span class="kn">import</span> <span class="n">SelectorBond</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">sire.mm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectorBond</span>
 
             <span class="k">return</span> <span class="n">SearchResult</span><span class="p">(</span><span class="n">SelectorBond</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="SearchResult.nResults">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.nResults">[docs]</a>
-    <span class="k">def</span> <span class="nf">nResults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nResults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of results.</span>
 
@@ -919,7 +928,7 @@
 
 <div class="viewcode-block" id="SearchResult.getResult">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.SearchResult.html#BioSimSpace._SireWrappers.SearchResult.getResult">[docs]</a>
-    <span class="k">def</span> <span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the result at the given index.</span>
 
@@ -943,7 +952,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">index</span><span class="p">]</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_getSireObject</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getSireObject</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the underlying Sire object.</span>
 
@@ -957,10 +966,10 @@
 
 
 <span class="c1"># Import at bottom of module to avoid circular dependency.</span>
-<span class="kn">from</span> <span class="nn">._atom</span> <span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
-<span class="kn">from</span> <span class="nn">._molecule</span> <span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
-<span class="kn">from</span> <span class="nn">._residue</span> <span class="kn">import</span> <span class="n">Residue</span> <span class="k">as</span> <span class="n">_Residue</span>
-<span class="kn">from</span> <span class="nn">._bond</span> <span class="kn">import</span> <span class="n">Bond</span> <span class="k">as</span> <span class="n">_Bond</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._atom</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._molecule</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecule</span> <span class="k">as</span> <span class="n">_Molecule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._residue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Residue</span> <span class="k">as</span> <span class="n">_Residue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._bond</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bond</span> <span class="k">as</span> <span class="n">_Bond</span>
 </pre></div>
         </article>
       </div>
@@ -975,7 +984,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

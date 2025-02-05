@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Process._openmm - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,51 +633,51 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;OpenMM&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_try_import</span>
 
-<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">_math</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
 
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">timeit</span> <span class="k">as</span> <span class="nn">_timeit</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_timeit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
 
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">..Metadynamics</span> <span class="kn">import</span> <span class="n">CollectiveVariable</span> <span class="k">as</span> <span class="n">_CollectiveVariable</span>
-<span class="kn">from</span> <span class="nn">..Protocol._position_restraint_mixin</span> <span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
-<span class="kn">from</span> <span class="nn">..Types._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Metadynamics</span><span class="w"> </span><span class="kn">import</span> <span class="n">CollectiveVariable</span> <span class="k">as</span> <span class="n">_CollectiveVariable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._position_restraint_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types._type</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_process</span>
 
-<span class="kn">from</span> <span class="nn">._plumed</span> <span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._plumed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
 
 
 <div class="viewcode-block" id="OpenMM">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM">[docs]</a>
-<span class="k">class</span> <span class="nc">OpenMM</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">OpenMM</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for running simulations using OpenMM.&quot;&quot;&quot;</span>
 
     <span class="c1"># Dictionary of platforms and their OpenMM keyword.</span>
     <span class="n">_platforms</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="s2">&quot;CPU&quot;</span><span class="p">,</span> <span class="s2">&quot;CUDA&quot;</span><span class="p">:</span> <span class="s2">&quot;CUDA&quot;</span><span class="p">,</span> <span class="s2">&quot;OPENCL&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenCL&quot;</span><span class="p">}</span>
 
     <span class="c1"># Special cases for generate config when using ATM protocols.</span>
-    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
         <span class="n">system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -681,8 +690,8 @@
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">._atm</span> <span class="kn">import</span> <span class="n">OpenMMATM</span>
-        <span class="kn">from</span> <span class="nn">..Protocol._atm</span> <span class="kn">import</span> <span class="n">_ATM</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">._atm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenMMATM</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._atm</span><span class="w"> </span><span class="kn">import</span> <span class="n">_ATM</span>
 
         <span class="c1"># would like to use issubclass but _Protocol._ATM is not exposed</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">_ATM</span><span class="p">):</span>
@@ -692,7 +701,7 @@
 
 <div class="viewcode-block" id="OpenMM.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="p">,</span>
@@ -833,7 +842,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human readable string representation of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="s2">&quot;&lt;BioSimSpace.Process.</span><span class="si">%s</span><span class="s2">: system=</span><span class="si">%s</span><span class="s2">, protocol=</span><span class="si">%s</span><span class="s2">, exe=&#39;</span><span class="si">%s</span><span class="s2">&#39;, name=&#39;</span><span class="si">%s</span><span class="s2">&#39;, platform=&#39;</span><span class="si">%s</span><span class="s2">&#39;, work_dir=&#39;</span><span class="si">%s</span><span class="s2">&#39; seed=</span><span class="si">%s</span><span class="s2">&gt;&quot;</span>
@@ -849,7 +858,7 @@
             <span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string showing how to instantiate the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="s2">&quot;BioSimSpace.Process.</span><span class="si">%s</span><span class="s2">(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, exe=&#39;</span><span class="si">%s</span><span class="s2">&#39;, name=&#39;</span><span class="si">%s</span><span class="s2">&#39;, platform=&#39;</span><span class="si">%s</span><span class="s2">&#39;, work_dir=&#39;</span><span class="si">%s</span><span class="s2">&#39;, seed=</span><span class="si">%s</span><span class="s2">)&quot;</span>
@@ -865,7 +874,7 @@
             <span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the input files and working directory ready for simulation.&quot;&quot;&quot;</span>
 
         <span class="c1"># Create a copy of the system.</span>
@@ -890,9 +899,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;RST7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Reference coordinate file for position restraints.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestraint</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -907,9 +916,9 @@
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write reference system to &#39;RST7&#39; format.&quot;</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
@@ -920,9 +929,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;PRM7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Skip if the user has passed a custom config.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="n">_Protocol</span><span class="o">.</span><span class="n">Custom</span><span class="p">):</span>
@@ -937,7 +946,7 @@
         <span class="c1"># Return the list of input files.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span>
 
-    <span class="k">def</span> <span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate OpenMM Python script file strings.&quot;&quot;&quot;</span>
 
         <span class="c1"># Clear the existing configuration list.</span>
@@ -1810,7 +1819,7 @@
 
 <div class="viewcode-block" id="OpenMM.getConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">getConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the list of strings defining the OpenMM Python script.</span>
 
@@ -1823,7 +1832,7 @@
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getConfig</span><span class="p">()</span></div>
 
 
-    <span class="k">def</span> <span class="nf">setConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the list of strings defining the OpenMM Python script.</span>
 
@@ -1838,7 +1847,7 @@
 
 <div class="viewcode-block" id="OpenMM.addToConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.addToConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">addToConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addToConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a string to the OpenMM Python script configuration.</span>
 
@@ -1856,14 +1865,14 @@
 
 <div class="viewcode-block" id="OpenMM.resetConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.resetConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">resetConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resetConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the OpenMM Python script configuration.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_generate_config</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="OpenMM.setConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.setConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">setConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the list of configuration file strings.</span>
 
@@ -1881,7 +1890,7 @@
 
 <div class="viewcode-block" id="OpenMM.start">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.start">[docs]</a>
-    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start the OpenMM process.</span>
 
@@ -1935,7 +1944,7 @@
 
 <div class="viewcode-block" id="OpenMM.getSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -2037,7 +2046,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -2052,7 +2061,7 @@
 
 <div class="viewcode-block" id="OpenMM.getTrajectory">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getTrajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a trajectory object.</span>
 
@@ -2098,7 +2107,7 @@
 
 <div class="viewcode-block" id="OpenMM.getFrame">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getFrame">[docs]</a>
-    <span class="k">def</span> <span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a specific trajectory frame.</span>
 
@@ -2117,13 +2126,12 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;index&#39; must be of type &#39;int&#39;&quot;</span><span class="p">)</span>
-        <span class="n">max_index</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="nb">int</span><span class="p">(</span>
-                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRunTime</span><span class="p">()</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getTimeStep</span><span class="p">())</span>
-                <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestartInterval</span><span class="p">()</span>
-            <span class="p">)</span>
-            <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="n">max_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRunTime</span><span class="p">()</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getTimeStep</span><span class="p">())</span>
+            <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">getRestartInterval</span><span class="p">()</span>
         <span class="p">)</span>
+
         <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">max_index</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;index&#39; must be in range [0, </span><span class="si">{</span><span class="n">max_index</span><span class="si">}</span><span class="s2">].&quot;</span><span class="p">)</span>
 
@@ -2176,7 +2184,7 @@
 
 <div class="viewcode-block" id="OpenMM.getRecord">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getRecord">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a record from the stdout dictionary.</span>
 
@@ -2218,7 +2226,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentRecord">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentRecord">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a current record from the stdout dictionary.</span>
 
@@ -2250,7 +2258,7 @@
 
 <div class="viewcode-block" id="OpenMM.getRecords">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getRecords">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the dictionary of stdout time-series records.</span>
 
@@ -2282,7 +2290,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentRecords">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentRecords">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the current dictionary of stdout time-series records.</span>
 
@@ -2303,7 +2311,7 @@
 
 <div class="viewcode-block" id="OpenMM.getTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the simulation time.</span>
 
@@ -2327,7 +2335,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current simulation time.</span>
 
@@ -2351,7 +2359,7 @@
 
 <div class="viewcode-block" id="OpenMM.getStep">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getStep">[docs]</a>
-    <span class="k">def</span> <span class="nf">getStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of integration steps.</span>
 
@@ -2375,7 +2383,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentStep">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentStep">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current number of integration steps.</span>
 
@@ -2396,7 +2404,7 @@
 
 <div class="viewcode-block" id="OpenMM.getPotentialEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getPotentialEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the potential energy.</span>
 
@@ -2422,7 +2430,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentPotentialEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentPotentialEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current potential energy.</span>
 
@@ -2443,7 +2451,7 @@
 
 <div class="viewcode-block" id="OpenMM.getKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the kinetic energy.</span>
 
@@ -2469,7 +2477,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current kinetic energy.</span>
 
@@ -2490,7 +2498,7 @@
 
 <div class="viewcode-block" id="OpenMM.getTotalEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getTotalEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the total energy.</span>
 
@@ -2516,7 +2524,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentTotalEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentTotalEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current total energy.</span>
 
@@ -2537,7 +2545,7 @@
 
 <div class="viewcode-block" id="OpenMM.getTemperature">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getTemperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the temperature.</span>
 
@@ -2563,7 +2571,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentTemperature">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentTemperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current temperature.</span>
 
@@ -2584,7 +2592,7 @@
 
 <div class="viewcode-block" id="OpenMM.getVolume">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getVolume">[docs]</a>
-    <span class="k">def</span> <span class="nf">getVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the volume.</span>
 
@@ -2610,7 +2618,7 @@
 
 <div class="viewcode-block" id="OpenMM.getCurrentVolume">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.getCurrentVolume">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current volume.</span>
 
@@ -2631,7 +2639,7 @@
 
 <div class="viewcode-block" id="OpenMM.stdout">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.OpenMM.html#BioSimSpace.Process.OpenMM.stdout">[docs]</a>
-    <span class="k">def</span> <span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print the last n lines of the stdout buffer.</span>
 
@@ -2667,14 +2675,14 @@
             <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stdout</span><span class="p">[</span><span class="n">x</span><span class="p">])</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_add_config_imports</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_config_imports</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to write the header (import statements) to the</span>
 <span class="sd">        OpenMM Python script (config file).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># We should verify that openmm is available to prevent</span>
         <span class="c1"># difficult-to-debug errors in the run script</span>
-        <span class="kn">from</span> <span class="nn">BioSimSpace._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span><span class="p">,</span> <span class="n">_assert_imported</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">BioSimSpace._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_try_import</span><span class="p">,</span> <span class="n">_assert_imported</span>
 
         <span class="n">_openmm</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;openmm&quot;</span><span class="p">)</span>
         <span class="n">_assert_imported</span><span class="p">(</span><span class="n">_openmm</span><span class="p">)</span>
@@ -2687,7 +2695,7 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;import parmed&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_add_config_platform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_config_platform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to add platform information to the OpenMM</span>
 <span class="sd">        Python script.</span>
@@ -2718,7 +2726,7 @@
                 <span class="s2">&quot;properties = {&#39;OpenCLDeviceIndex&#39;: &#39;</span><span class="si">%s</span><span class="s2">&#39;}&quot;</span> <span class="o">%</span> <span class="n">opencl_devices</span>
             <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_add_config_restart</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_config_restart</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to check for a restart file and load state information.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># Check for a restart file.&quot;</span><span class="p">)</span>
@@ -2751,7 +2759,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">_add_config_monkey_patches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_config_monkey_patches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to write any monkey-patches to the OpenMM Python</span>
 <span class="sd">        script (config file).</span>
@@ -2786,7 +2794,7 @@
         <span class="c1"># Replace the writeModel method with the monkey-patch.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;DCDFile.writeModel = writeModelPatched&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_add_config_reporters</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_config_reporters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">state_interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">traj_interval</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">is_restart</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2881,7 +2889,7 @@
             <span class="s2">&quot;                                              separator=&#39; &#39;))&quot;</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_add_config_restraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_config_restraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to add position restraints to the OpenMM script (config file).&quot;&quot;&quot;</span>
         <span class="c1"># Add position restraints. This uses the approach from:</span>
         <span class="c1"># https://github.com/openmm/openmm/issues/2262#issuecomment-464157489</span>
@@ -2928,7 +2936,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;    dummy_indices.append(j)&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">addToConfig</span><span class="p">(</span><span class="s2">&quot;    positions.append(positions[i])&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_update_stdout_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_stdout_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the dictionary of thermodynamic records.&quot;&quot;&quot;</span>
 
         <span class="c1"># Exit if log file hasn&#39;t been created.</span>
@@ -3025,7 +3033,7 @@
                     <span class="c1"># Update the record dictionary for this key.</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">record</span>
 
-    <span class="k">def</span> <span class="nf">_get_stdout_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_stdout_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to get a stdout record from the dictionary.</span>
 
@@ -3100,7 +3108,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

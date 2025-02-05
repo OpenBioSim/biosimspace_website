@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Process._amber - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_style.css?v=094c566b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_pygments.css?v=c839eb9e" />
@@ -90,7 +90,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -105,22 +105,63 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -133,6 +174,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -151,7 +194,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -344,7 +388,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
 </ul>
@@ -528,7 +575,8 @@
           <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -538,7 +586,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <h1>Source code for BioSimSpace.Process._amber</h1><div class="highlight"><pre>
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
@@ -568,51 +616,51 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Amber&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_try_import</span>
 
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">re</span> <span class="k">as</span> <span class="nn">_re</span>
-<span class="kn">import</span> <span class="nn">time</span> <span class="k">as</span> <span class="nn">_time</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">tempfile</span> <span class="k">as</span> <span class="nn">_tempfile</span>
-<span class="kn">import</span> <span class="nn">timeit</span> <span class="k">as</span> <span class="nn">_timeit</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_tempfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_timeit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_amber_home</span><span class="p">,</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">..Align._squash</span> <span class="kn">import</span> <span class="n">_squash</span><span class="p">,</span> <span class="n">_unsquash</span>
-<span class="kn">from</span> <span class="nn">.._Config</span> <span class="kn">import</span> <span class="n">Amber</span> <span class="k">as</span> <span class="n">_AmberConfig</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
-<span class="kn">from</span> <span class="nn">..Protocol._free_energy_mixin</span> <span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
-<span class="kn">from</span> <span class="nn">..Protocol._position_restraint_mixin</span> <span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">..Types._type</span> <span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_amber_home</span><span class="p">,</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Align._squash</span><span class="w"> </span><span class="kn">import</span> <span class="n">_squash</span><span class="p">,</span> <span class="n">_unsquash</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Amber</span> <span class="k">as</span> <span class="n">_AmberConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingSoftwareError</span> <span class="k">as</span> <span class="n">_MissingSoftwareError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._free_energy_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_FreeEnergyMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol._position_restraint_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">_PositionRestraintMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types._type</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span> <span class="k">as</span> <span class="n">_Type</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span> <span class="k">as</span> <span class="n">_Protocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trajectory</span> <span class="k">as</span> <span class="n">_Trajectory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_process</span>
 
-<span class="kn">from</span> <span class="nn">._plumed</span> <span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._plumed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plumed</span> <span class="k">as</span> <span class="n">_Plumed</span>
 
 
 <div class="viewcode-block" id="Amber">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber">[docs]</a>
-<span class="k">class</span> <span class="nc">Amber</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Amber</span><span class="p">(</span><span class="n">_process</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for running simulations using AMBER.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Amber.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">system</span><span class="p">,</span>
         <span class="n">protocol</span><span class="p">,</span>
@@ -802,7 +850,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the input files and working directory ready for simulation.&quot;&quot;&quot;</span>
 
         <span class="c1"># Create the input files...</span>
@@ -833,8 +881,8 @@
 
                 <span class="c1"># We need to add a box.</span>
                 <span class="k">if</span> <span class="n">box</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="kn">from</span> <span class="nn">..Box</span> <span class="kn">import</span> <span class="n">cubic</span> <span class="k">as</span> <span class="n">_cubic</span>
-                    <span class="kn">from</span> <span class="nn">..Units.Length</span> <span class="kn">import</span> <span class="n">angstrom</span> <span class="k">as</span> <span class="n">_angstrom</span>
+                    <span class="kn">from</span><span class="w"> </span><span class="nn">..Box</span><span class="w"> </span><span class="kn">import</span> <span class="n">cubic</span> <span class="k">as</span> <span class="n">_cubic</span>
+                    <span class="kn">from</span><span class="w"> </span><span class="nn">..Units.Length</span><span class="w"> </span><span class="kn">import</span> <span class="n">angstrom</span> <span class="k">as</span> <span class="n">_angstrom</span>
 
                     <span class="c1"># Get the bounding box of the system.</span>
                     <span class="n">box_min</span><span class="p">,</span> <span class="n">box_max</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">getAxisAlignedBoundingBox</span><span class="p">()</span>
@@ -857,7 +905,7 @@
                 <span class="s2">&quot;somd1_compatibility&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span>
                 <span class="ow">and</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;somd1_compatibility&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>
             <span class="p">):</span>
-                <span class="kn">from</span> <span class="nn">._somd</span> <span class="kn">import</span> <span class="n">_somd1_compatibility</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">._somd</span><span class="w"> </span><span class="kn">import</span> <span class="n">_somd1_compatibility</span>
 
                 <span class="n">system</span> <span class="o">=</span> <span class="n">_somd1_compatibility</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 
@@ -877,9 +925,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;RST7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Reference file for position restraints.</span>
         <span class="k">try</span><span class="p">:</span>
@@ -890,9 +938,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write reference system to &#39;RST7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># PRM file (topology).</span>
         <span class="k">try</span><span class="p">:</span>
@@ -903,9 +951,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to write system to &#39;PRM7&#39; format.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Generate the AMBER configuration file.</span>
         <span class="c1"># Skip if the user has passed a custom config.</span>
@@ -921,7 +969,7 @@
         <span class="c1"># Return the list of input files.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_files</span>
 
-    <span class="k">def</span> <span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate AMBER configuration file strings.&quot;&quot;&quot;</span>
 
         <span class="n">extra_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -979,7 +1027,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extra_options</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extra_lines</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="o">.</span><span class="n">_setCustomised</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_generate_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate the dictionary of command-line arguments.&quot;&quot;&quot;</span>
 
         <span class="c1"># Clear the existing arguments.</span>
@@ -1011,7 +1059,7 @@
 
 <div class="viewcode-block" id="Amber.start">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.start">[docs]</a>
-    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start the AMBER process.</span>
 
@@ -1060,7 +1108,7 @@
 
 <div class="viewcode-block" id="Amber.getSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -1178,7 +1226,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the latest molecular system.</span>
 
@@ -1193,7 +1241,7 @@
 
 <div class="viewcode-block" id="Amber.getTrajectory">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getTrajectory">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTrajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a trajectory object.</span>
 
@@ -1240,7 +1288,7 @@
 
 <div class="viewcode-block" id="Amber.getFrame">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getFrame">[docs]</a>
-    <span class="k">def</span> <span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a specific trajectory frame.</span>
 
@@ -1315,7 +1363,7 @@
 
 <div class="viewcode-block" id="Amber.getRecordKey">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRecordKey">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecordKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecordKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1374,7 +1422,7 @@
 
 <div class="viewcode-block" id="Amber.getRecord">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRecord">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecord</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecord</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1435,7 +1483,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentRecord">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRecord">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRecord</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRecord</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1487,7 +1535,7 @@
 
 <div class="viewcode-block" id="Amber.getRecords">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRecords">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the dictionary of stdout time-series records.</span>
 
@@ -1544,7 +1592,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentRecords">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRecords">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRecords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the current dictionary of stdout time-series records.</span>
 
@@ -1571,7 +1619,7 @@
 
 <div class="viewcode-block" id="Amber.getTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the simulation time.</span>
 
@@ -1626,7 +1674,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current simulation time.</span>
 
@@ -1658,7 +1706,7 @@
 
 <div class="viewcode-block" id="Amber.getStep">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getStep">[docs]</a>
-    <span class="k">def</span> <span class="nf">getStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of integration steps.</span>
 
@@ -1698,7 +1746,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentStep">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentStep">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentStep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current number of integration steps.</span>
 
@@ -1730,7 +1778,7 @@
 
 <div class="viewcode-block" id="Amber.getBondEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getBondEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the bond energy.</span>
 
@@ -1765,7 +1813,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentBondEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentBondEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentBondEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current bond energy.</span>
 
@@ -1797,7 +1845,7 @@
 
 <div class="viewcode-block" id="Amber.getAngleEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getAngleEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAngleEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAngleEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1839,7 +1887,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentAngleEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentAngleEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentAngleEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current angle energy.</span>
 
@@ -1871,7 +1919,7 @@
 
 <div class="viewcode-block" id="Amber.getDihedralEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getDihedralEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getDihedralEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDihedralEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1913,7 +1961,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentDihedralEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentDihedralEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentDihedralEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current total dihedral energy (proper + improper).</span>
 
@@ -1945,7 +1993,7 @@
 
 <div class="viewcode-block" id="Amber.getElectrostaticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getElectrostaticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getElectrostaticEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getElectrostaticEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1987,7 +2035,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentElectrostaticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentElectrostaticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentElectrostaticEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentElectrostaticEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2021,7 +2069,7 @@
 
 <div class="viewcode-block" id="Amber.getElectrostaticEnergy14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getElectrostaticEnergy14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getElectrostaticEnergy14</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getElectrostaticEnergy14</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2063,7 +2111,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentElectrostaticEnergy14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentElectrostaticEnergy14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentElectrostaticEnergy14</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentElectrostaticEnergy14</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2097,7 +2145,7 @@
 
 <div class="viewcode-block" id="Amber.getVanDerWaalsEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getVanDerWaalsEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getVanDerWaalsEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getVanDerWaalsEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2139,7 +2187,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentVanDerWaalsEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVanDerWaalsEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentVanDerWaalsEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentVanDerWaalsEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current Van der Vaals energy.</span>
 
@@ -2171,7 +2219,7 @@
 
 <div class="viewcode-block" id="Amber.getVanDerWaalsEnergy14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getVanDerWaalsEnergy14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getVanDerWaalsEnergy14</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getVanDerWaalsEnergy14</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2213,7 +2261,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentVanDerWaalsEnergy14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVanDerWaalsEnergy14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentVanDerWaalsEnergy14</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentVanDerWaalsEnergy14</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2247,7 +2295,7 @@
 
 <div class="viewcode-block" id="Amber.getHydrogenBondEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getHydrogenBondEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getHydrogenBondEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getHydrogenBondEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2289,7 +2337,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentHydrogenBondEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentHydrogenBondEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentHydrogenBondEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentHydrogenBondEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2323,7 +2371,7 @@
 
 <div class="viewcode-block" id="Amber.getRestraintEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getRestraintEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getRestraintEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRestraintEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2365,7 +2413,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentRestraintEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentRestraintEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentRestraintEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current restraint energy.</span>
 
@@ -2400,7 +2448,7 @@
 
 <div class="viewcode-block" id="Amber.getPotentialEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getPotentialEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPotentialEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPotentialEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2442,7 +2490,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentPotentialEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentPotentialEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentPotentialEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current potential energy.</span>
 
@@ -2474,7 +2522,7 @@
 
 <div class="viewcode-block" id="Amber.getKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getKineticEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getKineticEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2516,7 +2564,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentKineticEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current kinetic energy.</span>
 
@@ -2548,7 +2596,7 @@
 
 <div class="viewcode-block" id="Amber.getNonBondedEnergy14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getNonBondedEnergy14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getNonBondedEnergy14</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getNonBondedEnergy14</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2590,7 +2638,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentNonBondedEnergy14">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentNonBondedEnergy14">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentNonBondedEnergy14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentNonBondedEnergy14</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current non-bonded energy between atoms 1 and 4.</span>
 
@@ -2622,7 +2670,7 @@
 
 <div class="viewcode-block" id="Amber.getTotalEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getTotalEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTotalEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTotalEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2688,7 +2736,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentTotalEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentTotalEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTotalEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current total energy.</span>
 
@@ -2720,7 +2768,7 @@
 
 <div class="viewcode-block" id="Amber.getCentreOfMassKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCentreOfMassKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCentreOfMassKineticEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCentreOfMassKineticEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2762,7 +2810,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentCentreOfMassKineticEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentCentreOfMassKineticEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentCentreOfMassKineticEnergy</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentCentreOfMassKineticEnergy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2796,7 +2844,7 @@
 
 <div class="viewcode-block" id="Amber.getVirial">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getVirial">[docs]</a>
-    <span class="k">def</span> <span class="nf">getVirial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getVirial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the virial.</span>
 
@@ -2835,7 +2883,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentVirial">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVirial">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentVirial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentVirial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current virial.</span>
 
@@ -2867,7 +2915,7 @@
 
 <div class="viewcode-block" id="Amber.getTemperature">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getTemperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTemperature</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTemperature</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2909,7 +2957,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentTemperature">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentTemperature">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentTemperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current temperature.</span>
 
@@ -2941,7 +2989,7 @@
 
 <div class="viewcode-block" id="Amber.getPressure">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getPressure">[docs]</a>
-    <span class="k">def</span> <span class="nf">getPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the pressure.</span>
 
@@ -2981,7 +3029,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentPressure">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentPressure">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentPressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current pressure.</span>
 
@@ -3013,7 +3061,7 @@
 
 <div class="viewcode-block" id="Amber.getVolume">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getVolume">[docs]</a>
-    <span class="k">def</span> <span class="nf">getVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the volume.</span>
 
@@ -3053,7 +3101,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentVolume">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentVolume">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current volume.</span>
 
@@ -3085,7 +3133,7 @@
 
 <div class="viewcode-block" id="Amber.getDensity">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getDensity">[docs]</a>
-    <span class="k">def</span> <span class="nf">getDensity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDensity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the density.</span>
 
@@ -3124,7 +3172,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentDensity">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentDensity">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentDensity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentDensity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current density.</span>
 
@@ -3156,7 +3204,7 @@
 
 <div class="viewcode-block" id="Amber.getDVDL">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getDVDL">[docs]</a>
-    <span class="k">def</span> <span class="nf">getDVDL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDVDL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="s2">&quot;AUTO&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the gradient of the total energy with respect to lambda.</span>
 
@@ -3195,7 +3243,7 @@
 
 <div class="viewcode-block" id="Amber.getCurrentDVDL">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.getCurrentDVDL">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCurrentDVDL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCurrentDVDL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current gradient of the total energy with respect to lambda.</span>
 
@@ -3227,7 +3275,7 @@
 
 <div class="viewcode-block" id="Amber.stdout">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.stdout">[docs]</a>
-    <span class="k">def</span> <span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stdout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print the last n lines of the stdout buffer.</span>
 
@@ -3380,7 +3428,7 @@
 
 <div class="viewcode-block" id="Amber.kill">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Amber.html#BioSimSpace.Process.Amber.kill">[docs]</a>
-    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Kill the running process.&quot;&quot;&quot;</span>
 
         <span class="c1"># Kill the process.</span>
@@ -3388,7 +3436,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_get_stdout_record</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_stdout_record</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">soft_core</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -3502,7 +3550,7 @@
 
 
 
-<span class="k">def</span> <span class="nf">_find_exe</span><span class="p">(</span><span class="n">is_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_free_energy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_vacuum</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_find_exe</span><span class="p">(</span><span class="n">is_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_free_energy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_vacuum</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper function to search for an AMBER executable.</span>
 
@@ -3544,10 +3592,10 @@
 
     <span class="c1"># Search for the executable.</span>
 
-    <span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-    <span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">_pathlib</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_pathlib</span>
 
-    <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span> <span class="k">as</span> <span class="n">_glob</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span> <span class="k">as</span> <span class="n">_glob</span>
 
     <span class="c1"># Get the current path.</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)</span>
@@ -3557,7 +3605,7 @@
         <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">_amber_home</span> <span class="o">+</span> <span class="s2">&quot;/bin&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">path</span>
 
     <span class="c1"># Helper function to check whether a file is executable.</span>
-    <span class="k">def</span> <span class="nf">is_exe</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_exe</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">_os</span><span class="o">.</span><span class="n">X_OK</span><span class="p">)</span>
 
     <span class="c1"># Loop over each directory in the path and search for the executable.</span>
@@ -3601,7 +3649,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 09, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             
@@ -3617,9 +3665,9 @@
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../../../_static/js/custom.js?v=e0b44004"></script>
     </body>
 </html>

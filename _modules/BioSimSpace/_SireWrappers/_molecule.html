@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace._SireWrappers._molecule - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -627,33 +636,33 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Molecule&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">isclose</span> <span class="k">as</span> <span class="n">_isclose</span>
-<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span> <span class="k">as</span> <span class="n">_warn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isclose</span> <span class="k">as</span> <span class="n">_isclose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">warn</span> <span class="k">as</span> <span class="n">_warn</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">MM</span> <span class="k">as</span> <span class="n">_SireMM</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_SireSystem</span>
-<span class="kn">from</span> <span class="nn">sire.legacy</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">_SireBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_SireIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">MM</span> <span class="k">as</span> <span class="n">_SireMM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Maths</span> <span class="k">as</span> <span class="n">_SireMaths</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mol</span> <span class="k">as</span> <span class="n">_SireMol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_SireSystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_SireUnits</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_isVerbose</span>
-<span class="kn">from</span> <span class="nn">.._Exceptions</span> <span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span> <span class="k">as</span> <span class="n">_Length</span>
 
-<span class="kn">from</span> <span class="nn">._sire_wrapper</span> <span class="kn">import</span> <span class="n">SireWrapper</span> <span class="k">as</span> <span class="n">_SireWrapper</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._sire_wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">SireWrapper</span> <span class="k">as</span> <span class="n">_SireWrapper</span>
 
 
 <div class="viewcode-block" id="Molecule">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule">[docs]</a>
-<span class="k">class</span> <span class="nc">Molecule</span><span class="p">(</span><span class="n">_SireWrapper</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Molecule</span><span class="p">(</span><span class="n">_SireWrapper</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A container class for storing a molecule.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Molecule.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecule</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecule</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -716,7 +725,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_multi_atom</span> <span class="o">=</span> <span class="kc">True</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human readable string representation of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;BioSimSpace.Molecule: number=</span><span class="si">%d</span><span class="s2">, nAtoms=</span><span class="si">%d</span><span class="s2">, nResidues=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">(),</span>
@@ -724,7 +733,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">nResidues</span><span class="p">(),</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string showing how to instantiate the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;BioSimSpace.Molecule: number=</span><span class="si">%d</span><span class="s2">, nAtoms=</span><span class="si">%d</span><span class="s2">, nResidues=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">(),</span>
@@ -732,7 +741,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">nResidues</span><span class="p">(),</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Addition operator.&quot;&quot;&quot;</span>
 
         <span class="c1"># Convert tuple to a list.</span>
@@ -777,7 +786,7 @@
         <span class="c1"># Create a new Molecules container.</span>
         <span class="k">return</span> <span class="n">_Molecules</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether other is in self.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">_Atom</span><span class="p">,</span> <span class="n">_Residue</span><span class="p">)):</span>
@@ -791,7 +800,7 @@
 
 <div class="viewcode-block" id="Molecule.copy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.copy">[docs]</a>
-    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a copy of this Molecule.</span>
 
@@ -812,7 +821,7 @@
 
 <div class="viewcode-block" id="Molecule.number">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.number">[docs]</a>
-    <span class="k">def</span> <span class="nf">number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of the molecule. Each molecule has a unique</span>
 <span class="sd">        identification number.</span>
@@ -828,7 +837,7 @@
 
 <div class="viewcode-block" id="Molecule.coordinates">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.coordinates">[docs]</a>
-    <span class="k">def</span> <span class="nf">coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the coordinates of the atoms in the molecule.</span>
 
@@ -869,7 +878,7 @@
 
 <div class="viewcode-block" id="Molecule.getResidues">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.getResidues">[docs]</a>
-    <span class="k">def</span> <span class="nf">getResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing the residues in the molecule.</span>
 
@@ -887,7 +896,7 @@
 
 <div class="viewcode-block" id="Molecule.getAtoms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.getAtoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">getAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing the atoms in the molecule.</span>
 
@@ -905,7 +914,7 @@
 
 <div class="viewcode-block" id="Molecule.extract">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.extract">[docs]</a>
-    <span class="k">def</span> <span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">renumber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">renumber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract atoms at the specified indices from the molecule to create</span>
 <span class="sd">        a new molecule.</span>
@@ -988,9 +997,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to create partial molecule!&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># Get the &quot;intrascale&quot; property name.</span>
         <span class="n">intrascale</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;intrascale&quot;</span><span class="p">,</span> <span class="s2">&quot;intrascale&quot;</span><span class="p">)</span>
@@ -1015,9 +1024,9 @@
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to recover non-bonded matrix for the extracted molecule!&quot;</span>
                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Convert back to a Sire system.</span>
             <span class="n">gro_sys</span> <span class="o">=</span> <span class="n">gro_top</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span>
@@ -1048,7 +1057,7 @@
 
 <div class="viewcode-block" id="Molecule.molecule0">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.molecule0">[docs]</a>
-    <span class="k">def</span> <span class="nf">molecule0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">molecule0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the component of the merged molecule at lambda = 0.</span>
 
@@ -1064,7 +1073,7 @@
 
 <div class="viewcode-block" id="Molecule.molecule1">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.molecule1">[docs]</a>
-    <span class="k">def</span> <span class="nf">molecule1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">molecule1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the component of the merged molecule at lambda = 1.</span>
 
@@ -1080,7 +1089,7 @@
 
 <div class="viewcode-block" id="Molecule.nAtoms">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.nAtoms">[docs]</a>
-    <span class="k">def</span> <span class="nf">nAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nAtoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of atoms in the molecule.</span>
 
@@ -1095,7 +1104,7 @@
 
 <div class="viewcode-block" id="Molecule.nResidues">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.nResidues">[docs]</a>
-    <span class="k">def</span> <span class="nf">nResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nResidues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of residues in the molecule.</span>
 
@@ -1110,7 +1119,7 @@
 
 <div class="viewcode-block" id="Molecule.nChains">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.nChains">[docs]</a>
-    <span class="k">def</span> <span class="nf">nChains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nChains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of chains in the molecule.</span>
 
@@ -1125,7 +1134,7 @@
 
 <div class="viewcode-block" id="Molecule.isPerturbable">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.isPerturbable">[docs]</a>
-    <span class="k">def</span> <span class="nf">isPerturbable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isPerturbable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether this molecule is perturbable, i.e. it can be used in a</span>
 <span class="sd">        free-energy perturbation simulation.</span>
@@ -1141,7 +1150,7 @@
 
 <div class="viewcode-block" id="Molecule.isWater">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.isWater">[docs]</a>
-    <span class="k">def</span> <span class="nf">isWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether this is a water molecule.</span>
 
@@ -1168,7 +1177,7 @@
 
 <div class="viewcode-block" id="Molecule.isAmberWater">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.isAmberWater">[docs]</a>
-    <span class="k">def</span> <span class="nf">isAmberWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isAmberWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether this is an AMBER format water molecule.</span>
 
@@ -1195,7 +1204,7 @@
 
 <div class="viewcode-block" id="Molecule.isGromacsWater">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.isGromacsWater">[docs]</a>
-    <span class="k">def</span> <span class="nf">isGromacsWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isGromacsWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Whether this is a GROMACS format water molecule.</span>
 
@@ -1221,7 +1230,7 @@
 
 <div class="viewcode-block" id="Molecule.toSystem">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.toSystem">[docs]</a>
-    <span class="k">def</span> <span class="nf">toSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">toSystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a single Molecule to a System.</span>
 
@@ -1235,7 +1244,7 @@
 
 <div class="viewcode-block" id="Molecule.search">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.search">[docs]</a>
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Search the molecule for atoms and residues. Search results will be</span>
 <span class="sd">        reduced to their minimal representation, i.e. a residue containing</span>
@@ -1289,9 +1298,9 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&#39;Invalid search query: </span><span class="si">%r</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Query the Sire molecule.</span>
@@ -1300,16 +1309,16 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&#39;Invalid search query: </span><span class="si">%r</span><span class="s2"> : </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="k">return</span> <span class="n">_SearchResult</span><span class="p">(</span><span class="n">search_result</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Molecule.makeCompatibleWith">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.makeCompatibleWith">[docs]</a>
-    <span class="k">def</span> <span class="nf">makeCompatibleWith</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">makeCompatibleWith</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">molecule</span><span class="p">,</span>
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
@@ -1481,9 +1490,9 @@
                                     <span class="s2">&quot;Failed to set property &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">_property_map</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span>
                                 <span class="p">)</span>
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># The atom order is different, we need to map the atoms when setting properties.</span>
             <span class="k">else</span><span class="p">:</span>
@@ -1527,9 +1536,9 @@
                                         <span class="o">%</span> <span class="p">(</span><span class="n">_property_map</span><span class="p">[</span><span class="n">prop</span><span class="p">],</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">idx0</span><span class="p">)</span>
                                     <span class="p">)</span>
                                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                                     <span class="k">else</span><span class="p">:</span>
-                                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
                 <span class="c1"># Now deal with all unseen properties. These will be non atom-based</span>
                 <span class="c1"># properties, such as TwoAtomFunctions, StringProperty, etc.</span>
@@ -1567,9 +1576,9 @@
                                             <span class="o">%</span> <span class="n">_property_map</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span>
                                         <span class="p">)</span>
                                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                                         <span class="k">else</span><span class="p">:</span>
-                                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
                                 <span class="c1"># Now try to set the property.</span>
                                 <span class="n">edit_mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">_property_map</span><span class="p">[</span><span class="n">prop</span><span class="p">],</span> <span class="n">propty</span><span class="p">)</span>
@@ -1598,9 +1607,9 @@
                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to rename atom: </span><span class="si">%s</span><span class="s2"> --&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name0</span><span class="p">,</span> <span class="n">name1</span><span class="p">)</span>
                         <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                            <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Commit the changes.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -1718,9 +1727,9 @@
                         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to rename atom: </span><span class="si">%s</span><span class="s2"> --&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name0</span><span class="p">,</span> <span class="n">name1</span><span class="p">)</span>
                             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                             <span class="k">else</span><span class="p">:</span>
-                                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
                     <span class="c1"># Loop over all atom properties.</span>
                     <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">atom_props</span><span class="p">:</span>
@@ -1741,9 +1750,9 @@
                                     <span class="n">idx0</span><span class="p">,</span>
                                 <span class="p">)</span>
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
                 <span class="c1"># Now deal with the molecular properties.</span>
                 <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">mol_props</span><span class="p">:</span>
@@ -1767,9 +1776,9 @@
                             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                                 <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                                 <span class="k">else</span><span class="p">:</span>
-                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                                    <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
                         <span class="c1"># Now try to set the property.</span>
                         <span class="n">edit_mol</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">propty</span><span class="p">)</span>
@@ -1870,9 +1879,9 @@
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Angles.</span>
             <span class="k">if</span> <span class="n">angles</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1884,9 +1893,9 @@
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Dihedrals.</span>
             <span class="k">if</span> <span class="n">dihedrals</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1898,9 +1907,9 @@
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Impropers.</span>
             <span class="k">if</span> <span class="n">impropers</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1912,9 +1921,9 @@
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Now generate the molecular connectivity.</span>
             <span class="k">if</span> <span class="n">bonds</span><span class="o">.</span><span class="n">nFunctions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1934,9 +1943,9 @@
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Next we construct the intrascale matrix for the non-bonded</span>
             <span class="c1"># interactions. It is prohibitively slow to do this on-the-fly so</span>
@@ -1964,9 +1973,9 @@
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Incompatible property: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prop</span>
                     <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                        <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
             <span class="c1"># Finally, commit the changes to the internal object.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
@@ -1974,7 +1983,7 @@
 
 <div class="viewcode-block" id="Molecule.translate">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.translate">[docs]</a>
-    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vector</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vector</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Translate each molecule in the container.</span>
 
@@ -2050,7 +2059,7 @@
 
 <div class="viewcode-block" id="Molecule.repartitionHydrogenMass">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule.repartitionHydrogenMass">[docs]</a>
-    <span class="k">def</span> <span class="nf">repartitionHydrogenMass</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repartitionHydrogenMass</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="n">use_coordinates</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2178,7 +2187,7 @@
             <span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_getPropertyMap0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getPropertyMap0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a property map for the lambda = 0 state of the merged molecule.&quot;&quot;&quot;</span>
 
         <span class="n">property_map</span> <span class="o">=</span> <span class="p">{}</span>
@@ -2190,7 +2199,7 @@
 
         <span class="k">return</span> <span class="n">property_map</span>
 
-    <span class="k">def</span> <span class="nf">_getPropertyMap1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getPropertyMap1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a property map for the lambda = 1 state of the merged molecule.&quot;&quot;&quot;</span>
 
         <span class="n">property_map</span> <span class="o">=</span> <span class="p">{}</span>
@@ -2202,7 +2211,7 @@
 
         <span class="k">return</span> <span class="n">property_map</span>
 
-    <span class="k">def</span> <span class="nf">_fixCharge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fixCharge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make the molecular charge an integer value.</span>
 
@@ -2254,7 +2263,7 @@
         <span class="c1"># Update the Sire molecule.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">edit_mol</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_toRegularMolecule</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_toRegularMolecule</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span>
         <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -2396,7 +2405,7 @@
         <span class="c1"># Return the updated molecule.</span>
         <span class="k">return</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">_extractMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_extractMolecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">is_lambda1</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Internal function to extract an &quot;original&quot; molecule from a merged</span>
 <span class="sd">        molecule, i.e. one of the original molecules that was used to</span>
@@ -2440,9 +2449,9 @@
         <span class="k">except</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;All atoms in the selection are dummies. Unable to extract.&quot;</span>
             <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="n">_IncompatibleError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
         <span class="c1"># If there are no dummies, then simply return this molecule.</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_result</span><span class="p">)</span> <span class="o">==</span> <span class="n">mol</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
@@ -2470,7 +2479,7 @@
             <span class="c1"># with the indices of the dummy atoms.</span>
             <span class="k">return</span> <span class="n">mol</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">non_dummies</span><span class="p">),</span> <span class="n">dummies</span>
 
-    <span class="k">def</span> <span class="nf">_getPerturbationIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getPerturbationIndices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the indices of the atoms that are perturbed, i.e. those</span>
 <span class="sd">        that change one of the following properties: &quot;ambertype&quot;, &quot;LJ&quot;,</span>
@@ -2506,11 +2515,11 @@
 
 
 <span class="c1"># Import at bottom of module to avoid circular dependency.</span>
-<span class="kn">from</span> <span class="nn">._atom</span> <span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
-<span class="kn">from</span> <span class="nn">._molecules</span> <span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
-<span class="kn">from</span> <span class="nn">._residue</span> <span class="kn">import</span> <span class="n">Residue</span> <span class="k">as</span> <span class="n">_Residue</span>
-<span class="kn">from</span> <span class="nn">._search_result</span> <span class="kn">import</span> <span class="n">SearchResult</span> <span class="k">as</span> <span class="n">_SearchResult</span>
-<span class="kn">from</span> <span class="nn">._system</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._atom</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atom</span> <span class="k">as</span> <span class="n">_Atom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._molecules</span><span class="w"> </span><span class="kn">import</span> <span class="n">Molecules</span> <span class="k">as</span> <span class="n">_Molecules</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._residue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Residue</span> <span class="k">as</span> <span class="n">_Residue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._search_result</span><span class="w"> </span><span class="kn">import</span> <span class="n">SearchResult</span> <span class="k">as</span> <span class="n">_SearchResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._system</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
 </pre></div>
         </article>
       </div>
@@ -2525,7 +2534,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

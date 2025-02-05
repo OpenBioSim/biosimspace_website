@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Process._plumed - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -308,6 +308,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -458,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -482,6 +484,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -599,7 +608,7 @@
 <span></span><span class="c1">######################################################################</span>
 <span class="c1"># BioSimSpace: Making biomolecular simulation a breeze!</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright: 2017-2024</span>
+<span class="c1"># Copyright: 2017-2025</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Lester Hedges &lt;lester.hedges@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -624,44 +633,44 @@
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plumed&quot;</span><span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.._Utils</span> <span class="kn">import</span> <span class="n">_try_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._Utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_try_import</span>
 
-<span class="kn">import</span> <span class="nn">glob</span> <span class="k">as</span> <span class="nn">_glob</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
 
 <span class="n">_pygtail</span> <span class="o">=</span> <span class="n">_try_import</span><span class="p">(</span><span class="s2">&quot;pygtail&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">shlex</span> <span class="k">as</span> <span class="nn">_shlex</span>
-<span class="kn">import</span> <span class="nn">shutil</span> <span class="k">as</span> <span class="nn">_shutil</span>
-<span class="kn">import</span> <span class="nn">subprocess</span> <span class="k">as</span> <span class="nn">_subprocess</span>
-<span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shlex</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shlex</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
 
-<span class="kn">from</span> <span class="nn">sire.legacy.Base</span> <span class="kn">import</span> <span class="n">findExe</span> <span class="k">as</span> <span class="n">_findExe</span>
-<span class="kn">from</span> <span class="nn">sire.legacy.Maths</span> <span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>
-<span class="kn">from</span> <span class="nn">sire.legacy.Mol</span> <span class="kn">import</span> <span class="n">MolNum</span> <span class="k">as</span> <span class="n">_MolNum</span>
-<span class="kn">import</span> <span class="nn">sire.legacy.Vol</span> <span class="k">as</span> <span class="nn">_SireVol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Base</span><span class="w"> </span><span class="kn">import</span> <span class="n">findExe</span> <span class="k">as</span> <span class="n">_findExe</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span> <span class="k">as</span> <span class="n">_Vector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.Mol</span><span class="w"> </span><span class="kn">import</span> <span class="n">MolNum</span> <span class="k">as</span> <span class="n">_MolNum</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sire.legacy.Vol</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_SireVol</span>
 
-<span class="kn">from</span> <span class="nn">.._SireWrappers</span> <span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
-<span class="kn">from</span> <span class="nn">..Metadynamics</span> <span class="kn">import</span> <span class="n">CollectiveVariable</span> <span class="k">as</span> <span class="n">_CollectiveVariable</span>
-<span class="kn">from</span> <span class="nn">..Protocol</span> <span class="kn">import</span> <span class="n">Metadynamics</span> <span class="k">as</span> <span class="n">_Metadynamics</span>
-<span class="kn">from</span> <span class="nn">..Protocol</span> <span class="kn">import</span> <span class="n">Steering</span> <span class="k">as</span> <span class="n">_Steering</span>
-<span class="kn">from</span> <span class="nn">..Types</span> <span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Metadynamics</span><span class="w"> </span><span class="kn">import</span> <span class="n">CollectiveVariable</span> <span class="k">as</span> <span class="n">_CollectiveVariable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metadynamics</span> <span class="k">as</span> <span class="n">_Metadynamics</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Protocol</span><span class="w"> </span><span class="kn">import</span> <span class="n">Steering</span> <span class="k">as</span> <span class="n">_Steering</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Coordinate</span> <span class="k">as</span> <span class="n">_Coordinate</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Exceptions</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">_Utils</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Exceptions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Types</span> <span class="k">as</span> <span class="n">_Types</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">Units</span> <span class="k">as</span> <span class="n">_Units</span>
 
-<span class="kn">from</span> <span class="nn">._process</span> <span class="kn">import</span> <span class="n">_MultiDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._process</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MultiDict</span>
 
 
 <div class="viewcode-block" id="Plumed">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Plumed.html#BioSimSpace.Process.Plumed">[docs]</a>
-<span class="k">class</span> <span class="nc">Plumed</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Plumed</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for interfacing with PLUMED.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Plumed.__init__">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Plumed.html#BioSimSpace.Process.Plumed.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">work_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">work_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructor.</span>
 
@@ -759,7 +768,7 @@
 
 <div class="viewcode-block" id="Plumed.createConfig">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Plumed.html#BioSimSpace.Process.Plumed.createConfig">[docs]</a>
-    <span class="k">def</span> <span class="nf">createConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">createConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a PLUMED configuration file.</span>
 
@@ -806,7 +815,7 @@
             <span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_createMetadynamicsConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_createMetadynamicsConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a PLUMED metadynamics configuration file.</span>
 
@@ -983,7 +992,10 @@
                 <span class="p">)</span>
 
                 <span class="c1"># Store the indices of the largest and second largest molecules.</span>
-                <span class="n">molecules</span> <span class="o">=</span> <span class="p">[</span><span class="n">sorted_nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">sorted_nums</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+                <span class="k">if</span> <span class="n">sorted_nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+                    <span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">sorted_nums</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+                    <span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_nums</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 
                 <span class="c1"># The funnel collective variable requires an auxiliary file for</span>
                 <span class="c1"># PLUMED versions &lt; 2.7.</span>
@@ -1003,7 +1015,10 @@
 
             <span class="c1"># RMSD.</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colvar</span><span class="p">,</span> <span class="n">_CollectiveVariable</span><span class="o">.</span><span class="n">RMSD</span><span class="p">):</span>
-                <span class="n">molecules</span> <span class="o">=</span> <span class="p">[</span><span class="n">system</span><span class="o">.</span><span class="n">_mol_nums</span><span class="p">[</span><span class="n">colvar</span><span class="o">.</span><span class="n">getReferenceIndex</span><span class="p">()]]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getMoleculeIndices</span><span class="p">():</span>
+                    <span class="n">num</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">_mol_nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">num</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+                        <span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 
             <span class="c1"># Loop over all of the atoms. Make sure the index is valid and</span>
             <span class="c1"># check if we need to create an entity for the molecule containing</span>
@@ -1229,12 +1244,16 @@
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colvar</span><span class="p">,</span> <span class="n">_CollectiveVariable</span><span class="o">.</span><span class="n">RMSD</span><span class="p">):</span>
                 <span class="n">num_rmsd</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">arg_name</span> <span class="o">=</span> <span class="s2">&quot;r</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">num_rmsd</span>
-                <span class="n">colvar_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: RMSD REFERENCE=reference.pdb&quot;</span> <span class="o">%</span> <span class="n">arg_name</span>
+                <span class="n">colvar_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: RMSD REFERENCE=reference_</span><span class="si">%d</span><span class="s2">.pdb&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">arg_name</span><span class="p">,</span>
+                    <span class="n">num_rmsd</span><span class="p">,</span>
+                <span class="p">)</span>
                 <span class="n">colvar_string</span> <span class="o">+=</span> <span class="s2">&quot; TYPE=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getAlignmentType</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
                 <span class="c1"># Write the reference PDB file.</span>
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
-                    <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="s2">&quot;reference.pdb&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span>
+                    <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;reference_</span><span class="si">{</span><span class="n">num_rmsd</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;w&quot;</span><span class="p">,</span>
                 <span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getReferencePDB</span><span class="p">():</span>
                         <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1502,7 +1521,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aux_files</span>
 
-    <span class="k">def</span> <span class="nf">_createSteeringConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_createSteeringConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">property_map</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a PLUMED steering molecular dynamics configuration file.</span>
 
@@ -1610,7 +1629,10 @@
 
             <span class="c1"># RMSD.</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colvar</span><span class="p">,</span> <span class="n">_CollectiveVariable</span><span class="o">.</span><span class="n">RMSD</span><span class="p">):</span>
-                <span class="n">molecules</span> <span class="o">=</span> <span class="p">[</span><span class="n">system</span><span class="o">.</span><span class="n">_mol_nums</span><span class="p">[</span><span class="n">colvar</span><span class="o">.</span><span class="n">getReferenceIndex</span><span class="p">()]]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getMoleculeIndices</span><span class="p">():</span>
+                    <span class="n">num</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">_mol_nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">num</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
+                        <span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 
             <span class="c1"># Loop over all of the atoms. Make sure the index is valid and</span>
             <span class="c1"># check if we need to create an entity for the molecule containing</span>
@@ -1835,7 +1857,7 @@
 
                 <span class="c1"># Write the reference PDB file.</span>
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
-                    <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="s2">&quot;reference_</span><span class="si">%i</span><span class="s2">.pdb&quot;</span> <span class="o">%</span> <span class="n">num_rmsd</span><span class="p">),</span>
+                    <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;reference_</span><span class="si">{</span><span class="n">num_rmsd</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">),</span>
                     <span class="s2">&quot;w&quot;</span><span class="p">,</span>
                 <span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">colvar</span><span class="o">.</span><span class="n">getReferencePDB</span><span class="p">():</span>
@@ -1923,7 +1945,7 @@
 
 <div class="viewcode-block" id="Plumed.getTime">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Plumed.html#BioSimSpace.Process.Plumed.getTime">[docs]</a>
-    <span class="k">def</span> <span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the simulation run time.</span>
 
@@ -1957,7 +1979,7 @@
 
 <div class="viewcode-block" id="Plumed.getCollectiveVariable">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Plumed.html#BioSimSpace.Process.Plumed.getCollectiveVariable">[docs]</a>
-    <span class="k">def</span> <span class="nf">getCollectiveVariable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getCollectiveVariable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the value of a collective variable.</span>
 
@@ -2009,7 +2031,7 @@
 
 <div class="viewcode-block" id="Plumed.getFreeEnergy">
 <a class="viewcode-back" href="../../../api/generated/BioSimSpace.Process.Plumed.html#BioSimSpace.Process.Plumed.getFreeEnergy">[docs]</a>
-    <span class="k">def</span> <span class="nf">getFreeEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kt</span><span class="o">=</span><span class="n">_Types</span><span class="o">.</span><span class="n">Energy</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kt&quot;</span><span class="p">)):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getFreeEnergy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kt</span><span class="o">=</span><span class="n">_Types</span><span class="o">.</span><span class="n">Energy</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kt&quot;</span><span class="p">)):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current free energy estimate.</span>
 
@@ -2180,7 +2202,7 @@
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">free_energies</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_update_colvar_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_colvar_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Read the COLVAR file and update any records.&quot;&quot;&quot;</span>
 
         <span class="c1"># Exit if the COLVAR file hasn&#39;t been created.</span>
@@ -2219,7 +2241,7 @@
                     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_colvar_keys</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_colvar_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
-    <span class="k">def</span> <span class="nf">_update_hills_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_hills_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Read the HILLS file and update any records.&quot;&quot;&quot;</span>
 
         <span class="c1"># Exit if the HILLS file hasn&#39;t been created.</span>
@@ -2238,7 +2260,7 @@
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hills_keys</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_hills_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
-    <span class="k">def</span> <span class="nf">_get_colvar_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_colvar_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to get a COLVAR record from the dictionary.</span>
 
@@ -2304,7 +2326,7 @@
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">_get_hills_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_hills_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to get a HILLS record from the dictionary.</span>
 
@@ -2376,7 +2398,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             

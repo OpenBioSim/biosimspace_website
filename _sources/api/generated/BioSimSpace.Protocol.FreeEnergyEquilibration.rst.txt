@@ -29,6 +29,7 @@
       ~FreeEnergyEquilibration.getThermostatTimeConstant
       ~FreeEnergyEquilibration.getTimeStep
       ~FreeEnergyEquilibration.isConstantTemp
+      ~FreeEnergyEquilibration.isRestart
       ~FreeEnergyEquilibration.restraints
       ~FreeEnergyEquilibration.setEndTemperature
       ~FreeEnergyEquilibration.setForceConstant
@@ -36,6 +37,7 @@
       ~FreeEnergyEquilibration.setPerturbationType
       ~FreeEnergyEquilibration.setPressure
       ~FreeEnergyEquilibration.setReportInterval
+      ~FreeEnergyEquilibration.setRestart
       ~FreeEnergyEquilibration.setRestartInterval
       ~FreeEnergyEquilibration.setRestraint
       ~FreeEnergyEquilibration.setRunTime

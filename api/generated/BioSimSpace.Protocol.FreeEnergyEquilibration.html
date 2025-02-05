@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Protocol.FreeEnergyEquilibration - openbiosim - biosimspace</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
@@ -309,6 +309,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
@@ -459,6 +460,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
@@ -483,6 +485,13 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
@@ -602,11 +611,11 @@
 <h1>BioSimSpace.Protocol.FreeEnergyEquilibration<a class="headerlink" href="#biosimspace-protocol-freeenergyequilibration" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.FreeEnergyEquilibration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">FreeEnergyEquilibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_vals=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lam=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lam=11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=0.2000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_start=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_end=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbation_type='full'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_free_energy_equilibration.html#FreeEnergyEquilibration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">FreeEnergyEquilibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_vals=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lam=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lam=11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_start=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_end=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbation_type='full'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_free_energy_equilibration.html#FreeEnergyEquilibration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration" title="Link to this definition">¶</a></dt>
 <dd><p>A class for storing free energy equilibration protocols.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.FreeEnergyEquilibration.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_vals=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lam=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lam=11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=0.2000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_start=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_end=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbation_type='full'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_free_energy_equilibration.html#FreeEnergyEquilibration.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.__init__" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_vals=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_lam=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lam=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lam=11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_start=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_end=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturbation_type='full'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_free_energy_equilibration.html#FreeEnergyEquilibration.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.__init__" title="Link to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -628,6 +637,7 @@ is run using the NVT ensemble.</p></li>
 <li><p><strong>report_interval</strong> (<em>int</em>) – The frequency at which statistics are recorded. (In integration steps.)</p></li>
 <li><p><strong>restart_interval</strong> (<em>int</em>) – The frequency at which restart configurations and trajectory
 frames are saved. (In integration steps.)</p></li>
+<li><p><strong>restart</strong> (<em>bool</em>) – Whether this is a continuation of a previous simulation.</p></li>
 <li><p><strong>restraint</strong> (<em>str</em><em>, </em><em>[</em><em>int</em><em>]</em>) – <p>The type of restraint to perform. This should be one of the
 following options:</p>
 <blockquote>
@@ -719,26 +729,32 @@ BioSimSpace.Process.Somd.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.isConstantTemp" title="BioSimSpace.Protocol.FreeEnergyEquilibration.isConstantTemp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isConstantTemp</span></code></a>()</p></td>
 <td><p>Return whether the protocol has a constant temperature.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.restraints" title="BioSimSpace.Protocol.FreeEnergyEquilibration.restraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">restraints</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.isRestart" title="BioSimSpace.Protocol.FreeEnergyEquilibration.isRestart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isRestart</span></code></a>()</p></td>
+<td><p>Return whether this restart simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.restraints" title="BioSimSpace.Protocol.FreeEnergyEquilibration.restraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">restraints</span></code></a>()</p></td>
 <td><p>Return a list of the supported restraint keywords.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setEndTemperature" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setEndTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEndTemperature</span></code></a>(temperature)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setEndTemperature" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setEndTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEndTemperature</span></code></a>(temperature)</p></td>
 <td><p>Set the final temperature.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setForceConstant" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setForceConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setForceConstant</span></code></a>(force_constant)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setForceConstant" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setForceConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setForceConstant</span></code></a>(force_constant)</p></td>
 <td><p>Set the force constant for the restraint.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setLambdaValues" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setLambdaValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLambdaValues</span></code></a>(lam[, lam_vals, min_lam, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setLambdaValues" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setLambdaValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLambdaValues</span></code></a>(lam[, lam_vals, min_lam, ...])</p></td>
 <td><p>Set the list of lambda values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setPerturbationType" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setPerturbationType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPerturbationType</span></code></a>(perturbation_type)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setPerturbationType" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setPerturbationType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPerturbationType</span></code></a>(perturbation_type)</p></td>
 <td><p>Set the perturbation type.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setPressure" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setPressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPressure</span></code></a>(pressure)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setPressure" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setPressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPressure</span></code></a>(pressure)</p></td>
 <td><p>Set the pressure.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setReportInterval" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setReportInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setReportInterval</span></code></a>(report_interval)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setReportInterval" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setReportInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setReportInterval</span></code></a>(report_interval)</p></td>
 <td><p>Set the interval at which statistics are reported.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRestart" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setRestart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRestart</span></code></a>(restart)</p></td>
+<td><p>Set the restart flag.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRestartInterval" title="BioSimSpace.Protocol.FreeEnergyEquilibration.setRestartInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRestartInterval</span></code></a>(restart_interval)</p></td>
 <td><p>Set the interval between saving restart confiugrations, and/or trajectory frames.</p></td>
@@ -975,6 +991,20 @@ configurations and/or trajectory frames.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.FreeEnergyEquilibration.isRestart">
+<span class="sig-name descname"><span class="pre">isRestart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.isRestart" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this restart simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_restart</strong> – Whether this is a restart simulation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.FreeEnergyEquilibration.restraints">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.restraints" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list of the supported restraint keywords.</p>
@@ -1066,6 +1096,17 @@ kcal_per_mol/angstrom**2.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>report_interval</strong> (<em>int</em>) – The number of integration steps between reporting statistics.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.FreeEnergyEquilibration.setRestart">
+<span class="sig-name descname"><span class="pre">setRestart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restart</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRestart" title="Link to this definition">¶</a></dt>
+<dd><p>Set the restart flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restart</strong> (<em>bool</em>) – Whether this is a restart simulation.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1191,7 +1232,7 @@ more fine-grained control.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 24, 2024</div>
+              Last updated on Feb 05, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1230,6 +1271,7 @@ more fine-grained control.</p>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.getThermostatTimeConstant"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.getThermostatTimeConstant()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.getTimeStep"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.getTimeStep()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.isConstantTemp"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.isConstantTemp()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.isRestart"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.isRestart()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.restraints"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.restraints()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setEndTemperature"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setEndTemperature()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setForceConstant"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setForceConstant()</span></code></a></li>
@@ -1237,6 +1279,7 @@ more fine-grained control.</p>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setPerturbationType"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setPerturbationType()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setPressure"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setPressure()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setReportInterval"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setReportInterval()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRestart"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setRestart()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRestartInterval"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setRestartInterval()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRestraint"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setRestraint()</span></code></a></li>
 <li><a class="reference internal" href="#BioSimSpace.Protocol.FreeEnergyEquilibration.setRunTime"><code class="docutils literal notranslate"><span class="pre">FreeEnergyEquilibration.setRunTime()</span></code></a></li>

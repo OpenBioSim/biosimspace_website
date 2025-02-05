@@ -19,8 +19,8 @@
       ~RMSD.getHillWidth
       ~RMSD.getInitialValue
       ~RMSD.getLowerBound
+      ~RMSD.getMoleculeIndices
       ~RMSD.getPeriodicBoundaries
-      ~RMSD.getReferenceIndex
       ~RMSD.getReferencePDB
       ~RMSD.getUpperBound
       ~RMSD.nComponents
