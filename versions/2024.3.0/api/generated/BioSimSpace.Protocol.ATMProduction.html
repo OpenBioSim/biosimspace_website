@@ -1,1 +1,1799 @@
-../../../../api/generated/BioSimSpace.Protocol.ATMProduction.html
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Sandpit" href="../index_Sandpit.html" /><link rel="prev" title="BioSimSpace.Protocol.ATMAnnealing" href="BioSimSpace.Protocol.ATMAnnealing.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>BioSimSpace.Protocol.ATMProduction - openbiosim - biosimspace</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">openbiosim - biosimspace</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/crystal_water.html">Crystal water</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Crystal water</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hydration_freenrg.html">Hydration free energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/nodes.html">Nodes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Nodes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/protocols.html">Protocols</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Protocols</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of API Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Align.html">BioSimSpace.Align</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of BioSimSpace.Align</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.generateNetwork.html">BioSimSpace.Align.generateNetwork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.matchAtoms.html">BioSimSpace.Align.matchAtoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.rmsdAlign.html">BioSimSpace.Align.rmsdAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.flexAlign.html">BioSimSpace.Align.flexAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.merge.html">BioSimSpace.Align.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Align.viewMapping.html">BioSimSpace.Align.viewMapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Box.html">BioSimSpace.Box</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of BioSimSpace.Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.boxTypes.html">BioSimSpace.Box.boxTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.generateBoxParameters.html">BioSimSpace.Box.generateBoxParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.cubic.html">BioSimSpace.Box.cubic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.rhombicDodecahedronSquare.html">BioSimSpace.Box.rhombicDodecahedronSquare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.rhombicDodecahedronHexagon.html">BioSimSpace.Box.rhombicDodecahedronHexagon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Box.truncatedOctahedron.html">BioSimSpace.Box.truncatedOctahedron</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Convert.html">BioSimSpace.Convert</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of BioSimSpace.Convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.smiles.html">BioSimSpace.Convert.smiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_FreeEnergy.html">BioSimSpace.FreeEnergy</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of BioSimSpace.FreeEnergy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.Relative.html">BioSimSpace.FreeEnergy.Relative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.ATMSetup.html">BioSimSpace.FreeEnergy.ATMSetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.ATM.html">BioSimSpace.FreeEnergy.ATM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.engines.html">BioSimSpace.FreeEnergy.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.FreeEnergy.getData.html">BioSimSpace.FreeEnergy.getData</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Gateway.html">BioSimSpace.Gateway</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of BioSimSpace.Gateway</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Node.html">BioSimSpace.Gateway.Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Boolean.html">BioSimSpace.Gateway.Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Integer.html">BioSimSpace.Gateway.Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Float.html">BioSimSpace.Gateway.Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.String.html">BioSimSpace.Gateway.String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.File.html">BioSimSpace.Gateway.File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.FileSet.html">BioSimSpace.Gateway.FileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Length.html">BioSimSpace.Gateway.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Area.html">BioSimSpace.Gateway.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readPDB.html">BioSimSpace.IO.readPDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.readPerturbableSystem.html">BioSimSpace.IO.readPerturbableSystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.saveMolecules.html">BioSimSpace.IO.saveMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.IO.savePerturbableSystem.html">BioSimSpace.IO.savePerturbableSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Metadynamics.html">BioSimSpace.Metadynamics</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of BioSimSpace.Metadynamics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.engines.html">BioSimSpace.Metadynamics.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.run.html">BioSimSpace.Metadynamics.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.Bound.html">BioSimSpace.Metadynamics.Bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.Grid.html">BioSimSpace.Metadynamics.Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Metadynamics.Restraint.html">BioSimSpace.Metadynamics.Restraint</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Metadynamics_CollectiveVariable.html">BioSimSpace.Metadynamics.CollectiveVariable</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of BioSimSpace.Metadynamics.CollectiveVariable</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.list.html">BioSimSpace.Metadynamics.CollectiveVariable.list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.Distance.html">BioSimSpace.Metadynamics.CollectiveVariable.Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.Funnel.html">BioSimSpace.Metadynamics.CollectiveVariable.Funnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html">BioSimSpace.Metadynamics.CollectiveVariable.RMSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BioSimSpace.Metadynamics.CollectiveVariable.Torsion.html">BioSimSpace.Metadynamics.CollectiveVariable.Torsion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_MD.html">BioSimSpace.MD</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of BioSimSpace.MD</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.MD.engines.html">BioSimSpace.MD.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.MD.run.html">BioSimSpace.MD.run</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Node.html">BioSimSpace.Node</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of BioSimSpace.Node</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.help.html">BioSimSpace.Node.help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.list.html">BioSimSpace.Node.list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.run.html">BioSimSpace.Node.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Node.setNodeDirectory.html">BioSimSpace.Node.setNodeDirectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Notebook.html">BioSimSpace.Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of BioSimSpace.Notebook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.plot.html">BioSimSpace.Notebook.plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.plotContour.html">BioSimSpace.Notebook.plotContour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.plotOverlapMatrix.html">BioSimSpace.Notebook.plotOverlapMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Notebook.View.html">BioSimSpace.Notebook.View</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Parameters.html">BioSimSpace.Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of BioSimSpace.Parameters</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.amberForceFields.html">BioSimSpace.Parameters.amberForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.amberProteinForceFields.html">BioSimSpace.Parameters.amberProteinForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff03.html">BioSimSpace.Parameters.ff03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff14SB.html">BioSimSpace.Parameters.ff14SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff99.html">BioSimSpace.Parameters.ff99</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff99SB.html">BioSimSpace.Parameters.ff99SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.ff99SBildn.html">BioSimSpace.Parameters.ff99SBildn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.forceFields.html">BioSimSpace.Parameters.forceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.gaff.html">BioSimSpace.Parameters.gaff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.gaff2.html">BioSimSpace.Parameters.gaff2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openForceFields.html">BioSimSpace.Parameters.openForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_0.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_0_1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_1_0.html">BioSimSpace.Parameters.openff_unconstrained_1_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_1_1.html">BioSimSpace.Parameters.openff_unconstrained_1_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_2_0.html">BioSimSpace.Parameters.openff_unconstrained_1_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_2_1.html">BioSimSpace.Parameters.openff_unconstrained_1_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_3_0.html">BioSimSpace.Parameters.openff_unconstrained_1_3_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_3_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Process.html">BioSimSpace.Process</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of BioSimSpace.Process</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.engines.html">BioSimSpace.Process.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.createProcess.html">BioSimSpace.Process.createProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Amber.html">BioSimSpace.Process.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Gromacs.html">BioSimSpace.Process.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Namd.html">BioSimSpace.Process.Namd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.OpenMM.html">BioSimSpace.Process.OpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Plumed.html">BioSimSpace.Process.Plumed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.Somd.html">BioSimSpace.Process.Somd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Process.ProcessRunner.html">BioSimSpace.Process.ProcessRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index_Protocol.html">BioSimSpace.Protocol</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of BioSimSpace.Protocol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMMinimisation.html">BioSimSpace.Protocol.ATMMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMEquilibration.html">BioSimSpace.Protocol.ATMEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Protocol.ATMAnnealing.html">BioSimSpace.Protocol.ATMAnnealing</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BioSimSpace.Protocol.ATMProduction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_Sandpit.html">BioSimSpace.Sandpit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Solvent.html">BioSimSpace.Solvent</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of BioSimSpace.Solvent</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.solvate.html">BioSimSpace.Solvent.solvate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.spc.html">BioSimSpace.Solvent.spc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.spce.html">BioSimSpace.Solvent.spce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Stream.html">BioSimSpace.Stream</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of BioSimSpace.Stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Stream.save.html">BioSimSpace.Stream.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Stream.load.html">BioSimSpace.Stream.load</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of BioSimSpace.Trajectory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Trajectory.Trajectory.html">BioSimSpace.Trajectory.Trajectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of BioSimSpace.Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Angle.html">BioSimSpace.Types.Angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Area.html">BioSimSpace.Types.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Charge.html">BioSimSpace.Types.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Vector.html">BioSimSpace.Types.Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Types.Volume.html">BioSimSpace.Types.Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of BioSimSpace.Units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.meter.html">BioSimSpace.Units.Length.meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.angstrom.html">BioSimSpace.Units.Length.angstrom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.nanometer.html">BioSimSpace.Units.Length.nanometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Length.picometer.html">BioSimSpace.Units.Length.picometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.meter2.html">BioSimSpace.Units.Area.meter2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.angstrom2.html">BioSimSpace.Units.Area.angstrom2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.nanometer2.html">BioSimSpace.Units.Area.nanometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Area.picometer2.html">BioSimSpace.Units.Area.picometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Angle.radian.html">BioSimSpace.Units.Angle.radian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Angle.degree.html">BioSimSpace.Units.Angle.degree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.meter3.html">BioSimSpace.Units.Volume.meter3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.angstrom3.html">BioSimSpace.Units.Volume.angstrom3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.nanometer3.html">BioSimSpace.Units.Volume.nanometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Pressure.atm.html">BioSimSpace.Units.Pressure.atm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Pressure.bar.html">BioSimSpace.Units.Pressure.bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Temperature.kelvin.html">BioSimSpace.Units.Temperature.kelvin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Temperature.celsius.html">BioSimSpace.Units.Temperature.celsius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Temperature.fahrenheit.html">BioSimSpace.Units.Temperature.fahrenheit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.day.html">BioSimSpace.Units.Time.day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.hour.html">BioSimSpace.Units.Time.hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.minute.html">BioSimSpace.Units.Time.minute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.second.html">BioSimSpace.Units.Time.second</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.millisecond.html">BioSimSpace.Units.Time.millisecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.nanosecond.html">BioSimSpace.Units.Time.nanosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.picosecond.html">BioSimSpace.Units.Time.picosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Units.Time.femtosecond.html">BioSimSpace.Units.Time.femtosecond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Config.html">BioSimSpace._Config</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of BioSimSpace._Config</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Config.Amber.html">BioSimSpace._Config.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Config.Gromacs.html">BioSimSpace._Config.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Config.Somd.html">BioSimSpace._Config.Somd</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of BioSimSpace._Exceptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.AlignmentError.html">BioSimSpace._Exceptions.AlignmentError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.AnalysisError.html">BioSimSpace._Exceptions.AnalysisError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ConversionError.html">BioSimSpace._Exceptions.ConversionError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.IncompatibleError.html">BioSimSpace._Exceptions.IncompatibleError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.MissingSoftwareError.html">BioSimSpace._Exceptions.MissingSoftwareError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ParameterisationError.html">BioSimSpace._Exceptions.ParameterisationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.StreamError.html">BioSimSpace._Exceptions.StreamError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Exceptions.ThirdPartyError.html">BioSimSpace._Exceptions.ThirdPartyError</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_SireWrappers.html">BioSimSpace._SireWrappers</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of BioSimSpace._SireWrappers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html">BioSimSpace._SireWrappers.Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Bond.html">BioSimSpace._SireWrappers.Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html">BioSimSpace._SireWrappers.Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html">BioSimSpace._SireWrappers.Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.Residue.html">BioSimSpace._SireWrappers.Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.System.html">BioSimSpace._SireWrappers.System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._SireWrappers.SearchResult.html">BioSimSpace._SireWrappers.SearchResult</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of BioSimSpace._Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.WorkDir.html">BioSimSpace._Utils.WorkDir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.cd.html">BioSimSpace._Utils.cd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils.command_split.html">BioSimSpace._Utils.command_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils._module_stub.html">BioSimSpace._Utils._module_stub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils._try_import.html">BioSimSpace._Utils._try_import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils._have_imported.html">BioSimSpace._Utils._have_imported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace._Utils._assert_imported.html">BioSimSpace._Utils._assert_imported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../contributing/development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Developer’s guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/packaging.html#creating-releases">Creating releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="biosimspace-protocol-atmproduction">
+<h1>BioSimSpace.Protocol.ATMProduction<a class="headerlink" href="#biosimspace-protocol-atmproduction" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">ATMProduction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_alignment=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_distance_restraint=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_k=25</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_restraint_width=5.0000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_restraint_width=0.5000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lambda=22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda1=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda2=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uh=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W0=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_distance=2.5</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_theta=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_psi=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_umax=100.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_u0=50.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_a=0.0625</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_method='UWHAM'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction" title="Link to this definition">¶</a></dt>
+<dd><p>Production protocol for ATM simulations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=1.0000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_alignment=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_distance_restraint=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_k=25</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_restraint_width=5.0000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_restraint_width=0.5000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lambda=22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda1=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda2=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uh=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W0=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_distance=2.5</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_theta=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_psi=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_umax=100.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_u0=50.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_a=0.0625</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_method='UWHAM'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new production protocol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – A prepared ATM system.</p></li>
+<li><p><strong>data</strong> (<em>dict</em>) – The ATM data dictionary.</p></li>
+<li><p><strong>timestep</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The integration timestep.</p></li>
+<li><p><strong>runtime</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The running time.</p></li>
+<li><p><strong>temperature</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a>) – The temperature.</p></li>
+<li><p><strong>pressure</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a>) – The pressure. Pass pressure=None to use the NVT ensemble.</p></li>
+<li><p><strong>thermostat_time_constant</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – Time constant for thermostat coupling.</p></li>
+<li><p><strong>report_interval</strong> (<em>int</em>) – The frequency at which statistics are recorded. (In integration steps.)</p></li>
+<li><p><strong>restart_interval</strong> (<em>int</em>) – The frequency at which restart configurations and trajectory</p></li>
+<li><p><strong>core_alignment</strong> (<em>bool</em>) – Whether to use rigid core restraints to align the two ligands.</p></li>
+<li><p><strong>align_k_distance</strong> (int, float, str, <code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>) – The force constant for the distance portion of the alignment restraint (kcal/(mol A^2)).</p></li>
+<li><p><strong>align_k_theta</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The force constant for the angular portion of the alignment restaint (kcal/mol).</p></li>
+<li><p><strong>align_k_psi</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The force constant for the dihedral portion of the alignment restraint (kcal/mol).</p></li>
+<li><p><strong>com_distance_restraint</strong> (<em>bool</em>) – Whether to use a center of mass distance restraint.
+This restraint applies to the protein/host and both ligands, and
+is used to maintain the relative positions of all of them.</p></li>
+<li><p><strong>com_k</strong> (int, float, str, <code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>) – The force constant for the center of mass distance restraint (kcal/mol/A^2).</p></li>
+<li><p><strong>com_restraint_width</strong> (int, float, str, :class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Length &lt;BioSimSpace.Types.Length&gt;) – The width (tolerance) of the center of mass distance restraint (A).</p></li>
+<li><p><strong>restraint</strong> (<em>str</em><em>, </em><em>[</em><em>int</em><em>]</em>) – <p>The type of restraint to perform. This should be one of the
+following options:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”backbone”</dt><dd><p>Protein backbone atoms. The matching is done by a name
+template, so is unreliable on conversion between
+molecular file formats.</p>
+</dd>
+<dt>”heavy”</dt><dd><p>All non-hydrogen atoms that aren’t part of water
+molecules or free ions.</p>
+</dd>
+<dt>”all”</dt><dd><p>All atoms that aren’t part of water molecules or free
+ions.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Alternatively, the user can pass a list of atom indices for
+more fine-grained control. If None, then no restraints are used.</p>
+</p></li>
+<li><p><strong>force_constant</strong> (float, <code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>) – The force constant for the restraint potential. If a ‘float’ is
+passed, then default units of ‘kcal_per_mol / angstrom**2’ will
+be used.</p></li>
+<li><p><strong>positional_restraint_width</strong> (<a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a>, float) – The width of the flat-bottom potential used for coordinate restraint in Angstroms.</p></li>
+<li><p><strong>pos_restrained_atoms</strong> (<em>[</em><em>int</em><em>]</em>) – The atoms to be restrained.</p></li>
+<li><p><strong>soft_core_umax</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The Umax value for the ATM softcore potential (kcal/mol).</p></li>
+<li><p><strong>soft_core_u0</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The uh value for the ATM softcore potential (kcal/mol).</p></li>
+<li><p><strong>soft_core_a</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The a value for the ATM softcore potential.</p></li>
+<li><p><strong>restart</strong> (<em>bool</em>) – Whether this is a continuation of a previous simulation.</p></li>
+<li><p><strong>num_lambda</strong> (<em>int</em>) – The number of lambda values. This will be used to set the window-dependent
+ATM parameters, unless they are explicitly set by the user.</p></li>
+<li><p><strong>lambdas</strong> (<em>[</em><em>float</em><em>]</em>) – The lambda values.</p></li>
+<li><p><strong>direction</strong> (<em>[</em><em>int</em><em>]</em>) – The direction values. Must be either 1 (forwards) or -1 (backwards).</p></li>
+<li><p><strong>lambda1</strong> (<em>[</em><em>float</em><em>]</em>) – The lambda1 values.</p></li>
+<li><p><strong>lambda2</strong> (<em>[</em><em>float</em><em>]</em>) – The lambda2 values.</p></li>
+<li><p><strong>alpha</strong> ([int], float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The alpha values.</p></li>
+<li><p><strong>uh</strong> ([int], float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The uh values.</p></li>
+<li><p><strong>W0</strong> ([int], float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The W0 values.</p></li>
+<li><p><strong>analysis_method</strong> (<em>str</em>) – The method to use for analysis. Options are “UWHAM”, “MBAR” or “both”
+This affects the output files and the analysis that is performed.
+USE of “UWHAM” is strongly recommended, “MBAR” analysis is still experimental.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.__init__" title="BioSimSpace.Protocol.ATMProduction.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([system, data, timestep, runtime, ...])</p></td>
+<td><p>Create a new production protocol.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlignKDistance" title="BioSimSpace.Protocol.ATMProduction.getAlignKDistance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAlignKDistance</span></code></a>()</p></td>
+<td><p>Return the align_k_distance value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlignKPsi" title="BioSimSpace.Protocol.ATMProduction.getAlignKPsi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAlignKPsi</span></code></a>()</p></td>
+<td><p>Return the align_k_psi value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlignKTheta" title="BioSimSpace.Protocol.ATMProduction.getAlignKTheta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAlignKTheta</span></code></a>()</p></td>
+<td><p>Return the align_k_theta value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlpha" title="BioSimSpace.Protocol.ATMProduction.getAlpha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAlpha</span></code></a>()</p></td>
+<td><p>Return the alpha values.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAnalysisMethod</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCOMDistanceRestraint" title="BioSimSpace.Protocol.ATMProduction.getCOMDistanceRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCOMDistanceRestraint</span></code></a>()</p></td>
+<td><p>Return CMCM restraint boolean.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCOMWidth" title="BioSimSpace.Protocol.ATMProduction.getCOMWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCOMWidth</span></code></a>()</p></td>
+<td><p>Return the com_restraint_width value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCOMk" title="BioSimSpace.Protocol.ATMProduction.getCOMk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCOMk</span></code></a>()</p></td>
+<td><p>Return the com_k value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCoreAlignment" title="BioSimSpace.Protocol.ATMProduction.getCoreAlignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCoreAlignment</span></code></a>()</p></td>
+<td><p>Return core alignment boolean.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getData" title="BioSimSpace.Protocol.ATMProduction.getData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getData</span></code></a>()</p></td>
+<td><p>Return the ATM data dictionary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getDirection" title="BioSimSpace.Protocol.ATMProduction.getDirection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDirection</span></code></a>()</p></td>
+<td><p>Return the direction values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getForceConstant" title="BioSimSpace.Protocol.ATMProduction.getForceConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getForceConstant</span></code></a>()</p></td>
+<td><p>Return the force constant for the restraint.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getLambda1" title="BioSimSpace.Protocol.ATMProduction.getLambda1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLambda1</span></code></a>()</p></td>
+<td><p>Return the lambda1 values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getLambda2" title="BioSimSpace.Protocol.ATMProduction.getLambda2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLambda2</span></code></a>()</p></td>
+<td><p>Return the lambda2 values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getNumLambda" title="BioSimSpace.Protocol.ATMProduction.getNumLambda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumLambda</span></code></a>()</p></td>
+<td><p>Return the number of lambda values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getPosRestWidth" title="BioSimSpace.Protocol.ATMProduction.getPosRestWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPosRestWidth</span></code></a>()</p></td>
+<td><p>Return the width of the position restraint.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getPressure" title="BioSimSpace.Protocol.ATMProduction.getPressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPressure</span></code></a>()</p></td>
+<td><p>Return the pressure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getReportInterval" title="BioSimSpace.Protocol.ATMProduction.getReportInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getReportInterval</span></code></a>()</p></td>
+<td><p>Return the interval between reporting statistics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getRestartInterval" title="BioSimSpace.Protocol.ATMProduction.getRestartInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRestartInterval</span></code></a>()</p></td>
+<td><p>Return the interval between saving restart confiugrations, and/or trajectory frames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getRestraint" title="BioSimSpace.Protocol.ATMProduction.getRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRestraint</span></code></a>()</p></td>
+<td><p>Return the type of restraint.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getRunTime" title="BioSimSpace.Protocol.ATMProduction.getRunTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRunTime</span></code></a>()</p></td>
+<td><p>Return the running time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreA" title="BioSimSpace.Protocol.ATMProduction.getSoftCoreA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSoftCoreA</span></code></a>()</p></td>
+<td><p>Return the soft_core_a value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreU0" title="BioSimSpace.Protocol.ATMProduction.getSoftCoreU0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSoftCoreU0</span></code></a>()</p></td>
+<td><p>Return the soft_core_u0 value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreUmax" title="BioSimSpace.Protocol.ATMProduction.getSoftCoreUmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSoftCoreUmax</span></code></a>()</p></td>
+<td><p>Return the soft_core_umax value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getTemperature" title="BioSimSpace.Protocol.ATMProduction.getTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTemperature</span></code></a>()</p></td>
+<td><p>Return temperature.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getThermostatTimeConstant" title="BioSimSpace.Protocol.ATMProduction.getThermostatTimeConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getThermostatTimeConstant</span></code></a>()</p></td>
+<td><p>Return the time constant for the thermostat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getTimeStep" title="BioSimSpace.Protocol.ATMProduction.getTimeStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTimeStep</span></code></a>()</p></td>
+<td><p>Return the time step.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getUh" title="BioSimSpace.Protocol.ATMProduction.getUh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUh</span></code></a>()</p></td>
+<td><p>Return the uh values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getW0" title="BioSimSpace.Protocol.ATMProduction.getW0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getW0</span></code></a>()</p></td>
+<td><p>Return the W0 values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.get_window_index" title="BioSimSpace.Protocol.ATMProduction.get_window_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_window_index</span></code></a>()</p></td>
+<td><p>A function to get the index of the current lambda window.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.isRestart" title="BioSimSpace.Protocol.ATMProduction.isRestart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isRestart</span></code></a>()</p></td>
+<td><p>Return whether this restart simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.restraints" title="BioSimSpace.Protocol.ATMProduction.restraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">restraints</span></code></a>()</p></td>
+<td><p>Return a list of the supported restraint keywords.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlignKDistance" title="BioSimSpace.Protocol.ATMProduction.setAlignKDistance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAlignKDistance</span></code></a>(align_k_distance)</p></td>
+<td><p>Set the align_k_distance value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlignKPsi" title="BioSimSpace.Protocol.ATMProduction.setAlignKPsi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAlignKPsi</span></code></a>(align_k_psi)</p></td>
+<td><p>Set the align_k_psi value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlignKTheta" title="BioSimSpace.Protocol.ATMProduction.setAlignKTheta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAlignKTheta</span></code></a>(align_k_theta)</p></td>
+<td><p>Set the align_k_theta value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlpha" title="BioSimSpace.Protocol.ATMProduction.setAlpha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAlpha</span></code></a>(alpha)</p></td>
+<td><p>Set the alpha values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAnalysisMethod" title="BioSimSpace.Protocol.ATMProduction.setAnalysisMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAnalysisMethod</span></code></a>(analysis_method)</p></td>
+<td><p>Set the method that will be used for analysis of the simulation results.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCOMDistanceRestraint" title="BioSimSpace.Protocol.ATMProduction.setCOMDistanceRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCOMDistanceRestraint</span></code></a>(com_distance_restraint)</p></td>
+<td><p>Set the CMCM restraint flag.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCOMWidth" title="BioSimSpace.Protocol.ATMProduction.setCOMWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCOMWidth</span></code></a>(com_restraint_width)</p></td>
+<td><p>Set the com_restraint_width value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCOMk" title="BioSimSpace.Protocol.ATMProduction.setCOMk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCOMk</span></code></a>(com_k)</p></td>
+<td><p>Set the com_k value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCoreAlignment" title="BioSimSpace.Protocol.ATMProduction.setCoreAlignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCoreAlignment</span></code></a>(core_alignment)</p></td>
+<td><p>Set the core alignment flag.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setDirection" title="BioSimSpace.Protocol.ATMProduction.setDirection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDirection</span></code></a>(directions)</p></td>
+<td><p>Set the direction values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setForceConstant" title="BioSimSpace.Protocol.ATMProduction.setForceConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setForceConstant</span></code></a>(force_constant)</p></td>
+<td><p>Set the force constant for the restraint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setLambda1" title="BioSimSpace.Protocol.ATMProduction.setLambda1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLambda1</span></code></a>(lambda1)</p></td>
+<td><p>Set the lambda1 values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setLambda2" title="BioSimSpace.Protocol.ATMProduction.setLambda2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLambda2</span></code></a>(lambda2)</p></td>
+<td><p>Set the lambda2 values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setNumLambda" title="BioSimSpace.Protocol.ATMProduction.setNumLambda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNumLambda</span></code></a>(num_lambda)</p></td>
+<td><p>Set the number of lambda values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setPosRestWidth" title="BioSimSpace.Protocol.ATMProduction.setPosRestWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPosRestWidth</span></code></a>(positional_restraint_width)</p></td>
+<td><p>Set the width of the position restraint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setPressure" title="BioSimSpace.Protocol.ATMProduction.setPressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPressure</span></code></a>(pressure)</p></td>
+<td><p>Set the pressure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setReportInterval" title="BioSimSpace.Protocol.ATMProduction.setReportInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setReportInterval</span></code></a>(report_interval)</p></td>
+<td><p>Set the interval at which statistics are reported.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRestart" title="BioSimSpace.Protocol.ATMProduction.setRestart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRestart</span></code></a>(restart)</p></td>
+<td><p>Set the restart flag.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRestartInterval" title="BioSimSpace.Protocol.ATMProduction.setRestartInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRestartInterval</span></code></a>(restart_interval)</p></td>
+<td><p>Set the interval between saving restart confiugrations, and/or trajectory frames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRestraint" title="BioSimSpace.Protocol.ATMProduction.setRestraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRestraint</span></code></a>(restraint)</p></td>
+<td><p>Set the type of restraint.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRuntime" title="BioSimSpace.Protocol.ATMProduction.setRuntime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRuntime</span></code></a>(runtime)</p></td>
+<td><p>Set the running time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreA" title="BioSimSpace.Protocol.ATMProduction.setSoftCoreA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSoftCoreA</span></code></a>(soft_core_a)</p></td>
+<td><p>Set the soft_core_a value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreU0" title="BioSimSpace.Protocol.ATMProduction.setSoftCoreU0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSoftCoreU0</span></code></a>(soft_core_u0)</p></td>
+<td><p>Set the soft_core_u0 value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreUmax" title="BioSimSpace.Protocol.ATMProduction.setSoftCoreUmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSoftCoreUmax</span></code></a>(soft_core_umax)</p></td>
+<td><p>Set the soft_core_umax value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setTemperature" title="BioSimSpace.Protocol.ATMProduction.setTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTemperature</span></code></a>(temperature)</p></td>
+<td><p>Set the temperature.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setThermostatTimeConstant" title="BioSimSpace.Protocol.ATMProduction.setThermostatTimeConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setThermostatTimeConstant</span></code></a>(...)</p></td>
+<td><p>Set the time constant for the thermostat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setTimestep" title="BioSimSpace.Protocol.ATMProduction.setTimestep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTimestep</span></code></a>(timestep)</p></td>
+<td><p>Set the time step.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setUh" title="BioSimSpace.Protocol.ATMProduction.setUh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUh</span></code></a>(uh)</p></td>
+<td><p>Set the uh values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setW0" title="BioSimSpace.Protocol.ATMProduction.setW0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setW0</span></code></a>(W0)</p></td>
+<td><p>Set the W0 values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.set_current_index" title="BioSimSpace.Protocol.ATMProduction.set_current_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_current_index</span></code></a>(index)</p></td>
+<td><p>A function to set the index of the current lambda window.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getAlignKDistance">
+<span class="sig-name descname"><span class="pre">getAlignKDistance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getAlignKDistance" title="Link to this definition">¶</a></dt>
+<dd><p>Return the align_k_distance value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align_k_distance</strong> – The align_k_distance value in kcal/mol angstrom**2.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getAlignKPsi">
+<span class="sig-name descname"><span class="pre">getAlignKPsi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getAlignKPsi" title="Link to this definition">¶</a></dt>
+<dd><p>Return the align_k_psi value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align_k_psi</strong> – The align_k_psi value in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getAlignKTheta">
+<span class="sig-name descname"><span class="pre">getAlignKTheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getAlignKTheta" title="Link to this definition">¶</a></dt>
+<dd><p>Return the align_k_theta value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align_k_theta</strong> – The align_k_theta value in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getAlpha">
+<span class="sig-name descname"><span class="pre">getAlpha</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getAlpha"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getAlpha" title="Link to this definition">¶</a></dt>
+<dd><p>Return the alpha values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>alpha</strong> – The alpha values in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[:class:<a href="#id3"><span class="problematic" id="id4">`</span></a>Energy &lt;BioSimSpace.Types.Energy&gt;]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getCOMDistanceRestraint">
+<span class="sig-name descname"><span class="pre">getCOMDistanceRestraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getCOMDistanceRestraint" title="Link to this definition">¶</a></dt>
+<dd><p>Return CMCM restraint boolean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>com_distance_restraint</strong> – Whether to use the CMCM restraint.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getCOMWidth">
+<span class="sig-name descname"><span class="pre">getCOMWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getCOMWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Return the com_restraint_width value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>com_restraint_width</strong> – The com_restraint_width value in angstroms.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getCOMk">
+<span class="sig-name descname"><span class="pre">getCOMk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getCOMk" title="Link to this definition">¶</a></dt>
+<dd><p>Return the com_k value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>com_k</strong> – The com_k value in kcal/mol A**2.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getCoreAlignment">
+<span class="sig-name descname"><span class="pre">getCoreAlignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getCoreAlignment" title="Link to this definition">¶</a></dt>
+<dd><p>Return core alignment boolean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>core_alignment</strong> – Whether to use core alignment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getData">
+<span class="sig-name descname"><span class="pre">getData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getData" title="Link to this definition">¶</a></dt>
+<dd><p>Return the ATM data dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – The ATM data dictionary.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getDirection">
+<span class="sig-name descname"><span class="pre">getDirection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getDirection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getDirection" title="Link to this definition">¶</a></dt>
+<dd><p>Return the direction values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambdas</strong> – The directions.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getForceConstant">
+<span class="sig-name descname"><span class="pre">getForceConstant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getForceConstant" title="Link to this definition">¶</a></dt>
+<dd><p>Return the force constant for the restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>force_constant</strong> – The force constant for the restraint, in units of
+kcal_per_mol/angstrom**2.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float, str, class:<code class="xref py py-obj docutils literal notranslate"><span class="pre">GeneralUnit</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getLambda1">
+<span class="sig-name descname"><span class="pre">getLambda1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getLambda1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getLambda1" title="Link to this definition">¶</a></dt>
+<dd><p>Return the lambda1 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda1</strong> – The lambda1 values.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getLambda2">
+<span class="sig-name descname"><span class="pre">getLambda2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getLambda2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getLambda2" title="Link to this definition">¶</a></dt>
+<dd><p>Return the lambda2 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda2</strong> – The lambda2 values.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getNumLambda">
+<span class="sig-name descname"><span class="pre">getNumLambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getNumLambda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getNumLambda" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of lambda values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_lambda</strong> – The number of lambda values.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getPosRestWidth">
+<span class="sig-name descname"><span class="pre">getPosRestWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getPosRestWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Return the width of the position restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>positional_restraint_width</strong> – The width of the position restraint.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getPressure">
+<span class="sig-name descname"><span class="pre">getPressure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getPressure" title="Link to this definition">¶</a></dt>
+<dd><p>Return the pressure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pressure</strong> – The pressure.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getReportInterval">
+<span class="sig-name descname"><span class="pre">getReportInterval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getReportInterval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getReportInterval" title="Link to this definition">¶</a></dt>
+<dd><p>Return the interval between reporting statistics. (In integration steps.).
+:returns: <strong>report_interval</strong> – The number of integration steps between reporting statistics.
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getRestartInterval">
+<span class="sig-name descname"><span class="pre">getRestartInterval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getRestartInterval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getRestartInterval" title="Link to this definition">¶</a></dt>
+<dd><p>Return the interval between saving restart confiugrations, and/or
+trajectory frames. (In integration steps.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restart_interval</strong> – The number of integration steps between saving restart
+configurations and/or trajectory frames.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getRestraint">
+<span class="sig-name descname"><span class="pre">getRestraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getRestraint" title="Link to this definition">¶</a></dt>
+<dd><p>Return the type of restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraint</strong> – The type of restraint, either a keyword or a list of atom indices.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str, [int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getRunTime">
+<span class="sig-name descname"><span class="pre">getRunTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getRunTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getRunTime" title="Link to this definition">¶</a></dt>
+<dd><p>Return the running time. Set the same as other OpenMM protocols - really should be Runtime not RunTime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>runtime</strong> – The simulation run time.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getSoftCoreA">
+<span class="sig-name descname"><span class="pre">getSoftCoreA</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreA" title="Link to this definition">¶</a></dt>
+<dd><p>Return the soft_core_a value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>soft_core_a</strong> – The soft_core_a value.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getSoftCoreU0">
+<span class="sig-name descname"><span class="pre">getSoftCoreU0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreU0" title="Link to this definition">¶</a></dt>
+<dd><p>Return the soft_core_u0 value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>soft_core_u0</strong> – The soft_core_u0 value in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getSoftCoreUmax">
+<span class="sig-name descname"><span class="pre">getSoftCoreUmax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreUmax" title="Link to this definition">¶</a></dt>
+<dd><p>Return the soft_core_umax value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>soft_core_umax</strong> – The soft_core_umax value in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getTemperature">
+<span class="sig-name descname"><span class="pre">getTemperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getTemperature" title="Link to this definition">¶</a></dt>
+<dd><p>Return temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature</strong> – The simulation temperature.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getThermostatTimeConstant">
+<span class="sig-name descname"><span class="pre">getThermostatTimeConstant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getThermostatTimeConstant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getThermostatTimeConstant" title="Link to this definition">¶</a></dt>
+<dd><p>Return the time constant for the thermostat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>runtime</strong> – The time constant for the thermostat.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getTimeStep">
+<span class="sig-name descname"><span class="pre">getTimeStep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getTimeStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getTimeStep" title="Link to this definition">¶</a></dt>
+<dd><p>Return the time step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> – The integration time step.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getUh">
+<span class="sig-name descname"><span class="pre">getUh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getUh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getUh" title="Link to this definition">¶</a></dt>
+<dd><p>Return the uh values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>uh</strong> – The uh values in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[:class:<a href="#id5"><span class="problematic" id="id6">`</span></a>Energy &lt;BioSimSpace.Types.Energy&gt;]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.getW0">
+<span class="sig-name descname"><span class="pre">getW0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.getW0"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.getW0" title="Link to this definition">¶</a></dt>
+<dd><p>Return the W0 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>W0</strong> – The W0 values in kcal/mol.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[:class:<a href="#id7"><span class="problematic" id="id8">`</span></a>Energy &lt;BioSimSpace.Types.Energy&gt;]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.get_window_index">
+<span class="sig-name descname"><span class="pre">get_window_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.get_window_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.get_window_index" title="Link to this definition">¶</a></dt>
+<dd><p>A function to get the index of the current lambda window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – The index of the current lambda window.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.isRestart">
+<span class="sig-name descname"><span class="pre">isRestart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.isRestart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.isRestart" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether this restart simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_restart</strong> – Whether this is a restart simulation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.restraints">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.restraints" title="Link to this definition">¶</a></dt>
+<dd><p>Return a list of the supported restraint keywords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraints</strong> – A list of the supported restraint keywords.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setAlignKDistance">
+<span class="sig-name descname"><span class="pre">setAlignKDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align_k_distance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setAlignKDistance" title="Link to this definition">¶</a></dt>
+<dd><p>Set the align_k_distance value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align_k_distance</strong> (int, float, str, <code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>, float) – Length value for the alignment restraint kcal/mol angstrom**2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setAlignKPsi">
+<span class="sig-name descname"><span class="pre">setAlignKPsi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align_k_psi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setAlignKPsi" title="Link to this definition">¶</a></dt>
+<dd><p>Set the align_k_psi value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align_k_psi</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – Force constant for the alignment dihedral constraint in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setAlignKTheta">
+<span class="sig-name descname"><span class="pre">setAlignKTheta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align_k_theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setAlignKTheta" title="Link to this definition">¶</a></dt>
+<dd><p>Set the align_k_theta value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align_k_theta</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – Force constant for the alignment angular constraint in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setAlpha">
+<span class="sig-name descname"><span class="pre">setAlpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setAlpha"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setAlpha" title="Link to this definition">¶</a></dt>
+<dd><p>Set the alpha values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>alpha</strong> ([<a href="#id9"><span class="problematic" id="id10">`</span></a>Energy &lt;BioSimSpace.Types.Energy&gt;] or [int], [float], [str]) – The alpha values in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setAnalysisMethod">
+<span class="sig-name descname"><span class="pre">setAnalysisMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">analysis_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setAnalysisMethod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setAnalysisMethod" title="Link to this definition">¶</a></dt>
+<dd><p>Set the method that will be used for analysis of the simulation results.
+This will change the output files that are generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>analysis_method</strong> (<em>str</em>) – The method to use for analysis. Options are “UWHAM”, “MBAR” or “both”
+This affects the output files and the analysis that is performed.
+USE of “UWHAM” is strongly recommended, “MBAR” analysis is still experimental.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setCOMDistanceRestraint">
+<span class="sig-name descname"><span class="pre">setCOMDistanceRestraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">com_distance_restraint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setCOMDistanceRestraint" title="Link to this definition">¶</a></dt>
+<dd><p>Set the CMCM restraint flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>com_distance_restraint</strong> (<em>bool</em>) – Whether to use the CMCM restraint.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setCOMWidth">
+<span class="sig-name descname"><span class="pre">setCOMWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">com_restraint_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setCOMWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Set the com_restraint_width value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>com_restraint_width</strong> (int, float, str, :class:<a href="#id11"><span class="problematic" id="id12">`</span></a>Length &lt;BioSimSpace.Types.Length&gt;) – The com_restraint_width value in angstroms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setCOMk">
+<span class="sig-name descname"><span class="pre">setCOMk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">com_k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setCOMk" title="Link to this definition">¶</a></dt>
+<dd><p>Set the com_k value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>com_k</strong> (int, float, str, :class:<a href="#id13"><span class="problematic" id="id14">`</span></a>GeneralUnit &lt;BioSimSpace.Types._GeneralUnit&gt;) – The force constant for the CM-CM force in kcal/mol A**2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setCoreAlignment">
+<span class="sig-name descname"><span class="pre">setCoreAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">core_alignment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setCoreAlignment" title="Link to this definition">¶</a></dt>
+<dd><p>Set the core alignment flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>core_alignment</strong> (<em>bool</em>) – Whether to use core alignment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setDirection">
+<span class="sig-name descname"><span class="pre">setDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setDirection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setDirection" title="Link to this definition">¶</a></dt>
+<dd><p>Set the direction values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directions</strong> (<em>[</em><em>int</em><em>]</em>) – The directions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setForceConstant">
+<span class="sig-name descname"><span class="pre">setForceConstant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_constant</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setForceConstant" title="Link to this definition">¶</a></dt>
+<dd><p>Set the force constant for the restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>force_constant</strong> (int, float, str, <code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralUnit</span></code>, float) – The force constant for the restraint, in units of
+kcal_per_mol/angstrom**2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setLambda1">
+<span class="sig-name descname"><span class="pre">setLambda1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setLambda1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setLambda1" title="Link to this definition">¶</a></dt>
+<dd><p>Set the lambda1 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda1</strong> (<em>[</em><em>float</em><em>]</em>) – The lambda1 values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setLambda2">
+<span class="sig-name descname"><span class="pre">setLambda2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setLambda2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setLambda2" title="Link to this definition">¶</a></dt>
+<dd><p>Set the lambda2 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda2</strong> (<em>[</em><em>float</em><em>]</em>) – The lambda2 values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setNumLambda">
+<span class="sig-name descname"><span class="pre">setNumLambda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_lambda</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setNumLambda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setNumLambda" title="Link to this definition">¶</a></dt>
+<dd><p>Set the number of lambda values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_lambda</strong> (<em>int</em>) – The number of lambda values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setPosRestWidth">
+<span class="sig-name descname"><span class="pre">setPosRestWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positional_restraint_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setPosRestWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Set the width of the position restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>positional_restraint_width</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Length.html#BioSimSpace.Types.Length" title="BioSimSpace.Types.Length"><code class="xref py py-class docutils literal notranslate"><span class="pre">Length</span></code></a>) – The width of the position restraint.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setPressure">
+<span class="sig-name descname"><span class="pre">setPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setPressure" title="Link to this definition">¶</a></dt>
+<dd><p>Set the pressure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pressure</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Pressure.html#BioSimSpace.Types.Pressure" title="BioSimSpace.Types.Pressure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pressure</span></code></a>) – The pressure.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setReportInterval">
+<span class="sig-name descname"><span class="pre">setReportInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report_interval</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setReportInterval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setReportInterval" title="Link to this definition">¶</a></dt>
+<dd><p>Set the interval at which statistics are reported. (In integration steps.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>report_interval</strong> (<em>int</em>) – The number of integration steps between reporting statistics.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setRestart">
+<span class="sig-name descname"><span class="pre">setRestart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restart</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setRestart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setRestart" title="Link to this definition">¶</a></dt>
+<dd><p>Set the restart flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restart</strong> (<em>bool</em>) – Whether this is a restart simulation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setRestartInterval">
+<span class="sig-name descname"><span class="pre">setRestartInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restart_interval</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setRestartInterval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setRestartInterval" title="Link to this definition">¶</a></dt>
+<dd><p>Set the interval between saving restart confiugrations, and/or
+trajectory frames. (In integration steps.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restart_interval</strong> (<em>int</em>) – The number of integration steps between saving restart
+configurations and/or trajectory frames.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setRestraint">
+<span class="sig-name descname"><span class="pre">setRestraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restraint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setRestraint" title="Link to this definition">¶</a></dt>
+<dd><p>Set the type of restraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restraint</strong> (<em>str</em><em>, </em><em>[</em><em>int</em><em>]</em>) – <p>The type of restraint to perform. This should be one of the
+following options:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”backbone”</dt><dd><p>Protein backbone atoms. The matching is done by a name
+template, so is unreliable on conversion between
+molecular file formats.</p>
+</dd>
+<dt>”heavy”</dt><dd><p>All non-hydrogen atoms that aren’t part of water
+molecules or free ions.</p>
+</dd>
+<dt>”all”</dt><dd><p>All atoms that aren’t part of water molecules or free
+ions.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Alternatively, the user can pass a list of atom indices for
+more fine-grained control.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setRuntime">
+<span class="sig-name descname"><span class="pre">setRuntime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">runtime</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setRuntime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setRuntime" title="Link to this definition">¶</a></dt>
+<dd><p>Set the running time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>runtime</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The simulation run time.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setSoftCoreA">
+<span class="sig-name descname"><span class="pre">setSoftCoreA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soft_core_a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreA" title="Link to this definition">¶</a></dt>
+<dd><p>Set the soft_core_a value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>soft_core_a</strong> (<em>float</em>) – The softcore a value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setSoftCoreU0">
+<span class="sig-name descname"><span class="pre">setSoftCoreU0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soft_core_u0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreU0" title="Link to this definition">¶</a></dt>
+<dd><p>Set the soft_core_u0 value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>soft_core_u0</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The softcore u0 value in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setSoftCoreUmax">
+<span class="sig-name descname"><span class="pre">setSoftCoreUmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soft_core_umax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreUmax" title="Link to this definition">¶</a></dt>
+<dd><p>Set the soft_core_umax value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>soft_core_umax</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The softcore Umax value in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setTemperature">
+<span class="sig-name descname"><span class="pre">setTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setTemperature" title="Link to this definition">¶</a></dt>
+<dd><p>Set the temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Temperature.html#BioSimSpace.Types.Temperature" title="BioSimSpace.Types.Temperature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Temperature</span></code></a>) – The simulation temperature.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setThermostatTimeConstant">
+<span class="sig-name descname"><span class="pre">setThermostatTimeConstant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setThermostatTimeConstant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setThermostatTimeConstant" title="Link to this definition">¶</a></dt>
+<dd><p>Set the time constant for the thermostat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thermostat_time_constant</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The time constant for the thermostat.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setTimestep">
+<span class="sig-name descname"><span class="pre">setTimestep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestep</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setTimestep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setTimestep" title="Link to this definition">¶</a></dt>
+<dd><p>Set the time step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> (str, <a class="reference internal" href="BioSimSpace.Types.Time.html#BioSimSpace.Types.Time" title="BioSimSpace.Types.Time"><code class="xref py py-class docutils literal notranslate"><span class="pre">Time</span></code></a>) – The integration time step.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setUh">
+<span class="sig-name descname"><span class="pre">setUh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uh</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setUh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setUh" title="Link to this definition">¶</a></dt>
+<dd><p>Set the uh values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>uh</strong> ([:class:<a href="#id15"><span class="problematic" id="id16">`</span></a>Energy &lt;BioSimSpace.Types.Energy&gt;]) – The uh values in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.setW0">
+<span class="sig-name descname"><span class="pre">setW0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.setW0"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.setW0" title="Link to this definition">¶</a></dt>
+<dd><p>Set the W0 values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>W0</strong> ([:class:<a href="#id17"><span class="problematic" id="id18">`</span></a>Energy &lt;BioSimSpace.Types.Energy&gt;] or [int], [float], [str]) – The W0 values in kcal/mol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMProduction.set_current_index">
+<span class="sig-name descname"><span class="pre">set_current_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMProduction.set_current_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMProduction.set_current_index" title="Link to this definition">¶</a></dt>
+<dd><p>A function to set the index of the current lambda window.
+Used internally to set the values for all lambda-dependent parameters.
+Take care when using this function as it can lead to unexpected behaviour if not used correctly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the current lambda window.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../index_Sandpit.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">BioSimSpace.Sandpit</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="BioSimSpace.Protocol.ATMAnnealing.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">BioSimSpace.Protocol.ATMAnnealing</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 14, 2025</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BioSimSpace.Protocol.ATMProduction</a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction"><code class="docutils literal notranslate"><span class="pre">ATMProduction</span></code></a><ul>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.__init__"><code class="docutils literal notranslate"><span class="pre">ATMProduction.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlignKDistance"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getAlignKDistance()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlignKPsi"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getAlignKPsi()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlignKTheta"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getAlignKTheta()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getAlpha"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getAlpha()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCOMDistanceRestraint"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getCOMDistanceRestraint()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCOMWidth"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getCOMWidth()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCOMk"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getCOMk()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getCoreAlignment"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getCoreAlignment()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getData"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getData()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getDirection"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getDirection()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getForceConstant"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getForceConstant()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getLambda1"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getLambda1()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getLambda2"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getLambda2()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getNumLambda"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getNumLambda()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getPosRestWidth"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getPosRestWidth()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getPressure"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getPressure()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getReportInterval"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getReportInterval()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getRestartInterval"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getRestartInterval()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getRestraint"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getRestraint()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getRunTime"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getRunTime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreA"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getSoftCoreA()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreU0"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getSoftCoreU0()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getSoftCoreUmax"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getSoftCoreUmax()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getTemperature"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getThermostatTimeConstant"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getThermostatTimeConstant()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getTimeStep"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getTimeStep()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getUh"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getUh()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.getW0"><code class="docutils literal notranslate"><span class="pre">ATMProduction.getW0()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.get_window_index"><code class="docutils literal notranslate"><span class="pre">ATMProduction.get_window_index()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.isRestart"><code class="docutils literal notranslate"><span class="pre">ATMProduction.isRestart()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.restraints"><code class="docutils literal notranslate"><span class="pre">ATMProduction.restraints()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlignKDistance"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setAlignKDistance()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlignKPsi"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setAlignKPsi()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlignKTheta"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setAlignKTheta()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAlpha"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setAlpha()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setAnalysisMethod"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setAnalysisMethod()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCOMDistanceRestraint"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setCOMDistanceRestraint()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCOMWidth"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setCOMWidth()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCOMk"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setCOMk()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setCoreAlignment"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setCoreAlignment()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setDirection"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setDirection()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setForceConstant"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setForceConstant()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setLambda1"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setLambda1()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setLambda2"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setLambda2()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setNumLambda"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setNumLambda()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setPosRestWidth"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setPosRestWidth()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setPressure"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setPressure()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setReportInterval"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setReportInterval()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRestart"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setRestart()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRestartInterval"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setRestartInterval()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRestraint"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setRestraint()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setRuntime"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setRuntime()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreA"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setSoftCoreA()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreU0"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setSoftCoreU0()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setSoftCoreUmax"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setSoftCoreUmax()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setTemperature"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setTemperature()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setThermostatTimeConstant"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setThermostatTimeConstant()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setTimestep"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setTimestep()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setUh"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setUh()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.setW0"><code class="docutils literal notranslate"><span class="pre">ATMProduction.setW0()</span></code></a></li>
+<li><a class="reference internal" href="#BioSimSpace.Protocol.ATMProduction.set_current_index"><code class="docutils literal notranslate"><span class="pre">ATMProduction.set_current_index()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/js/custom.js?v=e0b44004"></script>
+    </body>
+</html>

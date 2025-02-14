@@ -1,0 +1,29 @@
+﻿BioSimSpace.FreeEnergy.ATM
+==========================
+
+.. currentmodule:: BioSimSpace.FreeEnergy
+
+.. autoclass:: ATM
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ATM.__init__
+      ~ATM.analyse
+      ~ATM.getData
+      ~ATM.kill
+      ~ATM.killAll
+      ~ATM.run
+      ~ATM.wait
+      ~ATM.workDir
+   
+   
+
+   
+   
+   
