@@ -677,15 +677,12 @@ packages (e.g. <code class="docutils literal notranslate"><span class="pre">cond
 <h3>And then… Install BioSimSpace into a new environment<a class="headerlink" href="#and-then-install-biosimspace-into-a-new-environment" title="Link to this heading">¶</a></h3>
 <p>We recommend that <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> is installed into a new (clean) environment.
 This minimises the risk of failures caused by incompatible dependencies.</p>
-<p>BioSimSpace is currently packaged for Python 3.8 and Python 3.9. We will start
-by creating a Python 3.9 environment that we will call <code class="docutils literal notranslate"><span class="pre">openbiosim</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span><span class="s2">&quot;python&lt;3.10&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We use <code class="docutils literal notranslate"><span class="pre">python&lt;3.10</span></code> as this will install the most recent 3.9
-release of python.</p>
+<p>If you require a specific version of Python, you can specify this when creating the environment, e.g. by adding <code class="docutils literal notranslate"><span class="pre">python&#61;3.12</span></code> to the command above. Note that the latest version of BioSimSpace will only be compatible with specific versions of Python.</p>
 </div>
 <p>We can now install <code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace</span></code> into that environment by typing</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>openbiosim<span class="w"> </span>-c<span class="w"> </span>openbiosim<span class="w"> </span>biosimspace
