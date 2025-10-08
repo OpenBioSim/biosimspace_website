@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace._SireWrappers.SearchResult" href="BioSimSpace._SireWrappers.SearchResult.html" /><link rel="prev" title="BioSimSpace._SireWrappers.Residue" href="BioSimSpace._SireWrappers.Residue.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BioSimSpace._SireWrappers.System - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -612,7 +614,7 @@
 <h1>BioSimSpace._SireWrappers.System<a class="headerlink" href="#biosimspace-sirewrappers-system" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace._SireWrappers.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace._SireWrappers.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System" title="Link to this definition">¶</a></dt>
 <dd><p>A container class for storing molecular systems.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.__init__">
@@ -639,8 +641,8 @@ a BioSimSpace Molecules object, or a list of BioSimSpace molecule objects.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.charge" title="BioSimSpace._SireWrappers.System.charge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">charge</span></code></a>([property_map, is_lambda1])</p></td>
 <td><p>Return the total molecular charge.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.copy" title="BioSimSpace._SireWrappers.System.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
-<td><p>Return a copy of this object.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.copy" title="BioSimSpace._SireWrappers.System.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>([renumber])</p></td>
+<td><p>Return a copy of this System.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System.fileFormat" title="BioSimSpace._SireWrappers.System.fileFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fileFormat</span></code></a>([property_map])</p></td>
 <td><p>Return the file formats associated with the system.</p></td>
@@ -795,15 +797,17 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace._SireWrappers.System.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace._SireWrappers.System.copy" title="Link to this definition">¶</a></dt>
-<dd><p>Return a copy of this object. The return type is same as the object
-on which copy is called.</p>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/_SireWrappers/_system.html#System.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace._SireWrappers.System.copy" title="Link to this definition">¶</a></dt>
+<dd><p>Return a copy of this System.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>object</strong> – A copy of the object.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>renumber</strong> (<em>bool</em>) – Whether to give the copied molecules unique molecule numbers.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="BioSimSpace._SireWrappers.Atom.html#BioSimSpace._SireWrappers.Atom" title="BioSimSpace._SireWrappers.Atom"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code></a>,                  <a class="reference internal" href="BioSimSpace._SireWrappers.Residue.html#BioSimSpace._SireWrappers.Residue" title="BioSimSpace._SireWrappers.Residue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Residue</span></code></a>,                  <a class="reference internal" href="BioSimSpace._SireWrappers.Molecule.html#BioSimSpace._SireWrappers.Molecule" title="BioSimSpace._SireWrappers.Molecule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code></a>,                  <a class="reference internal" href="BioSimSpace._SireWrappers.Molecules.html#BioSimSpace._SireWrappers.Molecules" title="BioSimSpace._SireWrappers.Molecules"><code class="xref py py-class docutils literal notranslate"><span class="pre">Molecules</span></code></a>,                  <a class="reference internal" href="#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>System</strong> – A copy of the object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1511,7 +1515,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             

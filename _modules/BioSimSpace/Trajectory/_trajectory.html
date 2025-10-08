@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Trajectory._trajectory - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
@@ -243,6 +243,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -441,6 +442,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/generated/BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -655,6 +657,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">sire._load</span><span class="w"> </span><span class="kn">import</span> <span class="n">_resolve_path</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">_isVerbose</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..Align._squash</span><span class="w"> </span><span class="kn">import</span> <span class="n">_squash</span><span class="p">,</span> <span class="n">_unsquash</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.._Exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleError</span> <span class="k">as</span> <span class="n">_IncompatibleError</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">..Process._process</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span> <span class="k">as</span> <span class="n">_Process</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.._SireWrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span> <span class="k">as</span> <span class="n">_System</span>
@@ -878,9 +881,22 @@
             <span class="c1"># The new_system object will contain a single molecule with the</span>
             <span class="c1"># coordinates of all of the atoms in the reference. As such, we</span>
             <span class="c1"># will need to split the system into molecules.</span>
-            <span class="n">new_system</span> <span class="o">=</span> <span class="n">_split_molecules</span><span class="p">(</span>
+            <span class="n">new_system</span><span class="p">,</span> <span class="n">is_squashed</span> <span class="o">=</span> <span class="n">_split_molecules</span><span class="p">(</span>
                 <span class="n">frame</span><span class="p">,</span> <span class="n">pdb</span><span class="p">,</span> <span class="n">renumbered_system</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">work_dir</span><span class="p">),</span> <span class="n">property_map</span>
             <span class="p">)</span>
+
+            <span class="c1"># Make sure the system has the correct end-state properties.</span>
+            <span class="k">if</span> <span class="n">is_squashed</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">new_system</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;is_perturbable&quot;</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">propertyKeys</span><span class="p">():</span>
+                        <span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+                        <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates0&quot;</span><span class="p">]</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;velocities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;velocities0&quot;</span><span class="p">]</span>
+                        <span class="k">except</span><span class="p">:</span>
+                            <span class="k">pass</span>
+                    <span class="n">new_system</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">sire_system</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">updateCoordinatesAndVelocities</span><span class="p">(</span>
                     <span class="n">system</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span> <span class="n">new_system</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">property_map</span><span class="p">,</span> <span class="p">{}</span>
@@ -1409,7 +1425,7 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">)</span>
 
             <span class="c1"># Try to update the coordinates/velocities in the reference system.</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">nPerturbableMolecules</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s2">&quot;SIRE&quot;</span> <span class="ow">and</span> <span class="n">frame</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">num_molecules</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="k">try</span><span class="p">:</span>
                         <span class="n">new_system</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">_system</span>
@@ -1471,13 +1487,26 @@
                     <span class="c1"># The new_system object will contain a single molecule with the</span>
                     <span class="c1"># coordinates of all of the atoms in the reference. As such, we</span>
                     <span class="c1"># will need to split the system into molecules.</span>
-                    <span class="n">new_system</span> <span class="o">=</span> <span class="n">_split_molecules</span><span class="p">(</span>
+                    <span class="n">new_system</span><span class="p">,</span> <span class="n">is_squashed</span> <span class="o">=</span> <span class="n">_split_molecules</span><span class="p">(</span>
                         <span class="n">frame</span><span class="p">,</span>
                         <span class="n">pdb</span><span class="p">,</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_renumbered_system</span><span class="p">,</span>
                         <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_work_dir</span><span class="p">),</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_property_map</span><span class="p">,</span>
                     <span class="p">)</span>
+
+                    <span class="c1"># Make sure the system has the correct end-state properties.</span>
+                    <span class="k">if</span> <span class="n">is_squashed</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">new_system</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="s2">&quot;is_perturbable&quot;</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">propertyKeys</span><span class="p">():</span>
+                                <span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+                                <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;coordinates0&quot;</span><span class="p">]</span>
+                                <span class="k">try</span><span class="p">:</span>
+                                    <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;velocities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;velocities0&quot;</span><span class="p">]</span>
+                                <span class="k">except</span><span class="p">:</span>
+                                    <span class="k">pass</span>
+                            <span class="n">new_system</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+
                     <span class="k">try</span><span class="p">:</span>
                         <span class="n">sire_system</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">updateCoordinatesAndVelocities</span><span class="p">(</span>
                             <span class="bp">self</span><span class="o">.</span><span class="n">_system</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">,</span>
@@ -1714,6 +1743,9 @@
 <span class="sd">    system : Sire.System.System</span>
 <span class="sd">        The passed system, split into the appropriate number of molecules,</span>
 <span class="sd">        as a Sire System object.</span>
+
+<span class="sd">    is_squashed : bool</span>
+<span class="sd">        Whether the passed frame was squashed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">_SireIO</span><span class="o">.</span><span class="n">AmberRst7</span><span class="p">,</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">Gro87</span><span class="p">)):</span>
@@ -1745,6 +1777,25 @@
     <span class="c1"># Whether the frame contains velocity information.</span>
     <span class="n">has_vels</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">hasVelocities</span><span class="p">()</span>
 
+    <span class="c1"># Whether the reference is a perturbable system.</span>
+    <span class="n">is_perturbable</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">nPerturbableMolecules</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">is_perturbable</span><span class="p">:</span>
+        <span class="c1"># Cannot go via PDB format for perturbable systems.</span>
+        <span class="n">pdb</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># AMBER format perturbable systems are squashed.</span>
+        <span class="k">if</span> <span class="n">frame</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">reference</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">():</span>
+            <span class="n">explicit_dummies</span> <span class="o">=</span> <span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;explicit_dummies&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">explicit_dummies</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+                <span class="n">explicit_dummies</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">is_amber</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">squashed_system</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="n">_squash</span><span class="p">(</span>
+                <span class="n">reference</span><span class="p">,</span> <span class="n">explicit_dummies</span><span class="o">=</span><span class="n">explicit_dummies</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_amber</span> <span class="o">=</span> <span class="kc">False</span>
+
     <span class="c1"># Store the formats associated with the reference system.</span>
     <span class="n">formats</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">fileFormat</span><span class="p">()</span>
 
@@ -1770,72 +1821,104 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">box</span> <span class="o">=</span> <span class="n">_SireVol</span><span class="o">.</span><span class="n">TriclinicBox</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">box_v1</span><span class="p">(),</span> <span class="n">frame</span><span class="o">.</span><span class="n">box_v2</span><span class="p">(),</span> <span class="n">frame</span><span class="o">.</span><span class="n">box_v3</span><span class="p">())</span>
 
-    <span class="k">if</span> <span class="s2">&quot;PRM7&quot;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">AmberPrm</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
-            <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write reference system to AmberPrm7 format!&quot;</span>
-            <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-
-    <span class="k">elif</span> <span class="s2">&quot;GroTop&quot;</span> <span class="ow">in</span> <span class="n">formats</span> <span class="ow">or</span> <span class="s2">&quot;GROTOP&quot;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
-            <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write reference system to GroTop format!&quot;</span>
-            <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-
-    <span class="k">elif</span> <span class="s2">&quot;PSF&quot;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">CharmmPSF</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
-            <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write reference system to CharmmPSF format!&quot;</span>
-            <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-
-    <span class="c1"># Unknown, try using PDB.</span>
+    <span class="k">if</span> <span class="n">is_perturbable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_amber</span><span class="p">:</span>
+            <span class="c1"># Write the squashed system to file.</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">AmberPrm</span><span class="p">(</span><span class="n">squashed_system</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+                <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write squashed reference system to AmberPrm7 format!&quot;</span>
+                <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+                <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write perturbable reference system to GroTop format!&quot;</span>
+                <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">is_pdb</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="s2">&quot;PRM7&quot;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">AmberPrm</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+                <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write reference system to AmberPrm7 format!&quot;</span>
+                <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
-        <span class="c1"># Get the PDB records.</span>
-        <span class="n">pdb_lines</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">toLines</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="s2">&quot;GroTop&quot;</span> <span class="ow">in</span> <span class="n">formats</span> <span class="ow">or</span> <span class="s2">&quot;GROTOP&quot;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">GroTop</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+                <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write reference system to GroTop format!&quot;</span>
+                <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
-        <span class="c1"># Create a list to hold the new lines.</span>
-        <span class="n">new_lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="s2">&quot;PSF&quot;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">CharmmPSF</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">_sire_object</span><span class="p">)</span>
+                <span class="n">top</span><span class="o">.</span><span class="n">writeToFile</span><span class="p">(</span><span class="n">top_file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to write reference system to CharmmPSF format!&quot;</span>
+                <span class="k">if</span> <span class="n">_isVerbose</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
 
-        <span class="c1"># Find the first atom record.</span>
-        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pdb_lines</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;ATOM&quot;</span><span class="p">):</span>
-                <span class="k">break</span>
+        <span class="c1"># Unknown, try using PDB.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_pdb</span> <span class="o">=</span> <span class="kc">True</span>
 
-        <span class="c1"># Loop over all of the molecules in the reference, adding the records fo</span>
-        <span class="c1"># each atom. We append a standalone TER record between each molecule,</span>
-        <span class="c1"># which is used by Sire.IO.PDB2 to split molecules.</span>
-        <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">reference</span><span class="p">:</span>
-            <span class="n">new_lines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">pdb_lines</span><span class="p">[</span><span class="n">idx</span> <span class="p">:</span> <span class="n">idx</span> <span class="o">+</span> <span class="n">mol</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()])</span>
-            <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;TER&quot;</span><span class="p">)</span>
-            <span class="n">idx</span> <span class="o">+=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span>
+            <span class="c1"># Get the PDB records.</span>
+            <span class="n">pdb_lines</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">toLines</span><span class="p">()</span>
 
-        <span class="c1"># Recreate the PDB object using the updated records.</span>
-        <span class="n">pdb</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">PDB2</span><span class="p">(</span><span class="n">new_lines</span><span class="p">)</span>
+            <span class="c1"># Create a list to hold the new lines.</span>
+            <span class="n">new_lines</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="c1"># Convert to a system.</span>
-        <span class="n">split_system</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span>
+            <span class="c1"># Find the first atom record.</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pdb_lines</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;ATOM&quot;</span><span class="p">):</span>
+                    <span class="k">break</span>
+
+            <span class="c1"># Loop over all of the molecules in the reference, adding the records fo</span>
+            <span class="c1"># each atom. We append a standalone TER record between each molecule,</span>
+            <span class="c1"># which is used by Sire.IO.PDB2 to split molecules.</span>
+            <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">reference</span><span class="p">:</span>
+                <span class="n">new_lines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">pdb_lines</span><span class="p">[</span><span class="n">idx</span> <span class="p">:</span> <span class="n">idx</span> <span class="o">+</span> <span class="n">mol</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()])</span>
+                <span class="n">new_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;TER&quot;</span><span class="p">)</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nAtoms</span><span class="p">()</span>
+
+            <span class="c1"># Recreate the PDB object using the updated records.</span>
+            <span class="n">pdb</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">PDB2</span><span class="p">(</span><span class="n">new_lines</span><span class="p">)</span>
+
+            <span class="c1"># Convert to a system.</span>
+            <span class="n">split_system</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">toSystem</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_pdb</span><span class="p">:</span>
         <span class="c1"># Try to read the system back in, making sure that the numbering is unique.</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">split_system</span> <span class="o">=</span> <span class="n">_SireIO</span><span class="o">.</span><span class="n">MoleculeParser</span><span class="o">.</span><span class="n">read</span><span class="p">([</span><span class="n">coord_file</span><span class="p">,</span> <span class="n">top_file</span><span class="p">])</span>
+
+            <span class="c1"># Unsquash if necessary.</span>
+            <span class="k">if</span> <span class="n">is_perturbable</span> <span class="ow">and</span> <span class="n">is_amber</span><span class="p">:</span>
+                <span class="n">split_system</span> <span class="o">=</span> <span class="n">_unsquash</span><span class="p">(</span>
+                    <span class="n">reference</span><span class="p">,</span>
+                    <span class="n">_System</span><span class="p">(</span><span class="n">split_system</span><span class="p">),</span>
+                    <span class="n">mapping</span><span class="p">,</span>
+                    <span class="n">explicit_dummies</span><span class="o">=</span><span class="n">explicit_dummies</span><span class="p">,</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">_sire_object</span>
 
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Unable to read trajectory frame!&quot;</span>
@@ -1847,7 +1930,7 @@
     <span class="c1"># Add the space property.</span>
     <span class="n">split_system</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">property_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">),</span> <span class="n">box</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">split_system</span>
+    <span class="k">return</span> <span class="n">split_system</span><span class="p">,</span> <span class="n">is_perturbable</span> <span class="ow">and</span> <span class="n">is_amber</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_update_water_topology</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">topology</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">,</span> <span class="n">property_map</span><span class="p">):</span>
@@ -1943,7 +2026,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             

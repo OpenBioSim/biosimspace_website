@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Types.Temperature" href="BioSimSpace.Types.Temperature.html" /><link rel="prev" title="BioSimSpace.Types.Mass" href="BioSimSpace.Types.Mass.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Types.Pressure - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -612,7 +614,7 @@
 <h1>BioSimSpace.Types.Pressure<a class="headerlink" href="#biosimspace-types-pressure" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Types.</span></span><span class="sig-name descname"><span class="pre">Pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_pressure.html#Pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Pressure" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Types.</span></span><span class="sig-name descname"><span class="pre">Pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Types/_pressure.html#Pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Types.Pressure" title="Link to this definition">¶</a></dt>
 <dd><p>A pressure type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.__init__">
@@ -699,7 +701,7 @@ would be valid arguments: “3.1 atm”, “3.1 atmosphere”, “0.31e1 atm”.
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.angle">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.angle" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.angle" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘angle’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -741,7 +743,7 @@ would be valid arguments: “3.1 atm”, “3.1 atmosphere”, “0.31e1 atm”.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.charge">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.charge" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.charge" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘charge’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -755,7 +757,7 @@ would be valid arguments: “3.1 atm”, “3.1 atmosphere”, “0.31e1 atm”.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.dimensions">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dimensions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.dimensions" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dimensions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.dimensions" title="Link to this definition">¶</a></dt>
 <dd><p>Return the dimensions of this type. This is a tuple
 containing the power in each dimension.</p>
 <dl class="simple">
@@ -767,7 +769,7 @@ containing the power in each dimension.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.length">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.length" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.length" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘length’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -781,7 +783,7 @@ containing the power in each dimension.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.mass">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.mass" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.mass" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘mass’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -795,7 +797,7 @@ containing the power in each dimension.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.quantity">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quantity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.quantity" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quantity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.quantity" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘quantity’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -809,7 +811,7 @@ containing the power in each dimension.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.temperature">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.temperature" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.temperature" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘temperature’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -823,7 +825,7 @@ containing the power in each dimension.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Types.Pressure.time">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.time" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Types.Pressure.time" title="Link to this definition">¶</a></dt>
 <dd><p>Return the power in the ‘time’ dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -915,7 +917,7 @@ containing the power in each dimension.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             

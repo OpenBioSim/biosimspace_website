@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Protocol.ATMAnnealing" href="BioSimSpace.Protocol.ATMAnnealing.html" /><link rel="prev" title="BioSimSpace.Protocol.ATMMinimisation" href="BioSimSpace.Protocol.ATMMinimisation.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Protocol.ATMEquilibration - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -612,7 +614,7 @@
 <h1>BioSimSpace.Protocol.ATMEquilibration<a class="headerlink" href="#biosimspace-protocol-atmequilibration" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMEquilibration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">ATMEquilibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=0.2000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_start=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_end=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_alignment=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_distance_restraint=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_k=25</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_restraint_width=5.0000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_restraint_width=0.5000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_distance=2.5</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_theta=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_psi=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_umax=1000.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_u0=500.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_a=0.0625</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atm_force=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda1=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda2=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha=0.0000e+00</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uh=0.0000e+00</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W0=0.0000e+00</span> <span class="pre">kcal/mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMEquilibration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMEquilibration" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">ATMEquilibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep=2.0000</span> <span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime=0.2000</span> <span class="pre">ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_start=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_end=300.0000</span> <span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure=1.0000</span> <span class="pre">atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermostat_time_constant=1.0000</span> <span class="pre">ps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_interval=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_alignment=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_distance_restraint=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_k=25</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_restraint_width=5.0000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_restraint_width=0.5000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_distance=2.5</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_theta=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_psi=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_umax=1000.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_u0=500.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_a=0.0625</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atm_force=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda1=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda2=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha=0.0000e+00</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uh=0.0000e+00</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W0=0.0000e+00</span> <span class="pre">kcal/mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMEquilibration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMEquilibration" title="Link to this definition">¶</a></dt>
 <dd><p>Equilibration protocol for ATM simulations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMEquilibration.__init__">
@@ -666,26 +668,17 @@ more fine-grained control. If None, then no restraints are used.</p>
 <li><p><strong>soft_core_umax</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The Umax value for the ATM softcore potential (kcal/mol).</p></li>
 <li><p><strong>soft_core_u0</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The uh value for the ATM softcore potential (kcal/mol).</p></li>
 <li><p><strong>soft_core_a</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The a value for the ATM softcore potential.</p></li>
+<li><p><strong>use_atm_force</strong> (<em>bool</em>) – Whether to apply the ATM force within the equilibration protocol.</p></li>
+<li><p><strong>direction</strong> (<em>str</em>) – The direction of the equilibration. Ignored if use_atm_force is False.</p></li>
+<li><p><strong>lambda1</strong> (<em>float</em>) – The lambda1 value for the ATM force. Ignored if use_atm_force is False.</p></li>
+<li><p><strong>lambda2</strong> (<em>float</em>) – The lambda2 value for the ATM force. Ignored if use_atm_force is False.</p></li>
+<li><p><strong>alpha</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The alpha value for the ATM force. Ignored if use_atm_force is False.
+Value in kcal/mol.</p></li>
+<li><p><strong>uh</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The uh value for the ATM force. Ignored if use_atm_force is False.
+Value in kcal/mol.</p></li>
+<li><p><strong>W0</strong> (int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a>) – The W0 value for the ATM force. Ignored if use_atm_force is False.
+Value in kcal/mol.</p></li>
 </ul>
-</dd>
-</dl>
-<dl>
-<dt>use_atm_force<span class="classifier">bool</span></dt><dd><p>Whether to apply the ATM force within the equilibration protocol.</p>
-</dd>
-<dt>direction<span class="classifier">str</span></dt><dd><p>The direction of the equilibration. Ignored if use_atm_force is False.</p>
-</dd>
-<dt>lambda1<span class="classifier">float</span></dt><dd><p>The lambda1 value for the ATM force. Ignored if use_atm_force is False.</p>
-</dd>
-<dt>lambda2<span class="classifier">float</span></dt><dd><p>The lambda2 value for the ATM force. Ignored if use_atm_force is False.</p>
-</dd>
-<dt>alpha<span class="classifier">int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></span></dt><dd><p>The alpha value for the ATM force. Ignored if use_atm_force is False.
-Value in kcal/mol.</p>
-</dd>
-<dt>uh<span class="classifier">int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></span></dt><dd><p>The uh value for the ATM force. Ignored if use_atm_force is False.
-Value in kcal/mol.</p>
-</dd>
-<dt>W0<span class="classifier">int, float, str, <a class="reference internal" href="BioSimSpace.Types.Energy.html#BioSimSpace.Types.Energy" title="BioSimSpace.Types.Energy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Energy</span></code></a></span></dt><dd><p>The W0 value for the ATM force. Ignored if use_atm_force is False.
-Value in kcal/mol.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1296,7 +1289,7 @@ configurations and/or trajectory frames.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMEquilibration.restraints">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMEquilibration.restraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMEquilibration.restraints" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMEquilibration.restraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMEquilibration.restraints" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list of the supported restraint keywords.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1672,7 +1665,7 @@ more fine-grained control.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             

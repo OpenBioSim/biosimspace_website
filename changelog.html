@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Changelog - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -617,6 +619,25 @@ company supporting open-source development of fostering academic/industrial coll
 within the biomolecular simulation community. Our software is hosted via the <em class="xref py py-obj">OpenBioSim</em>
 <a class="reference external" href="https://github.com/OpenBioSim/biosimspace">GitHub</a> organisation.</p>
 </section>
+<section id="oct-08-2025">
+<h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2024.5.0...2025.2.0">2025.2.0</a> - Oct 08 2025<a class="headerlink" href="#oct-08-2025" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Add support for <code class="docutils literal notranslate"><span class="pre">SOMD2</span></code> FEP analysis using data frames with different numbers of samples (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/415">#415</a>).</p></li>
+<li><p>Add support for the ABCG2 charge method for GAFF parameterisation (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/421">#421</a>).</p></li>
+<li><p>Fixed f-string formatting error in FEP analysis exception message (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/423">#423</a>).</p></li>
+<li><p>Fixed FEP energy trajectory slicing when intitial sample time is non-zero (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/424">#424</a>).</p></li>
+<li><p>Add workaround for incompatibility between <code class="docutils literal notranslate"><span class="pre">ParmEd</span></code> and <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> 2.3 (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/428">#428</a>).</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">AnteChamber</span></code> check when using <code class="docutils literal notranslate"><span class="pre">OpenFF-NAGL</span></code> (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/428">#428</a>).</p></li>
+<li><p>Add missing OPC water solvation function docstring (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/431">#431</a>).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> native <code class="docutils literal notranslate"><span class="pre">array.tolist()</span></code> rather than <code class="docutils literal notranslate"><span class="pre">list(array)</span></code> and add missing ATM protocol <code class="docutils literal notranslate"><span class="pre">__str__</span></code> methods (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/435">#435</a>).</p></li>
+<li><p>Add missing OPC water solvation function docstring (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/431">#431</a>).</p></li>
+<li><p>Allow user to skip writing of velocities to output files (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/437">#437</a>).</p></li>
+<li><p>Add support for renumbering molecules when copying a system (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/440">#440</a>).</p></li>
+<li><p>Added a molecular editing tutorial (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/447">#447</a>).</p></li>
+<li><p>Fixed issue with a non-singleton being used in a set within a mapping pruning function (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/454">#454</a>).</p></li>
+<li><p>Fix handling of trajectory frame reconstruction when using a perturbable reference system (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/456">#456</a>).</p></li>
+</ul>
+</section>
 <section id="jul-01-2025">
 <h2><a class="reference external" href="https://github.com/openbiosim/biosimspace/compare/2024.4.1...2025.1.0">2025.1.0</a> - Jul 01 2025<a class="headerlink" href="#jul-01-2025" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -671,7 +692,7 @@ within the biomolecular simulation community. Our software is hosted via the <em
 <li><p>Use SDF as an intermediate for <code class="docutils literal notranslate"><span class="pre">antechamber</span></code> if the original molecule was loaded from that format (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/287">#287</a>).</p></li>
 <li><p>Detect dummy atoms by checking <code class="docutils literal notranslate"><span class="pre">element</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">ambertype</span></code> properties when creating <code class="docutils literal notranslate"><span class="pre">SOMD</span></code> pert files (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/289">#289</a>).</p></li>
 <li><p>Add missing <code class="docutils literal notranslate"><span class="pre">match_water</span></code> kwarg to <code class="docutils literal notranslate"><span class="pre">prepareFEP</span></code> node (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/292">#292</a>).</p></li>
-<li><p>Add protein free-energy perturbation functionality (<a href="#id43"><span class="problematic" id="id44">`&#64;akalpokas &lt;https://github.com/akalpokas`_</span></a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/294">#294</a>).</p></li>
+<li><p>Add protein free-energy perturbation functionality (<a href="#id44"><span class="problematic" id="id45">`&#64;akalpokas &lt;https://github.com/akalpokas`_</span></a>) (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/294">#294</a>).</p></li>
 <li><p>Ensure that the LJ sigma parameter for perturbed atoms is non-zero (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/295">#295</a>).</p></li>
 <li><p>Fixed return type docstrings for functions in the <a class="reference internal" href="api/index_Parameters.html#module-BioSimSpace.Parameters" title="BioSimSpace.Parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">BioSimSpace.Parameters</span></code></a> module (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/298">#298</a>).</p></li>
 <li><p>Don’t use <code class="docutils literal notranslate"><span class="pre">sire.legacy.Base.wrap</span></code> with the <code class="docutils literal notranslate"><span class="pre">file_format</span></code> property to avoid (incorrect) auto string to unit conversion of <code class="docutils literal notranslate"><span class="pre">mol2</span></code> to moles squared (<a class="reference external" href="https://github.com/OpenBioSim/biosimspace/pull/300">#300</a>).</p></li>
@@ -1010,7 +1031,7 @@ combination of molecular systems.</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             
@@ -1033,6 +1054,7 @@ combination of molecular systems.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
 <li><a class="reference internal" href="#openbiosim">OpenBioSim</a></li>
+<li><a class="reference internal" href="#oct-08-2025">2025.2.0 - Oct 08 2025</a></li>
 <li><a class="reference internal" href="#jul-01-2025">2025.1.0 - Jul 01 2025</a></li>
 <li><a class="reference internal" href="#feb-14-2025">2024.4.1 - Feb 14 2025</a></li>
 <li><a class="reference internal" href="#feb-04-2025">2024.4.0 - Feb 04 2025</a></li>

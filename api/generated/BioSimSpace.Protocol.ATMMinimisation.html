@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Protocol.ATMEquilibration" href="BioSimSpace.Protocol.ATMEquilibration.html" /><link rel="prev" title="BioSimSpace.Protocol.Custom" href="BioSimSpace.Protocol.Custom.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.Protocol.ATMMinimisation - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -612,7 +614,7 @@
 <h1>BioSimSpace.Protocol.ATMMinimisation<a class="headerlink" href="#biosimspace-protocol-atmminimisation" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMMinimisation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">ATMMinimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps=10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_alignment=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_distance_restraint=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_restraint_width=0.5000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_distance=2.5</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_theta=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_psi=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_umax=1000.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_u0=500.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_a=0.0625</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_k=25</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_restraint_width=5.0000</span> <span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMMinimisation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMMinimisation" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BioSimSpace.Protocol.</span></span><span class="sig-name descname"><span class="pre">ATMMinimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps=10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_alignment=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_distance_restraint=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restraint=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_constant=10</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_restraint_width=0.5000</span> <span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_distance=2.5</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_theta=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_k_psi=10.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_umax=1000.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_u0=500.0000</span> <span class="pre">kcal/mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_core_a=0.0625</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_k=25</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">Å-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com_restraint_width=5.0000</span> <span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/Protocol/_atm.html#ATMMinimisation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.Protocol.ATMMinimisation" title="Link to this definition">¶</a></dt>
 <dd><p>Minimisation protocol for ATM simulations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMMinimisation.__init__">
@@ -981,7 +983,7 @@ kcal_per_mol/angstrom**2.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="BioSimSpace.Protocol.ATMMinimisation.restraints">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMMinimisation.restraints" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BioSimSpace.Protocol.ATMMinimisation.restraints" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list of the supported restraint keywords.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1201,7 +1203,7 @@ more fine-grained control.</p>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             

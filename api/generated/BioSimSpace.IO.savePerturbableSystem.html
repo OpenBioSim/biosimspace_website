@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="BioSimSpace.Metadynamics" href="../index_Metadynamics.html" /><link rel="prev" title="BioSimSpace.IO.saveMolecules" href="BioSimSpace.IO.saveMolecules.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BioSimSpace.IO.savePerturbableSystem - openbiosim - biosimspace</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/metadynamics.html">Metadynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/protein_mutations.html">Alchemical Protein Mutations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/molecular_editing.html">Molecular editing</a></li>
 </ul>
 </li>
 </ul>
@@ -442,6 +443,7 @@
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
 </ul>
 </li>
@@ -612,7 +614,7 @@
 <h1>BioSimSpace.IO.savePerturbableSystem<a class="headerlink" href="#biosimspace-io-saveperturbablesystem" title="Link to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="BioSimSpace.IO.savePerturbableSystem">
-<span class="sig-prename descclassname"><span class="pre">BioSimSpace.IO.</span></span><span class="sig-name descname"><span class="pre">savePerturbableSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filebase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/IO/_io.html#savePerturbableSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.IO.savePerturbableSystem" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BioSimSpace.IO.</span></span><span class="sig-name descname"><span class="pre">savePerturbableSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filebase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_velocities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/BioSimSpace/IO/_io.html#savePerturbableSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BioSimSpace.IO.savePerturbableSystem" title="Link to this definition">¶</a></dt>
 <dd><p>Save a system containing a perturbable molecule. This will be written in
 AMBER format, with a topology file for each end state of the perturbation,
 i.e. ‘filebase0.prm7’ and ‘filebase1.prm7’. Coordinates for the end
@@ -622,6 +624,7 @@ states are written to ‘filebase0.rst7’ and ‘filebase1.rst7’.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filebase</strong> (<em>str</em>) – The base name of the output files.</p></li>
 <li><p><strong>system</strong> (<a class="reference internal" href="BioSimSpace._SireWrappers.System.html#BioSimSpace._SireWrappers.System" title="BioSimSpace._SireWrappers.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a>) – The molecular system.</p></li>
+<li><p><strong>save_velocities</strong> (<em>bool</em>) – Whether to write velocities to the output files.</p></li>
 <li><p><strong>property_map</strong> (<em>dict</em>) – A dictionary that maps system “properties” to their user defined
 values. This allows the user to refer to properties with their
 own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
@@ -663,7 +666,7 @@ own naming scheme, e.g. { “charge” : “my-charge” }</p></li>
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 01, 2025</div>
+              Last updated on Oct 08, 2025</div>
           </div>
           <div class="right-details">
             
