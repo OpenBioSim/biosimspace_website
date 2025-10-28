@@ -1,0 +1,1171 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Detailed Guides" href="../guides/index.html" /><link rel="prev" title="Alchemical Transfer Method" href="alchemical_transfer.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Molecular editing - openbiosim - biosimspace</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_fonts.css?v=50da5bc0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_style.css?v=094c566b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_pygments.css?v=c839eb9e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --font-stack: Changa, sans-serif;
+  --font-stack--monospace: Roboto Mono, monospace;
+  --color-foreground-primary: #dddddd;
+  --color-foreground-secondary: #cccccc;
+  --color-foreground-muted: #d0d0d0;
+  --color-foreground-border: #923eb1;
+  --color-background-primary: #160f30;
+  --color-background-secondary: #201146;
+  --color-background-hover: #4f4fb0;
+  --color-background-hover--transparent: #4f4fb000;
+  --color-background-border: #403333;
+  --color-background-item: #411a30;
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+  --color-admonition-title-background--note: #FFFFFF33;
+  --color-admonition-title-background--warning: #FF000033;
+  --color-admonition-background: #FFFFFF11;
+  --color-brand-primary: #eeeeee;
+  --color-brand-content: #00dfef;
+  --color-highlight-on-target: #333300;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">openbiosim - biosimspace</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.svg" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-search">
+  <div class="version_container">
+    <div class="version_label">Branch</div>
+    <div id="version_box" class="version_box"></div>
+  </div>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="crystal_water.html">Crystal water</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Crystal water</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hydration_freenrg.html">Hydration free energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadynamics.html">Metadynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protein_mutations.html">Alchemical Protein Mutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alchemical_transfer.html">Alchemical Transfer Method</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Molecular editing</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../guides/index.html">Detailed Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Detailed Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../guides/nodes.html">Nodes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Nodes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../guides/protocols.html">Protocols</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Protocols</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of API Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Align.html">BioSimSpace.Align</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of BioSimSpace.Align</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Align.generateNetwork.html">BioSimSpace.Align.generateNetwork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Align.matchAtoms.html">BioSimSpace.Align.matchAtoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Align.rmsdAlign.html">BioSimSpace.Align.rmsdAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Align.flexAlign.html">BioSimSpace.Align.flexAlign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Align.merge.html">BioSimSpace.Align.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Align.viewMapping.html">BioSimSpace.Align.viewMapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Box.html">BioSimSpace.Box</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of BioSimSpace.Box</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Box.boxTypes.html">BioSimSpace.Box.boxTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Box.generateBoxParameters.html">BioSimSpace.Box.generateBoxParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Box.cubic.html">BioSimSpace.Box.cubic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Box.rhombicDodecahedronSquare.html">BioSimSpace.Box.rhombicDodecahedronSquare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Box.rhombicDodecahedronHexagon.html">BioSimSpace.Box.rhombicDodecahedronHexagon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Box.truncatedOctahedron.html">BioSimSpace.Box.truncatedOctahedron</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Convert.html">BioSimSpace.Convert</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of BioSimSpace.Convert</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.smiles.html">BioSimSpace.Convert.smiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.supportedFormats.html">BioSimSpace.Convert.supportedFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.to.html">BioSimSpace.Convert.to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.toBioSimSpace.html">BioSimSpace.Convert.toBioSimSpace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.toOpenMM.html">BioSimSpace.Convert.toOpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.toRDKit.html">BioSimSpace.Convert.toRDKit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Convert.toSire.html">BioSimSpace.Convert.toSire</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_FreeEnergy.html">BioSimSpace.FreeEnergy</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of BioSimSpace.FreeEnergy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.FreeEnergy.Relative.html">BioSimSpace.FreeEnergy.Relative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.FreeEnergy.ATMSetup.html">BioSimSpace.FreeEnergy.ATMSetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.FreeEnergy.ATM.html">BioSimSpace.FreeEnergy.ATM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.FreeEnergy.engines.html">BioSimSpace.FreeEnergy.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.FreeEnergy.getData.html">BioSimSpace.FreeEnergy.getData</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Gateway.html">BioSimSpace.Gateway</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of BioSimSpace.Gateway</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Node.html">BioSimSpace.Gateway.Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Boolean.html">BioSimSpace.Gateway.Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Integer.html">BioSimSpace.Gateway.Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Float.html">BioSimSpace.Gateway.Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.String.html">BioSimSpace.Gateway.String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.File.html">BioSimSpace.Gateway.File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.FileSet.html">BioSimSpace.Gateway.FileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Length.html">BioSimSpace.Gateway.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Area.html">BioSimSpace.Gateway.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Volume.html">BioSimSpace.Gateway.Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Charge.html">BioSimSpace.Gateway.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Energy.html">BioSimSpace.Gateway.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Mass.html">BioSimSpace.Gateway.Mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Pressure.html">BioSimSpace.Gateway.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Temperature.html">BioSimSpace.Gateway.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Gateway.Time.html">BioSimSpace.Gateway.Time</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_IO.html">BioSimSpace.IO</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of BioSimSpace.IO</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.clearCache.html">BioSimSpace.IO.clearCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.disableCache.html">BioSimSpace.IO.disableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.enableCache.html">BioSimSpace.IO.enableCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.fileFormats.html">BioSimSpace.IO.fileFormats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.formatInfo.html">BioSimSpace.IO.formatInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.readMolecules.html">BioSimSpace.IO.readMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.readPDB.html">BioSimSpace.IO.readPDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.readPerturbableSystem.html">BioSimSpace.IO.readPerturbableSystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.saveMolecules.html">BioSimSpace.IO.saveMolecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.IO.savePerturbableSystem.html">BioSimSpace.IO.savePerturbableSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Metadynamics.html">BioSimSpace.Metadynamics</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of BioSimSpace.Metadynamics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.engines.html">BioSimSpace.Metadynamics.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.run.html">BioSimSpace.Metadynamics.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.Bound.html">BioSimSpace.Metadynamics.Bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.Grid.html">BioSimSpace.Metadynamics.Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.Restraint.html">BioSimSpace.Metadynamics.Restraint</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/index_Metadynamics_CollectiveVariable.html">BioSimSpace.Metadynamics.CollectiveVariable</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of BioSimSpace.Metadynamics.CollectiveVariable</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.list.html">BioSimSpace.Metadynamics.CollectiveVariable.list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.makeFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel.html">BioSimSpace.Metadynamics.CollectiveVariable.viewFunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Distance.html">BioSimSpace.Metadynamics.CollectiveVariable.Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Funnel.html">BioSimSpace.Metadynamics.CollectiveVariable.Funnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.RMSD.html">BioSimSpace.Metadynamics.CollectiveVariable.RMSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/generated/BioSimSpace.Metadynamics.CollectiveVariable.Torsion.html">BioSimSpace.Metadynamics.CollectiveVariable.Torsion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_MD.html">BioSimSpace.MD</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of BioSimSpace.MD</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.MD.engines.html">BioSimSpace.MD.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.MD.run.html">BioSimSpace.MD.run</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Node.html">BioSimSpace.Node</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of BioSimSpace.Node</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Node.help.html">BioSimSpace.Node.help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Node.list.html">BioSimSpace.Node.list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Node.run.html">BioSimSpace.Node.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Node.setNodeDirectory.html">BioSimSpace.Node.setNodeDirectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Notebook.html">BioSimSpace.Notebook</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of BioSimSpace.Notebook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Notebook.plot.html">BioSimSpace.Notebook.plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Notebook.plotContour.html">BioSimSpace.Notebook.plotContour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Notebook.plotOverlapMatrix.html">BioSimSpace.Notebook.plotOverlapMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Notebook.View.html">BioSimSpace.Notebook.View</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Parameters.html">BioSimSpace.Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of BioSimSpace.Parameters</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.amberForceFields.html">BioSimSpace.Parameters.amberForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.amberProteinForceFields.html">BioSimSpace.Parameters.amberProteinForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.ff03.html">BioSimSpace.Parameters.ff03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.ff14SB.html">BioSimSpace.Parameters.ff14SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.ff19SB.html">BioSimSpace.Parameters.ff19SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.ff99.html">BioSimSpace.Parameters.ff99</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.ff99SB.html">BioSimSpace.Parameters.ff99SB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.ff99SBildn.html">BioSimSpace.Parameters.ff99SBildn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.forceFields.html">BioSimSpace.Parameters.forceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.gaff.html">BioSimSpace.Parameters.gaff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.gaff2.html">BioSimSpace.Parameters.gaff2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openForceFields.html">BioSimSpace.Parameters.openForceFields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2.html">BioSimSpace.Parameters.openff_unconstrained_1_0_0_RC2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_0_1.html">BioSimSpace.Parameters.openff_unconstrained_1_0_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_1_0.html">BioSimSpace.Parameters.openff_unconstrained_1_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_1_1.html">BioSimSpace.Parameters.openff_unconstrained_1_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_2_0.html">BioSimSpace.Parameters.openff_unconstrained_1_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_2_1.html">BioSimSpace.Parameters.openff_unconstrained_1_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_0.html">BioSimSpace.Parameters.openff_unconstrained_1_3_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1.html">BioSimSpace.Parameters.openff_unconstrained_1_3_1_alpha_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2.html">BioSimSpace.Parameters.openff_unconstrained_2_0_0_rc_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_0_rc_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_1_1.html">BioSimSpace.Parameters.openff_unconstrained_2_1_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_0_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1.html">BioSimSpace.Parameters.openff_unconstrained_2_2_1_rc1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.parameterise.html">BioSimSpace.Parameters.parameterise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Parameters.formalCharge.html">BioSimSpace.Parameters.formalCharge</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Process.html">BioSimSpace.Process</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of BioSimSpace.Process</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.engines.html">BioSimSpace.Process.engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.createProcess.html">BioSimSpace.Process.createProcess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.Amber.html">BioSimSpace.Process.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.Gromacs.html">BioSimSpace.Process.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.Namd.html">BioSimSpace.Process.Namd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.OpenMM.html">BioSimSpace.Process.OpenMM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.Plumed.html">BioSimSpace.Process.Plumed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.Somd.html">BioSimSpace.Process.Somd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Process.ProcessRunner.html">BioSimSpace.Process.ProcessRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Protocol.html">BioSimSpace.Protocol</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of BioSimSpace.Protocol</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.protocols.html">BioSimSpace.Protocol.protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.createProtocol.html">BioSimSpace.Protocol.createProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Minimisation.html">BioSimSpace.Protocol.Minimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Equilibration.html">BioSimSpace.Protocol.Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Production.html">BioSimSpace.Protocol.Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.FreeEnergyMinimisation.html">BioSimSpace.Protocol.FreeEnergyMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.FreeEnergyEquilibration.html">BioSimSpace.Protocol.FreeEnergyEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.FreeEnergyProduction.html">BioSimSpace.Protocol.FreeEnergyProduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.FreeEnergy.html">BioSimSpace.Protocol.FreeEnergy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Metadynamics.html">BioSimSpace.Protocol.Metadynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Steering.html">BioSimSpace.Protocol.Steering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.Custom.html">BioSimSpace.Protocol.Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.ATMMinimisation.html">BioSimSpace.Protocol.ATMMinimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.ATMEquilibration.html">BioSimSpace.Protocol.ATMEquilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.ATMAnnealing.html">BioSimSpace.Protocol.ATMAnnealing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Protocol.ATMProduction.html">BioSimSpace.Protocol.ATMProduction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index_Sandpit.html">BioSimSpace.Sandpit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Solvent.html">BioSimSpace.Solvent</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of BioSimSpace.Solvent</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.solvate.html">BioSimSpace.Solvent.solvate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.spc.html">BioSimSpace.Solvent.spc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.spce.html">BioSimSpace.Solvent.spce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.tip3p.html">BioSimSpace.Solvent.tip3p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.tip4p.html">BioSimSpace.Solvent.tip4p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.tip5p.html">BioSimSpace.Solvent.tip5p</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.opc.html">BioSimSpace.Solvent.opc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Solvent.waterModels.html">BioSimSpace.Solvent.waterModels</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Stream.html">BioSimSpace.Stream</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of BioSimSpace.Stream</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Stream.save.html">BioSimSpace.Stream.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Stream.load.html">BioSimSpace.Stream.load</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Trajectory.html">BioSimSpace.Trajectory</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of BioSimSpace.Trajectory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Trajectory.Trajectory.html">BioSimSpace.Trajectory.Trajectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Types.html">BioSimSpace.Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of BioSimSpace.Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Angle.html">BioSimSpace.Types.Angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Area.html">BioSimSpace.Types.Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Charge.html">BioSimSpace.Types.Charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Coordinate.html">BioSimSpace.Types.Coordinate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Energy.html">BioSimSpace.Types.Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Length.html">BioSimSpace.Types.Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Mass.html">BioSimSpace.Types.Mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Pressure.html">BioSimSpace.Types.Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Temperature.html">BioSimSpace.Types.Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Time.html">BioSimSpace.Types.Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Vector.html">BioSimSpace.Types.Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Types.Volume.html">BioSimSpace.Types.Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Units.html">BioSimSpace.Units</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of BioSimSpace.Units</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Length.meter.html">BioSimSpace.Units.Length.meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Length.angstrom.html">BioSimSpace.Units.Length.angstrom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Length.nanometer.html">BioSimSpace.Units.Length.nanometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Length.picometer.html">BioSimSpace.Units.Length.picometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Area.meter2.html">BioSimSpace.Units.Area.meter2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Area.angstrom2.html">BioSimSpace.Units.Area.angstrom2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Area.nanometer2.html">BioSimSpace.Units.Area.nanometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Area.picometer2.html">BioSimSpace.Units.Area.picometer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Angle.radian.html">BioSimSpace.Units.Angle.radian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Angle.degree.html">BioSimSpace.Units.Angle.degree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Volume.meter3.html">BioSimSpace.Units.Volume.meter3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Volume.angstrom3.html">BioSimSpace.Units.Volume.angstrom3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Volume.nanometer3.html">BioSimSpace.Units.Volume.nanometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Volume.picometer3.html">BioSimSpace.Units.Volume.picometer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Charge.electron_charge.html">BioSimSpace.Units.Charge.electron_charge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Charge.coulomb.html">BioSimSpace.Units.Charge.coulomb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.kilogram.html">BioSimSpace.Units.Mass.kilogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.gram.html">BioSimSpace.Units.Mass.gram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.milligram.html">BioSimSpace.Units.Mass.milligram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.microgram.html">BioSimSpace.Units.Mass.microgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.nanogram.html">BioSimSpace.Units.Mass.nanogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.picogram.html">BioSimSpace.Units.Mass.picogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Mass.femtogram.html">BioSimSpace.Units.Mass.femtogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Energy.kcal_per_mol.html">BioSimSpace.Units.Energy.kcal_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Energy.kj_per_mol.html">BioSimSpace.Units.Energy.kj_per_mol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Energy.kt.html">BioSimSpace.Units.Energy.kt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Pressure.atm.html">BioSimSpace.Units.Pressure.atm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Pressure.bar.html">BioSimSpace.Units.Pressure.bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Temperature.kelvin.html">BioSimSpace.Units.Temperature.kelvin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Temperature.celsius.html">BioSimSpace.Units.Temperature.celsius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Temperature.fahrenheit.html">BioSimSpace.Units.Temperature.fahrenheit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.day.html">BioSimSpace.Units.Time.day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.hour.html">BioSimSpace.Units.Time.hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.minute.html">BioSimSpace.Units.Time.minute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.second.html">BioSimSpace.Units.Time.second</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.millisecond.html">BioSimSpace.Units.Time.millisecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.nanosecond.html">BioSimSpace.Units.Time.nanosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.picosecond.html">BioSimSpace.Units.Time.picosecond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace.Units.Time.femtosecond.html">BioSimSpace.Units.Time.femtosecond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Config.html">BioSimSpace._Config</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of BioSimSpace._Config</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Config.Amber.html">BioSimSpace._Config.Amber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Config.Gromacs.html">BioSimSpace._Config.Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Config.Somd.html">BioSimSpace._Config.Somd</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Exceptions.html">BioSimSpace._Exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of BioSimSpace._Exceptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.AlignmentError.html">BioSimSpace._Exceptions.AlignmentError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.AnalysisError.html">BioSimSpace._Exceptions.AnalysisError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.ConversionError.html">BioSimSpace._Exceptions.ConversionError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.IncompatibleError.html">BioSimSpace._Exceptions.IncompatibleError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.MissingSoftwareError.html">BioSimSpace._Exceptions.MissingSoftwareError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.ParameterisationError.html">BioSimSpace._Exceptions.ParameterisationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.StreamError.html">BioSimSpace._Exceptions.StreamError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Exceptions.ThirdPartyError.html">BioSimSpace._Exceptions.ThirdPartyError</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_SireWrappers.html">BioSimSpace._SireWrappers</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of BioSimSpace._SireWrappers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.Atom.html">BioSimSpace._SireWrappers.Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.Bond.html">BioSimSpace._SireWrappers.Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.Molecule.html">BioSimSpace._SireWrappers.Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.Molecules.html">BioSimSpace._SireWrappers.Molecules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.Residue.html">BioSimSpace._SireWrappers.Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.System.html">BioSimSpace._SireWrappers.System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._SireWrappers.SearchResult.html">BioSimSpace._SireWrappers.SearchResult</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index_Utils.html">BioSimSpace._Utils</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of BioSimSpace._Utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils.WorkDir.html">BioSimSpace._Utils.WorkDir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils.cd.html">BioSimSpace._Utils.cd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils.command_split.html">BioSimSpace._Utils.command_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils._module_stub.html">BioSimSpace._Utils._module_stub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils._try_import.html">BioSimSpace._Utils._try_import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils._have_imported.html">BioSimSpace._Utils._have_imported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/generated/BioSimSpace._Utils._assert_imported.html">BioSimSpace._Utils._assert_imported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">How to ask for help</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../contributing/development.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Developer’s guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/codestyle.html">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/packaging.html#creating-releases">Creating releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="molecular-editing">
+<h1>Molecular editing<a class="headerlink" href="#molecular-editing" title="Link to this heading">¶</a></h1>
+<p>In this tutorial, you will use BioSimSpace and Sire to edit force field parameters
+for a small molecule. Sire is a molecular simulation framework that BioSimSpace is
+built upon, and provides a wide range of functionality for manipulating and editing
+molecules.</p>
+<section id="editing-existing-molecules">
+<h2>Editing existing molecules<a class="headerlink" href="#editing-existing-molecules" title="Link to this heading">¶</a></h2>
+<p>In this section you will learn how to edit the force field parameters of an
+existing molecule, e.g. if you want to adjust charges, or modify bonded parameters.</p>
+<p>First, let’s import the necessary modules and use BioSimSpace to create
+a parameterised ethanol molecule from a SMILES string:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">BioSimSpace</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">BSS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ethanol</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">gaff</span><span class="p">(</span><span class="s2">&quot;CCO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getMolecule</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Forcefield parameters are stored as molecular <em>properties</em>. These can be
+accessed by using the appropriate property <em>key</em> on the underlying Sire molecule,
+e.g. for the charges on the atoms.</p>
+<p>&gt;&gt; print(ethanol._sire_object.property(“charge”))
+SireMol::AtomCharges( size=9
+0: -0.1361 <a href="#id3"><span class="problematic" id="id4">|e|</span></a>
+1: 0.1264 <a href="#id5"><span class="problematic" id="id6">|e|</span></a>
+2: -0.5998 <a href="#id7"><span class="problematic" id="id8">|e|</span></a>
+3: 0.0423669 <a href="#id9"><span class="problematic" id="id10">|e|</span></a>
+4: 0.0423669 <a href="#id11"><span class="problematic" id="id12">|e|</span></a>
+5: 0.0423669 <a href="#id13"><span class="problematic" id="id14">|e|</span></a>
+6: 0.0431999 <a href="#id15"><span class="problematic" id="id16">|e|</span></a>
+7: 0.0431999 <a href="#id17"><span class="problematic" id="id18">|e|</span></a>
+8: 0.396 <a href="#id19"><span class="problematic" id="id20">|e|</span></a>
+)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>BioSimSpace provides wrappers for several Sire classes, including the
+<code class="docutils literal notranslate"><span class="pre">Molecule</span></code> class used here. The underlying Sire object can be accessed
+via the <code class="docutils literal notranslate"><span class="pre">_sire_object</span></code> attribute. The underscore signifies that this is
+a “private” attribute, and so should be used with care, i.e. the operations
+described here would typically only be performed by an expert user since they
+directly modify the state of an internal attribute of the <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> object.</p>
+</div>
+<p>Bonded terms are stored internally as expressions using a buit-in computer algebra
+system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;bond&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(3)} : 330.6 [r - 1.0969]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(1)} : 300.9 [r - 1.5375]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(1)} &lt;-&gt; {CGIdx(0),Index(2)} : 316.7 [r - 1.4233]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(1)} &lt;-&gt; {CGIdx(0),Index(7)} : 330.6 [r - 1.0969]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(5)} : 330.6 [r - 1.0969]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(1)} &lt;-&gt; {CGIdx(0),Index(6)} : 330.6 [r - 1.0969]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(4)} : 330.6 [r - 1.0969]^2 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(2)} &lt;-&gt; {CGIdx(0),Index(8)} : 371.4 [r - 0.973]^2 )</span>
+</pre></div>
+</div>
+<p>Each <code class="docutils literal notranslate"><span class="pre">TwoAtomFunction</span></code> stores the two atoms involved in the bond, as well as the
+expression used to compute the bonded energy:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">bond</span><span class="o">.</span><span class="n">atom1</span><span class="p">(),</span> <span class="n">bond</span><span class="o">.</span><span class="n">function</span><span class="p">())</span>
+<span class="go">{CGIdx(0),Index(2)} {CGIdx(0),Index(8)} 371.4 [r - 0.973]^2</span>
+</pre></div>
+</div>
+<p>On write, these expressions are converted into the appropriate functional form
+for the parser in question, e.g. for conversion to AMBER format:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.CAS</span><span class="w"> </span><span class="kn">import</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.MM</span><span class="w"> </span><span class="kn">import</span> <span class="n">AmberBond</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">amber_bond</span> <span class="o">=</span> <span class="n">AmberBond</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">function</span><span class="p">(),</span> <span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We can now print the components of the bond function, e.g. the force constant and
+the equilibrium bond length:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">amber_bond</span><span class="o">.</span><span class="n">k</span><span class="p">(),</span> <span class="n">amber_bond</span><span class="o">.</span><span class="n">r0</span><span class="p">())</span>
+<span class="go">371.4 0.973</span>
+</pre></div>
+</div>
+<p>To go the other way, we can convert the <code class="docutils literal notranslate"><span class="pre">AmberBond</span></code> back into an <code class="docutils literal notranslate"><span class="pre">Expression</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">amber_bond</span><span class="o">.</span><span class="n">asExpression</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)))</span>
+<span class="go">371.4 [r - 0.973]^2</span>
+</pre></div>
+</div>
+<section id="editing-charges">
+<h3>Editing charges<a class="headerlink" href="#editing-charges" title="Link to this heading">¶</a></h3>
+<p>To edit <em>atomic</em> properties, such as charges, we can use the <em>new</em> Sire Python API:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">atom</span><span class="p">[</span><span class="s2">&quot;charge&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">sr</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">mod_electron</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge&quot;</span><span class="p">))</span>
+<span class="go">SireMol::AtomCharges( size=9</span>
+<span class="go">0: 10 |e|</span>
+<span class="go">1: 10 |e|</span>
+<span class="go">2: 10 |e|</span>
+<span class="go">3: 10 |e|</span>
+<span class="go">4: 10 |e|</span>
+<span class="go">5: 10 |e|</span>
+<span class="go">6: 10 |e|</span>
+<span class="go">7: 10 |e|</span>
+<span class="go">8: 10 |e|</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To see the full list of properties available for a molecule, you can use the
+<code class="docutils literal notranslate"><span class="pre">propertyKeys()</span></code> method on the underlying Sire molecule object, e.g.
+<code class="docutils literal notranslate"><span class="pre">ethanol._sire_object.propertyKeys()</span></code>.</p>
+</div>
+</section>
+<section id="editing-bonds">
+<h3>Editing bonds<a class="headerlink" href="#editing-bonds" title="Link to this heading">¶</a></h3>
+<p>For <em>molecule</em> properties, such as bonded parameters, we currently need to use
+the legacy Sire API. Here we will create a new set of bonds by nulling the force
+constant for all existing bonds:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.MM</span><span class="w"> </span><span class="kn">import</span> <span class="n">TwoAtomFunctions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bonds</span> <span class="o">=</span> <span class="n">TwoAtomFunctions</span><span class="p">(</span><span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;bond&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">amber_bond</span> <span class="o">=</span> <span class="n">AmberBond</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">bonds</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">bond</span><span class="o">.</span><span class="n">atom1</span><span class="p">(),</span> <span class="n">amber_bond</span><span class="o">.</span><span class="n">toExpression</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;bond&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bonds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now lets print the new bonds:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;bond&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">bond</span><span class="p">)</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(3)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(1)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(1)} &lt;-&gt; {CGIdx(0),Index(2)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(1)} &lt;-&gt; {CGIdx(0),Index(7)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(5)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(1)} &lt;-&gt; {CGIdx(0),Index(6)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(0)} &lt;-&gt; {CGIdx(0),Index(4)} : 0 )</span>
+<span class="go">TwoAtomFunction( {CGIdx(0),Index(2)} &lt;-&gt; {CGIdx(0),Index(8)} : 0 )</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we’ve adjusted the parameters for the existing bonding, but we could
+also adjust which atoms are bonded by ommitting or adding new bonds when
+constructing the new <code class="docutils literal notranslate"><span class="pre">TwoAtomFunctions</span></code> object.</p>
+</div>
+</section>
+<section id="editing-angles">
+<h3>Editing angles<a class="headerlink" href="#editing-angles" title="Link to this heading">¶</a></h3>
+<p>Angles are stored as <code class="docutils literal notranslate"><span class="pre">ThreeAtomFunction</span></code> objects, which can be accessed via the
+<code class="docutils literal notranslate"><span class="pre">angle</span></code> property key. Here we will modify the angle whose central atom is named
+O3.</p>
+<p>First, let’s create a <code class="docutils literal notranslate"><span class="pre">ThreeAtomFunctions</span></code> container to store the potentials:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.MM</span><span class="w"> </span><span class="kn">import</span> <span class="n">AmberAngle</span><span class="p">,</span> <span class="n">ThreeAtomFunctions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">angles</span> <span class="o">=</span> <span class="n">ThreeAtomFunctions</span><span class="p">(</span><span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Next, let’s loop over the existing potentials, adding each in turn,
+and modifying the desired angle:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;angle&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atom</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">atom1</span><span class="p">())</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;O3&quot;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">amber_angle</span> <span class="o">=</span> <span class="n">AmberAngle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="n">angles</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">angle</span><span class="o">.</span><span class="n">atom1</span><span class="p">(),</span> <span class="n">angle</span><span class="o">.</span><span class="n">atom2</span><span class="p">(),</span> <span class="n">amber_angle</span><span class="o">.</span><span class="n">toExpression</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">)))</span>
+<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">angles</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">atom0</span><span class="p">(),</span> <span class="n">angle</span><span class="o">.</span><span class="n">atom1</span><span class="p">(),</span> <span class="n">angle</span><span class="o">.</span><span class="n">atom2</span><span class="p">(),</span> <span class="n">angle</span><span class="o">.</span><span class="n">function</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Now we can set the new angles on the molecule:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;angle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">angles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Let’s print the new angles to check that the change has been made:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;angle&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(1)} &lt;- {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(3)} : 46.3 [theta - 1.91637]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(0)} &lt;- {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(2)} : 67.5 [theta - 1.92318]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(2)} &lt;- {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(7)} : 50.9 [theta - 1.9244]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(3)} &lt;- {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(5)} : 39.4 [theta - 1.87763]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(2)} &lt;- {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(6)} : 50.9 [theta - 1.9244]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(3)} &lt;- {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(4)} : 39.4 [theta - 1.87763]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(0)} &lt;- {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(7)} : 46.4 [theta - 1.91218]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(1)} &lt;- {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(5)} : 46.3 [theta - 1.91637]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(0)} &lt;- {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(6)} : 46.4 [theta - 1.91218]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(6)} &lt;- {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(7)} : 39.2 [theta - 1.89298]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(1)} &lt;- {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(4)} : 46.3 [theta - 1.91637]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(4)} &lt;- {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(5)} : 39.4 [theta - 1.87763]^2 )</span>
+<span class="go">ThreeAtomFunction( {CGIdx(0),Index(1)} &lt;- {CGIdx(0),Index(2)} -&gt; {CGIdx(0),Index(8)} : 100 [theta - 1.5]^2 )</span>
+</pre></div>
+</div>
+</section>
+<section id="editing-dihedrals">
+<h3>Editing dihedrals<a class="headerlink" href="#editing-dihedrals" title="Link to this heading">¶</a></h3>
+<p>Dihedrals are a bit more complex to edit, since a single dihedral can contain multiple
+terms, or <em>parts</em>. For example, let’s look at the dihedrals in our ethanol molecule:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dihedrals</span> <span class="o">=</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;dihedral&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">potentials</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dihedral</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dihedrals</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dihedral</span><span class="p">)</span>
+<span class="go">0 FourAtomFunction( {CGIdx(0),Index(0)} &lt;- {CGIdx(0),Index(1)} - {CGIdx(0),Index(2)} -&gt; {CGIdx(0),Index(8)} : 0.25 cos(phi) + 0.16 cos(3 phi) + 0.41 )</span>
+<span class="go">1 FourAtomFunction( {CGIdx(0),Index(7)} &lt;- {CGIdx(0),Index(1)} - {CGIdx(0),Index(2)} -&gt; {CGIdx(0),Index(8)} : 0.166667 cos(3 phi) + 0.166667 )</span>
+<span class="go">2 FourAtomFunction( {CGIdx(0),Index(2)} &lt;- {CGIdx(0),Index(1)} - {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(3)} : 0.25 cos(phi) + 0.25 )</span>
+<span class="go">3 FourAtomFunction( {CGIdx(0),Index(6)} &lt;- {CGIdx(0),Index(1)} - {CGIdx(0),Index(2)} -&gt; {CGIdx(0),Index(8)} : 0.166667 cos(3 phi) + 0.166667 )</span>
+<span class="go">4 FourAtomFunction( {CGIdx(0),Index(3)} &lt;- {CGIdx(0),Index(0)} - {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(7)} : 0.155556 cos(3 phi) + 0.155556 )</span>
+<span class="go">5 FourAtomFunction( {CGIdx(0),Index(3)} &lt;- {CGIdx(0),Index(0)} - {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(6)} : 0.155556 cos(3 phi) + 0.155556 )</span>
+<span class="go">6 FourAtomFunction( {CGIdx(0),Index(2)} &lt;- {CGIdx(0),Index(1)} - {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(5)} : 0.25 cos(phi) + 0.25 )</span>
+<span class="go">7 FourAtomFunction( {CGIdx(0),Index(2)} &lt;- {CGIdx(0),Index(1)} - {CGIdx(0),Index(0)} -&gt; {CGIdx(0),Index(4)} : 0.25 cos(phi) + 0.25 )</span>
+<span class="go">8 FourAtomFunction( {CGIdx(0),Index(5)} &lt;- {CGIdx(0),Index(0)} - {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(7)} : 0.155556 cos(3 phi) + 0.155556 )</span>
+<span class="go">9 FourAtomFunction( {CGIdx(0),Index(4)} &lt;- {CGIdx(0),Index(0)} - {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(7)} : 0.155556 cos(3 phi) + 0.155556 )</span>
+<span class="go">10 FourAtomFunction( {CGIdx(0),Index(5)} &lt;- {CGIdx(0),Index(0)} - {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(6)} : 0.155556 cos(3 phi) + 0.155556 )</span>
+<span class="go">11 FourAtomFunction( {CGIdx(0),Index(4)} &lt;- {CGIdx(0),Index(0)} - {CGIdx(0),Index(1)} -&gt; {CGIdx(0),Index(6)} : 0.155556 cos(3 phi) + 0.155556 )</span>
+</pre></div>
+</div>
+<p>Let’s consider the first <code class="docutils literal notranslate"><span class="pre">FourAtomFunction</span></code>, which has multiple terms, and convert it to
+an <a href="#id1"><span class="problematic" id="id2">``</span></a>AmberDihedral``object.</p>
+<dl class="simple">
+<dt>… Note::</dt><dd><p>The containers used for bonded functions don’t preserver order, so the
+dihedrals shown above may not be in the same order as you see when you run
+the code.</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.MM</span><span class="w"> </span><span class="kn">import</span> <span class="n">AmberDihedral</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.CAS</span><span class="w"> </span><span class="kn">import</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">amber_dihedral</span> <span class="o">=</span> <span class="n">AmberDihedral</span><span class="p">(</span><span class="n">dihedrals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">function</span><span class="p">(),</span> <span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;phi&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We can now print the terms in the dihedral:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">amber_dihedral</span><span class="o">.</span><span class="n">terms</span><span class="p">())</span>
+<span class="go">[AmberDihPart( k = 0.25, periodicity = 1, phase = 0 ), AmberDihPart( k = 0.16, periodicity = 3, phase = 0 )]</span>
+</pre></div>
+</div>
+<p>It’s not currently possible to use <code class="docutils literal notranslate"><span class="pre">AmberDihPart</span></code> objects directly as a means
+of building an <code class="docutils literal notranslate"><span class="pre">AmberDihedral</span></code>. This is because this part of the legacy Sire
+API was never intended to be used directly from Python, rather <code class="docutils literal notranslate"><span class="pre">AmberDihedral</span></code>
+objects would be created directly from expressions that are parsed from AMBER
+topology files in the C++ API. However, it is easy enough to create multi-term
+objects by writing custom expressions. The <code class="docutils literal notranslate"><span class="pre">AmberDihedral</span></code> code is written to
+be robust against different AMBER-style dihedral representations from common
+format. For example:</p>
+<p>A regular AMBER-style dihedral series where all terms have positive cosine factors:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.CAS</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cos</span><span class="p">,</span> <span class="n">Expression</span><span class="p">,</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Phi</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;phi&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span><span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Cos</span><span class="p">(</span><span class="n">Phi</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">Phi</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">AmberDihedral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Phi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AMBER:&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="go">AMBER: AmberDihedral( k[0] = 0.3, periodicity[0] = 1, phase[0] = 0, k[1] = 0.8, periodicity[1] = 4, phase[1] = 0 )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">d</span><span class="o">.</span><span class="n">toExpression</span><span class="p">(</span><span class="n">Phi</span><span class="p">)</span> <span class="o">==</span> <span class="n">f</span>
+</pre></div>
+</div>
+<p>An AMBER-style dihedral containing positive and negative cosine factors, which
+can appear in the CHARMM force field:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span><span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Cos</span><span class="p">(</span><span class="n">Phi</span><span class="p">))</span> <span class="o">-</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">Phi</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">AmberDihedral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Phi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CHARMM:&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="go">CHARMM: AmberDihedral( k[0] = 0.3, periodicity[0] = 1, phase[0] = 0, k[1] = -0.8, periodicity[1] = 4, phase[1] = 0 )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">d</span><span class="o">.</span><span class="n">toExpression</span><span class="p">(</span><span class="n">Phi</span><span class="p">)</span> <span class="o">==</span> <span class="n">f</span>
+</pre></div>
+</div>
+<p>An AMBER-style dihedral containing positive and negative cosine factors, with
+the negative of the form <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">[1</span> <span class="pre">-</span> <span class="pre">Cos(Phi)]</span></code> rather than <code class="docutils literal notranslate"><span class="pre">-k</span> <span class="pre">[1</span> <span class="pre">+</span> <span class="pre">Cos(Phi)]</span></code>.
+These can appear in the GROMACS force field:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span><span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Cos</span><span class="p">(</span><span class="n">Phi</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">Phi</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">AmberDihedral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Phi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GROMACS:&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="go">GROMACS: AmberDihedral( k[0] = 0.3, periodicity[0] = 1, phase[0] = 0, k[1] = 0.8, periodicity[1] = 4, phase[1] = -3.14159 )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isclose</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sire.legacy.CAS</span><span class="w"> </span><span class="kn">import</span> <span class="n">SymbolValue</span><span class="p">,</span> <span class="n">Values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">val</span> <span class="o">=</span> <span class="n">Values</span><span class="p">(</span><span class="n">SymbolValue</span><span class="p">(</span><span class="n">Phi</span><span class="o">.</span><span class="n">ID</span><span class="p">(),</span> <span class="mf">2.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">isclose</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">d</span><span class="o">.</span><span class="n">toExpression</span><span class="p">(</span><span class="n">Phi</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Finally, a three-term expression that mixes all formats:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Try a three-term expression that mixes all formats.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Cos</span><span class="p">(</span><span class="n">Phi</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="o">-</span> <span class="mf">1.2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">Phi</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="o">+</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">Phi</span><span class="p">))</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">AmberDihedral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Phi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">isclose</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">d</span><span class="o">.</span><span class="n">toExpression</span><span class="p">(</span><span class="n">Phi</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Impropers are also stored as <code class="docutils literal notranslate"><span class="pre">FourAtomFunction</span></code> objects, which can be
+accessed via the <code class="docutils literal notranslate"><span class="pre">improper</span></code> property key.</p>
+</div>
+</section>
+</section>
+<section id="creating-new-molecules">
+<h2>Creating new molecules<a class="headerlink" href="#creating-new-molecules" title="Link to this heading">¶</a></h2>
+<p>In this section you will learn how to create a new molecule from scratch. For
+simplicity, we will assume that we have a reference molecule to serve as a template,
+i.e. we already have a set of molecular properties to apply. In practice, you might
+want to set the properties manually.</p>
+<p>First we need to build the topology of our molecule. To do so, we will create
+a new molecule and build the structure of residues and atoms from our ethanol
+template. Sire works with residue-based cutting groups, so we create a new
+cut-group for each residue in our template, then add atoms to them:</p>
+<p>&gt;&gt; mol = sr.legacy.Mol.Molecule(“ethanol”)
+&gt;&gt;&gt; for i, res in enumerate(ethanol._sire_object.residues()):
+…     new_res = mol.edit().add(sr.legacy.Mol.ResNum(i+1))
+…     new_res.rename(res.name())
+…     cg = new_res.molecule().add(sr.legacy.Mol.CGName(f{“i}”))
+…     for j, atom in enumerate(res.atoms()):
+…         new_atom = cg.add(atom.name())
+…         new_atom.renumber(sr.legacy.Mol.AtomNum(j+1))
+…         new_atom.reparent(sr.legacy.Mol.ResIdx(i))
+…     mol = cg.molecule().commit()</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A cut-group is a logical grouping of atoms into a single group that is
+considered for intermolecular non-bonded cutting, and for periodic boundaries.</p>
+</div>
+<p>We now have the basic structure of our molecule:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">residues</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">atoms</span><span class="p">():</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">atom</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">Residue( LIG:1   num_atoms=9 )</span>
+<span class="go">  Atom( C1:1 )</span>
+<span class="go">  Atom( C2:2 )</span>
+<span class="go">  Atom( O3:3 )</span>
+<span class="go">  Atom( H4:4 )</span>
+<span class="go">  Atom( H5:5 )</span>
+<span class="go">  Atom( H6:6 )</span>
+<span class="go">  Atom( H7:7 )</span>
+<span class="go">  Atom( H8:8 )</span>
+<span class="go">  Atom( H9:9 )</span>
+</pre></div>
+</div>
+<p>Next we can start adding the required properties, e.g. for the charge:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">new_atom</span><span class="p">,</span> <span class="n">old_atom</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">atoms</span><span class="p">(),</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">atoms</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="n">new_atom</span><span class="p">[</span><span class="s2">&quot;charge&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">old_atom</span><span class="p">[</span><span class="s2">&quot;charge&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we’ve copied the charges from our template, but we could also set them
+manually. In this case we have added them atom-by-atom, but we could also
+copy the entire molecular property in one go.</p>
+</div>
+<p>Let’s check that the charges have been added correctly:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;charge&quot;</span><span class="p">))</span>
+<span class="go">SireMol::AtomCharges( size=9</span>
+<span class="go">0: 10 |e|</span>
+<span class="go">1: 10 |e|</span>
+<span class="go">2: 10 |e|</span>
+<span class="go">3: 10 |e|</span>
+<span class="go">4: 10 |e|</span>
+<span class="go">5: 10 |e|</span>
+<span class="go">6: 10 |e|</span>
+<span class="go">7: 10 |e|</span>
+<span class="go">8: 10 |e|</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<p>Similarly, we can set molecule properties, such as <em class="xref py py-obj">bond</em> or <em class="xref py py-obj">angle</em>. Here we will
+copy the existing <em class="xref py py-obj">angle</em> property across:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cursor</span><span class="p">[</span><span class="s2">&quot;angle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ethanol</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;angle&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>As before, this could also be done manually, e.g. by creating a new <em class="xref py py-obj">TheeAtomFunctions</em>
+object and adding angles one-by-one. Let’s check that the angles have been added correctly:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;angle&quot;</span><span class="p">))</span>
+<span class="go">ThreeAtomFunctions( size=13</span>
+<span class="go">0:    C1:1-C2:2-O3:3       : 67.5 [theta - 1.92318]^2</span>
+<span class="go">1:    C1:1-C2:2-H7:7       : 46.4 [theta - 1.91218]^2</span>
+<span class="go">2:    C1:1-C2:2-H8:8       : 46.4 [theta - 1.91218]^2</span>
+<span class="go">3:    C2:2-C1:1-H4:4       : 46.3 [theta - 1.91637]^2</span>
+<span class="go">4:    C2:2-C1:1-H5:5       : 46.3 [theta - 1.91637]^2</span>
+<span class="go">...</span>
+<span class="go">8:    O3:3-C2:2-H8:8       : 50.9 [theta - 1.9244]^2</span>
+<span class="go">9:    H4:4-C1:1-H5:5       : 39.4 [theta - 1.87763]^2</span>
+<span class="go">10:    H4:4-C1:1-H6:6       : 39.4 [theta - 1.87763]^2</span>
+<span class="go">11:    H5:5-C1:1-H6:6       : 39.4 [theta - 1.87763]^2</span>
+<span class="go">12:    H7:7-C2:2-H8:8       : 39.2 [theta - 1.89298]^2</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-chain-identifiers">
+<h2>Adding chain identifiers<a class="headerlink" href="#adding-chain-identifiers" title="Link to this heading">¶</a></h2>
+<p>It may be useful to add chain identifiers to a molecule, e.g. if you plan to track
+specific residues during a simulation. Here we will add chain identifiers to an
+existing molecule, defining a new chain for each residue. (This is just an example.)
+The logic is almost identical to that used to create a new molecule from scratch,
+as shown above. The only difference is the addition of chains to the molecule prior
+to adding the residues and atoms. In Sire the largest structural units are added first,
+with the smaller ones then being added and <em>reparented</em> to the larger ones.</p>
+<p>First, let’s load a molecule that has multiple residues. Here we will use
+the alanine dipeptide molecule that is included with the BioSimSpace tutorials:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">BioSimSpace</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">BSS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ala</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">readMolecules</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">BSS</span><span class="o">.</span><span class="n">tutorialUrl</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;ala.top&quot;</span><span class="p">,</span> <span class="s2">&quot;ala.crd&quot;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Next we will create a string for the chain identifiers. Here we will
+use uppercase letters, but in practice you can use any character:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">chain_ids</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+</pre></div>
+</div>
+<p>Now we create a <code class="docutils literal notranslate"><span class="pre">MolStructureEditor</span></code> to build the new molecule:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sire</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">editor</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">legacy</span><span class="o">.</span><span class="n">Mol</span><span class="o">.</span><span class="n">MolStructureEditor</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To begin with we need to add the chains to the editor:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ala</span><span class="o">.</span><span class="n">nResidues</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="n">editor</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">legacy</span><span class="o">.</span><span class="n">Mol</span><span class="o">.</span><span class="n">ChainName</span><span class="p">(</span><span class="n">chain_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Now we can loop over the residues in the original molecule, adding them to
+the editor, reparenting them to the appropriate chain, then adding the atoms:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">res</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ala</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">residues</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="n">cg</span> <span class="o">=</span> <span class="n">editor</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">legacy</span><span class="o">.</span><span class="n">Mol</span><span class="o">.</span><span class="n">CGName</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+<span class="gp">... </span>    <span class="n">new_res</span> <span class="o">=</span> <span class="n">editor</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">number</span><span class="p">())</span>
+<span class="gp">... </span>    <span class="n">new_res</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+<span class="gp">... </span>    <span class="n">new_res</span><span class="o">.</span><span class="n">reparent</span><span class="p">(</span><span class="n">chain_ids</span><span class="p">[</span><span class="n">i</span> <span class="o">//</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">atoms</span><span class="p">()):</span>
+<span class="gp">... </span>        <span class="n">new_atom</span> <span class="o">=</span> <span class="n">cg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">number</span><span class="p">())</span>
+<span class="gp">... </span>        <span class="n">new_atom</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+<span class="gp">... </span>        <span class="n">new_atom</span><span class="o">.</span><span class="n">reparent</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="p">())</span>
+<span class="gp">... </span><span class="n">editor</span> <span class="o">=</span> <span class="n">editor</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Next we need to copy across the molecular properties, e.g. charges and bonded terms.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">ala</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">propertKeys</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">editor</span> <span class="o">=</span> <span class="n">editor</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">ala</span><span class="o">.</span><span class="n">_sire_object</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">))</span><span class="o">.</span><span class="n">molecule</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Finally, we can commit the changes to create the new molecule:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bss_mol</span> <span class="o">=</span> <span class="n">BSS</span><span class="o">.</span><span class="n">_SireWrappers</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">editor</span><span class="o">.</span><span class="n">commit</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Let’s check that the new molecule has the correct number of chains:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">bss_mol</span><span class="o">.</span><span class="n">nChains</span><span class="p">()</span> <span class="o">==</span> <span class="n">bss_mol</span><span class="o">.</span><span class="n">nResidues</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Finally we will write to PDB format to check that the chain identifiers:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BSS</span><span class="o">.</span><span class="n">IO</span><span class="o">.</span><span class="n">saveMolecules</span><span class="p">(</span><span class="s2">&quot;ala_chains&quot;</span><span class="p">,</span> <span class="n">bss_mol</span><span class="p">,</span> <span class="s2">&quot;pdb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output file <code class="docutils literal notranslate"><span class="pre">ala_chains.pdb</span></code> should look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL</span>     <span class="mi">1</span>
+<span class="n">ATOM</span>      <span class="mi">1</span> <span class="n">HH31</span> <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>      <span class="mf">13.681</span>  <span class="mf">13.148</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>      <span class="mi">2</span>  <span class="n">CH3</span> <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>      <span class="mf">13.681</span>  <span class="mf">14.238</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">C</span>
+<span class="n">ATOM</span>      <span class="mi">3</span> <span class="n">HH32</span> <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>      <span class="mf">13.168</span>  <span class="mf">14.602</span>  <span class="mf">16.163</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>      <span class="mi">4</span> <span class="n">HH33</span> <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>      <span class="mf">13.168</span>  <span class="mf">14.602</span>  <span class="mf">14.384</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>      <span class="mi">5</span>  <span class="n">C</span>   <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>      <span class="mf">15.109</span>  <span class="mf">14.789</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">C</span>
+<span class="n">ATOM</span>      <span class="mi">6</span>  <span class="n">O</span>   <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>      <span class="mf">16.072</span>  <span class="mf">14.026</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">O</span>
+<span class="n">TER</span>       <span class="mi">7</span>      <span class="n">ACE</span> <span class="n">A</span>   <span class="mi">1</span>
+<span class="n">ATOM</span>      <span class="mi">8</span>  <span class="n">N</span>   <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">15.237</span>  <span class="mf">16.118</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">N</span>
+<span class="n">ATOM</span>      <span class="mi">9</span>  <span class="n">H</span>   <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">14.414</span>  <span class="mf">16.704</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">10</span>  <span class="n">CA</span>  <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">16.535</span>  <span class="mf">16.762</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">C</span>
+<span class="n">ATOM</span>     <span class="mi">11</span>  <span class="n">HA</span>  <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">17.089</span>  <span class="mf">16.464</span>  <span class="mf">16.163</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">12</span>  <span class="n">CB</span>  <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">17.343</span>  <span class="mf">16.369</span>  <span class="mf">14.041</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">C</span>
+<span class="n">ATOM</span>     <span class="mi">13</span>  <span class="n">HB1</span> <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">16.805</span>  <span class="mf">16.670</span>  <span class="mf">13.142</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">14</span>  <span class="n">HB2</span> <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">18.312</span>  <span class="mf">16.867</span>  <span class="mf">14.068</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">15</span>  <span class="n">HB3</span> <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">17.490</span>  <span class="mf">15.289</span>  <span class="mf">14.032</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">16</span>  <span class="n">C</span>   <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">16.394</span>  <span class="mf">18.278</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">C</span>
+<span class="n">ATOM</span>     <span class="mi">17</span>  <span class="n">O</span>   <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>      <span class="mf">15.282</span>  <span class="mf">18.801</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">O</span>
+<span class="n">TER</span>      <span class="mi">18</span>      <span class="n">ALA</span> <span class="n">B</span>   <span class="mi">2</span>
+<span class="n">ATOM</span>     <span class="mi">19</span>  <span class="n">N</span>   <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>      <span class="mf">17.527</span>  <span class="mf">18.983</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">N</span>
+<span class="n">ATOM</span>     <span class="mi">20</span>  <span class="n">H</span>   <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>      <span class="mf">18.418</span>  <span class="mf">18.507</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">21</span>  <span class="n">CH3</span> <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>      <span class="mf">17.527</span>  <span class="mf">20.432</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">C</span>
+<span class="n">ATOM</span>     <span class="mi">22</span> <span class="n">HH31</span> <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>      <span class="mf">16.500</span>  <span class="mf">20.796</span>  <span class="mf">15.273</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">23</span> <span class="n">HH32</span> <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>      <span class="mf">18.041</span>  <span class="mf">20.796</span>  <span class="mf">16.163</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">ATOM</span>     <span class="mi">24</span> <span class="n">HH33</span> <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>      <span class="mf">18.041</span>  <span class="mf">20.796</span>  <span class="mf">14.384</span>  <span class="mf">1.00</span>  <span class="mf">0.00</span>           <span class="n">H</span>
+<span class="n">TER</span>      <span class="mi">25</span>      <span class="n">NME</span> <span class="n">C</span>   <span class="mi">3</span>
+<span class="n">ENDMDL</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../guides/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Detailed Guides</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="alchemical_transfer.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Alchemical Transfer Method</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 08, 2025</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Molecular editing</a><ul>
+<li><a class="reference internal" href="#editing-existing-molecules">Editing existing molecules</a><ul>
+<li><a class="reference internal" href="#editing-charges">Editing charges</a></li>
+<li><a class="reference internal" href="#editing-bonds">Editing bonds</a></li>
+<li><a class="reference internal" href="#editing-angles">Editing angles</a></li>
+<li><a class="reference internal" href="#editing-dihedrals">Editing dihedrals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-new-molecules">Creating new molecules</a></li>
+<li><a class="reference internal" href="#adding-chain-identifiers">Adding chain identifiers</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/js/custom.js?v=e0b44004"></script>
+    </body>
+</html>
