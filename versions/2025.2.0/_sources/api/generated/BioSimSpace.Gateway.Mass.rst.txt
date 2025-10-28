@@ -1,0 +1,33 @@
+﻿BioSimSpace.Gateway.Mass
+========================
+
+.. currentmodule:: BioSimSpace.Gateway
+
+.. autoclass:: Mass
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Mass.__init__
+      ~Mass.getAllowedValues
+      ~Mass.getArgType
+      ~Mass.getDefault
+      ~Mass.getHelp
+      ~Mass.getMax
+      ~Mass.getMin
+      ~Mass.getUnit
+      ~Mass.getValue
+      ~Mass.isMulti
+      ~Mass.isOptional
+      ~Mass.setValue
+   
+   
+
+   
+   
+   

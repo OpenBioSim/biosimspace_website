@@ -1,0 +1,6 @@
+﻿BioSimSpace.\_Utils.\_assert\_imported
+======================================
+
+.. currentmodule:: BioSimSpace._Utils
+
+.. autofunction:: _assert_imported

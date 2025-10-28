@@ -1,0 +1,81 @@
+﻿BioSimSpace.Protocol.ATMEquilibration
+=====================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: ATMEquilibration
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ATMEquilibration.__init__
+      ~ATMEquilibration.getAlignKDistance
+      ~ATMEquilibration.getAlignKPsi
+      ~ATMEquilibration.getAlignKTheta
+      ~ATMEquilibration.getAlpha
+      ~ATMEquilibration.getCOMDistanceRestraint
+      ~ATMEquilibration.getCOMWidth
+      ~ATMEquilibration.getCOMk
+      ~ATMEquilibration.getCoreAlignment
+      ~ATMEquilibration.getData
+      ~ATMEquilibration.getDirection
+      ~ATMEquilibration.getEndTemperature
+      ~ATMEquilibration.getForceConstant
+      ~ATMEquilibration.getLambda1
+      ~ATMEquilibration.getLambda2
+      ~ATMEquilibration.getPosRestWidth
+      ~ATMEquilibration.getPressure
+      ~ATMEquilibration.getReportInterval
+      ~ATMEquilibration.getRestartInterval
+      ~ATMEquilibration.getRestraint
+      ~ATMEquilibration.getRunTime
+      ~ATMEquilibration.getSoftCoreA
+      ~ATMEquilibration.getSoftCoreU0
+      ~ATMEquilibration.getSoftCoreUmax
+      ~ATMEquilibration.getStartTemperature
+      ~ATMEquilibration.getThermostatTimeConstant
+      ~ATMEquilibration.getTimeStep
+      ~ATMEquilibration.getUh
+      ~ATMEquilibration.getUseATMForce
+      ~ATMEquilibration.getW0
+      ~ATMEquilibration.isConstantTemp
+      ~ATMEquilibration.restraints
+      ~ATMEquilibration.setAlignKDistance
+      ~ATMEquilibration.setAlignKPsi
+      ~ATMEquilibration.setAlignKTheta
+      ~ATMEquilibration.setAlpha
+      ~ATMEquilibration.setCOMDistanceRestraint
+      ~ATMEquilibration.setCOMWidth
+      ~ATMEquilibration.setCOMk
+      ~ATMEquilibration.setCoreAlignment
+      ~ATMEquilibration.setDirection
+      ~ATMEquilibration.setEndTemperature
+      ~ATMEquilibration.setForceConstant
+      ~ATMEquilibration.setLambda1
+      ~ATMEquilibration.setLambda2
+      ~ATMEquilibration.setPosRestWidth
+      ~ATMEquilibration.setPressure
+      ~ATMEquilibration.setReportInterval
+      ~ATMEquilibration.setRestartInterval
+      ~ATMEquilibration.setRestraint
+      ~ATMEquilibration.setRuntime
+      ~ATMEquilibration.setSoftCoreA
+      ~ATMEquilibration.setSoftCoreU0
+      ~ATMEquilibration.setSoftCoreUmax
+      ~ATMEquilibration.setStartTemperature
+      ~ATMEquilibration.setThermostatTimeConstant
+      ~ATMEquilibration.setTimestep
+      ~ATMEquilibration.setUh
+      ~ATMEquilibration.setUseATMForce
+      ~ATMEquilibration.setW0
+   
+   
+
+   
+   
+   
