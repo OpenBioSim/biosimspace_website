@@ -1,0 +1,84 @@
+﻿BioSimSpace.Protocol.ATMProduction
+==================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: ATMProduction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ATMProduction.__init__
+      ~ATMProduction.getAlignKDistance
+      ~ATMProduction.getAlignKPsi
+      ~ATMProduction.getAlignKTheta
+      ~ATMProduction.getAlpha
+      ~ATMProduction.getAnalysisMethod
+      ~ATMProduction.getCOMDistanceRestraint
+      ~ATMProduction.getCOMWidth
+      ~ATMProduction.getCOMk
+      ~ATMProduction.getCoreAlignment
+      ~ATMProduction.getData
+      ~ATMProduction.getDirection
+      ~ATMProduction.getForceConstant
+      ~ATMProduction.getLambda1
+      ~ATMProduction.getLambda2
+      ~ATMProduction.getNumLambda
+      ~ATMProduction.getPosRestWidth
+      ~ATMProduction.getPressure
+      ~ATMProduction.getReportInterval
+      ~ATMProduction.getRestartInterval
+      ~ATMProduction.getRestraint
+      ~ATMProduction.getRunTime
+      ~ATMProduction.getSoftCoreA
+      ~ATMProduction.getSoftCoreU0
+      ~ATMProduction.getSoftCoreUmax
+      ~ATMProduction.getTemperature
+      ~ATMProduction.getThermostatTimeConstant
+      ~ATMProduction.getTimeStep
+      ~ATMProduction.getUh
+      ~ATMProduction.getW0
+      ~ATMProduction.get_window_index
+      ~ATMProduction.isRestart
+      ~ATMProduction.restraints
+      ~ATMProduction.setAlignKDistance
+      ~ATMProduction.setAlignKPsi
+      ~ATMProduction.setAlignKTheta
+      ~ATMProduction.setAlpha
+      ~ATMProduction.setAnalysisMethod
+      ~ATMProduction.setCOMDistanceRestraint
+      ~ATMProduction.setCOMWidth
+      ~ATMProduction.setCOMk
+      ~ATMProduction.setCoreAlignment
+      ~ATMProduction.setDirection
+      ~ATMProduction.setForceConstant
+      ~ATMProduction.setLambda1
+      ~ATMProduction.setLambda2
+      ~ATMProduction.setNumLambda
+      ~ATMProduction.setPosRestWidth
+      ~ATMProduction.setPressure
+      ~ATMProduction.setReportInterval
+      ~ATMProduction.setRestart
+      ~ATMProduction.setRestartInterval
+      ~ATMProduction.setRestraint
+      ~ATMProduction.setRuntime
+      ~ATMProduction.setSoftCoreA
+      ~ATMProduction.setSoftCoreU0
+      ~ATMProduction.setSoftCoreUmax
+      ~ATMProduction.setTemperature
+      ~ATMProduction.setThermostatTimeConstant
+      ~ATMProduction.setTimestep
+      ~ATMProduction.setUh
+      ~ATMProduction.setW0
+      ~ATMProduction.set_current_index
+   
+   
+
+   
+   
+   

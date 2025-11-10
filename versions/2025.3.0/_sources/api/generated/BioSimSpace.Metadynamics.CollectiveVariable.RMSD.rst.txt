@@ -1,0 +1,38 @@
+﻿BioSimSpace.Metadynamics.CollectiveVariable.RMSD
+================================================
+
+.. currentmodule:: BioSimSpace.Metadynamics.CollectiveVariable
+
+.. autoclass:: RMSD
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RMSD.__init__
+      ~RMSD.getAlignmentType
+      ~RMSD.getGrid
+      ~RMSD.getHillWidth
+      ~RMSD.getInitialValue
+      ~RMSD.getLowerBound
+      ~RMSD.getMoleculeIndices
+      ~RMSD.getPeriodicBoundaries
+      ~RMSD.getReferencePDB
+      ~RMSD.getUpperBound
+      ~RMSD.nComponents
+      ~RMSD.setAlignmentType
+      ~RMSD.setGrid
+      ~RMSD.setHillWidth
+      ~RMSD.setLowerBound
+      ~RMSD.setPeriodicBoundaries
+      ~RMSD.setUpperBound
+   
+   
+
+   
+   
+   
