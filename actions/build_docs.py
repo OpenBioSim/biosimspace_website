@@ -79,5 +79,5 @@ run_command(f"mamba install {reqs}")
 # make the documentation
 print(f"Changing into {doc_dir} and building the website...")
 os.chdir(f"{doc_dir}")
-os.environ["PYTHONPATH"] = "../python"
+os.environ["PYTHONPATH"] = "../src"
 run_command("make")

@@ -69,7 +69,7 @@ jobs:
       - name: Debug BioSimSpace
         run: ls -l project
       - name: Inject force fields
-        run: PYTHONPATH=project/python actions/inject_force_fields.sh project
+        run: PYTHONPATH=project/src actions/inject_force_fields.sh project
       - name: Build Website
         run: python actions/build_docs.py project
       - name: Assemble Website

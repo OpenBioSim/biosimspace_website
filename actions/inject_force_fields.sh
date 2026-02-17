@@ -14,4 +14,4 @@ force_fields=$(python actions/supported_force_fields.py)
 
 # Inject the string into the __init__ of the BioSimSpace.Parameters package.
 # This is only run on Linux so the following, non-portable, sed command is fine.
-sed -i "s/__FORCE_FIELDS__/$force_fields/g" "$SRC_DIR"/python/BioSimSpace/Parameters/__init__.py
+sed -i "s/__FORCE_FIELDS__/$force_fields/g" "$SRC_DIR"/src/BioSimSpace/Parameters/__init__.py
