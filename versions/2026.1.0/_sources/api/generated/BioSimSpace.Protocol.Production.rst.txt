@@ -1,0 +1,43 @@
+﻿BioSimSpace.Protocol.Production
+===============================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: Production
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Production.__init__
+      ~Production.getForceConstant
+      ~Production.getPressure
+      ~Production.getReportInterval
+      ~Production.getRestartInterval
+      ~Production.getRestraint
+      ~Production.getRunTime
+      ~Production.getTemperature
+      ~Production.getThermostatTimeConstant
+      ~Production.getTimeStep
+      ~Production.isRestart
+      ~Production.restraints
+      ~Production.setForceConstant
+      ~Production.setPressure
+      ~Production.setReportInterval
+      ~Production.setRestart
+      ~Production.setRestartInterval
+      ~Production.setRestraint
+      ~Production.setRunTime
+      ~Production.setTemperature
+      ~Production.setThermostatTimeConstant
+      ~Production.setTimeStep
+   
+   
+
+   
+   
+   

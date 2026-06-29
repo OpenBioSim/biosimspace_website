@@ -1,0 +1,27 @@
+﻿BioSimSpace.Types.Coordinate
+============================
+
+.. currentmodule:: BioSimSpace.Types
+
+.. autoclass:: Coordinate
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Coordinate.__init__
+      ~Coordinate.fromVector
+      ~Coordinate.to_vector
+      ~Coordinate.x
+      ~Coordinate.y
+      ~Coordinate.z
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+﻿BioSimSpace.\_Utils.command\_split
+==================================
+
+.. currentmodule:: BioSimSpace._Utils
+
+.. autofunction:: command_split

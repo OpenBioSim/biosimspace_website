@@ -1,0 +1,6 @@
+﻿BioSimSpace.IO.disableCache
+===========================
+
+.. currentmodule:: BioSimSpace.IO
+
+.. autofunction:: disableCache

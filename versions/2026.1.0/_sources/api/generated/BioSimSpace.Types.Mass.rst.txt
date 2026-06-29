@@ -1,0 +1,40 @@
+﻿BioSimSpace.Types.Mass
+======================
+
+.. currentmodule:: BioSimSpace.Types
+
+.. autoclass:: Mass
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Mass.__init__
+      ~Mass.angle
+      ~Mass.charge
+      ~Mass.dimensions
+      ~Mass.femtograms
+      ~Mass.grams
+      ~Mass.kilograms
+      ~Mass.length
+      ~Mass.mass
+      ~Mass.micrograms
+      ~Mass.milligrams
+      ~Mass.nanograms
+      ~Mass.picograms
+      ~Mass.quantity
+      ~Mass.temperature
+      ~Mass.time
+      ~Mass.to
+      ~Mass.unit
+      ~Mass.value
+   
+   
+
+   
+   
+   

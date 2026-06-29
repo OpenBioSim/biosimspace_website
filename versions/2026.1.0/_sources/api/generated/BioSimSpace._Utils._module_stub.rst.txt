@@ -1,0 +1,6 @@
+﻿BioSimSpace.\_Utils.\_module\_stub
+==================================
+
+.. currentmodule:: BioSimSpace._Utils
+
+.. autofunction:: _module_stub

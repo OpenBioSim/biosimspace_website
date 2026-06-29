@@ -1,0 +1,29 @@
+﻿BioSimSpace.\_Config.Somd
+=========================
+
+.. currentmodule:: BioSimSpace._Config
+
+.. autoclass:: Somd
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Somd.__init__
+      ~Somd.createConfig
+      ~Somd.hasBox
+      ~Somd.hasWater
+      ~Somd.isRestart
+      ~Somd.reportInterval
+      ~Somd.restartInterval
+      ~Somd.steps
+   
+   
+
+   
+   
+   

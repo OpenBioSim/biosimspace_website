@@ -1,0 +1,6 @@
+﻿BioSimSpace.Units.Angle.radian
+==============================
+
+.. currentmodule:: BioSimSpace.Units.Angle
+
+.. autodata:: radian

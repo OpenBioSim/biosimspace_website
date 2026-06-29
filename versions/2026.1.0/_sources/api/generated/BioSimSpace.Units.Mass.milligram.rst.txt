@@ -1,0 +1,6 @@
+﻿BioSimSpace.Units.Mass.milligram
+================================
+
+.. currentmodule:: BioSimSpace.Units.Mass
+
+.. autodata:: milligram

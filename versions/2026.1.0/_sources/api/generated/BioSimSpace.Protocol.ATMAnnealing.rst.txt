@@ -1,0 +1,80 @@
+﻿BioSimSpace.Protocol.ATMAnnealing
+=================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: ATMAnnealing
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ATMAnnealing.__init__
+      ~ATMAnnealing.getAlignKDistance
+      ~ATMAnnealing.getAlignKPsi
+      ~ATMAnnealing.getAlignKTheta
+      ~ATMAnnealing.getAlpha
+      ~ATMAnnealing.getAnnealNumCycles
+      ~ATMAnnealing.getAnnealValues
+      ~ATMAnnealing.getCOMDistanceRestraint
+      ~ATMAnnealing.getCOMWidth
+      ~ATMAnnealing.getCOMk
+      ~ATMAnnealing.getCoreAlignment
+      ~ATMAnnealing.getData
+      ~ATMAnnealing.getDirection
+      ~ATMAnnealing.getForceConstant
+      ~ATMAnnealing.getLambda1
+      ~ATMAnnealing.getLambda2
+      ~ATMAnnealing.getPosRestWidth
+      ~ATMAnnealing.getPressure
+      ~ATMAnnealing.getReportInterval
+      ~ATMAnnealing.getRestartInterval
+      ~ATMAnnealing.getRestraint
+      ~ATMAnnealing.getRunTime
+      ~ATMAnnealing.getSoftCoreA
+      ~ATMAnnealing.getSoftCoreU0
+      ~ATMAnnealing.getSoftCoreUmax
+      ~ATMAnnealing.getTemperature
+      ~ATMAnnealing.getThermostatTimeConstant
+      ~ATMAnnealing.getTimeStep
+      ~ATMAnnealing.getUh
+      ~ATMAnnealing.getW0
+      ~ATMAnnealing.restraints
+      ~ATMAnnealing.setAlignKDistance
+      ~ATMAnnealing.setAlignKPsi
+      ~ATMAnnealing.setAlignKTheta
+      ~ATMAnnealing.setAlpha
+      ~ATMAnnealing.setAnnealNumCycles
+      ~ATMAnnealing.setAnnealValues
+      ~ATMAnnealing.setCOMDistanceRestraint
+      ~ATMAnnealing.setCOMWidth
+      ~ATMAnnealing.setCOMk
+      ~ATMAnnealing.setCoreAlignment
+      ~ATMAnnealing.setDirection
+      ~ATMAnnealing.setForceConstant
+      ~ATMAnnealing.setLambda1
+      ~ATMAnnealing.setLambda2
+      ~ATMAnnealing.setPosRestWidth
+      ~ATMAnnealing.setPressure
+      ~ATMAnnealing.setReportInterval
+      ~ATMAnnealing.setRestartInterval
+      ~ATMAnnealing.setRestraint
+      ~ATMAnnealing.setRuntime
+      ~ATMAnnealing.setSoftCoreA
+      ~ATMAnnealing.setSoftCoreU0
+      ~ATMAnnealing.setSoftCoreUmax
+      ~ATMAnnealing.setTemperature
+      ~ATMAnnealing.setThermostatTimeConstant
+      ~ATMAnnealing.setTimestep
+      ~ATMAnnealing.setUh
+      ~ATMAnnealing.setW0
+   
+   
+
+   
+   
+   
