@@ -1,0 +1,29 @@
+﻿BioSimSpace.\_Config.Gromacs
+============================
+
+.. currentmodule:: BioSimSpace._Config
+
+.. autoclass:: Gromacs
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Gromacs.__init__
+      ~Gromacs.createConfig
+      ~Gromacs.hasBox
+      ~Gromacs.hasWater
+      ~Gromacs.isRestart
+      ~Gromacs.reportInterval
+      ~Gromacs.restartInterval
+      ~Gromacs.steps
+   
+   
+
+   
+   
+   

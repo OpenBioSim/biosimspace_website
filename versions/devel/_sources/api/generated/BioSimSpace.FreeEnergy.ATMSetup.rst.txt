@@ -1,0 +1,24 @@
+﻿BioSimSpace.FreeEnergy.ATMSetup
+===============================
+
+.. currentmodule:: BioSimSpace.FreeEnergy
+
+.. autoclass:: ATMSetup
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ATMSetup.__init__
+      ~ATMSetup.prepare
+      ~ATMSetup.viewRigidCores
+   
+   
+
+   
+   
+   

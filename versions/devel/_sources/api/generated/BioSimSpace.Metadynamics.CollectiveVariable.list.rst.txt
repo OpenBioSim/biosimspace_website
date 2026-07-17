@@ -1,0 +1,6 @@
+﻿BioSimSpace.Metadynamics.CollectiveVariable.list
+================================================
+
+.. currentmodule:: BioSimSpace.Metadynamics.CollectiveVariable
+
+.. autofunction:: list

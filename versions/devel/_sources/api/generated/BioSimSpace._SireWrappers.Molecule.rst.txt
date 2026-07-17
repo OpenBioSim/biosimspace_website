@@ -1,0 +1,46 @@
+﻿BioSimSpace.\_SireWrappers.Molecule
+===================================
+
+.. currentmodule:: BioSimSpace._SireWrappers
+
+.. autoclass:: Molecule
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Molecule.__init__
+      ~Molecule.charge
+      ~Molecule.coordinates
+      ~Molecule.copy
+      ~Molecule.extract
+      ~Molecule.getAtoms
+      ~Molecule.getAxisAlignedBoundingBox
+      ~Molecule.getResidues
+      ~Molecule.isAmberWater
+      ~Molecule.isGromacsWater
+      ~Molecule.isPerturbable
+      ~Molecule.isWater
+      ~Molecule.makeCompatibleWith
+      ~Molecule.molecule0
+      ~Molecule.molecule1
+      ~Molecule.nAtoms
+      ~Molecule.nChains
+      ~Molecule.nResidues
+      ~Molecule.number
+      ~Molecule.repartitionHydrogenMass
+      ~Molecule.save
+      ~Molecule.search
+      ~Molecule.smiles
+      ~Molecule.toSystem
+      ~Molecule.translate
+   
+   
+
+   
+   
+   

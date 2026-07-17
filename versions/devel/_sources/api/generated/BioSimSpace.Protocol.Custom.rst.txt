@@ -1,0 +1,25 @@
+﻿BioSimSpace.Protocol.Custom
+===========================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: Custom
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Custom.__init__
+      ~Custom.getConfig
+      ~Custom.getRestraint
+      ~Custom.setConfig
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+﻿BioSimSpace.Parameters.formalCharge
+===================================
+
+.. currentmodule:: BioSimSpace.Parameters
+
+.. autofunction:: formalCharge

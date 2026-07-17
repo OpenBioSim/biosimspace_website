@@ -1,0 +1,23 @@
+﻿BioSimSpace.\_Utils.WorkDir
+===========================
+
+.. currentmodule:: BioSimSpace._Utils
+
+.. autoclass:: WorkDir
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~WorkDir.__init__
+      ~WorkDir.is_temp_dir
+   
+   
+
+   
+   
+   

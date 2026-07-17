@@ -1,0 +1,329 @@
+.. THIS FILE IS AUTO-GENERATED - DO NOT EDIT BY HAND.
+.. Run ``python generate_roadmap.py`` from the ``doc`` directory to
+.. regenerate it from changelog.rst and open GitHub issues.
+
+Roadmap
+=======
+
+A sparse, curated timeline of the capabilities added to :mod:`BioSimSpace`
+over time, plus what's currently planned. This isn't every change - see the
+:doc:`changelog` for the full, linear history of every fix and tweak - just
+the entries that mark a new piece of scientific or engineering capability.
+
+Planned
+-------
+
+
+.. raw:: html
+
+    <div class="roadmap-planned">
+      <ul class="roadmap-planned-items">
+        <li><a href="https://github.com/OpenBioSim/biosimspace/issues/531">Bespoke ligand forcefield generation</a> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/issues/531">#531</a></li><li><a href="https://github.com/OpenBioSim/biosimspace/issues/530">Metalloenzyme protein setup support</a> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/issues/530">#530</a></li><li><a href="https://github.com/OpenBioSim/biosimspace/issues/529">AI co-scientist for target specific drug-binding pipeline</a> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/issues/529">#529</a></li><li><a href="https://github.com/OpenBioSim/biosimspace/issues/528">AI co-scientist for structure preparation</a> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/issues/528">#528</a></li><li><a href="https://github.com/OpenBioSim/biosimspace/issues/527">AI-native documentation</a> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/issues/527">#527</a></li><li><a href="https://github.com/OpenBioSim/biosimspace/issues/262">Support for openff-bespokefit</a> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/issues/262">#262</a></li>
+      </ul>
+      <p class="roadmap-planned-footer">
+        Tracked via issues labelled
+        <a href="https://github.com/openbiosim/biosimspace/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap">"roadmap"</a>.
+      </p>
+    </div>
+
+
+Shipped
+-------
+
+
+.. raw:: html
+
+    <div class="roadmap-timeline">
+
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2025.4.0...2026.1.0">2026.1.0</a></span>
+              <span class="roadmap-date">Jun 29 2026</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added functionaltiy for adding ions to an existing system <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/518">#518</a></li><li>Add support for user-defined "region-of-interest" merges <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/522">#522</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2025.3.0...2025.4.0">2025.4.0</a></span>
+              <span class="roadmap-date">Feb 17 2026</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add experimental ReplicaSystem class to speed up handling of replica exchange simulations <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/473">#473</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2025.2.0...2025.3.0">2025.3.0</a></span>
+              <span class="roadmap-date">Nov 10 2025</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Fully switch over to using the new Sire Python API naming convention, allowing BioSimSpace to be used within Sire <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/466">#466</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2025.1.0...2025.2.0">2025.2.0</a></span>
+              <span class="roadmap-date">Oct 08 2025</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add support for <code>SOMD2</code> FEP analysis using data frames with different numbers of samples <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/415">#415</a></li><li>Add support for the ABCG2 charge method for GAFF parameterisation <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/421">#421</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2024.4.1...2025.1.0">2025.1.0</a></span>
+              <span class="roadmap-date">Jul 01 2025</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add support for the <code>ff19SB</code> force field and OPC water <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/406">#406</a></li><li>Support analysis of <code>SOMD2</code> energy trajectories with time varying lambda sampling <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/408">#408</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2024.2.0...2024.3.0">2024.3.0</a></span>
+              <span class="roadmap-date">Oct 24 2024</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add support for the Alchemical Transfer Method (ATM) <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/327">#327</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2024.1.0...2024.2.0">2024.2.0</a></span>
+              <span class="roadmap-date">Jul 09 2024</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add protein free-energy perturbation functionality <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/294">#294</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2023.5.1...2024.1.0">2024.1.0</a></span>
+              <span class="roadmap-date">Apr 15 2024</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add support for using <code>openff-nagl</code> to generate partial charges <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/267">#267</a></li><li>Add support for AMBER as an alchemical free-energy simulation engine <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/272">#272</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2023.4.1...2023.5.0">2023.5.0</a></span>
+              <span class="roadmap-date">Dec 16 2023</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added SOMD and GROMACS support for multiple distance restraints for ABFE calculations <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/178">#178</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2023.3.1...2023.4.0">2023.4.0</a></span>
+              <span class="roadmap-date">Oct 13 2023</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add support for setting up systems containing crystal waters <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/154">#154</a></li><li>Add unified free-energy perturbation analysis using <code>alchemlyb</code> <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/155">#155</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2023.2.2...2023.3.0">2023.3.0</a></span>
+              <span class="roadmap-date">Jun 30 2023</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Add absolute binding free-energy support for SOMD <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/104">#104</a></li><li>Add support for Sire as a trajectory backend <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/121">#121</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2023.1.1...2023.1.2">2023.1.2</a></span>
+              <span class="roadmap-date">Feb 24 2023</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added the initial version of BioSimSpace.Convert, which provides support for converting between native BioSimSpace, <a href="http://sire.openbiosim.org">Sire</a>, and <a href="https://www.rdkit.org">RDKit</a> objects <a class="roadmap-pr" href="https://github.com/OpenBioSim/biosimspace/pull/9">#9</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2022.3.0...2023.1.0">2023.1.0</a></span>
+              <span class="roadmap-date">Feb 03 2023</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added BioSimSpace._Config sub-package to simplify the generation of configuration files for molecular dynamics engines and improve flexiblity. (Adapted from code written by <a href="https://github.com/msuruzhon">@msuruzhon</a>.)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2022.2.1...2022.3.0">2022.3.0</a></span>
+              <span class="roadmap-date">Sep 28 2022 (Pre-release)</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added <code>BioSimSpace.Sandpit</code> for experimental features from external collaborators</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2020.1.0...2022.1.0">2022.1.0</a></span>
+              <span class="roadmap-date">Jan 26 2022</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added support for parameterising molecules using OpenForceField</li><li>Added support for funnel metadynamics simulations</li><li>Added support for steered molecular dynamics simulations</li><li>Added support for generating perturbation networks using LOMAP</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2019.1.0...2019.2.0">2019.2.0</a></span>
+              <span class="roadmap-date">Sep 11 2019</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added basic metadynamics functionality with support for distance and torsion collective variables</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-release">
+          <div class="roadmap-marker" aria-hidden="true"></div>
+          <div class="roadmap-release-body">
+            <div class="roadmap-release-header">
+              <span class="roadmap-version"><a href="https://github.com/openbiosim/biosimspace/compare/2018.1.1...2019.1.0">2019.1.0</a></span>
+              <span class="roadmap-date">May 02 2019</span>
+            </div>
+            <ul class="roadmap-items">
+              <li>Added support for parameterising proteins and ligands</li><li>Added support for solvating molecular systems</li><li>Molecular dynamics drivers updated to support SOMD and GROMACS</li><li>Support free energy perturbation simulations with SOMD and GROMACS</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+.. raw:: html
+
+    <style>
+      .roadmap-planned-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .roadmap-planned-items li {
+        padding: 0.5em 0.8em;
+        margin: 0.3em 0;
+        border: 1px solid var(--color-background-border);
+        border-radius: 0.3em;
+        background: var(--color-background-secondary);
+      }
+      .roadmap-planned-empty {
+        color: var(--color-foreground-muted);
+        font-style: italic;
+      }
+      .roadmap-planned-footer {
+        margin-top: 0.6em;
+        font-size: 0.85em;
+        color: var(--color-foreground-muted);
+      }
+      .roadmap-timeline {
+        position: relative;
+        margin: 2em 0;
+        padding-left: 1.6em;
+        border-left: 2px solid var(--color-background-border);
+      }
+      .roadmap-release {
+        position: relative;
+        margin-bottom: 1.8em;
+      }
+      .roadmap-marker {
+        position: absolute;
+        left: -1.95em;
+        top: 0.3em;
+        width: 0.6em;
+        height: 0.6em;
+        border-radius: 50%;
+        background: var(--color-brand-content);
+      }
+      .roadmap-release-header {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75em;
+        flex-wrap: wrap;
+      }
+      .roadmap-version {
+        font-weight: 600;
+        font-size: 1.05em;
+      }
+      .roadmap-version a {
+        color: var(--color-foreground-primary);
+        text-decoration: none;
+      }
+      .roadmap-version a:hover {
+        color: var(--color-brand-content);
+      }
+      .roadmap-date {
+        color: var(--color-foreground-muted);
+        font-size: 0.85em;
+      }
+      .roadmap-items {
+        margin: 0.4em 0 0 0;
+        padding-left: 1.2em;
+      }
+      .roadmap-items li {
+        margin: 0.2em 0;
+      }
+      .roadmap-items code {
+        background: var(--color-background-secondary);
+        border-radius: 0.2em;
+        padding: 0.05em 0.35em;
+      }
+      .roadmap-pr {
+        font-size: 0.8em;
+        color: var(--color-foreground-muted);
+        text-decoration: none;
+      }
+      .roadmap-pr:hover {
+        color: var(--color-brand-content);
+      }
+    </style>

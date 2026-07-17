@@ -1,0 +1,49 @@
+﻿BioSimSpace.Protocol.FreeEnergyProduction
+=========================================
+
+.. currentmodule:: BioSimSpace.Protocol
+
+.. autoclass:: FreeEnergyProduction
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FreeEnergyProduction.__init__
+      ~FreeEnergyProduction.getForceConstant
+      ~FreeEnergyProduction.getLambda
+      ~FreeEnergyProduction.getLambdaIndex
+      ~FreeEnergyProduction.getLambdaValues
+      ~FreeEnergyProduction.getPerturbationType
+      ~FreeEnergyProduction.getPressure
+      ~FreeEnergyProduction.getReportInterval
+      ~FreeEnergyProduction.getRestartInterval
+      ~FreeEnergyProduction.getRestraint
+      ~FreeEnergyProduction.getRunTime
+      ~FreeEnergyProduction.getTemperature
+      ~FreeEnergyProduction.getThermostatTimeConstant
+      ~FreeEnergyProduction.getTimeStep
+      ~FreeEnergyProduction.isRestart
+      ~FreeEnergyProduction.restraints
+      ~FreeEnergyProduction.setForceConstant
+      ~FreeEnergyProduction.setLambdaValues
+      ~FreeEnergyProduction.setPerturbationType
+      ~FreeEnergyProduction.setPressure
+      ~FreeEnergyProduction.setReportInterval
+      ~FreeEnergyProduction.setRestart
+      ~FreeEnergyProduction.setRestartInterval
+      ~FreeEnergyProduction.setRestraint
+      ~FreeEnergyProduction.setRunTime
+      ~FreeEnergyProduction.setTemperature
+      ~FreeEnergyProduction.setThermostatTimeConstant
+      ~FreeEnergyProduction.setTimeStep
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+﻿BioSimSpace.IO.clearCache
+=========================
+
+.. currentmodule:: BioSimSpace.IO
+
+.. autofunction:: clearCache
