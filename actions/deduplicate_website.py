@@ -50,7 +50,19 @@ for root, dirs, files in os.walk("gh-pages", onerror=None, followlinks=False):
         if os.path.isfile(fullpath):
             # really don't follow links
             if os.path.islink(fullpath):
-                print(f"Skipping {fullpath} as link")
+                # os.path.exists follows the link - if it returns False
+                # then the link's target has since been renamed/removed
+                # (e.g. by a later release dropping a page that an older
+                # version snapshot was symlinked to). Past runs of this
+                # script never revisited existing links to check this,
+                # so dangling links could accumulate silently until
+                # something downstream (e.g. the Pages artifact upload)
+                # failed on them with no useful error.
+                if not os.path.exists(fullpath):
+                    print(f"Removing dangling symlink {fullpath}")
+                    os.unlink(fullpath)
+                else:
+                    print(f"Skipping {fullpath} as link")
                 continue
 
             with open(fullpath, "rb") as FILE:
@@ -78,18 +90,25 @@ current_dir = os.getcwd()
 if len(duplicates) == 0:
     print("There are no depulicates to de-dup")
 
+def dedup_rank(path):
+    # prefer a file outside of "versions" (i.e. the canonical "latest"
+    # copy) over any archived version snapshot, regardless of path
+    # length - a versioned snapshot must never become the canonical
+    # file, since a later release rebuilding "latest" would then write
+    # straight through the symlink and silently corrupt the archived
+    # snapshot. Shortest path is only used as a tie-break within the
+    # same tier.
+    is_versioned = "versions" in path.split(os.sep)
+    return (is_versioned, len(path))
+
+
 for duplicate in duplicates:
-    # the duplicate with the shortest path name is the one we want
-    # to keep
+    # the preferred duplicate (see dedup_rank) is the one we want to keep
     files = digests[duplicate]
 
     common_prefix = os.path.commonprefix(files)
 
-    best_file = files[0]
-
-    for file in files[1:]:
-        if len(file) < len(best_file):
-            best_file = file
+    best_file = min(files, key=dedup_rank)
 
     files.remove(best_file)
 
